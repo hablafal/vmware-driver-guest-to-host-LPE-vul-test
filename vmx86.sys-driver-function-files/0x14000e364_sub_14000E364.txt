@@ -1,0 +1,55 @@
+=== METADATA ===
+Name: sub_14000E364
+Addr: 0x14000e364
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000BE84 (0x14000BFCA)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000e364-0x14000e36c -> Jumps to: 0x14000e36c, 0x14000e375
+  Block 0x14000e36c-0x14000e371 -> Jumps to: 0x14000e371, 0x14000e375
+  Block 0x14000e371-0x14000e375 -> Jumps to: 
+  Block 0x14000e375-0x14000e378 -> Jumps to: 
+
+=== CODE ===
+_DWORD *__fastcall sub_14000E364(_DWORD *a1, unsigned int a2)
+{
+  if ( a2 >= 0xA0 && *a1 == 42 )
+    return a1;
+  else
+    return 0;
+}
+
+
+=== DISASM ===
+0x14000e364: cmp     edx, 0A0h
+0x14000e36a: jb      short loc_14000E375
+0x14000e36c: cmp     dword ptr [rcx], 2Ah ; '*'
+0x14000e36f: jnz     short loc_14000E375
+0x14000e371: mov     rax, rcx
+0x14000e374: retn
+0x14000e375: xor     eax, eax
+0x14000e377: retn

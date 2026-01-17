@@ -1,0 +1,107 @@
+=== METADATA ===
+Name: sub_140007AD0
+Addr: 0x140007ad0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] MEMORY_MAPPING_RW
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140007b17: AND with Mask 0xF0
+
+=== MEMBER ACCESS ===
+  0x140007b0a: Access Member +0x38 ([rsp+28h+BaseAddress])
+  0x140007b14: Access Member +0x30 ([rax+30h])
+  0x140007b1d: Access Member +0x8 ([rdi+8])
+  0x140007b35: Access Member +0x38 ([rsp+28h+BaseAddress])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] 0x140007af6: [CFG_TARGET] via r8d
+
+=== CALLERS ===
+  <- sub_140005430 (0x140005475)
+
+=== IMPORTS ===
+  -> 0x140007b01 calls MmMapIoSpace
+  -> 0x140007b28 calls MmUnmapIoSpace
+  -> 0x140007b3a calls MmUnmapIoSpace
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140007ad0-0x140007af0 -> Jumps to: 0x140007af0, 0x140007afe
+  Block 0x140007af0-0x140007afe -> Jumps to: 0x140007b07
+  Block 0x140007afe-0x140007b07 -> Jumps to: 0x140007b07
+  Block 0x140007b07-0x140007b14 -> Jumps to: 0x140007b14, 0x140007b41
+  Block 0x140007b14-0x140007b1d -> Jumps to: 0x140007b1d, 0x140007b23
+  Block 0x140007b1d-0x140007b23 -> Jumps to: 0x140007b2e
+  Block 0x140007b23-0x140007b2e -> Jumps to: 0x140007b2e
+  Block 0x140007b2e-0x140007b30 -> Jumps to: 0x140007b41
+  Block 0x140007b30-0x140007b41 -> Jumps to: 0x140007b41
+  Block 0x140007b41-0x140007b47 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140007AD0(__int64 a1, PHYSICAL_ADDRESS a2)
+{
+  _DWORD *v3; // rax
+
+  if ( qword_140014BD8 )
+    v3 = (_DWORD *)((__int64 (__fastcall *)(_QWORD, _QWORD, _QWORD))qword_140014BD8)(
+                     (PHYSICAL_ADDRESS)a2.QuadPart,
+                     4096,
+                     516);
+  else
+    v3 = MmMapIoSpace(a2, 0x1000u, MmNonCached);
+  if ( v3 )
+  {
+    if ( (v3[12] & 0xF0) == 0x10 )
+      *(_QWORD *)(a1 + 8) = v3;
+    else
+      MmUnmapIoSpace(v3, 0x1000u);
+  }
+}
+
+
+=== DISASM ===
+0x140007ad0: push    rdi
+0x140007ad2: sub     rsp, 20h
+0x140007ad6: mov     r9, rdx
+0x140007ad9: mov     rdi, rcx
+0x140007adc: mov     rax, cs:qword_140014BD8
+0x140007ae3: mov     edx, 1000h; NumberOfBytes
+0x140007ae8: mov     rcx, r9; PhysicalAddress
+0x140007aeb: test    rax, rax
+0x140007aee: jz      short loc_140007AFE
+0x140007af0: mov     r8d, 204h
+0x140007af6: call    cs:__guard_dispatch_icall_fptr
+0x140007afc: jmp     short loc_140007B07
+0x140007afe: xor     r8d, r8d; CacheType
+0x140007b01: call    cs:MmMapIoSpace
+0x140007b07: mov     rcx, rax; BaseAddress
+0x140007b0a: mov     [rsp+28h+BaseAddress], rax
+0x140007b0f: test    rax, rax
+0x140007b12: jz      short loc_140007B41
+0x140007b14: mov     eax, [rax+30h]
+0x140007b17: and     al, 0F0h
+0x140007b19: cmp     al, 10h
+0x140007b1b: jnz     short loc_140007B23
+0x140007b1d: mov     [rdi+8], rcx
+0x140007b21: jmp     short loc_140007B2E
+0x140007b23: mov     edx, 1000h; NumberOfBytes
+0x140007b28: call    cs:MmUnmapIoSpace
+0x140007b2e: jmp     short loc_140007B41
+0x140007b30: mov     edx, 1000h; NumberOfBytes
+0x140007b35: mov     rcx, [rsp+28h+BaseAddress]; BaseAddress
+0x140007b3a: call    cs:MmUnmapIoSpace
+0x140007b40: nop
+0x140007b41: add     rsp, 20h
+0x140007b45: pop     rdi
+0x140007b46: retn

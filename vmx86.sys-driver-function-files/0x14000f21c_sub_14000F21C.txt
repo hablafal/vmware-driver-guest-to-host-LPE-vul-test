@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: sub_14000F21C
+Addr: 0x14000f21c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E46C (0x14000E582)
+  <- sub_14000E46C (0x14000E623)
+  <- sub_14000E46C (0x14000E6F0)
+  <- sub_14000E46C (0x14000E7C6)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f21c-0x14000f21f -> Jumps to: 
+
+=== CODE ===
+char sub_14000F21C()
+{
+  return 1;
+}
+
+
+=== DISASM ===
+0x14000f21c: mov     al, 1
+0x14000f21e: retn

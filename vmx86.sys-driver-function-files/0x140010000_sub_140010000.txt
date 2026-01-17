@@ -1,0 +1,82 @@
+=== METADATA ===
+Name: sub_140010000
+Addr: 0x140010000
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140010001: TEST with Mask 0x1
+  0x14001001b: AND with Mask 0xFFFFFFFFFFFFFFC0
+
+=== MEMBER ACCESS ===
+  0x140010017: Access Member +0x10 (xmmword ptr [rcx+10h])
+  0x14001001f: Access Member +0x20 (xmmword ptr [rcx+20h])
+  0x140010026: Access Member +0x30 (xmmword ptr [rcx+30h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000FEC0 (0x14000FEF2)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140010000-0x14001000a -> Jumps to: 0x14001000a, 0x14001003c
+  Block 0x14001000a-0x14001003c -> Jumps to: 
+  Block 0x14001003c-0x140010043 -> Jumps to: 0x14001000a
+
+=== CODE ===
+__int64 __fastcall sub_140010000(_OWORD *a1, __int64 a2, __int64 a3)
+{
+  __int128 v3; // xmm0
+  __int64 result; // rax
+
+  if ( (byte_140014BC0 & 1) == 0 )
+    result = sub_140010080();
+  *a1 = v3;
+  a1[1] = v3;
+  a1[2] = v3;
+  a1[3] = v3;
+  memset(
+    (void *)((unsigned __int64)(a1 + 4) & 0xFFFFFFFFFFFFFFC0uLL),
+    v3,
+    (unsigned __int64)a1 + a3 - ((unsigned __int64)(a1 + 4) & 0xFFFFFFFFFFFFFFC0uLL));
+  return result;
+}
+
+
+=== DISASM ===
+0x140010000: push    rdi
+0x140010001: test    cs:byte_140014BC0, 1
+0x140010008: jz      short loc_14001003C
+0x14001000a: mov     rdi, rcx
+0x14001000d: add     r8, rcx
+0x140010010: movups  xmmword ptr [rcx], xmm0
+0x140010013: add     rdi, 40h ; '@'
+0x140010017: movups  xmmword ptr [rcx+10h], xmm0
+0x14001001b: and     rdi, 0FFFFFFFFFFFFFFC0h
+0x14001001f: movups  xmmword ptr [rcx+20h], xmm0
+0x140010023: sub     r8, rdi
+0x140010026: movups  xmmword ptr [rcx+30h], xmm0
+0x14001002a: mov     rcx, r8
+0x14001002d: mov     r9, rax
+0x140010030: movq    rax, xmm0
+0x140010035: rep stosb
+0x140010037: mov     rax, r9
+0x14001003a: pop     rdi
+0x14001003b: retn
+0x14001003c: call    sub_140010080
+0x140010041: jmp     short loc_14001000A

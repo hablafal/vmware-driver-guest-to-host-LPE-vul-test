@@ -1,0 +1,134 @@
+=== METADATA ===
+Name: sub_14000F918 (Suggested: EvtIoWrite)
+Addr: 0x14000f918
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f91e: Access Member +0x18 ([rdx+18h])
+  0x14000f927: Access Member +0x28 ([rcx+28h])
+  0x14000f930: Access Member +0x4 ([rcx+4])
+  0x14000f93b: Access Member +0x8 (dword ptr [rdx+8])
+  0x14000f978: Access Member +0x8 ([r11+rax*8+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x28 -> possible EvtIoWrite
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140003D76)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f918-0x14000f927 -> Jumps to: 0x14000f927, 0x14000f98d
+  Block 0x14000f927-0x14000f930 -> Jumps to: 0x14000f930, 0x14000f98d
+  Block 0x14000f930-0x14000f936 -> Jumps to: 0x14000f936, 0x14000f98d
+  Block 0x14000f936-0x14000f93b -> Jumps to: 0x14000f93b, 0x14000f98d
+  Block 0x14000f93b-0x14000f944 -> Jumps to: 0x14000f944, 0x14000f98d
+  Block 0x14000f944-0x14000f948 -> Jumps to: 0x14000f948, 0x14000f94d
+  Block 0x14000f948-0x14000f94d -> Jumps to: 0x14000f94d, 0x14000f952
+  Block 0x14000f94d-0x14000f952 -> Jumps to: 0x14000f952, 0x14000f98d
+  Block 0x14000f952-0x14000f95e -> Jumps to: 0x14000f95e, 0x14000f98a
+  Block 0x14000f95e-0x14000f963 -> Jumps to: 0x14000f963, 0x14000f986
+  Block 0x14000f963-0x14000f983 -> Jumps to: 0x14000f983, 0x14000f986
+  Block 0x14000f983-0x14000f986 -> Jumps to: 0x14000f986
+  Block 0x14000f986-0x14000f98a -> Jumps to: 
+  Block 0x14000f98a-0x14000f98d -> Jumps to: 
+  Block 0x14000f98d-0x14000f990 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000F918(__int64 a1, unsigned int *a2)
+{
+  __int64 v2; // r9
+  char v3; // r8
+  __int64 v4; // r11
+  __int64 v5; // rax
+  __int64 v6; // rax
+  __int64 v7; // rcx
+
+  v2 = *a2;
+  v3 = 0;
+  if ( !a1 )
+    return 0;
+  v4 = *(_QWORD *)(a1 + 40);
+  if ( !v4 )
+    return 0;
+  if ( (unsigned int)v2 >= *(_DWORD *)(a1 + 4) )
+    return 0;
+  if ( !a2[6] )
+    return 0;
+  v5 = (int)a2[2];
+  if ( (int)v5 >= 6 )
+    return 0;
+  if ( (!(_DWORD)v5 || (_DWORD)v5 == 3) && (_DWORD)v2 )
+    return 0;
+  v6 = 2 * v5;
+  v7 = *(_QWORD *)(v4 + 8 * v6);
+  if ( !v7 )
+    return 1;
+  if ( v7 == a2[6] )
+  {
+    _mm_lfence();
+    if ( *(_QWORD *)(*(_QWORD *)(v4 + 8 * v6 + 8) + 8 * *(_QWORD *)(v4 + 8 * v6) * v2) == 0x3FFFFFFFFFLL )
+      return 1;
+  }
+  return v3;
+}
+
+
+=== DISASM ===
+0x14000f918: mov     r9d, [rdx]
+0x14000f91b: xor     r8d, r8d
+0x14000f91e: mov     r10d, [rdx+18h]
+0x14000f922: test    rcx, rcx
+0x14000f925: jz      short loc_14000F98D
+0x14000f927: mov     r11, [rcx+28h]
+0x14000f92b: test    r11, r11
+0x14000f92e: jz      short loc_14000F98D
+0x14000f930: cmp     r9d, [rcx+4]
+0x14000f934: jnb     short loc_14000F98D
+0x14000f936: test    r10, r10
+0x14000f939: jz      short loc_14000F98D
+0x14000f93b: movsxd  rax, dword ptr [rdx+8]
+0x14000f93f: cmp     eax, 6
+0x14000f942: jge     short loc_14000F98D
+0x14000f944: test    eax, eax
+0x14000f946: jz      short loc_14000F94D
+0x14000f948: cmp     eax, 3
+0x14000f94b: jnz     short loc_14000F952
+0x14000f94d: test    r9d, r9d
+0x14000f950: jnz     short loc_14000F98D
+0x14000f952: add     rax, rax
+0x14000f955: mov     rcx, [r11+rax*8]
+0x14000f959: test    rcx, rcx
+0x14000f95c: jz      short loc_14000F98A
+0x14000f95e: cmp     rcx, r10
+0x14000f961: jnz     short loc_14000F986
+0x14000f963: lfence
+0x14000f966: mov     rcx, r9
+0x14000f969: mov     rdx, 3FFFFFFFFFh
+0x14000f973: imul    rcx, [r11+rax*8]
+0x14000f978: mov     rax, [r11+rax*8+8]
+0x14000f97d: cmp     [rax+rcx*8], rdx
+0x14000f981: jnz     short loc_14000F986
+0x14000f983: mov     r8b, 1
+0x14000f986: mov     al, r8b
+0x14000f989: retn
+0x14000f98a: mov     al, 1
+0x14000f98c: retn
+0x14000f98d: xor     al, al
+0x14000f98f: retn

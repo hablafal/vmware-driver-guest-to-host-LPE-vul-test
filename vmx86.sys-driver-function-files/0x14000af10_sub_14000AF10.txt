@@ -1,0 +1,58 @@
+=== METADATA ===
+Name: sub_14000AF10
+Addr: 0x14000af10
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000af10-0x14000af24 -> Jumps to: 0x14000af24, 0x14000af27
+  Block 0x14000af24-0x14000af27 -> Jumps to: 0x14000af27
+  Block 0x14000af27-0x14000af2d -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000AF10(_BYTE *a1)
+{
+  __int64 result; // rax
+
+  result = sub_140003428();
+  if ( result != 3 )
+    *a1 = 1;
+  return result;
+}
+
+
+=== DISASM ===
+0x14000af10: push    rbx
+0x14000af12: sub     rsp, 20h
+0x14000af16: mov     rbx, rcx
+0x14000af19: call    sub_140003428
+0x14000af1e: cmp     rax, 3
+0x14000af22: jz      short loc_14000AF27
+0x14000af24: mov     byte ptr [rbx], 1
+0x14000af27: add     rsp, 20h
+0x14000af2b: pop     rbx
+0x14000af2c: retn

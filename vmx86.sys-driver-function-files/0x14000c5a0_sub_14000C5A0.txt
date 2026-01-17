@@ -1,0 +1,67 @@
+=== METADATA ===
+Name: sub_14000C5A0
+Addr: 0x14000c5a0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000c5a0: Access Member +0x8 ([rsp+arg_0])
+  0x14000c5d8: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x1400042FF)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000c5a0-0x14000c5e3 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000C5A0(__int64 a1, __int64 a2)
+{
+  __int64 v4; // rbx
+
+  sub_140007558(a1);
+  v4 = sub_140005F6C(a1, a2);
+  sub_140007564(a1);
+  return v4;
+}
+
+
+=== DISASM ===
+0x14000c5a0: mov     [rsp+arg_0], rbx
+0x14000c5a5: push    rdi
+0x14000c5a6: sub     rsp, 20h
+0x14000c5aa: mov     rbx, rdx
+0x14000c5ad: mov     rdi, rcx
+0x14000c5b0: mov     edx, 16h
+0x14000c5b5: call    sub_140007558
+0x14000c5ba: mov     rdx, rbx
+0x14000c5bd: mov     rcx, rdi
+0x14000c5c0: call    sub_140005F6C
+0x14000c5c5: mov     edx, 16h
+0x14000c5ca: mov     rcx, rdi
+0x14000c5cd: mov     rbx, rax
+0x14000c5d0: call    sub_140007564
+0x14000c5d5: mov     rax, rbx
+0x14000c5d8: mov     rbx, [rsp+28h+arg_0]
+0x14000c5dd: add     rsp, 20h
+0x14000c5e1: pop     rdi
+0x14000c5e2: retn

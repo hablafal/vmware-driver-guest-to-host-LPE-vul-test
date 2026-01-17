@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: unknown_libname_1 (Suggested: EvtIoRead)
+Addr: 0x14000f464
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f464: Access Member +0x20 ([rcx+20h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x20 -> possible EvtIoRead
+
+=== CALLERS ===
+  <- sub_14000EFA4 (0x14000EFD6)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f464-0x14000f46c -> Jumps to: 
+
+=== CODE ===
+// Windows Driver Kit 7/10 64bit
+__int64 __fastcall unknown_libname_1(__int64 a1)
+{
+  return **(_QWORD **)(a1 + 32);
+}
+
+
+=== DISASM ===
+0x14000f464: mov     rax, [rcx+20h]
+0x14000f468: mov     rax, [rax]
+0x14000f46b: retn

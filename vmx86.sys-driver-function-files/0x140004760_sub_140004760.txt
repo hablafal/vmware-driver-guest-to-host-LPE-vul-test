@@ -1,0 +1,95 @@
+=== METADATA ===
+Name: sub_140004760
+Addr: 0x140004760
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000476f: AND with Mask 0x3
+
+=== MEMBER ACCESS ===
+  0x140004764: Access Member +0x90 ([rsp+58h+arg_30])
+  0x14000477a: Access Member +0xA0 ([rsp+58h+arg_40])
+  0x140004782: Access Member +0x48 ([rsp+58h+var_10])
+  0x140004787: Access Member +0x98 ([rsp+58h+arg_38])
+  0x14000478f: Access Member +0x40 ([rsp+58h+var_18])
+  0x140004794: Access Member +0x88 ([rsp+58h+arg_28])
+  0x14000479b: Access Member +0x38 ([rsp+58h+var_20])
+  0x1400047a0: Access Member +0x30 ([rsp+58h+var_28])
+  0x1400047a4: Access Member +0x80 ([rsp+58h+arg_20])
+  0x1400047ac: Access Member +0x28 ([rsp+58h+var_30])
+  0x1400047b1: Access Member +0x20 ([rsp+58h+var_38])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140004760-0x140004776 -> Jumps to: 0x140004776, 0x14000477a
+  Block 0x140004776-0x14000477a -> Jumps to: 0x1400047c6
+  Block 0x14000477a-0x1400047c6 -> Jumps to: 0x1400047c6
+  Block 0x1400047c6-0x1400047cb -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_140004760(
+        __int64 a1,
+        char a2,
+        __int64 a3,
+        unsigned int a4,
+        __int64 a5,
+        unsigned int a6,
+        unsigned int a7,
+        __int64 a8)
+{
+  __int64 *v9; // r9
+
+  if ( (a7 & 3) != 3 )
+    return 0;
+  v9 = (__int64 *)a3;
+  LOBYTE(a3) = a2;
+  return sub_140003BB4(0, a1, a3, v9, a4, a5, a6, a7, a8);
+}
+
+
+=== DISASM ===
+0x140004760: sub     rsp, 58h
+0x140004764: mov     r10d, [rsp+58h+arg_30]
+0x14000476c: mov     eax, r10d
+0x14000476f: and     eax, 3
+0x140004772: cmp     al, 3
+0x140004774: jz      short loc_14000477A
+0x140004776: xor     al, al
+0x140004778: jmp     short loc_1400047C6
+0x14000477a: mov     rax, [rsp+58h+arg_40]
+0x140004782: mov     [rsp+58h+var_10], rax
+0x140004787: mov     rax, [rsp+58h+arg_38]
+0x14000478f: mov     [rsp+58h+var_18], rax
+0x140004794: mov     eax, [rsp+58h+arg_28]
+0x14000479b: mov     [rsp+58h+var_20], r10d
+0x1400047a0: mov     [rsp+58h+var_28], eax
+0x1400047a4: mov     rax, [rsp+58h+arg_20]
+0x1400047ac: mov     [rsp+58h+var_30], rax
+0x1400047b1: mov     [rsp+58h+var_38], r9d
+0x1400047b6: mov     r9, r8
+0x1400047b9: mov     r8b, dl
+0x1400047bc: mov     rdx, rcx
+0x1400047bf: xor     ecx, ecx
+0x1400047c1: call    sub_140003BB4
+0x1400047c6: add     rsp, 58h
+0x1400047ca: retn

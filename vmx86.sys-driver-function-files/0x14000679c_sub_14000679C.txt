@@ -1,0 +1,55 @@
+=== METADATA ===
+Name: sub_14000679C
+Addr: 0x14000679c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x1400067a0: Access Member +0x10 ([rcx+10h])
+  0x1400067aa: Access Member +0x40 ([r8+40h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000D1B0 (0x14000D220)
+
+=== IMPORTS ===
+  -> 0x1400067b2 calls KeClearEvent
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000679c-0x1400067bf -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000679C(__int64 a1, unsigned int a2)
+{
+  KeClearEvent((PRKEVENT)(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 64LL) + 24LL * a2));
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000679c: sub     rsp, 28h
+0x1400067a0: mov     r8, [rcx+10h]
+0x1400067a4: mov     eax, edx
+0x1400067a6: lea     rcx, [rax+rax*2]
+0x1400067aa: mov     rax, [r8+40h]
+0x1400067ae: lea     rcx, [rax+rcx*8]; Event
+0x1400067b2: call    cs:KeClearEvent
+0x1400067b8: xor     al, al
+0x1400067ba: add     rsp, 28h
+0x1400067be: retn

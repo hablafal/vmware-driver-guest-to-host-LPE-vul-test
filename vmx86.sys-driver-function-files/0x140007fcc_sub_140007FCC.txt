@@ -1,0 +1,89 @@
+=== METADATA ===
+Name: sub_140007FCC
+Addr: 0x140007fcc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140007fcc: Access Member +0x8 ([rsp+arg_0])
+  0x140007fed: Access Member +0x8 ([rax+8])
+  0x140008019: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000606C (0x14000618A)
+  <- sub_14000606C (0x1400061A5)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140008003 -> PhysTrack_Alloc
+  0x14000800a -> %s failed
+
+
+=== BASIC BLOCKS ===
+  Block 0x140007fcc-0x140007fed -> Jumps to: 0x140007fed, 0x140008003
+  Block 0x140007fed-0x140008003 -> Jumps to: 0x140008016
+  Block 0x140008003-0x140008016 -> Jumps to: 0x140008016
+  Block 0x140008016-0x140008024 -> Jumps to: 
+
+=== CODE ===
+_QWORD *__fastcall sub_140007FCC(__int64 a1)
+{
+  _QWORD *v2; // rax
+  _QWORD *v3; // rbx
+
+  v2 = sub_1400055C0(0x20108u, 0);
+  v3 = v2;
+  if ( v2 )
+  {
+    sub_14000FEC0(v2 + 1, 0, 131328);
+    *v3 = a1;
+  }
+  else
+  {
+    sub_140003A14("%s failed\n", "PhysTrack_Alloc");
+  }
+  return v3;
+}
+
+
+=== DISASM ===
+0x140007fcc: mov     [rsp+arg_0], rbx
+0x140007fd1: push    rdi
+0x140007fd2: sub     rsp, 20h
+0x140007fd6: mov     rdi, rcx
+0x140007fd9: xor     edx, edx
+0x140007fdb: mov     ecx, 20108h; NumberOfBytes
+0x140007fe0: call    sub_1400055C0
+0x140007fe5: mov     rbx, rax
+0x140007fe8: test    rax, rax
+0x140007feb: jz      short loc_140008003
+0x140007fed: lea     rcx, [rax+8]
+0x140007ff1: xor     edx, edx
+0x140007ff3: mov     r8d, 20100h
+0x140007ff9: call    sub_14000FEC0
+0x140007ffe: mov     [rbx], rdi
+0x140008001: jmp     short loc_140008016
+0x140008003: lea     rdx, aPhystrackAlloc; "PhysTrack_Alloc"
+0x14000800a: lea     rcx, aSFailed; "%s failed\n"
+0x140008011: call    sub_140003A14
+0x140008016: mov     rax, rbx
+0x140008019: mov     rbx, [rsp+28h+arg_0]
+0x14000801e: add     rsp, 20h
+0x140008022: pop     rdi
+0x140008023: retn

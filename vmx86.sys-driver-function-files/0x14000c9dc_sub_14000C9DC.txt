@@ -1,0 +1,105 @@
+=== METADATA ===
+Name: sub_14000C9DC
+Addr: 0x14000c9dc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000c9dc: Access Member +0x8 ([rsp+arg_0])
+  0x14000c9e1: Access Member +0x10 ([rsp+arg_8])
+  0x14000c9e6: Access Member +0x18 ([rsp+arg_10])
+  0x14000c9ff: Access Member +0x1 ([r8+1])
+  0x14000ca53: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000ca58: Access Member +0x38 ([rsp+28h+arg_8])
+  0x14000ca5d: Access Member +0x40 ([rsp+28h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140004209)
+  <- sub_14000D3E0 (0x14000D7AE)
+  <- sub_14000F768 (0x14000F8B3)
+  <- sub_14000FA80 (0x14000FC03)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000c9dc-0x14000ca0c -> Jumps to: 0x14000ca0c, 0x14000ca13
+  Block 0x14000ca0c-0x14000ca13 -> Jumps to: 0x14000ca53
+  Block 0x14000ca13-0x14000ca44 -> Jumps to: 0x14000ca44, 0x14000ca51
+  Block 0x14000ca44-0x14000ca51 -> Jumps to: 0x14000ca51
+  Block 0x14000ca51-0x14000ca53 -> Jumps to: 0x14000ca53
+  Block 0x14000ca53-0x14000ca68 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000C9DC(__int64 a1, unsigned __int64 a2, char a3, unsigned __int64 *a4)
+{
+  unsigned int v9; // edi
+
+  if ( !sub_14000B074(a1, 1u, 0) )
+    return 4294957294LL;
+  sub_140007558(a1);
+  v9 = sub_1400064BC(a1, a2, a3, a4);
+  sub_140007564(a1);
+  if ( v9 )
+    sub_14000B2F0(a1, 1);
+  return v9;
+}
+
+
+=== DISASM ===
+0x14000c9dc: mov     [rsp+arg_0], rbx
+0x14000c9e1: mov     [rsp+arg_8], rbp
+0x14000c9e6: mov     [rsp+arg_10], rsi
+0x14000c9eb: push    rdi
+0x14000c9ec: sub     rsp, 20h
+0x14000c9f0: mov     sil, r8b
+0x14000c9f3: mov     rbp, rdx
+0x14000c9f6: xor     r8d, r8d
+0x14000c9f9: mov     rdi, r9
+0x14000c9fc: mov     rbx, rcx
+0x14000c9ff: lea     edx, [r8+1]
+0x14000ca03: call    sub_14000B074
+0x14000ca08: test    al, al
+0x14000ca0a: jnz     short loc_14000CA13
+0x14000ca0c: mov     eax, 0FFFFD8EEh
+0x14000ca11: jmp     short loc_14000CA53
+0x14000ca13: mov     edx, 4
+0x14000ca18: mov     rcx, rbx
+0x14000ca1b: call    sub_140007558
+0x14000ca20: mov     r9, rdi
+0x14000ca23: mov     r8b, sil
+0x14000ca26: mov     rdx, rbp
+0x14000ca29: mov     rcx, rbx
+0x14000ca2c: call    sub_1400064BC
+0x14000ca31: mov     edx, 4
+0x14000ca36: mov     rcx, rbx
+0x14000ca39: mov     edi, eax
+0x14000ca3b: call    sub_140007564
+0x14000ca40: test    edi, edi
+0x14000ca42: jz      short loc_14000CA51
+0x14000ca44: mov     edx, 1
+0x14000ca49: mov     rcx, rbx
+0x14000ca4c: call    sub_14000B2F0
+0x14000ca51: mov     eax, edi
+0x14000ca53: mov     rbx, [rsp+28h+arg_0]
+0x14000ca58: mov     rbp, [rsp+28h+arg_8]
+0x14000ca5d: mov     rsi, [rsp+28h+arg_10]
+0x14000ca62: add     rsp, 20h
+0x14000ca66: pop     rdi
+0x14000ca67: retn

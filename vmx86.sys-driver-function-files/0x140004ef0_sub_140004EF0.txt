@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: sub_140004EF0
+Addr: 0x140004ef0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140004ef3: Access Member +0x8 ([rdx+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] 0x140004ef7: [CFG_TARGET] via rcx
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140004ef0-0x140004efe -> Jumps to: 0x14000fe80
+  Block 0x14000fe80-0x14000fe80 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140004EF0(__int64 a1, __int64 a2)
+{
+  return (*(__int64 (__fastcall **)(_QWORD))a2)(*(_QWORD *)(a2 + 8));
+}
+
+
+=== DISASM ===
+0x140004ef0: mov     rax, [rdx]
+0x140004ef3: mov     rcx, [rdx+8]
+0x140004ef7: jmp     cs:__guard_dispatch_icall_fptr

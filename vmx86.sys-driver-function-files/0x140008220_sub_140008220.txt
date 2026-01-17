@@ -1,0 +1,81 @@
+=== METADATA ===
+Name: sub_140008220
+Addr: 0x140008220
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140008228: AND with Mask 0x7FFF
+  0x14000824d: AND with Mask 0x7
+
+=== MEMBER ACCESS ===
+  0x140008239: Access Member +0x8 ([rcx+rax*8+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140004C50 (0x140004D20)
+  <- sub_140004F00 (0x140004F3E)
+  <- sub_140004F00 (0x140004F61)
+  <- sub_140005E28 (0x140005E5D)
+  <- sub_1400064BC (0x1400065C9)
+  <- sub_1400073A4 (0x1400073C1)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140008220-0x140008236 -> Jumps to: 0x140008236, 0x14000825f
+  Block 0x140008236-0x140008243 -> Jumps to: 0x140008243, 0x14000825f
+  Block 0x140008243-0x14000825f -> Jumps to: 
+  Block 0x14000825f-0x140008262 -> Jumps to: 
+
+=== CODE ===
+bool __fastcall sub_140008220(__int64 a1, unsigned int a2)
+{
+  __int64 v2; // rax
+  __int64 v3; // r9
+  bool result; // al
+
+  v2 = a2 >> 15;
+  result = (unsigned int)v2 < 0x4020
+        && (_mm_lfence(), (v3 = *(_QWORD *)(a1 + 8 * v2 + 8)) != 0)
+        && ((unsigned __int8)(1 << (a2 & 7)) & *(_BYTE *)(((unsigned __int64)(a2 & 0x7FFF) >> 3) + v3)) != 0;
+  return result;
+}
+
+
+=== DISASM ===
+0x140008220: mov     r8, rdx
+0x140008223: mov     eax, edx
+0x140008225: shr     eax, 0Fh
+0x140008228: and     r8d, 7FFFh
+0x14000822f: cmp     eax, 4020h
+0x140008234: jnb     short loc_14000825F
+0x140008236: lfence
+0x140008239: mov     r9, [rcx+rax*8+8]
+0x14000823e: test    r9, r9
+0x140008241: jz      short loc_14000825F
+0x140008243: mov     eax, r8d
+0x140008246: mov     ecx, r8d
+0x140008249: shr     rax, 3
+0x14000824d: and     ecx, 7
+0x140008250: mov     edx, 1
+0x140008255: shl     edx, cl
+0x140008257: test    [rax+r9], dl
+0x14000825b: setnz   al
+0x14000825e: retn
+0x14000825f: xor     al, al
+0x140008261: retn

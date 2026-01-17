@@ -1,0 +1,81 @@
+=== METADATA ===
+Name: sub_14000CC7C
+Addr: 0x14000cc7c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000cc82: Access Member +0x20 ([rsp+20h])
+  0x14000cc87: Access Member +0x10 ([rbp+arg_0])
+  0x14000cc8d: Access Member +0x18 ([rbp+arg_8])
+  0x14000cca8: Access Member +0x8 ([rdi+8])
+  0x14000ccac: Access Member +0x18 ([rbp+arg_8])
+  0x14000ccb2: Access Member +0x10 ([rbp+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x1400037F9)
+  <- sub_14000BBE0 (0x14000BC09)
+  <- sub_14000C7D4 (0x14000C854)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000cc7c-0x14000ccbb -> Jumps to: 
+
+=== CODE ===
+LONGLONG __fastcall sub_14000CC7C(_QWORD *a1)
+{
+  unsigned __int64 v2; // rbx
+  LONGLONG result; // rax
+  unsigned __int64 v4; // [rsp+0h] [rbp-28h]
+
+  v2 = v4;
+  _disable();
+  *a1 = __rdtsc();
+  result = sub_140006814();
+  a1[1] = result;
+  __writeeflags(v2);
+  return result;
+}
+
+
+=== DISASM ===
+0x14000cc7c: push    rbp
+0x14000cc7e: sub     rsp, 20h
+0x14000cc82: lea     rbp, [rsp+20h]
+0x14000cc87: mov     [rbp+arg_0], rbx
+0x14000cc8b: pushfq
+0x14000cc8d: mov     [rbp+arg_8], rdi
+0x14000cc91: mov     rdi, rcx
+0x14000cc94: pop     rbx
+0x14000cc95: cli
+0x14000cc96: rdtsc
+0x14000cc98: shl     rdx, 20h
+0x14000cc9c: or      rax, rdx
+0x14000cc9f: mov     [rcx], rax
+0x14000cca2: call    sub_140006814
+0x14000cca7: push    rbx
+0x14000cca8: mov     [rdi+8], rax
+0x14000ccac: mov     rdi, [rbp+arg_8]
+0x14000ccb0: popfq
+0x14000ccb2: mov     rbx, [rbp+arg_0]
+0x14000ccb6: mov     rsp, rbp
+0x14000ccb9: pop     rbp
+0x14000ccba: retn

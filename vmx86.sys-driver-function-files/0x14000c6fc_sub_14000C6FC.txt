@@ -1,0 +1,94 @@
+=== METADATA ===
+Name: sub_14000C6FC
+Addr: 0x14000c6fc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000c6fc: Access Member +0x8 ([rsp+arg_0])
+  0x14000c701: Access Member +0x10 ([rsp+arg_8])
+  0x14000c730: Access Member +0x8 ([rsi+8])
+  0x14000c748: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000c74d: Access Member +0x38 ([rsp+28h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x1400041D2)
+  <- DeferredRoutine (0x140004A37)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000c6fc-0x14000c718 -> Jumps to: 0x14000c718, 0x14000c748
+  Block 0x14000c718-0x14000c748 -> Jumps to: 0x14000c748
+  Block 0x14000c748-0x14000c758 -> Jumps to: 
+
+=== CODE ===
+unsigned __int64 __fastcall sub_14000C6FC(_QWORD *a1)
+{
+  unsigned __int64 result; // rax
+  unsigned __int64 v2; // kr00_8
+  unsigned __int64 v3; // rbx
+  unsigned __int64 v4; // rax
+
+  result = (unsigned int)dword_14001D0B0;
+  if ( !dword_14001D0B0 )
+  {
+    v2 = __readeflags();
+    _disable();
+    v3 = __rdtsc() - *a1;
+    v4 = sub_140006814() - a1[1];
+    __writeeflags(v2);
+    result = sub_14000BDC4(v3, v4);
+    dword_14001D0B0 = result;
+  }
+  return result;
+}
+
+
+=== DISASM ===
+0x14000c6fc: mov     [rsp+arg_0], rbx
+0x14000c701: mov     [rsp+arg_8], rsi
+0x14000c706: push    rdi
+0x14000c707: sub     rsp, 20h
+0x14000c70b: mov     eax, cs:dword_14001D0B0
+0x14000c711: mov     rsi, rcx
+0x14000c714: test    eax, eax
+0x14000c716: jnz     short loc_14000C748
+0x14000c718: pushfq
+0x14000c71a: pop     rdi
+0x14000c71b: cli
+0x14000c71c: rdtsc
+0x14000c71e: shl     rdx, 20h
+0x14000c722: or      rax, rdx
+0x14000c725: mov     rbx, rax
+0x14000c728: sub     rbx, [rcx]
+0x14000c72b: call    sub_140006814
+0x14000c730: sub     rax, [rsi+8]
+0x14000c734: push    rdi
+0x14000c735: popfq
+0x14000c737: mov     rdx, rax
+0x14000c73a: mov     rcx, rbx
+0x14000c73d: call    sub_14000BDC4
+0x14000c742: mov     cs:dword_14001D0B0, eax
+0x14000c748: mov     rbx, [rsp+28h+arg_0]
+0x14000c74d: mov     rsi, [rsp+28h+arg_8]
+0x14000c752: add     rsp, 20h
+0x14000c756: pop     rdi
+0x14000c757: retn

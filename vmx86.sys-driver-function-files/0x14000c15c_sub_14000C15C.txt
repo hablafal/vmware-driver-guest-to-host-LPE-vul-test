@@ -1,0 +1,84 @@
+=== METADATA ===
+Name: sub_14000C15C
+Addr: 0x14000c15c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000c15c: Access Member +0x8 ([rsp+arg_0])
+  0x14000c161: Access Member +0x10 ([rsp+arg_8])
+  0x14000c1aa: Access Member +0x38 ([rsp+28h+arg_8])
+  0x14000c1b1: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B3B8 (0x14000B655)
+  <- sub_14000D3E0 (0x14000D78C)
+  <- sub_14000EE70 (0x14000EF02)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000c15c-0x14000c19f -> Jumps to: 0x14000c19f, 0x14000c1aa
+  Block 0x14000c19f-0x14000c1aa -> Jumps to: 0x14000c1aa
+  Block 0x14000c1aa-0x14000c1bc -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000C15C(__int64 a1, __int64 a2, unsigned __int64 a3)
+{
+  unsigned int v6; // ebx
+
+  sub_140007558(a1);
+  v6 = sub_140005E28(a1, a2, a3);
+  sub_140007564(a1);
+  if ( !v6 )
+    sub_14000B2F0(a1, a3);
+  return v6;
+}
+
+
+=== DISASM ===
+0x14000c15c: mov     [rsp+arg_0], rbx
+0x14000c161: mov     [rsp+arg_8], rsi
+0x14000c166: push    rdi
+0x14000c167: sub     rsp, 20h
+0x14000c16b: mov     rbx, rdx
+0x14000c16e: mov     rsi, r8
+0x14000c171: mov     edx, 8
+0x14000c176: mov     rdi, rcx
+0x14000c179: call    sub_140007558
+0x14000c17e: mov     r8, rsi
+0x14000c181: mov     rdx, rbx
+0x14000c184: mov     rcx, rdi
+0x14000c187: call    sub_140005E28
+0x14000c18c: mov     edx, 8
+0x14000c191: mov     rcx, rdi
+0x14000c194: mov     ebx, eax
+0x14000c196: call    sub_140007564
+0x14000c19b: test    ebx, ebx
+0x14000c19d: jnz     short loc_14000C1AA
+0x14000c19f: mov     rdx, rsi
+0x14000c1a2: mov     rcx, rdi
+0x14000c1a5: call    sub_14000B2F0
+0x14000c1aa: mov     rsi, [rsp+28h+arg_8]
+0x14000c1af: mov     eax, ebx
+0x14000c1b1: mov     rbx, [rsp+28h+arg_0]
+0x14000c1b6: add     rsp, 20h
+0x14000c1ba: pop     rdi
+0x14000c1bb: retn

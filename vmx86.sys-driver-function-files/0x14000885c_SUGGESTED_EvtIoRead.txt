@@ -1,0 +1,262 @@
+=== METADATA ===
+Name: sub_14000885C (Suggested: EvtIoRead)
+Addr: 0x14000885c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x1400088a8: AND with Mask 0xF0000
+  0x1400088cf: AND with Mask 0xFFFFFFFFFF208000
+  0x14000890a: AND with Mask 0xFF0000
+  0x140008910: AND with Mask 0x200000
+  0x140008916: OR with Mask 0xFFFFFFFF8000FFFF
+  0x140008959: OR with Mask 0xFFFFFFFFFFFFFEFF
+
+=== MEMBER ACCESS ===
+  0x14000885c: Access Member +0x10 ([rsp+arg_8])
+  0x140008861: Access Member +0x18 ([rsp+arg_10])
+  0x140008880: Access Member +0x18 (dword ptr [rdi+r11*8+18h])
+  0x14000888c: Access Member +0x4 ([rdi+r11*8+4])
+  0x140008893: Access Member +0x8 ([rdi+r11*8+8])
+  0x140008898: Access Member +0x24 ([rdi+r11*8+24h])
+  0x1400088a3: Access Member +0x20 ([rdi+r11*8+20h])
+  0x1400088b2: Access Member +0x14 ([rdi+r11*8+14h])
+  0x1400088bd: Access Member +0x10 ([rdi+r11*8+10h])
+  0x1400088ca: Access Member +0xC ([rdi+r11*8+0Ch])
+  0x1400088db: Access Member +0x20 (dword ptr [rsp+38h+var_18])
+  0x1400088df: Access Member +0x14 ([rdi+r11*8+14h])
+  0x1400088e7: Access Member +0x1C ([rdi+r11*8+1Ch])
+  0x1400088ee: Access Member +0x10 ([rdi+r11*8+10h])
+  0x1400088f6: Access Member +0xC ([rdi+r11*8+0Ch])
+  0x14000892a: Access Member +0x24 (dword ptr [rsp+38h+var_18+4])
+  0x140008939: Access Member +0x4 ([r10+r11*8+4])
+  0x140008947: Access Member +0x20 ([rsp+38h+var_18])
+  0x140008980: Access Member +0x48 ([rsp+38h+arg_8])
+  0x140008985: Access Member +0x50 ([rsp+38h+arg_10])
+  0x1400089c7: Access Member +0x20 ([rsp+38h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x18 -> possible EvtIoDefault
+  [!] Offset +0x20 -> possible EvtIoRead
+
+=== CALLERS ===
+  <- sub_140008B8C (0x140008C36)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140008996 -> TaskSetCrossGDTEntry
+  0x14000899d -> %s: entry 0x%X mismatch
+
+  0x1400089b0 -> TaskSetCrossGDTEntry
+  0x1400089b7 -> %s:   crossGDT %16.16I64X
+
+  0x1400089cc -> TaskSetCrossGDTEntry
+  0x1400089d3 -> %s:   template %16.16I64X
+
+  0x1400089e7 -> TaskSetCrossGDTEntry
+  0x1400089ee -> %s: index %u too big
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000885c-0x140008878 -> Jumps to: 0x140008878
+  Block 0x140008878-0x14000888c -> Jumps to: 0x14000888c, 0x140008971
+  Block 0x14000888c-0x140008939 -> Jumps to: 0x140008939, 0x1400089e1
+  Block 0x140008939-0x140008947 -> Jumps to: 0x140008947, 0x140008952
+  Block 0x140008947-0x140008952 -> Jumps to: 0x140008971
+  Block 0x140008952-0x140008965 -> Jumps to: 0x140008965, 0x140008990
+  Block 0x140008965-0x140008971 -> Jumps to: 0x140008971, 0x140008990
+  Block 0x140008971-0x14000897e -> Jumps to: 0x140008878, 0x14000897e
+  Block 0x14000897e-0x140008980 -> Jumps to: 0x140008980
+  Block 0x140008980-0x140008990 -> Jumps to: 
+  Block 0x140008990-0x1400089e1 -> Jumps to: 0x1400089fa
+  Block 0x1400089e1-0x1400089fa -> Jumps to: 0x1400089fa
+  Block 0x1400089fa-0x1400089fe -> Jumps to: 0x140008980
+
+=== CODE ===
+char __fastcall sub_14000885C(__int64 a1)
+{
+  __int64 v1; // r10
+  unsigned __int8 v3; // r9
+  __int64 v4; // r11
+  int v5; // edx
+  int v6; // ecx
+  unsigned int v7; // r8d
+  __int64 v8; // r11
+  unsigned int v9; // r8d
+  unsigned int v10; // edx
+  __int64 v11; // rbx
+  unsigned int v12; // ecx
+  __int64 v14; // [rsp+20h] [rbp-18h]
+
+  v1 = qword_140018F08;
+  v3 = 0;
+  while ( 1 )
+  {
+    if ( *(_DWORD *)(a1 + 40LL * v3 + 24) != 1 )
+      goto LABEL_8;
+    v5 = *(_DWORD *)(a1 + 40LL * v3 + 4);
+    v6 = *(_DWORD *)(a1 + 40LL * v3 + 8);
+    LODWORD(v14) = (unsigned __int16)v6 | (v5 << 16);
+    v4 = 5LL * v3;
+    v7 = v5 & 0xFF208000
+       | v6 & 0xF0000
+       | ((*(_DWORD *)(a1 + 8 * v4 + 12)
+         | (16
+          * (*(_DWORD *)(a1 + 8 * v4 + 16)
+           | (2
+            * (*(_DWORD *)(a1 + 8 * v4 + 20)
+             | ((*(_DWORD *)(a1 + 8 * v4 + 32) | (2 * *(_DWORD *)(a1 + 8 * v4 + 36))) << 9)))))) << 8);
+    v8 = *(unsigned __int16 *)(a1 + 40LL * v3);
+    v9 = ((v5 & 0xFF0000 | 0x8000FFFF) >> 16)
+       | ((*(_DWORD *)(a1 + 40LL * v3 + 28) << 21)
+        ^ (v5
+         | ((*(_DWORD *)(a1 + 40LL * v3 + 12)
+           | (16 * (*(_DWORD *)(a1 + 40LL * v3 + 16) | (2 * *(_DWORD *)(a1 + 40LL * v3 + 20))))) << 8)))
+       & 0x200000
+       ^ v7;
+    HIDWORD(v14) = v9;
+    if ( (unsigned __int16)v8 >= 0x200u )
+      break;
+    v10 = *(_DWORD *)(v1 + 8 * v8 + 4);
+    v11 = *(unsigned __int16 *)(a1 + 40LL * v3);
+    if ( (v10 & 0x8000) != 0 )
+    {
+      if ( *(_DWORD *)(v1 + 8 * v8) != ((unsigned __int16)v6 | (*(_DWORD *)(a1 + 40LL * v3 + 4) << 16))
+        || (v12 = ~(v10 >> 4) | 0xFFFFFEFF, (v10 & v12) != (v12 & v9)) )
+      {
+        _mm_lfence();
+        sub_140003A14("%s: entry 0x%X mismatch\n", "TaskSetCrossGDTEntry", v8);
+        sub_140003A14("%s:   crossGDT %16.16I64X\n", "TaskSetCrossGDTEntry", *(_QWORD *)(qword_140018F08 + 8 * v11));
+        sub_140003A14("%s:   template %16.16I64X\n", "TaskSetCrossGDTEntry", v14);
+        return 0;
+      }
+    }
+    else
+    {
+      *(_QWORD *)(v1 + 8 * v8) = v14;
+    }
+LABEL_8:
+    if ( ++v3 >= 2u )
+      return 1;
+  }
+  _mm_lfence();
+  sub_140003A14("%s: index %u too big\n", "TaskSetCrossGDTEntry", v8);
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000885c: mov     [rsp+arg_8], rbx
+0x140008861: mov     [rsp+arg_10], rsi
+0x140008866: push    rdi
+0x140008867: sub     rsp, 30h
+0x14000886b: mov     r10, cs:qword_140018F08
+0x140008872: mov     rdi, rcx
+0x140008875: xor     r9b, r9b
+0x140008878: movzx   eax, r9b
+0x14000887c: lea     r11, [rax+rax*4]
+0x140008880: cmp     dword ptr [rdi+r11*8+18h], 1
+0x140008886: jnz     loc_140008971
+0x14000888c: mov     edx, [rdi+r11*8+4]
+0x140008891: mov     esi, edx
+0x140008893: mov     ecx, [rdi+r11*8+8]
+0x140008898: mov     r8d, [rdi+r11*8+24h]
+0x14000889d: add     r8d, r8d
+0x1400088a0: movzx   eax, cx
+0x1400088a3: or      r8d, [rdi+r11*8+20h]
+0x1400088a8: and     ecx, 0F0000h
+0x1400088ae: shl     r8d, 9
+0x1400088b2: or      r8d, [rdi+r11*8+14h]
+0x1400088b7: add     r8d, r8d
+0x1400088ba: shl     esi, 10h
+0x1400088bd: or      r8d, [rdi+r11*8+10h]
+0x1400088c2: or      esi, eax
+0x1400088c4: shl     r8d, 4
+0x1400088c8: mov     eax, edx
+0x1400088ca: or      r8d, [rdi+r11*8+0Ch]
+0x1400088cf: and     eax, 0FF208000h
+0x1400088d4: shl     r8d, 8
+0x1400088d8: or      r8d, ecx
+0x1400088db: mov     dword ptr [rsp+38h+var_18], esi
+0x1400088df: mov     ecx, [rdi+r11*8+14h]
+0x1400088e4: or      r8d, eax
+0x1400088e7: mov     eax, [rdi+r11*8+1Ch]
+0x1400088ec: add     ecx, ecx
+0x1400088ee: or      ecx, [rdi+r11*8+10h]
+0x1400088f3: shl     ecx, 4
+0x1400088f6: or      ecx, [rdi+r11*8+0Ch]
+0x1400088fb: movzx   r11d, word ptr [rdi+r11*8]
+0x140008900: shl     ecx, 8
+0x140008903: or      ecx, edx
+0x140008905: shl     eax, 15h
+0x140008908: xor     ecx, eax
+0x14000890a: and     edx, 0FF0000h
+0x140008910: and     ecx, 200000h
+0x140008916: or      edx, 8000FFFFh
+0x14000891c: xor     r8d, ecx
+0x14000891f: shr     edx, 10h
+0x140008922: or      r8d, edx
+0x140008925: mov     eax, 200h
+0x14000892a: mov     dword ptr [rsp+38h+var_18+4], r8d
+0x14000892f: cmp     r11w, ax
+0x140008933: jnb     loc_1400089E1
+0x140008939: mov     edx, [r10+r11*8+4]
+0x14000893e: mov     ebx, r11d
+0x140008941: bt      edx, 0Fh
+0x140008945: jb      short loc_140008952
+0x140008947: mov     rax, [rsp+38h+var_18]
+0x14000894c: mov     [r10+r11*8], rax
+0x140008950: jmp     short loc_140008971
+0x140008952: mov     ecx, edx
+0x140008954: shr     ecx, 4
+0x140008957: not     ecx
+0x140008959: or      ecx, 0FFFFFEFFh
+0x14000895f: cmp     [r10+r11*8], esi
+0x140008963: jnz     short loc_140008990
+0x140008965: mov     eax, ecx
+0x140008967: and     r8d, ecx
+0x14000896a: and     eax, edx
+0x14000896c: cmp     eax, r8d
+0x14000896f: jnz     short loc_140008990
+0x140008971: inc     r9b
+0x140008974: cmp     r9b, 2
+0x140008978: jb      loc_140008878
+0x14000897e: mov     al, 1
+0x140008980: mov     rbx, [rsp+38h+arg_8]
+0x140008985: mov     rsi, [rsp+38h+arg_10]
+0x14000898a: add     rsp, 30h
+0x14000898e: pop     rdi
+0x14000898f: retn
+0x140008990: lfence
+0x140008993: mov     r8d, r11d
+0x140008996: lea     rdx, aTasksetcrossgd; "TaskSetCrossGDTEntry"
+0x14000899d: lea     rcx, aSEntry0xXMisma; "%s: entry 0x%X mismatch\n"
+0x1400089a4: call    sub_140003A14
+0x1400089a9: mov     r8, cs:qword_140018F08
+0x1400089b0: lea     rdx, aTasksetcrossgd; "TaskSetCrossGDTEntry"
+0x1400089b7: lea     rcx, aSCrossgdt1616i; "%s:   crossGDT %16.16I64X\n"
+0x1400089be: mov     r8, [r8+rbx*8]
+0x1400089c2: call    sub_140003A14
+0x1400089c7: mov     r8, [rsp+38h+var_18]
+0x1400089cc: lea     rdx, aTasksetcrossgd; "TaskSetCrossGDTEntry"
+0x1400089d3: lea     rcx, aSTemplate1616i; "%s:   template %16.16I64X\n"
+0x1400089da: call    sub_140003A14
+0x1400089df: jmp     short loc_1400089FA
+0x1400089e1: lfence
+0x1400089e4: mov     r8d, r11d
+0x1400089e7: lea     rdx, aTasksetcrossgd; "TaskSetCrossGDTEntry"
+0x1400089ee: lea     rcx, aSIndexUTooBig; "%s: index %u too big\n"
+0x1400089f5: call    sub_140003A14
+0x1400089fa: xor     al, al
+0x1400089fc: jmp     short loc_140008980

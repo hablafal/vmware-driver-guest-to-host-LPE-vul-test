@@ -1,0 +1,47 @@
+=== METADATA ===
+Name: __C_specific_handler
+Addr: 0x14000fd88
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fd88-0x14000fd8e -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+EXCEPTION_DISPOSITION __cdecl _C_specific_handler(
+        struct _EXCEPTION_RECORD *ExceptionRecord,
+        void *EstablisherFrame,
+        struct _CONTEXT *ContextRecord,
+        struct _DISPATCHER_CONTEXT *DispatcherContext)
+{
+  return __C_specific_handler(ExceptionRecord, EstablisherFrame, ContextRecord, DispatcherContext);
+}
+
+
+=== DISASM ===
+0x14000fd88: jmp     cs:__imp___C_specific_handler

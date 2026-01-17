@@ -1,0 +1,45 @@
+=== METADATA ===
+Name: sub_140003400
+Addr: 0x140003400
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000922C (0x140009BE5)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140003400-0x140003411 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140003400(unsigned __int8 a1)
+{
+  return ((__int64 (*)(void))((char *)sub_140003000 + 4 * a1))();
+}
+
+
+=== DISASM ===
+0x140003400: movzx   rcx, cl
+0x140003404: lea     rax, sub_140003000
+0x14000340b: lea     rax, [rax+rcx*4]
+0x14000340f: jmp     rax

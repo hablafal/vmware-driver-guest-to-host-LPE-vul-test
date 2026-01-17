@@ -1,0 +1,93 @@
+=== METADATA ===
+Name: sub_1400075B8
+Addr: 0x1400075b8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x1400075bb: Access Member +0x18 ([r11+18h])
+  0x1400075ce: Access Member +0x38 ([rsp+48h+var_10])
+  0x1400075ea: Access Member +0x10 ([rcx+10h])
+  0x1400075ee: Access Member +0x40 ([rax+40h])
+  0x14000760a: Access Member +0x10 ([rbx+10h])
+  0x14000760e: Access Member +0x40 ([rax+40h])
+  0x14000761c: Access Member +0x38 ([rsp+48h+var_10])
+  0x140007629: Access Member +0x60 ([rsp+48h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000D1B0 (0x14000D345)
+
+=== IMPORTS ===
+  -> 0x140007600 calls KeWaitForSingleObject
+  -> 0x140007616 calls KeClearEvent
+
+=== STRINGS ===
+  0x1400075c4 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x1400075b8-0x14000760a -> Jumps to: 0x14000760a, 0x14000761c
+  Block 0x14000760a-0x14000761c -> Jumps to: 0x14000761c
+  Block 0x14000761c-0x140007634 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_1400075B8(__int64 a1, unsigned int a2)
+{
+  __int64 v3; // rdi
+  union _LARGE_INTEGER v4; // [rsp+30h] [rbp-18h] BYREF
+
+  v4.QuadPart = -10000;
+  v3 = 3LL * a2;
+  if ( !KeWaitForSingleObject((PVOID)(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 64LL) + 24LL * a2), Executive, 0, 1u, &v4) )
+    KeClearEvent((PRKEVENT)(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 64LL) + 8 * v3));
+}
+
+
+=== DISASM ===
+0x1400075b8: mov     r11, rsp
+0x1400075bb: mov     [r11+18h], rbx
+0x1400075bf: push    rdi
+0x1400075c0: sub     rsp, 40h
+0x1400075c4: mov     rax, cs:__security_cookie
+0x1400075cb: xor     rax, rsp
+0x1400075ce: mov     [rsp+48h+var_10], rax
+0x1400075d3: mov     eax, edx
+0x1400075d5: mov     rbx, rcx
+0x1400075d8: mov     qword ptr [r11-18h], 0FFFFFFFFFFFFD8F0h
+0x1400075e0: mov     r9b, 1; Alertable
+0x1400075e3: xor     r8d, r8d; WaitMode
+0x1400075e6: lea     rdi, [rax+rax*2]
+0x1400075ea: mov     rax, [rcx+10h]
+0x1400075ee: mov     rdx, [rax+40h]
+0x1400075f2: lea     rax, [r11-18h]
+0x1400075f6: mov     [r11-28h], rax
+0x1400075fa: lea     rcx, [rdx+rdi*8]; Object
+0x1400075fe: xor     edx, edx; WaitReason
+0x140007600: call    cs:KeWaitForSingleObject
+0x140007606: test    eax, eax
+0x140007608: jnz     short loc_14000761C
+0x14000760a: mov     rax, [rbx+10h]
+0x14000760e: mov     rcx, [rax+40h]
+0x140007612: lea     rcx, [rcx+rdi*8]; Event
+0x140007616: call    cs:KeClearEvent
+0x14000761c: mov     rcx, [rsp+48h+var_10]
+0x140007621: xor     rcx, rsp; StackCookie
+0x140007624: call    __security_check_cookie
+0x140007629: mov     rbx, [rsp+48h+arg_10]
+0x14000762e: add     rsp, 40h
+0x140007632: pop     rdi
+0x140007633: retn

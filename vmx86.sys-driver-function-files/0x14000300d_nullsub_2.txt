@@ -1,0 +1,42 @@
+=== METADATA ===
+Name: nullsub_2
+Addr: 0x14000300d
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000300d-0x14000300e -> Jumps to: 
+
+=== CODE ===
+void nullsub_2()
+{
+  ;
+}
+
+
+=== DISASM ===
+0x14000300d: retn

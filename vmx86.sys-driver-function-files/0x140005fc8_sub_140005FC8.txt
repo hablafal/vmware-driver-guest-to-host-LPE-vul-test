@@ -1,0 +1,63 @@
+=== METADATA ===
+Name: sub_140005FC8
+Addr: 0x140005fc8
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008B8C (0x140008BE4)
+  <- sub_140008B8C (0x140008C42)
+  <- sub_14000B074 (0x14000B169)
+  <- sub_14000B074 (0x14000B18C)
+  <- sub_14000B074 (0x14000B1C3)
+  <- sub_14000B074 (0x14000B20E)
+  <- sub_14000B2F0 (0x14000B341)
+  <- sub_14000B3B8 (0x14000B5E7)
+  <- sub_14000B3B8 (0x14000B760)
+  <- sub_14000BD88 (0x14000BDBE)
+  <- sub_14000BE84 (0x14000C078)
+  <- sub_14000BE84 (0x14000C0F6)
+  <- sub_14000C280 (0x14000C393)
+  <- sub_14000C280 (0x14000C49A)
+  <- sub_14000C758 (0x14000C7CC)
+  <- sub_14000C7D4 (0x14000C97D)
+  <- sub_14000CAC4 (0x14000CAF0)
+  <- sub_14000CCBC (0x14000CE5A)
+  <- sub_14000CE80 (0x14000CF5A)
+  <- sub_14000CF70 (0x14000CFA0)
+  <- sub_14000CFB4 (0x14000D055)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005fc8-0x140005fd6 -> Jumps to: 
+
+=== CODE ===
+void sub_140005FC8()
+{
+  ExReleaseFastMutex(&FastMutex);
+}
+
+
+=== DISASM ===
+0x140005fc8: lea     rcx, FastMutex
+0x140005fcf: jmp     cs:ExReleaseFastMutex

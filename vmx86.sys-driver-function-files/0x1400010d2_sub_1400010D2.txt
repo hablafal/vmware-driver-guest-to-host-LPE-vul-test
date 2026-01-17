@@ -1,0 +1,61 @@
+=== METADATA ===
+Name: sub_1400010D2
+Addr: 0x1400010d2
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x1400010ea: AND with Mask 0xFFF
+
+=== MEMBER ACCESS ===
+  0x1400010da: Access Member +0x10 ([rbp+arg_0])
+  0x1400010e6: Access Member +0x10 ([rbp+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140001104 (0x1400011F0)
+  <- sub_140001104 (0x140001215)
+  <- sub_140001104 (0x14000123A)
+  <- sub_140001104 (0x14000125F)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x1400010d2-0x140001104 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_1400010D2(__int16 a1)
+{
+  return (a1 & 0xFFF) - 56619008LL;
+}
+
+
+=== DISASM ===
+0x1400010d2: push    rbp
+0x1400010d3: mov     rbp, rsp
+0x1400010d6: sub     rsp, 10h
+0x1400010da: mov     [rbp+arg_0], rcx
+0x1400010de: mov     [rbp+var_8], 0FFFFFFFFFCA01000h
+0x1400010e6: mov     rax, [rbp+arg_0]
+0x1400010ea: and     eax, 0FFFh
+0x1400010ef: mov     [rbp+var_10], rax
+0x1400010f3: mov     rax, [rbp+var_10]
+0x1400010f7: mov     rdx, [rbp+var_8]
+0x1400010fb: add     rax, rdx
+0x1400010fe: add     rsp, 10h
+0x140001102: pop     rbp
+0x140001103: retn

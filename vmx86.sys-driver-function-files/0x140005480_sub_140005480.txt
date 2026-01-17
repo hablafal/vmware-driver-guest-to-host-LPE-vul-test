@@ -1,0 +1,221 @@
+=== METADATA ===
+Name: sub_140005480
+Addr: 0x140005480
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] DIRECT_MEMORY_ACCESS
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005480: Access Member +0x8 ([rsp+arg_0])
+  0x140005485: Access Member +0x10 ([rsp+arg_8])
+  0x14000548a: Access Member +0x18 ([rsp+arg_10])
+  0x1400054d5: Access Member +0x28 ([rsp+58h+var_30])
+  0x1400054dd: Access Member +0x20 ([rsp+58h+CacheType])
+  0x1400054ed: Access Member +0x20 ([rsp+58h+CacheType])
+  0x140005514: Access Member +0x20 (qword ptr [rsp+58h+CacheType])
+  0x140005540: Access Member +0x20 ([rdx+20h])
+  0x140005550: Access Member +0x30 ([rsi+30h])
+  0x140005557: Access Member +0x8 ([rax+8])
+  0x14000555b: Access Member +0x10 ([rax+10h])
+  0x14000556c: Access Member +0x10 ([r15+10h])
+  0x140005576: Access Member +0x58 ([rcx+58h])
+  0x140005582: Access Member +0x10 ([rbx+10h])
+  0x1400055a6: Access Member +0x60 ([rsp+58h+arg_0])
+  0x1400055ab: Access Member +0x68 ([rsp+58h+arg_8])
+  0x1400055b0: Access Member +0x70 ([rsp+58h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] 0x1400054e5: [CFG_TARGET] via [rsp+58h+CacheType]
+
+=== CALLERS ===
+  <- sub_14000BE34 (0x14000BE48)
+  <- sub_14000D3E0 (0x14000D68F)
+
+=== IMPORTS ===
+  -> 0x1400054f5 calls MmAllocateContiguousMemorySpecifyCache
+  -> 0x140005524 calls IoAllocateMdl
+  -> 0x140005538 calls MmBuildMdlForNonPagedPool
+  -> 0x14000558b calls IoFreeMdl
+  -> 0x140005599 calls MmFreeContiguousMemory
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005480-0x1400054b5 -> Jumps to: 0x1400054b5, 0x1400055a4
+  Block 0x1400054b5-0x1400054d5 -> Jumps to: 0x1400054d5, 0x1400054ed
+  Block 0x1400054d5-0x1400054ed -> Jumps to: 0x1400054fb
+  Block 0x1400054ed-0x1400054fb -> Jumps to: 0x1400054fb
+  Block 0x1400054fb-0x140005507 -> Jumps to: 0x140005507, 0x1400055a4
+  Block 0x140005507-0x140005532 -> Jumps to: 0x140005532, 0x140005596
+  Block 0x140005532-0x140005550 -> Jumps to: 0x140005550, 0x140005588
+  Block 0x140005550-0x140005564 -> Jumps to: 0x140005564, 0x140005588
+  Block 0x140005564-0x14000556c -> Jumps to: 0x14000556c, 0x140005588
+  Block 0x14000556c-0x140005588 -> Jumps to: 0x140005588, 0x14000556c
+  Block 0x140005588-0x140005596 -> Jumps to: 0x140005596, 0x14000559f
+  Block 0x140005596-0x14000559f -> Jumps to: 0x14000559f
+  Block 0x14000559f-0x1400055a4 -> Jumps to: 0x1400055a6
+  Block 0x1400055a4-0x1400055a6 -> Jumps to: 0x1400055a6
+  Block 0x1400055a6-0x1400055bf -> Jumps to: 
+
+=== CODE ===
+struct _MDL **__fastcall sub_140005480(__int64 a1, struct _MDL *a2)
+{
+  __int64 v2; // rsi
+  struct _MDL **v3; // rbx
+  SIZE_T v6; // rcx
+  struct _MDL *v7; // rax
+  struct _MDL *v8; // rdi
+  PMDL Mdl; // rax
+  struct _MDL *v10; // rsi
+  struct _MDL **v11; // rax
+  unsigned __int64 v12; // r14
+
+  v2 = (_QWORD)a2 << 12;
+  v3 = 0;
+  if ( (unsigned __int64)&a2[-1].ByteOffset + 3 > 2 )
+    return 0;
+  v6 = (_QWORD)a2 << 12;
+  v7 = qword_140014BD0
+     ? (struct _MDL *)((__int64 (__fastcall *)(SIZE_T, _QWORD, __int64, _QWORD, int, unsigned int))qword_140014BD0)(
+                        v6,
+                        0,
+                        0x7FFFFFFFFFFFFFFFLL,
+                        0,
+                        4,
+                        0x80000000)
+     : (struct _MDL *)MmAllocateContiguousMemorySpecifyCache(v6, 0, (PHYSICAL_ADDRESS)0x7FFFFFFFFFFFFFFFLL, 0, MmCached);
+  v8 = v7;
+  if ( !v7 )
+    return 0;
+  sub_14000FEC0(v7, 0, v2);
+  Mdl = IoAllocateMdl(v8, v2, 0, 1u, 0);
+  v10 = Mdl;
+  if ( !Mdl )
+    goto LABEL_12;
+  Mdl->Next = 0;
+  MmBuildMdlForNonPagedPool(Mdl);
+  v11 = (struct _MDL **)sub_1400055C0(0x20u);
+  v3 = v11;
+  if ( v11 )
+  {
+    *v11 = v10[1].Next;
+    v11[1] = v8;
+    v11[2] = a2;
+    if ( a1 )
+    {
+      v12 = 0;
+      if ( a2 )
+      {
+        do
+          sub_140007F14(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 88LL), (char *)*v3 + v12++);
+        while ( v12 < (unsigned __int64)v3[2] );
+      }
+    }
+  }
+  IoFreeMdl(v10);
+  if ( !v3 )
+LABEL_12:
+    MmFreeContiguousMemory(v8);
+  return v3;
+}
+
+
+=== DISASM ===
+0x140005480: mov     [rsp+arg_0], rbx
+0x140005485: mov     [rsp+arg_8], rbp
+0x14000548a: mov     [rsp+arg_10], rsi
+0x14000548f: push    rdi
+0x140005490: push    r14
+0x140005492: push    r15
+0x140005494: sub     rsp, 40h
+0x140005498: mov     rsi, rdx
+0x14000549b: lea     rax, [rdx-1]
+0x14000549f: shl     rsi, 0Ch
+0x1400054a3: xor     ebx, ebx
+0x1400054a5: mov     rbp, rdx
+0x1400054a8: mov     r15, rcx
+0x1400054ab: cmp     rax, 2
+0x1400054af: ja      loc_1400055A4
+0x1400054b5: mov     rax, cs:qword_140014BD0
+0x1400054bc: mov     rcx, rsi; NumberOfBytes
+0x1400054bf: mov     rdx, qword ptr cs:LowAddress; LowestAcceptableAddress
+0x1400054c6: mov     r8, qword ptr cs:HighestAcceptableAddress; HighestAcceptableAddress
+0x1400054cd: mov     r9, rdx; BoundaryAddressMultiple
+0x1400054d0: test    rax, rax
+0x1400054d3: jz      short loc_1400054ED
+0x1400054d5: mov     [rsp+58h+var_30], 80000000h
+0x1400054dd: mov     [rsp+58h+CacheType], 4
+0x1400054e5: call    cs:__guard_dispatch_icall_fptr
+0x1400054eb: jmp     short loc_1400054FB
+0x1400054ed: mov     [rsp+58h+CacheType], 1; Irp
+0x1400054f5: call    cs:MmAllocateContiguousMemorySpecifyCache
+0x1400054fb: mov     rdi, rax
+0x1400054fe: test    rax, rax
+0x140005501: jz      loc_1400055A4
+0x140005507: mov     r8, rsi
+0x14000550a: xor     edx, edx
+0x14000550c: mov     rcx, rax
+0x14000550f: call    sub_14000FEC0
+0x140005514: and     qword ptr [rsp+58h+CacheType], rbx
+0x140005519: mov     r9b, 1; ChargeQuota
+0x14000551c: xor     r8d, r8d; SecondaryBuffer
+0x14000551f: mov     edx, esi; Length
+0x140005521: mov     rcx, rdi; VirtualAddress
+0x140005524: call    cs:IoAllocateMdl
+0x14000552a: mov     rsi, rax
+0x14000552d: test    rax, rax
+0x140005530: jz      short loc_140005596
+0x140005532: and     [rax], rbx
+0x140005535: mov     rcx, rax; MemoryDescriptorList
+0x140005538: call    cs:MmBuildMdlForNonPagedPool
+0x14000553e: xor     edx, edx
+0x140005540: lea     ecx, [rdx+20h]; NumberOfBytes
+0x140005543: call    sub_1400055C0
+0x140005548: mov     rbx, rax
+0x14000554b: test    rax, rax
+0x14000554e: jz      short loc_140005588
+0x140005550: mov     rcx, [rsi+30h]
+0x140005554: mov     [rax], rcx
+0x140005557: mov     [rax+8], rdi
+0x14000555b: mov     [rax+10h], rbp
+0x14000555f: test    r15, r15
+0x140005562: jz      short loc_140005588
+0x140005564: xor     r14d, r14d
+0x140005567: test    rbp, rbp
+0x14000556a: jz      short loc_140005588
+0x14000556c: mov     rcx, [r15+10h]
+0x140005570: mov     rdx, [rbx]
+0x140005573: add     rdx, r14
+0x140005576: mov     rcx, [rcx+58h]
+0x14000557a: call    sub_140007F14
+0x14000557f: inc     r14
+0x140005582: cmp     r14, [rbx+10h]
+0x140005586: jb      short loc_14000556C
+0x140005588: mov     rcx, rsi; Mdl
+0x14000558b: call    cs:IoFreeMdl
+0x140005591: test    rbx, rbx
+0x140005594: jnz     short loc_14000559F
+0x140005596: mov     rcx, rdi; BaseAddress
+0x140005599: call    cs:MmFreeContiguousMemory
+0x14000559f: mov     rax, rbx
+0x1400055a2: jmp     short loc_1400055A6
+0x1400055a4: xor     eax, eax
+0x1400055a6: mov     rbx, [rsp+58h+arg_0]
+0x1400055ab: mov     rbp, [rsp+58h+arg_8]
+0x1400055b0: mov     rsi, [rsp+58h+arg_10]
+0x1400055b5: add     rsp, 40h
+0x1400055b9: pop     r15
+0x1400055bb: pop     r14
+0x1400055bd: pop     rdi
+0x1400055be: retn

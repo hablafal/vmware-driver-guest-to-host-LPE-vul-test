@@ -1,0 +1,138 @@
+=== METADATA ===
+Name: sub_14000717C
+Addr: 0x14000717c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000717c: Access Member +0x8 ([rsp+arg_0])
+  0x14000722c: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140004910 (0x140004934)
+  <- sub_14000CFB4 (0x14000CFFB)
+  <- sub_14000CFB4 (0x14000D064)
+
+=== IMPORTS ===
+  -> 0x1400071ed calls ExSetTimerResolution
+  -> 0x1400071f7 calls ExSetTimerResolution
+  -> 0x14000721f calls ExSetTimerResolution
+
+=== STRINGS ===
+  0x14000718c -> HostIF_SetFastClockRate
+  0x14000719d -> %s: Setting rate to %d
+
+  0x1400071c8 -> HostIF_SetFastClockRate
+  0x1400071d4 -> %s: Bumping rate to 256
+
+  0x140007206 -> %s: Setting rate to system default
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000717c-0x140007197 -> Jumps to: 0x140007197, 0x140007206
+  Block 0x140007197-0x1400071bd -> Jumps to: 0x1400071bd, 0x1400071e0
+  Block 0x1400071bd-0x1400071c8 -> Jumps to: 0x1400071c8, 0x1400071e0
+  Block 0x1400071c8-0x1400071e0 -> Jumps to: 0x1400071e0
+  Block 0x1400071e0-0x1400071e9 -> Jumps to: 0x1400071e9, 0x1400071f3
+  Block 0x1400071e9-0x1400071f3 -> Jumps to: 0x1400071f3
+  Block 0x1400071f3-0x140007206 -> Jumps to: 0x14000722c
+  Block 0x140007206-0x14000721b -> Jumps to: 0x14000721b, 0x14000722c
+  Block 0x14000721b-0x14000722c -> Jumps to: 0x14000722c
+  Block 0x14000722c-0x140007239 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000717C(unsigned int a1)
+{
+  ULONG v2; // edi
+
+  if ( a1 <= dword_140018E44 )
+  {
+    sub_140003A14("%s: Setting rate to system default\n", "HostIF_SetFastClockRate");
+    if ( byte_14001D0CC )
+    {
+      ExSetTimerResolution(0, 0);
+      byte_14001D0CC = 0;
+    }
+  }
+  else
+  {
+    _mm_lfence();
+    sub_140003A14("%s: Setting rate to %d\n", "HostIF_SetFastClockRate", a1);
+    v2 = 0x989680 / a1;
+    if ( dword_140018E40 == 64 && a1 - 65 <= 0xBE )
+    {
+      v2 = 39062;
+      sub_140003A14("%s: Bumping rate to 256\n", "HostIF_SetFastClockRate");
+    }
+    if ( byte_14001D0CC )
+      ExSetTimerResolution(0, 0);
+    ExSetTimerResolution(v2, 1u);
+    byte_14001D0CC = 1;
+  }
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000717c: mov     [rsp+arg_0], rbx
+0x140007181: push    rdi
+0x140007182: sub     rsp, 20h
+0x140007186: cmp     ecx, cs:dword_140018E44
+0x14000718c: lea     rdx, aHostifSetfastc; "HostIF_SetFastClockRate"
+0x140007193: mov     ebx, ecx
+0x140007195: jbe     short loc_140007206
+0x140007197: lfence
+0x14000719a: mov     r8d, ecx
+0x14000719d: lea     rcx, aSSettingRateTo; "%s: Setting rate to %d\n"
+0x1400071a4: call    sub_140003A14
+0x1400071a9: xor     edx, edx
+0x1400071ab: mov     eax, 989680h
+0x1400071b0: div     ebx
+0x1400071b2: cmp     cs:dword_140018E40, 40h ; '@'
+0x1400071b9: mov     edi, eax
+0x1400071bb: jnz     short loc_1400071E0
+0x1400071bd: lea     ecx, [rbx-41h]
+0x1400071c0: cmp     ecx, 0BEh
+0x1400071c6: ja      short loc_1400071E0
+0x1400071c8: lea     rdx, aHostifSetfastc; "HostIF_SetFastClockRate"
+0x1400071cf: mov     edi, 9896h
+0x1400071d4: lea     rcx, aSBumpingRateTo; "%s: Bumping rate to 256\n"
+0x1400071db: call    sub_140003A14
+0x1400071e0: cmp     cs:byte_14001D0CC, 0
+0x1400071e7: jz      short loc_1400071F3
+0x1400071e9: xor     edx, edx; SetResolution
+0x1400071eb: xor     ecx, ecx; DesiredTime
+0x1400071ed: call    cs:ExSetTimerResolution
+0x1400071f3: mov     dl, 1; SetResolution
+0x1400071f5: mov     ecx, edi; DesiredTime
+0x1400071f7: call    cs:ExSetTimerResolution
+0x1400071fd: mov     cs:byte_14001D0CC, 1
+0x140007204: jmp     short loc_14000722C
+0x140007206: lea     rcx, aSSettingRateTo_0; "%s: Setting rate to system default\n"
+0x14000720d: call    sub_140003A14
+0x140007212: cmp     cs:byte_14001D0CC, 0
+0x140007219: jz      short loc_14000722C
+0x14000721b: xor     edx, edx; SetResolution
+0x14000721d: xor     ecx, ecx; DesiredTime
+0x14000721f: call    cs:ExSetTimerResolution
+0x140007225: mov     cs:byte_14001D0CC, 0
+0x14000722c: mov     rbx, [rsp+28h+arg_0]
+0x140007231: xor     eax, eax
+0x140007233: add     rsp, 20h
+0x140007237: pop     rdi
+0x140007238: retn

@@ -1,0 +1,146 @@
+=== METADATA ===
+Name: sub_1400070A8
+Addr: 0x1400070a8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] HANDLE_MANIPULATION
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x1400070d9: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x1400070b8: Access Member +0x40 ([rsp+58h+var_18])
+  0x1400070bd: Access Member +0x8 ([r8+8])
+  0x1400070c4: Access Member +0x10 ([r8+10h])
+  0x1400070d9: Access Member +0x28 ([rsp+58h+var_30])
+  0x1400070df: Access Member +0x30 ([rsp+58h+var_28])
+  0x1400070e7: Access Member +0x20 ([rsp+58h+Object])
+  0x14000710a: Access Member +0x6 ([r8+6])
+  0x140007111: Access Member +0x38 ([rsp+58h+Timeout])
+  0x140007116: Access Member +0x38 (qword ptr [rsp+58h+Timeout])
+  0x14000711b: Access Member +0x30 ([rsp+58h+var_28])
+  0x140007120: Access Member +0x20 ([rsp+58h+Object])
+  0x140007131: Access Member +0x30 ([rsp+58h+var_28])
+  0x14000713c: Access Member +0x30 ([rsp+58h+var_28])
+  0x140007168: Access Member +0x40 ([rsp+58h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000D3E0 (0x14000D57F)
+
+=== IMPORTS ===
+  -> 0x1400070f4 calls ObReferenceObjectByHandle
+  -> 0x140007125 calls KeWaitForSingleObject
+  -> 0x140007136 calls KeClearEvent
+  -> 0x140007141 calls ObfDereferenceObject
+
+=== STRINGS ===
+  0x1400070ae -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x1400070a8-0x1400070d9 -> Jumps to: 0x1400070d9, 0x140007166
+  Block 0x1400070d9-0x1400070fe -> Jumps to: 0x1400070fe, 0x140007166
+  Block 0x1400070fe-0x140007131 -> Jumps to: 0x140007131, 0x14000713c
+  Block 0x140007131-0x14000713c -> Jumps to: 0x14000713c
+  Block 0x14000713c-0x14000714b -> Jumps to: 0x14000714b, 0x14000715f
+  Block 0x14000714b-0x140007153 -> Jumps to: 0x140007153, 0x140007158
+  Block 0x140007153-0x140007158 -> Jumps to: 0x140007158, 0x140007166
+  Block 0x140007158-0x14000715f -> Jumps to: 0x140007168
+  Block 0x14000715f-0x140007166 -> Jumps to: 0x140007168
+  Block 0x140007166-0x140007168 -> Jumps to: 0x140007168
+  Block 0x140007168-0x14000717b -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_1400070A8(__int64 a1, __int64 a2, unsigned int *a3)
+{
+  unsigned int v3; // ebx
+  void *v4; // rcx
+  NTSTATUS v5; // ebx
+  PVOID Object; // [rsp+30h] [rbp-28h] BYREF
+  union _LARGE_INTEGER Timeout; // [rsp+38h] [rbp-20h] BYREF
+
+  v3 = a3[4];
+  v4 = (void *)(*a3 | ((unsigned __int64)a3[2] << 32));
+  if ( v4 != (void *)-1LL && ObReferenceObjectByHandle(v4, 0x100000u, 0, 1, &Object, 0) >= 0 )
+  {
+    Timeout.QuadPart = (int)(-10000 * v3);
+    v5 = KeWaitForSingleObject(Object, UserRequest, 0, 1u, &Timeout);
+    if ( !v5 )
+      KeClearEvent((PRKEVENT)Object);
+    ObfDereferenceObject(Object);
+    if ( !v5 )
+      return 1;
+    if ( (unsigned int)(v5 - 257) <= 1 )
+      return 2;
+  }
+  return 0;
+}
+
+
+=== DISASM ===
+0x1400070a8: push    rbx
+0x1400070aa: sub     rsp, 50h
+0x1400070ae: mov     rax, cs:__security_cookie
+0x1400070b5: xor     rax, rsp
+0x1400070b8: mov     [rsp+58h+var_18], rax
+0x1400070bd: mov     ecx, [r8+8]
+0x1400070c1: mov     eax, [r8]
+0x1400070c4: mov     ebx, [r8+10h]
+0x1400070c8: shl     rcx, 20h
+0x1400070cc: or      rcx, rax; Handle
+0x1400070cf: cmp     rcx, 0FFFFFFFFFFFFFFFFh
+0x1400070d3: jz      loc_140007166
+0x1400070d9: and     [rsp+58h+var_30], 0
+0x1400070df: lea     rax, [rsp+58h+var_28]
+0x1400070e4: mov     r9b, 1; AccessMode
+0x1400070e7: mov     [rsp+58h+Object], rax; Object
+0x1400070ec: xor     r8d, r8d; ObjectType
+0x1400070ef: mov     edx, 100000h; DesiredAccess
+0x1400070f4: call    cs:ObReferenceObjectByHandle
+0x1400070fa: test    eax, eax
+0x1400070fc: js      short loc_140007166
+0x1400070fe: imul    eax, ebx, 0FFFFD8F0h
+0x140007104: xor     r8d, r8d; WaitMode
+0x140007107: mov     r9b, 1; Alertable
+0x14000710a: lea     edx, [r8+6]; WaitReason
+0x14000710e: movsxd  rcx, eax
+0x140007111: lea     rax, [rsp+58h+Timeout]
+0x140007116: mov     qword ptr [rsp+58h+Timeout], rcx
+0x14000711b: mov     rcx, [rsp+58h+var_28]; Object
+0x140007120: mov     [rsp+58h+Object], rax; Timeout
+0x140007125: call    cs:KeWaitForSingleObject
+0x14000712b: mov     ebx, eax
+0x14000712d: test    eax, eax
+0x14000712f: jnz     short loc_14000713C
+0x140007131: mov     rcx, [rsp+58h+var_28]; Event
+0x140007136: call    cs:KeClearEvent
+0x14000713c: mov     rcx, [rsp+58h+var_28]; Object
+0x140007141: call    cs:ObfDereferenceObject
+0x140007147: test    ebx, ebx
+0x140007149: jz      short loc_14000715F
+0x14000714b: sub     ebx, 101h
+0x140007151: jz      short loc_140007158
+0x140007153: cmp     ebx, 1
+0x140007156: jnz     short loc_140007166
+0x140007158: mov     eax, 2
+0x14000715d: jmp     short loc_140007168
+0x14000715f: mov     eax, 1
+0x140007164: jmp     short loc_140007168
+0x140007166: xor     eax, eax
+0x140007168: mov     rcx, [rsp+58h+var_18]
+0x14000716d: xor     rcx, rsp; StackCookie
+0x140007170: call    __security_check_cookie
+0x140007175: add     rsp, 50h
+0x140007179: pop     rbx
+0x14000717a: retn

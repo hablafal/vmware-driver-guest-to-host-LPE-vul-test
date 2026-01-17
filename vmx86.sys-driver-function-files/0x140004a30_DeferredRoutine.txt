@@ -1,0 +1,44 @@
+=== METADATA ===
+Name: DeferredRoutine
+Addr: 0x140004a30
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140004a30-0x140004a3c -> Jumps to: 0x14000c6fc
+  Block 0x14000c6fc-0x14000c6fc -> Jumps to: 
+
+=== CODE ===
+void __fastcall DeferredRoutine(struct _KDPC *Dpc, PVOID DeferredContext, PVOID SystemArgument1, PVOID SystemArgument2)
+{
+  sub_14000C6FC(&unk_140014C70, DeferredContext, SystemArgument1, SystemArgument2);
+}
+
+
+=== DISASM ===
+0x140004a30: lea     rcx, unk_140014C70
+0x140004a37: jmp     sub_14000C6FC

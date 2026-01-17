@@ -1,0 +1,185 @@
+=== METADATA ===
+Name: sub_14000A010
+Addr: 0x14000a010
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000a05a: AND with Mask 0x1FF
+  0x14000a060: AND with Mask 0x7
+  0x14000a0d7: AND with Mask 0x7
+  0x14000a0db: AND with Mask 0x7
+  0x14000a0f8: AND with Mask 0xFFFFFFFFF000FFFF
+  0x14000a106: AND with Mask 0xFFFFFFFFFFFFF1FF
+
+=== MEMBER ACCESS ===
+  0x14000a013: Access Member +0x8 ([rax+8])
+  0x14000a017: Access Member +0x10 ([rax+10h])
+  0x14000a01b: Access Member +0x18 ([rax+18h])
+  0x14000a01f: Access Member +0x20 ([rax+20h])
+  0x14000a0f3: Access Member +0x48 ([rsp+38h+arg_8])
+  0x14000a101: Access Member +0x58 ([rsp+38h+arg_18])
+  0x14000a10e: Access Member +0x50 ([rsp+38h+arg_10])
+  0x14000a121: Access Member +0x40 ([rsp+38h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] 0x14000a041: [CFG_TARGET] via r15
+  [!] 0x14000a07d: [CFG_TARGET] via rax
+
+=== CALLERS ===
+  <- sub_14000A754 (0x14000A859)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000a010-0x14000a06f -> Jumps to: 0x14000a06f, 0x14000a0f3
+  Block 0x14000a06f-0x14000a09b -> Jumps to: 0x14000a09b, 0x14000a0f1
+  Block 0x14000a09b-0x14000a0ef -> Jumps to: 0x14000a06f, 0x14000a0ef
+  Block 0x14000a0ef-0x14000a0f1 -> Jumps to: 0x14000a0f3
+  Block 0x14000a0f1-0x14000a0f3 -> Jumps to: 0x14000a0f3
+  Block 0x14000a0f3-0x14000a131 -> Jumps to: 
+
+=== CODE ===
+unsigned __int64 __fastcall sub_14000A010(
+        __int64 a1,
+        __int64 (__fastcall *a2)(__int64, __int64, _QWORD),
+        unsigned int a3)
+{
+  unsigned __int64 v6; // rax
+  unsigned int v7; // ebp
+  __int64 v8; // rdi
+  __int64 v9; // rsi
+  unsigned __int64 v10; // rbx
+  unsigned __int64 v11; // r8
+  unsigned __int64 v12; // rdx
+  char v13; // cl
+  int v14; // r8d
+
+  v6 = a2(a1, 1157, 0);
+  v7 = 1;
+  v8 = (v6 >> 16) & 0x1FF;
+  v9 = (v6 >> 25) & 7;
+  v10 = v6;
+  if ( a3 > 1 )
+  {
+    while ( 1 )
+    {
+      v11 = a2(a1, 1157, v7);
+      if ( ((v10 ^ v11) & 0xFFFFFFFF00000000uLL) != 0 )
+        break;
+      v10 &= v11 | 0xFFFFFFFF0FFF001FuLL;
+      v12 = (v11 >> 16) & 0x1FF;
+      if ( (unsigned int)v8 < v12 )
+        LODWORD(v12) = v8;
+      v13 = v11 >> 25;
+      LODWORD(v8) = v12;
+      v14 = v13 & 7;
+      if ( (unsigned int)v9 < (unsigned __int64)(v13 & 7) )
+        v14 = v9;
+      ++v7;
+      LODWORD(v9) = v14;
+      if ( v7 >= a3 )
+        return v10 & 0xFFFFFFFFF000FFFFuLL
+             | ((((unsigned __int64)(unsigned int)v9 << 9) | (unsigned int)v8 & 0xFFFFF1FF) << 16);
+    }
+    v10 = 0;
+  }
+  return v10 & 0xFFFFFFFFF000FFFFuLL
+       | ((((unsigned __int64)(unsigned int)v9 << 9) | (unsigned int)v8 & 0xFFFFF1FF) << 16);
+}
+
+
+=== DISASM ===
+0x14000a010: mov     rax, rsp
+0x14000a013: mov     [rax+8], rbx
+0x14000a017: mov     [rax+10h], rbp
+0x14000a01b: mov     [rax+18h], rsi
+0x14000a01f: mov     [rax+20h], rdi
+0x14000a023: push    r12
+0x14000a025: push    r14
+0x14000a027: push    r15
+0x14000a029: sub     rsp, 20h
+0x14000a02d: mov     r14, rdx
+0x14000a030: mov     r12d, r8d
+0x14000a033: mov     rax, r14
+0x14000a036: xor     r8d, r8d
+0x14000a039: mov     edx, 485h
+0x14000a03e: mov     r15, rcx
+0x14000a041: call    cs:__guard_dispatch_icall_fptr
+0x14000a047: mov     rdi, rax
+0x14000a04a: mov     rsi, rax
+0x14000a04d: shr     rdi, 10h
+0x14000a051: mov     ebp, 1
+0x14000a056: shr     rsi, 19h
+0x14000a05a: and     edi, 1FFh
+0x14000a060: and     esi, 7
+0x14000a063: mov     rbx, rax
+0x14000a066: cmp     r12d, ebp
+0x14000a069: jbe     loc_14000A0F3
+0x14000a06f: mov     r8d, ebp
+0x14000a072: mov     edx, 485h
+0x14000a077: mov     rcx, r15
+0x14000a07a: mov     rax, r14
+0x14000a07d: call    cs:__guard_dispatch_icall_fptr
+0x14000a083: mov     rcx, rax
+0x14000a086: mov     r8, rax
+0x14000a089: xor     rcx, rbx
+0x14000a08c: mov     rax, 0FFFFFFFF00000000h
+0x14000a096: test    rax, rcx
+0x14000a099: jnz     short loc_14000A0F1
+0x14000a09b: mov     rcx, r8
+0x14000a09e: mov     rdx, r8
+0x14000a0a1: shr     rdx, 10h
+0x14000a0a5: mov     rax, 0FFFFFFFF0FFF001Fh
+0x14000a0af: or      rcx, rax
+0x14000a0b2: mov     r9d, 1FFh
+0x14000a0b8: and     rbx, rcx
+0x14000a0bb: mov     eax, edi
+0x14000a0bd: mov     rcx, rdx
+0x14000a0c0: and     edx, r9d
+0x14000a0c3: and     rcx, r9
+0x14000a0c6: cmp     rax, rcx
+0x14000a0c9: mov     eax, esi
+0x14000a0cb: cmovb   edx, edi
+0x14000a0ce: shr     r8, 19h
+0x14000a0d2: mov     rcx, r8
+0x14000a0d5: mov     edi, edx
+0x14000a0d7: and     r8d, 7
+0x14000a0db: and     ecx, 7
+0x14000a0de: cmp     rax, rcx
+0x14000a0e1: cmovb   r8d, esi
+0x14000a0e5: inc     ebp
+0x14000a0e7: mov     esi, r8d
+0x14000a0ea: cmp     ebp, r12d
+0x14000a0ed: jb      short loc_14000A06F
+0x14000a0ef: jmp     short loc_14000A0F3
+0x14000a0f1: xor     ebx, ebx
+0x14000a0f3: mov     rbp, [rsp+38h+arg_8]
+0x14000a0f8: and     rbx, 0FFFFFFFFF000FFFFh
+0x14000a0ff: mov     eax, edi
+0x14000a101: mov     rdi, [rsp+38h+arg_18]
+0x14000a106: and     rax, 0FFFFFFFFFFFFF1FFh
+0x14000a10c: mov     ecx, esi
+0x14000a10e: mov     rsi, [rsp+38h+arg_10]
+0x14000a113: shl     rcx, 9
+0x14000a117: or      rax, rcx
+0x14000a11a: shl     rax, 10h
+0x14000a11e: or      rax, rbx
+0x14000a121: mov     rbx, [rsp+38h+arg_0]
+0x14000a126: add     rsp, 20h
+0x14000a12a: pop     r15
+0x14000a12c: pop     r14
+0x14000a12e: pop     r12
+0x14000a130: retn

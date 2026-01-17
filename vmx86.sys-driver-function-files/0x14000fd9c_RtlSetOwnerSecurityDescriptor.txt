@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: RtlSetOwnerSecurityDescriptor
+Addr: 0x14000fd9c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z (0x14000DD05)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fd9c-0x14000fda2 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+NTSTATUS __stdcall RtlSetOwnerSecurityDescriptor(
+        PSECURITY_DESCRIPTOR SecurityDescriptor,
+        PSID Owner,
+        BOOLEAN OwnerDefaulted)
+{
+  return __imp_RtlSetOwnerSecurityDescriptor(SecurityDescriptor, Owner, OwnerDefaulted);
+}
+
+
+=== DISASM ===
+0x14000fd9c: jmp     cs:__imp_RtlSetOwnerSecurityDescriptor

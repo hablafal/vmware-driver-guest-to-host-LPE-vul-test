@@ -1,0 +1,259 @@
+=== METADATA ===
+Name: sub_140003874
+Addr: 0x140003874
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000389c: AND with Mask 0x0
+  0x1400038a8: AND with Mask 0x0
+  0x1400038b0: AND with Mask 0x0
+  0x14000390b: AND with Mask 0x0
+  0x140003915: AND with Mask 0x0
+  0x14000391d: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140003874: Access Member +0x18 ([rsp-8+arg_10])
+  0x140003879: Access Member +0x20 ([rsp-8+arg_18])
+  0x140003898: Access Member +0x37 ([rbp+57h+var_20])
+  0x1400038f9: Access Member +0x7 ([rbp+57h+DestinationString])
+  0x14000390b: Access Member +0x30 ([rsp+0D0h+var_A0])
+  0x140003915: Access Member +0x28 ([rsp+0D0h+DataSize])
+  0x14000391d: Access Member +0x20 ([rsp+0D0h+Data])
+  0x14000392f: Access Member +0x7 ([rbp+57h+DestinationString])
+  0x14000395d: Access Member +0x7 ([rbp+57h+DestinationString])
+  0x14000396b: Access Member +0x7 ([rbp+57h+DestinationString])
+  0x140003974: Access Member +0x28 ([rsp+0D0h+DataSize])
+  0x140003985: Access Member +0x20 ([rsp+0D0h+Data])
+  0x140003994: Access Member +0x17 ([rbp+57h+ResultLength])
+  0x14000399e: Access Member +0x28 (qword ptr [rsp+0D0h+DataSize])
+  0x1400039a3: Access Member +0x1F ([rbp+57h+KeyValueInformation])
+  0x1400039a7: Access Member +0x20 (dword ptr [rsp+0D0h+Data])
+  0x1400039bb: Access Member +0x23 ([rbp+57h+var_34])
+  0x1400039c8: Access Member +0x27 ([rbp+57h+var_30])
+  0x1400039d5: Access Member +0x2B ([rbp+57h+var_2C])
+  0x1400039f0: Access Member +0x37 ([rbp+57h+var_20])
+  0x1400039fc: Access Member +0xC0 ([rsp+0D0h+var_10])
+  0x140003a04: Access Member +0x30 ([r11+30h])
+  0x140003a08: Access Member +0x38 ([r11+38h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_1400062FC (0x140006403)
+  <- sub_140006B30 (0x140006C48)
+  <- sub_140006B30 (0x140006C77)
+  <- sub_140006B30 (0x140006CB0)
+  <- sub_140006B30 (0x140006CD8)
+
+=== IMPORTS ===
+  -> 0x1400038e2 calls ZwOpenKey
+  -> 0x1400038fd calls RtlInitUnicodeString
+  -> 0x14000394a calls ZwCreateKey
+  -> 0x140003961 calls RtlInitUnicodeString
+  -> 0x14000398a calls ZwSetValueKey
+  -> 0x1400039af calls ZwQueryValueKey
+  -> 0x1400039de calls ZwClose
+  -> 0x1400039e8 calls ZwClose
+
+=== STRINGS ===
+  0x14000388e -> 2
+  0x1400038f2 -> P
+
+=== BASIC BLOCKS ===
+  Block 0x140003874-0x1400038f2 -> Jumps to: 0x1400038f2, 0x1400039ee
+  Block 0x1400038f2-0x14000395a -> Jumps to: 0x14000395a, 0x1400039e4
+  Block 0x14000395a-0x140003974 -> Jumps to: 0x140003974, 0x140003994
+  Block 0x140003974-0x140003994 -> Jumps to: 0x1400039da
+  Block 0x140003994-0x1400039bb -> Jumps to: 0x1400039bb, 0x1400039da
+  Block 0x1400039bb-0x1400039c1 -> Jumps to: 0x1400039c1, 0x1400039c8
+  Block 0x1400039c1-0x1400039c8 -> Jumps to: 0x1400039da
+  Block 0x1400039c8-0x1400039ce -> Jumps to: 0x1400039ce, 0x1400039d5
+  Block 0x1400039ce-0x1400039d5 -> Jumps to: 0x1400039da
+  Block 0x1400039d5-0x1400039da -> Jumps to: 0x1400039da
+  Block 0x1400039da-0x1400039e4 -> Jumps to: 0x1400039e4
+  Block 0x1400039e4-0x1400039ee -> Jumps to: 0x1400039ee
+  Block 0x1400039ee-0x140003a14 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140003874(_DWORD *Data, PCWSTR SourceString, char a3)
+{
+  NTSTATUS v6; // ebx
+  HANDLE Handle; // [rsp+40h] [rbp-39h] BYREF
+  void *KeyHandle; // [rsp+48h] [rbp-31h] BYREF
+  struct _OBJECT_ATTRIBUTES ObjectAttributes; // [rsp+50h] [rbp-29h] BYREF
+  struct _UNICODE_STRING DestinationString; // [rsp+80h] [rbp+7h] BYREF
+  ULONG ResultLength; // [rsp+90h] [rbp+17h] BYREF
+  _BYTE KeyValueInformation[4]; // [rsp+98h] [rbp+1Fh] BYREF
+  int v14; // [rsp+9Ch] [rbp+23h]
+  int v15; // [rsp+A0h] [rbp+27h]
+  int v16; // [rsp+A4h] [rbp+2Bh]
+
+  KeyHandle = 0;
+  Handle = 0;
+  ObjectAttributes.RootDirectory = 0;
+  ObjectAttributes.ObjectName = &::DestinationString;
+  ObjectAttributes.Length = 48;
+  ObjectAttributes.Attributes = 576;
+  *(_OWORD *)&ObjectAttributes.SecurityDescriptor = 0;
+  v6 = ZwOpenKey(&KeyHandle, 0xF003Fu, &ObjectAttributes);
+  if ( v6 >= 0 )
+  {
+    RtlInitUnicodeString(&DestinationString, L"Parameters");
+    ObjectAttributes.RootDirectory = KeyHandle;
+    ObjectAttributes.Length = 48;
+    ObjectAttributes.ObjectName = &DestinationString;
+    ObjectAttributes.Attributes = 576;
+    *(_OWORD *)&ObjectAttributes.SecurityDescriptor = 0;
+    v6 = ZwCreateKey(&Handle, 0xF003Fu, &ObjectAttributes, 0, 0, 0, 0);
+    if ( v6 >= 0 )
+    {
+      RtlInitUnicodeString(&DestinationString, SourceString);
+      if ( a3 )
+      {
+        v6 = ZwSetValueKey(Handle, &DestinationString, 0, 4u, Data, 4u);
+      }
+      else
+      {
+        v6 = ZwQueryValueKey(
+               Handle,
+               &DestinationString,
+               KeyValuePartialInformation,
+               KeyValueInformation,
+               0x13u,
+               &ResultLength);
+        if ( v6 >= 0 )
+        {
+          if ( v14 == 4 )
+          {
+            if ( v15 == 4 )
+              *Data = v16;
+            else
+              v6 = -1073741820;
+          }
+          else
+          {
+            v6 = -1073741821;
+          }
+        }
+      }
+      ZwClose(Handle);
+    }
+    ZwClose(KeyHandle);
+  }
+  return (unsigned int)v6;
+}
+
+
+=== DISASM ===
+0x140003874: mov     [rsp-8+arg_10], rbx
+0x140003879: mov     [rsp-8+arg_18], rsi
+0x14000387e: push    rbp
+0x14000387f: push    rdi
+0x140003880: push    r14
+0x140003882: lea     rbp, [rsp-47h]
+0x140003887: sub     rsp, 0C0h
+0x14000388e: mov     rax, cs:__security_cookie
+0x140003895: xor     rax, rsp
+0x140003898: mov     [rbp+57h+var_20], rax
+0x14000389c: and     [rbp+57h+KeyHandle], 0
+0x1400038a1: lea     rax, DestinationString
+0x1400038a8: and     [rbp+57h+Handle], 0
+0x1400038ad: mov     sil, r8b
+0x1400038b0: and     [rbp+57h+ObjectAttributes.RootDirectory], 0
+0x1400038b5: lea     r8, [rbp+57h+ObjectAttributes]; ObjectAttributes
+0x1400038b9: mov     r14, rdx
+0x1400038bc: mov     [rbp+57h+ObjectAttributes.ObjectName], rax
+0x1400038c0: mov     rdi, rcx
+0x1400038c3: mov     [rbp+57h+ObjectAttributes.Length], 30h ; '0'
+0x1400038ca: xorps   xmm0, xmm0
+0x1400038cd: mov     [rbp+57h+ObjectAttributes.Attributes], 240h
+0x1400038d4: mov     edx, 0F003Fh; DesiredAccess
+0x1400038d9: lea     rcx, [rbp+57h+KeyHandle]; KeyHandle
+0x1400038dd: movdqu  xmmword ptr [rbp+57h+ObjectAttributes.SecurityDescriptor], xmm0
+0x1400038e2: call    cs:ZwOpenKey
+0x1400038e8: mov     ebx, eax
+0x1400038ea: test    eax, eax
+0x1400038ec: js      loc_1400039EE
+0x1400038f2: lea     rdx, aParameters; "Parameters"
+0x1400038f9: lea     rcx, [rbp+57h+DestinationString]; DestinationString
+0x1400038fd: call    cs:RtlInitUnicodeString
+0x140003903: mov     rax, [rbp+57h+KeyHandle]
+0x140003907: lea     r8, [rbp+57h+ObjectAttributes]; ObjectAttributes
+0x14000390b: and     [rsp+0D0h+var_A0], 0
+0x140003911: lea     rcx, [rbp+57h+Handle]; KeyHandle
+0x140003915: and     [rsp+0D0h+DataSize], 0
+0x14000391a: xorps   xmm0, xmm0
+0x14000391d: and     [rsp+0D0h+Data], 0
+0x140003923: xor     r9d, r9d; TitleIndex
+0x140003926: mov     [rbp+57h+ObjectAttributes.RootDirectory], rax
+0x14000392a: mov     edx, 0F003Fh; DesiredAccess
+0x14000392f: lea     rax, [rbp+57h+DestinationString]
+0x140003933: mov     [rbp+57h+ObjectAttributes.Length], 30h ; '0'
+0x14000393a: mov     [rbp+57h+ObjectAttributes.ObjectName], rax
+0x14000393e: mov     [rbp+57h+ObjectAttributes.Attributes], 240h
+0x140003945: movdqu  xmmword ptr [rbp+57h+ObjectAttributes.SecurityDescriptor], xmm0
+0x14000394a: call    cs:ZwCreateKey
+0x140003950: mov     ebx, eax
+0x140003952: test    eax, eax
+0x140003954: js      loc_1400039E4
+0x14000395a: mov     rdx, r14; SourceString
+0x14000395d: lea     rcx, [rbp+57h+DestinationString]; DestinationString
+0x140003961: call    cs:RtlInitUnicodeString
+0x140003967: mov     rcx, [rbp+57h+Handle]; KeyHandle
+0x14000396b: lea     rdx, [rbp+57h+DestinationString]; ValueName
+0x14000396f: test    sil, sil
+0x140003972: jz      short loc_140003994
+0x140003974: mov     [rsp+0D0h+DataSize], 4; DataSize
+0x14000397c: mov     r9d, 4; Type
+0x140003982: xor     r8d, r8d; TitleIndex
+0x140003985: mov     [rsp+0D0h+Data], rdi; Data
+0x14000398a: call    cs:ZwSetValueKey
+0x140003990: mov     ebx, eax
+0x140003992: jmp     short loc_1400039DA
+0x140003994: lea     rax, [rbp+57h+ResultLength]
+0x140003998: mov     r8d, 2; KeyValueInformationClass
+0x14000399e: mov     qword ptr [rsp+0D0h+DataSize], rax; ResultLength
+0x1400039a3: lea     r9, [rbp+57h+KeyValueInformation]; KeyValueInformation
+0x1400039a7: mov     dword ptr [rsp+0D0h+Data], 13h; Length
+0x1400039af: call    cs:ZwQueryValueKey
+0x1400039b5: mov     ebx, eax
+0x1400039b7: test    eax, eax
+0x1400039b9: js      short loc_1400039DA
+0x1400039bb: cmp     [rbp+57h+var_34], 4
+0x1400039bf: jz      short loc_1400039C8
+0x1400039c1: mov     ebx, 0C0000003h
+0x1400039c6: jmp     short loc_1400039DA
+0x1400039c8: cmp     [rbp+57h+var_30], 4
+0x1400039cc: jz      short loc_1400039D5
+0x1400039ce: mov     ebx, 0C0000004h
+0x1400039d3: jmp     short loc_1400039DA
+0x1400039d5: mov     eax, [rbp+57h+var_2C]
+0x1400039d8: mov     [rdi], eax
+0x1400039da: mov     rcx, [rbp+57h+Handle]; Handle
+0x1400039de: call    cs:ZwClose
+0x1400039e4: mov     rcx, [rbp+57h+KeyHandle]; Handle
+0x1400039e8: call    cs:ZwClose
+0x1400039ee: mov     eax, ebx
+0x1400039f0: mov     rcx, [rbp+57h+var_20]
+0x1400039f4: xor     rcx, rsp; StackCookie
+0x1400039f7: call    __security_check_cookie
+0x1400039fc: lea     r11, [rsp+0D0h+var_10]
+0x140003a04: mov     rbx, [r11+30h]
+0x140003a08: mov     rsi, [r11+38h]
+0x140003a0c: mov     rsp, r11
+0x140003a0f: pop     r14
+0x140003a11: pop     rdi
+0x140003a12: pop     rbp
+0x140003a13: retn

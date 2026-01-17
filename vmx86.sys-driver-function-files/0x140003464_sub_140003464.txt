@@ -1,0 +1,487 @@
+=== METADATA ===
+Name: sub_140003464
+Addr: 0x140003464
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] DYNAMIC_IMPORT_RESOLVING
+  [+] IRP_DISPATCH_HANDLER
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140003492: AND with Mask 0x0
+  0x140003652: AND with Mask 0x0
+  0x140003725: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140003464: Access Member +0x18 ([rsp-8+arg_10])
+  0x140003469: Access Member +0x20 ([rsp-8+arg_18])
+  0x14000348b: Access Member +0x210 ([rbp+230h+var_20])
+  0x140003492: Access Member +0x40 ([rsp+330h+var_2F0])
+  0x1400034bc: Access Member +0x48 (dword ptr [rsp+330h+SystemRoutineName.Length])
+  0x1400034c4: Access Member +0xF0 ([rbp+230h+VersionInformation])
+  0x1400034cb: Access Member +0x50 ([rsp+330h+SystemRoutineName.Buffer])
+  0x1400034d6: Access Member +0xF0 ([rbp+230h+VersionInformation.dwOSVersionInfoSize])
+  0x1400034e2: Access Member +0x48 ([rsp+330h+SystemRoutineName])
+  0x140003637: Access Member +0x40 ([rsp+330h+var_2F0])
+  0x140003642: Access Member +0x30 ([rsp+330h+DeviceObject])
+  0x14000364b: Access Member +0x28 ([rsp+330h+Exclusive])
+  0x140003652: Access Member +0x20 ([rsp+330h+var_310])
+  0x140003690: Access Member +0xE0 ([rbx+0E0h])
+  0x14000369e: Access Member +0x80 ([rbx+80h])
+  0x1400036a8: Access Member +0x70 ([rbx+70h])
+  0x1400036b8: Access Member +0x68 ([rbx+68h])
+  0x1400036dd: Access Member +0x50 ([rbx+50h])
+  0x1400036f5: Access Member +0x40 ([rsp+330h+var_2F0])
+  0x140003725: Access Member +0x60 ([rsp+330h+ObjectAttributes.RootDirectory])
+  0x140003732: Access Member +0x58 ([rsp+330h+ObjectAttributes.Length])
+  0x14000373a: Access Member +0x70 ([rsp+330h+ObjectAttributes.Attributes])
+  0x140003749: Access Member +0x68 ([rsp+330h+ObjectAttributes.ObjectName])
+  0x14000374e: Access Member +0x78 (xmmword ptr [rsp+330h+ObjectAttributes.SecurityDescriptor])
+  0x140003754: Access Member +0x1 ([r8+1])
+  0x140003761: Access Member +0x58 ([rsp+330h+ObjectAttributes])
+  0x14000384d: Access Member +0x210 ([rbp+230h+var_20])
+  0x14000385c: Access Member +0x320 ([rsp+330h+var_10])
+  0x140003864: Access Member +0x30 ([r11+30h])
+  0x140003868: Access Member +0x38 ([r11+38h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] DISPATCH ASSIGNMENT -> None (0x240)
+
+=== CALLERS ===
+  <- DriverEntry (0x14002001B)
+
+=== IMPORTS ===
+  -> 0x1400034dc calls RtlGetVersion
+  -> 0x1400034e7 calls MmGetSystemRoutineAddress
+  -> 0x140003545 calls RtlInitUnicodeString
+  -> 0x14000354f calls MmGetSystemRoutineAddress
+  -> 0x140003567 calls RtlInitUnicodeString
+  -> 0x140003571 calls MmGetSystemRoutineAddress
+  -> 0x140003582 calls RtlGetVersion
+  -> 0x140003593 calls RtlInitUnicodeString
+  -> 0x1400035a4 calls RtlInitUnicodeString
+  -> 0x1400035f6 calls RtlInitUnicodeString
+  -> 0x140003631 calls RtlCopyUnicodeString
+  -> 0x14000365a calls IoCreateDevice
+  -> 0x140003677 calls ExFreePoolWithTag
+  -> 0x1400036e1 calls IoCreateSymbolicLink
+  -> 0x1400036fa calls IoDeleteDevice
+  -> 0x140003709 calls ExFreePoolWithTag
+  -> 0x14000371f calls RtlInitUnicodeString
+  -> 0x140003758 calls KeInitializeEvent
+  -> 0x140003770 calls ExCreateCallback
+  -> 0x140003788 calls IoDeleteSymbolicLink
+  -> 0x1400037a4 calls ExRegisterCallback
+  -> 0x1400037d5 calls ExUnregisterCallback
+  -> 0x1400037e7 calls ObfDereferenceObject
+  -> 0x140003813 calls KeInitializeDpc
+  -> 0x140003820 calls KeInitializeTimer
+  -> 0x14000383b calls KeSetTimer
+
+=== STRINGS ===
+  0x140003481 -> 2
+  0x1400034b5 -> N
+  0x140003518 -> DriverEntry
+  0x140003526 -> VMX86.SYS: begin %s
+  0x14000353a -> M
+  0x140003555 -> M
+  0x140003588 -> \
+  0x140003599 -> \
+  0x140003684 -> H
+  0x1400036ae -> @SH
+  0x1400036c1 -> H
+  0x140003714 -> \
+  0x14000379a -> H
+  0x140003805 -> H
+
+=== BASIC BLOCKS ===
+  Block 0x140003464-0x1400034f2 -> Jumps to: 0x1400034f2, 0x140003518
+  Block 0x1400034f2-0x14000350b -> Jumps to: 0x14000350b, 0x140003518
+  Block 0x14000350b-0x140003511 -> Jumps to: 0x140003511, 0x140003518
+  Block 0x140003511-0x140003518 -> Jumps to: 0x140003518
+  Block 0x140003518-0x1400035bd -> Jumps to: 0x1400035bd, 0x1400035c7
+  Block 0x1400035bd-0x1400035c7 -> Jumps to: 0x14000384d
+  Block 0x1400035c7-0x1400035d0 -> Jumps to: 0x1400035d0, 0x1400035da
+  Block 0x1400035d0-0x1400035da -> Jumps to: 0x14000384d
+  Block 0x1400035da-0x1400035e3 -> Jumps to: 0x1400035e3, 0x1400035ed
+  Block 0x1400035e3-0x1400035ed -> Jumps to: 0x14000384d
+  Block 0x1400035ed-0x140003620 -> Jumps to: 0x140003620, 0x140003627
+  Block 0x140003620-0x140003627 -> Jumps to: 0x1400035d0
+  Block 0x140003627-0x140003666 -> Jumps to: 0x140003666, 0x140003684
+  Block 0x140003666-0x140003684 -> Jumps to: 0x14000384d
+  Block 0x140003684-0x1400036ed -> Jumps to: 0x1400036ed, 0x140003714
+  Block 0x1400036ed-0x1400036f5 -> Jumps to: 0x1400036f5
+  Block 0x1400036f5-0x140003714 -> Jumps to: 0x14000384b
+  Block 0x140003714-0x14000377c -> Jumps to: 0x14000377c, 0x140003793
+  Block 0x14000377c-0x140003784 -> Jumps to: 0x140003784
+  Block 0x140003784-0x140003793 -> Jumps to: 0x1400036f5
+  Block 0x140003793-0x1400037b6 -> Jumps to: 0x1400037b6, 0x1400037c0
+  Block 0x1400037b6-0x1400037c0 -> Jumps to: 0x1400037e0
+  Block 0x1400037c0-0x1400037c9 -> Jumps to: 0x1400037c9, 0x1400037ef
+  Block 0x1400037c9-0x1400037e0 -> Jumps to: 0x1400037e0
+  Block 0x1400037e0-0x1400037ef -> Jumps to: 0x140003784
+  Block 0x1400037ef-0x14000384b -> Jumps to: 0x14000384b
+  Block 0x14000384b-0x14000384d -> Jumps to: 0x14000384d
+  Block 0x14000384d-0x140003874 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140003464(struct _DRIVER_OBJECT *IoObject, PCUNICODE_STRING SourceString)
+{
+  PVOID SystemRoutineAddress; // rax
+  NTSTATUS v6; // edi
+  NTSTATUS v7; // ebx
+  PDEVICE_OBJECT DeviceObject; // [rsp+40h] [rbp-C0h] BYREF
+  struct _UNICODE_STRING SystemRoutineName; // [rsp+48h] [rbp-B8h] BYREF
+  struct _OBJECT_ATTRIBUTES ObjectAttributes; // [rsp+58h] [rbp-A8h] BYREF
+  _BYTE v11[8]; // [rsp+88h] [rbp-78h] BYREF
+  struct _UNICODE_STRING DestinationString; // [rsp+90h] [rbp-70h] BYREF
+  struct _UNICODE_STRING SymbolicLinkName; // [rsp+A0h] [rbp-60h] BYREF
+  struct _UNICODE_STRING DeviceName; // [rsp+B0h] [rbp-50h] BYREF
+  struct _UNICODE_STRING v15; // [rsp+C0h] [rbp-40h] BYREF
+  struct _OSVERSIONINFOW v16; // [rsp+D0h] [rbp-30h] BYREF
+  struct _OSVERSIONINFOW VersionInformation; // [rsp+1F0h] [rbp+F0h] BYREF
+
+  DeviceObject = 0;
+  v16.dwOSVersionInfoSize = 276;
+  sub_14000FEC0(&v16.dwMajorVersion, 0, 272);
+  *(_DWORD *)&SystemRoutineName.Length = 3276848;
+  SystemRoutineName.Buffer = L"NtQuerySystemInformation";
+  VersionInformation.dwOSVersionInfoSize = 276;
+  RtlGetVersion(&VersionInformation);
+  SystemRoutineAddress = MmGetSystemRoutineAddress(&SystemRoutineName);
+  if ( SystemRoutineAddress
+    && ((int (__fastcall *)(__int64, _BYTE *, __int64, _QWORD))SystemRoutineAddress)(227, v11, 1, 0) >= 0 )
+  {
+    if ( v11[0] )
+      byte_140014D91 = 1;
+  }
+  ::IoObject = IoObject;
+  sub_14000DF58(IoObject);
+  RtlInitUnicodeString(&DestinationString, L"MmAllocateContiguousNodeMemory");
+  qword_140014BD0 = (__int64)MmGetSystemRoutineAddress(&DestinationString);
+  RtlInitUnicodeString(&DestinationString, L"MmMapIoSpaceEx");
+  qword_140014BD8 = (__int64)MmGetSystemRoutineAddress(&DestinationString);
+  RtlGetVersion(&v16);
+  RtlInitUnicodeString(&DeviceName, L"\\Device\\vmx86");
+  RtlInitUnicodeString(&SymbolicLinkName, L"\\DosDevices\\vmx86");
+  sub_140009DE0();
+  sub_14000B880();
+  if ( !(unsigned __int8)sub_140009034() )
+    return 3221225659LL;
+  if ( !(unsigned __int8)sub_14000BE34() )
+    return 3221225495LL;
+  if ( !(unsigned __int8)sub_14000B92C() )
+    return 3221225473LL;
+  RtlInitUnicodeString(&::DestinationString, 0);
+  ::DestinationString.MaximumLength = SourceString->Length + 2;
+  ::DestinationString.Buffer = (PWSTR)sub_1400055C0(::DestinationString.MaximumLength);
+  if ( !::DestinationString.Buffer )
+  {
+    sub_14000BD3C();
+    return 3221225495LL;
+  }
+  RtlCopyUnicodeString(&::DestinationString, SourceString);
+  v6 = IoCreateDevice(IoObject, 0, &DeviceName, 0x8101u, 0, 0, &DeviceObject);
+  if ( v6 < 0 )
+  {
+    _mm_lfence();
+    sub_14000BD3C();
+    ExFreePoolWithTag(::DestinationString.Buffer, 0);
+    return (unsigned int)v6;
+  }
+  IoObject->MajorFunction[14] = (PDRIVER_DISPATCH)&sub_1400047D0;
+  IoObject->MajorFunction[2] = (PDRIVER_DISPATCH)&sub_1400047D0;
+  IoObject->MajorFunction[0] = (PDRIVER_DISPATCH)&sub_1400047D0;
+  IoObject->DriverUnload = (PDRIVER_UNLOAD)sub_140004910;
+  sub_14000FEC0(&dword_140014C80, 0, 224);
+  dword_140014C80 = 224;
+  qword_140014CD0 = (__int64)sub_140004760;
+  IoObject->FastIoDispatch = (PFAST_IO_DISPATCH)&dword_140014C80;
+  v7 = IoCreateSymbolicLink(&SymbolicLinkName, &DeviceName);
+  if ( v7 >= 0 )
+  {
+    RtlInitUnicodeString(&v15, L"\\Callback\\PowerState");
+    ObjectAttributes.RootDirectory = 0;
+    ObjectAttributes.Length = 48;
+    ObjectAttributes.Attributes = 576;
+    ObjectAttributes.ObjectName = &v15;
+    *(_OWORD *)&ObjectAttributes.SecurityDescriptor = 0;
+    KeInitializeEvent(&Event, SynchronizationEvent, 0);
+    v7 = ExCreateCallback(&Object, &ObjectAttributes, 0, 1u);
+    if ( v7 >= 0 )
+    {
+      CallbackRegistration = ExRegisterCallback(Object, CallbackFunction, 0);
+      if ( CallbackRegistration )
+      {
+        if ( (unsigned __int8)sub_1400062FC() )
+        {
+          _mm_lfence();
+          sub_14000CC7C(&unk_140014C70);
+          KeInitializeDpc(&Dpc, DeferredRoutine, &unk_140014C70);
+          KeInitializeTimer(&Timer);
+          KeSetTimer(&Timer, (LARGE_INTEGER)-40000000LL, &Dpc);
+          sub_140006258();
+          sub_14000C758();
+          return (unsigned int)v7;
+        }
+        sub_14000BD3C();
+        ExUnregisterCallback(CallbackRegistration);
+        v7 = -1073741801;
+      }
+      else
+      {
+        _mm_lfence();
+        sub_14000BD3C();
+      }
+      ObfDereferenceObject(Object);
+    }
+    else
+    {
+      _mm_lfence();
+      sub_14000BD3C();
+    }
+    IoDeleteSymbolicLink(&SymbolicLinkName);
+  }
+  else
+  {
+    _mm_lfence();
+    sub_14000BD3C();
+  }
+  IoDeleteDevice(DeviceObject);
+  ExFreePoolWithTag(::DestinationString.Buffer, 0);
+  return (unsigned int)v7;
+}
+
+
+=== DISASM ===
+0x140003464: mov     [rsp-8+arg_10], rbx
+0x140003469: mov     [rsp-8+arg_18], rsi
+0x14000346e: push    rbp
+0x14000346f: push    rdi
+0x140003470: push    r12
+0x140003472: lea     rbp, [rsp-220h]
+0x14000347a: sub     rsp, 320h
+0x140003481: mov     rax, cs:__security_cookie
+0x140003488: xor     rax, rsp
+0x14000348b: mov     [rbp+230h+var_20], rax
+0x140003492: and     [rsp+330h+var_2F0], 0
+0x140003498: mov     esi, 114h
+0x14000349d: mov     rdi, rdx
+0x1400034a0: mov     [rbp+230h+var_260.dwOSVersionInfoSize], esi
+0x1400034a3: mov     rbx, rcx
+0x1400034a6: xor     edx, edx
+0x1400034a8: lea     rcx, [rbp+230h+var_260.dwMajorVersion]
+0x1400034ac: lea     r8d, [rsi-4]
+0x1400034b0: call    sub_14000FEC0
+0x1400034b5: lea     rax, aNtquerysystemi; "NtQuerySystemInformation"
+0x1400034bc: mov     dword ptr [rsp+330h+SystemRoutineName.Length], 320030h
+0x1400034c4: lea     rcx, [rbp+230h+VersionInformation]; lpVersionInformation
+0x1400034cb: mov     [rsp+330h+SystemRoutineName.Buffer], rax
+0x1400034d0: mov     r12d, 30h ; '0'
+0x1400034d6: mov     [rbp+230h+VersionInformation.dwOSVersionInfoSize], esi
+0x1400034dc: call    cs:RtlGetVersion
+0x1400034e2: lea     rcx, [rsp+330h+SystemRoutineName]; SystemRoutineName
+0x1400034e7: call    cs:MmGetSystemRoutineAddress
+0x1400034ed: test    rax, rax
+0x1400034f0: jz      short loc_140003518
+0x1400034f2: xor     r9d, r9d
+0x1400034f5: lea     r8d, [r12-2Fh]
+0x1400034fa: lea     rdx, [rbp+230h+var_2A8]
+0x1400034fe: lea     ecx, [rsi-31h]
+0x140003501: call    cs:__guard_dispatch_icall_fptr
+0x140003507: test    eax, eax
+0x140003509: js      short loc_140003518
+0x14000350b: cmp     [rbp+230h+var_2A8], 0
+0x14000350f: jz      short loc_140003518
+0x140003511: mov     cs:byte_140014D91, 1
+0x140003518: lea     r9, aDriverentry; "DriverEntry"
+0x14000351f: mov     cs:IoObject, rbx
+0x140003526: lea     r8, aVmx86SysBeginS; "VMX86.SYS: begin %s"
+0x14000352d: mov     edx, 40080022h
+0x140003532: mov     rcx, rbx; IoObject
+0x140003535: call    sub_14000DF58
+0x14000353a: lea     rdx, SourceString; "MmAllocateContiguousNodeMemory"
+0x140003541: lea     rcx, [rbp+230h+DestinationString]; DestinationString
+0x140003545: call    cs:RtlInitUnicodeString
+0x14000354b: lea     rcx, [rbp+230h+DestinationString]; SystemRoutineName
+0x14000354f: call    cs:MmGetSystemRoutineAddress
+0x140003555: lea     rdx, aMmmapiospaceex; "MmMapIoSpaceEx"
+0x14000355c: mov     cs:qword_140014BD0, rax
+0x140003563: lea     rcx, [rbp+230h+DestinationString]; DestinationString
+0x140003567: call    cs:RtlInitUnicodeString
+0x14000356d: lea     rcx, [rbp+230h+DestinationString]; SystemRoutineName
+0x140003571: call    cs:MmGetSystemRoutineAddress
+0x140003577: lea     rcx, [rbp+230h+var_260]; lpVersionInformation
+0x14000357b: mov     cs:qword_140014BD8, rax
+0x140003582: call    cs:RtlGetVersion
+0x140003588: lea     rdx, aDeviceVmx86; "\\Device\\vmx86"
+0x14000358f: lea     rcx, [rbp+230h+DeviceName]; DestinationString
+0x140003593: call    cs:RtlInitUnicodeString
+0x140003599: lea     rdx, aDosdevicesVmx8; "\\DosDevices\\vmx86"
+0x1400035a0: lea     rcx, [rbp+230h+SymbolicLinkName]; DestinationString
+0x1400035a4: call    cs:RtlInitUnicodeString
+0x1400035aa: call    sub_140009DE0
+0x1400035af: call    sub_14000B880
+0x1400035b4: call    sub_140009034
+0x1400035b9: test    al, al
+0x1400035bb: jnz     short loc_1400035C7
+0x1400035bd: mov     eax, 0C00000BBh
+0x1400035c2: jmp     loc_14000384D
+0x1400035c7: call    sub_14000BE34
+0x1400035cc: test    al, al
+0x1400035ce: jnz     short loc_1400035DA
+0x1400035d0: mov     eax, 0C0000017h
+0x1400035d5: jmp     loc_14000384D
+0x1400035da: call    sub_14000B92C
+0x1400035df: test    al, al
+0x1400035e1: jnz     short loc_1400035ED
+0x1400035e3: mov     eax, 0C0000001h
+0x1400035e8: jmp     loc_14000384D
+0x1400035ed: xor     edx, edx; SourceString
+0x1400035ef: lea     rcx, DestinationString; DestinationString
+0x1400035f6: call    cs:RtlInitUnicodeString
+0x1400035fc: movzx   eax, word ptr [rdi]
+0x1400035ff: xor     edx, edx
+0x140003601: add     ax, 2
+0x140003605: movzx   ecx, ax; NumberOfBytes
+0x140003608: mov     cs:DestinationString.MaximumLength, cx
+0x14000360f: call    sub_1400055C0
+0x140003614: mov     cs:DestinationString.Buffer, rax
+0x14000361b: test    rax, rax
+0x14000361e: jnz     short loc_140003627
+0x140003620: call    sub_14000BD3C
+0x140003625: jmp     short loc_1400035D0
+0x140003627: mov     rdx, rdi; SourceString
+0x14000362a: lea     rcx, DestinationString; DestinationString
+0x140003631: call    cs:RtlCopyUnicodeString
+0x140003637: lea     rax, [rsp+330h+var_2F0]
+0x14000363c: mov     r9d, 8101h; DeviceType
+0x140003642: mov     [rsp+330h+DeviceObject], rax; DeviceObject
+0x140003647: lea     r8, [rbp+230h+DeviceName]; DeviceName
+0x14000364b: mov     [rsp+330h+Exclusive], 0; Exclusive
+0x140003650: xor     edx, edx; DeviceExtensionSize
+0x140003652: and     [rsp+330h+var_310], 0
+0x140003657: mov     rcx, rbx; DriverObject
+0x14000365a: call    cs:IoCreateDevice
+0x140003660: mov     edi, eax
+0x140003662: test    eax, eax
+0x140003664: jns     short loc_140003684
+0x140003666: lfence
+0x140003669: call    sub_14000BD3C
+0x14000366e: mov     rcx, cs:DestinationString.Buffer; P
+0x140003675: xor     edx, edx; Tag
+0x140003677: call    cs:ExFreePoolWithTag
+0x14000367d: mov     eax, edi
+0x14000367f: jmp     loc_14000384D
+0x140003684: lea     rax, sub_1400047D0
+0x14000368b: mov     edi, 0E0h
+0x140003690: mov     [rbx+0E0h], rax
+0x140003697: lea     rsi, dword_140014C80
+0x14000369e: mov     [rbx+80h], rax
+0x1400036a5: mov     r8d, edi
+0x1400036a8: mov     [rbx+70h], rax
+0x1400036ac: xor     edx, edx
+0x1400036ae: lea     rax, sub_140004910
+0x1400036b5: mov     rcx, rsi
+0x1400036b8: mov     [rbx+68h], rax
+0x1400036bc: call    sub_14000FEC0
+0x1400036c1: lea     rax, sub_140004760
+0x1400036c8: mov     cs:dword_140014C80, edi
+0x1400036ce: mov     cs:qword_140014CD0, rax
+0x1400036d5: lea     rdx, [rbp+230h+DeviceName]; DeviceName
+0x1400036d9: lea     rcx, [rbp+230h+SymbolicLinkName]; SymbolicLinkName
+0x1400036dd: mov     [rbx+50h], rsi
+0x1400036e1: call    cs:IoCreateSymbolicLink
+0x1400036e7: mov     ebx, eax
+0x1400036e9: test    eax, eax
+0x1400036eb: jns     short loc_140003714
+0x1400036ed: lfence
+0x1400036f0: call    sub_14000BD3C
+0x1400036f5: mov     rcx, [rsp+330h+var_2F0]; DeviceObject
+0x1400036fa: call    cs:IoDeleteDevice
+0x140003700: mov     rcx, cs:DestinationString.Buffer; P
+0x140003707: xor     edx, edx; Tag
+0x140003709: call    cs:ExFreePoolWithTag
+0x14000370f: jmp     loc_14000384B
+0x140003714: lea     rdx, aCallbackPowers; "\\Callback\\PowerState"
+0x14000371b: lea     rcx, [rbp+230h+var_270]; DestinationString
+0x14000371f: call    cs:RtlInitUnicodeString
+0x140003725: and     [rsp+330h+ObjectAttributes.RootDirectory], 0
+0x14000372b: lea     rax, [rbp+230h+var_270]
+0x14000372f: xor     r8d, r8d; State
+0x140003732: mov     [rsp+330h+ObjectAttributes.Length], r12d
+0x140003737: xorps   xmm0, xmm0
+0x14000373a: mov     [rsp+330h+ObjectAttributes.Attributes], 240h
+0x140003742: lea     rcx, Event; Event
+0x140003749: mov     [rsp+330h+ObjectAttributes.ObjectName], rax
+0x14000374e: movdqu  xmmword ptr [rsp+330h+ObjectAttributes.SecurityDescriptor], xmm0
+0x140003754: lea     edx, [r8+1]; Type
+0x140003758: call    cs:KeInitializeEvent
+0x14000375e: mov     r9b, 1; AllowMultipleCallbacks
+0x140003761: lea     rdx, [rsp+330h+ObjectAttributes]; ObjectAttributes
+0x140003766: xor     r8d, r8d; Create
+0x140003769: lea     rcx, Object; CallbackObject
+0x140003770: call    cs:ExCreateCallback
+0x140003776: mov     ebx, eax
+0x140003778: test    eax, eax
+0x14000377a: jns     short loc_140003793
+0x14000377c: lfence
+0x14000377f: call    sub_14000BD3C
+0x140003784: lea     rcx, [rbp+230h+SymbolicLinkName]; SymbolicLinkName
+0x140003788: call    cs:IoDeleteSymbolicLink
+0x14000378e: jmp     loc_1400036F5
+0x140003793: mov     rcx, cs:Object; CallbackObject
+0x14000379a: lea     rdx, CallbackFunction; CallbackFunction
+0x1400037a1: xor     r8d, r8d; CallbackContext
+0x1400037a4: call    cs:ExRegisterCallback
+0x1400037aa: mov     cs:CallbackRegistration, rax
+0x1400037b1: test    rax, rax
+0x1400037b4: jnz     short loc_1400037C0
+0x1400037b6: lfence
+0x1400037b9: call    sub_14000BD3C
+0x1400037be: jmp     short loc_1400037E0
+0x1400037c0: call    sub_1400062FC
+0x1400037c5: test    al, al
+0x1400037c7: jnz     short loc_1400037EF
+0x1400037c9: call    sub_14000BD3C
+0x1400037ce: mov     rcx, cs:CallbackRegistration; CallbackRegistration
+0x1400037d5: call    cs:ExUnregisterCallback
+0x1400037db: mov     ebx, 0C0000017h
+0x1400037e0: mov     rcx, cs:Object; Object
+0x1400037e7: call    cs:ObfDereferenceObject
+0x1400037ed: jmp     short loc_140003784
+0x1400037ef: lfence
+0x1400037f2: lea     rcx, unk_140014C70
+0x1400037f9: call    sub_14000CC7C
+0x1400037fe: lea     r8, unk_140014C70; DeferredContext
+0x140003805: lea     rdx, DeferredRoutine; DeferredRoutine
+0x14000380c: lea     rcx, Dpc; Dpc
+0x140003813: call    cs:KeInitializeDpc
+0x140003819: lea     rcx, Timer; Timer
+0x140003820: call    cs:KeInitializeTimer
+0x140003826: lea     r8, Dpc; Dpc
+0x14000382d: mov     rdx, 0FFFFFFFFFD9DA600h; DueTime
+0x140003834: lea     rcx, Timer; Timer
+0x14000383b: call    cs:KeSetTimer
+0x140003841: call    sub_140006258
+0x140003846: call    sub_14000C758
+0x14000384b: mov     eax, ebx
+0x14000384d: mov     rcx, [rbp+230h+var_20]
+0x140003854: xor     rcx, rsp; StackCookie
+0x140003857: call    __security_check_cookie
+0x14000385c: lea     r11, [rsp+330h+var_10]
+0x140003864: mov     rbx, [r11+30h]
+0x140003868: mov     rsi, [r11+38h]
+0x14000386c: mov     rsp, r11
+0x14000386f: pop     r12
+0x140003871: pop     rdi
+0x140003872: pop     rbp
+0x140003873: retn

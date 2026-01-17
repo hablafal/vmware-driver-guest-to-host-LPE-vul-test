@@ -1,0 +1,168 @@
+=== METADATA ===
+Name: sub_140007450
+Addr: 0x140007450
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140007450: Access Member +0x8 ([rsp+arg_0])
+  0x140007455: Access Member +0x10 ([rsp+arg_8])
+  0x14000745a: Access Member +0x18 ([rsp+arg_10])
+  0x14000746a: Access Member +0x10 ([rcx+10h])
+  0x140007476: Access Member +0x10 ([rsi+10h])
+  0x14000748c: Access Member +0x10 ([rbx+10h])
+  0x14000749a: Access Member +0x10 ([rsi+10h])
+  0x1400074a4: Access Member +0x10 ([rsi+10h])
+  0x1400074b1: Access Member +0x18 ([rdi+18h])
+  0x1400074b5: Access Member +0x10 ([rdi+10h])
+  0x1400074bf: Access Member +0x18 ([rdi+18h])
+  0x1400074c9: Access Member +0x18 ([rdi+18h])
+  0x1400074e4: Access Member +0x8 ([rax+8])
+  0x1400074ea: Access Member +0x8 ([rbx+8])
+  0x1400074f6: Access Member +0x8 ([rax+8])
+  0x140007508: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000750d: Access Member +0x38 ([rsp+28h+arg_8])
+  0x140007512: Access Member +0x40 ([rsp+28h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x14000474C)
+
+=== IMPORTS ===
+  -> 0x140007470 calls ExAcquireFastMutex
+  -> 0x14000749e calls ExReleaseFastMutex
+  -> 0x1400074b9 calls MmUnmapLockedPages
+  -> 0x1400074c3 calls MmUnlockPages
+  -> 0x1400074cf calls ExFreePoolWithTag
+  -> 0x1400074da calls ExFreePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140007450-0x140007486 -> Jumps to: 0x140007486, 0x14000749a
+  Block 0x140007486-0x140007492 -> Jumps to: 0x140007492, 0x1400074e4
+  Block 0x140007492-0x14000749a -> Jumps to: 0x140007486, 0x14000749a
+  Block 0x14000749a-0x1400074b1 -> Jumps to: 0x1400074b1, 0x140007503
+  Block 0x1400074b1-0x1400074e4 -> Jumps to: 0x140007508
+  Block 0x1400074e4-0x1400074ea -> Jumps to: 0x1400074ea, 0x1400074fc
+  Block 0x1400074ea-0x1400074f3 -> Jumps to: 0x1400074f3, 0x1400074fc
+  Block 0x1400074f3-0x1400074fc -> Jumps to: 0x14000749a
+  Block 0x1400074fc-0x140007503 -> Jumps to: 
+  Block 0x140007503-0x140007508 -> Jumps to: 0x140007508
+  Block 0x140007508-0x14000751d -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140007450(__int64 a1, __int64 a2)
+{
+  _QWORD *v4; // rdi
+  _QWORD **v5; // rcx
+  _QWORD *v6; // rbx
+  _QWORD **v7; // rax
+  _QWORD *v9; // rcx
+
+  v4 = 0;
+  ExAcquireFastMutex(*(PFAST_MUTEX *)(a1 + 16));
+  v5 = (_QWORD **)(*(_QWORD *)(a1 + 16) + 96LL);
+  v6 = *v5;
+  if ( *v5 != v5 )
+  {
+    while ( 1 )
+    {
+      v4 = v6;
+      v7 = (_QWORD **)*v6;
+      if ( v6[2] == a2 )
+        break;
+      v6 = (_QWORD *)*v6;
+      if ( v7 == v5 )
+        goto LABEL_4;
+    }
+    if ( v7[1] != v6 || (v9 = (_QWORD *)v6[1], (_QWORD *)*v9 != v6) )
+      __fastfail(3u);
+    *v9 = v7;
+    v7[1] = v9;
+  }
+LABEL_4:
+  ExReleaseFastMutex(*(PFAST_MUTEX *)(a1 + 16));
+  if ( v6 == (_QWORD *)(*(_QWORD *)(a1 + 16) + 96LL) )
+    return 3221226021LL;
+  MmUnmapLockedPages((PVOID)v4[2], (PMDL)v4[3]);
+  MmUnlockPages((PMDL)v4[3]);
+  ExFreePoolWithTag((PVOID)v4[3], 0);
+  ExFreePoolWithTag(v4, 0);
+  return 0;
+}
+
+
+=== DISASM ===
+0x140007450: mov     [rsp+arg_0], rbx
+0x140007455: mov     [rsp+arg_8], rbp
+0x14000745a: mov     [rsp+arg_10], rsi
+0x14000745f: push    rdi
+0x140007460: sub     rsp, 20h
+0x140007464: mov     rsi, rcx
+0x140007467: mov     rbp, rdx
+0x14000746a: mov     rcx, [rcx+10h]; FastMutex
+0x14000746e: xor     edi, edi
+0x140007470: call    cs:ExAcquireFastMutex
+0x140007476: mov     rcx, [rsi+10h]
+0x14000747a: add     rcx, 60h ; '`'
+0x14000747e: mov     rbx, [rcx]
+0x140007481: cmp     rbx, rcx
+0x140007484: jz      short loc_14000749A
+0x140007486: mov     rdi, rbx
+0x140007489: mov     rax, [rbx]
+0x14000748c: cmp     [rbx+10h], rbp
+0x140007490: jz      short loc_1400074E4
+0x140007492: mov     rbx, rax
+0x140007495: cmp     rax, rcx
+0x140007498: jnz     short loc_140007486
+0x14000749a: mov     rcx, [rsi+10h]; FastMutex
+0x14000749e: call    cs:ExReleaseFastMutex
+0x1400074a4: mov     rax, [rsi+10h]
+0x1400074a8: add     rax, 60h ; '`'
+0x1400074ac: cmp     rbx, rax
+0x1400074af: jz      short loc_140007503
+0x1400074b1: mov     rdx, [rdi+18h]; MemoryDescriptorList
+0x1400074b5: mov     rcx, [rdi+10h]; BaseAddress
+0x1400074b9: call    cs:MmUnmapLockedPages
+0x1400074bf: mov     rcx, [rdi+18h]; MemoryDescriptorList
+0x1400074c3: call    cs:MmUnlockPages
+0x1400074c9: mov     rcx, [rdi+18h]; P
+0x1400074cd: xor     edx, edx; Tag
+0x1400074cf: call    cs:ExFreePoolWithTag
+0x1400074d5: xor     edx, edx; Tag
+0x1400074d7: mov     rcx, rdi; P
+0x1400074da: call    cs:ExFreePoolWithTag
+0x1400074e0: xor     eax, eax
+0x1400074e2: jmp     short loc_140007508
+0x1400074e4: cmp     [rax+8], rbx
+0x1400074e8: jnz     short loc_1400074FC
+0x1400074ea: mov     rcx, [rbx+8]
+0x1400074ee: cmp     [rcx], rbx
+0x1400074f1: jnz     short loc_1400074FC
+0x1400074f3: mov     [rcx], rax
+0x1400074f6: mov     [rax+8], rcx
+0x1400074fa: jmp     short loc_14000749A
+0x1400074fc: mov     ecx, 3
+0x140007501: int     29h; Win8: RtlFailFast(ecx)
+0x140007503: mov     eax, 0C0000225h
+0x140007508: mov     rbx, [rsp+28h+arg_0]
+0x14000750d: mov     rbp, [rsp+28h+arg_8]
+0x140007512: mov     rsi, [rsp+28h+arg_10]
+0x140007517: add     rsp, 20h
+0x14000751b: pop     rdi
+0x14000751c: retn

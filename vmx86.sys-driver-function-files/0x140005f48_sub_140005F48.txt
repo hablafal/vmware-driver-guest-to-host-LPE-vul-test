@@ -1,0 +1,48 @@
+=== METADATA ===
+Name: sub_140005F48
+Addr: 0x140005f48
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008D04 (0x140008D59)
+  <- sub_14000F1CC (0x14000F1F4)
+
+=== IMPORTS ===
+  -> 0x140005f4c calls MmGetPhysicalAddress
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005f48-0x140005f5b -> Jumps to: 
+
+=== CODE ===
+PHYSICAL_ADDRESS __fastcall sub_140005F48(void *a1)
+{
+  return (PHYSICAL_ADDRESS)(MmGetPhysicalAddress(a1).QuadPart >> 12);
+}
+
+
+=== DISASM ===
+0x140005f48: sub     rsp, 28h
+0x140005f4c: call    cs:MmGetPhysicalAddress
+0x140005f52: sar     rax, 0Ch
+0x140005f56: add     rsp, 28h
+0x140005f5a: retn

@@ -1,0 +1,190 @@
+=== METADATA ===
+Name: sub_14000501C
+Addr: 0x14000501c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000501c: Access Member +0x8 ([rsp+arg_0])
+  0x140005021: Access Member +0x10 ([rsp+arg_8])
+  0x140005026: Access Member +0x18 ([rsp+arg_10])
+  0x1400050fc: Access Member +0x40 ([rsp+38h+arg_0])
+  0x140005101: Access Member +0x48 ([rsp+38h+arg_8])
+  0x140005106: Access Member +0x50 ([rsp+38h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140004C50 (0x140004D34)
+  <- sub_140004C50 (0x140004E64)
+  <- sub_140005390 (0x1400053A6)
+  <- sub_140005618 (0x1400056C9)
+  <- sub_14000578C (0x1400057D5)
+  <- sub_140005DD0 (0x140005DED)
+  <- sub_140005E28 (0x140005E74)
+  <- sub_140005EF8 (0x140005EFE)
+  <- sub_1400064BC (0x14000659B)
+  <- sub_1400064BC (0x1400065D8)
+  <- sub_1400064BC (0x140006615)
+  <- sub_140006738 (0x140006742)
+  <- sub_140007338 (0x14000736E)
+  <- sub_1400073A4 (0x1400073D6)
+  <- sub_14000741C (0x140007439)
+  <- sub_14000774C (0x14000775E)
+
+=== IMPORTS ===
+  -> 0x1400050a2 calls ExFreePoolWithTag
+  -> 0x1400050e7 calls ExFreePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000501c-0x14000505d -> Jumps to: 0x14000505d, 0x1400050fa
+  Block 0x14000505d-0x140005071 -> Jumps to: 0x140005071, 0x1400050a8
+  Block 0x140005071-0x140005083 -> Jumps to: 0x140005083, 0x1400050fa
+  Block 0x140005083-0x14000509d -> Jumps to: 0x14000509d, 0x1400050a8
+  Block 0x14000509d-0x1400050a8 -> Jumps to: 0x1400050a8
+  Block 0x1400050a8-0x1400050b6 -> Jumps to: 0x1400050b6, 0x1400050ed
+  Block 0x1400050b6-0x1400050c8 -> Jumps to: 0x1400050c8, 0x1400050fa
+  Block 0x1400050c8-0x1400050e2 -> Jumps to: 0x1400050e2, 0x1400050ed
+  Block 0x1400050e2-0x1400050ed -> Jumps to: 0x1400050ed
+  Block 0x1400050ed-0x1400050fa -> Jumps to: 0x1400050fc
+  Block 0x1400050fa-0x1400050fc -> Jumps to: 0x1400050fc
+  Block 0x1400050fc-0x140005115 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000501C(unsigned __int64 a1)
+{
+  __int64 v1; // rbx
+  unsigned __int64 v2; // rdi
+  __int64 v3; // rbp
+  __int64 v4; // rax
+  void *v5; // rsi
+  signed __int64 v6; // rdi
+  __int64 v7; // rax
+  void *v8; // rsi
+
+  v1 = (a1 >> 9) & 0x1FF;
+  v2 = a1 >> 18;
+  v3 = a1 & 0x1FF;
+  if ( a1 >> 18 >= 0x804 )
+    return 0;
+  if ( !qword_140014DA0[v2] )
+  {
+    v4 = sub_1400055C0(0x1000u);
+    v5 = (void *)v4;
+    if ( !v4 )
+      return 0;
+    _mm_lfence();
+    sub_14000FEC0(v4, 0, 4096);
+    if ( _InterlockedCompareExchange64(&qword_140014DA0[v2], (signed __int64)v5, 0) )
+      ExFreePoolWithTag(v5, 0);
+  }
+  _mm_lfence();
+  v6 = qword_140014DA0[v2];
+  if ( *(_QWORD *)(v6 + 8 * v1) )
+  {
+LABEL_10:
+    _mm_lfence();
+    return *(_QWORD *)(v6 + 8 * v1) + 8 * v3;
+  }
+  v7 = sub_1400055C0(0x1000u);
+  v8 = (void *)v7;
+  if ( v7 )
+  {
+    _mm_lfence();
+    sub_14000FEC0(v7, 0, 4096);
+    if ( _InterlockedCompareExchange64((volatile signed __int64 *)(v6 + 8 * v1), (signed __int64)v8, 0) )
+      ExFreePoolWithTag(v8, 0);
+    goto LABEL_10;
+  }
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000501c: mov     [rsp+arg_0], rbx
+0x140005021: mov     [rsp+arg_8], rbp
+0x140005026: mov     [rsp+arg_10], rsi
+0x14000502b: push    rdi
+0x14000502c: push    r14
+0x14000502e: push    r15
+0x140005030: sub     rsp, 20h
+0x140005034: mov     eax, 1FFh
+0x140005039: mov     rbx, rcx
+0x14000503c: shr     rbx, 9
+0x140005040: mov     rbp, rcx
+0x140005043: mov     rdi, rcx
+0x140005046: and     rbx, rax
+0x140005049: shr     rdi, 12h
+0x14000504d: and     rbp, rax
+0x140005050: cmp     rdi, 804h
+0x140005057: jnb     loc_1400050FA
+0x14000505d: lea     r14, qword_140014DA0
+0x140005064: mov     r15d, 1000h
+0x14000506a: cmp     qword ptr [r14+rdi*8], 0
+0x14000506f: jnz     short loc_1400050A8
+0x140005071: xor     edx, edx
+0x140005073: mov     ecx, r15d; NumberOfBytes
+0x140005076: call    sub_1400055C0
+0x14000507b: mov     rsi, rax
+0x14000507e: test    rax, rax
+0x140005081: jz      short loc_1400050FA
+0x140005083: lfence
+0x140005086: mov     r8d, r15d
+0x140005089: xor     edx, edx
+0x14000508b: mov     rcx, rax
+0x14000508e: call    sub_14000FEC0
+0x140005093: xor     eax, eax
+0x140005095: lock cmpxchg [r14+rdi*8], rsi
+0x14000509b: jz      short loc_1400050A8
+0x14000509d: xor     edx, edx; Tag
+0x14000509f: mov     rcx, rsi; P
+0x1400050a2: call    cs:ExFreePoolWithTag
+0x1400050a8: lfence
+0x1400050ab: mov     rdi, [r14+rdi*8]
+0x1400050af: cmp     qword ptr [rdi+rbx*8], 0
+0x1400050b4: jnz     short loc_1400050ED
+0x1400050b6: xor     edx, edx
+0x1400050b8: mov     rcx, r15; NumberOfBytes
+0x1400050bb: call    sub_1400055C0
+0x1400050c0: mov     rsi, rax
+0x1400050c3: test    rax, rax
+0x1400050c6: jz      short loc_1400050FA
+0x1400050c8: lfence
+0x1400050cb: mov     r8, r15
+0x1400050ce: xor     edx, edx
+0x1400050d0: mov     rcx, rax
+0x1400050d3: call    sub_14000FEC0
+0x1400050d8: xor     eax, eax
+0x1400050da: lock cmpxchg [rdi+rbx*8], rsi
+0x1400050e0: jz      short loc_1400050ED
+0x1400050e2: xor     edx, edx; Tag
+0x1400050e4: mov     rcx, rsi; P
+0x1400050e7: call    cs:ExFreePoolWithTag
+0x1400050ed: lfence
+0x1400050f0: mov     rax, [rdi+rbx*8]
+0x1400050f4: lea     rax, [rax+rbp*8]
+0x1400050f8: jmp     short loc_1400050FC
+0x1400050fa: xor     eax, eax
+0x1400050fc: mov     rbx, [rsp+38h+arg_0]
+0x140005101: mov     rbp, [rsp+38h+arg_8]
+0x140005106: mov     rsi, [rsp+38h+arg_10]
+0x14000510b: add     rsp, 20h
+0x14000510f: pop     r15
+0x140005111: pop     r14
+0x140005113: pop     rdi
+0x140005114: retn

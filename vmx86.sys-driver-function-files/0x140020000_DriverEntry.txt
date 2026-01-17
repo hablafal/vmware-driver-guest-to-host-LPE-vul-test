@@ -1,0 +1,58 @@
+=== METADATA ===
+Name: DriverEntry
+Addr: 0x140020000
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140020000: Access Member +0x8 ([rsp+arg_0])
+  0x140020020: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] ENTRY_POINT
+  [!] DRIVER_ENTRY
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140020000-0x14002002b -> Jumps to: 
+
+=== CODE ===
+NTSTATUS __stdcall DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath)
+{
+  sub_14002002C();
+  return sub_140003464(DriverObject, RegistryPath);
+}
+
+
+=== DISASM ===
+0x140020000: mov     [rsp+arg_0], rbx
+0x140020005: push    rdi
+0x140020006: sub     rsp, 20h
+0x14002000a: mov     rbx, rdx
+0x14002000d: mov     rdi, rcx
+0x140020010: call    sub_14002002C
+0x140020015: mov     rdx, rbx; SourceString
+0x140020018: mov     rcx, rdi; IoObject
+0x14002001b: call    sub_140003464
+0x140020020: mov     rbx, [rsp+28h+arg_0]
+0x140020025: add     rsp, 20h
+0x140020029: pop     rdi
+0x14002002a: retn

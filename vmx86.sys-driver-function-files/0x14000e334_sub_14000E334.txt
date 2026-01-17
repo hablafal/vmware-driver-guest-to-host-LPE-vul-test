@@ -1,0 +1,82 @@
+=== METADATA ===
+Name: sub_14000E334
+Addr: 0x14000e334
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000e342: Access Member +0x800 ([rax+800h])
+  0x14000e355: Access Member +0x8 ([rdx+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008754 (0x14000878E)
+  <- sub_14000922C (0x140009C12)
+  <- sub_14000922C (0x140009C36)
+  <- sub_14000922C (0x140009C5A)
+  <- sub_14000922C (0x140009C7E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000e334-0x14000e33f -> Jumps to: 0x14000e33f, 0x14000e352
+  Block 0x14000e33f-0x14000e352 -> Jumps to: 
+  Block 0x14000e352-0x14000e361 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000E334(__int64 a1, int a2, unsigned int a3)
+{
+  __int64 v3; // rax
+  unsigned int v5; // ecx
+  __int64 result; // rax
+  __int64 v7; // rcx
+
+  v3 = a2;
+  if ( *(_BYTE *)a1 )
+  {
+    v5 = v3 + 2048;
+    __writemsr(v5, a3);
+    return a3;
+  }
+  else
+  {
+    v7 = v3;
+    result = *(_QWORD *)(a1 + 8);
+    *(_DWORD *)(result + 16 * v7) = a3;
+  }
+  return result;
+}
+
+
+=== DISASM ===
+0x14000e334: cmp     byte ptr [rcx], 0
+0x14000e337: movsxd  rax, edx
+0x14000e33a: mov     rdx, rcx
+0x14000e33d: jz      short loc_14000E352
+0x14000e33f: mov     edx, r8d
+0x14000e342: lea     ecx, [rax+800h]
+0x14000e348: shr     rdx, 20h
+0x14000e34c: mov     eax, r8d
+0x14000e34f: wrmsr
+0x14000e351: retn
+0x14000e352: mov     rcx, rax
+0x14000e355: mov     rax, [rdx+8]
+0x14000e359: add     rcx, rcx
+0x14000e35c: mov     [rax+rcx*8], r8d
+0x14000e360: retn

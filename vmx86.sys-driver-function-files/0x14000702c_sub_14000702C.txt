@@ -1,0 +1,94 @@
+=== METADATA ===
+Name: sub_14000702C
+Addr: 0x14000702c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] HANDLE_MANIPULATION
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000704a: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000703a: Access Member +0x38 ([rsp+48h+var_10])
+  0x140007044: Access Member +0x8 ([rdx+8])
+  0x14000704a: Access Member +0x28 ([rsp+48h+var_20])
+  0x14000705c: Access Member +0x30 ([rsp+48h+var_18])
+  0x140007061: Access Member +0x20 ([rsp+48h+Object])
+  0x140007074: Access Member +0x30 ([rsp+48h+var_18])
+  0x140007084: Access Member +0x30 ([rsp+48h+var_18])
+  0x140007094: Access Member +0x38 ([rsp+48h+var_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000D3E0 (0x14000D56B)
+
+=== IMPORTS ===
+  -> 0x140007066 calls ObReferenceObjectByHandle
+  -> 0x14000707e calls KeSetEvent
+  -> 0x140007089 calls ObfDereferenceObject
+
+=== STRINGS ===
+  0x140007030 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x14000702c-0x140007070 -> Jumps to: 0x140007070, 0x140007074
+  Block 0x140007070-0x140007074 -> Jumps to: 0x140007094
+  Block 0x140007074-0x140007094 -> Jumps to: 0x140007094
+  Block 0x140007094-0x1400070a6 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000702C(__int64 a1, unsigned int *a2)
+{
+  PVOID Object; // [rsp+30h] [rbp-18h] BYREF
+
+  if ( ObReferenceObjectByHandle((HANDLE)(*a2 | ((unsigned __int64)a2[2] << 32)), 0x100000u, 0, 1, &Object, 0) < 0 )
+    return 0;
+  KeSetEvent((PRKEVENT)Object, 0, 0);
+  ObfDereferenceObject(Object);
+  return 1;
+}
+
+
+=== DISASM ===
+0x14000702c: sub     rsp, 48h
+0x140007030: mov     rax, cs:__security_cookie
+0x140007037: xor     rax, rsp
+0x14000703a: mov     [rsp+48h+var_10], rax
+0x14000703f: mov     eax, [rdx]
+0x140007041: mov     r9b, 1; AccessMode
+0x140007044: mov     ecx, [rdx+8]
+0x140007047: xor     r8d, r8d; ObjectType
+0x14000704a: and     [rsp+48h+var_20], 0
+0x140007050: mov     edx, 100000h; DesiredAccess
+0x140007055: shl     rcx, 20h
+0x140007059: or      rcx, rax; Handle
+0x14000705c: lea     rax, [rsp+48h+var_18]
+0x140007061: mov     [rsp+48h+Object], rax; Object
+0x140007066: call    cs:ObReferenceObjectByHandle
+0x14000706c: test    eax, eax
+0x14000706e: jns     short loc_140007074
+0x140007070: xor     eax, eax
+0x140007072: jmp     short loc_140007094
+0x140007074: mov     rcx, [rsp+48h+var_18]; Event
+0x140007079: xor     r8d, r8d; Wait
+0x14000707c: xor     edx, edx; Increment
+0x14000707e: call    cs:KeSetEvent
+0x140007084: mov     rcx, [rsp+48h+var_18]; Object
+0x140007089: call    cs:ObfDereferenceObject
+0x14000708f: mov     eax, 1
+0x140007094: mov     rcx, [rsp+48h+var_10]
+0x140007099: xor     rcx, rsp; StackCookie
+0x14000709c: call    __security_check_cookie
+0x1400070a1: add     rsp, 48h
+0x1400070a5: retn

@@ -1,0 +1,321 @@
+=== METADATA ===
+Name: sub_140006B30
+Addr: 0x140006b30
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140006b71: AND with Mask 0x0
+  0x140006bb0: AND with Mask 0xF
+  0x140006be7: AND with Mask 0xF
+  0x140006c37: AND with Mask 0x7FFF
+  0x140006c62: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140006b30: Access Member +0x18 ([rsp-18h+arg_10])
+  0x140006b35: Access Member +0x20 ([rsp-18h+arg_18])
+  0x140006c00: Access Member +0x4 ([rbx+4])
+  0x140006c05: Access Member +0x10 ([rbx+10h])
+  0x140006cfb: Access Member +0x80 ([rsp+80h+var_s0])
+  0x140006d03: Access Member +0x30 ([r11+30h])
+  0x140006d07: Access Member +0x38 ([r11+38h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x1400045A0)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140006b48 -> 2
+  0x140006c1b -> h
+  0x140006c6c -> h
+  0x140006ca2 -> h
+  0x140006ccd -> h
+
+=== BASIC BLOCKS ===
+  Block 0x140006b30-0x140006bcb -> Jumps to: 0x140006bcb, 0x140006bd9
+  Block 0x140006bcb-0x140006bd9 -> Jumps to: 0x140006bd9
+  Block 0x140006bd9-0x140006bf7 -> Jumps to: 0x140006bf7
+  Block 0x140006bf7-0x140006c12 -> Jumps to: 0x140006c12, 0x140006bf7
+  Block 0x140006c12-0x140006c56 -> Jumps to: 0x140006c56, 0x140006c69
+  Block 0x140006c56-0x140006c5a -> Jumps to: 0x140006c5a, 0x140006c62
+  Block 0x140006c5a-0x140006c62 -> Jumps to: 0x140006cef
+  Block 0x140006c62-0x140006c69 -> Jumps to: 0x140006c69
+  Block 0x140006c69-0x140006c8a -> Jumps to: 0x140006c8a, 0x140006c93
+  Block 0x140006c8a-0x140006c8e -> Jumps to: 0x140006c8e, 0x140006c93
+  Block 0x140006c8e-0x140006c93 -> Jumps to: 0x140006ced
+  Block 0x140006c93-0x140006c9b -> Jumps to: 0x140006c9b, 0x140006c9f
+  Block 0x140006c9b-0x140006c9f -> Jumps to: 0x140006c9f, 0x140006cbb
+  Block 0x140006c9f-0x140006cbb -> Jumps to: 0x140006c5a, 0x140006cbb
+  Block 0x140006cbb-0x140006cc2 -> Jumps to: 0x140006cc2, 0x140006cc7
+  Block 0x140006cc2-0x140006cc7 -> Jumps to: 0x140006cc7, 0x140006cea
+  Block 0x140006cc7-0x140006ce7 -> Jumps to: 0x140006c5a, 0x140006ce7
+  Block 0x140006ce7-0x140006cea -> Jumps to: 0x140006cea
+  Block 0x140006cea-0x140006ced -> Jumps to: 0x140006ced
+  Block 0x140006ced-0x140006cef -> Jumps to: 0x140006cef
+  Block 0x140006cef-0x140006d13 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140006B30(unsigned int a1, unsigned int *a2)
+{
+  char v9; // di
+  unsigned int v21; // r9d
+  _DWORD *v26; // rbx
+  unsigned int v27; // r8d
+  unsigned int v28; // r10d
+  int v29; // ecx
+  __int64 result; // rax
+  unsigned int v31; // edx
+  unsigned int v32; // eax
+  unsigned int Data; // [rsp+20h] [rbp-60h] BYREF
+  int v34; // [rsp+24h] [rbp-5Ch] BYREF
+  _DWORD v35[4]; // [rsp+28h] [rbp-58h] BYREF
+  _DWORD v36[14]; // [rsp+38h] [rbp-48h] BYREF
+
+  _RAX = 0;
+  __asm { cpuid }
+  v9 = 0;
+  v35[2] = 0;
+  _RAX = 2147483650LL;
+  v36[0] = _RCX;
+  v35[3] = _RBX;
+  v36[1] = _RDX;
+  __asm { cpuid }
+  v36[2] = _RAX;
+  _RAX = 2147483651LL;
+  v36[4] = _RCX;
+  v36[3] = _RBX;
+  v36[5] = _RDX;
+  __asm { cpuid }
+  v36[6] = _RAX;
+  _RAX = 2147483652LL;
+  v36[8] = _RCX;
+  v36[7] = _RBX;
+  v21 = ((unsigned int)dword_14001D0C4 >> 8) & 0xF;
+  v36[9] = _RDX;
+  __asm { cpuid }
+  v36[10] = _RAX;
+  v36[11] = _RBX;
+  v36[12] = _RCX;
+  v36[13] = _RDX;
+  if ( v21 == 15 )
+    v21 = (unsigned __int8)((unsigned int)dword_14001D0C4 >> 20) + 15;
+  v26 = v36;
+  v27 = 0;
+  v28 = 0;
+  do
+  {
+    ++v28;
+    v29 = *v26 ^ v26[1] ^ *(v26 - 1) ^ *(v26 - 2);
+    v26 += 4;
+    v27 ^= v29;
+  }
+  while ( v28 < 4 );
+  v34 = ((unsigned __int16)(HIWORD(v27) ^ v27) ^ (unsigned __int16)((HIWORD(v27) ^ v27) >> 1)) & 0x7FFF
+      | (((v21 << 8) | (unsigned __int8)(((unsigned __int8)dword_14001D0C4 >> 4) + 16 * BYTE2(dword_14001D0C4))) << 15);
+  result = sub_140003874(&Data, L"host.maxkHzEstimate.value", 0);
+  if ( (int)result < 0 )
+  {
+    if ( (_DWORD)result != -1073741772 )
+    {
+LABEL_7:
+      _mm_lfence();
+      return result;
+    }
+    Data = 0;
+    v9 = 1;
+  }
+  v31 = sub_140003874(v35, L"host.maxkHzEstimate.cpuidHash", 0);
+  if ( (int)(v31 + 0x80000000) < 0 || v31 == -1073741772 )
+  {
+    if ( v34 != v35[0] || v31 == -1073741772 )
+    {
+      v9 = 1;
+      result = sub_140003874(&v34, L"host.maxkHzEstimate.cpuidHash", 1);
+      v31 = result;
+      if ( (int)result < 0 )
+        goto LABEL_7;
+    }
+    v32 = Data;
+    if ( a1 > Data || v9 )
+    {
+      Data = a1;
+      result = sub_140003874(&Data, L"host.maxkHzEstimate.value", 1);
+      v31 = result;
+      if ( (int)result < 0 )
+        goto LABEL_7;
+      v32 = Data;
+    }
+    *a2 = v32;
+  }
+  else
+  {
+    _mm_lfence();
+  }
+  return v31;
+}
+
+
+=== DISASM ===
+0x140006b30: mov     [rsp-18h+arg_10], rbx
+0x140006b35: mov     [rsp-18h+arg_18], rsi
+0x140006b3a: push    rbp
+0x140006b3b: push    rdi
+0x140006b3c: push    r14
+0x140006b3e: mov     rbp, rsp
+0x140006b41: sub     rsp, 80h
+0x140006b48: mov     rax, cs:__security_cookie
+0x140006b4f: xor     rax, rsp
+0x140006b52: mov     [rbp+var_10], rax
+0x140006b56: mov     r8d, cs:dword_14001D0C4
+0x140006b5d: mov     esi, ecx
+0x140006b5f: xor     ecx, ecx
+0x140006b61: xor     eax, eax
+0x140006b63: mov     r14, rdx
+0x140006b66: mov     r9d, r8d
+0x140006b69: cpuid
+0x140006b6b: mov     [rbp+var_50], eax
+0x140006b6e: xor     dil, dil
+0x140006b71: and     [rbp+var_50], 0
+0x140006b75: mov     eax, 80000002h
+0x140006b7a: mov     [rbp+var_48], ecx
+0x140006b7d: xor     ecx, ecx
+0x140006b7f: mov     [rbp+var_4C], ebx
+0x140006b82: mov     [rbp+var_44], edx
+0x140006b85: cpuid
+0x140006b87: mov     [rbp+var_40], eax
+0x140006b8a: mov     eax, 80000003h
+0x140006b8f: mov     [rbp+var_38], ecx
+0x140006b92: xor     ecx, ecx
+0x140006b94: mov     [rbp+var_3C], ebx
+0x140006b97: mov     [rbp+var_34], edx
+0x140006b9a: cpuid
+0x140006b9c: mov     [rbp+var_30], eax
+0x140006b9f: mov     eax, 80000004h
+0x140006ba4: mov     [rbp+var_28], ecx
+0x140006ba7: xor     ecx, ecx
+0x140006ba9: shr     r9d, 8
+0x140006bad: mov     [rbp+var_2C], ebx
+0x140006bb0: and     r9d, 0Fh
+0x140006bb4: mov     [rbp+var_24], edx
+0x140006bb7: cpuid
+0x140006bb9: mov     [rbp+var_20], eax
+0x140006bbc: mov     [rbp+var_1C], ebx
+0x140006bbf: mov     [rbp+var_18], ecx
+0x140006bc2: mov     [rbp+var_14], edx
+0x140006bc5: cmp     r9d, 0Fh
+0x140006bc9: jnz     short loc_140006BD9
+0x140006bcb: mov     eax, r8d
+0x140006bce: shr     eax, 14h
+0x140006bd1: movzx   r9d, al
+0x140006bd5: add     r9d, 0Fh
+0x140006bd9: mov     edx, r8d
+0x140006bdc: lea     rbx, [rbp+var_48]
+0x140006be0: shr     edx, 10h
+0x140006be3: shr     r8d, 4
+0x140006be7: and     r8d, 0Fh
+0x140006beb: shl     edx, 4
+0x140006bee: add     edx, r8d
+0x140006bf1: xor     r8d, r8d
+0x140006bf4: xor     r10d, r10d
+0x140006bf7: mov     ecx, [rbx-8]
+0x140006bfa: inc     r10d
+0x140006bfd: xor     ecx, [rbx-4]
+0x140006c00: xor     ecx, [rbx+4]
+0x140006c03: xor     ecx, [rbx]
+0x140006c05: lea     rbx, [rbx+10h]
+0x140006c09: xor     r8d, ecx
+0x140006c0c: cmp     r10d, 4
+0x140006c10: jb      short loc_140006BF7
+0x140006c12: mov     eax, r8d
+0x140006c15: movzx   ecx, dl
+0x140006c18: shr     eax, 10h
+0x140006c1b: lea     rdx, aHostMaxkhzesti; "host.maxkHzEstimate.value"
+0x140006c22: xor     r8d, eax
+0x140006c25: shl     r9d, 8
+0x140006c29: or      ecx, r9d
+0x140006c2c: mov     eax, r8d
+0x140006c2f: shr     eax, 1
+0x140006c31: xor     eax, r8d
+0x140006c34: shl     ecx, 0Fh
+0x140006c37: and     eax, 7FFFh
+0x140006c3c: xor     r8d, r8d
+0x140006c3f: or      ecx, eax
+0x140006c41: mov     [rbp+var_5C], ecx
+0x140006c44: lea     rcx, [rbp+Data]; Data
+0x140006c48: call    sub_140003874
+0x140006c4d: mov     ebx, 0C0000034h
+0x140006c52: test    eax, eax
+0x140006c54: jns     short loc_140006C69
+0x140006c56: cmp     eax, ebx
+0x140006c58: jz      short loc_140006C62
+0x140006c5a: lfence
+0x140006c5d: jmp     loc_140006CEF
+0x140006c62: and     [rbp+Data], 0
+0x140006c66: mov     dil, 1
+0x140006c69: xor     r8d, r8d
+0x140006c6c: lea     rdx, aHostMaxkhzesti_0; "host.maxkHzEstimate.cpuidHash"
+0x140006c73: lea     rcx, [rbp+var_58]; Data
+0x140006c77: call    sub_140003874
+0x140006c7c: mov     edx, eax
+0x140006c7e: mov     eax, 80000000h
+0x140006c83: lea     ecx, [rdx+rax]
+0x140006c86: test    eax, ecx
+0x140006c88: jnz     short loc_140006C93
+0x140006c8a: cmp     edx, ebx
+0x140006c8c: jz      short loc_140006C93
+0x140006c8e: lfence
+0x140006c91: jmp     short loc_140006CED
+0x140006c93: mov     eax, [rbp+var_58]
+0x140006c96: cmp     [rbp+var_5C], eax
+0x140006c99: jnz     short loc_140006C9F
+0x140006c9b: cmp     edx, ebx
+0x140006c9d: jnz     short loc_140006CBB
+0x140006c9f: mov     dil, 1
+0x140006ca2: lea     rdx, aHostMaxkhzesti_0; "host.maxkHzEstimate.cpuidHash"
+0x140006ca9: mov     r8b, dil
+0x140006cac: lea     rcx, [rbp+var_5C]; Data
+0x140006cb0: call    sub_140003874
+0x140006cb5: mov     edx, eax
+0x140006cb7: test    eax, eax
+0x140006cb9: js      short loc_140006C5A
+0x140006cbb: mov     eax, [rbp+Data]
+0x140006cbe: cmp     esi, eax
+0x140006cc0: ja      short loc_140006CC7
+0x140006cc2: test    dil, dil
+0x140006cc5: jz      short loc_140006CEA
+0x140006cc7: mov     r8b, 1
+0x140006cca: mov     [rbp+Data], esi
+0x140006ccd: lea     rdx, aHostMaxkhzesti; "host.maxkHzEstimate.value"
+0x140006cd4: lea     rcx, [rbp+Data]; Data
+0x140006cd8: call    sub_140003874
+0x140006cdd: mov     edx, eax
+0x140006cdf: test    eax, eax
+0x140006ce1: js      loc_140006C5A
+0x140006ce7: mov     eax, [rbp+Data]
+0x140006cea: mov     [r14], eax
+0x140006ced: mov     eax, edx
+0x140006cef: mov     rcx, [rbp+var_10]
+0x140006cf3: xor     rcx, rsp; StackCookie
+0x140006cf6: call    __security_check_cookie
+0x140006cfb: lea     r11, [rsp+80h+var_s0]
+0x140006d03: mov     rbx, [r11+30h]
+0x140006d07: mov     rsi, [r11+38h]
+0x140006d0b: mov     rsp, r11
+0x140006d0e: pop     r14
+0x140006d10: pop     rdi
+0x140006d11: pop     rbp
+0x140006d12: retn

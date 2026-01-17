@@ -1,0 +1,81 @@
+=== METADATA ===
+Name: sub_14000A418
+Addr: 0x14000a418
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A3E0 (0x14000A3E7)
+  <- sub_14000A6F0 (0x14000A702)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000a41b -> 
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000a418-0x14000a42e -> Jumps to: 0x14000a42e
+  Block 0x14000a42e-0x14000a433 -> Jumps to: 0x14000a433, 0x14000a43f
+  Block 0x14000a433-0x14000a43e -> Jumps to: 0x14000a42e, 0x14000a43e
+  Block 0x14000a43e-0x14000a43f -> Jumps to: 
+  Block 0x14000a43f-0x14000a44d -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000A418(int a1, unsigned int a2)
+{
+  _DWORD *v2; // r8
+  __int64 result; // rax
+  __int64 v4; // r9
+  unsigned int v5; // edx
+
+  v2 = &unk_140014A10;
+  result = 0;
+  v4 = 16LL * a2 + 8;
+  v5 = 0;
+  while ( a1 != *v2 )
+  {
+    ++v5;
+    v2 += 4;
+    if ( v5 >= 0x1A )
+      return result;
+  }
+  return qword_14001D0A0 + v4 * v5;
+}
+
+
+=== DISASM ===
+0x14000a418: mov     r9d, edx
+0x14000a41b: lea     r8, unk_140014A10
+0x14000a422: xor     eax, eax
+0x14000a424: shl     r9, 4
+0x14000a428: add     r9, 8
+0x14000a42c: mov     edx, eax
+0x14000a42e: cmp     ecx, [r8]
+0x14000a431: jz      short loc_14000A43F
+0x14000a433: inc     edx
+0x14000a435: add     r8, 10h
+0x14000a439: cmp     edx, 1Ah
+0x14000a43c: jb      short loc_14000A42E
+0x14000a43e: retn
+0x14000a43f: mov     eax, edx
+0x14000a441: imul    rax, r9
+0x14000a445: add     rax, cs:qword_14001D0A0
+0x14000a44c: retn

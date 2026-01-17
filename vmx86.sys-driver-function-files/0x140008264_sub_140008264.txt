@@ -1,0 +1,167 @@
+=== METADATA ===
+Name: sub_140008264
+Addr: 0x140008264
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140008264: Access Member +0x10 ([rsp+arg_8])
+  0x140008269: Access Member +0x18 ([rsp+arg_10])
+  0x14000826e: Access Member +0x20 ([rsp+arg_18])
+  0x140008282: Access Member +0x28 ([rsp+38h+var_10])
+  0x1400082c5: Access Member +0x20 ([rsp+38h+var_18])
+  0x1400082d8: Access Member +0x20 (dword ptr [rsp+38h+var_18])
+  0x14000834c: Access Member +0x28 ([rsp+38h+var_10])
+  0x140008359: Access Member +0x48 ([rsp+38h+arg_8])
+  0x14000835e: Access Member +0x50 ([rsp+38h+arg_10])
+  0x140008363: Access Member +0x58 ([rsp+38h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008C68 (0x140008C90)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140008278 -> 2
+  0x1400082a0 -> TaskAllocHVRootPage
+  0x1400082a7 -> %s: Failed to allocate content.
+
+  0x140008314 -> TaskAllocHVRootPage
+  0x14000831b -> %s: Failed to setup page mpn=%llx.
+
+  0x140008331 -> TaskAllocHVRootPage
+  0x140008338 -> %s: Failed to allocate page.
+
+
+=== BASIC BLOCKS ===
+  Block 0x140008264-0x1400082a0 -> Jumps to: 0x1400082a0, 0x1400082b8
+  Block 0x1400082a0-0x1400082b8 -> Jumps to: 0x14000834c
+  Block 0x1400082b8-0x1400082d8 -> Jumps to: 0x1400082d8, 0x1400082de
+  Block 0x1400082d8-0x1400082de -> Jumps to: 0x1400082de
+  Block 0x1400082de-0x1400082f5 -> Jumps to: 0x1400082f5, 0x140008331
+  Block 0x1400082f5-0x140008304 -> Jumps to: 0x140008304, 0x140008311
+  Block 0x140008304-0x140008311 -> Jumps to: 0x140008311, 0x140008344
+  Block 0x140008311-0x140008331 -> Jumps to: 0x140008344
+  Block 0x140008331-0x140008344 -> Jumps to: 0x140008344
+  Block 0x140008344-0x14000834c -> Jumps to: 0x14000834c
+  Block 0x14000834c-0x14000836e -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140008264(volatile signed __int64 *a1)
+{
+  _DWORD *v2; // rax
+  _DWORD *v3; // rdi
+  unsigned __int64 v4; // rax
+  unsigned __int64 v5; // rbx
+  unsigned __int64 v6; // [rsp+20h] [rbp-18h] BYREF
+
+  v2 = sub_1400055C0(0x1000u, 1);
+  v3 = v2;
+  if ( v2 )
+  {
+    sub_14000FEC0(v2, 0, 4096);
+    if ( !(unsigned int)sub_140006D14(0x480u, &v6) )
+      *v3 = v6;
+    v4 = sub_14000578C();
+    v5 = v4;
+    if ( v4 == 0x3FFFFFFFFFLL )
+    {
+      sub_140003A14("%s: Failed to allocate page.\n", "TaskAllocHVRootPage");
+    }
+    else if ( (unsigned int)sub_14000774C(v4, (__int64)v3)
+           || _InterlockedCompareExchange64(a1, v5, 0x3FFFFFFFFFLL) != 0x3FFFFFFFFFLL )
+    {
+      sub_140003A14("%s: Failed to setup page mpn=%llx.\n", "TaskAllocHVRootPage", v5);
+      sub_140005EF8(v5);
+    }
+    sub_140005DC4(v3);
+  }
+  else
+  {
+    sub_140003A14("%s: Failed to allocate content.\n", "TaskAllocHVRootPage");
+  }
+}
+
+
+=== DISASM ===
+0x140008264: mov     [rsp+arg_8], rbx
+0x140008269: mov     [rsp+arg_10], rbp
+0x14000826e: mov     [rsp+arg_18], rsi
+0x140008273: push    rdi
+0x140008274: sub     rsp, 30h
+0x140008278: mov     rax, cs:__security_cookie
+0x14000827f: xor     rax, rsp
+0x140008282: mov     [rsp+38h+var_10], rax
+0x140008287: mov     rsi, rcx
+0x14000828a: mov     ebx, 1000h
+0x14000828f: mov     ecx, ebx; NumberOfBytes
+0x140008291: mov     dl, 1
+0x140008293: call    sub_1400055C0
+0x140008298: mov     rdi, rax
+0x14000829b: test    rax, rax
+0x14000829e: jnz     short loc_1400082B8
+0x1400082a0: lea     rdx, aTaskallochvroo; "TaskAllocHVRootPage"
+0x1400082a7: lea     rcx, aSFailedToAlloc; "%s: Failed to allocate content.\n"
+0x1400082ae: call    sub_140003A14
+0x1400082b3: jmp     loc_14000834C
+0x1400082b8: mov     r8, rbx
+0x1400082bb: xor     edx, edx
+0x1400082bd: mov     rcx, rdi
+0x1400082c0: call    sub_14000FEC0
+0x1400082c5: lea     rdx, [rsp+38h+var_18]
+0x1400082ca: mov     ecx, 480h
+0x1400082cf: call    sub_140006D14
+0x1400082d4: test    eax, eax
+0x1400082d6: jnz     short loc_1400082DE
+0x1400082d8: mov     eax, dword ptr [rsp+38h+var_18]
+0x1400082dc: mov     [rdi], eax
+0x1400082de: call    sub_14000578C
+0x1400082e3: mov     rbp, 3FFFFFFFFFh
+0x1400082ed: mov     rbx, rax
+0x1400082f0: cmp     rax, rbp
+0x1400082f3: jz      short loc_140008331
+0x1400082f5: mov     rdx, rdi
+0x1400082f8: mov     rcx, rax
+0x1400082fb: call    sub_14000774C
+0x140008300: test    eax, eax
+0x140008302: jnz     short loc_140008311
+0x140008304: mov     rax, rbp
+0x140008307: lock cmpxchg [rsi], rbx
+0x14000830c: cmp     rax, rbp
+0x14000830f: jz      short loc_140008344
+0x140008311: mov     r8, rbx
+0x140008314: lea     rdx, aTaskallochvroo; "TaskAllocHVRootPage"
+0x14000831b: lea     rcx, aSFailedToSetup; "%s: Failed to setup page mpn=%llx.\n"
+0x140008322: call    sub_140003A14
+0x140008327: mov     rcx, rbx
+0x14000832a: call    sub_140005EF8
+0x14000832f: jmp     short loc_140008344
+0x140008331: lea     rdx, aTaskallochvroo; "TaskAllocHVRootPage"
+0x140008338: lea     rcx, aSFailedToAlloc_0; "%s: Failed to allocate page.\n"
+0x14000833f: call    sub_140003A14
+0x140008344: mov     rcx, rdi
+0x140008347: call    sub_140005DC4
+0x14000834c: mov     rcx, [rsp+38h+var_10]
+0x140008351: xor     rcx, rsp; StackCookie
+0x140008354: call    __security_check_cookie
+0x140008359: mov     rbx, [rsp+38h+arg_8]
+0x14000835e: mov     rbp, [rsp+38h+arg_10]
+0x140008363: mov     rsi, [rsp+38h+arg_18]
+0x140008368: add     rsp, 30h
+0x14000836c: pop     rdi
+0x14000836d: retn

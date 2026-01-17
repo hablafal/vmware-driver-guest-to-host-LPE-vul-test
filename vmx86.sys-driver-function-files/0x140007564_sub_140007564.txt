@@ -1,0 +1,80 @@
+=== METADATA ===
+Name: sub_140007564
+Addr: 0x140007564
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140007564: Access Member +0x10 ([rcx+10h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008D04 (0x140008F07)
+  <- sub_140008D04 (0x140008FF6)
+  <- sub_14000A1FC (0x14000A26D)
+  <- sub_14000A564 (0x14000A643)
+  <- sub_14000B074 (0x14000B161)
+  <- sub_14000B074 (0x14000B184)
+  <- sub_14000B074 (0x14000B1BB)
+  <- sub_14000B074 (0x14000B206)
+  <- sub_14000B218 (0x14000B292)
+  <- sub_14000B218 (0x14000B2C0)
+  <- sub_14000B2F0 (0x14000B32D)
+  <- sub_14000B3B8 (0x14000B4B0)
+  <- sub_14000B3B8 (0x14000B5DD)
+  <- sub_14000B3B8 (0x14000B740)
+  <- sub_14000B768 (0x14000B7CB)
+  <- sub_14000B804 (0x14000B84E)
+  <- sub_14000C15C (0x14000C196)
+  <- sub_14000C280 (0x14000C480)
+  <- sub_14000C5A0 (0x14000C5D0)
+  <- sub_14000C5E4 (0x14000C60E)
+  <- sub_14000C9DC (0x14000CA3B)
+  <- sub_14000CA68 (0x14000CAA2)
+  <- sub_14000CCBC (0x14000CE53)
+  <- sub_14000D0A8 (0x14000D0D7)
+  <- sub_14000D0F8 (0x14000D132)
+  <- sub_14000D160 (0x14000D1A8)
+  <- sub_14000D3E0 (0x14000D6C9)
+  <- sub_14000D3E0 (0x14000D74C)
+  <- sub_14000EE70 (0x14000EF32)
+  <- sub_14000EFA4 (0x14000F02A)
+  <- sub_14000F0AC (0x14000F0ED)
+  <- sub_14000F300 (0x14000F3C1)
+  <- sub_14000F300 (0x14000F3DD)
+  <- sub_14000F9BC (0x14000F9F7)
+  <- sub_14000F9BC (0x14000FA31)
+  <- sub_14000FA80 (0x14000FBDA)
+  <- sub_14000FA80 (0x14000FC66)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140007564-0x14000756f -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140007564(__int64 a1)
+{
+  ExReleaseFastMutex(*(PFAST_MUTEX *)(a1 + 16));
+}
+
+
+=== DISASM ===
+0x140007564: mov     rcx, [rcx+10h]
+0x140007568: jmp     cs:ExReleaseFastMutex

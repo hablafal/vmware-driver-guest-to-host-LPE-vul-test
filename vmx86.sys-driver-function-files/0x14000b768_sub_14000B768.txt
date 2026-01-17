@@ -1,0 +1,120 @@
+=== METADATA ===
+Name: sub_14000B768
+Addr: 0x14000b768
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000b768: Access Member +0x8 ([rsp+arg_0])
+  0x14000b76d: Access Member +0x10 ([rsp+arg_8])
+  0x14000b772: Access Member +0x18 ([rsp+arg_10])
+  0x14000b782: Access Member +0x50 ([rsp+28h+arg_20])
+  0x14000b7ee: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000b7f3: Access Member +0x38 ([rsp+28h+arg_8])
+  0x14000b7f8: Access Member +0x40 ([rsp+28h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140004337)
+  <- sub_14000B3B8 (0x14000B635)
+  <- sub_14000D3E0 (0x14000D5CA)
+  <- sub_14000EE70 (0x14000EEAF)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000b768-0x14000b799 -> Jumps to: 0x14000b799, 0x14000b7a2
+  Block 0x14000b799-0x14000b7a2 -> Jumps to: 0x14000b7ee
+  Block 0x14000b7a2-0x14000b7d5 -> Jumps to: 0x14000b7d5, 0x14000b7dd
+  Block 0x14000b7d5-0x14000b7da -> Jumps to: 0x14000b7da, 0x14000b7eb
+  Block 0x14000b7da-0x14000b7dd -> Jumps to: 0x14000b7dd
+  Block 0x14000b7dd-0x14000b7eb -> Jumps to: 0x14000b7eb
+  Block 0x14000b7eb-0x14000b7ee -> Jumps to: 0x14000b7ee
+  Block 0x14000b7ee-0x14000b803 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000B768(__int64 a1, char *a2, unsigned __int64 a3, char a4, char a5)
+{
+  unsigned __int64 v5; // rbx
+  __int64 v10; // rdi
+
+  v5 = a3;
+  if ( !sub_14000B074(a1, a3, a5) )
+    return -10002;
+  sub_140007558(a1);
+  v10 = sub_140005720(a1, a2, v5, a4);
+  sub_140007564(a1);
+  if ( v10 < 0 )
+    goto LABEL_6;
+  if ( v10 < v5 )
+  {
+    v5 -= v10;
+LABEL_6:
+    _mm_lfence();
+    sub_14000B2F0(a1, v5);
+  }
+  return v10;
+}
+
+
+=== DISASM ===
+0x14000b768: mov     [rsp+arg_0], rbx
+0x14000b76d: mov     [rsp+arg_8], rbp
+0x14000b772: mov     [rsp+arg_10], rsi
+0x14000b777: push    rdi
+0x14000b778: sub     rsp, 20h
+0x14000b77c: mov     rbx, r8
+0x14000b77f: mov     rbp, rdx
+0x14000b782: mov     r8b, [rsp+28h+arg_20]
+0x14000b787: mov     rdx, rbx
+0x14000b78a: mov     dil, r9b
+0x14000b78d: mov     rsi, rcx
+0x14000b790: call    sub_14000B074
+0x14000b795: test    al, al
+0x14000b797: jnz     short loc_14000B7A2
+0x14000b799: mov     rax, 0FFFFFFFFFFFFD8EEh
+0x14000b7a0: jmp     short loc_14000B7EE
+0x14000b7a2: mov     edx, 7
+0x14000b7a7: mov     rcx, rsi
+0x14000b7aa: call    sub_140007558
+0x14000b7af: mov     r9b, dil
+0x14000b7b2: mov     r8, rbx
+0x14000b7b5: mov     rdx, rbp
+0x14000b7b8: mov     rcx, rsi
+0x14000b7bb: call    sub_140005720
+0x14000b7c0: mov     edx, 7
+0x14000b7c5: mov     rcx, rsi
+0x14000b7c8: mov     rdi, rax
+0x14000b7cb: call    sub_140007564
+0x14000b7d0: test    rdi, rdi
+0x14000b7d3: js      short loc_14000B7DD
+0x14000b7d5: cmp     rdi, rbx
+0x14000b7d8: jnb     short loc_14000B7EB
+0x14000b7da: sub     rbx, rdi
+0x14000b7dd: lfence
+0x14000b7e0: mov     rdx, rbx
+0x14000b7e3: mov     rcx, rsi
+0x14000b7e6: call    sub_14000B2F0
+0x14000b7eb: mov     rax, rdi
+0x14000b7ee: mov     rbx, [rsp+28h+arg_0]
+0x14000b7f3: mov     rbp, [rsp+28h+arg_8]
+0x14000b7f8: mov     rsi, [rsp+28h+arg_10]
+0x14000b7fd: add     rsp, 20h
+0x14000b801: pop     rdi
+0x14000b802: retn

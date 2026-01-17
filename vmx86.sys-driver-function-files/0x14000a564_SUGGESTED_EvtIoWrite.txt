@@ -1,0 +1,216 @@
+=== METADATA ===
+Name: sub_14000A564 (Suggested: EvtIoWrite)
+Addr: 0x14000a564
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000a5d9: AND with Mask 0x0
+  0x14000a5ec: AND with Mask 0x0
+  0x14000a5ff: AND with Mask 0x0
+  0x14000a648: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000a56d: Access Member +0x8 ([rsp+arg_0])
+  0x14000a581: Access Member +0x38 (qword ptr [rdi+38h])
+  0x14000a58a: Access Member +0x4 ([rdi+4])
+  0x14000a58f: Access Member +0x38 ([rdi+38h])
+  0x14000a5a8: Access Member +0x4 ([rdi+4])
+  0x14000a5ad: Access Member +0x40 (qword ptr [rdi+40h])
+  0x14000a5bc: Access Member +0x48 (qword ptr [rdi+48h])
+  0x14000a5cb: Access Member +0x20 ([rdi+20h])
+  0x14000a5d9: Access Member +0x20 (qword ptr [rdi+20h])
+  0x14000a5de: Access Member +0x28 ([rdi+28h])
+  0x14000a5ec: Access Member +0x28 (qword ptr [rdi+28h])
+  0x14000a5f1: Access Member +0x30 ([rdi+30h])
+  0x14000a5ff: Access Member +0x30 (qword ptr [rdi+30h])
+  0x14000a604: Access Member +0x108 (qword ptr [rdi+108h])
+  0x14000a61b: Access Member +0x108 ([rdi+108h])
+  0x14000a627: Access Member +0x18 ([rdx+18h])
+  0x14000a648: Access Member +0x108 (qword ptr [rdi+108h])
+  0x14000a660: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x30 -> possible EvtIoDeviceControl
+  [!] Offset +0x28 -> possible EvtIoWrite
+  [!] Offset +0x38 -> possible EvtIoInternalDeviceControl
+  [!] Offset +0x20 -> possible EvtIoRead
+
+=== CALLERS ===
+  <- sub_14000BE84 (0x14000C090)
+  <- sub_14000CE80 (0x14000CF62)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000a564-0x14000a56d -> Jumps to: 0x14000a56d, 0x14000a66a
+  Block 0x14000a56d-0x14000a588 -> Jumps to: 0x14000a588, 0x14000a5ad
+  Block 0x14000a588-0x14000a58f -> Jumps to: 0x14000a58f, 0x14000a5ad
+  Block 0x14000a58f-0x14000a59c -> Jumps to: 0x14000a59c, 0x14000a5a6
+  Block 0x14000a59c-0x14000a5a6 -> Jumps to: 0x14000a5a6
+  Block 0x14000a5a6-0x14000a5ad -> Jumps to: 0x14000a58f, 0x14000a5ad
+  Block 0x14000a5ad-0x14000a5b4 -> Jumps to: 0x14000a5b4, 0x14000a5bc
+  Block 0x14000a5b4-0x14000a5bc -> Jumps to: 0x14000a5bc
+  Block 0x14000a5bc-0x14000a5c3 -> Jumps to: 0x14000a5c3, 0x14000a5cb
+  Block 0x14000a5c3-0x14000a5cb -> Jumps to: 0x14000a5cb
+  Block 0x14000a5cb-0x14000a5d4 -> Jumps to: 0x14000a5d4, 0x14000a5de
+  Block 0x14000a5d4-0x14000a5de -> Jumps to: 0x14000a5de
+  Block 0x14000a5de-0x14000a5e7 -> Jumps to: 0x14000a5e7, 0x14000a5f1
+  Block 0x14000a5e7-0x14000a5f1 -> Jumps to: 0x14000a5f1
+  Block 0x14000a5f1-0x14000a5fa -> Jumps to: 0x14000a5fa, 0x14000a604
+  Block 0x14000a5fa-0x14000a604 -> Jumps to: 0x14000a604
+  Block 0x14000a604-0x14000a60e -> Jumps to: 0x14000a60e, 0x14000a650
+  Block 0x14000a60e-0x14000a627 -> Jumps to: 0x14000a627, 0x14000a63b
+  Block 0x14000a627-0x14000a63b -> Jumps to: 0x14000a63b, 0x14000a627
+  Block 0x14000a63b-0x14000a650 -> Jumps to: 0x14000a650
+  Block 0x14000a650-0x14000a66a -> Jumps to: 0x14000a66a
+  Block 0x14000a66a-0x14000a66b -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000A564(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
+{
+  __int64 i; // rbx
+  void *v6; // rdx
+  _QWORD *v7; // rdx
+  _QWORD *v8; // rbx
+  __int64 result; // rax
+
+  if ( a1 )
+  {
+    sub_14000CFB4(a1, 0, a3, a4);
+    if ( *(_QWORD *)(a1 + 56) )
+    {
+      for ( i = 0; (unsigned int)i < *(_DWORD *)(a1 + 4); i = (unsigned int)(i + 1) )
+      {
+        v6 = *(void **)(*(_QWORD *)(a1 + 56) + 8 * i);
+        if ( v6 )
+          sub_140005DD0(1, v6);
+      }
+    }
+    if ( *(_QWORD *)(a1 + 64) )
+      sub_140009CE8(a1);
+    if ( *(_QWORD *)(a1 + 72) )
+      sub_14000BD60(a1);
+    if ( *(_QWORD *)(a1 + 32) )
+    {
+      sub_14000F3EC();
+      *(_QWORD *)(a1 + 32) = 0;
+    }
+    if ( *(_QWORD *)(a1 + 40) )
+    {
+      sub_14000F650();
+      *(_QWORD *)(a1 + 40) = 0;
+    }
+    if ( *(_QWORD *)(a1 + 48) )
+    {
+      DnssrvFreeDirectoryPartitionEnum();
+      *(_QWORD *)(a1 + 48) = 0;
+    }
+    if ( *(_QWORD *)(a1 + 264) )
+    {
+      sub_140007558(a1);
+      v7 = *(_QWORD **)(a1 + 264);
+      if ( v7 )
+      {
+        do
+        {
+          v8 = (_QWORD *)v7[3];
+          sub_140005D60(a1, v7);
+          v7 = v8;
+        }
+        while ( v8 );
+      }
+      sub_140007564(a1);
+      *(_QWORD *)(a1 + 264) = 0;
+    }
+    sub_140005B9C(a1);
+    return sub_14000A66C(a1);
+  }
+  return result;
+}
+
+
+=== DISASM ===
+0x14000a564: test    rcx, rcx
+0x14000a567: jz      locret_14000A66A
+0x14000a56d: mov     [rsp+arg_0], rbx
+0x14000a572: push    rdi
+0x14000a573: sub     rsp, 20h
+0x14000a577: xor     edx, edx
+0x14000a579: mov     rdi, rcx
+0x14000a57c: call    sub_14000CFB4
+0x14000a581: cmp     qword ptr [rdi+38h], 0
+0x14000a586: jz      short loc_14000A5AD
+0x14000a588: xor     ebx, ebx
+0x14000a58a: cmp     [rdi+4], ebx
+0x14000a58d: jbe     short loc_14000A5AD
+0x14000a58f: mov     rax, [rdi+38h]
+0x14000a593: mov     rdx, [rax+rbx*8]
+0x14000a597: test    rdx, rdx
+0x14000a59a: jz      short loc_14000A5A6
+0x14000a59c: mov     ecx, 1
+0x14000a5a1: call    sub_140005DD0
+0x14000a5a6: inc     ebx
+0x14000a5a8: cmp     ebx, [rdi+4]
+0x14000a5ab: jb      short loc_14000A58F
+0x14000a5ad: cmp     qword ptr [rdi+40h], 0
+0x14000a5b2: jz      short loc_14000A5BC
+0x14000a5b4: mov     rcx, rdi
+0x14000a5b7: call    sub_140009CE8
+0x14000a5bc: cmp     qword ptr [rdi+48h], 0
+0x14000a5c1: jz      short loc_14000A5CB
+0x14000a5c3: mov     rcx, rdi
+0x14000a5c6: call    sub_14000BD60
+0x14000a5cb: mov     rcx, [rdi+20h]
+0x14000a5cf: test    rcx, rcx
+0x14000a5d2: jz      short loc_14000A5DE
+0x14000a5d4: call    sub_14000F3EC
+0x14000a5d9: and     qword ptr [rdi+20h], 0
+0x14000a5de: mov     rcx, [rdi+28h]
+0x14000a5e2: test    rcx, rcx
+0x14000a5e5: jz      short loc_14000A5F1
+0x14000a5e7: call    sub_14000F650
+0x14000a5ec: and     qword ptr [rdi+28h], 0
+0x14000a5f1: mov     rcx, [rdi+30h]
+0x14000a5f5: test    rcx, rcx
+0x14000a5f8: jz      short loc_14000A604
+0x14000a5fa: call    DnssrvFreeDirectoryPartitionEnum
+0x14000a5ff: and     qword ptr [rdi+30h], 0
+0x14000a604: cmp     qword ptr [rdi+108h], 0
+0x14000a60c: jz      short loc_14000A650
+0x14000a60e: mov     edx, 30h ; '0'
+0x14000a613: mov     rcx, rdi
+0x14000a616: call    sub_140007558
+0x14000a61b: mov     rdx, [rdi+108h]
+0x14000a622: test    rdx, rdx
+0x14000a625: jz      short loc_14000A63B
+0x14000a627: mov     rbx, [rdx+18h]
+0x14000a62b: mov     rcx, rdi
+0x14000a62e: call    sub_140005D60
+0x14000a633: mov     rdx, rbx
+0x14000a636: test    rbx, rbx
+0x14000a639: jnz     short loc_14000A627
+0x14000a63b: mov     edx, 30h ; '0'
+0x14000a640: mov     rcx, rdi
+0x14000a643: call    sub_140007564
+0x14000a648: and     qword ptr [rdi+108h], 0
+0x14000a650: mov     rcx, rdi
+0x14000a653: call    sub_140005B9C
+0x14000a658: mov     rcx, rdi
+0x14000a65b: call    sub_14000A66C
+0x14000a660: mov     rbx, [rsp+28h+arg_0]
+0x14000a665: add     rsp, 20h
+0x14000a669: pop     rdi
+0x14000a66a: retn

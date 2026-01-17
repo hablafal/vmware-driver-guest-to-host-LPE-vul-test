@@ -1,0 +1,159 @@
+=== METADATA ===
+Name: sub_14000F300
+Addr: 0x14000f300
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f300: Access Member +0x10 ([rsp+arg_8])
+  0x14000f314: Access Member +0x28 ([rsp+38h+var_10])
+  0x14000f319: Access Member +0x8 ([rcx+8])
+  0x14000f331: Access Member +0x8 (qword ptr [rcx+8])
+  0x14000f352: Access Member +0x28 ([rsp+38h+var_10])
+  0x14000f35f: Access Member +0x48 ([rsp+38h+arg_8])
+  0x14000f37a: Access Member +0x10 ([rax+10h])
+  0x14000f383: Access Member +0x8 ([rax+8])
+  0x14000f3a5: Access Member +0x20 ([rsp+38h+var_18])
+  0x14000f3e2: Access Member +0x20 ([rsp+38h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000F1CC (0x14000F1E4)
+  <- sub_14000F200 (0x14000F217)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f30a -> 2
+  0x14000f3c9 -> Failed to lookup MPN for shared region VA %lx
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000f300-0x14000f329 -> Jumps to: 0x14000f329
+  Block 0x14000f329-0x14000f331 -> Jumps to: 0x14000f331, 0x14000f338
+  Block 0x14000f331-0x14000f338 -> Jumps to: 0x14000f338, 0x14000f36a
+  Block 0x14000f338-0x14000f348 -> Jumps to: 0x14000f329, 0x14000f348
+  Block 0x14000f348-0x14000f352 -> Jumps to: 0x14000f352
+  Block 0x14000f352-0x14000f36a -> Jumps to: 
+  Block 0x14000f36a-0x14000f37a -> Jumps to: 0x14000f348, 0x14000f37a
+  Block 0x14000f37a-0x14000f380 -> Jumps to: 0x14000f348, 0x14000f380
+  Block 0x14000f380-0x14000f3bb -> Jumps to: 0x14000f3bb, 0x14000f3da
+  Block 0x14000f3bb-0x14000f3da -> Jumps to: 0x14000f348
+  Block 0x14000f3da-0x14000f3ec -> Jumps to: 0x14000f352
+
+=== CODE ===
+__int64 __fastcall sub_14000F300(__int64 *a1, __int64 a2, __int64 a3, unsigned int a4)
+{
+  __int64 v4; // r11
+  int v5; // r8d
+  __int64 v7; // r10
+  __int64 i; // rcx
+  __int64 v10; // rax
+  unsigned __int64 v11; // rdi
+  __int64 v12; // [rsp+20h] [rbp-18h] BYREF
+
+  v4 = a1[1];
+  v5 = 0;
+  v7 = 0;
+  for ( i = v4; *(_DWORD *)i != a2 || *(_QWORD *)(i + 8) == -1; i += 24 )
+  {
+    ++v5;
+    if ( ++v7 >= 3 )
+      return 0x3FFFFFFFFFLL;
+  }
+  v10 = v4 + 24LL * v5;
+  if ( !v10 || a4 >= *(_DWORD *)(v10 + 16) )
+    return 0x3FFFFFFFFFLL;
+  _mm_lfence();
+  v11 = (a4 << 12) + (*(_QWORD *)(v10 + 8) << 12);
+  sub_140007558(*a1);
+  if ( (unsigned int)sub_140006680(*a1, v11, &v12) )
+  {
+    _mm_lfence();
+    sub_140007564(*a1);
+    sub_140003A14("Failed to lookup MPN for shared region VA %lx\n", v11);
+    return 0x3FFFFFFFFFLL;
+  }
+  sub_140007564(*a1);
+  return v12;
+}
+
+
+=== DISASM ===
+0x14000f300: mov     [rsp+arg_8], rbx
+0x14000f305: push    rdi
+0x14000f306: sub     rsp, 30h
+0x14000f30a: mov     rax, cs:__security_cookie
+0x14000f311: xor     rax, rsp
+0x14000f314: mov     [rsp+38h+var_10], rax
+0x14000f319: mov     r11, [rcx+8]
+0x14000f31d: xor     r8d, r8d
+0x14000f320: mov     rbx, rcx
+0x14000f323: xor     r10d, r10d
+0x14000f326: mov     rcx, r11
+0x14000f329: movsxd  rax, dword ptr [rcx]
+0x14000f32c: cmp     rax, rdx
+0x14000f32f: jnz     short loc_14000F338
+0x14000f331: cmp     qword ptr [rcx+8], 0FFFFFFFFFFFFFFFFh
+0x14000f336: jnz     short loc_14000F36A
+0x14000f338: inc     r8d
+0x14000f33b: inc     r10
+0x14000f33e: add     rcx, 18h
+0x14000f342: cmp     r10, 3
+0x14000f346: jl      short loc_14000F329
+0x14000f348: mov     rax, 3FFFFFFFFFh
+0x14000f352: mov     rcx, [rsp+38h+var_10]
+0x14000f357: xor     rcx, rsp; StackCookie
+0x14000f35a: call    __security_check_cookie
+0x14000f35f: mov     rbx, [rsp+38h+arg_8]
+0x14000f364: add     rsp, 30h
+0x14000f368: pop     rdi
+0x14000f369: retn
+0x14000f36a: movsxd  rax, r8d
+0x14000f36d: lea     rcx, [rax+rax*2]
+0x14000f371: lea     rax, [r11+rcx*8]
+0x14000f375: test    rax, rax
+0x14000f378: jz      short loc_14000F348
+0x14000f37a: cmp     r9d, [rax+10h]
+0x14000f37e: jnb     short loc_14000F348
+0x14000f380: lfence
+0x14000f383: mov     rdi, [rax+8]
+0x14000f387: mov     edx, 2Bh ; '+'
+0x14000f38c: mov     rcx, [rbx]
+0x14000f38f: shl     r9d, 0Ch
+0x14000f393: mov     eax, r9d
+0x14000f396: shl     rdi, 0Ch
+0x14000f39a: add     rdi, rax
+0x14000f39d: call    sub_140007558
+0x14000f3a2: mov     rcx, [rbx]
+0x14000f3a5: lea     r8, [rsp+38h+var_18]
+0x14000f3aa: mov     rdx, rdi
+0x14000f3ad: call    sub_140006680
+0x14000f3b2: mov     edx, 2Bh ; '+'
+0x14000f3b7: test    eax, eax
+0x14000f3b9: jz      short loc_14000F3DA
+0x14000f3bb: lfence
+0x14000f3be: mov     rcx, [rbx]
+0x14000f3c1: call    sub_140007564
+0x14000f3c6: mov     rdx, rdi
+0x14000f3c9: lea     rcx, aFailedToLookup; "Failed to lookup MPN for shared region "...
+0x14000f3d0: call    sub_140003A14
+0x14000f3d5: jmp     loc_14000F348
+0x14000f3da: mov     rcx, [rbx]
+0x14000f3dd: call    sub_140007564
+0x14000f3e2: mov     rax, [rsp+38h+var_18]
+0x14000f3e7: jmp     loc_14000F352

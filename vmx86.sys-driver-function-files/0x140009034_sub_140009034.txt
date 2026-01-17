@@ -1,0 +1,342 @@
+=== METADATA ===
+Name: sub_140009034
+Addr: 0x140009034
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000905a: TEST with Mask 0xFFFFFFFFFFFFF000
+  0x1400090e4: AND with Mask 0xA00
+  0x140009110: TEST with Mask 0x6000
+  0x140009118: AND with Mask 0x408000
+  0x140009135: AND with Mask 0xFFFFFFFFFFFFFFF8
+  0x140009178: AND with Mask 0x1080
+  0x1400091ed: AND with Mask 0x1
+
+=== MEMBER ACCESS ===
+  0x140009044: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000908e: Access Member +0x8 ([rax+8])
+  0x1400090a5: Access Member +0x8 ([rax+8])
+  0x1400090af: Access Member +0x20 (fword ptr [rsp+48h+var_28])
+  0x1400090b4: Access Member +0x22 ([rsp+48h+var_26])
+  0x1400090b9: Access Member +0x20 ([rsp+48h+var_28])
+  0x1400090c2: Access Member +0x8 ([r8+8])
+  0x1400090ca: Access Member +0x10 ([r8+10h])
+  0x1400090f0: Access Member +0x7 (byte ptr [rdx+7])
+  0x1400090f4: Access Member +0x4 ([rdx+4])
+  0x1400090ff: Access Member +0x2 (word ptr [rdx+2])
+  0x14000912a: Access Member +0x8 ([rdx+8])
+  0x140009217: Access Member +0x30 ([rsp+48h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x1400035B4)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000903a -> 2
+  0x140009049 -> UH
+  0x140009062 -> Crosspage code validation failed.
+
+  0x140009209 -> Task_Initialize: unsupported SS %04x
+
+
+=== BASIC BLOCKS ===
+  Block 0x140009034-0x140009062 -> Jumps to: 0x140009062, 0x140009073
+  Block 0x140009062-0x140009073 -> Jumps to: 0x140009215
+  Block 0x140009073-0x140009081 -> Jumps to: 0x140009081
+  Block 0x140009081-0x140009098 -> Jumps to: 0x140009098, 0x140009081
+  Block 0x140009098-0x1400090a2 -> Jumps to: 0x1400090a2
+  Block 0x1400090a2-0x1400090af -> Jumps to: 0x1400090af, 0x1400090a2
+  Block 0x1400090af-0x1400090ce -> Jumps to: 0x1400090ce
+  Block 0x1400090ce-0x1400090d7 -> Jumps to: 0x1400090d7, 0x1400091ff
+  Block 0x1400090d7-0x1400090e4 -> Jumps to: 0x1400090e4, 0x140009126
+  Block 0x1400090e4-0x1400090f0 -> Jumps to: 0x1400090f0, 0x140009126
+  Block 0x1400090f0-0x14000910a -> Jumps to: 0x14000910a, 0x140009126
+  Block 0x14000910a-0x140009110 -> Jumps to: 0x140009110, 0x140009126
+  Block 0x140009110-0x140009118 -> Jumps to: 0x140009118, 0x140009126
+  Block 0x140009118-0x140009126 -> Jumps to: 0x140009126, 0x140009130
+  Block 0x140009126-0x140009130 -> Jumps to: 0x1400090ce
+  Block 0x140009130-0x140009146 -> Jumps to: 0x140009146, 0x140009207
+  Block 0x140009146-0x140009160 -> Jumps to: 0x140009160, 0x1400091c0
+  Block 0x140009160-0x140009165 -> Jumps to: 0x140009165, 0x1400091c0
+  Block 0x140009165-0x14000916a -> Jumps to: 0x14000916a, 0x1400091c0
+  Block 0x14000916a-0x140009185 -> Jumps to: 0x140009185, 0x1400091c0
+  Block 0x140009185-0x140009192 -> Jumps to: 0x140009192, 0x1400091bc
+  Block 0x140009192-0x1400091a4 -> Jumps to: 0x1400091a4, 0x1400091bc
+  Block 0x1400091a4-0x1400091ac -> Jumps to: 0x1400091ac, 0x1400091bc
+  Block 0x1400091ac-0x1400091b4 -> Jumps to: 0x1400091b4, 0x1400091bc
+  Block 0x1400091b4-0x1400091bc -> Jumps to: 0x1400091bc, 0x1400091c0
+  Block 0x1400091bc-0x1400091c0 -> Jumps to: 0x1400091c3
+  Block 0x1400091c0-0x1400091c3 -> Jumps to: 0x1400091c3
+  Block 0x1400091c3-0x1400091d7 -> Jumps to: 0x1400091d7, 0x1400091f2
+  Block 0x1400091d7-0x1400091dc -> Jumps to: 0x1400091dc, 0x1400091f2
+  Block 0x1400091dc-0x1400091e1 -> Jumps to: 0x1400091e1, 0x1400091f2
+  Block 0x1400091e1-0x1400091f2 -> Jumps to: 0x1400091f5
+  Block 0x1400091f2-0x1400091f5 -> Jumps to: 0x1400091f5
+  Block 0x1400091f5-0x1400091ff -> Jumps to: 0x140009217
+  Block 0x1400091ff-0x140009207 -> Jumps to: 0x140009207
+  Block 0x140009207-0x140009215 -> Jumps to: 0x140009215
+  Block 0x140009215-0x140009217 -> Jumps to: 0x140009217
+  Block 0x140009217-0x14000922a -> Jumps to: 
+
+=== CODE ===
+char sub_140009034()
+{
+  __int64 v0; // rcx
+  __int64 *v1; // rax
+  __int64 v2; // rdx
+  __int64 *v3; // rax
+  __int64 v4; // rdx
+  unsigned __int64 i; // rax
+  int v6; // ebx
+  unsigned __int64 v12; // rax
+  char v23; // al
+  bool v34; // bl
+  unsigned __int16 v36; // [rsp+20h] [rbp-28h] BYREF
+  __int64 v37; // [rsp+22h] [rbp-26h]
+
+  if ( (((unsigned __int64)algn_140002208 ^ (unsigned __int64)sub_140002000) & 0xFFFFFFFFFFFFF000uLL) == 0 )
+  {
+    v0 = 1024;
+    v1 = qword_140018F20;
+    v2 = 1024;
+    do
+    {
+      *v1++ = 0x3FFFFFFFFFLL;
+      --v2;
+    }
+    while ( v2 );
+    v3 = qword_14001AF20;
+    do
+    {
+      *v3++ = 0;
+      --v0;
+    }
+    while ( v0 );
+    __sgdt(&v36);
+    v4 = v37 + 8;
+    for ( i = v37 + 16; i < v37 + 8 * ((unsigned __int64)v36 >> 3); i = v4 + 8 )
+    {
+      if ( (*(_QWORD *)v4 & 0x100000000000LL) != 0 && (HIDWORD(*(_QWORD *)v4) & 0xA00) == 0x200 )
+      {
+        v6 = *(_DWORD *)(v4 + 4);
+        if ( !(*(unsigned __int16 *)(v4 + 2) | (((unsigned __int8)v6 | (*(unsigned __int8 *)(v4 + 7) << 8)) << 16))
+          && (v6 & 0x1000) != 0
+          && (v6 & 0x6000) == 0
+          && (v6 & 0x408000) == 0x408000 )
+        {
+          word_140018F18 = (v4 - v37) & 0xFFF8;
+          if ( (((_WORD)v4 - (_WORD)v37) & 0xFFF8) != 0 )
+          {
+            _RAX = 0;
+            __asm { cpuid }
+            if ( (_DWORD)_RBX != 1970169159 )
+              goto LABEL_27;
+            if ( (_DWORD)_RCX != 1818588270 )
+              goto LABEL_27;
+            if ( (_DWORD)_RDX != 1231384169 )
+              goto LABEL_27;
+            v12 = __readmsr(0x1A0u);
+            if ( (v12 & 0x1080) != 0x80 )
+              goto LABEL_27;
+            _RAX = 1;
+            __asm { cpuid }
+            if ( (int)_RCX >= 0 )
+              goto LABEL_26;
+            _RAX = 0x40000000;
+            __asm { cpuid }
+            if ( (unsigned int)_RAX < 0x40000000
+              || (_DWORD)_RBX != 1919117645
+              || (_DWORD)_RCX != 1718580079
+              || (_DWORD)_RDX != 1984438388 )
+            {
+LABEL_26:
+              v23 = 1;
+            }
+            else
+            {
+LABEL_27:
+              v23 = 0;
+            }
+            byte_140018F1A = v23;
+            _RAX = 0;
+            __asm { cpuid }
+            if ( (_DWORD)_RBX == 1970169159 && (_DWORD)_RCX == 1818588270 && (_DWORD)_RDX == 1231384169 )
+            {
+              _RAX = 7;
+              __asm { cpuid }
+              v34 = (_RBX & 0x2000000) != 0;
+            }
+            else
+            {
+              v34 = 0;
+            }
+            byte_140018F1B = v34;
+            return 1;
+          }
+LABEL_35:
+          sub_140003A14("Task_Initialize: unsupported SS %04x\n", 0);
+          return 0;
+        }
+      }
+      v4 += 8;
+    }
+    word_140018F18 = 0;
+    goto LABEL_35;
+  }
+  sub_140003A14("Crosspage code validation failed.\n");
+  return 0;
+}
+
+
+=== DISASM ===
+0x140009034: push    rbx
+0x140009036: sub     rsp, 40h
+0x14000903a: mov     rax, cs:__security_cookie
+0x140009041: xor     rax, rsp
+0x140009044: mov     [rsp+48h+var_18], rax
+0x140009049: lea     rax, sub_140002000
+0x140009050: lea     rcx, algn_140002208
+0x140009057: xor     rax, rcx
+0x14000905a: test    rax, 0FFFFFFFFFFFFF000h
+0x140009060: jz      short loc_140009073
+0x140009062: lea     rcx, aCrosspageCodeV; "Crosspage code validation failed.\n"
+0x140009069: call    sub_140003A14
+0x14000906e: jmp     loc_140009215
+0x140009073: mov     ecx, 400h
+0x140009078: lea     rax, qword_140018F20
+0x14000907f: mov     edx, ecx
+0x140009081: mov     rbx, 3FFFFFFFFFh
+0x14000908b: mov     [rax], rbx
+0x14000908e: lea     rax, [rax+8]
+0x140009092: sub     rdx, 1
+0x140009096: jnz     short loc_140009081
+0x140009098: lea     rax, qword_14001AF20
+0x14000909f: xor     r10d, r10d
+0x1400090a2: mov     [rax], r10
+0x1400090a5: lea     rax, [rax+8]
+0x1400090a9: sub     rcx, 1
+0x1400090ad: jnz     short loc_1400090A2
+0x1400090af: sgdt    fword ptr [rsp+48h+var_28]
+0x1400090b4: mov     r8, [rsp+48h+var_26]
+0x1400090b9: movzx   eax, [rsp+48h+var_28]
+0x1400090be: shr     rax, 3
+0x1400090c2: lea     rdx, [r8+8]
+0x1400090c6: lea     r9, [r8+rax*8]
+0x1400090ca: lea     rax, [r8+10h]
+0x1400090ce: cmp     rax, r9
+0x1400090d1: jnb     loc_1400091FF
+0x1400090d7: mov     rax, [rdx]
+0x1400090da: shr     rax, 20h
+0x1400090de: bt      eax, 0Ch
+0x1400090e2: jnb     short loc_140009126
+0x1400090e4: and     eax, 0A00h
+0x1400090e9: cmp     eax, 200h
+0x1400090ee: jnz     short loc_140009126
+0x1400090f0: movzx   ecx, byte ptr [rdx+7]
+0x1400090f4: mov     ebx, [rdx+4]
+0x1400090f7: shl     ecx, 8
+0x1400090fa: movzx   eax, bl
+0x1400090fd: or      ecx, eax
+0x1400090ff: movzx   eax, word ptr [rdx+2]
+0x140009103: shl     ecx, 10h
+0x140009106: or      ecx, eax
+0x140009108: jnz     short loc_140009126
+0x14000910a: bt      ebx, 0Ch
+0x14000910e: jnb     short loc_140009126
+0x140009110: test    ebx, 6000h
+0x140009116: jnz     short loc_140009126
+0x140009118: and     ebx, 408000h
+0x14000911e: cmp     ebx, 408000h
+0x140009124: jz      short loc_140009130
+0x140009126: add     rdx, 8
+0x14000912a: lea     rax, [rdx+8]
+0x14000912e: jmp     short loc_1400090CE
+0x140009130: mov     eax, edx
+0x140009132: sub     eax, r8d
+0x140009135: and     ax, 0FFF8h
+0x140009139: mov     cs:word_140018F18, ax
+0x140009140: jz      loc_140009207
+0x140009146: xor     eax, eax
+0x140009148: xor     ecx, ecx
+0x14000914a: cpuid
+0x14000914c: mov     r11d, 6C65746Eh
+0x140009152: mov     r9d, 49656E69h
+0x140009158: cmp     ebx, 756E6547h
+0x14000915e: jnz     short loc_1400091C0
+0x140009160: cmp     ecx, r11d
+0x140009163: jnz     short loc_1400091C0
+0x140009165: cmp     edx, r9d
+0x140009168: jnz     short loc_1400091C0
+0x14000916a: mov     ecx, 1A0h
+0x14000916f: rdmsr
+0x140009171: shl     rdx, 20h
+0x140009175: or      rax, rdx
+0x140009178: and     eax, 1080h
+0x14000917d: cmp     rax, 80h
+0x140009183: jnz     short loc_1400091C0
+0x140009185: xor     ecx, ecx
+0x140009187: mov     eax, 1
+0x14000918c: cpuid
+0x14000918e: test    ecx, ecx
+0x140009190: jns     short loc_1400091BC
+0x140009192: mov     r8d, 40000000h
+0x140009198: xor     ecx, ecx
+0x14000919a: mov     eax, r8d
+0x14000919d: cpuid
+0x14000919f: cmp     eax, r8d
+0x1400091a2: jb      short loc_1400091BC
+0x1400091a4: cmp     ebx, 7263694Dh
+0x1400091aa: jnz     short loc_1400091BC
+0x1400091ac: cmp     ecx, 666F736Fh
+0x1400091b2: jnz     short loc_1400091BC
+0x1400091b4: cmp     edx, 76482074h
+0x1400091ba: jz      short loc_1400091C0
+0x1400091bc: mov     al, 1
+0x1400091be: jmp     short loc_1400091C3
+0x1400091c0: mov     al, r10b
+0x1400091c3: mov     cs:byte_140018F1A, al
+0x1400091c9: xor     ecx, ecx
+0x1400091cb: xor     eax, eax
+0x1400091cd: cpuid
+0x1400091cf: cmp     ebx, 756E6547h
+0x1400091d5: jnz     short loc_1400091F2
+0x1400091d7: cmp     ecx, r11d
+0x1400091da: jnz     short loc_1400091F2
+0x1400091dc: cmp     edx, r9d
+0x1400091df: jnz     short loc_1400091F2
+0x1400091e1: xor     ecx, ecx
+0x1400091e3: mov     eax, 7
+0x1400091e8: cpuid
+0x1400091ea: shr     ebx, 19h
+0x1400091ed: and     bl, 1
+0x1400091f0: jmp     short loc_1400091F5
+0x1400091f2: mov     bl, r10b
+0x1400091f5: mov     cs:byte_140018F1B, bl
+0x1400091fb: mov     al, 1
+0x1400091fd: jmp     short loc_140009217
+0x1400091ff: mov     cs:word_140018F18, r10w
+0x140009207: xor     edx, edx
+0x140009209: lea     rcx, aTaskInitialize; "Task_Initialize: unsupported SS %04x\n"
+0x140009210: call    sub_140003A14
+0x140009215: xor     al, al
+0x140009217: mov     rcx, [rsp+48h+var_18]
+0x14000921c: xor     rcx, rsp; StackCookie
+0x14000921f: call    __security_check_cookie
+0x140009224: add     rsp, 40h
+0x140009228: pop     rbx
+0x140009229: retn

@@ -1,0 +1,153 @@
+=== METADATA ===
+Name: sub_140005118
+Addr: 0x140005118
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140005142: AND with Mask 0x0
+  0x14000519a: OR with Mask 0xFFFFFFFFFFFFFFFF
+
+=== MEMBER ACCESS ===
+  0x140005118: Access Member +0x8 ([rsp+arg_0])
+  0x14000511d: Access Member +0x10 ([rsp+arg_8])
+  0x14000512b: Access Member +0x28 ([rsp+38h+var_10])
+  0x14000512f: Access Member +0x1 ([rsi+1])
+  0x14000513a: Access Member +0x28 ([rax+28h])
+  0x140005142: Access Member +0x28 ([rsp+38h+var_10])
+  0x14000515e: Access Member +0x20 ([rsp+38h+CacheType])
+  0x1400051b3: Access Member +0x40 ([rsp+38h+arg_0])
+  0x1400051ba: Access Member +0x48 ([rsp+38h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140005A48 (0x140005AFA)
+
+=== IMPORTS ===
+  -> 0x140005162 calls MmAllocatePagesForMdlEx
+  -> 0x140005178 calls MmFreePagesFromMdl
+  -> 0x140005183 calls ExFreePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005118-0x140005134 -> Jumps to: 0x140005147
+  Block 0x140005134-0x140005147 -> Jumps to: 0x140005147
+  Block 0x140005147-0x14000516d -> Jumps to: 0x140005134, 0x14000516d
+  Block 0x14000516d-0x140005172 -> Jumps to: 0x140005172, 0x140005191
+  Block 0x140005172-0x140005191 -> Jumps to: 0x140005191, 0x140005172
+  Block 0x140005191-0x14000519a -> Jumps to: 0x14000519a, 0x14000519f
+  Block 0x14000519a-0x14000519f -> Jumps to: 0x1400051b3
+  Block 0x14000519f-0x1400051a7 -> Jumps to: 0x1400051a7, 0x1400051b1
+  Block 0x1400051a7-0x1400051b1 -> Jumps to: 0x1400051b1
+  Block 0x1400051b1-0x1400051b3 -> Jumps to: 0x1400051b3
+  Block 0x1400051b3-0x1400051c5 -> Jumps to: 
+
+=== CODE ===
+__int64 sub_140005118()
+{
+  struct _MDL *v0; // rsi
+  unsigned int v1; // edi
+  PMDL i; // rax
+  struct _MDL *Next; // rbx
+  unsigned int v4; // edx
+
+  v0 = 0;
+  v1 = 0;
+  for ( i = MmAllocatePagesForMdlEx(0, (PHYSICAL_ADDRESS)0x7FFFFFFFFFFFFFFFLL, 0, 0x20000u, MmCached, 0);
+        i;
+        i = MmAllocatePagesForMdlEx(0, (PHYSICAL_ADDRESS)0x7FFFFFFFFFFFFFFFLL, 0, 0x20000u, MmCached, 0) )
+  {
+    i->Next = v0;
+    v0 = i;
+    v1 += i->ByteCount >> 12;
+  }
+  if ( v0 )
+  {
+    do
+    {
+      Next = v0->Next;
+      MmFreePagesFromMdl(v0);
+      ExFreePoolWithTag(v0, 0);
+      v0 = Next;
+    }
+    while ( Next );
+  }
+  v4 = 2048;
+  if ( v1 > 0x800 )
+  {
+    if ( v1 >= 0x14028 )
+      v4 = v1 / 0x28;
+    return v1 - v4;
+  }
+  else
+  {
+    return (unsigned int)-1;
+  }
+}
+
+
+=== DISASM ===
+0x140005118: mov     [rsp+arg_0], rbx
+0x14000511d: mov     [rsp+arg_8], rsi
+0x140005122: push    rdi
+0x140005123: sub     rsp, 30h
+0x140005127: xor     esi, esi
+0x140005129: xor     edi, edi
+0x14000512b: and     [rsp+38h+var_10], esi
+0x14000512f: lea     ebx, [rsi+1]
+0x140005132: jmp     short loc_140005147
+0x140005134: mov     [rax], rsi
+0x140005137: mov     rsi, rax
+0x14000513a: mov     eax, [rax+28h]
+0x14000513d: shr     eax, 0Ch
+0x140005140: add     edi, eax
+0x140005142: and     [rsp+38h+var_10], 0
+0x140005147: mov     rcx, qword ptr cs:LowAddress; LowAddress
+0x14000514e: mov     r9d, 20000h; TotalBytes
+0x140005154: mov     rdx, qword ptr cs:HighestAcceptableAddress; HighAddress
+0x14000515b: mov     r8, rcx; SkipBytes
+0x14000515e: mov     [rsp+38h+CacheType], ebx; CacheType
+0x140005162: call    cs:MmAllocatePagesForMdlEx
+0x140005168: test    rax, rax
+0x14000516b: jnz     short loc_140005134
+0x14000516d: test    rsi, rsi
+0x140005170: jz      short loc_140005191
+0x140005172: mov     rbx, [rsi]
+0x140005175: mov     rcx, rsi; MemoryDescriptorList
+0x140005178: call    cs:MmFreePagesFromMdl
+0x14000517e: xor     edx, edx; Tag
+0x140005180: mov     rcx, rsi; P
+0x140005183: call    cs:ExFreePoolWithTag
+0x140005189: mov     rsi, rbx
+0x14000518c: test    rbx, rbx
+0x14000518f: jnz     short loc_140005172
+0x140005191: mov     edx, 800h
+0x140005196: cmp     edi, edx
+0x140005198: ja      short loc_14000519F
+0x14000519a: or      edi, 0FFFFFFFFh
+0x14000519d: jmp     short loc_1400051B3
+0x14000519f: cmp     edi, 14028h
+0x1400051a5: jb      short loc_1400051B1
+0x1400051a7: mov     eax, 0CCCCCCCDh
+0x1400051ac: mul     edi
+0x1400051ae: shr     edx, 5
+0x1400051b1: sub     edi, edx
+0x1400051b3: mov     rbx, [rsp+38h+arg_0]
+0x1400051b8: mov     eax, edi
+0x1400051ba: mov     rsi, [rsp+38h+arg_8]
+0x1400051bf: add     rsp, 30h
+0x1400051c3: pop     rdi
+0x1400051c4: retn

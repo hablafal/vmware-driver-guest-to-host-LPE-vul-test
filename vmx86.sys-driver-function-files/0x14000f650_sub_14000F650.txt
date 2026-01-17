@@ -1,0 +1,91 @@
+=== METADATA ===
+Name: sub_14000F650
+Addr: 0x14000f650
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f655: Access Member +0x8 ([rsp+arg_0])
+  0x14000f65a: Access Member +0x10 ([rsp+arg_8])
+  0x14000f667: Access Member +0x8 ([rcx+8])
+  0x14000f68f: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000f694: Access Member +0x38 ([rsp+28h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A564 (0x14000A5E7)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f650-0x14000f655 -> Jumps to: 0x14000f655, 0x14000f69e
+  Block 0x14000f655-0x14000f670 -> Jumps to: 0x14000f670
+  Block 0x14000f670-0x14000f678 -> Jumps to: 0x14000f678, 0x14000f67d
+  Block 0x14000f678-0x14000f67d -> Jumps to: 0x14000f67d
+  Block 0x14000f67d-0x14000f687 -> Jumps to: 0x14000f670, 0x14000f687
+  Block 0x14000f687-0x14000f69e -> Jumps to: 0x14000f69e
+  Block 0x14000f69e-0x14000f69f -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_14000F650(void **a1)
+{
+  void **v2; // rdi
+  __int64 v3; // rsi
+
+  if ( a1 )
+  {
+    v2 = a1 + 1;
+    v3 = 6;
+    do
+    {
+      if ( *v2 )
+        sub_140005DC4(*v2);
+      v2 += 2;
+      --v3;
+    }
+    while ( v3 );
+    sub_140005DC4(a1);
+  }
+}
+
+
+=== DISASM ===
+0x14000f650: test    rcx, rcx
+0x14000f653: jz      short locret_14000F69E
+0x14000f655: mov     [rsp+arg_0], rbx
+0x14000f65a: mov     [rsp+arg_8], rsi
+0x14000f65f: push    rdi
+0x14000f660: sub     rsp, 20h
+0x14000f664: mov     rbx, rcx
+0x14000f667: lea     rdi, [rcx+8]
+0x14000f66b: mov     esi, 6
+0x14000f670: mov     rcx, [rdi]
+0x14000f673: test    rcx, rcx
+0x14000f676: jz      short loc_14000F67D
+0x14000f678: call    sub_140005DC4
+0x14000f67d: add     rdi, 10h
+0x14000f681: sub     rsi, 1
+0x14000f685: jnz     short loc_14000F670
+0x14000f687: mov     rcx, rbx
+0x14000f68a: call    sub_140005DC4
+0x14000f68f: mov     rbx, [rsp+28h+arg_0]
+0x14000f694: mov     rsi, [rsp+28h+arg_8]
+0x14000f699: add     rsp, 20h
+0x14000f69d: pop     rdi
+0x14000f69e: retn

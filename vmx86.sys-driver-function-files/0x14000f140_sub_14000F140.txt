@@ -1,0 +1,74 @@
+=== METADATA ===
+Name: sub_14000F140
+Addr: 0x14000f140
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f434: Access Member +0x20 ([rcx+20h])
+  0x14000f442: Access Member +0x8 ([r9+8])
+  0x14000f458: Access Member +0x10 ([r9+10h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E878 (0x14000E8D3)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f140-0x14000f14c -> Jumps to: 0x14000f434
+  Block 0x14000f434-0x14000f455 -> Jumps to: 0x14000f455, 0x14000f460
+  Block 0x14000f455-0x14000f460 -> Jumps to: 0x14000f460
+  Block 0x14000f460-0x14000f464 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000F140(__int64 a1, unsigned __int64 a2)
+{
+  unsigned __int64 v2; // rdx
+  __int64 v3; // r9
+  __int64 v4; // r8
+
+  v2 = a2 >> 12;
+  v3 = *(_QWORD *)(*(_QWORD *)a1 + 32LL);
+  v4 = 0x3FFFFFFFFFLL;
+  if ( v2 < (unsigned __int64)(unsigned int)(*(_DWORD *)(v3 + 8) + 4095) >> 12 )
+  {
+    _mm_lfence();
+    return *(_QWORD *)(*(_QWORD *)(v3 + 16) + 8 * v2);
+  }
+  return v4;
+}
+
+
+=== DISASM ===
+0x14000f140: mov     rcx, [rcx]
+0x14000f143: shr     rdx, 0Ch
+0x14000f147: jmp     loc_14000F434
+0x14000f434: mov     r9, [rcx+20h]
+0x14000f438: mov     r8, 3FFFFFFFFFh
+0x14000f442: mov     ecx, [r9+8]
+0x14000f446: add     ecx, 0FFFh
+0x14000f44c: shr     rcx, 0Ch
+0x14000f450: cmp     rdx, rcx
+0x14000f453: jnb     short loc_14000F460
+0x14000f455: lfence
+0x14000f458: mov     rax, [r9+10h]
+0x14000f45c: mov     r8, [rax+rdx*8]
+0x14000f460: mov     rax, r8
+0x14000f463: retn

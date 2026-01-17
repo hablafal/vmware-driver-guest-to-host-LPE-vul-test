@@ -1,0 +1,323 @@
+=== METADATA ===
+Name: sub_140006924 (Suggested: EvtIoWrite)
+Addr: 0x140006924
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140006a2a: AND with Mask 0xFFFFFFFFFFFFF000
+  0x140006a49: AND with Mask 0x2
+
+=== MEMBER ACCESS ===
+  0x140006927: Access Member +0x8 ([rax+8])
+  0x14000692b: Access Member +0x10 ([rax+10h])
+  0x14000692f: Access Member +0x18 ([rax+18h])
+  0x140006933: Access Member +0x20 ([rax+20h])
+  0x140006980: Access Member +0x20 ([rdx+20h])
+  0x14000698b: Access Member +0x30 ([rsp+58h+var_28])
+  0x1400069d2: Access Member +0x18 ([rbx+18h])
+  0x1400069eb: Access Member +0x10 (xmmword ptr [rax+10h])
+  0x1400069ef: Access Member +0x20 (xmmword ptr [rax+20h])
+  0x1400069fa: Access Member +0x18 ([rbx+18h])
+  0x140006a0a: Access Member +0xFFF ([rdi+0FFFh])
+  0x140006a20: Access Member +0x8 ([r9+8])
+  0x140006a25: Access Member +0xA ([r9+0Ah])
+  0x140006a31: Access Member +0x20 ([r9+20h])
+  0x140006a38: Access Member +0x2C ([r9+2Ch])
+  0x140006a3c: Access Member +0x28 ([r9+28h])
+  0x140006a53: Access Member +0x18 ([rbx+18h])
+  0x140006a5e: Access Member +0x18 ([rbx+18h])
+  0x140006a62: Access Member +0x28 ([rsp+58h+Priority])
+  0x140006a6a: Access Member +0x20 ([rsp+58h+BugCheckOnFailure])
+  0x140006a72: Access Member +0x1 ([r9+1])
+  0x140006a82: Access Member +0x10 ([rbx+10h])
+  0x140006a92: Access Member +0x80 ([rsp+58h+arg_20])
+  0x140006a9d: Access Member +0x10 ([r15+10h])
+  0x140006aa7: Access Member +0x10 ([r15+10h])
+  0x140006aaf: Access Member +0x8 ([rax+8])
+  0x140006ac2: Access Member +0x8 ([rbx+8])
+  0x140006ac9: Access Member +0x8 ([rax+8])
+  0x140006acd: Access Member +0x10 ([r15+10h])
+  0x140006add: Access Member +0x30 ([rsp+58h+var_28])
+  0x140006ae2: Access Member +0x18 ([rbx+18h])
+  0x140006af0: Access Member +0x30 ([rsp+58h+var_28])
+  0x140006af7: Access Member +0x18 ([rbx+18h])
+  0x140006b0e: Access Member +0x60 ([rsp+58h+arg_0])
+  0x140006b13: Access Member +0x68 ([rsp+58h+arg_8])
+  0x140006b18: Access Member +0x70 ([rsp+58h+arg_10])
+  0x140006b1d: Access Member +0x78 ([rsp+58h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x28 -> possible EvtIoWrite
+  [!] Offset +0x20 -> possible EvtIoRead
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x14000467B)
+
+=== IMPORTS ===
+  -> 0x140006a57 calls MmProbeAndLockSelectedPages
+  -> 0x140006a79 calls MmMapLockedPagesSpecifyCache
+  -> 0x140006aa1 calls ExAcquireFastMutex
+  -> 0x140006ad1 calls ExReleaseFastMutex
+  -> 0x140006ae6 calls MmUnlockPages
+  -> 0x140006afb calls ExFreePoolWithTag
+  -> 0x140006b06 calls ExFreePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140006924-0x140006953 -> Jumps to: 0x140006953, 0x14000695d
+  Block 0x140006953-0x14000695d -> Jumps to: 0x140006b0e
+  Block 0x14000695d-0x14000696d -> Jumps to: 0x14000696d, 0x14000697e
+  Block 0x14000696d-0x140006974 -> Jumps to: 0x140006974, 0x14000699f
+  Block 0x140006974-0x14000697e -> Jumps to: 0x14000696d, 0x14000697e
+  Block 0x14000697e-0x140006995 -> Jumps to: 0x140006995, 0x1400069a9
+  Block 0x140006995-0x14000699f -> Jumps to: 0x140006b0e
+  Block 0x14000699f-0x1400069a9 -> Jumps to: 0x140006b0e
+  Block 0x1400069a9-0x1400069db -> Jumps to: 0x1400069db, 0x1400069e5
+  Block 0x1400069db-0x1400069e5 -> Jumps to: 0x140006b01
+  Block 0x1400069e5-0x140006a40 -> Jumps to: 0x140006a40
+  Block 0x140006a40-0x140006a5e -> Jumps to: 0x140006a5e
+  Block 0x140006a5e-0x140006a86 -> Jumps to: 0x140006a86
+  Block 0x140006a86-0x140006a8b -> Jumps to: 0x140006a8b, 0x140006a92
+  Block 0x140006a8b-0x140006a92 -> Jumps to: 0x140006ae2
+  Block 0x140006a92-0x140006ab8 -> Jumps to: 0x140006ab8, 0x140006abf
+  Block 0x140006ab8-0x140006abf -> Jumps to: 
+  Block 0x140006abf-0x140006adb -> Jumps to: 0x140006b0e
+  Block 0x140006adb-0x140006ae2 -> Jumps to: 0x140006ae2
+  Block 0x140006ae2-0x140006aee -> Jumps to: 0x140006af5
+  Block 0x140006aee-0x140006af5 -> Jumps to: 0x140006af5
+  Block 0x140006af5-0x140006b01 -> Jumps to: 0x140006b01
+  Block 0x140006b01-0x140006b0e -> Jumps to: 0x140006b0e
+  Block 0x140006b0e-0x140006b2d -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140006924(__int64 a1, union _FILE_SEGMENT_ELEMENT *a2, unsigned int a3, char a4, _QWORD *a5)
+{
+  __int64 v6; // rdi
+  union _FILE_SEGMENT_ELEMENT *v7; // r14
+  unsigned int v10; // ecx
+  PVOID v11; // rbx
+  _OWORD *v12; // rax
+  __int64 v13; // rdi
+  ULONGLONG Alignment; // rdx
+  __int64 v15; // r9
+  PVOID v16; // rcx
+  __int64 v17; // rax
+  _QWORD *v18; // rcx
+
+  v6 = a3;
+  v7 = a2;
+  if ( a3 == 1 )
+    return 3221225507LL;
+  v10 = 0;
+  if ( !a3 )
+  {
+LABEL_6:
+    v11 = sub_1400055C0(0x20u, 0);
+    if ( !v11 )
+      return 3221225626LL;
+    v12 = sub_1400055C0(8 * ((unsigned __int64)((v6 << 12) + 4095 + ((__int64)v7->Buffer & 0xFFF)) >> 12) + 48, 1);
+    *((_QWORD *)v11 + 3) = v12;
+    if ( v12 )
+    {
+      *v12 = 0;
+      v12[1] = 0;
+      v12[2] = 0;
+      v13 = v6 << 12;
+      Alignment = v7->Alignment;
+      v15 = *((_QWORD *)v11 + 3);
+      *(_QWORD *)v15 = 0;
+      *(_WORD *)(v15 + 8) = 8 * ((((Alignment & 0xFFF) + v13 + 4095) >> 12) + 6);
+      *(_WORD *)(v15 + 10) = 0;
+      *(_QWORD *)(v15 + 32) = Alignment & 0xFFFFFFFFFFFFF000uLL;
+      *(_DWORD *)(v15 + 44) = Alignment & 0xFFF;
+      *(_DWORD *)(v15 + 40) = v13;
+      MmProbeAndLockSelectedPages(*((PMDL *)v11 + 3), v7, 1, a4 == 0 ? IoModifyAccess : IoReadAccess);
+      v16 = MmMapLockedPagesSpecifyCache(*((PMDL *)v11 + 3), 1, MmCached, 0, 0, 0x40000010u);
+      *((_QWORD *)v11 + 2) = v16;
+      if ( v16 )
+      {
+        *a5 = v16;
+        ExAcquireFastMutex(*(PFAST_MUTEX *)(a1 + 16));
+        v17 = *(_QWORD *)(a1 + 16) + 96LL;
+        v18 = *(_QWORD **)(*(_QWORD *)(a1 + 16) + 104LL);
+        if ( *v18 != v17 )
+          __fastfail(3u);
+        *(_QWORD *)v11 = v17;
+        *((_QWORD *)v11 + 1) = v18;
+        *v18 = v11;
+        *(_QWORD *)(v17 + 8) = v11;
+        ExReleaseFastMutex(*(PFAST_MUTEX *)(a1 + 16));
+        return 0;
+      }
+      MmUnlockPages(*((PMDL *)v11 + 3));
+      ExFreePoolWithTag(*((PVOID *)v11 + 3), 0);
+    }
+    ExFreePoolWithTag(v11, 0);
+    return 3221225626LL;
+  }
+  while ( ((__int64)a2->Buffer & 0xFFFLL) == 0 )
+  {
+    ++v10;
+    ++a2;
+    if ( v10 >= a3 )
+      goto LABEL_6;
+  }
+  return 3221225485LL;
+}
+
+
+=== DISASM ===
+0x140006924: mov     rax, rsp
+0x140006927: mov     [rax+8], rbx
+0x14000692b: mov     [rax+10h], rsi
+0x14000692f: mov     [rax+18h], rdi
+0x140006933: mov     [rax+20h], r12
+0x140006937: push    r13
+0x140006939: push    r14
+0x14000693b: push    r15
+0x14000693d: sub     rsp, 40h
+0x140006941: mov     r12b, r9b
+0x140006944: mov     edi, r8d
+0x140006947: mov     r14, rdx
+0x14000694a: mov     r15, rcx
+0x14000694d: cmp     r8d, 1
+0x140006951: jnz     short loc_14000695D
+0x140006953: mov     eax, 0C0000023h
+0x140006958: jmp     loc_140006B0E
+0x14000695d: xor     r13d, r13d
+0x140006960: mov     ecx, r13d
+0x140006963: mov     esi, 0FFFh
+0x140006968: test    r8d, r8d
+0x14000696b: jz      short loc_14000697E
+0x14000696d: mov     eax, [rdx]
+0x14000696f: test    rsi, rax
+0x140006972: jnz     short loc_14000699F
+0x140006974: inc     ecx
+0x140006976: add     rdx, 8
+0x14000697a: cmp     ecx, edi
+0x14000697c: jb      short loc_14000696D
+0x14000697e: xor     edx, edx
+0x140006980: lea     ecx, [rdx+20h]; NumberOfBytes
+0x140006983: call    sub_1400055C0
+0x140006988: mov     rbx, rax
+0x14000698b: mov     [rsp+58h+var_28], rax
+0x140006990: test    rax, rax
+0x140006993: jnz     short loc_1400069A9
+0x140006995: mov     eax, 0C000009Ah
+0x14000699a: jmp     loc_140006B0E
+0x14000699f: mov     eax, 0C000000Dh
+0x1400069a4: jmp     loc_140006B0E
+0x1400069a9: mov     ecx, [r14]
+0x1400069ac: and     rcx, rsi
+0x1400069af: mov     rax, rdi
+0x1400069b2: shl     rax, 0Ch
+0x1400069b6: add     rax, 0FFFh
+0x1400069bc: add     rcx, rax
+0x1400069bf: shr     rcx, 0Ch
+0x1400069c3: lea     rcx, ds:30h[rcx*8]; NumberOfBytes
+0x1400069cb: mov     dl, 1
+0x1400069cd: call    sub_1400055C0
+0x1400069d2: mov     [rbx+18h], rax
+0x1400069d6: test    rax, rax
+0x1400069d9: jnz     short loc_1400069E5
+0x1400069db: mov     edi, 0C000009Ah
+0x1400069e0: jmp     loc_140006B01
+0x1400069e5: xorps   xmm0, xmm0
+0x1400069e8: movups  xmmword ptr [rax], xmm0
+0x1400069eb: movups  xmmword ptr [rax+10h], xmm0
+0x1400069ef: movups  xmmword ptr [rax+20h], xmm0
+0x1400069f3: shl     rdi, 0Ch
+0x1400069f7: mov     rdx, [r14]
+0x1400069fa: mov     r9, [rbx+18h]
+0x1400069fe: mov     [r9], r13
+0x140006a01: mov     r8d, edx
+0x140006a04: mov     eax, r8d
+0x140006a07: and     rax, rsi
+0x140006a0a: lea     rcx, [rdi+0FFFh]
+0x140006a11: add     rcx, rax
+0x140006a14: shr     rcx, 0Ch
+0x140006a18: add     cx, 6
+0x140006a1c: shl     cx, 3
+0x140006a20: mov     [r9+8], cx
+0x140006a25: mov     [r9+0Ah], r13w
+0x140006a2a: and     rdx, 0FFFFFFFFFFFFF000h
+0x140006a31: mov     [r9+20h], rdx
+0x140006a35: and     r8d, esi
+0x140006a38: mov     [r9+2Ch], r8d
+0x140006a3c: mov     [r9+28h], edi
+0x140006a40: neg     r12b
+0x140006a43: sbb     r9d, r9d
+0x140006a46: not     r9d
+0x140006a49: and     r9d, 2; Operation
+0x140006a4d: mov     r8b, 1; AccessMode
+0x140006a50: mov     rdx, r14; SegmentArray
+0x140006a53: mov     rcx, [rbx+18h]; MemoryDescriptorList
+0x140006a57: call    cs:MmProbeAndLockSelectedPages
+0x140006a5d: nop
+0x140006a5e: mov     rcx, [rbx+18h]; MemoryDescriptorList
+0x140006a62: mov     [rsp+58h+Priority], 40000010h; Priority
+0x140006a6a: mov     [rsp+58h+BugCheckOnFailure], r13d; BugCheckOnFailure
+0x140006a6f: xor     r9d, r9d; RequestedAddress
+0x140006a72: lea     r8d, [r9+1]; CacheType
+0x140006a76: mov     dl, r8b; AccessMode
+0x140006a79: call    cs:MmMapLockedPagesSpecifyCache
+0x140006a7f: mov     rcx, rax
+0x140006a82: mov     [rbx+10h], rax
+0x140006a86: test    rcx, rcx
+0x140006a89: jnz     short loc_140006A92
+0x140006a8b: mov     edi, 0C000009Ah
+0x140006a90: jmp     short loc_140006AE2
+0x140006a92: mov     rax, [rsp+58h+arg_20]
+0x140006a9a: mov     [rax], rcx
+0x140006a9d: mov     rcx, [r15+10h]; FastMutex
+0x140006aa1: call    cs:ExAcquireFastMutex
+0x140006aa7: mov     rax, [r15+10h]
+0x140006aab: add     rax, 60h ; '`'
+0x140006aaf: mov     rcx, [rax+8]
+0x140006ab3: cmp     [rcx], rax
+0x140006ab6: jz      short loc_140006ABF
+0x140006ab8: mov     ecx, 3
+0x140006abd: int     29h; Win8: RtlFailFast(ecx)
+0x140006abf: mov     [rbx], rax
+0x140006ac2: mov     [rbx+8], rcx
+0x140006ac6: mov     [rcx], rbx
+0x140006ac9: mov     [rax+8], rbx
+0x140006acd: mov     rcx, [r15+10h]; FastMutex
+0x140006ad1: call    cs:ExReleaseFastMutex
+0x140006ad7: xor     eax, eax
+0x140006ad9: jmp     short loc_140006B0E
+0x140006adb: mov     edi, eax
+0x140006add: mov     rbx, [rsp+58h+var_28]
+0x140006ae2: mov     rcx, [rbx+18h]; MemoryDescriptorList
+0x140006ae6: call    cs:MmUnlockPages
+0x140006aec: jmp     short loc_140006AF5
+0x140006aee: mov     edi, eax
+0x140006af0: mov     rbx, [rsp+58h+var_28]
+0x140006af5: xor     edx, edx; Tag
+0x140006af7: mov     rcx, [rbx+18h]; P
+0x140006afb: call    cs:ExFreePoolWithTag
+0x140006b01: xor     edx, edx; Tag
+0x140006b03: mov     rcx, rbx; P
+0x140006b06: call    cs:ExFreePoolWithTag
+0x140006b0c: mov     eax, edi
+0x140006b0e: mov     rbx, [rsp+58h+arg_0]
+0x140006b13: mov     rsi, [rsp+58h+arg_8]
+0x140006b18: mov     rdi, [rsp+58h+arg_10]
+0x140006b1d: mov     r12, [rsp+58h+arg_18]
+0x140006b22: add     rsp, 40h
+0x140006b26: pop     r15
+0x140006b28: pop     r14
+0x140006b2a: pop     r13
+0x140006b2c: retn

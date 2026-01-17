@@ -1,0 +1,79 @@
+=== METADATA ===
+Name: sub_1400059A4
+Addr: 0x1400059a4
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x1400059a4: Access Member +0x8 ([rsp+arg_0])
+  0x1400059a9: Access Member +0x10 ([rsp+arg_8])
+  0x1400059e6: Access Member +0x30 ([rsp+28h+arg_0])
+  0x1400059eb: Access Member +0x38 ([rsp+28h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x1400044E1)
+  <- sub_140007830 (0x140007A82)
+  <- sub_14000BE84 (0x14000BFB0)
+  <- sub_14000F474 (0x14000F54F)
+
+=== IMPORTS ===
+  -> 0x1400059c8 calls ProbeForRead
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x1400059a4-0x1400059bc -> Jumps to: 0x1400059bc
+  Block 0x1400059bc-0x1400059dd -> Jumps to: 0x1400059dd
+  Block 0x1400059dd-0x1400059e1 -> Jumps to: 0x1400059e6
+  Block 0x1400059e1-0x1400059e6 -> Jumps to: 0x1400059e6
+  Block 0x1400059e6-0x1400059f6 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_1400059A4(__int64 a1, volatile void *a2, SIZE_T a3)
+{
+  ProbeForRead(a2, a3, 1u);
+  sub_1400100C0(a1, a2, a3);
+  return 0;
+}
+
+
+=== DISASM ===
+0x1400059a4: mov     [rsp+arg_0], rbx
+0x1400059a9: mov     [rsp+arg_8], rsi
+0x1400059ae: push    rdi
+0x1400059af: sub     rsp, 20h
+0x1400059b3: mov     rbx, r8
+0x1400059b6: mov     rdi, rdx
+0x1400059b9: mov     rsi, rcx
+0x1400059bc: mov     r8d, 1; Alignment
+0x1400059c2: mov     rdx, rbx; Length
+0x1400059c5: mov     rcx, rdi; Address
+0x1400059c8: call    cs:ProbeForRead
+0x1400059ce: mov     r8, rbx
+0x1400059d1: mov     rdx, rdi
+0x1400059d4: mov     rcx, rsi
+0x1400059d7: call    sub_1400100C0
+0x1400059dc: nop
+0x1400059dd: xor     eax, eax
+0x1400059df: jmp     short loc_1400059E6
+0x1400059e1: mov     eax, 0C0000005h
+0x1400059e6: mov     rbx, [rsp+28h+arg_0]
+0x1400059eb: mov     rsi, [rsp+28h+arg_8]
+0x1400059f0: add     rsp, 20h
+0x1400059f4: pop     rdi
+0x1400059f5: retn

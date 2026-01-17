@@ -1,0 +1,160 @@
+=== METADATA ===
+Name: sub_140006680
+Addr: 0x140006680
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140006683: Access Member +0x8 ([rax+8])
+  0x140006687: Access Member +0x10 ([rax+10h])
+  0x14000668b: Access Member +0x18 ([rax+18h])
+  0x14000668f: Access Member +0x20 ([rax+20h])
+  0x1400066b4: Access Member +0xA ([rsi+0Ah])
+  0x1400066d2: Access Member +0xA ([rsi+0Ah])
+  0x1400066ea: Access Member +0x68 ([rbp+68h])
+  0x140006703: Access Member +0x8 ([rax+8])
+  0x14000671c: Access Member +0x30 ([rsp+28h+arg_0])
+  0x140006721: Access Member +0x38 ([rsp+28h+arg_8])
+  0x140006726: Access Member +0x40 ([rsp+28h+arg_10])
+  0x14000672b: Access Member +0x48 ([rsp+28h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B218 (0x14000B281)
+  <- sub_14000CA68 (0x14000CA93)
+  <- sub_14000D3E0 (0x14000D727)
+  <- sub_14000F300 (0x14000F3AD)
+
+=== IMPORTS ===
+  -> 0x1400066a5 calls MmIsAddressValid
+  -> 0x1400066bf calls MmGetPhysicalAddress
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140006680-0x1400066af -> Jumps to: 0x1400066af, 0x1400066bc
+  Block 0x1400066af-0x1400066bc -> Jumps to: 0x1400066d8
+  Block 0x1400066bc-0x1400066cd -> Jumps to: 0x1400066cd, 0x140006715
+  Block 0x1400066cd-0x1400066d8 -> Jumps to: 0x1400066d8
+  Block 0x1400066d8-0x1400066ea -> Jumps to: 0x1400066ea, 0x14000671c
+  Block 0x1400066ea-0x1400066ff -> Jumps to: 0x1400066ff, 0x140006703
+  Block 0x1400066ff-0x140006703 -> Jumps to: 0x14000671c
+  Block 0x140006703-0x14000670c -> Jumps to: 0x14000670c, 0x140006710
+  Block 0x14000670c-0x140006710 -> Jumps to: 0x14000671c
+  Block 0x140006710-0x140006715 -> Jumps to: 0x14000671a
+  Block 0x140006715-0x14000671a -> Jumps to: 0x14000671a
+  Block 0x14000671a-0x14000671c -> Jumps to: 0x14000671c
+  Block 0x14000671c-0x140006737 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140006680(__int64 a1, unsigned __int64 a2, _QWORD *a3)
+{
+  unsigned int v6; // esi
+  unsigned int v7; // ebx
+  __int64 result; // rax
+  PHYSICAL_ADDRESS v9; // rax
+  __int64 v10; // rax
+  __int64 v11; // rax
+
+  if ( MmIsAddressValid((PVOID)a2) )
+  {
+    v9.QuadPart = MmGetPhysicalAddress((PVOID)a2).QuadPart >> 12;
+    if ( v9.LowPart )
+    {
+      *a3 = v9.LowPart;
+      return 0;
+    }
+    v6 = -10222;
+    v7 = -10212;
+    result = 4294957054LL;
+  }
+  else
+  {
+    v6 = -10220;
+    v7 = -10210;
+    result = 4294957056LL;
+  }
+  *a3 = 0x3FFFFFFFFFLL;
+  if ( !a1 )
+    return result;
+  v10 = sub_140007EDC(*(_QWORD *)(a1 + 104), a2 >> 12);
+  if ( !v10 )
+    return v7;
+  v11 = *(_QWORD *)(v10 + 8);
+  if ( !v11 )
+    return v6;
+  *a3 = v11;
+  return 0;
+}
+
+
+=== DISASM ===
+0x140006680: mov     rax, rsp
+0x140006683: mov     [rax+8], rbx
+0x140006687: mov     [rax+10h], rbp
+0x14000668b: mov     [rax+18h], rsi
+0x14000668f: mov     [rax+20h], rdi
+0x140006693: push    r14
+0x140006695: sub     rsp, 20h
+0x140006699: mov     rbp, rcx
+0x14000669c: mov     r14, r8
+0x14000669f: mov     rcx, rdx; VirtualAddress
+0x1400066a2: mov     rdi, rdx
+0x1400066a5: call    cs:MmIsAddressValid
+0x1400066ab: test    al, al
+0x1400066ad: jnz     short loc_1400066BC
+0x1400066af: mov     esi, 0FFFFD814h
+0x1400066b4: lea     ebx, [rsi+0Ah]
+0x1400066b7: lea     eax, [rsi-14h]
+0x1400066ba: jmp     short loc_1400066D8
+0x1400066bc: mov     rcx, rdi; BaseAddress
+0x1400066bf: call    cs:MmGetPhysicalAddress
+0x1400066c5: sar     rax, 0Ch
+0x1400066c9: test    eax, eax
+0x1400066cb: jnz     short loc_140006715
+0x1400066cd: mov     esi, 0FFFFD812h
+0x1400066d2: lea     ebx, [rsi+0Ah]
+0x1400066d5: lea     eax, [rsi-14h]
+0x1400066d8: mov     rcx, 3FFFFFFFFFh
+0x1400066e2: mov     [r14], rcx
+0x1400066e5: test    rbp, rbp
+0x1400066e8: jz      short loc_14000671C
+0x1400066ea: mov     rcx, [rbp+68h]
+0x1400066ee: shr     rdi, 0Ch
+0x1400066f2: mov     rdx, rdi
+0x1400066f5: call    sub_140007EDC
+0x1400066fa: test    rax, rax
+0x1400066fd: jnz     short loc_140006703
+0x1400066ff: mov     eax, ebx
+0x140006701: jmp     short loc_14000671C
+0x140006703: mov     rax, [rax+8]
+0x140006707: test    rax, rax
+0x14000670a: jnz     short loc_140006710
+0x14000670c: mov     eax, esi
+0x14000670e: jmp     short loc_14000671C
+0x140006710: mov     [r14], rax
+0x140006713: jmp     short loc_14000671A
+0x140006715: mov     ecx, eax
+0x140006717: mov     [r14], rcx
+0x14000671a: xor     eax, eax
+0x14000671c: mov     rbx, [rsp+28h+arg_0]
+0x140006721: mov     rbp, [rsp+28h+arg_8]
+0x140006726: mov     rsi, [rsp+28h+arg_10]
+0x14000672b: mov     rdi, [rsp+28h+arg_18]
+0x140006730: add     rsp, 20h
+0x140006734: pop     r14
+0x140006736: retn

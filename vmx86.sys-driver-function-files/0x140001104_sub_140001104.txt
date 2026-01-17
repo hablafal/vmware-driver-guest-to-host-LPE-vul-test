@@ -1,0 +1,164 @@
+=== METADATA ===
+Name: sub_140001104
+Addr: 0x140001104
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000110c: Access Member +0x10 ([rbp+arg_0])
+  0x140001110: Access Member +0x10 ([rbp+arg_0])
+  0x140001114: Access Member +0x320 (word ptr [rax+320h])
+  0x14000111f: Access Member +0x10 ([rbp+arg_0])
+  0x14000112d: Access Member +0x10 ([rbp+arg_0])
+  0x14000113b: Access Member +0x10 ([rbp+arg_0])
+  0x14000113f: Access Member +0x720 (word ptr [rax+720h])
+  0x140001148: Access Member +0x10 ([rbp+arg_0])
+  0x14000115a: Access Member +0x10 ([rbp+arg_0])
+  0x14000115e: Access Member +0x722 ([rdx+722h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008D04 (0x140008F9B)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140001104-0x140001284 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140001104(__int64 a1)
+{
+  __int64 v1; // rax
+  __int64 v2; // rax
+  __int64 v3; // rax
+  __int64 v4; // rax
+  __int64 v6; // [rsp+28h] [rbp-18h]
+  __int64 v7; // [rsp+30h] [rbp-10h]
+  __int16 v8; // [rsp+3Eh] [rbp-2h]
+
+  v8 = *(_WORD *)(a1 + 800);
+  v7 = a1 + 1856;
+  v6 = a1 + 2176;
+  *(_WORD *)(a1 + 1824) = 319;
+  *(_QWORD *)(a1 + 1826) = sub_140001000(a1 + 1856);
+  sub_14000100E(1u, v8, v7, (__int64)&loc_140002010);
+  sub_14000100E(2u, v8, v7, (__int64)&loc_1400020A0);
+  sub_14000100E(6u, v8, v7, (__int64)&loc_140002040);
+  sub_14000100E(0x12u, v8, v7, (__int64)&loc_1400020C0);
+  v1 = sub_1400010D2((__int16)&loc_140002010);
+  sub_14000100E(1u, 1864, v6, v1);
+  v2 = sub_1400010D2((__int16)&loc_1400020A0);
+  sub_14000100E(2u, 1864, v6, v2);
+  v3 = sub_1400010D2((__int16)&loc_140002040);
+  sub_14000100E(6u, 1864, v6, v3);
+  v4 = sub_1400010D2((__int16)&loc_1400020C0);
+  return sub_14000100E(0x12u, 1864, v6, v4);
+}
+
+
+=== DISASM ===
+0x140001104: push    rbp
+0x140001105: mov     rbp, rsp
+0x140001108: sub     rsp, 40h
+0x14000110c: mov     [rbp+arg_0], rcx
+0x140001110: mov     rax, [rbp+arg_0]
+0x140001114: movzx   eax, word ptr [rax+320h]
+0x14000111b: mov     [rbp+var_2], ax
+0x14000111f: mov     rax, [rbp+arg_0]
+0x140001123: add     rax, 740h
+0x140001129: mov     [rbp+var_10], rax
+0x14000112d: mov     rax, [rbp+arg_0]
+0x140001131: add     rax, 880h
+0x140001137: mov     [rbp+var_18], rax
+0x14000113b: mov     rax, [rbp+arg_0]
+0x14000113f: mov     word ptr [rax+720h], 13Fh
+0x140001148: mov     rax, [rbp+arg_0]
+0x14000114c: add     rax, 740h
+0x140001152: mov     rcx, rax
+0x140001155: call    sub_140001000
+0x14000115a: mov     rdx, [rbp+arg_0]
+0x14000115e: mov     [rdx+722h], rax
+0x140001165: lea     rcx, loc_140002010
+0x14000116c: movzx   eax, [rbp+var_2]
+0x140001170: mov     rdx, [rbp+var_10]
+0x140001174: mov     r9, rcx
+0x140001177: mov     r8, rdx
+0x14000117a: mov     edx, eax
+0x14000117c: mov     ecx, 1
+0x140001181: call    sub_14000100E
+0x140001186: lea     rcx, loc_1400020A0
+0x14000118d: movzx   eax, [rbp+var_2]
+0x140001191: mov     rdx, [rbp+var_10]
+0x140001195: mov     r9, rcx
+0x140001198: mov     r8, rdx
+0x14000119b: mov     edx, eax
+0x14000119d: mov     ecx, 2
+0x1400011a2: call    sub_14000100E
+0x1400011a7: lea     rcx, loc_140002040
+0x1400011ae: movzx   eax, [rbp+var_2]
+0x1400011b2: mov     rdx, [rbp+var_10]
+0x1400011b6: mov     r9, rcx
+0x1400011b9: mov     r8, rdx
+0x1400011bc: mov     edx, eax
+0x1400011be: mov     ecx, 6
+0x1400011c3: call    sub_14000100E
+0x1400011c8: lea     rcx, loc_1400020C0
+0x1400011cf: movzx   eax, [rbp+var_2]
+0x1400011d3: mov     rdx, [rbp+var_10]
+0x1400011d7: mov     r9, rcx
+0x1400011da: mov     r8, rdx
+0x1400011dd: mov     edx, eax
+0x1400011df: mov     ecx, 12h
+0x1400011e4: call    sub_14000100E
+0x1400011e9: lea     rcx, loc_140002010
+0x1400011f0: call    sub_1400010D2
+0x1400011f5: mov     rdx, [rbp+var_18]
+0x1400011f9: mov     r9, rax
+0x1400011fc: mov     r8, rdx
+0x1400011ff: mov     edx, 748h
+0x140001204: mov     ecx, 1
+0x140001209: call    sub_14000100E
+0x14000120e: lea     rcx, loc_1400020A0
+0x140001215: call    sub_1400010D2
+0x14000121a: mov     rdx, [rbp+var_18]
+0x14000121e: mov     r9, rax
+0x140001221: mov     r8, rdx
+0x140001224: mov     edx, 748h
+0x140001229: mov     ecx, 2
+0x14000122e: call    sub_14000100E
+0x140001233: lea     rcx, loc_140002040
+0x14000123a: call    sub_1400010D2
+0x14000123f: mov     rdx, [rbp+var_18]
+0x140001243: mov     r9, rax
+0x140001246: mov     r8, rdx
+0x140001249: mov     edx, 748h
+0x14000124e: mov     ecx, 6
+0x140001253: call    sub_14000100E
+0x140001258: lea     rcx, loc_1400020C0
+0x14000125f: call    sub_1400010D2
+0x140001264: mov     rdx, [rbp+var_18]
+0x140001268: mov     r9, rax
+0x14000126b: mov     r8, rdx
+0x14000126e: mov     edx, 748h
+0x140001273: mov     ecx, 12h
+0x140001278: call    sub_14000100E
+0x14000127d: nop
+0x14000127e: add     rsp, 40h
+0x140001282: pop     rbp
+0x140001283: retn

@@ -1,0 +1,112 @@
+=== METADATA ===
+Name: sub_14000F9BC (Suggested: EvtIoDeviceControl)
+Addr: 0x14000f9bc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f9bc: Access Member +0x8 ([rsp+arg_0])
+  0x14000f9c1: Access Member +0x10 ([rsp+arg_8])
+  0x14000f9c6: Access Member +0x18 ([rsp+arg_10])
+  0x14000f9d0: Access Member +0x30 ([rcx+30h])
+  0x14000fa26: Access Member +0x8 ([rbp+8])
+  0x14000fa39: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000fa3e: Access Member +0x38 ([rsp+28h+arg_8])
+  0x14000fa43: Access Member +0x40 ([rsp+28h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x30 -> possible EvtIoDeviceControl
+
+=== CALLERS ===
+  <- sub_14000D3E0 (0x14000D90D)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f9ff -> StatVarsVmmon_GetRegionMPN
+  0x14000fa09 -> (%s) Requested MPN at invalid offset %I64u for VCPU %u
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000f9bc-0x14000f9f7 -> Jumps to: 0x14000f9f7, 0x14000fa21
+  Block 0x14000f9f7-0x14000fa21 -> Jumps to: 0x14000fa39
+  Block 0x14000fa21-0x14000fa39 -> Jumps to: 0x14000fa39
+  Block 0x14000fa39-0x14000fa4e -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000F9BC(__int64 a1, unsigned int a2, unsigned __int64 a3)
+{
+  unsigned __int64 *v3; // rbp
+  __int64 v5; // rbx
+  bool v7; // cf
+  __int64 v9; // rbx
+
+  v3 = *(unsigned __int64 **)(a1 + 48);
+  v5 = a2;
+  sub_140007558(a1);
+  v7 = a3 < *v3;
+  _mm_lfence();
+  if ( v7 )
+  {
+    v9 = *(_QWORD *)(v3[1] + 8 * (a3 + *v3 * v5));
+    sub_140007564(a1);
+    return v9;
+  }
+  else
+  {
+    sub_140007564(a1);
+    sub_140003A14("(%s) Requested MPN at invalid offset %I64u for VCPU %u\n", "StatVarsVmmon_GetRegionMPN", a3, v5);
+    return 0x3FFFFFFFFFLL;
+  }
+}
+
+
+=== DISASM ===
+0x14000f9bc: mov     [rsp+arg_0], rbx
+0x14000f9c1: mov     [rsp+arg_8], rbp
+0x14000f9c6: mov     [rsp+arg_10], rsi
+0x14000f9cb: push    rdi
+0x14000f9cc: sub     rsp, 20h
+0x14000f9d0: mov     rbp, [rcx+30h]
+0x14000f9d4: mov     rsi, r8
+0x14000f9d7: mov     ebx, edx
+0x14000f9d9: mov     rdi, rcx
+0x14000f9dc: mov     edx, 2Eh ; '.'
+0x14000f9e1: call    sub_140007558
+0x14000f9e6: cmp     rsi, [rbp+0]
+0x14000f9ea: mov     edx, 2Eh ; '.'
+0x14000f9ef: mov     rcx, rdi
+0x14000f9f2: lfence
+0x14000f9f5: jb      short loc_14000FA21
+0x14000f9f7: call    sub_140007564
+0x14000f9fc: mov     r9d, ebx
+0x14000f9ff: lea     rdx, aStatvarsvmmonG; "StatVarsVmmon_GetRegionMPN"
+0x14000fa06: mov     r8, rsi
+0x14000fa09: lea     rcx, aSRequestedMpnA; "(%s) Requested MPN at invalid offset %I"...
+0x14000fa10: call    sub_140003A14
+0x14000fa15: mov     rax, 3FFFFFFFFFh
+0x14000fa1f: jmp     short loc_14000FA39
+0x14000fa21: imul    rbx, [rbp+0]
+0x14000fa26: mov     rax, [rbp+8]
+0x14000fa2a: add     rbx, rsi
+0x14000fa2d: mov     rbx, [rax+rbx*8]
+0x14000fa31: call    sub_140007564
+0x14000fa36: mov     rax, rbx
+0x14000fa39: mov     rbx, [rsp+28h+arg_0]
+0x14000fa3e: mov     rbp, [rsp+28h+arg_8]
+0x14000fa43: mov     rsi, [rsp+28h+arg_10]
+0x14000fa48: add     rsp, 20h
+0x14000fa4c: pop     rdi
+0x14000fa4d: retn

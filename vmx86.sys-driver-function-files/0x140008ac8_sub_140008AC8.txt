@@ -1,0 +1,131 @@
+=== METADATA ===
+Name: sub_140008AC8
+Addr: 0x140008ac8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140008acb: Access Member +0x8 ([rax+8])
+  0x140008acf: Access Member +0x10 ([rax+10h])
+  0x140008ad3: Access Member +0x18 ([rax+18h])
+  0x140008ad7: Access Member +0x20 ([rax+20h])
+  0x140008ae5: Access Member +0x308 ([rdx+308h])
+  0x140008aef: Access Member +0x300 ([rdx+300h])
+  0x140008af6: Access Member +0x2B8 ([rdx+2B8h])
+  0x140008afd: Access Member +0x310 ([rdx+310h])
+  0x140008b04: Access Member +0x270 ([rdx+270h])
+  0x140008b6a: Access Member +0x48 ([rsp+38h+arg_8])
+  0x140008b71: Access Member +0x40 ([rsp+38h+arg_0])
+  0x140008b76: Access Member +0x50 ([rsp+38h+arg_10])
+  0x140008b7b: Access Member +0x58 ([rsp+38h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008D04 (0x140008F25)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140008ac8-0x140008b3a -> Jumps to: 0x140008b3a, 0x140008b6a
+  Block 0x140008b3a-0x140008b53 -> Jumps to: 0x140008b53, 0x140008b6a
+  Block 0x140008b53-0x140008b68 -> Jumps to: 0x140008b68, 0x140008b6a
+  Block 0x140008b68-0x140008b6a -> Jumps to: 0x140008b6a
+  Block 0x140008b6a-0x140008b8b -> Jumps to: 
+
+=== CODE ===
+bool __fastcall sub_140008AC8(__int64 a1, _QWORD *a2)
+{
+  unsigned __int64 v3; // rbp
+  unsigned __int64 v4; // r14
+  unsigned __int64 v5; // rdi
+  __int64 v6; // rbx
+  unsigned __int64 v7; // r15
+  PHYSICAL_ADDRESS v8; // r12
+  bool v9; // al
+  char v10; // bl
+
+  v3 = a2[78];
+  v4 = a2[97] >> 12;
+  v5 = a2[96] >> 12;
+  v6 = a2[87] >> 12;
+  v7 = a2[98] >> 12;
+  v8 = sub_140005F2C();
+  v9 = sub_140008A14(a1, v3, v5, v6);
+  v10 = 0;
+  if ( v9 && sub_140008A14(a1, v3, v4, qword_140018F10) )
+    return sub_140008A14(a1, v3, v7, v8.QuadPart);
+  return v10;
+}
+
+
+=== DISASM ===
+0x140008ac8: mov     rax, rsp
+0x140008acb: mov     [rax+8], rbx
+0x140008acf: mov     [rax+10h], rbp
+0x140008ad3: mov     [rax+18h], rsi
+0x140008ad7: mov     [rax+20h], rdi
+0x140008adb: push    r12
+0x140008add: push    r14
+0x140008adf: push    r15
+0x140008ae1: sub     rsp, 20h
+0x140008ae5: mov     r14, [rdx+308h]
+0x140008aec: mov     rsi, rcx
+0x140008aef: mov     rdi, [rdx+300h]
+0x140008af6: mov     rbx, [rdx+2B8h]
+0x140008afd: mov     r15, [rdx+310h]
+0x140008b04: mov     rbp, [rdx+270h]
+0x140008b0b: shr     r14, 0Ch
+0x140008b0f: shr     rdi, 0Ch
+0x140008b13: shr     rbx, 0Ch
+0x140008b17: shr     r15, 0Ch
+0x140008b1b: call    sub_140005F2C
+0x140008b20: mov     r9, rbx
+0x140008b23: mov     r8, rdi
+0x140008b26: mov     rdx, rbp
+0x140008b29: mov     rcx, rsi
+0x140008b2c: mov     r12, rax
+0x140008b2f: call    sub_140008A14
+0x140008b34: xor     bl, bl
+0x140008b36: test    al, al
+0x140008b38: jz      short loc_140008B6A
+0x140008b3a: mov     r9, cs:qword_140018F10
+0x140008b41: mov     r8, r14
+0x140008b44: mov     rdx, rbp
+0x140008b47: mov     rcx, rsi
+0x140008b4a: call    sub_140008A14
+0x140008b4f: test    al, al
+0x140008b51: jz      short loc_140008B6A
+0x140008b53: mov     r9, r12
+0x140008b56: mov     r8, r15
+0x140008b59: mov     rdx, rbp
+0x140008b5c: mov     rcx, rsi
+0x140008b5f: call    sub_140008A14
+0x140008b64: test    al, al
+0x140008b66: jz      short loc_140008B6A
+0x140008b68: mov     bl, 1
+0x140008b6a: mov     rbp, [rsp+38h+arg_8]
+0x140008b6f: mov     al, bl
+0x140008b71: mov     rbx, [rsp+38h+arg_0]
+0x140008b76: mov     rsi, [rsp+38h+arg_10]
+0x140008b7b: mov     rdi, [rsp+38h+arg_18]
+0x140008b80: add     rsp, 20h
+0x140008b84: pop     r15
+0x140008b86: pop     r14
+0x140008b88: pop     r12
+0x140008b8a: retn

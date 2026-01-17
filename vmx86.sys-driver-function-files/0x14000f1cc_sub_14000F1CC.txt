@@ -1,0 +1,67 @@
+=== METADATA ===
+Name: sub_14000F1CC
+Addr: 0x14000f1cc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f1ec: Access Member +0x38 ([rax+38h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E938 (0x14000E994)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f1cc-0x14000f1d8 -> Jumps to: 0x14000f1d8, 0x14000f1f9
+  Block 0x14000f1d8-0x14000f1de -> Jumps to: 0x14000f1de, 0x14000f1e9
+  Block 0x14000f1de-0x14000f1e9 -> Jumps to: 0x14000f300
+  Block 0x14000f1e9-0x14000f1f9 -> Jumps to: 0x140005f48
+  Block 0x14000f1f9-0x14000f1fe -> Jumps to: 0x140005f2c
+  Block 0x14000f300-0x14000f300 -> Jumps to: 
+  Block 0x140005f48-0x140005f48 -> Jumps to: 
+  Block 0x140005f2c-0x140005f2c -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000F1CC(__int64 a1, __int64 a2, unsigned int a3, unsigned int a4)
+{
+  if ( a2 == 8 )
+    return sub_140005F2C().QuadPart;
+  if ( a2 == 9 )
+    return sub_140005F48(*(void **)(*(_QWORD *)(*(_QWORD *)a1 + 56LL) + 8LL * a4)).QuadPart;
+  return sub_14000F300(a1, a2, a4, a3);
+}
+
+
+=== DISASM ===
+0x14000f1cc: mov     rax, rdx
+0x14000f1cf: mov     r10d, r9d
+0x14000f1d2: sub     rax, 8
+0x14000f1d6: jz      short loc_14000F1F9
+0x14000f1d8: cmp     rax, 1
+0x14000f1dc: jz      short loc_14000F1E9
+0x14000f1de: mov     r9d, r8d
+0x14000f1e1: mov     r8d, r10d
+0x14000f1e4: jmp     sub_14000F300
+0x14000f1e9: mov     rax, [rcx]
+0x14000f1ec: mov     rcx, [rax+38h]
+0x14000f1f0: mov     rcx, [rcx+r10*8]
+0x14000f1f4: jmp     sub_140005F48
+0x14000f1f9: jmp     sub_140005F2C

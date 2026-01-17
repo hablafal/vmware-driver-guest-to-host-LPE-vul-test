@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: strcmp
+Addr: 0x14000fd90
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140009DE0 (0x140009E47)
+  <- sub_140009DE0 (0x140009E67)
+  <- sub_140009DE0 (0x140009E87)
+  <- sub_140009DE0 (0x140009EA7)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fd90-0x14000fd96 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+int __cdecl strcmp(const char *Str1, const char *Str2)
+{
+  return __imp_strcmp(Str1, Str2);
+}
+
+
+=== DISASM ===
+0x14000fd90: jmp     cs:__imp_strcmp

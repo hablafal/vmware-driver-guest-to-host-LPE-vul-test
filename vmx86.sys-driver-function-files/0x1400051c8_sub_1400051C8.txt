@@ -1,0 +1,131 @@
+=== METADATA ===
+Name: sub_1400051C8
+Addr: 0x1400051c8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x1400051e1: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x1400051c8: Access Member +0x18 ([rsp+arg_10])
+  0x1400051dc: Access Member +0x28 ([rsp+38h+var_10])
+  0x1400051e1: Access Member +0x20 (dword ptr [rsp+38h+ProcNumber.Group])
+  0x1400051e6: Access Member +0xF8 ([rcx+0F8h])
+  0x1400051fb: Access Member +0x10 ([rcx+10h])
+  0x14000520a: Access Member +0x48 ([rax+48h])
+  0x14000520e: Access Member +0x18 ([rbx+18h])
+  0x14000522e: Access Member +0x20 ([rsp+38h+ProcNumber])
+  0x14000523e: Access Member +0x20 ([rsp+38h+ProcNumber])
+  0x14000525c: Access Member +0x28 ([rsp+38h+var_10])
+  0x140005269: Access Member +0x50 ([rsp+38h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140005FD8 (0x140006037)
+  <- sub_140006780 (0x140006784)
+
+=== IMPORTS ===
+  -> 0x14000521a calls KeInitializeDpc
+  -> 0x140005228 calls KeSetImportanceDpc
+  -> 0x140005246 calls KeSetTargetProcessorDpcEx
+  -> 0x140005254 calls KeInsertQueueDpc
+
+=== STRINGS ===
+  0x1400051d2 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x1400051c8-0x1400051f7 -> Jumps to: 0x1400051f7, 0x1400051fb
+  Block 0x1400051f7-0x1400051fb -> Jumps to: 0x14000525c
+  Block 0x1400051fb-0x140005214 -> Jumps to: 0x140005214, 0x14000522e
+  Block 0x140005214-0x14000522e -> Jumps to: 0x14000522e
+  Block 0x14000522e-0x14000523e -> Jumps to: 0x14000523e, 0x14000525a
+  Block 0x14000523e-0x14000525a -> Jumps to: 0x14000525a
+  Block 0x14000525a-0x14000525c -> Jumps to: 0x14000525c
+  Block 0x14000525c-0x140005274 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_1400051C8(__int64 a1, unsigned int a2)
+{
+  ULONG v2; // edi
+  struct _KDPC *v4; // rbx
+  struct _PROCESSOR_NUMBER ProcNumber; // [rsp+20h] [rbp-18h] BYREF
+
+  ProcNumber = 0;
+  v2 = *(_DWORD *)(*(_QWORD *)(a1 + 248) + 4LL * a2);
+  if ( v2 == -1 )
+    return 0;
+  v4 = (struct _KDPC *)(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 72LL) + ((unsigned __int64)a2 << 6));
+  if ( v4->DeferredRoutine != nullsub_1 )
+  {
+    KeInitializeDpc(v4, nullsub_1, 0);
+    KeSetImportanceDpc(v4, HighImportance);
+  }
+  if ( !KeGetProcessorNumberFromIndex(v2, &ProcNumber) )
+  {
+    KeSetTargetProcessorDpcEx(v4, &ProcNumber);
+    KeInsertQueueDpc(v4, 0, 0);
+  }
+  return 1;
+}
+
+
+=== DISASM ===
+0x1400051c8: mov     [rsp+arg_10], rbx
+0x1400051cd: push    rdi
+0x1400051ce: sub     rsp, 30h
+0x1400051d2: mov     rax, cs:__security_cookie
+0x1400051d9: xor     rax, rsp
+0x1400051dc: mov     [rsp+38h+var_10], rax
+0x1400051e1: and     dword ptr [rsp+38h+ProcNumber.Group], 0
+0x1400051e6: mov     rax, [rcx+0F8h]
+0x1400051ed: mov     ebx, edx
+0x1400051ef: mov     edi, [rax+rbx*4]
+0x1400051f2: cmp     edi, 0FFFFFFFFh
+0x1400051f5: jnz     short loc_1400051FB
+0x1400051f7: xor     al, al
+0x1400051f9: jmp     short loc_14000525C
+0x1400051fb: mov     rax, [rcx+10h]
+0x1400051ff: lea     rdx, nullsub_1; DeferredRoutine
+0x140005206: shl     rbx, 6
+0x14000520a: add     rbx, [rax+48h]
+0x14000520e: cmp     [rbx+18h], rdx
+0x140005212: jz      short loc_14000522E
+0x140005214: xor     r8d, r8d; DeferredContext
+0x140005217: mov     rcx, rbx; Dpc
+0x14000521a: call    cs:KeInitializeDpc
+0x140005220: mov     edx, 2; Importance
+0x140005225: mov     rcx, rbx; Dpc
+0x140005228: call    cs:KeSetImportanceDpc
+0x14000522e: lea     rdx, [rsp+38h+ProcNumber]; ProcNumber
+0x140005233: mov     ecx, edi; ProcIndex
+0x140005235: call    KeGetProcessorNumberFromIndex
+0x14000523a: test    eax, eax
+0x14000523c: jnz     short loc_14000525A
+0x14000523e: lea     rdx, [rsp+38h+ProcNumber]; ProcNumber
+0x140005243: mov     rcx, rbx; Dpc
+0x140005246: call    cs:KeSetTargetProcessorDpcEx
+0x14000524c: xor     r8d, r8d; SystemArgument2
+0x14000524f: xor     edx, edx; SystemArgument1
+0x140005251: mov     rcx, rbx; Dpc
+0x140005254: call    cs:KeInsertQueueDpc
+0x14000525a: mov     al, 1
+0x14000525c: mov     rcx, [rsp+38h+var_10]
+0x140005261: xor     rcx, rsp; StackCookie
+0x140005264: call    __security_check_cookie
+0x140005269: mov     rbx, [rsp+38h+arg_10]
+0x14000526e: add     rsp, 30h
+0x140005272: pop     rdi
+0x140005273: retn

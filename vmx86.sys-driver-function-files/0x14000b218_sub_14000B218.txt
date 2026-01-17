@@ -1,0 +1,151 @@
+=== METADATA ===
+Name: sub_14000B218
+Addr: 0x14000b218
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000b25d: TEST with Mask 0xFFF
+
+=== MEMBER ACCESS ===
+  0x14000b21b: Access Member +0x8 ([rax+8])
+  0x14000b21f: Access Member +0x10 ([rax+10h])
+  0x14000b223: Access Member +0x18 ([rax+18h])
+  0x14000b227: Access Member +0x20 ([rax+20h])
+  0x14000b23f: Access Member +0x4 ([rcx+4])
+  0x14000b273: Access Member +0x18 ([rdi+18h])
+  0x14000b2a1: Access Member +0x40 ([rsp+38h+arg_0])
+  0x14000b2a6: Access Member +0x48 ([rsp+38h+arg_8])
+  0x14000b2ab: Access Member +0x50 ([rsp+38h+arg_10])
+  0x14000b2b0: Access Member +0x58 ([rsp+38h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x18 -> possible EvtIoDefault
+
+=== CALLERS ===
+  <- sub_14000CAF8 (0x14000CB9A)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000b2c8 -> Failure looking up page table root MPN for VCPU %d
+
+  0x14000b2dc -> Error: page table VA %I64x is not page-aligned
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000b218-0x14000b244 -> Jumps to: 0x14000b244, 0x14000b248
+  Block 0x14000b244-0x14000b248 -> Jumps to: 0x14000b2a1
+  Block 0x14000b248-0x14000b255 -> Jumps to: 0x14000b255, 0x14000b29f
+  Block 0x14000b255-0x14000b266 -> Jumps to: 0x14000b266, 0x14000b2d9
+  Block 0x14000b266-0x14000b292 -> Jumps to: 0x14000b292, 0x14000b2c0
+  Block 0x14000b292-0x14000b29f -> Jumps to: 0x14000b255, 0x14000b29f
+  Block 0x14000b29f-0x14000b2a1 -> Jumps to: 0x14000b2a1
+  Block 0x14000b2a1-0x14000b2c0 -> Jumps to: 
+  Block 0x14000b2c0-0x14000b2d9 -> Jumps to: 0x14000b244
+  Block 0x14000b2d9-0x14000b2ed -> Jumps to: 0x14000b244
+
+=== CODE ===
+char __fastcall sub_14000B218(__int64 a1, __int64 a2, unsigned __int16 a3)
+{
+  unsigned __int16 v7; // bx
+  unsigned __int64 v8; // rbp
+
+  if ( (unsigned int)a3 > *(_DWORD *)(a1 + 4) )
+    return 0;
+  v7 = 0;
+  if ( a3 )
+  {
+    while ( 1 )
+    {
+      v8 = *(_QWORD *)(a2 + 8LL * v7);
+      if ( (v8 & 0xFFF) != 0 )
+        break;
+      sub_140007558(a1);
+      if ( (unsigned int)sub_140006680(a1, v8, (_QWORD *)(*(_QWORD *)(a1 + 24) + 8LL * v7)) )
+      {
+        sub_140007564(a1);
+        sub_140003A14("Failure looking up page table root MPN for VCPU %d\n", v7);
+        return 0;
+      }
+      sub_140007564(a1);
+      if ( ++v7 >= a3 )
+        return 1;
+    }
+    sub_140003A14("Error: page table VA %I64x is not page-aligned\n", *(_QWORD *)(a2 + 8LL * v7));
+    return 0;
+  }
+  return 1;
+}
+
+
+=== DISASM ===
+0x14000b218: mov     rax, rsp
+0x14000b21b: mov     [rax+8], rbx
+0x14000b21f: mov     [rax+10h], rbp
+0x14000b223: mov     [rax+18h], rsi
+0x14000b227: mov     [rax+20h], rdi
+0x14000b22b: push    r13
+0x14000b22d: push    r14
+0x14000b22f: push    r15
+0x14000b231: sub     rsp, 20h
+0x14000b235: movzx   esi, r8w
+0x14000b239: mov     r15, rdx
+0x14000b23c: mov     rdi, rcx
+0x14000b23f: cmp     esi, [rcx+4]
+0x14000b242: jbe     short loc_14000B248
+0x14000b244: xor     al, al
+0x14000b246: jmp     short loc_14000B2A1
+0x14000b248: xor     r13d, r13d
+0x14000b24b: movzx   ebx, r13w
+0x14000b24f: cmp     r13w, si
+0x14000b253: jnb     short loc_14000B29F
+0x14000b255: movzx   r14d, bx
+0x14000b259: mov     rbp, [r15+r14*8]
+0x14000b25d: test    rbp, 0FFFh
+0x14000b264: jnz     short loc_14000B2D9
+0x14000b266: mov     edx, 26h ; '&'
+0x14000b26b: mov     rcx, rdi
+0x14000b26e: call    sub_140007558
+0x14000b273: mov     rax, [rdi+18h]
+0x14000b277: mov     rdx, rbp
+0x14000b27a: mov     rcx, rdi
+0x14000b27d: lea     r8, [rax+r14*8]
+0x14000b281: call    sub_140006680
+0x14000b286: mov     edx, 26h ; '&'
+0x14000b28b: mov     rcx, rdi
+0x14000b28e: test    eax, eax
+0x14000b290: jnz     short loc_14000B2C0
+0x14000b292: call    sub_140007564
+0x14000b297: inc     bx
+0x14000b29a: cmp     bx, si
+0x14000b29d: jb      short loc_14000B255
+0x14000b29f: mov     al, 1
+0x14000b2a1: mov     rbx, [rsp+38h+arg_0]
+0x14000b2a6: mov     rbp, [rsp+38h+arg_8]
+0x14000b2ab: mov     rsi, [rsp+38h+arg_10]
+0x14000b2b0: mov     rdi, [rsp+38h+arg_18]
+0x14000b2b5: add     rsp, 20h
+0x14000b2b9: pop     r15
+0x14000b2bb: pop     r14
+0x14000b2bd: pop     r13
+0x14000b2bf: retn
+0x14000b2c0: call    sub_140007564
+0x14000b2c5: movzx   edx, bx
+0x14000b2c8: lea     rcx, aFailureLooking; "Failure looking up page table root MPN "...
+0x14000b2cf: call    sub_140003A14
+0x14000b2d4: jmp     loc_14000B244
+0x14000b2d9: mov     rdx, rbp
+0x14000b2dc: lea     rcx, aErrorPageTable; "Error: page table VA %I64x is not page-"...
+0x14000b2e3: call    sub_140003A14
+0x14000b2e8: jmp     loc_14000B244

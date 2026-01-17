@@ -1,0 +1,169 @@
+=== METADATA ===
+Name: sub_140006814
+Addr: 0x140006814
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000681a: Access Member +0x20 ([rsp+20h])
+  0x14000681f: Access Member +0x20 ([rbp+10h+arg_0])
+  0x140006823: Access Member +0x28 ([rbp+10h+arg_8])
+  0x140006831: Access Member +0x8 ([rbp+10h+var_8])
+  0x140006908: Access Member +0x8 ([rbp+10h+var_8])
+  0x140006914: Access Member +0x20 ([rbp+10h+arg_0])
+  0x140006918: Access Member +0x28 ([rbp+10h+arg_8])
+  0x14000691c: Access Member +0x10 ([rbp+10h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_1400053E0 (0x1400053E0)
+  <- sub_1400062FC (0x1400063A5)
+  <- sub_14000C280 (0x14000C36B)
+  <- sub_14000C648 (0x14000C656)
+  <- sub_14000C6FC (0x14000C72B)
+  <- sub_14000CC7C (0x14000CCA2)
+
+=== IMPORTS ===
+  -> 0x140006852 calls KeQueryPerformanceCounter
+  -> 0x140006862 calls KeQueryUnbiasedInterruptTime
+
+=== STRINGS ===
+  0x140006827 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x140006814-0x140006840 -> Jumps to: 0x140006842
+  Block 0x140006840-0x140006842 -> Jumps to: 0x140006842
+  Block 0x140006842-0x14000684e -> Jumps to: 0x140006840, 0x14000684e
+  Block 0x14000684e-0x1400068b6 -> Jumps to: 0x1400068b6, 0x1400068c2
+  Block 0x1400068b6-0x1400068c2 -> Jumps to: 0x1400068cc
+  Block 0x1400068c2-0x1400068cc -> Jumps to: 0x1400068cc
+  Block 0x1400068cc-0x1400068e2 -> Jumps to: 0x1400068e2, 0x1400068f1
+  Block 0x1400068e2-0x1400068f1 -> Jumps to: 0x1400068f8
+  Block 0x1400068f1-0x1400068f8 -> Jumps to: 0x1400068f8
+  Block 0x1400068f8-0x140006922 -> Jumps to: 
+
+=== CODE ===
+LONGLONG sub_140006814()
+{
+  unsigned __int64 v0; // kr00_8
+  LARGE_INTEGER v1; // rbx
+  LARGE_INTEGER v2; // r9
+  LONGLONG v3; // r8
+  LONGLONG v4; // rcx
+  union _LARGE_INTEGER PerformanceFrequency; // [rsp+20h] [rbp+0h] BYREF
+
+  v0 = __readeflags();
+  _disable();
+  while ( _InterlockedCompareExchange(&dword_140018E4C, 1, 0) )
+    _mm_pause();
+  v1.QuadPart = *(_QWORD *)&KeQueryPerformanceCounter(&PerformanceFrequency) + qword_140018EE8;
+  v2.QuadPart = qword_140018EF0 + PerformanceFrequency.QuadPart * (KeQueryUnbiasedInterruptTime() / 0xF4240) / 0xA;
+  v3 = v2.QuadPart - v1.QuadPart;
+  if ( abs64(v2.QuadPart - v1.QuadPart) <= PerformanceFrequency.QuadPart )
+  {
+    qword_140018EF0 -= v3;
+  }
+  else
+  {
+    qword_140018EE8 += v3;
+    v1 = v2;
+  }
+  v4 = v1.QuadPart + qword_140018EE0;
+  if ( v1.QuadPart + qword_140018EE0 >= (unsigned __int64)qword_140018EF8 )
+  {
+    qword_140018EF8 = v1.QuadPart + qword_140018EE0;
+  }
+  else
+  {
+    v4 = qword_140018EF8;
+    qword_140018EE0 = qword_140018EF8 - v1.QuadPart;
+  }
+  dword_140018E4C = 0;
+  __writeeflags(v0);
+  return v4;
+}
+
+
+=== DISASM ===
+0x140006814: push    rbp
+0x140006816: sub     rsp, 30h
+0x14000681a: lea     rbp, [rsp+20h]
+0x14000681f: mov     [rbp+10h+arg_0], rbx
+0x140006823: mov     [rbp+10h+arg_8], rdi
+0x140006827: mov     rax, cs:__security_cookie
+0x14000682e: xor     rax, rbp
+0x140006831: mov     [rbp+10h+var_8], rax
+0x140006835: pushfq
+0x140006837: pop     rdi
+0x140006838: cli
+0x140006839: mov     ecx, 1
+0x14000683e: jmp     short loc_140006842
+0x140006840: pause
+0x140006842: xor     eax, eax
+0x140006844: lock cmpxchg cs:dword_140018E4C, ecx
+0x14000684c: jnz     short loc_140006840
+0x14000684e: lea     rcx, [rbp+10h+PerformanceFrequency]; PerformanceFrequency
+0x140006852: call    cs:KeQueryPerformanceCounter
+0x140006858: mov     rbx, cs:qword_140018EE8
+0x14000685f: add     rbx, rax
+0x140006862: call    cs:KeQueryUnbiasedInterruptTime
+0x140006868: mov     rcx, rax
+0x14000686b: mov     rax, 431BDE82D7B634DBh
+0x140006875: mul     rcx
+0x140006878: mov     rcx, cs:qword_140018EF0
+0x14000687f: mov     rax, 0CCCCCCCCCCCCCCCDh
+0x140006889: shr     rdx, 12h
+0x14000688d: imul    rdx, qword ptr [rbp+10h+PerformanceFrequency]
+0x140006892: mul     rdx
+0x140006895: mov     r9, rdx
+0x140006898: shr     r9, 3
+0x14000689c: add     r9, rcx
+0x14000689f: mov     r8, r9
+0x1400068a2: sub     r8, rbx
+0x1400068a5: mov     rax, r8
+0x1400068a8: cqo
+0x1400068aa: xor     rax, rdx
+0x1400068ad: sub     rax, rdx
+0x1400068b0: cmp     rax, qword ptr [rbp+10h+PerformanceFrequency]
+0x1400068b4: jbe     short loc_1400068C2
+0x1400068b6: add     cs:qword_140018EE8, r8
+0x1400068bd: mov     rbx, r9
+0x1400068c0: jmp     short loc_1400068CC
+0x1400068c2: sub     rcx, r8
+0x1400068c5: mov     cs:qword_140018EF0, rcx
+0x1400068cc: mov     rcx, cs:qword_140018EE0
+0x1400068d3: mov     rax, cs:qword_140018EF8
+0x1400068da: add     rcx, rbx
+0x1400068dd: cmp     rcx, rax
+0x1400068e0: jnb     short loc_1400068F1
+0x1400068e2: mov     rcx, rax
+0x1400068e5: sub     rax, rbx
+0x1400068e8: mov     cs:qword_140018EE0, rax
+0x1400068ef: jmp     short loc_1400068F8
+0x1400068f1: mov     cs:qword_140018EF8, rcx
+0x1400068f8: push    rdi
+0x1400068f9: mov     cs:dword_140018E4C, 0
+0x140006903: mov     rax, rcx
+0x140006906: popfq
+0x140006908: mov     rcx, [rbp+10h+var_8]
+0x14000690c: xor     rcx, rbp; StackCookie
+0x14000690f: call    __security_check_cookie
+0x140006914: mov     rbx, [rbp+10h+arg_0]
+0x140006918: mov     rdi, [rbp+10h+arg_8]
+0x14000691c: lea     rsp, [rbp+10h]
+0x140006920: pop     rbp
+0x140006921: retn

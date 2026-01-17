@@ -1,0 +1,48 @@
+=== METADATA ===
+Name: sub_1400053E0
+Addr: 0x1400053e0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x1400053e0-0x1400053e5 -> Jumps to: 0x140006814
+  Block 0x140006814-0x140006814 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+void __fastcall sub_1400053E0(struct _KDPC *Dpc, PVOID DeferredContext, PVOID SystemArgument1, PVOID SystemArgument2)
+{
+  ((void (__stdcall *)(struct _KDPC *, PVOID, PVOID, PVOID))sub_140006814)(
+    Dpc,
+    DeferredContext,
+    SystemArgument1,
+    SystemArgument2);
+}
+
+
+=== DISASM ===
+0x1400053e0: jmp     sub_140006814

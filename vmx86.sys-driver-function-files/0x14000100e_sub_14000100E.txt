@@ -1,0 +1,148 @@
+=== METADATA ===
+Name: sub_14000100E
+Addr: 0x14000100e
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140001074: AND with Mask 0xFFFFFFFFFFFFFFE0
+  0x140001077: OR with Mask 0xE
+  0x140001091: OR with Mask 0xFFFFFFFFFFFFFF80
+  0x14000109f: AND with Mask 0xFFFFFFFFFFFFFFF8
+  0x1400010ad: AND with Mask 0xFFFFFFFFFFFFFF9F
+  0x1400010bb: AND with Mask 0x7
+
+=== MEMBER ACCESS ===
+  0x140001016: Access Member +0x10 ([rbp+arg_0])
+  0x14000101b: Access Member +0x20 ([rbp+arg_10])
+  0x14000101f: Access Member +0x28 ([rbp+arg_18])
+  0x140001023: Access Member +0x18 ([rbp+arg_8])
+  0x140001027: Access Member +0x10 ([rbp+arg_0])
+  0x140001031: Access Member +0x20 ([rbp+arg_10])
+  0x14000103c: Access Member +0x28 ([rbp+arg_18])
+  0x140001049: Access Member +0x28 ([rbp+arg_18])
+  0x140001057: Access Member +0x6 ([rax+6])
+  0x14000105b: Access Member +0x28 ([rbp+arg_18])
+  0x140001069: Access Member +0x8 ([rax+8])
+  0x140001070: Access Member +0x5 (byte ptr [rax+5])
+  0x14000107a: Access Member +0x5 ([rax+5])
+  0x140001081: Access Member +0x18 ([rbp+arg_8])
+  0x140001085: Access Member +0x2 ([rax+2])
+  0x14000108d: Access Member +0x5 (byte ptr [rax+5])
+  0x140001094: Access Member +0x5 ([rax+5])
+  0x14000109b: Access Member +0x4 (byte ptr [rax+4])
+  0x1400010a2: Access Member +0x4 ([rax+4])
+  0x1400010a9: Access Member +0x5 (byte ptr [rax+5])
+  0x1400010b0: Access Member +0x5 ([rax+5])
+  0x1400010b7: Access Member +0x4 (byte ptr [rax+4])
+  0x1400010be: Access Member +0x4 ([rax+4])
+  0x1400010c5: Access Member +0xC (dword ptr [rax+0Ch])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140001104 (0x140001181)
+  <- sub_140001104 (0x1400011A2)
+  <- sub_140001104 (0x1400011C3)
+  <- sub_140001104 (0x1400011E4)
+  <- sub_140001104 (0x140001209)
+  <- sub_140001104 (0x14000122E)
+  <- sub_140001104 (0x140001253)
+  <- sub_140001104 (0x140001278)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000100e-0x1400010d2 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000100E(unsigned int a1, __int16 a2, __int64 a3, __int64 a4)
+{
+  __int64 v5; // [rsp+8h] [rbp-8h]
+
+  v5 = 16LL * a1 + a3;
+  *(_WORD *)v5 = a4;
+  *(_WORD *)(v5 + 6) = WORD1(a4);
+  *(_DWORD *)(v5 + 8) = HIDWORD(a4);
+  *(_BYTE *)(v5 + 5) = *(_BYTE *)(v5 + 5) & 0xE0 | 0xE;
+  *(_WORD *)(v5 + 2) = a2;
+  *(_BYTE *)(v5 + 5) |= 0x80u;
+  *(_BYTE *)(v5 + 4) &= 0xF8u;
+  *(_BYTE *)(v5 + 5) &= 0x9Fu;
+  *(_BYTE *)(v5 + 4) &= 7u;
+  *(_DWORD *)(v5 + 12) = 0;
+  return v5;
+}
+
+
+=== DISASM ===
+0x14000100e: push    rbp
+0x14000100f: mov     rbp, rsp
+0x140001012: sub     rsp, 10h
+0x140001016: mov     [rbp+arg_0], ecx
+0x140001019: mov     eax, edx
+0x14000101b: mov     [rbp+arg_10], r8
+0x14000101f: mov     [rbp+arg_18], r9
+0x140001023: mov     [rbp+arg_8], ax
+0x140001027: mov     eax, [rbp+arg_0]
+0x14000102a: mov     rdx, rax
+0x14000102d: shl     rdx, 4
+0x140001031: mov     rax, [rbp+arg_10]
+0x140001035: add     rax, rdx
+0x140001038: mov     [rbp+var_8], rax
+0x14000103c: mov     rax, [rbp+arg_18]
+0x140001040: mov     edx, eax
+0x140001042: mov     rax, [rbp+var_8]
+0x140001046: mov     [rax], dx
+0x140001049: mov     rax, [rbp+arg_18]
+0x14000104d: shr     rax, 10h
+0x140001051: mov     edx, eax
+0x140001053: mov     rax, [rbp+var_8]
+0x140001057: mov     [rax+6], dx
+0x14000105b: mov     rax, [rbp+arg_18]
+0x14000105f: shr     rax, 20h
+0x140001063: mov     edx, eax
+0x140001065: mov     rax, [rbp+var_8]
+0x140001069: mov     [rax+8], edx
+0x14000106c: mov     rax, [rbp+var_8]
+0x140001070: movzx   edx, byte ptr [rax+5]
+0x140001074: and     edx, 0FFFFFFE0h
+0x140001077: or      edx, 0Eh
+0x14000107a: mov     [rax+5], dl
+0x14000107d: mov     rax, [rbp+var_8]
+0x140001081: movzx   edx, [rbp+arg_8]
+0x140001085: mov     [rax+2], dx
+0x140001089: mov     rax, [rbp+var_8]
+0x14000108d: movzx   edx, byte ptr [rax+5]
+0x140001091: or      edx, 0FFFFFF80h
+0x140001094: mov     [rax+5], dl
+0x140001097: mov     rax, [rbp+var_8]
+0x14000109b: movzx   edx, byte ptr [rax+4]
+0x14000109f: and     edx, 0FFFFFFF8h
+0x1400010a2: mov     [rax+4], dl
+0x1400010a5: mov     rax, [rbp+var_8]
+0x1400010a9: movzx   edx, byte ptr [rax+5]
+0x1400010ad: and     edx, 0FFFFFF9Fh
+0x1400010b0: mov     [rax+5], dl
+0x1400010b3: mov     rax, [rbp+var_8]
+0x1400010b7: movzx   edx, byte ptr [rax+4]
+0x1400010bb: and     edx, 7
+0x1400010be: mov     [rax+4], dl
+0x1400010c1: mov     rax, [rbp+var_8]
+0x1400010c5: mov     dword ptr [rax+0Ch], 0
+0x1400010cc: add     rsp, 10h
+0x1400010d0: pop     rbp
+0x1400010d1: retn

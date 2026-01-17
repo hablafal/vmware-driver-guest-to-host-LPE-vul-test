@@ -1,0 +1,82 @@
+=== METADATA ===
+Name: sub_1400077DC
+Addr: 0x1400077dc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x1400077dc: Access Member +0x8 ([rsp+arg_0])
+  0x1400077e1: Access Member +0x10 ([rsp+arg_8])
+  0x140007808: Access Member +0x60 ([rsp+38h+arg_20])
+  0x140007813: Access Member +0x20 ([rsp+38h+var_18])
+  0x140007820: Access Member +0x40 ([rsp+38h+arg_0])
+  0x140007825: Access Member +0x48 ([rsp+38h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008370 (0x1400084F3)
+  <- sub_14000F278 (0x14000F2CB)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x1400077dc-0x140007801 -> Jumps to: 0x140007801, 0x140007808
+  Block 0x140007801-0x140007808 -> Jumps to: 0x140007820
+  Block 0x140007808-0x140007820 -> Jumps to: 0x140007820
+  Block 0x140007820-0x140007830 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_1400077DC(__int64 a1, unsigned __int64 a2, int a3, char a4, __int64 a5)
+{
+  int v5; // ebx
+  int v8; // r9d
+
+  v5 = a2;
+  if ( !sub_140004F00(a1, a2 >> 12) )
+    return 3221225477LL;
+  LOBYTE(v8) = a4;
+  return sub_140007830(v5, a3, a5, v8, 1);
+}
+
+
+=== DISASM ===
+0x1400077dc: mov     [rsp+arg_0], rbx
+0x1400077e1: mov     [rsp+arg_8], rsi
+0x1400077e6: push    rdi
+0x1400077e7: sub     rsp, 30h
+0x1400077eb: mov     rbx, rdx
+0x1400077ee: mov     dil, r9b
+0x1400077f1: shr     rdx, 0Ch
+0x1400077f5: mov     rsi, r8
+0x1400077f8: call    sub_140004F00
+0x1400077fd: test    al, al
+0x1400077ff: jnz     short loc_140007808
+0x140007801: mov     eax, 0C0000005h
+0x140007806: jmp     short loc_140007820
+0x140007808: mov     r8, [rsp+38h+arg_20]
+0x14000780d: mov     r9b, dil
+0x140007810: mov     rdx, rsi
+0x140007813: mov     [rsp+38h+var_18], 1
+0x140007818: mov     rcx, rbx
+0x14000781b: call    sub_140007830
+0x140007820: mov     rbx, [rsp+38h+arg_0]
+0x140007825: mov     rsi, [rsp+38h+arg_8]
+0x14000782a: add     rsp, 30h
+0x14000782e: pop     rdi
+0x14000782f: retn

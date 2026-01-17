@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: sub_14000B070
+Addr: 0x14000b070
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000b070-0x14000b074 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_14000B070(volatile signed __int32 *a1)
+{
+  _InterlockedIncrement(a1);
+}
+
+
+=== DISASM ===
+0x14000b070: lock inc dword ptr [rcx]
+0x14000b073: retn

@@ -1,0 +1,118 @@
+=== METADATA ===
+Name: HandleInformation
+Addr: 0x140004bb0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140004bc0: Access Member +0x38 ([rsp+48h+var_10])
+  0x140004bc5: Access Member +0x30 (qword ptr [rsp+48h+var_18])
+  0x140004bef: Access Member +0x30 ([rsp+48h+var_18])
+  0x140004bfa: Access Member +0x20 ([rsp+48h+Timeout])
+  0x140004c3d: Access Member +0x38 ([rsp+48h+var_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+  -> 0x140004c08 calls KeWaitForSingleObject
+  -> 0x140004c37 calls PsTerminateSystemThread
+
+=== STRINGS ===
+  0x140004bb6 -> 2
+  0x140004bd3 -> resumeResetClockThread
+  0x140004bda -> %s: Resetting clock, on second %d
+
+  0x140004c1b -> resumeResetClockThread
+  0x140004c22 -> %s: told to exit
+
+
+=== BASIC BLOCKS ===
+  Block 0x140004bb0-0x140004bd0 -> Jumps to: 0x140004bd0
+  Block 0x140004bd0-0x140004c12 -> Jumps to: 0x140004c12, 0x140004c1b
+  Block 0x140004c12-0x140004c19 -> Jumps to: 0x140004bd0, 0x140004c19
+  Block 0x140004c19-0x140004c1b -> Jumps to: 0x140004c2e
+  Block 0x140004c1b-0x140004c2e -> Jumps to: 0x140004c2e
+  Block 0x140004c2e-0x140004c50 -> Jumps to: 
+
+=== CODE ===
+void __fastcall HandleInformation(PVOID StartContext)
+{
+  int v1; // ebx
+  __int64 v2; // r8
+  __int64 v3; // r9
+  union _LARGE_INTEGER Timeout; // [rsp+30h] [rbp-18h] BYREF
+
+  Timeout.QuadPart = -10000000;
+  v1 = 0;
+  while ( 1 )
+  {
+    sub_140003A14("%s: Resetting clock, on second %d\n", "resumeResetClockThread", v1);
+    sub_14000CFB4(0, 0, v2, v3);
+    if ( !KeWaitForSingleObject(&Event, Executive, 0, 0, &Timeout) )
+      break;
+    if ( ++v1 >= 60 )
+      goto LABEL_6;
+  }
+  sub_140003A14("%s: told to exit\n", "resumeResetClockThread");
+LABEL_6:
+  byte_140014D90 = 0;
+  PsTerminateSystemThread(0);
+}
+
+
+=== DISASM ===
+0x140004bb0: push    rbx
+0x140004bb2: sub     rsp, 40h
+0x140004bb6: mov     rax, cs:__security_cookie
+0x140004bbd: xor     rax, rsp
+0x140004bc0: mov     [rsp+48h+var_10], rax
+0x140004bc5: mov     qword ptr [rsp+48h+var_18], 0FFFFFFFFFF676980h
+0x140004bce: xor     ebx, ebx
+0x140004bd0: mov     r8d, ebx
+0x140004bd3: lea     rdx, aResumeresetclo; "resumeResetClockThread"
+0x140004bda: lea     rcx, aSResettingCloc; "%s: Resetting clock, on second %d\n"
+0x140004be1: call    sub_140003A14
+0x140004be6: xor     edx, edx
+0x140004be8: xor     ecx, ecx
+0x140004bea: call    sub_14000CFB4
+0x140004bef: lea     rax, [rsp+48h+var_18]
+0x140004bf4: xor     r9d, r9d; Alertable
+0x140004bf7: xor     r8d, r8d; WaitMode
+0x140004bfa: mov     [rsp+48h+Timeout], rax; Timeout
+0x140004bff: xor     edx, edx; WaitReason
+0x140004c01: lea     rcx, Event; Object
+0x140004c08: call    cs:KeWaitForSingleObject
+0x140004c0e: test    eax, eax
+0x140004c10: jz      short loc_140004C1B
+0x140004c12: inc     ebx
+0x140004c14: cmp     ebx, 3Ch ; '<'
+0x140004c17: jl      short loc_140004BD0
+0x140004c19: jmp     short loc_140004C2E
+0x140004c1b: lea     rdx, aResumeresetclo; "resumeResetClockThread"
+0x140004c22: lea     rcx, aSToldToExit; "%s: told to exit\n"
+0x140004c29: call    sub_140003A14
+0x140004c2e: xor     ecx, ecx; ExitStatus
+0x140004c30: mov     cs:byte_140014D90, 0
+0x140004c37: call    cs:PsTerminateSystemThread
+0x140004c3d: mov     rcx, [rsp+48h+var_10]
+0x140004c42: xor     rcx, rsp; StackCookie
+0x140004c45: call    __security_check_cookie
+0x140004c4a: add     rsp, 40h
+0x140004c4e: pop     rbx
+0x140004c4f: retn

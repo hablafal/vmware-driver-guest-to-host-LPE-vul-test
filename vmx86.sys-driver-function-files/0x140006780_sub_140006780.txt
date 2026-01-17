@@ -1,0 +1,57 @@
+=== METADATA ===
+Name: sub_140006780
+Addr: 0x140006780
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x14000465D)
+  <- sub_14000D3E0 (0x14000D52F)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140006780-0x14000678d -> Jumps to: 0x14000678d, 0x140006794
+  Block 0x14000678d-0x140006794 -> Jumps to: 0x140006794
+  Block 0x140006794-0x140006799 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_140006780(__int64 a1, unsigned int a2)
+{
+  char result; // al
+
+  result = sub_1400051C8(a1, a2);
+  if ( result )
+    return sub_1400053E8(0);
+  return result;
+}
+
+
+=== DISASM ===
+0x140006780: sub     rsp, 28h
+0x140006784: call    sub_1400051C8
+0x140006789: test    al, al
+0x14000678b: jz      short loc_140006794
+0x14000678d: xor     ecx, ecx
+0x14000678f: call    sub_1400053E8
+0x140006794: add     rsp, 28h
+0x140006798: retn

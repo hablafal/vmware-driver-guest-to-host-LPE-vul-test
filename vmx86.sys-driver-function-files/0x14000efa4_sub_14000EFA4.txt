@@ -1,0 +1,167 @@
+=== METADATA ===
+Name: sub_14000EFA4
+Addr: 0x14000efa4
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000efa4: Access Member +0x8 ([rsp+arg_0])
+  0x14000efa9: Access Member +0x10 ([rsp+arg_8])
+  0x14000efae: Access Member +0x18 ([rsp+arg_10])
+  0x14000f013: Access Member +0x48 ([rbp+48h])
+  0x14000f093: Access Member +0x40 ([rsp+38h+arg_0])
+  0x14000f098: Access Member +0x48 ([rsp+38h+arg_8])
+  0x14000f09d: Access Member +0x50 ([rsp+38h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E378 (0x14000E420)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f06e -> Failed to look up MPN 0x%I64x
+
+  0x14000f07f -> Invalid VMM blob copy parameters: blobOffset 0x%I64x, copySize 0x%I64x, blobSize 0x%I64x
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000efa4-0x14000efef -> Jumps to: 0x14000efef, 0x14000f07c
+  Block 0x14000efef-0x14000eff8 -> Jumps to: 0x14000eff8, 0x14000f07c
+  Block 0x14000eff8-0x14000f003 -> Jumps to: 0x14000f003, 0x14000f07c
+  Block 0x14000f003-0x14000f034 -> Jumps to: 0x14000f034, 0x14000f06b
+  Block 0x14000f034-0x14000f03a -> Jumps to: 0x14000f03a, 0x14000f06b
+  Block 0x14000f03a-0x14000f06b -> Jumps to: 0x14000f093
+  Block 0x14000f06b-0x14000f07c -> Jumps to: 0x14000f091
+  Block 0x14000f07c-0x14000f091 -> Jumps to: 0x14000f091
+  Block 0x14000f091-0x14000f093 -> Jumps to: 0x14000f093
+  Block 0x14000f093-0x14000f0ac -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000EFA4(__int64 *a1, unsigned __int64 a2, unsigned __int64 a3, __int64 a4)
+{
+  __int64 v4; // rbp
+  unsigned __int64 v8; // rbx
+  __int64 v9; // r15
+  _QWORD *v10; // rbx
+  __int64 v11; // rbx
+
+  v4 = *a1;
+  v8 = sub_14000F46C(*a1);
+  v9 = unknown_libname_1(v4);
+  if ( a3 - 1 > 0xFFF || v8 < a3 || a2 > v8 - a3 )
+  {
+    sub_140003A14(
+      "Invalid VMM blob copy parameters: blobOffset 0x%I64x, copySize 0x%I64x, blobSize 0x%I64x\n",
+      a2,
+      a3,
+      v8);
+  }
+  else
+  {
+    _mm_lfence();
+    sub_140007558(v4);
+    v10 = (_QWORD *)sub_140007EA0(*(_QWORD *)(v4 + 72), a4);
+    sub_140007564(v4);
+    if ( v10 && *v10 )
+    {
+      _mm_lfence();
+      v11 = *v10 << 12;
+      sub_1400100C0(v11, v9 + a2, a3);
+      sub_14000FEC0(v11 + a3, 0, 4096 - a3);
+      return 1;
+    }
+    sub_140003A14("Failed to look up MPN 0x%I64x\n", a4);
+  }
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000efa4: mov     [rsp+arg_0], rbx
+0x14000efa9: mov     [rsp+arg_8], rbp
+0x14000efae: mov     [rsp+arg_10], rsi
+0x14000efb3: push    rdi
+0x14000efb4: push    r14
+0x14000efb6: push    r15
+0x14000efb8: sub     rsp, 20h
+0x14000efbc: mov     rbp, [rcx]
+0x14000efbf: mov     r14, r9
+0x14000efc2: mov     rcx, rbp
+0x14000efc5: mov     rdi, r8
+0x14000efc8: mov     rsi, rdx
+0x14000efcb: call    sub_14000F46C
+0x14000efd0: mov     rcx, rbp
+0x14000efd3: mov     rbx, rax
+0x14000efd6: call    unknown_libname_1; Windows Driver Kit 7/10 64bit
+0x14000efdb: lea     rcx, [rdi-1]
+0x14000efdf: mov     r15, rax
+0x14000efe2: cmp     rcx, 0FFFh
+0x14000efe9: ja      loc_14000F07C
+0x14000efef: cmp     rbx, rdi
+0x14000eff2: jb      loc_14000F07C
+0x14000eff8: mov     rdx, rbx
+0x14000effb: sub     rdx, rdi
+0x14000effe: cmp     rsi, rdx
+0x14000f001: ja      short loc_14000F07C
+0x14000f003: lfence
+0x14000f006: mov     edx, 2Ch ; ','
+0x14000f00b: mov     rcx, rbp
+0x14000f00e: call    sub_140007558
+0x14000f013: mov     rcx, [rbp+48h]
+0x14000f017: mov     rdx, r14
+0x14000f01a: call    sub_140007EA0
+0x14000f01f: mov     edx, 2Ch ; ','
+0x14000f024: mov     rcx, rbp
+0x14000f027: mov     rbx, rax
+0x14000f02a: call    sub_140007564
+0x14000f02f: test    rbx, rbx
+0x14000f032: jz      short loc_14000F06B
+0x14000f034: cmp     qword ptr [rbx], 0
+0x14000f038: jz      short loc_14000F06B
+0x14000f03a: lfence
+0x14000f03d: mov     rbx, [rbx]
+0x14000f040: lea     rdx, [r15+rsi]
+0x14000f044: shl     rbx, 0Ch
+0x14000f048: mov     r8, rdi
+0x14000f04b: mov     rcx, rbx
+0x14000f04e: call    sub_1400100C0
+0x14000f053: mov     r8d, 1000h
+0x14000f059: lea     rcx, [rbx+rdi]
+0x14000f05d: sub     r8, rdi
+0x14000f060: xor     edx, edx
+0x14000f062: call    sub_14000FEC0
+0x14000f067: mov     al, 1
+0x14000f069: jmp     short loc_14000F093
+0x14000f06b: mov     rdx, r14
+0x14000f06e: lea     rcx, aFailedToLookUp; "Failed to look up MPN 0x%I64x\n"
+0x14000f075: call    sub_140003A14
+0x14000f07a: jmp     short loc_14000F091
+0x14000f07c: mov     r9, rbx
+0x14000f07f: lea     rcx, aInvalidVmmBlob; "Invalid VMM blob copy parameters: blobO"...
+0x14000f086: mov     r8, rdi
+0x14000f089: mov     rdx, rsi
+0x14000f08c: call    sub_140003A14
+0x14000f091: xor     al, al
+0x14000f093: mov     rbx, [rsp+38h+arg_0]
+0x14000f098: mov     rbp, [rsp+38h+arg_8]
+0x14000f09d: mov     rsi, [rsp+38h+arg_10]
+0x14000f0a2: add     rsp, 20h
+0x14000f0a6: pop     r15
+0x14000f0a8: pop     r14
+0x14000f0aa: pop     rdi
+0x14000f0ab: retn

@@ -1,0 +1,205 @@
+=== METADATA ===
+Name: sub_14000A450
+Addr: 0x14000a450
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000a486: TEST with Mask 0x1
+  0x14000a492: AND with Mask 0x1
+
+=== MEMBER ACCESS ===
+  0x14000a450: Access Member +0x10 ([rsp+arg_8])
+  0x14000a464: Access Member +0x38 ([rsp+48h+var_10])
+  0x14000a469: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000a47a: Access Member +0x20 (dword ptr [rsp+48h+var_28])
+  0x14000a47e: Access Member +0x24 (dword ptr [rsp+48h+var_28+4])
+  0x14000a482: Access Member +0x2C ([rsp+48h+var_1C])
+  0x14000a4bb: Access Member +0x20 ([rsp+48h+var_28])
+  0x14000a4c0: Access Member +0x20 ([rsp+48h+var_28])
+  0x14000a4df: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000a549: Access Member +0x38 ([rsp+48h+var_10])
+  0x14000a556: Access Member +0x58 ([rsp+48h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000a45a -> 2
+  0x14000a4ff -> VMX_FailInvalid
+  0x14000a506 -> UNKNOWN
+  0x14000a511 -> VMCLEAR
+  0x14000a51b -> VMX_FailValid
+  0x14000a522 -> %s failed with status %s.
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000a450-0x14000a48b -> Jumps to: 0x14000a48b, 0x14000a499
+  Block 0x14000a48b-0x14000a497 -> Jumps to: 0x14000a497, 0x14000a4ab
+  Block 0x14000a497-0x14000a499 -> Jumps to: 0x14000a49b
+  Block 0x14000a499-0x14000a49b -> Jumps to: 0x14000a49b
+  Block 0x14000a49b-0x14000a4ab -> Jumps to: 0x14000a4ab
+  Block 0x14000a4ab-0x14000a4fc -> Jumps to: 0x14000a4fc, 0x14000a532
+  Block 0x14000a4fc-0x14000a532 -> Jumps to: 0x14000a532
+  Block 0x14000a532-0x14000a537 -> Jumps to: 0x14000a537, 0x14000a53a
+  Block 0x14000a537-0x14000a53a -> Jumps to: 0x14000a53a
+  Block 0x14000a53a-0x14000a53e -> Jumps to: 0x14000a53e, 0x14000a549
+  Block 0x14000a53e-0x14000a549 -> Jumps to: 0x14000a549
+  Block 0x14000a549-0x14000a561 -> Jumps to: 
+
+=== CODE ===
+int sub_14000A450()
+{
+  __int16 v5; // bx
+  bool v6; // bl
+  unsigned __int64 v7; // rax
+  ULONG v8; // eax
+  signed __int64 v9; // rax
+  bool v10; // cl
+  bool v11; // cf
+  unsigned __int8 v12; // cl
+  int v13; // edi
+  unsigned __int64 v14; // rax
+  int v15; // ecx
+  const char *v16; // r8
+  unsigned __int64 v17; // rax
+  signed __int64 v19; // [rsp+20h] [rbp-28h]
+
+  _RAX = 1;
+  __asm { cpuid }
+  if ( (_RCX & 0x20) != 0 )
+  {
+    v5 = __readcr4();
+    v6 = (v5 & 0x2000) != 0;
+    if ( v6 )
+      goto LABEL_6;
+  }
+  else
+  {
+    v6 = 0;
+  }
+  sub_14000A344();
+  v7 = __readcr4();
+  __writecr4(v7 | 0x2000);
+LABEL_6:
+  v8 = sub_140005F5C();
+  v9 = sub_140008C68(v8);
+  v19 = v9 << 12;
+  __asm { vmxon   [rsp+48h+var_28] }
+  v10 = v9 << 12 == 0;
+  v11 = __CFADD__(__CFSHL__(v9, 12), v10);
+  v12 = __CFSHL__(v9, 12) + v10;
+  v11 |= __CFADD__(__CFSHL__(v9, 12), v12);
+  v12 += __CFSHL__(v9, 12);
+  v13 = dword_140012430[v12];
+  __asm { vmclear [rsp+48h+var_18] }
+  v14 = (unsigned __int8)(v11 + v11 + (v12 == 0));
+  v15 = dword_140012440[v14];
+  if ( v15 != 2 )
+  {
+    v16 = "UNKNOWN";
+    if ( v15 == 3 )
+      v16 = "VMX_FailInvalid";
+    if ( v15 == 66 )
+      v16 = "VMX_FailValid";
+    LODWORD(v14) = sub_140003A14("%s failed with status %s.\n", "VMCLEAR", v16);
+  }
+  if ( v13 == 2 )
+    __vmx_off();
+  if ( !v6 )
+  {
+    v17 = __readcr4();
+    v14 = v17 & 0xFFFFFFFFFFFFDFFFuLL;
+    __writecr4(v14);
+  }
+  return v14;
+}
+
+
+=== DISASM ===
+0x14000a450: mov     [rsp+arg_8], rbx
+0x14000a455: push    rdi
+0x14000a456: sub     rsp, 40h
+0x14000a45a: mov     rax, cs:__security_cookie
+0x14000a461: xor     rax, rsp
+0x14000a464: mov     [rsp+48h+var_10], rax
+0x14000a469: mov     [rsp+48h+var_18], rcx
+0x14000a46e: mov     eax, 1
+0x14000a473: xor     ecx, ecx
+0x14000a475: cpuid
+0x14000a477: shr     ecx, 5
+0x14000a47a: mov     dword ptr [rsp+48h+var_28], eax
+0x14000a47e: mov     dword ptr [rsp+48h+var_28+4], ebx
+0x14000a482: mov     [rsp+48h+var_1C], edx
+0x14000a486: test    cl, 1
+0x14000a489: jz      short loc_14000A499
+0x14000a48b: mov     rbx, cr4
+0x14000a48e: shr     rbx, 0Dh
+0x14000a492: and     bl, 1
+0x14000a495: jnz     short loc_14000A4AB
+0x14000a497: jmp     short loc_14000A49B
+0x14000a499: xor     bl, bl
+0x14000a49b: call    sub_14000A344
+0x14000a4a0: mov     rax, cr4
+0x14000a4a3: bts     rax, 0Dh
+0x14000a4a8: mov     cr4, rax
+0x14000a4ab: call    sub_140005F5C
+0x14000a4b0: mov     ecx, eax
+0x14000a4b2: call    sub_140008C68
+0x14000a4b7: shl     rax, 0Ch
+0x14000a4bb: mov     [rsp+48h+var_28], rax
+0x14000a4c0: vmxon   [rsp+48h+var_28]
+0x14000a4c6: setz    cl
+0x14000a4c9: lea     rdx, cs:140000000h
+0x14000a4d0: setb    al
+0x14000a4d3: adc     cl, al
+0x14000a4d5: movzx   eax, cl
+0x14000a4d8: mov     edi, ds:rva dword_140012430[rdx+rax*4]
+0x14000a4df: vmclear [rsp+48h+var_18]
+0x14000a4e5: setz    cl
+0x14000a4e8: setb    al
+0x14000a4eb: adc     cl, al
+0x14000a4ed: movzx   eax, cl
+0x14000a4f0: mov     ecx, ds:rva dword_140012440[rdx+rax*4]
+0x14000a4f7: cmp     ecx, 2
+0x14000a4fa: jz      short loc_14000A532
+0x14000a4fc: cmp     ecx, 3
+0x14000a4ff: lea     rax, aVmxFailinvalid; "VMX_FailInvalid"
+0x14000a506: lea     r8, aUnknown; "UNKNOWN"
+0x14000a50d: cmovz   r8, rax
+0x14000a511: lea     rdx, aVmclear; "VMCLEAR"
+0x14000a518: cmp     ecx, 42h ; 'B'
+0x14000a51b: lea     rax, aVmxFailvalid; "VMX_FailValid"
+0x14000a522: lea     rcx, aSFailedWithSta; "%s failed with status %s.\n"
+0x14000a529: cmovz   r8, rax
+0x14000a52d: call    sub_140003A14
+0x14000a532: cmp     edi, 2
+0x14000a535: jnz     short loc_14000A53A
+0x14000a537: vmxoff
+0x14000a53a: test    bl, bl
+0x14000a53c: jnz     short loc_14000A549
+0x14000a53e: mov     rax, cr4
+0x14000a541: btr     rax, 0Dh
+0x14000a546: mov     cr4, rax
+0x14000a549: mov     rcx, [rsp+48h+var_10]
+0x14000a54e: xor     rcx, rsp; StackCookie
+0x14000a551: call    __security_check_cookie
+0x14000a556: mov     rbx, [rsp+48h+arg_8]
+0x14000a55b: add     rsp, 40h
+0x14000a55f: pop     rdi
+0x14000a560: retn

@@ -1,0 +1,73 @@
+=== METADATA ===
+Name: sub_140004FD8
+Addr: 0x140004fd8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140004fe1: Access Member +0x38 ([rcx+38h])
+  0x140004fea: Access Member +0x40 ([rbx+40h])
+  0x140004ff3: Access Member +0x48 ([rbx+48h])
+  0x140005003: Access Member +0x38 ([rbx+38h])
+  0x140005007: Access Member +0x40 ([rbx+40h])
+  0x14000500b: Access Member +0x48 ([rbx+48h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140005B9C (0x140005CFF)
+  <- sub_14000606C (0x1400060FF)
+  <- sub_14000606C (0x140006213)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140004fd8-0x14000501b -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140004FD8(_QWORD *a1)
+{
+  sub_14000C148(a1[7]);
+  sub_14000C148(a1[8]);
+  sub_14000C148(a1[9]);
+  a1[7] = 0;
+  a1[8] = 0;
+  a1[9] = 0;
+  ExFreePoolWithTag(a1, 0);
+}
+
+
+=== DISASM ===
+0x140004fd8: push    rbx
+0x140004fda: sub     rsp, 20h
+0x140004fde: mov     rbx, rcx
+0x140004fe1: mov     rcx, [rcx+38h]
+0x140004fe5: call    sub_14000C148
+0x140004fea: mov     rcx, [rbx+40h]
+0x140004fee: call    sub_14000C148
+0x140004ff3: mov     rcx, [rbx+48h]
+0x140004ff7: call    sub_14000C148
+0x140004ffc: xor     eax, eax
+0x140004ffe: xor     edx, edx
+0x140005000: mov     rcx, rbx
+0x140005003: mov     [rbx+38h], rax
+0x140005007: mov     [rbx+40h], rax
+0x14000500b: mov     [rbx+48h], rax
+0x14000500f: add     rsp, 20h
+0x140005013: pop     rbx
+0x140005014: jmp     cs:ExFreePoolWithTag

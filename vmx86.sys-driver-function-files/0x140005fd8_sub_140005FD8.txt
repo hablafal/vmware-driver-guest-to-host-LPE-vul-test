@@ -1,0 +1,138 @@
+=== METADATA ===
+Name: sub_140005FD8
+Addr: 0x140005fd8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005fd8: Access Member +0x18 ([rsp+arg_10])
+  0x140005fdd: Access Member +0x20 ([rsp+arg_18])
+  0x140005fee: Access Member +0x4 ([rcx+4])
+  0x140005fff: Access Member +0x1 ([rbx+1])
+  0x140006054: Access Member +0x60 ([rsp+48h+arg_10])
+  0x140006059: Access Member +0x68 ([rsp+48h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x1400044F7)
+  <- sub_14000D3E0 (0x14000D543)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005fd8-0x14000600c -> Jumps to: 0x14000600c
+  Block 0x14000600c-0x140006011 -> Jumps to: 0x140006011, 0x14000601e
+  Block 0x140006011-0x140006018 -> Jumps to: 0x140006018, 0x140006048
+  Block 0x140006018-0x14000601e -> Jumps to: 0x14000600c
+  Block 0x14000601e-0x140006034 -> Jumps to: 0x140006034, 0x140006048
+  Block 0x140006034-0x140006048 -> Jumps to: 0x14000600c
+  Block 0x140006048-0x14000604d -> Jumps to: 0x14000604d, 0x140006054
+  Block 0x14000604d-0x140006054 -> Jumps to: 0x140006054
+  Block 0x140006054-0x14000606b -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140005FD8(__int64 a1, unsigned __int64 *a2)
+{
+  __int64 v2; // rbx
+  unsigned __int64 v3; // rdi
+  char v4; // bp
+  unsigned int v7; // esi
+  unsigned __int64 v8; // rcx
+  unsigned int v9; // edx
+
+  LODWORD(v2) = 0;
+  v3 = *a2;
+  v4 = 0;
+  v7 = ((unsigned int)(*(_DWORD *)(a1 + 4) - 1) >> 6) + 1;
+  while ( 1 )
+  {
+    while ( !v3 )
+    {
+      v2 = (unsigned int)(v2 + 1);
+      if ( (unsigned int)v2 >= v7 )
+        goto LABEL_9;
+      v3 = a2[v2];
+    }
+    _BitScanForward64(&v8, v3);
+    v9 = v8 + ((_DWORD)v2 << 6);
+    v3 &= ~(1LL << v8);
+    if ( v9 == -1 )
+      break;
+    if ( sub_1400051C8(a1, v9) )
+      v4 = 1;
+  }
+LABEL_9:
+  if ( !v4 )
+    sub_1400053E8(0);
+}
+
+
+=== DISASM ===
+0x140005fd8: mov     [rsp+arg_10], rbx
+0x140005fdd: mov     [rsp+arg_18], rbp
+0x140005fe2: push    rsi
+0x140005fe3: push    rdi
+0x140005fe4: push    r12
+0x140005fe6: push    r14
+0x140005fe8: push    r15
+0x140005fea: sub     rsp, 20h
+0x140005fee: mov     esi, [rcx+4]
+0x140005ff1: xor     ebx, ebx
+0x140005ff3: mov     rdi, [rdx]
+0x140005ff6: xor     bpl, bpl
+0x140005ff9: mov     r14, rdx
+0x140005ffc: mov     r15, rcx
+0x140005fff: lea     r12d, [rbx+1]
+0x140006003: sub     esi, r12d
+0x140006006: shr     esi, 6
+0x140006009: add     esi, r12d
+0x14000600c: test    rdi, rdi
+0x14000600f: jnz     short loc_14000601E
+0x140006011: add     ebx, r12d
+0x140006014: cmp     ebx, esi
+0x140006016: jnb     short loc_140006048
+0x140006018: mov     rdi, [r14+rbx*8]
+0x14000601c: jmp     short loc_14000600C
+0x14000601e: bsf     rcx, rdi
+0x140006022: mov     edx, ebx
+0x140006024: shl     edx, 6
+0x140006027: mov     eax, ecx
+0x140006029: add     edx, ecx
+0x14000602b: btr     rdi, rax
+0x14000602f: cmp     edx, 0FFFFFFFFh
+0x140006032: jz      short loc_140006048
+0x140006034: mov     rcx, r15
+0x140006037: call    sub_1400051C8
+0x14000603c: test    al, al
+0x14000603e: movzx   ebp, bpl
+0x140006042: cmovnz  ebp, r12d
+0x140006046: jmp     short loc_14000600C
+0x140006048: test    bpl, bpl
+0x14000604b: jnz     short loc_140006054
+0x14000604d: xor     ecx, ecx
+0x14000604f: call    sub_1400053E8
+0x140006054: mov     rbx, [rsp+48h+arg_10]
+0x140006059: mov     rbp, [rsp+48h+arg_18]
+0x14000605e: add     rsp, 20h
+0x140006062: pop     r15
+0x140006064: pop     r14
+0x140006066: pop     r12
+0x140006068: pop     rdi
+0x140006069: pop     rsi
+0x14000606a: retn

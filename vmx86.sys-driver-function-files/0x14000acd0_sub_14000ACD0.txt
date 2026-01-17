@@ -1,0 +1,60 @@
+=== METADATA ===
+Name: sub_14000ACD0
+Addr: 0x14000acd0
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000acec: Access Member +0x4 (dword ptr [r8+4])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000acd0-0x14000acec -> Jumps to: 0x14000acec, 0x14000acf1
+  Block 0x14000acec-0x14000acf1 -> Jumps to: 0x14000acf1
+  Block 0x14000acf1-0x14000acf2 -> Jumps to: 
+
+=== CODE ===
+unsigned __int64 __fastcall sub_14000ACD0(volatile signed __int32 *a1)
+{
+  unsigned __int64 result; // rax
+
+  result = __readmsr(0xC0000080);
+  _InterlockedIncrement(a1);
+  if ( (result & 0x800) != 0 )
+    _InterlockedIncrement(a1 + 1);
+  return result;
+}
+
+
+=== DISASM ===
+0x14000acd0: mov     r8, rcx
+0x14000acd3: mov     ecx, 0C0000080h
+0x14000acd8: rdmsr
+0x14000acda: shl     rdx, 20h
+0x14000acde: or      rax, rdx
+0x14000ace1: lock inc dword ptr [r8]
+0x14000ace5: bt      rax, 0Bh
+0x14000acea: jnb     short locret_14000ACF1
+0x14000acec: lock inc dword ptr [r8+4]
+0x14000acf1: retn

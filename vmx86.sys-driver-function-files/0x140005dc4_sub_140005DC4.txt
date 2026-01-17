@@ -1,0 +1,75 @@
+=== METADATA ===
+Name: sub_140005DC4
+Addr: 0x140005dc4
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_1400047D0 (0x14000488B)
+  <- sub_140007B48 (0x140007B82)
+  <- sub_140007B48 (0x140007BA2)
+  <- sub_140007B48 (0x140007BBC)
+  <- sub_140007B48 (0x140007BDA)
+  <- sub_140007B48 (0x140007BE2)
+  <- sub_140008024 (0x140008067)
+  <- sub_140008024 (0x140008090)
+  <- sub_140008264 (0x140008347)
+  <- sub_140008CA0 (0x140008CEF)
+  <- sub_140009D10 (0x140009D78)
+  <- sub_14000A66C (0x14000A67E)
+  <- sub_14000A66C (0x14000A68C)
+  <- sub_14000A66C (0x14000A69A)
+  <- sub_14000A66C (0x14000A6AB)
+  <- sub_14000A66C (0x14000A6BC)
+  <- sub_14000A66C (0x14000A6E8)
+  <- sub_14000B3B8 (0x14000B65D)
+  <- sub_14000B92C (0x14000B9A3)
+  <- sub_14000B92C (0x14000BBC0)
+  <- sub_14000B92C (0x14000BBD1)
+  <- sub_14000BE84 (0x14000C088)
+  <- sub_14000BE84 (0x14000C103)
+  <- sub_14000C148 (0x14000C151)
+  <- sub_14000EF84 (0x14000EF9D)
+  <- sub_14000F3EC (0x14000F40E)
+  <- sub_14000F3EC (0x14000F41B)
+  <- sub_14000F474 (0x14000F5B3)
+  <- sub_14000F474 (0x14000F5C0)
+  <- sub_14000F650 (0x14000F678)
+  <- sub_14000F650 (0x14000F68A)
+  <- DnssrvFreeDirectoryPartitionEnum (0x14000F9A6)
+  <- DnssrvFreeDirectoryPartitionEnum (0x14000F9AE)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005dc4-0x140005dcd -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140005DC4(void *a1)
+{
+  ExFreePoolWithTag(a1, 0);
+}
+
+
+=== DISASM ===
+0x140005dc4: xor     edx, edx
+0x140005dc6: jmp     cs:ExFreePoolWithTag

@@ -1,0 +1,168 @@
+=== METADATA ===
+Name: sub_14000EE70
+Addr: 0x14000ee70
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000ee73: Access Member +0x10 ([r11+10h])
+  0x14000ee77: Access Member +0x18 ([r11+18h])
+  0x14000ee7b: Access Member +0x20 ([r11+20h])
+  0x14000ee8f: Access Member +0x38 ([rsp+48h+var_10])
+  0x14000eea1: Access Member +0x20 ([rsp+48h+var_28])
+  0x14000eed4: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000eee6: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000eefa: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000ef16: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000ef1e: Access Member +0x48 ([rsi+48h])
+  0x14000ef3c: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000ef5a: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000ef5f: Access Member +0x38 ([rsp+48h+var_10])
+  0x14000ef6c: Access Member +0x58 ([rsp+48h+arg_8])
+  0x14000ef71: Access Member +0x60 ([rsp+48h+arg_10])
+  0x14000ef76: Access Member +0x68 ([rsp+48h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E378 (0x14000E3DD)
+  <- sub_14000EA00 (0x14000EA4A)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000ee85 -> 2
+  0x14000eeb9 -> Failed to allocate page
+
+  0x14000eeeb -> Failed to map MPN 0x%I64x
+
+  0x14000ef41 -> Failed to track mapping from VPN 0x%lx to MPN 0x%I64x
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000ee70-0x14000eeb9 -> Jumps to: 0x14000eeb9, 0x14000eed4
+  Block 0x14000eeb9-0x14000eec5 -> Jumps to: 0x14000eec5
+  Block 0x14000eec5-0x14000eed4 -> Jumps to: 0x14000ef5f
+  Block 0x14000eed4-0x14000eee6 -> Jumps to: 0x14000eee6, 0x14000ef09
+  Block 0x14000eee6-0x14000eef7 -> Jumps to: 0x14000eef7
+  Block 0x14000eef7-0x14000ef09 -> Jumps to: 0x14000eec5
+  Block 0x14000ef09-0x14000ef3c -> Jumps to: 0x14000ef3c, 0x14000ef5a
+  Block 0x14000ef3c-0x14000ef5a -> Jumps to: 0x14000eef7
+  Block 0x14000ef5a-0x14000ef5f -> Jumps to: 0x14000ef5f
+  Block 0x14000ef5f-0x14000ef82 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000EE70(__int64 *a1)
+{
+  __int64 v1; // rsi
+  PMDL *v3; // rdi
+  char *v4; // rbx
+  __int64 v5; // [rsp+30h] [rbp-18h] BYREF
+
+  v1 = *a1;
+  if ( sub_14000B768(*a1, (char *)&v5, 1u, 1, 0) != 1 )
+  {
+    sub_140003A14("Failed to allocate page\n");
+    return 0x3FFFFFFFFFLL;
+  }
+  v3 = sub_14000CABC(v5);
+  if ( !v3 )
+  {
+    sub_140003A14("Failed to map MPN 0x%I64x\n", v5);
+LABEL_6:
+    sub_14000C15C(v1, (__int64)&v5, 1u);
+    return 0x3FFFFFFFFFLL;
+  }
+  sub_140007558(v1);
+  v4 = sub_140007BF8(*(_QWORD *)(v1 + 72), (__int64)v3, v5);
+  sub_140007564(v1);
+  if ( !v4 )
+  {
+    sub_140003A14("Failed to track mapping from VPN 0x%lx to MPN 0x%I64x\n", (_DWORD)v3, v5);
+    sub_14000D158((__int64)v3);
+    goto LABEL_6;
+  }
+  return v5;
+}
+
+
+=== DISASM ===
+0x14000ee70: mov     r11, rsp
+0x14000ee73: mov     [r11+10h], rbx
+0x14000ee77: mov     [r11+18h], rsi
+0x14000ee7b: mov     [r11+20h], rdi
+0x14000ee7f: push    r14
+0x14000ee81: sub     rsp, 40h
+0x14000ee85: mov     rax, cs:__security_cookie
+0x14000ee8c: xor     rax, rsp
+0x14000ee8f: mov     [rsp+48h+var_10], rax
+0x14000ee94: mov     rsi, [rcx]
+0x14000ee97: lea     rdx, [r11-18h]
+0x14000ee9b: mov     r14d, 1
+0x14000eea1: mov     [rsp+48h+var_28], 0
+0x14000eea6: mov     r9b, r14b
+0x14000eea9: mov     r8d, r14d
+0x14000eeac: mov     rcx, rsi
+0x14000eeaf: call    sub_14000B768
+0x14000eeb4: cmp     rax, r14
+0x14000eeb7: jz      short loc_14000EED4
+0x14000eeb9: lea     rcx, aFailedToAlloca_1; "Failed to allocate page\n"
+0x14000eec0: call    sub_140003A14
+0x14000eec5: mov     rax, 3FFFFFFFFFh
+0x14000eecf: jmp     loc_14000EF5F
+0x14000eed4: mov     rcx, [rsp+48h+var_18]
+0x14000eed9: call    sub_14000CABC
+0x14000eede: mov     rdi, rax
+0x14000eee1: test    rax, rax
+0x14000eee4: jnz     short loc_14000EF09
+0x14000eee6: mov     rdx, [rsp+48h+var_18]
+0x14000eeeb: lea     rcx, aFailedToMapMpn; "Failed to map MPN 0x%I64x\n"
+0x14000eef2: call    sub_140003A14
+0x14000eef7: mov     r8, r14
+0x14000eefa: lea     rdx, [rsp+48h+var_18]
+0x14000eeff: mov     rcx, rsi
+0x14000ef02: call    sub_14000C15C
+0x14000ef07: jmp     short loc_14000EEC5
+0x14000ef09: mov     edx, 29h ; ')'
+0x14000ef0e: mov     rcx, rsi
+0x14000ef11: call    sub_140007558
+0x14000ef16: mov     r8, [rsp+48h+var_18]
+0x14000ef1b: mov     rdx, rdi
+0x14000ef1e: mov     rcx, [rsi+48h]
+0x14000ef22: call    sub_140007BF8
+0x14000ef27: mov     edx, 29h ; ')'
+0x14000ef2c: mov     rcx, rsi
+0x14000ef2f: mov     rbx, rax
+0x14000ef32: call    sub_140007564
+0x14000ef37: test    rbx, rbx
+0x14000ef3a: jnz     short loc_14000EF5A
+0x14000ef3c: mov     r8, [rsp+48h+var_18]
+0x14000ef41: lea     rcx, aFailedToTrackM; "Failed to track mapping from VPN 0x%lx "...
+0x14000ef48: mov     rdx, rdi
+0x14000ef4b: call    sub_140003A14
+0x14000ef50: mov     rcx, rdi
+0x14000ef53: call    sub_14000D158
+0x14000ef58: jmp     short loc_14000EEF7
+0x14000ef5a: mov     rax, [rsp+48h+var_18]
+0x14000ef5f: mov     rcx, [rsp+48h+var_10]
+0x14000ef64: xor     rcx, rsp; StackCookie
+0x14000ef67: call    __security_check_cookie
+0x14000ef6c: mov     rbx, [rsp+48h+arg_8]
+0x14000ef71: mov     rsi, [rsp+48h+arg_10]
+0x14000ef76: mov     rdi, [rsp+48h+arg_18]
+0x14000ef7b: add     rsp, 40h
+0x14000ef7f: pop     r14
+0x14000ef81: retn

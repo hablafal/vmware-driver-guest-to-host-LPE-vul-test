@@ -1,0 +1,75 @@
+=== METADATA ===
+Name: sub_14000B880
+Addr: 0x14000b880
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000b88e: Access Member +0x28 ([rsp+38h+var_10])
+  0x14000b893: Access Member +0x20 ([rsp+38h+var_18])
+  0x14000b89b: Access Member +0x20 ([rsp+38h+var_18])
+  0x14000b8a7: Access Member +0x24 ([rsp+38h+var_14])
+  0x14000b8b4: Access Member +0x24 ([rsp+38h+var_14])
+  0x14000b8b8: Access Member +0x20 ([rsp+38h+var_18])
+  0x14000b8c5: Access Member +0x28 ([rsp+38h+var_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x1400035AF)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000b884 -> 2
+  0x14000b8a0 -> L
+
+=== BASIC BLOCKS ===
+  Block 0x14000b880-0x14000b8d7 -> Jumps to: 
+
+=== CODE ===
+__int64 sub_14000B880()
+{
+  unsigned int v1; // [rsp+20h] [rbp-18h] BYREF
+  int v2; // [rsp+24h] [rbp-14h]
+
+  v1 = 0;
+  v2 = 0;
+  sub_140005828((__int64)sub_14000ACD0, (__int64)&v1);
+  byte_14001CF71 = v2 == v1;
+  return v1;
+}
+
+
+=== DISASM ===
+0x14000b880: sub     rsp, 38h
+0x14000b884: mov     rax, cs:__security_cookie
+0x14000b88b: xor     rax, rsp
+0x14000b88e: mov     [rsp+38h+var_10], rax
+0x14000b893: mov     [rsp+38h+var_18], 0
+0x14000b89b: lea     rdx, [rsp+38h+var_18]
+0x14000b8a0: lea     rcx, sub_14000ACD0
+0x14000b8a7: mov     [rsp+38h+var_14], 0
+0x14000b8af: call    sub_140005828
+0x14000b8b4: mov     ecx, [rsp+38h+var_14]
+0x14000b8b8: mov     eax, [rsp+38h+var_18]
+0x14000b8bc: cmp     ecx, eax
+0x14000b8be: setz    cs:byte_14001CF71
+0x14000b8c5: mov     rcx, [rsp+38h+var_10]
+0x14000b8ca: xor     rcx, rsp; StackCookie
+0x14000b8cd: call    __security_check_cookie
+0x14000b8d2: add     rsp, 38h
+0x14000b8d6: retn

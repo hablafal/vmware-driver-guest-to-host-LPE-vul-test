@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: sub_14000345C
+Addr: 0x14000345c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000345c-0x14000345f -> Jumps to: 
+
+=== CODE ===
+void sub_14000345C()
+{
+  ;
+}
+
+
+=== DISASM ===
+0x14000345c: mov     fs, ecx
+0x14000345e: retn

@@ -1,0 +1,52 @@
+=== METADATA ===
+Name: sub_14000EF84
+Addr: 0x14000ef84
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000EAD0 (0x14000EE45)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000ef84-0x14000efa2 -> Jumps to: 0x140005dc4
+  Block 0x140005dc4-0x140005dc4 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_14000EF84(__int64 *a1)
+{
+  sub_14000BD60(*a1);
+  sub_140005DC4(a1);
+}
+
+
+=== DISASM ===
+0x14000ef84: push    rbx
+0x14000ef86: sub     rsp, 20h
+0x14000ef8a: mov     rbx, rcx
+0x14000ef8d: mov     rcx, [rcx]
+0x14000ef90: call    sub_14000BD60
+0x14000ef95: mov     rcx, rbx
+0x14000ef98: add     rsp, 20h
+0x14000ef9c: pop     rbx
+0x14000ef9d: jmp     sub_140005DC4

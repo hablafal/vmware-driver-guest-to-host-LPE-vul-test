@@ -1,0 +1,454 @@
+=== METADATA ===
+Name: sub_140006D14
+Addr: 0x140006d14
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140006e17: TEST with Mask 0x4
+  0x140006ea6: TEST with Mask 0x22
+  0x140006f22: TEST with Mask 0x2000
+  0x140006f51: AND with Mask 0x0
+  0x140006f55: OR with Mask 0xFFFFFFFFFFFFFFFF
+
+=== MEMBER ACCESS ===
+  0x140006d14: Access Member +0x8 ([rsp-8+arg_0])
+  0x140006f64: Access Member +0x30 ([rsp+20h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008264 (0x1400082CF)
+  <- sub_14000ABC0 (0x14000AC9C)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140006d21 -> 2
+  0x140006e38 -> 
+
+=== BASIC BLOCKS ===
+  Block 0x140006d14-0x140006d51 -> Jumps to: 0x140006d51, 0x140006dfe
+  Block 0x140006d51-0x140006d75 -> Jumps to: 0x140006d75, 0x140006db0
+  Block 0x140006d75-0x140006d77 -> Jumps to: 0x140006d77, 0x140006dab
+  Block 0x140006d77-0x140006d81 -> Jumps to: 0x140006d81, 0x140006d92
+  Block 0x140006d81-0x140006d83 -> Jumps to: 0x140006d83, 0x140006dab
+  Block 0x140006d83-0x140006d8b -> Jumps to: 0x140006d8b, 0x140006dab
+  Block 0x140006d8b-0x140006d92 -> Jumps to: 0x140006d9a
+  Block 0x140006d92-0x140006d9a -> Jumps to: 0x140006d9a
+  Block 0x140006d9a-0x140006d9c -> Jumps to: 0x140006d9c, 0x140006dab
+  Block 0x140006d9c-0x140006da1 -> Jumps to: 0x140006da1, 0x140006dab
+  Block 0x140006da1-0x140006da6 -> Jumps to: 0x140006da6, 0x140006dab
+  Block 0x140006da6-0x140006dab -> Jumps to: 0x140006dab, 0x140006dfe
+  Block 0x140006dab-0x140006db0 -> Jumps to: 0x140006dfe
+  Block 0x140006db0-0x140006dbe -> Jumps to: 0x140006dbe, 0x140006ebb
+  Block 0x140006dbe-0x140006dc0 -> Jumps to: 0x140006dc0, 0x140006de6
+  Block 0x140006dc0-0x140006dca -> Jumps to: 0x140006dab, 0x140006dca
+  Block 0x140006dca-0x140006dd3 -> Jumps to: 0x140006dd3, 0x140006eb3
+  Block 0x140006dd3-0x140006ddc -> Jumps to: 0x140006ddc, 0x140006e8c
+  Block 0x140006ddc-0x140006de1 -> Jumps to: 0x140006de1, 0x140006de6
+  Block 0x140006de1-0x140006de6 -> Jumps to: 0x140006de6, 0x140006dfe
+  Block 0x140006de6-0x140006dfe -> Jumps to: 0x140006dfe
+  Block 0x140006dfe-0x140006e0e -> Jumps to: 0x140006e0e, 0x140006e38
+  Block 0x140006e0e-0x140006e1c -> Jumps to: 0x140006e1c, 0x140006e38
+  Block 0x140006e1c-0x140006e29 -> Jumps to: 0x140006e29, 0x140006e38
+  Block 0x140006e29-0x140006e38 -> Jumps to: 0x140006e38
+  Block 0x140006e38-0x140006e41 -> Jumps to: 0x140006e41, 0x140006e7b
+  Block 0x140006e41-0x140006e49 -> Jumps to: 0x140006e49, 0x140006e84
+  Block 0x140006e49-0x140006e52 -> Jumps to: 0x140006e52, 0x140006f86
+  Block 0x140006e52-0x140006e5b -> Jumps to: 0x140006e5b, 0x140006f6f
+  Block 0x140006e5b-0x140006e64 -> Jumps to: 0x140006e64, 0x140006f2c
+  Block 0x140006e64-0x140006e6b -> Jumps to: 0x140006e6b, 0x140006e7b
+  Block 0x140006e6b-0x140006e7b -> Jumps to: 0x140006e7b
+  Block 0x140006e7b-0x140006e84 -> Jumps to: 0x140006e84, 0x140006f51
+  Block 0x140006e84-0x140006e8c -> Jumps to: 0x140006f9f
+  Block 0x140006e8c-0x140006e94 -> Jumps to: 0x140006dfe, 0x140006e94
+  Block 0x140006e94-0x140006ea8 -> Jumps to: 0x140006ea8
+  Block 0x140006ea8-0x140006eae -> Jumps to: 0x140006dfe, 0x140006eae
+  Block 0x140006eae-0x140006eb3 -> Jumps to: 0x140006dab
+  Block 0x140006eb3-0x140006ebb -> Jumps to: 0x140006dfe
+  Block 0x140006ebb-0x140006ec9 -> Jumps to: 0x140006de6, 0x140006ec9
+  Block 0x140006ec9-0x140006ece -> Jumps to: 0x140006ece, 0x140006f08
+  Block 0x140006ece-0x140006ed3 -> Jumps to: 0x140006ed3, 0x140006efa
+  Block 0x140006ed3-0x140006edc -> Jumps to: 0x140006dfe, 0x140006edc
+  Block 0x140006edc-0x140006efa -> Jumps to: 0x140006dfe
+  Block 0x140006efa-0x140006f08 -> Jumps to: 0x140006dfe
+  Block 0x140006f08-0x140006f10 -> Jumps to: 0x140006dfe, 0x140006f10
+  Block 0x140006f10-0x140006f2c -> Jumps to: 0x140006ea8
+  Block 0x140006f2c-0x140006f3b -> Jumps to: 0x140006f3b, 0x140006f51
+  Block 0x140006f3b-0x140006f51 -> Jumps to: 0x140006e84, 0x140006f51
+  Block 0x140006f51-0x140006f58 -> Jumps to: 0x140006f58
+  Block 0x140006f58-0x140006f6f -> Jumps to: 
+  Block 0x140006f6f-0x140006f86 -> Jumps to: 0x140006e7b
+  Block 0x140006f86-0x140006f9f -> Jumps to: 0x140006f9f
+  Block 0x140006f9f-0x140006faf -> Jumps to: 0x140006f58
+
+=== CODE ===
+__int64 __fastcall sub_140006D14(unsigned int a1, unsigned __int64 *a2)
+{
+  int v5; // r8d
+  unsigned __int64 v10; // rcx
+  bool v11; // zf
+  unsigned int v12; // eax
+  unsigned int v13; // eax
+  unsigned __int64 v14; // rax
+  unsigned int v35; // ecx
+  unsigned __int64 v36; // rax
+  bool v37; // zf
+  unsigned __int64 v38; // rax
+  unsigned __int64 v39; // rax
+  unsigned __int64 v45; // rax
+  unsigned __int64 v57; // rax
+
+  _RAX = 1;
+  LOBYTE(v5) = 0;
+  __asm { cpuid }
+  if ( (_RCX & 0x20) == 0 )
+    goto LABEL_20;
+  v10 = __readmsr(0x482u) >> 32;
+  if ( a1 > 0x489 )
+  {
+    if ( a1 > 0x48F )
+    {
+      if ( a1 == 1168 )
+        goto LABEL_19;
+      if ( a1 != 1169 )
+      {
+        if ( a1 == 1170 )
+        {
+          LOBYTE(v5) = (v10 & 0x20000) != 0;
+        }
+        else if ( a1 == 1171 )
+        {
+          v38 = __readmsr(0x483u);
+          v5 = HIDWORD(v38) >> 31;
+        }
+        goto LABEL_20;
+      }
+      if ( (v10 & 0x80000000) == 0LL )
+        goto LABEL_20;
+      v39 = __readmsr(0x48Bu);
+      v37 = (v39 & 0x200000000000LL) == 0;
+    }
+    else
+    {
+      switch ( a1 )
+      {
+        case 0x48Fu:
+          goto LABEL_19;
+        case 0x48Au:
+          goto LABEL_12;
+        case 0x48Bu:
+          LOBYTE(v5) = (v10 & 0x80000000) != 0LL;
+          goto LABEL_20;
+      }
+      if ( a1 != 1164 )
+      {
+        if ( a1 - 1165 > 1 )
+          goto LABEL_20;
+LABEL_19:
+        v14 = __readmsr(0x480u);
+        LOBYTE(v5) = ((((unsigned __int64)HIDWORD(v14) << 32) | (unsigned int)v14) & 0x80000000000000LL) != 0;
+        goto LABEL_20;
+      }
+      if ( (v10 & 0x80000000) == 0LL )
+        goto LABEL_20;
+      v36 = __readmsr(0x48Bu);
+      v37 = (v36 & 0x2200000000LL) == 0;
+    }
+    if ( v37 )
+      goto LABEL_20;
+    goto LABEL_12;
+  }
+  if ( a1 == 1161 )
+    goto LABEL_12;
+  if ( a1 > 0x484 )
+  {
+    v11 = a1 == 1157;
+    v12 = a1 - 1157;
+  }
+  else
+  {
+    if ( a1 == 1156 || a1 == 58 )
+      goto LABEL_12;
+    v12 = a1 - 1152;
+    v11 = a1 == 1152;
+  }
+  if ( v11 || (v13 = v12 - 1) == 0 || v13 - 1 <= 1 )
+LABEL_12:
+    LOBYTE(v5) = 1;
+LABEL_20:
+  _RAX = 0x80000000LL;
+  __asm { cpuid }
+  if ( (unsigned int)_RAX >= 0x8000000A )
+  {
+    _RAX = 2147483649LL;
+    __asm { cpuid }
+    if ( (_RCX & 4) != 0 )
+    {
+      _RAX = 2147483658LL;
+      __asm { cpuid }
+      if ( (_BYTE)_RAX )
+      {
+        if ( a1 == -1073676012 )
+          LOBYTE(v5) = 1;
+      }
+    }
+  }
+  if ( dword_140014A00 != 2 )
+    goto LABEL_32;
+  if ( a1 != 23 )
+  {
+    switch ( a1 )
+    {
+      case 0x8Bu:
+        __writemsr(0x8Bu, 0);
+        _RAX = 1;
+        __asm { cpuid }
+        v35 = 139;
+        goto LABEL_52;
+      case 0x10Au:
+        _RAX = 7;
+        __asm { cpuid }
+        LOBYTE(v5) = (_RDX & 0x20000000) != 0;
+        break;
+      case 0x122u:
+        _RAX = 7;
+        __asm { cpuid }
+        if ( (_RDX & 0x20000000) != 0 )
+        {
+          v45 = __readmsr(0x10Au);
+          if ( (v45 & 0x80u) != 0LL )
+            goto LABEL_33;
+        }
+        goto LABEL_49;
+      case 0x345u:
+        _RAX = 1;
+        __asm { cpuid }
+        LOBYTE(v5) = (_RCX & 0x8000) != 0;
+        break;
+    }
+LABEL_32:
+    if ( (_BYTE)v5 )
+      goto LABEL_33;
+LABEL_49:
+    *a2 = 0;
+    return 0xFFFFFFFFLL;
+  }
+LABEL_33:
+  v35 = a1;
+LABEL_52:
+  v57 = __readmsr(v35);
+  *a2 = ((unsigned __int64)HIDWORD(v57) << 32) | (unsigned int)v57;
+  return 0;
+}
+
+
+=== DISASM ===
+0x140006d14: mov     [rsp-8+arg_0], rbx
+0x140006d19: push    rbp
+0x140006d1a: mov     rbp, rsp
+0x140006d1d: sub     rsp, 20h
+0x140006d21: mov     rax, cs:__security_cookie
+0x140006d28: xor     rax, rsp
+0x140006d2b: mov     [rbp+var_10], rax
+0x140006d2f: mov     r9d, ecx
+0x140006d32: mov     r11d, 1
+0x140006d38: xor     ecx, ecx
+0x140006d3a: mov     eax, r11d
+0x140006d3d: mov     r10, rdx
+0x140006d40: xor     r8b, r8b
+0x140006d43: cpuid
+0x140006d45: shr     ecx, 5
+0x140006d48: test    r11b, cl
+0x140006d4b: jz      loc_140006DFE
+0x140006d51: mov     ecx, 482h
+0x140006d56: rdmsr
+0x140006d58: shl     rdx, 20h
+0x140006d5c: or      rax, rdx
+0x140006d5f: mov     rcx, rax
+0x140006d62: mov     eax, 489h
+0x140006d67: shr     rcx, 20h
+0x140006d6b: mov     edx, ecx
+0x140006d6d: shr     edx, 1Fh
+0x140006d70: cmp     r9d, eax
+0x140006d73: ja      short loc_140006DB0
+0x140006d75: jz      short loc_140006DAB
+0x140006d77: mov     eax, 484h
+0x140006d7c: cmp     r9d, eax
+0x140006d7f: ja      short loc_140006D92
+0x140006d81: jz      short loc_140006DAB
+0x140006d83: mov     eax, r9d
+0x140006d86: sub     eax, 3Ah ; ':'
+0x140006d89: jz      short loc_140006DAB
+0x140006d8b: sub     eax, 446h
+0x140006d90: jmp     short loc_140006D9A
+0x140006d92: mov     eax, r9d
+0x140006d95: sub     eax, 485h
+0x140006d9a: jz      short loc_140006DAB
+0x140006d9c: sub     eax, r11d
+0x140006d9f: jz      short loc_140006DAB
+0x140006da1: sub     eax, r11d
+0x140006da4: jz      short loc_140006DAB
+0x140006da6: cmp     eax, r11d
+0x140006da9: jnz     short loc_140006DFE
+0x140006dab: mov     r8b, r11b
+0x140006dae: jmp     short loc_140006DFE
+0x140006db0: mov     eax, 48Fh
+0x140006db5: cmp     r9d, eax
+0x140006db8: ja      loc_140006EBB
+0x140006dbe: jz      short loc_140006DE6
+0x140006dc0: mov     eax, r9d
+0x140006dc3: sub     eax, 48Ah
+0x140006dc8: jz      short loc_140006DAB
+0x140006dca: sub     eax, r11d
+0x140006dcd: jz      loc_140006EB3
+0x140006dd3: sub     eax, r11d
+0x140006dd6: jz      loc_140006E8C
+0x140006ddc: sub     eax, r11d
+0x140006ddf: jz      short loc_140006DE6
+0x140006de1: cmp     eax, r11d
+0x140006de4: jnz     short loc_140006DFE
+0x140006de6: mov     ecx, 480h
+0x140006deb: rdmsr
+0x140006ded: shl     rdx, 20h
+0x140006df1: or      rax, rdx
+0x140006df4: shr     rax, 37h
+0x140006df8: and     al, r11b
+0x140006dfb: mov     r8b, al
+0x140006dfe: xor     ecx, ecx
+0x140006e00: mov     eax, 80000000h
+0x140006e05: cpuid
+0x140006e07: cmp     eax, 8000000Ah
+0x140006e0c: jb      short loc_140006E38
+0x140006e0e: xor     ecx, ecx
+0x140006e10: mov     eax, 80000001h
+0x140006e15: cpuid
+0x140006e17: test    cl, 4
+0x140006e1a: jz      short loc_140006E38
+0x140006e1c: xor     ecx, ecx
+0x140006e1e: mov     eax, 8000000Ah
+0x140006e23: cpuid
+0x140006e25: test    al, al
+0x140006e27: jz      short loc_140006E38
+0x140006e29: cmp     r9d, 0C0010114h
+0x140006e30: movzx   r8d, r8b
+0x140006e34: cmovz   r8d, r11d
+0x140006e38: cmp     cs:dword_140014A00, 2
+0x140006e3f: jnz     short loc_140006E7B
+0x140006e41: mov     eax, r9d
+0x140006e44: sub     eax, 17h
+0x140006e47: jz      short loc_140006E84
+0x140006e49: sub     eax, 74h ; 't'
+0x140006e4c: jz      loc_140006F86
+0x140006e52: sub     eax, 7Fh
+0x140006e55: jz      loc_140006F6F
+0x140006e5b: sub     eax, 18h
+0x140006e5e: jz      loc_140006F2C
+0x140006e64: cmp     eax, 223h
+0x140006e69: jnz     short loc_140006E7B
+0x140006e6b: xor     ecx, ecx
+0x140006e6d: mov     eax, r11d
+0x140006e70: cpuid
+0x140006e72: shr     ecx, 0Fh
+0x140006e75: and     cl, r11b
+0x140006e78: mov     r8b, cl
+0x140006e7b: test    r8b, r8b
+0x140006e7e: jz      loc_140006F51
+0x140006e84: mov     ecx, r9d
+0x140006e87: jmp     loc_140006F9F
+0x140006e8c: test    dl, dl
+0x140006e8e: jz      loc_140006DFE
+0x140006e94: mov     ecx, 48Bh
+0x140006e99: rdmsr
+0x140006e9b: shl     rdx, 20h
+0x140006e9f: or      rax, rdx
+0x140006ea2: shr     rax, 20h
+0x140006ea6: test    al, 22h
+0x140006ea8: jz      loc_140006DFE
+0x140006eae: jmp     loc_140006DAB
+0x140006eb3: mov     r8b, dl
+0x140006eb6: jmp     loc_140006DFE
+0x140006ebb: mov     eax, r9d
+0x140006ebe: sub     eax, 490h
+0x140006ec3: jz      loc_140006DE6
+0x140006ec9: sub     eax, r11d
+0x140006ecc: jz      short loc_140006F08
+0x140006ece: sub     eax, r11d
+0x140006ed1: jz      short loc_140006EFA
+0x140006ed3: cmp     eax, r11d
+0x140006ed6: jnz     loc_140006DFE
+0x140006edc: mov     ecx, 483h
+0x140006ee1: rdmsr
+0x140006ee3: shl     rdx, 20h
+0x140006ee7: or      rax, rdx
+0x140006eea: mov     r8, rax
+0x140006eed: shr     r8, 20h
+0x140006ef1: shr     r8d, 1Fh
+0x140006ef5: jmp     loc_140006DFE
+0x140006efa: shr     ecx, 11h
+0x140006efd: and     cl, r11b
+0x140006f00: mov     r8b, cl
+0x140006f03: jmp     loc_140006DFE
+0x140006f08: test    dl, dl
+0x140006f0a: jz      loc_140006DFE
+0x140006f10: mov     ecx, 48Bh
+0x140006f15: rdmsr
+0x140006f17: shl     rdx, 20h
+0x140006f1b: or      rax, rdx
+0x140006f1e: shr     rax, 20h
+0x140006f22: test    eax, 2000h
+0x140006f27: jmp     loc_140006EA8
+0x140006f2c: xor     ecx, ecx
+0x140006f2e: mov     eax, 7
+0x140006f33: cpuid
+0x140006f35: bt      edx, 1Dh
+0x140006f39: jnb     short loc_140006F51
+0x140006f3b: mov     ecx, 10Ah
+0x140006f40: rdmsr
+0x140006f42: shl     rdx, 20h
+0x140006f46: or      rax, rdx
+0x140006f49: test    al, al
+0x140006f4b: js      loc_140006E84
+0x140006f51: and     qword ptr [r10], 0
+0x140006f55: or      eax, 0FFFFFFFFh
+0x140006f58: mov     rcx, [rbp+var_10]
+0x140006f5c: xor     rcx, rsp; StackCookie
+0x140006f5f: call    __security_check_cookie
+0x140006f64: mov     rbx, [rsp+20h+arg_0]
+0x140006f69: add     rsp, 20h
+0x140006f6d: pop     rbp
+0x140006f6e: retn
+0x140006f6f: xor     ecx, ecx
+0x140006f71: mov     eax, 7
+0x140006f76: cpuid
+0x140006f78: shr     edx, 1Dh
+0x140006f7b: and     dl, r11b
+0x140006f7e: mov     r8b, dl
+0x140006f81: jmp     loc_140006E7B
+0x140006f86: xor     eax, eax
+0x140006f88: mov     r8d, 8Bh
+0x140006f8e: xor     edx, edx
+0x140006f90: mov     ecx, r8d
+0x140006f93: wrmsr
+0x140006f95: xor     ecx, ecx
+0x140006f97: mov     eax, r11d
+0x140006f9a: cpuid
+0x140006f9c: mov     ecx, r8d
+0x140006f9f: rdmsr
+0x140006fa1: shl     rdx, 20h
+0x140006fa5: or      rax, rdx
+0x140006fa8: mov     [r10], rax
+0x140006fab: xor     eax, eax
+0x140006fad: jmp     short loc_140006F58

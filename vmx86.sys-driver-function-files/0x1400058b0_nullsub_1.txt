@@ -1,0 +1,42 @@
+=== METADATA ===
+Name: nullsub_1
+Addr: 0x1400058b0
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000D1B0 (0x14000D3B9)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x1400058b0-0x1400058b3 -> Jumps to: 
+
+=== CODE ===
+void __fastcall nullsub_1(struct _KDPC *Dpc, PVOID DeferredContext, PVOID SystemArgument1, PVOID SystemArgument2)
+{
+  ;
+}
+
+
+=== DISASM ===
+0x1400058b0: retn    0

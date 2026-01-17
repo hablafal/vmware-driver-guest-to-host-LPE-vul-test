@@ -1,0 +1,299 @@
+=== METADATA ===
+Name: sub_14000F474
+Addr: 0x14000f474
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f477: Access Member +0x10 ([rax+10h])
+  0x14000f47b: Access Member +0x18 ([rax+18h])
+  0x14000f47f: Access Member +0x20 ([rax+20h])
+  0x14000f483: Access Member +0x8 ([rax+8])
+  0x14000f4a1: Access Member +0xFFF ([rdi+0FFFh])
+  0x14000f4fc: Access Member +0x20 ([rdx+20h])
+  0x14000f544: Access Member +0x50 ([rsp+48h+arg_0])
+  0x14000f57b: Access Member +0xC ([r8+0Ch])
+  0x14000f58b: Access Member +0xC ([r8+0Ch])
+  0x14000f5c7: Access Member +0x10 ([rbx+10h])
+  0x14000f5d0: Access Member +0x8 ([rbx+8])
+  0x14000f5d3: Access Member +0x18 ([rbx+18h])
+  0x14000f632: Access Member +0x58 ([rsp+48h+arg_8])
+  0x14000f637: Access Member +0x60 ([rsp+48h+arg_10])
+  0x14000f63c: Access Member +0x68 ([rsp+48h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000CAF8 (0x14000CB3E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f4e9 -> Memory allocation for VMM bootstrap blob failed
+
+  0x14000f50c -> Memory allocation for VMM bootstrap blob failed
+
+  0x14000f533 -> Memory allocation for VMM bootstrap blob failed
+
+  0x14000f558 -> Error copying VMM bootstrap blob from userspace
+
+  0x14000f58f -> Invalid arguments for processing bootstrap. Header offset: %u, Number of header entries: %u, Blob size: %u bytes
+
+  0x14000f5dd -> Invalid arguments for processing bootstrap:
+  0x14000f5ec ->   Size          : %u  (expected <= %u)
+
+  0x14000f5fd ->   Hdr Offs      : %u  (expected <= %d)
+
+  0x14000f60e ->   Fixed Hdr Offs: %I64u (expected <= %d)
+  0x14000f624 ->   Blob size: %u bytes
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000f474-0x14000f4b4 -> Jumps to: 0x14000f4b4, 0x14000f5dd
+  Block 0x14000f4b4-0x14000f4bc -> Jumps to: 0x14000f4bc, 0x14000f5dd
+  Block 0x14000f4bc-0x14000f4cc -> Jumps to: 0x14000f4cc, 0x14000f5dd
+  Block 0x14000f4cc-0x14000f4e9 -> Jumps to: 0x14000f4e9, 0x14000f4fa
+  Block 0x14000f4e9-0x14000f4fa -> Jumps to: 0x14000f630
+  Block 0x14000f4fa-0x14000f50c -> Jumps to: 0x14000f50c, 0x14000f51d
+  Block 0x14000f50c-0x14000f51d -> Jumps to: 0x14000f5bd
+  Block 0x14000f51d-0x14000f533 -> Jumps to: 0x14000f533, 0x14000f541
+  Block 0x14000f533-0x14000f541 -> Jumps to: 0x14000f5b0
+  Block 0x14000f541-0x14000f558 -> Jumps to: 0x14000f558, 0x14000f566
+  Block 0x14000f558-0x14000f566 -> Jumps to: 0x14000f5a0
+  Block 0x14000f566-0x14000f588 -> Jumps to: 0x14000f588, 0x14000f5c7
+  Block 0x14000f588-0x14000f5a0 -> Jumps to: 0x14000f5a0
+  Block 0x14000f5a0-0x14000f5b0 -> Jumps to: 0x14000f5b0, 0x14000f5b8
+  Block 0x14000f5b0-0x14000f5b8 -> Jumps to: 0x14000f5b8
+  Block 0x14000f5b8-0x14000f5bd -> Jumps to: 0x14000f5bd, 0x14000f630
+  Block 0x14000f5bd-0x14000f5c7 -> Jumps to: 0x14000f630
+  Block 0x14000f5c7-0x14000f5dd -> Jumps to: 0x14000f632
+  Block 0x14000f5dd-0x14000f630 -> Jumps to: 0x14000f630
+  Block 0x14000f630-0x14000f632 -> Jumps to: 0x14000f632
+  Block 0x14000f632-0x14000f64f -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000F474(volatile void *a1, unsigned int a2, unsigned int a3, _QWORD *a4)
+{
+  SIZE_T v4; // rdi
+  __int64 v6; // rbp
+  __int64 v7; // r15
+  unsigned __int64 v8; // r13
+  unsigned __int64 *v9; // rsi
+  _QWORD *v10; // rbx
+  char *v11; // rax
+  char *v12; // r14
+  char *v13; // r8
+
+  v4 = a2;
+  v6 = a3;
+  v7 = (a2 + 4095) >> 12;
+  if ( a2 > 0x1900000 || a3 > a2 || (v8 = a2 - a3, v8 < 0x34) )
+  {
+    sub_140003A14("Invalid arguments for processing bootstrap:");
+    sub_140003A14("  Size          : %u  (expected <= %u)\n", v4, 26214400);
+    sub_140003A14("  Hdr Offs      : %u  (expected <= %d)\n", v6, v4);
+    sub_140003A14("  Fixed Hdr Offs: %I64u (expected <= %d)", 52, v4 - v6);
+    sub_140003A14("  Blob size: %u bytes\n", v4);
+  }
+  else
+  {
+    _mm_lfence();
+    v9 = (unsigned __int64 *)sub_1400055C0(8 * v7, 0);
+    if ( v9 )
+    {
+      v10 = sub_1400055C0(0x20u, 0);
+      if ( v10 )
+      {
+        _mm_lfence();
+        v11 = (char *)sub_140005618((unsigned int)v7, v9);
+        v12 = v11;
+        if ( v11 )
+        {
+          _mm_lfence();
+          if ( (unsigned int)sub_1400059A4((__int64)v11, a1, v4) )
+          {
+            sub_140003A14("Error copying VMM bootstrap blob from userspace\n");
+          }
+          else
+          {
+            v13 = &v12[v6];
+            if ( *(unsigned int *)&v12[v6 + 12] <= (v8 - 52) / 0x48 )
+            {
+              v10[2] = v9;
+              *v10 = v12;
+              *((_DWORD *)v10 + 2) = v4;
+              v10[3] = v13;
+              *a4 = v10;
+              return 1;
+            }
+            _mm_lfence();
+            sub_140003A14(
+              "Invalid arguments for processing bootstrap. Header offset: %u, Number of header entries: %u, Blob size: %u bytes\n",
+              v6,
+              *((_DWORD *)v13 + 3),
+              v4);
+          }
+          sub_140005DD0((unsigned int)v7, v12);
+        }
+        else
+        {
+          sub_140003A14("Memory allocation for VMM bootstrap blob failed\n");
+        }
+        sub_140005DC4(v10);
+      }
+      else
+      {
+        sub_140003A14("Memory allocation for VMM bootstrap blob failed\n");
+      }
+      sub_140005DC4(v9);
+    }
+    else
+    {
+      sub_140003A14("Memory allocation for VMM bootstrap blob failed\n");
+    }
+  }
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000f474: mov     rax, rsp
+0x14000f477: mov     [rax+10h], rbx
+0x14000f47b: mov     [rax+18h], rbp
+0x14000f47f: mov     [rax+20h], rsi
+0x14000f483: mov     [rax+8], rcx
+0x14000f487: push    rdi
+0x14000f488: push    r12
+0x14000f48a: push    r13
+0x14000f48c: push    r14
+0x14000f48e: push    r15
+0x14000f490: sub     rsp, 20h
+0x14000f494: mov     edi, edx
+0x14000f496: mov     ebx, 1900000h
+0x14000f49b: mov     r12, r9
+0x14000f49e: mov     ebp, r8d
+0x14000f4a1: lea     r15d, [rdi+0FFFh]
+0x14000f4a8: shr     r15d, 0Ch
+0x14000f4ac: cmp     edx, ebx
+0x14000f4ae: ja      loc_14000F5DD
+0x14000f4b4: cmp     ebp, edi
+0x14000f4b6: ja      loc_14000F5DD
+0x14000f4bc: mov     r13d, edi
+0x14000f4bf: sub     r13d, ebp
+0x14000f4c2: cmp     r13, 34h ; '4'
+0x14000f4c6: jb      loc_14000F5DD
+0x14000f4cc: lfence
+0x14000f4cf: lea     rcx, ds:0[r15*8]; NumberOfBytes
+0x14000f4d7: mov     r14d, r15d
+0x14000f4da: xor     edx, edx
+0x14000f4dc: call    sub_1400055C0
+0x14000f4e1: mov     rsi, rax
+0x14000f4e4: test    rax, rax
+0x14000f4e7: jnz     short loc_14000F4FA
+0x14000f4e9: lea     rcx, aMemoryAllocati; "Memory allocation for VMM bootstrap blo"...
+0x14000f4f0: call    sub_140003A14
+0x14000f4f5: jmp     loc_14000F630
+0x14000f4fa: xor     edx, edx
+0x14000f4fc: lea     ecx, [rdx+20h]; NumberOfBytes
+0x14000f4ff: call    sub_1400055C0
+0x14000f504: mov     rbx, rax
+0x14000f507: test    rax, rax
+0x14000f50a: jnz     short loc_14000F51D
+0x14000f50c: lea     rcx, aMemoryAllocati; "Memory allocation for VMM bootstrap blo"...
+0x14000f513: call    sub_140003A14
+0x14000f518: jmp     loc_14000F5BD
+0x14000f51d: lfence
+0x14000f520: mov     rdx, rsi
+0x14000f523: mov     rcx, r14
+0x14000f526: call    sub_140005618
+0x14000f52b: mov     r14, rax
+0x14000f52e: test    rax, rax
+0x14000f531: jnz     short loc_14000F541
+0x14000f533: lea     rcx, aMemoryAllocati; "Memory allocation for VMM bootstrap blo"...
+0x14000f53a: call    sub_140003A14
+0x14000f53f: jmp     short loc_14000F5B0
+0x14000f541: lfence
+0x14000f544: mov     rdx, [rsp+48h+arg_0]
+0x14000f549: mov     r8, rdi
+0x14000f54c: mov     rcx, r14
+0x14000f54f: call    sub_1400059A4
+0x14000f554: test    eax, eax
+0x14000f556: jz      short loc_14000F566
+0x14000f558: lea     rcx, aErrorCopyingVm; "Error copying VMM bootstrap blob from u"...
+0x14000f55f: call    sub_140003A14
+0x14000f564: jmp     short loc_14000F5A0
+0x14000f566: lea     rcx, [r13-34h]
+0x14000f56a: mov     rax, 0E38E38E38E38E38Fh
+0x14000f574: mul     rcx
+0x14000f577: lea     r8, [r14+rbp]
+0x14000f57b: mov     eax, [r8+0Ch]
+0x14000f57f: shr     rdx, 6
+0x14000f583: cmp     rax, rdx
+0x14000f586: jbe     short loc_14000F5C7
+0x14000f588: lfence
+0x14000f58b: mov     r8d, [r8+0Ch]
+0x14000f58f: lea     rcx, aInvalidArgumen_0; "Invalid arguments for processing bootst"...
+0x14000f596: mov     r9d, edi
+0x14000f599: mov     edx, ebp
+0x14000f59b: call    sub_140003A14
+0x14000f5a0: mov     ecx, r15d
+0x14000f5a3: mov     rdx, r14
+0x14000f5a6: call    sub_140005DD0
+0x14000f5ab: test    rbx, rbx
+0x14000f5ae: jz      short loc_14000F5B8
+0x14000f5b0: mov     rcx, rbx
+0x14000f5b3: call    sub_140005DC4
+0x14000f5b8: test    rsi, rsi
+0x14000f5bb: jz      short loc_14000F630
+0x14000f5bd: mov     rcx, rsi
+0x14000f5c0: call    sub_140005DC4
+0x14000f5c5: jmp     short loc_14000F630
+0x14000f5c7: mov     [rbx+10h], rsi
+0x14000f5cb: mov     al, 1
+0x14000f5cd: mov     [rbx], r14
+0x14000f5d0: mov     [rbx+8], edi
+0x14000f5d3: mov     [rbx+18h], r8
+0x14000f5d7: mov     [r12], rbx
+0x14000f5db: jmp     short loc_14000F632
+0x14000f5dd: lea     rcx, aInvalidArgumen; "Invalid arguments for processing bootst"...
+0x14000f5e4: call    sub_140003A14
+0x14000f5e9: mov     r8d, ebx
+0x14000f5ec: lea     rcx, aSizeUExpectedU; "  Size          : %u  (expected <= %u)"...
+0x14000f5f3: mov     edx, edi
+0x14000f5f5: call    sub_140003A14
+0x14000f5fa: mov     r8d, edi
+0x14000f5fd: lea     rcx, aHdrOffsUExpect; "  Hdr Offs      : %u  (expected <= %d)"...
+0x14000f604: mov     edx, ebp
+0x14000f606: call    sub_140003A14
+0x14000f60b: mov     r8d, edi
+0x14000f60e: lea     rcx, aFixedHdrOffsI6; "  Fixed Hdr Offs: %I64u (expected <= %d"...
+0x14000f615: sub     r8d, ebp
+0x14000f618: mov     edx, 34h ; '4'
+0x14000f61d: call    sub_140003A14
+0x14000f622: mov     edx, edi
+0x14000f624: lea     rcx, aBlobSizeUBytes; "  Blob size: %u bytes\n"
+0x14000f62b: call    sub_140003A14
+0x14000f630: xor     al, al
+0x14000f632: mov     rbx, [rsp+48h+arg_8]
+0x14000f637: mov     rbp, [rsp+48h+arg_10]
+0x14000f63c: mov     rsi, [rsp+48h+arg_18]
+0x14000f641: add     rsp, 20h
+0x14000f645: pop     r15
+0x14000f647: pop     r14
+0x14000f649: pop     r13
+0x14000f64b: pop     r12
+0x14000f64d: pop     rdi
+0x14000f64e: retn

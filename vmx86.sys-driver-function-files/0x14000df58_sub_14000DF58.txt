@@ -1,0 +1,190 @@
+=== METADATA ===
+Name: sub_14000DF58
+Addr: 0x14000df58
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000df5b: Access Member +0x18 ([r11+18h])
+  0x14000df5f: Access Member +0x20 ([r11+20h])
+  0x14000df78: Access Member +0xC0 ([rsp+0F8h+var_38])
+  0x14000df82: Access Member +0x20 ([r11+20h])
+  0x14000df86: Access Member +0x30 ([rsp+0F8h+Args])
+  0x14000df8b: Access Member +0x40 ([rsp+0F8h+var_B8])
+  0x14000df90: Access Member +0x28 ([rsp+0F8h+Format])
+  0x14000df9a: Access Member +0x40 ([rsp+0F8h+var_B8])
+  0x14000df9f: Access Member +0x64 ([rbp+64h])
+  0x14000dfa2: Access Member +0x20 ([rsp+0F8h+var_D8])
+  0x14000dfad: Access Member +0x50 ([rsp+0F8h+Dest])
+  0x14000dfb7: Access Member +0x65 ([rbp+65h])
+  0x14000dfba: Access Member +0x40 ([rsp+0F8h+var_B8])
+  0x14000dfbf: Access Member +0x50 ([rsp+0F8h+Dest])
+  0x14000e017: Access Member +0x50 ([rsp+0F8h+Dest])
+  0x14000e025: Access Member +0x28 ([rax+28h])
+  0x14000e029: Access Member +0x10 (xmmword ptr [rax+10h])
+  0x14000e02d: Access Member +0x20 (xmmword ptr [rax+20h])
+  0x14000e031: Access Member +0xC ([rax+0Ch])
+  0x14000e034: Access Member +0x10 ([rax+10h])
+  0x14000e037: Access Member +0x4 (dword ptr [rax+4])
+  0x14000e048: Access Member +0x2 ([r8+2])
+  0x14000e057: Access Member +0xC0 ([rsp+0F8h+var_38])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x140003535)
+  <- sub_140004C50 (0x140004CA6)
+  <- sub_140004C50 (0x140004DD9)
+  <- sub_140004C50 (0x140004E0A)
+  <- sub_140004C50 (0x140004E3B)
+  <- sub_140004C50 (0x140004EC2)
+  <- sub_140005E28 (0x140005EEB)
+
+=== IMPORTS ===
+  -> 0x14000dff5 calls IoAllocateErrorLogEntry
+  -> 0x14000e051 calls IoWriteErrorLogEntry
+
+=== STRINGS ===
+  0x14000df6e -> 2
+  0x14000dfc7 -> VMMON: log string (len %d): %s
+
+  0x14000dfe4 -> VMMON: log alloc size: %d (max %u)
+
+  0x14000e006 -> VMMON: LogEventMsg: Cannot allocate error log entry size %zu
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000df58-0x14000e003 -> Jumps to: 0x14000e003, 0x14000e014
+  Block 0x14000e003-0x14000e014 -> Jumps to: 0x14000e057
+  Block 0x14000e014-0x14000e03e -> Jumps to: 0x14000e03e
+  Block 0x14000e03e-0x14000e051 -> Jumps to: 0x14000e051, 0x14000e03e
+  Block 0x14000e051-0x14000e057 -> Jumps to: 0x14000e057
+  Block 0x14000e057-0x14000e073 -> Jumps to: 
+
+=== CODE ===
+void sub_14000DF58(PVOID IoObject, int a2, char *Format, ...)
+{
+  _WORD *ErrorLogEntry; // rax
+  void *v6; // rcx
+  char *v7; // rdx
+  _WORD *v8; // r8
+  __int16 v9; // ax
+  char Dest[112]; // [rsp+50h] [rbp-A8h] BYREF
+  va_list va; // [rsp+118h] [rbp+20h] BYREF
+
+  va_start(va, Format);
+  sub_14000E074(Dest, 2048, Format, va);
+  DbgPrint("VMMON: log string (len %d): %s\n", 101, Dest);
+  DbgPrint("VMMON: log alloc size: %d (max %u)\n", 242, 240);
+  ErrorLogEntry = IoAllocateErrorLogEntry(IoObject, 0xF2u);
+  v6 = ErrorLogEntry;
+  if ( ErrorLogEntry )
+  {
+    v7 = Dest;
+    *(_OWORD *)ErrorLogEntry = 0;
+    v8 = ErrorLogEntry + 20;
+    *((_OWORD *)ErrorLogEntry + 1) = 0;
+    *((_OWORD *)ErrorLogEntry + 2) = 0;
+    *((_DWORD *)ErrorLogEntry + 3) = a2;
+    *((_DWORD *)ErrorLogEntry + 4) = a2;
+    *((_DWORD *)ErrorLogEntry + 1) = 2621441;
+    do
+    {
+      v9 = *v7++;
+      *v8++ = v9;
+    }
+    while ( v9 );
+    IoWriteErrorLogEntry(v6);
+  }
+  else
+  {
+    DbgPrint("VMMON: LogEventMsg: Cannot allocate error log entry size %zu\n", 0xF2u);
+  }
+}
+
+
+=== DISASM ===
+0x14000df58: mov     r11, rsp
+0x14000df5b: mov     [r11+18h], r8
+0x14000df5f: mov     [r11+20h], r9
+0x14000df63: push    rbx
+0x14000df64: push    rbp
+0x14000df65: push    rsi
+0x14000df66: push    rdi
+0x14000df67: sub     rsp, 0D8h
+0x14000df6e: mov     rax, cs:__security_cookie
+0x14000df75: xor     rax, rsp
+0x14000df78: mov     [rsp+0F8h+var_38], rax
+0x14000df80: xor     ebp, ebp
+0x14000df82: lea     rax, [r11+20h]
+0x14000df86: mov     [rsp+0F8h+Args], rax; Args
+0x14000df8b: lea     r9, [rsp+0F8h+var_B8]
+0x14000df90: mov     [rsp+0F8h+Format], r8; Format
+0x14000df95: mov     esi, edx
+0x14000df97: mov     rdi, rcx
+0x14000df9a: mov     [rsp+0F8h+var_B8], rbp
+0x14000df9f: lea     edx, [rbp+64h]
+0x14000dfa2: mov     [rsp+0F8h+var_D8], 800h; int
+0x14000dfaa: xor     r8d, r8d
+0x14000dfad: lea     rcx, [rsp+0F8h+Dest]; Dest
+0x14000dfb2: call    sub_14000E074
+0x14000dfb7: lea     ebx, [rbp+65h]
+0x14000dfba: sub     rbx, [rsp+0F8h+var_B8]
+0x14000dfbf: lea     r8, [rsp+0F8h+Dest]
+0x14000dfc4: mov     rdx, rbx
+0x14000dfc7: lea     rcx, aVmmonLogString; "VMMON: log string (len %d): %s\n"
+0x14000dfce: call    DbgPrint
+0x14000dfd3: lea     rbx, ds:28h[rbx*2]
+0x14000dfdb: mov     r8d, 0F0h
+0x14000dfe1: mov     rdx, rbx
+0x14000dfe4: lea     rcx, aVmmonLogAllocS; "VMMON: log alloc size: %d (max %u)\n"
+0x14000dfeb: call    DbgPrint
+0x14000dff0: mov     dl, bl; EntrySize
+0x14000dff2: mov     rcx, rdi; IoObject
+0x14000dff5: call    cs:IoAllocateErrorLogEntry
+0x14000dffb: mov     rcx, rax; ElEntry
+0x14000dffe: test    rax, rax
+0x14000e001: jnz     short loc_14000E014
+0x14000e003: mov     rdx, rbx
+0x14000e006: lea     rcx, aVmmonLogeventm; "VMMON: LogEventMsg: Cannot allocate err"...
+0x14000e00d: call    DbgPrint
+0x14000e012: jmp     short loc_14000E057
+0x14000e014: xorps   xmm0, xmm0
+0x14000e017: lea     rdx, [rsp+0F8h+Dest]
+0x14000e01c: movups  xmmword ptr [rax], xmm0
+0x14000e01f: mov     r9d, 1
+0x14000e025: lea     r8, [rax+28h]
+0x14000e029: movups  xmmword ptr [rax+10h], xmm0
+0x14000e02d: movups  xmmword ptr [rax+20h], xmm0
+0x14000e031: mov     [rax+0Ch], esi
+0x14000e034: mov     [rax+10h], esi
+0x14000e037: mov     dword ptr [rax+4], 280001h
+0x14000e03e: movsx   eax, byte ptr [rdx]
+0x14000e041: add     rdx, r9
+0x14000e044: mov     [r8], ax
+0x14000e048: lea     r8, [r8+2]
+0x14000e04c: test    ax, ax
+0x14000e04f: jnz     short loc_14000E03E
+0x14000e051: call    cs:IoWriteErrorLogEntry
+0x14000e057: mov     rcx, [rsp+0F8h+var_38]
+0x14000e05f: xor     rcx, rsp; StackCookie
+0x14000e062: call    __security_check_cookie
+0x14000e067: add     rsp, 0D8h
+0x14000e06e: pop     rdi
+0x14000e06f: pop     rsi
+0x14000e070: pop     rbp
+0x14000e071: pop     rbx
+0x14000e072: retn

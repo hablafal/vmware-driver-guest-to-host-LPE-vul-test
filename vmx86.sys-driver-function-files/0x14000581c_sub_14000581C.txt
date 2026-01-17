@@ -1,0 +1,48 @@
+=== METADATA ===
+Name: sub_14000581C
+Addr: 0x14000581c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140007BF8 (0x140007C41)
+  <- sub_140007D74 (0x140007DCE)
+  <- sub_140007D74 (0x140007E31)
+  <- sub_140007F14 (0x140007F43)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000581c-0x140005828 -> Jumps to: 0x1400055c0
+  Block 0x1400055c0-0x1400055c0 -> Jumps to: 
+
+=== CODE ===
+PVOID sub_14000581C()
+{
+  return sub_1400055C0(0x1000u, 0);
+}
+
+
+=== DISASM ===
+0x14000581c: xor     edx, edx
+0x14000581e: mov     ecx, 1000h; NumberOfBytes
+0x140005823: jmp     sub_1400055C0

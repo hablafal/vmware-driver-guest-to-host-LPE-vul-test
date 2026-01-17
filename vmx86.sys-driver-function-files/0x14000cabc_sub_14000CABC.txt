@@ -1,0 +1,44 @@
+=== METADATA ===
+Name: sub_14000CABC
+Addr: 0x14000cabc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000EE70 (0x14000EED9)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000cabc-0x14000cac1 -> Jumps to: 0x140006738
+  Block 0x140006738-0x140006738 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+PMDL *__fastcall sub_14000CABC(unsigned __int64 a1)
+{
+  return sub_140006738(a1);
+}
+
+
+=== DISASM ===
+0x14000cabc: jmp     sub_140006738

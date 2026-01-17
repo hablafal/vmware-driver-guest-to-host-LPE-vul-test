@@ -1,0 +1,186 @@
+=== METADATA ===
+Name: sub_140005618
+Addr: 0x140005618
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000567c: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000561b: Access Member +0x8 ([rax+8])
+  0x14000561f: Access Member +0x10 ([rax+10h])
+  0x140005623: Access Member +0x18 ([rax+18h])
+  0x140005674: Access Member +0x28 ([rsp+48h+Priority])
+  0x14000567c: Access Member +0x20 ([rsp+48h+var_28])
+  0x140005686: Access Member +0x1 ([r9+1])
+  0x140005706: Access Member +0x50 ([rsp+48h+arg_0])
+  0x14000570b: Access Member +0x58 ([rsp+48h+arg_8])
+  0x140005710: Access Member +0x60 ([rsp+48h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008538 (0x14000868A)
+  <- sub_140008B8C (0x140008BCD)
+  <- sub_14000CAF8 (0x14000CBD2)
+  <- sub_14000F474 (0x14000F526)
+
+=== IMPORTS ===
+  -> 0x14000565f calls MmAllocatePagesForMdlEx
+  -> 0x14000568a calls MmMapLockedPagesSpecifyCache
+  -> 0x1400056a8 calls MmGetPhysicalAddress
+  -> 0x1400056ea calls MmUnmapLockedPages
+  -> 0x1400056f3 calls MmFreePagesFromMdl
+  -> 0x1400056fe calls ExFreePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005618-0x140005671 -> Jumps to: 0x140005671, 0x140005704
+  Block 0x140005671-0x140005698 -> Jumps to: 0x140005698, 0x1400056f0
+  Block 0x140005698-0x14000569f -> Jumps to: 0x14000569f, 0x1400056c5
+  Block 0x14000569f-0x1400056a5 -> Jumps to: 0x1400056a5
+  Block 0x1400056a5-0x1400056c5 -> Jumps to: 0x1400056c5, 0x1400056a5
+  Block 0x1400056c5-0x1400056d6 -> Jumps to: 0x1400056d6, 0x1400056e4
+  Block 0x1400056d6-0x1400056df -> Jumps to: 0x1400056df, 0x1400056e4
+  Block 0x1400056df-0x1400056e4 -> Jumps to: 0x140005706
+  Block 0x1400056e4-0x1400056f0 -> Jumps to: 0x1400056f0
+  Block 0x1400056f0-0x140005704 -> Jumps to: 0x140005704
+  Block 0x140005704-0x140005706 -> Jumps to: 0x140005706
+  Block 0x140005706-0x140005720 -> Jumps to: 
+
+=== CODE ===
+void *__fastcall sub_140005618(unsigned __int64 a1, unsigned __int64 *a2)
+{
+  struct _MDL *PagesForMdl; // rax
+  struct _MDL *v5; // rdi
+  char *v6; // rax
+  void *v7; // rsi
+  unsigned __int64 v8; // rbp
+  char *v9; // r14
+  PHYSICAL_ADDRESS PhysicalAddress; // rax
+  volatile signed __int64 *v11; // rax
+
+  PagesForMdl = MmAllocatePagesForMdlEx(
+                  (PHYSICAL_ADDRESS)4096LL,
+                  (PHYSICAL_ADDRESS)0x7FFFFFFFFFFFFFFFLL,
+                  0,
+                  a1 << 12,
+                  MmCached,
+                  4u);
+  v5 = PagesForMdl;
+  if ( PagesForMdl )
+  {
+    v6 = (char *)MmMapLockedPagesSpecifyCache(PagesForMdl, 0, MmCached, 0, 0, 0x40000010u);
+    v7 = v6;
+    if ( v6 )
+    {
+      v8 = 0;
+      if ( a1 )
+      {
+        _mm_lfence();
+        v9 = v6;
+        do
+        {
+          PhysicalAddress = MmGetPhysicalAddress(v9);
+          v9 += 4096;
+          a2[v8++] = PhysicalAddress.QuadPart >> 12;
+        }
+        while ( v8 < a1 );
+      }
+      v11 = (volatile signed __int64 *)sub_14000501C(*a2);
+      if ( v11 && !_InterlockedCompareExchange64(v11, (signed __int64)v5, 0) )
+        return v7;
+      MmUnmapLockedPages(v7, v5);
+    }
+    MmFreePagesFromMdl(v5);
+    ExFreePoolWithTag(v5, 0);
+  }
+  return 0;
+}
+
+
+=== DISASM ===
+0x140005618: mov     rax, rsp
+0x14000561b: mov     [rax+8], rbp
+0x14000561f: mov     [rax+10h], rsi
+0x140005623: mov     [rax+18h], rdi
+0x140005627: push    r12
+0x140005629: push    r14
+0x14000562b: push    r15
+0x14000562d: sub     rsp, 30h
+0x140005631: mov     r8, qword ptr cs:LowAddress; SkipBytes
+0x140005638: mov     r9, rcx
+0x14000563b: mov     r12, rdx
+0x14000563e: mov     dword ptr [rax-20h], 4
+0x140005645: mov     rdx, qword ptr cs:HighestAcceptableAddress; HighAddress
+0x14000564c: mov     r15, rcx
+0x14000564f: shl     r9, 0Ch; TotalBytes
+0x140005653: mov     ecx, 1000h; LowAddress
+0x140005658: mov     dword ptr [rax-28h], 1
+0x14000565f: call    cs:MmAllocatePagesForMdlEx
+0x140005665: mov     rdi, rax
+0x140005668: test    rax, rax
+0x14000566b: jz      loc_140005704
+0x140005671: xor     r9d, r9d; RequestedAddress
+0x140005674: mov     [rsp+48h+Priority], 40000010h; Priority
+0x14000567c: and     [rsp+48h+var_28], 0
+0x140005681: xor     edx, edx; AccessMode
+0x140005683: mov     rcx, rax; MemoryDescriptorList
+0x140005686: lea     r8d, [r9+1]; CacheType
+0x14000568a: call    cs:MmMapLockedPagesSpecifyCache
+0x140005690: mov     rsi, rax
+0x140005693: test    rax, rax
+0x140005696: jz      short loc_1400056F0
+0x140005698: xor     ebp, ebp
+0x14000569a: test    r15, r15
+0x14000569d: jz      short loc_1400056C5
+0x14000569f: lfence
+0x1400056a2: mov     r14, rax
+0x1400056a5: mov     rcx, r14; BaseAddress
+0x1400056a8: call    cs:MmGetPhysicalAddress
+0x1400056ae: sar     rax, 0Ch
+0x1400056b2: add     r14, 1000h
+0x1400056b9: mov     [r12+rbp*8], rax
+0x1400056bd: inc     rbp
+0x1400056c0: cmp     rbp, r15
+0x1400056c3: jb      short loc_1400056A5
+0x1400056c5: mov     rcx, [r12]
+0x1400056c9: call    sub_14000501C
+0x1400056ce: mov     rcx, rax
+0x1400056d1: test    rax, rax
+0x1400056d4: jz      short loc_1400056E4
+0x1400056d6: xor     eax, eax
+0x1400056d8: lock cmpxchg [rcx], rdi
+0x1400056dd: jnz     short loc_1400056E4
+0x1400056df: mov     rax, rsi
+0x1400056e2: jmp     short loc_140005706
+0x1400056e4: mov     rdx, rdi; MemoryDescriptorList
+0x1400056e7: mov     rcx, rsi; BaseAddress
+0x1400056ea: call    cs:MmUnmapLockedPages
+0x1400056f0: mov     rcx, rdi; MemoryDescriptorList
+0x1400056f3: call    cs:MmFreePagesFromMdl
+0x1400056f9: xor     edx, edx; Tag
+0x1400056fb: mov     rcx, rdi; P
+0x1400056fe: call    cs:ExFreePoolWithTag
+0x140005704: xor     eax, eax
+0x140005706: mov     rbp, [rsp+48h+arg_0]
+0x14000570b: mov     rsi, [rsp+48h+arg_8]
+0x140005710: mov     rdi, [rsp+48h+arg_10]
+0x140005715: add     rsp, 30h
+0x140005719: pop     r15
+0x14000571b: pop     r14
+0x14000571d: pop     r12
+0x14000571f: retn

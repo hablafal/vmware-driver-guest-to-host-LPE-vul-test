@@ -1,0 +1,456 @@
+=== METADATA ===
+Name: sub_14000BE84 (Suggested: EvtIoWrite)
+Addr: 0x14000be84
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000bf7a: TEST with Mask 0x1
+  0x14000c108: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000be84: Access Member +0x8 ([rsp+arg_0])
+  0x14000be89: Access Member +0x10 ([rsp+arg_8])
+  0x14000be8e: Access Member +0x18 ([rsp+arg_10])
+  0x14000bf0b: Access Member +0x4 ([rax+4])
+  0x14000bf0e: Access Member +0xC6 ([rax+0C6h])
+  0x14000bf23: Access Member +0xF8 ([rdi+0F8h])
+  0x14000bf3b: Access Member +0x4 ([rdx+4])
+  0x14000bf3f: Access Member +0x18 ([rdi+18h])
+  0x14000bf47: Access Member +0x8 ([rcx+8])
+  0x14000bfeb: Access Member +0x50 ([rax+50h])
+  0x14000c00b: Access Member +0x40 ([rdi+40h])
+  0x14000c023: Access Member +0x48 ([rdi+48h])
+  0x14000c03b: Access Member +0x28 ([rdi+28h])
+  0x14000c053: Access Member +0x30 ([rdi+30h])
+  0x14000c0cc: Access Member +0x1 ([rdx+1])
+  0x14000c0e5: Access Member +0x8 ([rax+8])
+  0x14000c10e: Access Member +0x40 ([rsp+38h+arg_0])
+  0x14000c113: Access Member +0x48 ([rsp+38h+arg_8])
+  0x14000c118: Access Member +0x50 ([rsp+38h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x28 -> possible EvtIoWrite
+  [!] Offset +0x30 -> possible EvtIoDeviceControl
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140003E03)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000bed7 -> NX/XD must be enabled.  Cannot create VM.
+
+  0x14000bf7e -> 5 level paging must not be enabled.  Cannot create VM.
+
+  0x14000bfd4 -> Could not validate the VMM bootstrap blob
+  0x14000c127 -> VM already registered on the list of VMs.
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000be84-0x14000beaf -> Jumps to: 0x14000beaf, 0x14000bebd
+  Block 0x14000beaf-0x14000beb6 -> Jumps to: 0x14000beb6
+  Block 0x14000beb6-0x14000bebd -> Jumps to: 0x14000c10e
+  Block 0x14000bebd-0x14000bec5 -> Jumps to: 0x14000bec5, 0x14000bece
+  Block 0x14000bec5-0x14000bece -> Jumps to: 0x14000beb6
+  Block 0x14000bece-0x14000bed7 -> Jumps to: 0x14000bed7, 0x14000beec
+  Block 0x14000bed7-0x14000beec -> Jumps to: 0x14000beb6
+  Block 0x14000beec-0x14000befe -> Jumps to: 0x14000befe, 0x14000bf06
+  Block 0x14000befe-0x14000bf06 -> Jumps to: 0x14000beb6
+  Block 0x14000bf06-0x14000bf19 -> Jumps to: 0x14000bf19, 0x14000bf51
+  Block 0x14000bf19-0x14000bf23 -> Jumps to: 0x14000bf23
+  Block 0x14000bf23-0x14000bf51 -> Jumps to: 0x14000bf51, 0x14000bf23
+  Block 0x14000bf51-0x14000bf5f -> Jumps to: 0x14000bf5f, 0x14000bf6a
+  Block 0x14000bf5f-0x14000bf6a -> Jumps to: 0x14000c07d
+  Block 0x14000bf6a-0x14000bf73 -> Jumps to: 0x14000bf73, 0x14000c000
+  Block 0x14000bf73-0x14000bf7e -> Jumps to: 0x14000bf7e, 0x14000bf95
+  Block 0x14000bf7e-0x14000bf95 -> Jumps to: 0x14000c07d
+  Block 0x14000bf95-0x14000bfa7 -> Jumps to: 0x14000bf5f, 0x14000bfa7
+  Block 0x14000bfa7-0x14000bfb9 -> Jumps to: 0x14000bfb9, 0x14000bfc4
+  Block 0x14000bfb9-0x14000bfc4 -> Jumps to: 0x14000c07d
+  Block 0x14000bfc4-0x14000bfd4 -> Jumps to: 0x14000bfd4, 0x14000bfeb
+  Block 0x14000bfd4-0x14000bfeb -> Jumps to: 0x14000c07d
+  Block 0x14000bfeb-0x14000bff8 -> Jumps to: 0x14000bff8, 0x14000c000
+  Block 0x14000bff8-0x14000c000 -> Jumps to: 0x14000c07d
+  Block 0x14000c000-0x14000c018 -> Jumps to: 0x14000bf5f, 0x14000c018
+  Block 0x14000c018-0x14000c030 -> Jumps to: 0x14000bf5f, 0x14000c030
+  Block 0x14000c030-0x14000c048 -> Jumps to: 0x14000bf5f, 0x14000c048
+  Block 0x14000c048-0x14000c060 -> Jumps to: 0x14000bf5f, 0x14000c060
+  Block 0x14000c060-0x14000c070 -> Jumps to: 0x14000c070, 0x14000c09a
+  Block 0x14000c070-0x14000c07d -> Jumps to: 0x14000c07d
+  Block 0x14000c07d-0x14000c085 -> Jumps to: 0x14000c085, 0x14000c08d
+  Block 0x14000c085-0x14000c08d -> Jumps to: 0x14000c08d
+  Block 0x14000c08d-0x14000c09a -> Jumps to: 0x14000beb6
+  Block 0x14000c09a-0x14000c0e0 -> Jumps to: 0x14000c0ec
+  Block 0x14000c0e0-0x14000c0e5 -> Jumps to: 0x14000c0e5, 0x14000c127
+  Block 0x14000c0e5-0x14000c0ec -> Jumps to: 0x14000c0ec
+  Block 0x14000c0ec-0x14000c0f1 -> Jumps to: 0x14000c0e0, 0x14000c0f1
+  Block 0x14000c0f1-0x14000c0f4 -> Jumps to: 0x14000c0f4
+  Block 0x14000c0f4-0x14000c100 -> Jumps to: 0x14000c100, 0x14000c108
+  Block 0x14000c100-0x14000c108 -> Jumps to: 0x14000c108
+  Block 0x14000c108-0x14000c10e -> Jumps to: 0x14000c10e
+  Block 0x14000c10e-0x14000c127 -> Jumps to: 
+  Block 0x14000c127-0x14000c135 -> Jumps to: 0x14000c0f4
+
+=== CODE ===
+__int64 __fastcall sub_14000BE84(volatile void *a1, __int64 a2, __int64 a3, _DWORD *a4)
+{
+  void *v4; // rbp
+  __int64 v5; // rsi
+  SIZE_T v6; // r14
+  _QWORD *v10; // rax
+  __int64 v11; // rdi
+  __int64 v12; // rcx
+  __int64 v13; // r8
+  __int64 v14; // rdx
+  __int64 v15; // rdx
+  __int64 v16; // r8
+  __int64 v17; // r9
+  __int16 v18; // ax
+  PVOID v19; // rax
+  __int64 v20; // rax
+  char *v21; // rax
+  char *v22; // rax
+  __int64 v23; // rax
+  __int64 v24; // rax
+  __int64 v25; // rdx
+  __int64 *v26; // rcx
+  __int64 v27; // rax
+
+  v4 = 0;
+  v5 = (unsigned int)a3;
+  v6 = (unsigned int)a2;
+  if ( !(_DWORD)a3 )
+  {
+    *a4 = 2;
+    return 0;
+  }
+  if ( (unsigned int)a3 > 0x800 )
+  {
+    *a4 = 3;
+    return 0;
+  }
+  if ( !byte_14001CF71 )
+  {
+    *a4 = 4;
+    sub_140003A14("NX/XD must be enabled.  Cannot create VM.\n");
+    return 0;
+  }
+  _mm_lfence();
+  v10 = sub_14000A134(a3, a2, a3);
+  v11 = (__int64)v10;
+  if ( !v10 )
+  {
+    *a4 = 5;
+    return 0;
+  }
+  _mm_lfence();
+  *(_DWORD *)v10 = 0;
+  *((_DWORD *)v10 + 1) = v5;
+  *((_BYTE *)v10 + 198) = 0;
+  if ( (_DWORD)v5 )
+  {
+    _mm_lfence();
+    v12 = 0;
+    v13 = v5;
+    v14 = 0;
+    do
+    {
+      *(_DWORD *)(v14 + v10[31]) = -1;
+      v14 += 4;
+      *(_QWORD *)(v12 + v10[3]) = 0x3FFFFFFFFFLL;
+      v12 += 8;
+      --v13;
+    }
+    while ( v13 );
+  }
+  if ( !sub_14000606C((__int64)v10, v5) )
+    goto LABEL_14;
+  if ( (_DWORD)v6 )
+  {
+    v18 = __readcr4();
+    if ( (v18 & 0x1000) != 0 )
+    {
+      sub_140003A14("5 level paging must not be enabled.  Cannot create VM.\n");
+      *a4 = 6;
+      goto LABEL_31;
+    }
+    v19 = sub_1400055C0(v6, 0);
+    v4 = v19;
+    if ( !v19 )
+    {
+LABEL_14:
+      *a4 = 5;
+LABEL_31:
+      _mm_lfence();
+      if ( v4 )
+        sub_140005DC4(v4);
+      sub_14000A564(v11, v15, v16, v17);
+      return 0;
+    }
+    if ( (unsigned int)sub_1400059A4((__int64)v19, a1, v6) )
+    {
+      *a4 = 7;
+      goto LABEL_31;
+    }
+    v20 = sub_14000E364(v4, (unsigned int)v6);
+    if ( !v20 )
+    {
+      *a4 = 8;
+      sub_140003A14("Could not validate the VMM bootstrap blob");
+      goto LABEL_31;
+    }
+    if ( !sub_140008B8C(v20 + 80) )
+    {
+      *a4 = 9;
+      goto LABEL_31;
+    }
+  }
+  _mm_lfence();
+  v21 = sub_140007D74(v11);
+  *(_QWORD *)(v11 + 64) = v21;
+  if ( !v21 )
+    goto LABEL_14;
+  _mm_lfence();
+  v22 = sub_140007D74(v11);
+  *(_QWORD *)(v11 + 72) = v22;
+  if ( !v22 )
+    goto LABEL_14;
+  _mm_lfence();
+  v23 = sub_14000F728(v11);
+  *(_QWORD *)(v11 + 40) = v23;
+  if ( !v23 )
+    goto LABEL_14;
+  _mm_lfence();
+  v24 = sub_14000FA50(v11);
+  *(_QWORD *)(v11 + 48) = v24;
+  if ( !v24 )
+    goto LABEL_14;
+  sub_140005FB8();
+  if ( (unsigned int)dword_14001CF80 >= 0x40 )
+  {
+    *a4 = 10;
+    sub_140005FC8();
+    goto LABEL_31;
+  }
+  _mm_lfence();
+  v25 = dword_14001D090;
+  ++dword_14001CF80;
+  v26 = &qword_14001CF58;
+  dword_14001D090 = dword_14001CF90[dword_14001D090];
+  dword_14001CF90[v25] = dword_14001CF88;
+  *(_DWORD *)v11 = v25 + 1;
+  v27 = qword_14001CF58;
+  dword_14001CF88 = v25;
+  while ( 1 )
+  {
+    if ( !v27 )
+    {
+      *v26 = v11;
+      goto LABEL_39;
+    }
+    if ( v27 == v11 )
+      break;
+    v26 = (__int64 *)(v27 + 8);
+    v27 = *(_QWORD *)(v27 + 8);
+  }
+  sub_140003A14("VM already registered on the list of VMs.\n");
+LABEL_39:
+  sub_140005FC8();
+  if ( v4 )
+    sub_140005DC4(v4);
+  *a4 = 0;
+  return v11;
+}
+
+
+=== DISASM ===
+0x14000be84: mov     [rsp+arg_0], rbx
+0x14000be89: mov     [rsp+arg_8], rbp
+0x14000be8e: mov     [rsp+arg_10], rsi
+0x14000be93: push    rdi
+0x14000be94: push    r14
+0x14000be96: push    r15
+0x14000be98: sub     rsp, 20h
+0x14000be9c: xor     ebp, ebp
+0x14000be9e: mov     esi, r8d
+0x14000bea1: mov     r14d, edx
+0x14000bea4: mov     rbx, r9
+0x14000bea7: mov     r15, rcx
+0x14000beaa: test    r8d, r8d
+0x14000bead: jnz     short loc_14000BEBD
+0x14000beaf: mov     dword ptr [r9], 2
+0x14000beb6: xor     eax, eax
+0x14000beb8: jmp     loc_14000C10E
+0x14000bebd: cmp     esi, 800h
+0x14000bec3: jbe     short loc_14000BECE
+0x14000bec5: mov     dword ptr [r9], 3
+0x14000becc: jmp     short loc_14000BEB6
+0x14000bece: cmp     cs:byte_14001CF71, bpl
+0x14000bed5: jnz     short loc_14000BEEC
+0x14000bed7: lea     rcx, aNxXdMustBeEnab; "NX/XD must be enabled.  Cannot create V"...
+0x14000bede: mov     dword ptr [r9], 4
+0x14000bee5: call    sub_140003A14
+0x14000beea: jmp     short loc_14000BEB6
+0x14000beec: lfence
+0x14000beef: mov     ecx, esi
+0x14000bef1: call    sub_14000A134
+0x14000bef6: mov     rdi, rax
+0x14000bef9: test    rax, rax
+0x14000befc: jnz     short loc_14000BF06
+0x14000befe: mov     dword ptr [rbx], 5
+0x14000bf04: jmp     short loc_14000BEB6
+0x14000bf06: lfence
+0x14000bf09: and     [rax], ebp
+0x14000bf0b: mov     [rax+4], esi
+0x14000bf0e: mov     [rax+0C6h], bpl
+0x14000bf15: test    esi, esi
+0x14000bf17: jz      short loc_14000BF51
+0x14000bf19: lfence
+0x14000bf1c: xor     ecx, ecx
+0x14000bf1e: mov     r8, rsi
+0x14000bf21: xor     edx, edx
+0x14000bf23: mov     rax, [rdi+0F8h]
+0x14000bf2a: mov     r9, 3FFFFFFFFFh
+0x14000bf34: mov     dword ptr [rdx+rax], 0FFFFFFFFh
+0x14000bf3b: lea     rdx, [rdx+4]
+0x14000bf3f: mov     rax, [rdi+18h]
+0x14000bf43: mov     [rcx+rax], r9
+0x14000bf47: lea     rcx, [rcx+8]
+0x14000bf4b: sub     r8, 1
+0x14000bf4f: jnz     short loc_14000BF23
+0x14000bf51: mov     edx, esi
+0x14000bf53: mov     rcx, rdi
+0x14000bf56: call    sub_14000606C
+0x14000bf5b: test    al, al
+0x14000bf5d: jnz     short loc_14000BF6A
+0x14000bf5f: mov     dword ptr [rbx], 5
+0x14000bf65: jmp     loc_14000C07D
+0x14000bf6a: test    r14d, r14d
+0x14000bf6d: jz      loc_14000C000
+0x14000bf73: mov     rax, cr4
+0x14000bf76: shr     rax, 0Ch
+0x14000bf7a: test    al, 1
+0x14000bf7c: jz      short loc_14000BF95
+0x14000bf7e: lea     rcx, a5LevelPagingMu; "5 level paging must not be enabled.  Ca"...
+0x14000bf85: call    sub_140003A14
+0x14000bf8a: mov     dword ptr [rbx], 6
+0x14000bf90: jmp     loc_14000C07D
+0x14000bf95: xor     edx, edx
+0x14000bf97: mov     rcx, r14; NumberOfBytes
+0x14000bf9a: call    sub_1400055C0
+0x14000bf9f: mov     rbp, rax
+0x14000bfa2: test    rax, rax
+0x14000bfa5: jz      short loc_14000BF5F
+0x14000bfa7: mov     r8, r14
+0x14000bfaa: mov     rdx, r15
+0x14000bfad: mov     rcx, rax
+0x14000bfb0: call    sub_1400059A4
+0x14000bfb5: test    eax, eax
+0x14000bfb7: jz      short loc_14000BFC4
+0x14000bfb9: mov     dword ptr [rbx], 7
+0x14000bfbf: jmp     loc_14000C07D
+0x14000bfc4: mov     edx, r14d
+0x14000bfc7: mov     rcx, rbp
+0x14000bfca: call    sub_14000E364
+0x14000bfcf: test    rax, rax
+0x14000bfd2: jnz     short loc_14000BFEB
+0x14000bfd4: lea     rcx, aCouldNotValida; "Could not validate the VMM bootstrap bl"...
+0x14000bfdb: mov     dword ptr [rbx], 8
+0x14000bfe1: call    sub_140003A14
+0x14000bfe6: jmp     loc_14000C07D
+0x14000bfeb: lea     rcx, [rax+50h]
+0x14000bfef: call    sub_140008B8C
+0x14000bff4: test    al, al
+0x14000bff6: jnz     short loc_14000C000
+0x14000bff8: mov     dword ptr [rbx], 9
+0x14000bffe: jmp     short loc_14000C07D
+0x14000c000: lfence
+0x14000c003: mov     rcx, rdi
+0x14000c006: call    sub_140007D74
+0x14000c00b: mov     [rdi+40h], rax
+0x14000c00f: test    rax, rax
+0x14000c012: jz      loc_14000BF5F
+0x14000c018: lfence
+0x14000c01b: mov     rcx, rdi
+0x14000c01e: call    sub_140007D74
+0x14000c023: mov     [rdi+48h], rax
+0x14000c027: test    rax, rax
+0x14000c02a: jz      loc_14000BF5F
+0x14000c030: lfence
+0x14000c033: mov     rcx, rdi
+0x14000c036: call    sub_14000F728
+0x14000c03b: mov     [rdi+28h], rax
+0x14000c03f: test    rax, rax
+0x14000c042: jz      loc_14000BF5F
+0x14000c048: lfence
+0x14000c04b: mov     rcx, rdi
+0x14000c04e: call    sub_14000FA50
+0x14000c053: mov     [rdi+30h], rax
+0x14000c057: test    rax, rax
+0x14000c05a: jz      loc_14000BF5F
+0x14000c060: xor     ecx, ecx
+0x14000c062: call    sub_140005FB8
+0x14000c067: cmp     cs:dword_14001CF80, 40h ; '@'
+0x14000c06e: jb      short loc_14000C09A
+0x14000c070: xor     ecx, ecx
+0x14000c072: mov     dword ptr [rbx], 0Ah
+0x14000c078: call    sub_140005FC8
+0x14000c07d: lfence
+0x14000c080: test    rbp, rbp
+0x14000c083: jz      short loc_14000C08D
+0x14000c085: mov     rcx, rbp
+0x14000c088: call    sub_140005DC4
+0x14000c08d: mov     rcx, rdi
+0x14000c090: call    sub_14000A564
+0x14000c095: jmp     loc_14000BEB6
+0x14000c09a: lfence
+0x14000c09d: movsxd  rdx, cs:dword_14001D090
+0x14000c0a4: lea     r8, dword_14001CF90
+0x14000c0ab: inc     cs:dword_14001CF80
+0x14000c0b1: lea     rcx, qword_14001CF58
+0x14000c0b8: mov     eax, [r8+rdx*4]
+0x14000c0bc: mov     cs:dword_14001D090, eax
+0x14000c0c2: mov     eax, cs:dword_14001CF88
+0x14000c0c8: mov     [r8+rdx*4], eax
+0x14000c0cc: lea     eax, [rdx+1]
+0x14000c0cf: mov     [rdi], eax
+0x14000c0d1: mov     rax, cs:qword_14001CF58
+0x14000c0d8: mov     cs:dword_14001CF88, edx
+0x14000c0de: jmp     short loc_14000C0EC
+0x14000c0e0: cmp     rax, rdi
+0x14000c0e3: jz      short loc_14000C127
+0x14000c0e5: lea     rcx, [rax+8]
+0x14000c0e9: mov     rax, [rcx]
+0x14000c0ec: test    rax, rax
+0x14000c0ef: jnz     short loc_14000C0E0
+0x14000c0f1: mov     [rcx], rdi
+0x14000c0f4: xor     ecx, ecx
+0x14000c0f6: call    sub_140005FC8
+0x14000c0fb: test    rbp, rbp
+0x14000c0fe: jz      short loc_14000C108
+0x14000c100: mov     rcx, rbp
+0x14000c103: call    sub_140005DC4
+0x14000c108: and     dword ptr [rbx], 0
+0x14000c10b: mov     rax, rdi
+0x14000c10e: mov     rbx, [rsp+38h+arg_0]
+0x14000c113: mov     rbp, [rsp+38h+arg_8]
+0x14000c118: mov     rsi, [rsp+38h+arg_10]
+0x14000c11d: add     rsp, 20h
+0x14000c121: pop     r15
+0x14000c123: pop     r14
+0x14000c125: pop     rdi
+0x14000c126: retn
+0x14000c127: lea     rcx, aVmAlreadyRegis; "VM already registered on the list of VM"...
+0x14000c12e: call    sub_140003A14
+0x14000c133: jmp     short loc_14000C0F4

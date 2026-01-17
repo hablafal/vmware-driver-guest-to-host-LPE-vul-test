@@ -1,0 +1,69 @@
+=== METADATA ===
+Name: sub_140008C68
+Addr: 0x140008c68
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A450 (0x14000A4B2)
+  <- sub_14000D3E0 (0x14000D65B)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140008c68-0x140008c8d -> Jumps to: 0x140008c8d, 0x140008c98
+  Block 0x140008c8d-0x140008c98 -> Jumps to: 0x140008c98
+  Block 0x140008c98-0x140008c9e -> Jumps to: 
+
+=== CODE ===
+signed __int64 __fastcall sub_140008C68(int a1)
+{
+  __int64 *v1; // rbx
+  volatile signed __int64 result; // rax
+
+  v1 = &qword_140018F20[a1];
+  result = *v1;
+  if ( *v1 == 0x3FFFFFFFFFLL )
+  {
+    sub_140008264(v1);
+    return *v1;
+  }
+  return result;
+}
+
+
+=== DISASM ===
+0x140008c68: push    rbx
+0x140008c6a: sub     rsp, 20h
+0x140008c6e: mov     eax, ecx
+0x140008c70: lea     rcx, qword_140018F20
+0x140008c77: lea     rbx, [rcx+rax*8]
+0x140008c7b: mov     rcx, 3FFFFFFFFFh
+0x140008c85: mov     rax, [rbx]
+0x140008c88: cmp     rax, rcx
+0x140008c8b: jnz     short loc_140008C98
+0x140008c8d: mov     rcx, rbx
+0x140008c90: call    sub_140008264
+0x140008c95: mov     rax, [rbx]
+0x140008c98: add     rsp, 20h
+0x140008c9c: pop     rbx
+0x140008c9d: retn

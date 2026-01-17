@@ -1,0 +1,426 @@
+=== METADATA ===
+Name: sub_140008D04
+Addr: 0x140008d04
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140008f82: OR with Mask 0xFFFFFFFFFFFFFFFF
+
+=== MEMBER ACCESS ===
+  0x140008d07: Access Member +0x8 ([rax+8])
+  0x140008d0b: Access Member +0x10 ([rax+10h])
+  0x140008d0f: Access Member +0x18 ([rax+18h])
+  0x140008d42: Access Member +0x4 ([rcx+4])
+  0x140008d4b: Access Member +0x38 ([r14+38h])
+  0x140008d92: Access Member +0x310 ([rsi+310h])
+  0x140008da0: Access Member +0x308 ([rsi+308h])
+  0x140008da7: Access Member +0x33A ([rsi+33Ah])
+  0x140008db3: Access Member +0x338 ([rsi+338h])
+  0x140008dba: Access Member +0x2B8 ([rsi+2B8h])
+  0x140008dc1: Access Member +0x300 ([rsi+300h])
+  0x140008dd1: Access Member +0x330 (qword ptr [rsi+330h])
+  0x140008dda: Access Member +0x18 ([r14+18h])
+  0x140008deb: Access Member +0x270 ([rsi+270h])
+  0x140008dfa: Access Member +0x308 ([rsi+308h])
+  0x140008e01: Access Member +0x300 ([rsi+300h])
+  0x140008e08: Access Member +0x2B8 ([rsi+2B8h])
+  0x140008e13: Access Member +0x48 ([rsp+88h+var_40])
+  0x140008e18: Access Member +0x310 ([rsi+310h])
+  0x140008e23: Access Member +0x58 ([rsp+88h+var_30])
+  0x140008e35: Access Member +0x50 ([rsp+88h+var_38])
+  0x140008e3d: Access Member +0x40 ([rsp+88h+var_48])
+  0x140008e45: Access Member +0x30 ([rsp+88h+var_58])
+  0x140008e4d: Access Member +0x28 ([rsp+88h+var_60])
+  0x140008e55: Access Member +0x20 ([rsp+88h+var_68])
+  0x140008e67: Access Member +0x40 ([rsp+88h+var_48])
+  0x140008e6f: Access Member +0x30 ([rsp+88h+var_58])
+  0x140008e81: Access Member +0x28 ([rsp+88h+var_60])
+  0x140008e89: Access Member +0x48 ([rsp+88h+var_40])
+  0x140008e8e: Access Member +0x20 ([rsp+88h+var_68])
+  0x140008ea0: Access Member +0x40 ([rsp+88h+var_48])
+  0x140008ea8: Access Member +0x30 ([rsp+88h+var_58])
+  0x140008eb0: Access Member +0x50 ([rsp+88h+var_38])
+  0x140008eb8: Access Member +0x28 ([rsp+88h+var_60])
+  0x140008ec0: Access Member +0x58 ([rsp+88h+var_30])
+  0x140008ec5: Access Member +0x20 ([rsp+88h+var_68])
+  0x140008ed9: Access Member +0x3C8 ([rsi+3C8h])
+  0x140008ee8: Access Member +0x18 ([rbx+18h])
+  0x140008f37: Access Member +0x320 ([rsi+320h])
+  0x140008f3e: Access Member +0x6F0 ([rsi+6F0h])
+  0x140008f46: Access Member +0x719 ([rsi+719h])
+  0x140008f4d: Access Member +0x6F0 ([rsi+6F0h])
+  0x140008f53: Access Member +0x6F0 ([rsi+6F0h])
+  0x140008f5b: Access Member +0x6E0 (qword ptr [rsi+6E0h])
+  0x140008f66: Access Member +0x6E8 ([rsi+6E8h])
+  0x140008f6d: Access Member +0x6F0 ([rsi+6F0h])
+  0x140008f78: Access Member +0x6F8 ([rsi+6F8h])
+  0x140008f86: Access Member +0x700 ([rsi+700h])
+  0x140008f8d: Access Member +0x708 ([rsi+708h])
+  0x140008f94: Access Member +0x710 ([rsi+710h])
+  0x140008fa3: Access Member +0x4 ([r14+4])
+  0x140008fad: Access Member +0x40 ([rsp+88h+var_48])
+  0x140008fb7: Access Member +0x100 ([r14+100h])
+  0x140008fbe: Access Member +0x60 ([rsp+88h+var_28])
+  0x140008fc3: Access Member +0x30 ([r11+30h])
+  0x140008fc7: Access Member +0x38 ([r11+38h])
+  0x140008fcb: Access Member +0x40 ([r11+40h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x18 -> possible EvtIoDefault
+  [!] Offset +0x38 -> possible EvtIoInternalDeviceControl
+
+=== CALLERS ===
+  <- sub_14000CAF8 (0x14000CC0E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140008d61 -> *
+  0x140008d87 -> UH
+  0x140008fdc -> %s: Page table patches for VCPU %d failed verification
+
+  0x140008fe5 -> %s: Could not apply page table patches for VCPU %d
+
+  0x140008ffb -> %s: Could not create page table patches for VCPU %d
+
+  0x140009005 -> Task_InitCrosspage
+  0x140009019 -> Task_InitCrosspage
+  0x140009020 -> %s: crosspage version mismatch: vmmon claims %#x, must match vmx version of %#x.
+
+
+=== BASIC BLOCKS ===
+  Block 0x140008d04-0x140008d38 -> Jumps to: 0x140008d38, 0x140008d3f
+  Block 0x140008d38-0x140008d3f -> Jumps to: 0x140008fbe
+  Block 0x140008d3f-0x140008d4b -> Jumps to: 0x140008d4b, 0x140008fb2
+  Block 0x140008d4b-0x140008d87 -> Jumps to: 0x140008d87, 0x140009016
+  Block 0x140008d87-0x140008dd1 -> Jumps to: 0x140008dd1, 0x140008dda
+  Block 0x140008dd1-0x140008dda -> Jumps to: 0x140008dda
+  Block 0x140008dda-0x140008e67 -> Jumps to: 0x140008e67, 0x140008fee
+  Block 0x140008e67-0x140008ea0 -> Jumps to: 0x140008ea0, 0x140008fee
+  Block 0x140008ea0-0x140008ed7 -> Jumps to: 0x140008ed7, 0x140008fee
+  Block 0x140008ed7-0x140008ee0 -> Jumps to: 0x140008ee0
+  Block 0x140008ee0-0x140008ee8 -> Jumps to: 0x140008ee8, 0x140008eff
+  Block 0x140008ee8-0x140008eff -> Jumps to: 0x140008ee0, 0x140008eff
+  Block 0x140008eff-0x140008f1f -> Jumps to: 0x140008f1f, 0x140008fe5
+  Block 0x140008f1f-0x140008f32 -> Jumps to: 0x140008f32, 0x140008fdc
+  Block 0x140008f32-0x140008fad -> Jumps to: 0x140008d4b, 0x140008fad
+  Block 0x140008fad-0x140008fb2 -> Jumps to: 0x140008fb2
+  Block 0x140008fb2-0x140008fbe -> Jumps to: 0x140008fbe
+  Block 0x140008fbe-0x140008fdc -> Jumps to: 
+  Block 0x140008fdc-0x140008fe5 -> Jumps to: 0x140009002
+  Block 0x140008fe5-0x140008fee -> Jumps to: 0x140009002
+  Block 0x140008fee-0x140009002 -> Jumps to: 0x140009002
+  Block 0x140009002-0x140009016 -> Jumps to: 0x140008d38
+  Block 0x140009016-0x140009031 -> Jumps to: 0x140008d38
+
+=== CODE ===
+char __fastcall sub_140008D04(__int64 a1, __int64 a2, __int64 a3)
+{
+  unsigned __int16 v3; // bp
+  unsigned int v8; // r15d
+  __int64 *v9; // rsi
+  PHYSICAL_ADDRESS v10; // rbx
+  __int64 v11; // rax
+  unsigned __int64 v12; // rdi
+  unsigned __int64 v13; // rbx
+  unsigned int v14; // edi
+  __int64 *v15; // rbx
+  int v16; // eax
+  int v17; // eax
+  __int64 v18; // rdx
+  __int64 v19; // rcx
+  __int64 v20; // r8
+  __int64 v21; // r9
+  unsigned __int16 v22; // [rsp+40h] [rbp-48h] BYREF
+  unsigned __int64 v23; // [rsp+48h] [rbp-40h]
+  __int64 QuadPart; // [rsp+50h] [rbp-38h]
+  unsigned __int64 v25; // [rsp+58h] [rbp-30h]
+
+  v3 = 0;
+  v22 = 0;
+  if ( !qword_140018F08 )
+    return 0;
+  v8 = 0;
+  if ( *(_DWORD *)(a1 + 4) )
+  {
+    while ( 1 )
+    {
+      v9 = *(__int64 **)(*(_QWORD *)(a1 + 56) + 8LL * v8);
+      v10 = sub_140005F48(v9);
+      sub_1400100C0(v9, &unk_140014000, 2536);
+      if ( *(_DWORD *)v9 != 6186 )
+        break;
+      v9[98] = (__int64)sub_140002000;
+      v11 = qword_140018F08;
+      v9[97] = qword_140018F08;
+      *(__int64 *)((char *)v9 + 826) = v11;
+      *((_WORD *)v9 + 412) = 4095;
+      v9[87] = v10.QuadPart << 12;
+      v9[96] = (__int64)v9;
+      if ( byte_14001D0C0 )
+        v9[102] |= 0x40000uLL;
+      v9[78] = *(_QWORD *)(*(_QWORD *)(a1 + 24) + 8LL * v8) << 12;
+      sub_140007558(a1);
+      v12 = v9[96];
+      v13 = v9[87];
+      v23 = (unsigned __int64)v9[97] >> 12;
+      v25 = (unsigned __int64)v9[98] >> 12;
+      QuadPart = sub_140005F2C().QuadPart;
+      if ( !sub_140008538(a1, (__int64)v9, a2, a3, v12 >> 12, v13 >> 12, &v22)
+        || !sub_140008538(a1, (__int64)v9, a2, a3, v23, qword_140018F10, &v22)
+        || !sub_140008538(a1, (__int64)v9, a2, a3, v25, QuadPart, &v22) )
+      {
+        sub_140007564(a1);
+        sub_140003A14("%s: Could not create page table patches for VCPU %d\n", "Task_InitCrosspage", v8);
+        return 0;
+      }
+      v14 = 0;
+      v15 = v9 + 121;
+      do
+      {
+        if ( !*(_DWORD *)v15 )
+          break;
+        sub_1400087B4(a1, v15 + 3, *(_DWORD *)v15);
+        ++v14;
+        v15 += 4;
+      }
+      while ( v14 < 3 );
+      sub_140007564(a1);
+      if ( !sub_140008370(a1, (__int64)v9) )
+      {
+        sub_140003A14("%s: Could not apply page table patches for VCPU %d\n", "Task_InitCrosspage", v8);
+        return 0;
+      }
+      if ( !sub_140008AC8(a1, v9) )
+      {
+        sub_140003A14("%s: Page table patches for VCPU %d failed verification\n", "Task_InitCrosspage", v8);
+        return 0;
+      }
+      *((_WORD *)v9 + 400) = sub_140003438();
+      v16 = *((_DWORD *)v9 + 444) + 1;
+      *((_BYTE *)v9 + 1817) = 0;
+      *((_DWORD *)v9 + 444) = v16;
+      v17 = *((_DWORD *)v9 + 444) + 1;
+      v9[220] = 1;
+      v9[221] = 0;
+      *((_DWORD *)v9 + 444) = v17;
+      v9[223] = sub_14000C648(v19, v18, v20, v21);
+      v9[224] = -1;
+      v9[225] = -1;
+      v9[226] = -1;
+      sub_140001104((__int64)v9);
+      if ( ++v8 >= *(_DWORD *)(a1 + 4) )
+      {
+        v3 = v22;
+        goto LABEL_17;
+      }
+    }
+    sub_140003A14(
+      "%s: crosspage version mismatch: vmmon claims %#x, must match vmx version of %#x.\n",
+      "Task_InitCrosspage",
+      6186,
+      *(_DWORD *)v9);
+    return 0;
+  }
+LABEL_17:
+  *(_QWORD *)(a1 + 256) = v3;
+  return 1;
+}
+
+
+=== DISASM ===
+0x140008d04: mov     rax, rsp
+0x140008d07: mov     [rax+8], rbx
+0x140008d0b: mov     [rax+10h], rbp
+0x140008d0f: mov     [rax+18h], rsi
+0x140008d13: push    rdi
+0x140008d14: push    r12
+0x140008d16: push    r13
+0x140008d18: push    r14
+0x140008d1a: push    r15
+0x140008d1c: sub     rsp, 60h
+0x140008d20: xor     ebp, ebp
+0x140008d22: mov     r12, r8
+0x140008d25: cmp     cs:qword_140018F08, rbp
+0x140008d2c: mov     r13, rdx
+0x140008d2f: mov     r14, rcx
+0x140008d32: mov     [rax-48h], bp
+0x140008d36: jnz     short loc_140008D3F
+0x140008d38: xor     al, al
+0x140008d3a: jmp     loc_140008FBE
+0x140008d3f: mov     r15d, ebp
+0x140008d42: cmp     [rcx+4], ebp
+0x140008d45: jbe     loc_140008FB2
+0x140008d4b: mov     rax, [r14+38h]
+0x140008d4f: mov     edi, r15d
+0x140008d52: mov     rsi, [rax+rdi*8]
+0x140008d56: mov     rcx, rsi
+0x140008d59: call    sub_140005F48
+0x140008d5e: mov     rcx, rsi
+0x140008d61: lea     rdx, unk_140014000
+0x140008d68: mov     r8d, 9E8h
+0x140008d6e: mov     rbx, rax
+0x140008d71: call    sub_1400100C0
+0x140008d76: mov     r9d, [rsi]
+0x140008d79: mov     eax, 182Ah
+0x140008d7e: cmp     r9d, eax
+0x140008d81: jnz     loc_140009016
+0x140008d87: lea     rax, sub_140002000
+0x140008d8e: shl     rbx, 0Ch
+0x140008d92: mov     [rsi+310h], rax
+0x140008d99: mov     rax, cs:qword_140018F08
+0x140008da0: mov     [rsi+308h], rax
+0x140008da7: mov     [rsi+33Ah], rax
+0x140008dae: mov     eax, 0FFFh
+0x140008db3: mov     [rsi+338h], ax
+0x140008dba: mov     [rsi+2B8h], rbx
+0x140008dc1: mov     [rsi+300h], rsi
+0x140008dc8: cmp     cs:byte_14001D0C0, bpl
+0x140008dcf: jz      short loc_140008DDA
+0x140008dd1: bts     qword ptr [rsi+330h], 12h
+0x140008dda: mov     rax, [r14+18h]
+0x140008dde: mov     edx, 27h ; '''
+0x140008de3: mov     rcx, [rax+rdi*8]
+0x140008de7: shl     rcx, 0Ch
+0x140008deb: mov     [rsi+270h], rcx
+0x140008df2: mov     rcx, r14
+0x140008df5: call    sub_140007558
+0x140008dfa: mov     rax, [rsi+308h]
+0x140008e01: mov     rdi, [rsi+300h]
+0x140008e08: mov     rbx, [rsi+2B8h]
+0x140008e0f: shr     rax, 0Ch
+0x140008e13: mov     [rsp+88h+var_40], rax
+0x140008e18: mov     rax, [rsi+310h]
+0x140008e1f: shr     rax, 0Ch
+0x140008e23: mov     [rsp+88h+var_30], rax
+0x140008e28: shr     rdi, 0Ch
+0x140008e2c: shr     rbx, 0Ch
+0x140008e30: call    sub_140005F2C
+0x140008e35: mov     [rsp+88h+var_38], rax
+0x140008e3a: mov     r9, r12
+0x140008e3d: lea     rax, [rsp+88h+var_48]
+0x140008e42: mov     r8, r13
+0x140008e45: mov     [rsp+88h+var_58], rax
+0x140008e4a: mov     rdx, rsi
+0x140008e4d: mov     [rsp+88h+var_60], rbx
+0x140008e52: mov     rcx, r14
+0x140008e55: mov     [rsp+88h+var_68], rdi
+0x140008e5a: call    sub_140008538
+0x140008e5f: test    al, al
+0x140008e61: jz      loc_140008FEE
+0x140008e67: lea     rax, [rsp+88h+var_48]
+0x140008e6c: mov     r9, r12
+0x140008e6f: mov     [rsp+88h+var_58], rax
+0x140008e74: mov     r8, r13
+0x140008e77: mov     rax, cs:qword_140018F10
+0x140008e7e: mov     rdx, rsi
+0x140008e81: mov     [rsp+88h+var_60], rax
+0x140008e86: mov     rcx, r14
+0x140008e89: mov     rax, [rsp+88h+var_40]
+0x140008e8e: mov     [rsp+88h+var_68], rax
+0x140008e93: call    sub_140008538
+0x140008e98: test    al, al
+0x140008e9a: jz      loc_140008FEE
+0x140008ea0: lea     rax, [rsp+88h+var_48]
+0x140008ea5: mov     r9, r12
+0x140008ea8: mov     [rsp+88h+var_58], rax
+0x140008ead: mov     r8, r13
+0x140008eb0: mov     rax, [rsp+88h+var_38]
+0x140008eb5: mov     rdx, rsi
+0x140008eb8: mov     [rsp+88h+var_60], rax
+0x140008ebd: mov     rcx, r14
+0x140008ec0: mov     rax, [rsp+88h+var_30]
+0x140008ec5: mov     [rsp+88h+var_68], rax
+0x140008eca: call    sub_140008538
+0x140008ecf: test    al, al
+0x140008ed1: jz      loc_140008FEE
+0x140008ed7: mov     edi, ebp
+0x140008ed9: lea     rbx, [rsi+3C8h]
+0x140008ee0: mov     r8d, [rbx]
+0x140008ee3: test    r8d, r8d
+0x140008ee6: jz      short loc_140008EFF
+0x140008ee8: lea     rdx, [rbx+18h]
+0x140008eec: mov     rcx, r14
+0x140008eef: call    sub_1400087B4
+0x140008ef4: inc     edi
+0x140008ef6: add     rbx, 20h ; ' '
+0x140008efa: cmp     edi, 3
+0x140008efd: jb      short loc_140008EE0
+0x140008eff: mov     edx, 27h ; '''
+0x140008f04: mov     rcx, r14
+0x140008f07: call    sub_140007564
+0x140008f0c: mov     rdx, rsi
+0x140008f0f: mov     rcx, r14
+0x140008f12: call    sub_140008370
+0x140008f17: test    al, al
+0x140008f19: jz      loc_140008FE5
+0x140008f1f: mov     rdx, rsi
+0x140008f22: mov     rcx, r14
+0x140008f25: call    sub_140008AC8
+0x140008f2a: test    al, al
+0x140008f2c: jz      loc_140008FDC
+0x140008f32: call    sub_140003438
+0x140008f37: mov     [rsi+320h], ax
+0x140008f3e: mov     eax, [rsi+6F0h]
+0x140008f44: inc     eax
+0x140008f46: mov     [rsi+719h], bpl
+0x140008f4d: mov     [rsi+6F0h], eax
+0x140008f53: mov     eax, [rsi+6F0h]
+0x140008f59: inc     eax
+0x140008f5b: mov     qword ptr [rsi+6E0h], 1
+0x140008f66: mov     [rsi+6E8h], rbp
+0x140008f6d: mov     [rsi+6F0h], eax
+0x140008f73: call    sub_14000C648
+0x140008f78: mov     [rsi+6F8h], rax
+0x140008f7f: mov     rcx, rsi
+0x140008f82: or      rax, 0FFFFFFFFFFFFFFFFh
+0x140008f86: mov     [rsi+700h], rax
+0x140008f8d: mov     [rsi+708h], rax
+0x140008f94: mov     [rsi+710h], rax
+0x140008f9b: call    sub_140001104
+0x140008fa0: inc     r15d
+0x140008fa3: cmp     r15d, [r14+4]
+0x140008fa7: jb      loc_140008D4B
+0x140008fad: movzx   ebp, [rsp+88h+var_48]
+0x140008fb2: movzx   ecx, bp
+0x140008fb5: mov     al, 1
+0x140008fb7: mov     [r14+100h], rcx
+0x140008fbe: lea     r11, [rsp+88h+var_28]
+0x140008fc3: mov     rbx, [r11+30h]
+0x140008fc7: mov     rbp, [r11+38h]
+0x140008fcb: mov     rsi, [r11+40h]
+0x140008fcf: mov     rsp, r11
+0x140008fd2: pop     r15
+0x140008fd4: pop     r14
+0x140008fd6: pop     r13
+0x140008fd8: pop     r12
+0x140008fda: pop     rdi
+0x140008fdb: retn
+0x140008fdc: lea     rcx, aSPageTablePatc; "%s: Page table patches for VCPU %d fail"...
+0x140008fe3: jmp     short loc_140009002
+0x140008fe5: lea     rcx, aSCouldNotApply; "%s: Could not apply page table patches "...
+0x140008fec: jmp     short loc_140009002
+0x140008fee: mov     edx, 27h ; '''
+0x140008ff3: mov     rcx, r14
+0x140008ff6: call    sub_140007564
+0x140008ffb: lea     rcx, aSCouldNotCreat; "%s: Could not create page table patches"...
+0x140009002: mov     r8d, r15d
+0x140009005: lea     rdx, aTaskInitcrossp; "Task_InitCrosspage"
+0x14000900c: call    sub_140003A14
+0x140009011: jmp     loc_140008D38
+0x140009016: mov     r8d, eax
+0x140009019: lea     rdx, aTaskInitcrossp; "Task_InitCrosspage"
+0x140009020: lea     rcx, aSCrosspageVers; "%s: crosspage version mismatch: vmmon c"...
+0x140009027: call    sub_140003A14
+0x14000902c: jmp     loc_140008D38

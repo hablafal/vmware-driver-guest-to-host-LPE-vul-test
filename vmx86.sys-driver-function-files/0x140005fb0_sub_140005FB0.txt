@@ -1,0 +1,45 @@
+=== METADATA ===
+Name: sub_140005FB0
+Addr: 0x140005fb0
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000D3E0 (0x14000D856)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005fb0-0x140005fb7 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140005FB0(_BYTE *a1, _BYTE *a2)
+{
+  *a1 = -47;
+  *a2 = 48;
+}
+
+
+=== DISASM ===
+0x140005fb0: mov     byte ptr [rcx], 0D1h
+0x140005fb3: mov     byte ptr [rdx], 30h ; '0'
+0x140005fb6: retn

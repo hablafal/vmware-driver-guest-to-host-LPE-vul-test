@@ -1,0 +1,115 @@
+=== METADATA ===
+Name: sub_14000F0AC
+Addr: 0x14000f0ac
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f0ac: Access Member +0x8 ([rsp+arg_0])
+  0x14000f0b1: Access Member +0x10 ([rsp+arg_8])
+  0x14000f0b6: Access Member +0x18 ([rsp+arg_10])
+  0x14000f0d6: Access Member +0x48 ([rbx+48h])
+  0x14000f0f7: Access Member +0x8 ([rsi+8])
+  0x14000f12b: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000f130: Access Member +0x38 ([rsp+28h+arg_8])
+  0x14000f135: Access Member +0x40 ([rsp+28h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000EA00 (0x14000EA70)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f11d -> Failed to look up MPN 0x%I64x
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000f0ac-0x14000f0f7 -> Jumps to: 0x14000f0f7, 0x14000f11a
+  Block 0x14000f0f7-0x14000f0fd -> Jumps to: 0x14000f0fd, 0x14000f11a
+  Block 0x14000f0fd-0x14000f105 -> Jumps to: 0x14000f105, 0x14000f11a
+  Block 0x14000f105-0x14000f11a -> Jumps to: 0x14000f12b
+  Block 0x14000f11a-0x14000f12b -> Jumps to: 0x14000f12b
+  Block 0x14000f12b-0x14000f140 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000F0AC(__int64 *a1, unsigned __int8 a2, __int64 a3)
+{
+  __int64 v3; // rbx
+  unsigned int v5; // ebp
+  _QWORD *v6; // rsi
+
+  v3 = *a1;
+  v5 = a2;
+  sub_140007558(*a1);
+  v6 = (_QWORD *)sub_140007EA0(*(_QWORD *)(v3 + 72), a3);
+  sub_140007564(v3);
+  if ( v6 && v6[1] == a3 && *v6 )
+  {
+    sub_14000FEC0(*v6 << 12, v5, 4096);
+    return 1;
+  }
+  else
+  {
+    sub_140003A14("Failed to look up MPN 0x%I64x\n", a3);
+    return 0;
+  }
+}
+
+
+=== DISASM ===
+0x14000f0ac: mov     [rsp+arg_0], rbx
+0x14000f0b1: mov     [rsp+arg_8], rbp
+0x14000f0b6: mov     [rsp+arg_10], rsi
+0x14000f0bb: push    rdi
+0x14000f0bc: sub     rsp, 20h
+0x14000f0c0: mov     rbx, [rcx]
+0x14000f0c3: mov     rdi, r8
+0x14000f0c6: movzx   ebp, dl
+0x14000f0c9: mov     rcx, rbx
+0x14000f0cc: mov     edx, 2Ah ; '*'
+0x14000f0d1: call    sub_140007558
+0x14000f0d6: mov     rcx, [rbx+48h]
+0x14000f0da: mov     rdx, rdi
+0x14000f0dd: call    sub_140007EA0
+0x14000f0e2: mov     edx, 2Ah ; '*'
+0x14000f0e7: mov     rcx, rbx
+0x14000f0ea: mov     rsi, rax
+0x14000f0ed: call    sub_140007564
+0x14000f0f2: test    rsi, rsi
+0x14000f0f5: jz      short loc_14000F11A
+0x14000f0f7: cmp     [rsi+8], rdi
+0x14000f0fb: jnz     short loc_14000F11A
+0x14000f0fd: mov     rcx, [rsi]
+0x14000f100: test    rcx, rcx
+0x14000f103: jz      short loc_14000F11A
+0x14000f105: mov     edx, ebp
+0x14000f107: shl     rcx, 0Ch
+0x14000f10b: mov     r8d, 1000h
+0x14000f111: call    sub_14000FEC0
+0x14000f116: mov     al, 1
+0x14000f118: jmp     short loc_14000F12B
+0x14000f11a: mov     rdx, rdi
+0x14000f11d: lea     rcx, aFailedToLookUp; "Failed to look up MPN 0x%I64x\n"
+0x14000f124: call    sub_140003A14
+0x14000f129: xor     al, al
+0x14000f12b: mov     rbx, [rsp+28h+arg_0]
+0x14000f130: mov     rbp, [rsp+28h+arg_8]
+0x14000f135: mov     rsi, [rsp+28h+arg_10]
+0x14000f13a: add     rsp, 20h
+0x14000f13e: pop     rdi
+0x14000f13f: retn

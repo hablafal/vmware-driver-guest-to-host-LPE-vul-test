@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: sub_140003460
+Addr: 0x140003460
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140003460-0x140003463 -> Jumps to: 
+
+=== CODE ===
+void sub_140003460()
+{
+  ;
+}
+
+
+=== DISASM ===
+0x140003460: mov     gs, ecx
+0x140003462: retn

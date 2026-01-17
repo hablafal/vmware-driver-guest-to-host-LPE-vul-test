@@ -1,0 +1,475 @@
+STRING: "DriverEntry" at 0x1400103b0
+  REFERENCED BY: sub_140003464 (0x140003518)
+
+STRING: "VMX86.SYS: begin %s" at 0x1400103c0
+  REFERENCED BY: sub_140003464 (0x140003526)
+
+STRING: "Waiting a moment for the power state thread to terminate...
+" at 0x1400104c0
+  REFERENCED BY: sub_140004910 (0x140004990)
+
+STRING: "power state thread has terminated...
+" at 0x140010500
+  REFERENCED BY: sub_140004910 (0x1400049b7)
+
+STRING: "resumeResetClockThread" at 0x140010550
+  REFERENCED BY: HandleInformation (0x140004bd3), HandleInformation (0x140004c1b)
+
+STRING: "%s: Resetting clock, on second %d
+" at 0x140010570
+  REFERENCED BY: HandleInformation (0x140004bda)
+
+STRING: "%s: told to exit
+" at 0x1400105a0
+  REFERENCED BY: HandleInformation (0x140004c22)
+
+STRING: "powerStateCallback" at 0x1400105c0
+  REFERENCED BY: CallbackFunction (0x140004a61)
+
+STRING: "Saw %s
+" at 0x1400105e0
+  REFERENCED BY: CallbackFunction (0x140004a6b)
+
+STRING: "%s: PO_CB_SYSTEM_STATE_LOCK with arg2 of %d
+" at 0x1400105f0
+  REFERENCED BY: CallbackFunction (0x140004a87)
+
+STRING: "%s: System is resuming, creating reset clock on resume thread...
+" at 0x140010620
+  REFERENCED BY: CallbackFunction (0x140004aa2)
+
+STRING: "%s: thread is already running
+" at 0x140010670
+  REFERENCED BY: CallbackFunction (0x140004ab7)
+
+STRING: "%s: releasing previous thread pointer
+" at 0x140010690
+  REFERENCED BY: CallbackFunction (0x140004ad0)
+
+STRING: "%s: PsCreateSystemThread failed: %d
+" at 0x1400106c0
+  REFERENCED BY: CallbackFunction (0x140004b37)
+
+STRING: "%s: Successfully created reset clock on resume thread
+" at 0x1400106f0
+  REFERENCED BY: CallbackFunction (0x140004b83)
+
+STRING: "VMX86 panic. pid=%p
+" at 0x140010730
+  REFERENCED BY: sub_140003A70 (0x140003aa6)
+
+STRING: "VMware vmmon: could not query physical page ranges
+Recommend running with sched.mem.pshare.enable=FALSE as a workaround.
+" at 0x140010750
+  REFERENCED BY: sub_1400062FC (0x140006399)
+
+STRING: "Can't allocate MDLs array for %I64u pages" at 0x140010810
+  REFERENCED BY: sub_140004C50 (0x140004c97)
+
+STRING: "Can't allocate %I64u pages" at 0x140010840
+  REFERENCED BY: sub_140004C50 (0x140004eb3)
+
+STRING: "MPN 0x%08llx is alredy locked (%I64u/%I64u)" at 0x140010860
+  REFERENCED BY: sub_140004C50 (0x140004e22)
+
+STRING: "Failed to add MPN 0x%08llx to MDL array(%I64u/%I64u)" at 0x140010890
+  REFERENCED BY: sub_140004C50 (0x140004df1)
+
+STRING: "Couldn't copy out %I64u pages" at 0x1400108d0
+  REFERENCED BY: sub_140004C50 (0x140004dca)
+
+STRING: "HostIF_FreeLockedPages" at 0x1400108f0
+  REFERENCED BY: sub_140005E28 (0x140005ecc)
+
+STRING: "%s(): MPN 0x%08llx is not locked" at 0x140010910
+  REFERENCED BY: sub_140005E28 (0x140005eda)
+
+STRING: "defaultTimerRate is %u, fastClockThreshold is %d
+" at 0x1400109f0
+  REFERENCED BY: sub_140006258 (0x14000626f)
+
+STRING: "HostIF_SetFastClockRate" at 0x140010a30
+  REFERENCED BY: sub_14000717C (0x1400071c8), sub_14000717C (0x14000718c)
+
+STRING: "%s: Setting rate to %d
+" at 0x140010a50
+  REFERENCED BY: sub_14000717C (0x14000719d)
+
+STRING: "%s: Bumping rate to 256
+" at 0x140010a70
+  REFERENCED BY: sub_14000717C (0x1400071d4)
+
+STRING: "%s: Setting rate to system default
+" at 0x140010a90
+  REFERENCED BY: sub_14000717C (0x140007206)
+
+STRING: "MemTrack failed to allocate handle.
+" at 0x140010ac0
+  REFERENCED BY: sub_140007D74 (0x140007da0)
+
+STRING: "MemTrack failed to allocate VPN hash table (%I64d).
+" at 0x140010af0
+  REFERENCED BY: sub_140007D74 (0x140007e70)
+
+STRING: "MemTrack failed to allocate MPN hash table.
+" at 0x140010b30
+  REFERENCED BY: sub_140007D74 (0x140007e19)
+
+STRING: "MemTrack failed to allocate MPN hash table (%I64d).
+" at 0x140010b60
+  REFERENCED BY: sub_140007D74 (0x140007e67)
+
+STRING: "PhysTrack_Alloc" at 0x140010ba0
+  REFERENCED BY: sub_140007FCC (0x140008003)
+
+STRING: "%s failed
+" at 0x140010bb0
+  REFERENCED BY: sub_140007FCC (0x14000800a)
+
+STRING: "PhysTrack_Free" at 0x140010bc0
+  REFERENCED BY: sub_140008024 (0x140008095)
+
+STRING: "%s: pfns still locked
+" at 0x140010bd0
+  REFERENCED BY: sub_140008024 (0x14000809c)
+
+STRING: "D:\build\ob\bora-24037534\bora\build\build\vmx86\release\win-kernel\vmx86\phystrack.c" at 0x140010bf0
+  REFERENCED BY: sub_140007F14 (0x140007f9e), sub_140007F14 (0x140007fb8), sub_1400081A4 (0x14000820b), sub_1400081A4 (0x1400081f1)
+
+STRING: "VERIFY %s:%d
+" at 0x140010c50
+  REFERENCED BY: sub_1400081A4 (0x1400081f8), sub_1400081A4 (0x140008212), sub_140007F14 (0x140007fbf), sub_140007F14 (0x140007fa5)
+
+STRING: "TaskAllocHVRootPage" at 0x140010c60
+  REFERENCED BY: sub_140008264 (0x140008314), sub_140008264 (0x1400082a0), sub_140008264 (0x140008331)
+
+STRING: "%s: Failed to allocate content.
+" at 0x140010c80
+  REFERENCED BY: sub_140008264 (0x1400082a7)
+
+STRING: "%s: Failed to setup page mpn=%llx.
+" at 0x140010cb0
+  REFERENCED BY: sub_140008264 (0x14000831b)
+
+STRING: "%s: Failed to allocate page.
+" at 0x140010ce0
+  REFERENCED BY: sub_140008264 (0x140008338)
+
+STRING: "TaskAllocGDT" at 0x140010d00
+  REFERENCED BY: sub_140008CA0 (0x140008cd0)
+
+STRING: "%s: Failed to allocate temporary GDT.
+" at 0x140010d10
+  REFERENCED BY: sub_140008CA0 (0x140008cd7)
+
+STRING: "Crosspage code validation failed.
+" at 0x140010d40
+  REFERENCED BY: sub_140009034 (0x140009062)
+
+STRING: "Task_Initialize: unsupported SS %04x
+" at 0x140010d70
+  REFERENCED BY: sub_140009034 (0x140009209)
+
+STRING: "TaskSetCrossGDTEntry" at 0x140010da0
+  REFERENCED BY: sub_14000885C (0x1400089b0), sub_14000885C (0x140008996), sub_14000885C (0x1400089e7), sub_14000885C (0x1400089cc)
+
+STRING: "%s: index %u too big
+" at 0x140010dc0
+  REFERENCED BY: sub_14000885C (0x1400089ee)
+
+STRING: "%s: entry 0x%X mismatch
+" at 0x140010de0
+  REFERENCED BY: sub_14000885C (0x14000899d)
+
+STRING: "%s:   crossGDT %16.16I64X
+" at 0x140010e00
+  REFERENCED BY: sub_14000885C (0x1400089b7)
+
+STRING: "%s:   template %16.16I64X
+" at 0x140010e20
+  REFERENCED BY: sub_14000885C (0x1400089d3)
+
+STRING: "Task_CreateCrossGDT" at 0x140010e40
+  REFERENCED BY: sub_140008B8C (0x140008be9)
+
+STRING: "%s: unable to allocate crossGDT
+" at 0x140010e60
+  REFERENCED BY: sub_140008B8C (0x140008bf0)
+
+STRING: "Internal error: PTP table is full" at 0x140010e90
+  REFERENCED BY: sub_140008538 (0x140008745)
+
+STRING: "TaskCreatePTPatch" at 0x140010ec0
+  REFERENCED BY: sub_140008538 (0x140008702), sub_140008538 (0x1400085d8)
+
+STRING: "%s: cannot create page table patch because LPN 0x%I64x overlaps with the VMM address space.
+" at 0x140010ee0
+  REFERENCED BY: sub_140008538 (0x1400085df)
+
+STRING: "%s: failure allocating memory for page table patch.
+" at 0x140010f40
+  REFERENCED BY: sub_140008538 (0x140008709)
+
+STRING: "Task_InitCrosspage" at 0x140010f80
+  REFERENCED BY: sub_140008D04 (0x140009019), sub_140008D04 (0x140009005)
+
+STRING: "%s: crosspage version mismatch: vmmon claims %#x, must match vmx version of %#x.
+" at 0x140010fa0
+  REFERENCED BY: sub_140008D04 (0x140009020)
+
+STRING: "%s: Could not create page table patches for VCPU %d
+" at 0x140011000
+  REFERENCED BY: sub_140008D04 (0x140008ffb)
+
+STRING: "%s: Could not apply page table patches for VCPU %d
+" at 0x140011040
+  REFERENCED BY: sub_140008D04 (0x140008fe5)
+
+STRING: "%s: Page table patches for VCPU %d failed verification
+" at 0x140011080
+  REFERENCED BY: sub_140008D04 (0x140008fdc)
+
+STRING: "Intel VT-x is disabled and locked on CPU %d
+" at 0x1400110c0
+  REFERENCED BY: sub_14000922C (0x140009cb1)
+
+STRING: "Task_Switch" at 0x140011120
+  REFERENCED BY: sub_14000922C (0x140009cbe)
+
+STRING: "%s: Received Unexpected Interrupt: 0x%I64X
+" at 0x140011130
+  REFERENCED BY: sub_14000922C (0x140009cc5)
+
+STRING: "Received Unexpected Interrupt: 0x%I64X
+" at 0x140011160
+  REFERENCED BY: sub_14000922C (0x140009cd8)
+
+STRING: "GenuineIntel" at 0x140011190
+  REFERENCED BY: sub_140009DE0 (0x140009e33)
+
+STRING: "AuthenticAMD" at 0x1400111a0
+  REFERENCED BY: sub_140009DE0 (0x140009e5c)
+
+STRING: "CyrixInstead" at 0x1400111b0
+  REFERENCED BY: sub_140009DE0 (0x140009e7c)
+
+STRING: "HygonGenuine" at 0x1400111c0
+  REFERENCED BY: sub_140009DE0 (0x140009e9c)
+
+STRING: "VMMON CPUID: Unrecognized CPU
+" at 0x1400111d0
+  REFERENCED BY: sub_140009DE0 (0x140009ebc)
+
+STRING: "VM already registered on the list of VMs.
+" at 0x1400111f0
+  REFERENCED BY: sub_14000BE84 (0x14000c127)
+
+STRING: "VM is not on the list of registered VMs.
+" at 0x140011220
+  REFERENCED BY: sub_14000CE80 (0x14000ceff)
+
+STRING: "NX/XD must be enabled.  Cannot create VM.
+" at 0x140011250
+  REFERENCED BY: sub_14000BE84 (0x14000bed7)
+
+STRING: "5 level paging must not be enabled.  Cannot create VM.
+" at 0x140011280
+  REFERENCED BY: sub_14000BE84 (0x14000bf7e)
+
+STRING: "Could not validate the VMM bootstrap blob" at 0x1400112c0
+  REFERENCED BY: sub_14000BE84 (0x14000bfd4)
+
+STRING: "Error: page table VA %I64x is not page-aligned
+" at 0x1400112f0
+  REFERENCED BY: sub_14000B218 (0x14000b2dc)
+
+STRING: "Failure looking up page table root MPN for VCPU %d
+" at 0x140011320
+  REFERENCED BY: sub_14000B218 (0x14000b2c8)
+
+STRING: "Error loading VMM bootstrap blob
+" at 0x140011360
+  REFERENCED BY: sub_14000CAF8 (0x14000cb47)
+
+STRING: "Vmx86_ProcessBootstrap" at 0x140011390
+  REFERENCED BY: sub_14000CAF8 (0x14000cbad)
+
+STRING: "%s: PseudoTSC has not been initialized
+" at 0x1400113b0
+  REFERENCED BY: sub_14000CAF8 (0x14000cbb4)
+
+STRING: "Failed to allocate cross pages.
+" at 0x1400113e0
+  REFERENCED BY: sub_14000CAF8 (0x14000cc23)
+
+STRING: "Error initializing crosspage
+" at 0x140011410
+  REFERENCED BY: sub_14000CAF8 (0x14000cc17)
+
+STRING: "Error processing bootstrap: error %d at line %u, vcpu %u
+" at 0x140011430
+  REFERENCED BY: sub_14000CAF8 (0x14000cc5c)
+
+STRING: "Resetting last set host clock rate of %d
+" at 0x140011470
+  REFERENCED BY: sub_14000CFB4 (0x14000cfe2)
+
+STRING: "reference clock" at 0x1400114c0
+  REFERENCED BY: sub_14000C7D4 (0x14000c900)
+
+STRING: "PTSC: initialized at %I64u Hz using %s, TSCs are %ssynchronized.
+" at 0x1400114e0
+  REFERENCED BY: sub_14000C7D4 (0x14000c90b)
+
+STRING: "VMX_FailValid" at 0x140011530
+  REFERENCED BY: sub_14000A450 (0x14000a51b)
+
+STRING: "VMX_FailInvalid" at 0x140011540
+  REFERENCED BY: sub_14000A450 (0x14000a4ff)
+
+STRING: "UNKNOWN" at 0x140011550
+  REFERENCED BY: sub_14000A450 (0x14000a506)
+
+STRING: "%s failed with status %s.
+" at 0x140011560
+  REFERENCED BY: sub_14000A450 (0x14000a522)
+
+STRING: "VMCLEAR" at 0x140011580
+  REFERENCED BY: sub_14000A450 (0x14000a511)
+
+STRING: "Failed to allocate SVM I/O bitmap.
+" at 0x140011590
+  REFERENCED BY: sub_14000BE34 (0x14000be59)
+
+STRING: "Found a mismatch on MSR feature 0x%x; logical cpu%u value = 0x%llx, but logical cpu%u value = 0x%llx
+" at 0x1400115c0
+  REFERENCED BY: sub_14000A290 (0x14000a2f8)
+
+STRING: "Fatal, not enough memory for MSR feature uniformity checks" at 0x140011630
+  REFERENCED BY: sub_14000B92C (0x14000b9a8)
+
+STRING: "Failed to alloc %I64u pages: %I64d
+" at 0x140011670
+  REFERENCED BY: sub_14000D3E0 (0x14000d5fe)
+
+STRING: "ModuleCall %d not supported
+" at 0x1400116a0
+  REFERENCED BY: sub_14000D3E0 (0x14000d89e)
+
+STRING: "Unexpected error in modulecall %u (%llu)
+" at 0x1400116c0
+  REFERENCED BY: sub_14000D3E0 (0x14000d97a)
+
+STRING: "VMMON: log string (len %d): %s
+" at 0x1400117c0
+  REFERENCED BY: sub_14000DF58 (0x14000dfc7)
+
+STRING: "VMMON: log alloc size: %d (max %u)
+" at 0x1400117e0
+  REFERENCED BY: sub_14000DF58 (0x14000dfe4)
+
+STRING: "VMMON: LogEventMsg: Cannot allocate error log entry size %zu
+" at 0x140011810
+  REFERENCED BY: sub_14000DF58 (0x14000e006)
+
+STRING: "Failed to allocate memory for MonLoader context
+" at 0x140011850
+  REFERENCED BY: sub_14000F220 (0x14000f242)
+
+STRING: "Failed to read PTE %d from MPN %I64x
+" at 0x140011890
+  REFERENCED BY: sub_14000F14C (0x14000f187)
+
+STRING: "Failed to allocate page
+" at 0x1400118c0
+  REFERENCED BY: sub_14000EE70 (0x14000eeb9)
+
+STRING: "Failed to map MPN 0x%I64x
+" at 0x1400118e0
+  REFERENCED BY: sub_14000EE70 (0x14000eeeb)
+
+STRING: "Failed to track mapping from VPN 0x%lx to MPN 0x%I64x
+" at 0x140011900
+  REFERENCED BY: sub_14000EE70 (0x14000ef41)
+
+STRING: "Failed to map MPN %I64x
+" at 0x140011940
+  REFERENCED BY: sub_14000F278 (0x14000f2d9)
+
+STRING: "Failed to look up MPN 0x%I64x
+" at 0x140011960
+  REFERENCED BY: sub_14000F0AC (0x14000f11d), sub_14000EFA4 (0x14000f06e)
+
+STRING: "Invalid VMM blob copy parameters: blobOffset 0x%I64x, copySize 0x%I64x, blobSize 0x%I64x
+" at 0x140011980
+  REFERENCED BY: sub_14000EFA4 (0x14000f07f)
+
+STRING: "Failed to lookup MPN for shared region VA %lx
+" at 0x1400119e0
+  REFERENCED BY: sub_14000F300 (0x14000f3c9)
+
+STRING: "Invalid arguments for processing bootstrap:" at 0x140011a10
+  REFERENCED BY: sub_14000F474 (0x14000f5dd)
+
+STRING: "  Size          : %u  (expected <= %u)
+" at 0x140011a40
+  REFERENCED BY: sub_14000F474 (0x14000f5ec)
+
+STRING: "  Hdr Offs      : %u  (expected <= %d)
+" at 0x140011a70
+  REFERENCED BY: sub_14000F474 (0x14000f5fd)
+
+STRING: "  Fixed Hdr Offs: %I64u (expected <= %d)" at 0x140011aa0
+  REFERENCED BY: sub_14000F474 (0x14000f60e)
+
+STRING: "  Blob size: %u bytes
+" at 0x140011ad0
+  REFERENCED BY: sub_14000F474 (0x14000f624)
+
+STRING: "Memory allocation for VMM bootstrap blob failed
+" at 0x140011af0
+  REFERENCED BY: sub_14000F474 (0x14000f4e9), sub_14000F474 (0x14000f50c), sub_14000F474 (0x14000f533)
+
+STRING: "Error copying VMM bootstrap blob from userspace
+" at 0x140011b30
+  REFERENCED BY: sub_14000F474 (0x14000f558)
+
+STRING: "Invalid arguments for processing bootstrap. Header offset: %u, Number of header entries: %u, Blob size: %u bytes
+" at 0x140011b70
+  REFERENCED BY: sub_14000F474 (0x14000f58f)
+
+STRING: "SharedArea failed to allocate handle.
+" at 0x140011bf0
+  REFERENCED BY: sub_14000F728 (0x14000f740)
+
+STRING: "Failed to allocate pages array for region %u
+" at 0x140011c20
+  REFERENCED BY: sub_14000F768 (0x14000f7e6)
+
+STRING: "SharedAreaVmmon_GetRegionMPN" at 0x140011c50
+  REFERENCED BY: sub_14000F6A0 (0x14000f6d6), sub_14000F6A0 (0x14000f706)
+
+STRING: "(%s) Requested unregistered region %u, VCPU %u
+" at 0x140011c70
+  REFERENCED BY: sub_14000F6A0 (0x14000f70d)
+
+STRING: "(%s) Offset %I64u (type %u, per-VCPU size %I64u)
+" at 0x140011ca0
+  REFERENCED BY: sub_14000F6A0 (0x14000f6e5)
+
+STRING: "StatVars failed to allocate handle.
+" at 0x140011ce0
+  REFERENCED BY: sub_14000FA50 (0x14000fa63)
+
+STRING: "StatVarsVmmon_GetRegionMPN" at 0x140011d10
+  REFERENCED BY: sub_14000F9BC (0x14000f9ff)
+
+STRING: "(%s) Requested MPN at invalid offset %I64u for VCPU %u
+" at 0x140011d30
+  REFERENCED BY: sub_14000F9BC (0x14000fa09)
+
+STRING: "ntoskrnl.exe" at 0x140020c40
+  REFERENCED BY: 
+
+STRING: "HAL.dll" at 0x140020c6a
+  REFERENCED BY: 

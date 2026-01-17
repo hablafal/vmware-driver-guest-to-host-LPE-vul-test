@@ -1,0 +1,45 @@
+=== METADATA ===
+Name: sub_140005F5C
+Addr: 0x140005f5c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000922C (0x1400092A1)
+  <- sub_14000A450 (0x14000A4AB)
+  <- sub_14000ABC0 (0x14000AC28)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005f5c-0x140005f65 -> Jumps to: 
+
+=== CODE ===
+ULONG sub_140005F5C()
+{
+  return KeGetCurrentProcessorNumberEx(0);
+}
+
+
+=== DISASM ===
+0x140005f5c: xor     ecx, ecx
+0x140005f5e: jmp     cs:KeGetCurrentProcessorNumberEx

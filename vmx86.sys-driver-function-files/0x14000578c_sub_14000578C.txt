@@ -1,0 +1,116 @@
+=== METADATA ===
+Name: sub_14000578C
+Addr: 0x14000578c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x1400057a3: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000578c: Access Member +0x8 ([rsp+arg_0])
+  0x1400057a3: Access Member +0x28 ([rsp+38h+var_10])
+  0x1400057b2: Access Member +0x20 ([rsp+38h+CacheType])
+  0x1400057c5: Access Member +0x28 (dword ptr [rax+28h])
+  0x1400057ce: Access Member +0x30 ([rax+30h])
+  0x14000580e: Access Member +0x40 ([rsp+38h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008264 (0x1400082DE)
+
+=== IMPORTS ===
+  -> 0x1400057b7 calls MmAllocatePagesForMdlEx
+  -> 0x1400057f3 calls MmFreePagesFromMdl
+  -> 0x1400057fe calls ExFreePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000578c-0x1400057c5 -> Jumps to: 0x1400057c5, 0x140005804
+  Block 0x1400057c5-0x1400057ce -> Jumps to: 0x1400057ce, 0x1400057f0
+  Block 0x1400057ce-0x1400057e2 -> Jumps to: 0x1400057e2, 0x1400057f0
+  Block 0x1400057e2-0x1400057eb -> Jumps to: 0x1400057eb, 0x1400057f0
+  Block 0x1400057eb-0x1400057f0 -> Jumps to: 0x14000580e
+  Block 0x1400057f0-0x140005804 -> Jumps to: 0x140005804
+  Block 0x140005804-0x14000580e -> Jumps to: 0x14000580e
+  Block 0x14000580e-0x140005819 -> Jumps to: 
+
+=== CODE ===
+__int64 sub_14000578C()
+{
+  PMDL PagesForMdl; // rax
+  struct _MDL *v1; // rbx
+  unsigned __int64 Next; // rdi
+  volatile signed __int64 *v3; // rax
+
+  PagesForMdl = MmAllocatePagesForMdlEx(0, (PHYSICAL_ADDRESS)0x7FFFFFFFFFFFFFFFLL, 0, 1u, MmCached, 0);
+  v1 = PagesForMdl;
+  if ( PagesForMdl )
+  {
+    if ( PagesForMdl->ByteCount >= 0x1000 )
+    {
+      Next = (unsigned __int64)PagesForMdl[1].Next;
+      v3 = (volatile signed __int64 *)sub_14000501C(Next);
+      if ( v3 )
+      {
+        if ( !_InterlockedCompareExchange64(v3, (signed __int64)v1, 0) )
+          return Next;
+      }
+    }
+    MmFreePagesFromMdl(v1);
+    ExFreePoolWithTag(v1, 0);
+  }
+  return 0x3FFFFFFFFFLL;
+}
+
+
+=== DISASM ===
+0x14000578c: mov     [rsp+arg_0], rbx
+0x140005791: push    rdi
+0x140005792: sub     rsp, 30h
+0x140005796: mov     rcx, qword ptr cs:LowAddress; LowAddress
+0x14000579d: mov     r9d, 1; TotalBytes
+0x1400057a3: and     [rsp+38h+var_10], 0
+0x1400057a8: mov     r8, rcx; SkipBytes
+0x1400057ab: mov     rdx, qword ptr cs:HighestAcceptableAddress; HighAddress
+0x1400057b2: mov     [rsp+38h+CacheType], r9d; CacheType
+0x1400057b7: call    cs:MmAllocatePagesForMdlEx
+0x1400057bd: mov     rbx, rax
+0x1400057c0: test    rax, rax
+0x1400057c3: jz      short loc_140005804
+0x1400057c5: cmp     dword ptr [rax+28h], 1000h
+0x1400057cc: jb      short loc_1400057F0
+0x1400057ce: mov     rdi, [rax+30h]
+0x1400057d2: mov     rcx, rdi
+0x1400057d5: call    sub_14000501C
+0x1400057da: mov     rcx, rax
+0x1400057dd: test    rax, rax
+0x1400057e0: jz      short loc_1400057F0
+0x1400057e2: xor     eax, eax
+0x1400057e4: lock cmpxchg [rcx], rbx
+0x1400057e9: jnz     short loc_1400057F0
+0x1400057eb: mov     rax, rdi
+0x1400057ee: jmp     short loc_14000580E
+0x1400057f0: mov     rcx, rbx; MemoryDescriptorList
+0x1400057f3: call    cs:MmFreePagesFromMdl
+0x1400057f9: xor     edx, edx; Tag
+0x1400057fb: mov     rcx, rbx; P
+0x1400057fe: call    cs:ExFreePoolWithTag
+0x140005804: mov     rax, 3FFFFFFFFFh
+0x14000580e: mov     rbx, [rsp+38h+arg_0]
+0x140005813: add     rsp, 30h
+0x140005817: pop     rdi
+0x140005818: retn

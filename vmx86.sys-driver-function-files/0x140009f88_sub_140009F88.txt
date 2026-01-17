@@ -1,0 +1,104 @@
+=== METADATA ===
+Name: sub_140009F88
+Addr: 0x140009f88
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140009f88: Access Member +0x8 ([rsp+arg_0])
+  0x140009f8d: Access Member +0x10 ([rsp+arg_8])
+  0x140009f92: Access Member +0x18 ([rsp+arg_10])
+  0x140009ff4: Access Member +0x48 ([rsp+38h+arg_8])
+  0x140009ffc: Access Member +0x40 ([rsp+38h+arg_0])
+  0x14000a001: Access Member +0x50 ([rsp+38h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] 0x140009fb5: [CFG_TARGET] via r15
+  [!] 0x140009fd2: [CFG_TARGET] via rax
+
+=== CALLERS ===
+  <- sub_14000A754 (0x14000AA1B)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140009f88-0x140009fc7 -> Jumps to: 0x140009fc7, 0x140009ff4
+  Block 0x140009fc7-0x140009ff4 -> Jumps to: 0x140009ff4, 0x140009fc7
+  Block 0x140009ff4-0x14000a010 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140009F88(
+        __int64 a1,
+        __int64 (__fastcall *a2)(__int64, _QWORD, _QWORD),
+        unsigned int a3,
+        unsigned int a4)
+{
+  unsigned int v8; // edi
+  __int64 i; // rbx
+  __int64 v10; // rax
+
+  v8 = 1;
+  for ( i = a2(a1, a4, 0); v8 < a3; i = (unsigned int)i | (i | 0xFFFFFFFFLL) & v10 )
+    v10 = a2(a1, a4, v8++);
+  return i;
+}
+
+
+=== DISASM ===
+0x140009f88: mov     [rsp+arg_0], rbx
+0x140009f8d: mov     [rsp+arg_8], rbp
+0x140009f92: mov     [rsp+arg_10], rsi
+0x140009f97: push    rdi
+0x140009f98: push    r14
+0x140009f9a: push    r15
+0x140009f9c: sub     rsp, 20h
+0x140009fa0: mov     r14, rdx
+0x140009fa3: mov     ebp, r8d
+0x140009fa6: mov     rax, r14
+0x140009fa9: xor     r8d, r8d
+0x140009fac: mov     edx, r9d
+0x140009faf: mov     esi, r9d
+0x140009fb2: mov     r15, rcx
+0x140009fb5: call    cs:__guard_dispatch_icall_fptr
+0x140009fbb: mov     edi, 1
+0x140009fc0: mov     rbx, rax
+0x140009fc3: cmp     ebp, edi
+0x140009fc5: jbe     short loc_140009FF4
+0x140009fc7: mov     r8d, edi
+0x140009fca: mov     edx, esi
+0x140009fcc: mov     rcx, r15
+0x140009fcf: mov     rax, r14
+0x140009fd2: call    cs:__guard_dispatch_icall_fptr
+0x140009fd8: mov     rcx, rbx
+0x140009fdb: mov     edx, 0FFFFFFFFh
+0x140009fe0: or      rcx, rdx
+0x140009fe3: inc     edi
+0x140009fe5: and     rax, rcx
+0x140009fe8: mov     ecx, ebx
+0x140009fea: mov     rbx, rax
+0x140009fed: or      rbx, rcx
+0x140009ff0: cmp     edi, ebp
+0x140009ff2: jb      short loc_140009FC7
+0x140009ff4: mov     rbp, [rsp+38h+arg_8]
+0x140009ff9: mov     rax, rbx
+0x140009ffc: mov     rbx, [rsp+38h+arg_0]
+0x14000a001: mov     rsi, [rsp+38h+arg_10]
+0x14000a006: add     rsp, 20h
+0x14000a00a: pop     r15
+0x14000a00c: pop     r14
+0x14000a00e: pop     rdi
+0x14000a00f: retn

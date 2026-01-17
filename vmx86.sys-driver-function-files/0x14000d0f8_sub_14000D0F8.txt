@@ -1,0 +1,83 @@
+=== METADATA ===
+Name: sub_14000D0F8
+Addr: 0x14000d0f8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000d0f8: Access Member +0x8 ([rsp+arg_0])
+  0x14000d0fd: Access Member +0x10 ([rsp+arg_8])
+  0x14000d13b: Access Member +0x1 ([rbx+1])
+  0x14000d146: Access Member +0x38 ([rsp+28h+arg_8])
+  0x14000d14d: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140004379)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000d0f8-0x14000d13b -> Jumps to: 0x14000d13b, 0x14000d146
+  Block 0x14000d13b-0x14000d146 -> Jumps to: 0x14000d146
+  Block 0x14000d146-0x14000d158 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000D0F8(__int64 a1, unsigned __int64 a2)
+{
+  unsigned int v4; // ebx
+
+  sub_140007558(a1);
+  v4 = sub_1400073A4(a1, a2);
+  sub_140007564(a1);
+  if ( !v4 )
+    sub_14000B2F0(a1, 1);
+  return v4;
+}
+
+
+=== DISASM ===
+0x14000d0f8: mov     [rsp+arg_0], rbx
+0x14000d0fd: mov     [rsp+arg_8], rsi
+0x14000d102: push    rdi
+0x14000d103: sub     rsp, 20h
+0x14000d107: mov     rdi, rdx
+0x14000d10a: mov     rbx, r8
+0x14000d10d: mov     edx, 6
+0x14000d112: mov     rsi, rcx
+0x14000d115: call    sub_140007558
+0x14000d11a: mov     r8, rbx
+0x14000d11d: mov     rdx, rdi
+0x14000d120: mov     rcx, rsi
+0x14000d123: call    sub_1400073A4
+0x14000d128: mov     edx, 6
+0x14000d12d: mov     rcx, rsi
+0x14000d130: mov     ebx, eax
+0x14000d132: call    sub_140007564
+0x14000d137: test    ebx, ebx
+0x14000d139: jnz     short loc_14000D146
+0x14000d13b: lea     edx, [rbx+1]
+0x14000d13e: mov     rcx, rsi
+0x14000d141: call    sub_14000B2F0
+0x14000d146: mov     rsi, [rsp+28h+arg_8]
+0x14000d14b: mov     eax, ebx
+0x14000d14d: mov     rbx, [rsp+28h+arg_0]
+0x14000d152: add     rsp, 20h
+0x14000d156: pop     rdi
+0x14000d157: retn

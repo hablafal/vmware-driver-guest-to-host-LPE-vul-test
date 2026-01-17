@@ -1,0 +1,115 @@
+=== METADATA ===
+Name: sub_140003AE4
+Addr: 0x140003ae4
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140003ae4: Access Member +0x18 ([rsp+arg_10])
+  0x140003ae9: Access Member +0x20 (qword ptr [rsp+Args])
+  0x140003b1c: Access Member +0x58 ([rsp+38h+Args])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003A70 (0x140003ABA)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140003ae4-0x140003b04 -> Jumps to: 0x140003b04, 0x140003b13
+  Block 0x140003b04-0x140003b0e -> Jumps to: 0x140003b0e, 0x140003b40
+  Block 0x140003b0e-0x140003b13 -> Jumps to: 0x140003b40
+  Block 0x140003b13-0x140003b2a -> Jumps to: 0x140003b2a, 0x140003b38
+  Block 0x140003b2a-0x140003b31 -> Jumps to: 0x140003b31, 0x140003b38
+  Block 0x140003b31-0x140003b33 -> Jumps to: 0x140003b33, 0x140003b40
+  Block 0x140003b33-0x140003b38 -> Jumps to: 0x140003b40
+  Block 0x140003b38-0x140003b40 -> Jumps to: 0x140003b40
+  Block 0x140003b40-0x140003b4a -> Jumps to: 
+
+=== CODE ===
+__int64 sub_140003AE4(char *a1, __int64 a2, const char *a3, ...)
+{
+  unsigned int v4; // ebx
+  unsigned __int64 v5; // rdi
+  int v6; // eax
+  va_list Args; // [rsp+58h] [rbp+20h] BYREF
+
+  va_start(Args, a3);
+  if ( (unsigned __int64)(a2 - 1) <= 0x7FFFFFFE )
+  {
+    v5 = a2 - 1;
+    v4 = 0;
+    v6 = vsnprintf(a1, a2 - 1, a3, Args);
+    if ( v6 < 0 || v6 > v5 )
+    {
+      a1[v5] = 0;
+      return (unsigned int)-2147483643;
+    }
+    else if ( v6 == v5 )
+    {
+      a1[v5] = 0;
+    }
+  }
+  else
+  {
+    v4 = -1073741811;
+    if ( a2 )
+      *a1 = 0;
+  }
+  return v4;
+}
+
+
+=== DISASM ===
+0x140003ae4: mov     [rsp+arg_10], r8
+0x140003ae9: mov     qword ptr [rsp+Args], r9
+0x140003aee: push    rbx
+0x140003aef: push    rsi
+0x140003af0: push    rdi
+0x140003af1: sub     rsp, 20h
+0x140003af5: lea     rax, [rdx-1]
+0x140003af9: mov     rsi, rcx
+0x140003afc: cmp     rax, 7FFFFFFEh
+0x140003b02: jbe     short loc_140003B13
+0x140003b04: mov     ebx, 0C000000Dh
+0x140003b09: test    rdx, rdx
+0x140003b0c: jz      short loc_140003B40
+0x140003b0e: mov     byte ptr [rcx], 0
+0x140003b11: jmp     short loc_140003B40
+0x140003b13: lea     rdi, [rdx-1]
+0x140003b17: xor     ebx, ebx
+0x140003b19: mov     rdx, rdi; Count
+0x140003b1c: lea     r9, [rsp+38h+Args]; Args
+0x140003b21: call    _vsnprintf
+0x140003b26: test    eax, eax
+0x140003b28: js      short loc_140003B38
+0x140003b2a: cdqe
+0x140003b2c: cmp     rax, rdi
+0x140003b2f: ja      short loc_140003B38
+0x140003b31: jnz     short loc_140003B40
+0x140003b33: mov     [rdi+rsi], bl
+0x140003b36: jmp     short loc_140003B40
+0x140003b38: mov     [rdi+rsi], bl
+0x140003b3b: mov     ebx, 80000005h
+0x140003b40: mov     eax, ebx
+0x140003b42: add     rsp, 20h
+0x140003b46: pop     rdi
+0x140003b47: pop     rsi
+0x140003b48: pop     rbx
+0x140003b49: retn

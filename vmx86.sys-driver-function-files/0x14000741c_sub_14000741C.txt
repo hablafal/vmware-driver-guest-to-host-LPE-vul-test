@@ -1,0 +1,64 @@
+=== METADATA ===
+Name: sub_14000741C
+Addr: 0x14000741c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B350 (0x14000B353)
+  <- sub_14000D158 (0x14000D158)
+
+=== IMPORTS ===
+  -> 0x14000742c calls MmGetPhysicalAddress
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000741c-0x140007450 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_14000741C(__int64 a1)
+{
+  void *v1; // rbx
+  PHYSICAL_ADDRESS PhysicalAddress; // rax
+  PMDL *v3; // rax
+
+  v1 = (void *)(a1 << 12);
+  PhysicalAddress = MmGetPhysicalAddress((PVOID)(a1 << 12));
+  v3 = (PMDL *)sub_14000501C(PhysicalAddress.QuadPart >> 12);
+  MmUnmapLockedPages(v1, *v3);
+}
+
+
+=== DISASM ===
+0x14000741c: push    rbx
+0x14000741e: sub     rsp, 20h
+0x140007422: mov     rbx, rcx
+0x140007425: shl     rbx, 0Ch
+0x140007429: mov     rcx, rbx; BaseAddress
+0x14000742c: call    cs:MmGetPhysicalAddress
+0x140007432: sar     rax, 0Ch
+0x140007436: mov     rcx, rax
+0x140007439: call    sub_14000501C
+0x14000743e: mov     rcx, rbx
+0x140007441: mov     rdx, [rax]
+0x140007444: add     rsp, 20h
+0x140007448: pop     rbx
+0x140007449: jmp     cs:MmUnmapLockedPages

@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: ZwAlertThread
+Addr: 0x14000fd82
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140006FB0 (0x140007012)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fd82-0x14000fd88 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+NTSTATUS __stdcall ZwAlertThread(HANDLE ThreadHandle)
+{
+  return __imp_ZwAlertThread(ThreadHandle);
+}
+
+
+=== DISASM ===
+0x14000fd82: jmp     cs:__imp_ZwAlertThread

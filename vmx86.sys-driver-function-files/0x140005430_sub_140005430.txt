@@ -1,0 +1,94 @@
+=== METADATA ===
+Name: sub_140005430
+Addr: 0x140005430
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005436: Access Member +0x60 (qword ptr [rcx+60h])
+  0x14000543d: Access Member +0x58 ([rcx+58h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x1400040ED)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005430-0x14000543d -> Jumps to: 0x14000543d, 0x14000547a
+  Block 0x14000543d-0x140005446 -> Jumps to: 0x140005446, 0x14000547a
+  Block 0x140005446-0x14000545b -> Jumps to: 0x14000545b, 0x140005464
+  Block 0x14000545b-0x140005464 -> Jumps to: 
+  Block 0x140005464-0x14000546f -> Jumps to: 0x14000546f, 0x14000547a
+  Block 0x14000546f-0x14000547a -> Jumps to: 0x14000547a
+  Block 0x14000547a-0x140005480 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140005430(__int64 a1)
+{
+  _BYTE *v1; // rbx
+  __int64 v2; // rax
+
+  if ( !*(_QWORD *)(a1 + 96) )
+  {
+    v1 = (_BYTE *)(a1 + 88);
+    if ( !*(_BYTE *)(a1 + 88) )
+    {
+      if ( (__readmsr(0x1Bu) & 0x400) != 0 )
+      {
+        *v1 = 1;
+      }
+      else
+      {
+        v2 = sub_14000E24C(27);
+        if ( v2 != -1 )
+          sub_140007AD0(v1, v2);
+      }
+    }
+  }
+}
+
+
+=== DISASM ===
+0x140005430: push    rbx
+0x140005432: sub     rsp, 20h
+0x140005436: cmp     qword ptr [rcx+60h], 0
+0x14000543b: jnz     short loc_14000547A
+0x14000543d: lea     rbx, [rcx+58h]
+0x140005441: cmp     byte ptr [rbx], 0
+0x140005444: jnz     short loc_14000547A
+0x140005446: mov     ecx, 1Bh
+0x14000544b: rdmsr
+0x14000544d: shl     rdx, 20h
+0x140005451: or      rax, rdx
+0x140005454: bt      rax, 0Ah
+0x140005459: jnb     short loc_140005464
+0x14000545b: mov     byte ptr [rbx], 1
+0x14000545e: add     rsp, 20h
+0x140005462: pop     rbx
+0x140005463: retn
+0x140005464: call    sub_14000E24C
+0x140005469: cmp     rax, 0FFFFFFFFFFFFFFFFh
+0x14000546d: jz      short loc_14000547A
+0x14000546f: mov     rdx, rax
+0x140005472: mov     rcx, rbx
+0x140005475: call    sub_140007AD0
+0x14000547a: add     rsp, 20h
+0x14000547e: pop     rbx
+0x14000547f: retn

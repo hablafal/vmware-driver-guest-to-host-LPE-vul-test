@@ -1,0 +1,76 @@
+=== METADATA ===
+Name: sub_140005EF8
+Addr: 0x140005ef8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008264 (0x14000832A)
+  <- sub_140009D10 (0x140009D3F)
+
+=== IMPORTS ===
+  -> 0x140005f15 calls MmFreePagesFromMdl
+  -> 0x140005f20 calls ExFreePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005ef8-0x140005f08 -> Jumps to: 0x140005f08, 0x140005f26
+  Block 0x140005f08-0x140005f12 -> Jumps to: 0x140005f12, 0x140005f26
+  Block 0x140005f12-0x140005f26 -> Jumps to: 0x140005f26
+  Block 0x140005f26-0x140005f2c -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140005EF8(unsigned __int64 a1)
+{
+  volatile __int64 *v1; // rax
+  struct _MDL *v2; // rbx
+
+  v1 = (volatile __int64 *)sub_14000501C(a1);
+  if ( v1 )
+  {
+    v2 = (struct _MDL *)_InterlockedExchange64(v1, 0);
+    if ( v2 )
+    {
+      MmFreePagesFromMdl(v2);
+      ExFreePoolWithTag(v2, 0);
+    }
+  }
+}
+
+
+=== DISASM ===
+0x140005ef8: push    rbx
+0x140005efa: sub     rsp, 20h
+0x140005efe: call    sub_14000501C
+0x140005f03: test    rax, rax
+0x140005f06: jz      short loc_140005F26
+0x140005f08: xor     ebx, ebx
+0x140005f0a: xchg    rbx, [rax]
+0x140005f0d: test    rbx, rbx
+0x140005f10: jz      short loc_140005F26
+0x140005f12: mov     rcx, rbx; MemoryDescriptorList
+0x140005f15: call    cs:MmFreePagesFromMdl
+0x140005f1b: xor     edx, edx; Tag
+0x140005f1d: mov     rcx, rbx; P
+0x140005f20: call    cs:ExFreePoolWithTag
+0x140005f26: add     rsp, 20h
+0x140005f2a: pop     rbx
+0x140005f2b: retn

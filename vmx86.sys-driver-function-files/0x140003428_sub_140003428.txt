@@ -1,0 +1,47 @@
+=== METADATA ===
+Name: sub_140003428
+Addr: 0x140003428
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000AF10 (0x14000AF19)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140003428-0x140003435 -> Jumps to: 
+
+=== CODE ===
+__int64 sub_140003428()
+{
+  __int64 result; // rax
+
+  __asm { rdsspq  rax }
+  return result;
+}
+
+
+=== DISASM ===
+0x140003428: mov     rax, 3
+0x14000342f: rdsspq  rax
+0x140003434: retn

@@ -1,0 +1,82 @@
+=== METADATA ===
+Name: sub_14000F728
+Addr: 0x14000f728
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f730: Access Member +0x60 ([rdx+60h])
+  0x14000f755: Access Member +0x60 ([rdx+60h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000BE84 (0x14000C036)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f740 -> SharedArea failed to allocate handle.
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000f728-0x14000f740 -> Jumps to: 0x14000f740, 0x14000f750
+  Block 0x14000f740-0x14000f750 -> Jumps to: 0x14000f761
+  Block 0x14000f750-0x14000f761 -> Jumps to: 0x14000f761
+  Block 0x14000f761-0x14000f767 -> Jumps to: 
+
+=== CODE ===
+PVOID sub_14000F728()
+{
+  PVOID v0; // rax
+  PVOID v1; // rbx
+
+  v0 = sub_1400055C0(0x60u, 0);
+  v1 = v0;
+  if ( v0 )
+  {
+    sub_14000FEC0(v0, 0, 96);
+    return v1;
+  }
+  else
+  {
+    sub_140003A14("SharedArea failed to allocate handle.\n");
+    return 0;
+  }
+}
+
+
+=== DISASM ===
+0x14000f728: push    rbx
+0x14000f72a: sub     rsp, 20h
+0x14000f72e: xor     edx, edx
+0x14000f730: lea     ecx, [rdx+60h]; NumberOfBytes
+0x14000f733: call    sub_1400055C0
+0x14000f738: mov     rbx, rax
+0x14000f73b: test    rax, rax
+0x14000f73e: jnz     short loc_14000F750
+0x14000f740: lea     rcx, aSharedareaFail; "SharedArea failed to allocate handle.\n"
+0x14000f747: call    sub_140003A14
+0x14000f74c: xor     eax, eax
+0x14000f74e: jmp     short loc_14000F761
+0x14000f750: xor     edx, edx
+0x14000f752: mov     rcx, rbx
+0x14000f755: lea     r8d, [rdx+60h]
+0x14000f759: call    sub_14000FEC0
+0x14000f75e: mov     rax, rbx
+0x14000f761: add     rsp, 20h
+0x14000f765: pop     rbx
+0x14000f766: retn

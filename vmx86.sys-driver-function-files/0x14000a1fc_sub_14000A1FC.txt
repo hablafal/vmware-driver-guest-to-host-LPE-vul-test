@@ -1,0 +1,108 @@
+=== METADATA ===
+Name: sub_14000A1FC
+Addr: 0x14000a1fc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000a1fc: Access Member +0x8 ([rsp+arg_0])
+  0x14000a201: Access Member +0x10 ([rsp+arg_8])
+  0x14000a226: Access Member +0xC6 (byte ptr [rbx+0C6h])
+  0x14000a23c: Access Member +0xA8 ([rbx+0A8h])
+  0x14000a254: Access Member +0xA0 ([rbx+0A0h])
+  0x14000a25b: Access Member +0x90 ([rbx+90h])
+  0x14000a272: Access Member +0x8 ([rbx+8])
+  0x14000a27b: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000a283: Access Member +0x38 ([rsp+28h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B3B8 (0x14000B3E4)
+  <- sub_14000C280 (0x14000C355)
+  <- sub_14000CCBC (0x14000CCF2)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000a1fc-0x14000a219 -> Jumps to: 0x14000a276
+  Block 0x14000a219-0x14000a22f -> Jumps to: 0x14000a22f, 0x14000a265
+  Block 0x14000a22f-0x14000a265 -> Jumps to: 0x14000a265
+  Block 0x14000a265-0x14000a276 -> Jumps to: 0x14000a276
+  Block 0x14000a276-0x14000a27b -> Jumps to: 0x14000a219, 0x14000a27b
+  Block 0x14000a27b-0x14000a28e -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000A1FC(unsigned __int8 a1)
+{
+  __int64 v1; // rbx
+  __int64 v2; // rdi
+  __int64 v3; // rsi
+
+  v1 = qword_14001CF58;
+  v2 = 0;
+  v3 = a1;
+  while ( v1 )
+  {
+    sub_140007558(v1);
+    if ( *(_BYTE *)(v1 + 198) )
+      v2 += *(_QWORD *)(v1 + 144) + *(_QWORD *)(v1 + 160) + *(_QWORD *)(v1 + 168) * v3 / 0x64uLL;
+    sub_140007564(v1);
+    v1 = *(_QWORD *)(v1 + 8);
+  }
+  return v2;
+}
+
+
+=== DISASM ===
+0x14000a1fc: mov     [rsp+arg_0], rbx
+0x14000a201: mov     [rsp+arg_8], rsi
+0x14000a206: push    rdi
+0x14000a207: sub     rsp, 20h
+0x14000a20b: mov     rbx, cs:qword_14001CF58
+0x14000a212: xor     edi, edi
+0x14000a214: movzx   esi, cl
+0x14000a217: jmp     short loc_14000A276
+0x14000a219: mov     edx, 2
+0x14000a21e: mov     rcx, rbx
+0x14000a221: call    sub_140007558
+0x14000a226: cmp     byte ptr [rbx+0C6h], 0
+0x14000a22d: jz      short loc_14000A265
+0x14000a22f: mov     rcx, rsi
+0x14000a232: mov     rax, 47AE147AE147AE15h
+0x14000a23c: imul    rcx, [rbx+0A8h]
+0x14000a244: mul     rcx
+0x14000a247: sub     rcx, rdx
+0x14000a24a: shr     rcx, 1
+0x14000a24d: add     rcx, rdx
+0x14000a250: shr     rcx, 6
+0x14000a254: add     rcx, [rbx+0A0h]
+0x14000a25b: add     rcx, [rbx+90h]
+0x14000a262: add     rdi, rcx
+0x14000a265: mov     edx, 2
+0x14000a26a: mov     rcx, rbx
+0x14000a26d: call    sub_140007564
+0x14000a272: mov     rbx, [rbx+8]
+0x14000a276: test    rbx, rbx
+0x14000a279: jnz     short loc_14000A219
+0x14000a27b: mov     rbx, [rsp+28h+arg_0]
+0x14000a280: mov     rax, rdi
+0x14000a283: mov     rsi, [rsp+28h+arg_8]
+0x14000a288: add     rsp, 20h
+0x14000a28c: pop     rdi
+0x14000a28d: retn

@@ -1,0 +1,64 @@
+=== METADATA ===
+Name: sub_14000E2E8
+Addr: 0x14000e2e8
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000e2fd: Access Member +0x8 ([rcx+8])
+  0x14000e301: Access Member +0x30 ([rax+30h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000922C (0x14000932A)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000e2e8-0x14000e2ed -> Jumps to: 0x14000e2ed, 0x14000e2fd
+  Block 0x14000e2ed-0x14000e2fd -> Jumps to: 0x14000e304
+  Block 0x14000e2fd-0x14000e304 -> Jumps to: 0x14000e304
+  Block 0x14000e304-0x14000e30b -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000E2E8(__int64 a1)
+{
+  unsigned __int64 v1; // rax
+
+  if ( *(_BYTE *)a1 )
+    v1 = __readmsr(0x803u);
+  else
+    LODWORD(v1) = *(_DWORD *)(*(_QWORD *)(a1 + 8) + 48LL);
+  return BYTE2(v1);
+}
+
+
+=== DISASM ===
+0x14000e2e8: cmp     byte ptr [rcx], 0
+0x14000e2eb: jz      short loc_14000E2FD
+0x14000e2ed: mov     ecx, 803h
+0x14000e2f2: rdmsr
+0x14000e2f4: shl     rdx, 20h
+0x14000e2f8: or      rax, rdx
+0x14000e2fb: jmp     short loc_14000E304
+0x14000e2fd: mov     rax, [rcx+8]
+0x14000e301: mov     eax, [rax+30h]
+0x14000e304: shr     eax, 10h
+0x14000e307: movzx   eax, al
+0x14000e30a: retn

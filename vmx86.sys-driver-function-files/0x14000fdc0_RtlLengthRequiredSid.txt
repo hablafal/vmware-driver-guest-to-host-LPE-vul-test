@@ -1,0 +1,44 @@
+=== METADATA ===
+Name: RtlLengthRequiredSid
+Addr: 0x14000fdc0
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z (0x14000DB3C)
+  <- ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z (0x14000DBD6)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fdc0-0x14000fdc6 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+ULONG __stdcall RtlLengthRequiredSid(ULONG SubAuthorityCount)
+{
+  return __imp_RtlLengthRequiredSid(SubAuthorityCount);
+}
+
+
+=== DISASM ===
+0x14000fdc0: jmp     cs:__imp_RtlLengthRequiredSid

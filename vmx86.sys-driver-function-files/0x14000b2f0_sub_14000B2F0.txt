@@ -1,0 +1,75 @@
+=== METADATA ===
+Name: sub_14000B2F0
+Addr: 0x14000b2f0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000b2f0: Access Member +0x8 ([rsp+arg_0])
+  0x14000b323: Access Member +0xB0 ([rdi+0B0h])
+  0x14000b337: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B768 (0x14000B7E6)
+  <- sub_14000B804 (0x14000B86A)
+  <- sub_14000C15C (0x14000C1A5)
+  <- sub_14000C9DC (0x14000CA4C)
+  <- sub_14000D0A8 (0x14000D0E6)
+  <- sub_14000D0F8 (0x14000D141)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000b2f0-0x14000b346 -> Jumps to: 0x140005fc8
+  Block 0x140005fc8-0x140005fc8 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_14000B2F0(__int64 a1, __int64 a2)
+{
+  sub_140005FB8();
+  sub_140007558(a1);
+  qword_14001CF78 -= a2;
+  *(_QWORD *)(a1 + 176) -= a2;
+  sub_140007564(a1);
+  sub_140005FC8();
+}
+
+
+=== DISASM ===
+0x14000b2f0: mov     [rsp+arg_0], rbx
+0x14000b2f5: push    rdi
+0x14000b2f6: sub     rsp, 20h
+0x14000b2fa: mov     rdi, rcx
+0x14000b2fd: mov     rbx, rdx
+0x14000b300: mov     ecx, 12h
+0x14000b305: call    sub_140005FB8
+0x14000b30a: mov     edx, 1
+0x14000b30f: mov     rcx, rdi
+0x14000b312: call    sub_140007558
+0x14000b317: sub     cs:qword_14001CF78, rbx
+0x14000b31e: mov     edx, 1
+0x14000b323: sub     [rdi+0B0h], rbx
+0x14000b32a: mov     rcx, rdi
+0x14000b32d: call    sub_140007564
+0x14000b332: mov     ecx, 12h
+0x14000b337: mov     rbx, [rsp+28h+arg_0]
+0x14000b33c: add     rsp, 20h
+0x14000b340: pop     rdi
+0x14000b341: jmp     sub_140005FC8

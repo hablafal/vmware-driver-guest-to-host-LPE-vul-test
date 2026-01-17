@@ -1,0 +1,185 @@
+=== METADATA ===
+Name: sub_14000CFB4
+Addr: 0x14000cfb4
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000cfb7: Access Member +0x8 ([rax+8])
+  0x14000cfbb: Access Member +0x10 ([rax+10h])
+  0x14000cfbf: Access Member +0x18 ([rax+18h])
+  0x14000cfc3: Access Member +0x20 ([rax+20h])
+  0x14000d006: Access Member +0xD8 ([rcx+0D8h])
+  0x14000d01c: Access Member +0xD8 ([rdi+0D8h])
+  0x14000d03e: Access Member +0xD8 ([rdx+0D8h])
+  0x14000d049: Access Member +0x8 ([rdx+8])
+  0x14000d052: Access Member +0x13 ([rdx+13h])
+  0x14000d076: Access Member +0xD8 ([rdi+0D8h])
+  0x14000d08b: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000d090: Access Member +0x38 ([rsp+28h+arg_8])
+  0x14000d095: Access Member +0x40 ([rsp+28h+arg_10])
+  0x14000d09a: Access Member +0x48 ([rsp+28h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x1400041AC)
+  <- HandleInformation (0x140004BEA)
+  <- sub_14000A564 (0x14000A57C)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000cfe2 -> Resetting last set host clock rate of %d
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000cfb4-0x14000cfdc -> Jumps to: 0x14000cfdc, 0x14000d006
+  Block 0x14000cfdc-0x14000d006 -> Jumps to: 0x14000d084
+  Block 0x14000d006-0x14000d00e -> Jumps to: 0x14000d00e, 0x14000d012
+  Block 0x14000d00e-0x14000d012 -> Jumps to: 0x14000d08b
+  Block 0x14000d012-0x14000d024 -> Jumps to: 0x14000d024, 0x14000d07f
+  Block 0x14000d024-0x14000d039 -> Jumps to: 0x14000d04d
+  Block 0x14000d039-0x14000d03e -> Jumps to: 0x14000d03e, 0x14000d049
+  Block 0x14000d03e-0x14000d049 -> Jumps to: 0x14000d049
+  Block 0x14000d049-0x14000d04d -> Jumps to: 0x14000d04d
+  Block 0x14000d04d-0x14000d052 -> Jumps to: 0x14000d039, 0x14000d052
+  Block 0x14000d052-0x14000d062 -> Jumps to: 0x14000d062, 0x14000d076
+  Block 0x14000d062-0x14000d070 -> Jumps to: 0x14000d070, 0x14000d07c
+  Block 0x14000d070-0x14000d076 -> Jumps to: 0x14000d076
+  Block 0x14000d076-0x14000d07c -> Jumps to: 0x14000d07c
+  Block 0x14000d07c-0x14000d07f -> Jumps to: 0x14000d07f
+  Block 0x14000d07f-0x14000d084 -> Jumps to: 0x14000d084
+  Block 0x14000d084-0x14000d08b -> Jumps to: 0x14000d08b
+  Block 0x14000d08b-0x14000d0a6 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000CFB4(__int64 a1, unsigned int a2)
+{
+  unsigned int v2; // ebx
+  unsigned int v5; // r14d
+  unsigned int v7; // esi
+  __int64 i; // rdx
+
+  v2 = 0;
+  v5 = 0;
+  if ( !a1 )
+  {
+    sub_140003A14("Resetting last set host clock rate of %d\n", dword_14001D094);
+    sub_140005B7C();
+    v2 = sub_14000717C(dword_14001D094);
+    goto LABEL_17;
+  }
+  if ( *(_DWORD *)(a1 + 216) == a2 )
+    return 0;
+  sub_140005B7C();
+  if ( *(_DWORD *)(a1 + 216) != a2 )
+  {
+    v7 = a2;
+    sub_140005FB8();
+    for ( i = qword_14001CF58; i; i = *(_QWORD *)(i + 8) )
+    {
+      if ( i != a1 && *(_DWORD *)(i + 216) > v7 )
+        v7 = *(_DWORD *)(i + 216);
+    }
+    sub_140005FC8();
+    if ( v7 != dword_14001D094 )
+    {
+      v5 = sub_14000717C(v7);
+      if ( v5 )
+      {
+LABEL_16:
+        v2 = v5;
+        goto LABEL_17;
+      }
+      dword_14001D094 = v7;
+    }
+    *(_DWORD *)(a1 + 216) = a2;
+    goto LABEL_16;
+  }
+LABEL_17:
+  sub_140005B8C();
+  return v2;
+}
+
+
+=== DISASM ===
+0x14000cfb4: mov     rax, rsp
+0x14000cfb7: mov     [rax+8], rbx
+0x14000cfbb: mov     [rax+10h], rbp
+0x14000cfbf: mov     [rax+18h], rsi
+0x14000cfc3: mov     [rax+20h], rdi
+0x14000cfc7: push    r14
+0x14000cfc9: sub     rsp, 20h
+0x14000cfcd: xor     ebx, ebx
+0x14000cfcf: mov     ebp, edx
+0x14000cfd1: mov     rdi, rcx
+0x14000cfd4: mov     r14d, ebx
+0x14000cfd7: test    rcx, rcx
+0x14000cfda: jnz     short loc_14000D006
+0x14000cfdc: mov     edx, cs:dword_14001D094
+0x14000cfe2: lea     rcx, aResettingLastS; "Resetting last set host clock rate of %"...
+0x14000cfe9: call    sub_140003A14
+0x14000cfee: xor     ecx, ecx
+0x14000cff0: call    sub_140005B7C
+0x14000cff5: mov     ecx, cs:dword_14001D094
+0x14000cffb: call    sub_14000717C
+0x14000d000: mov     ebx, eax
+0x14000d002: xor     ecx, ecx
+0x14000d004: jmp     short loc_14000D084
+0x14000d006: cmp     [rcx+0D8h], ebp
+0x14000d00c: jnz     short loc_14000D012
+0x14000d00e: xor     eax, eax
+0x14000d010: jmp     short loc_14000D08B
+0x14000d012: mov     ecx, 2
+0x14000d017: call    sub_140005B7C
+0x14000d01c: cmp     [rdi+0D8h], ebp
+0x14000d022: jz      short loc_14000D07F
+0x14000d024: mov     ecx, 13h
+0x14000d029: mov     esi, ebp
+0x14000d02b: call    sub_140005FB8
+0x14000d030: mov     rdx, cs:qword_14001CF58
+0x14000d037: jmp     short loc_14000D04D
+0x14000d039: cmp     rdx, rdi
+0x14000d03c: jz      short loc_14000D049
+0x14000d03e: mov     eax, [rdx+0D8h]
+0x14000d044: cmp     eax, esi
+0x14000d046: cmova   esi, eax
+0x14000d049: mov     rdx, [rdx+8]
+0x14000d04d: test    rdx, rdx
+0x14000d050: jnz     short loc_14000D039
+0x14000d052: lea     ecx, [rdx+13h]
+0x14000d055: call    sub_140005FC8
+0x14000d05a: cmp     esi, cs:dword_14001D094
+0x14000d060: jz      short loc_14000D076
+0x14000d062: mov     ecx, esi
+0x14000d064: call    sub_14000717C
+0x14000d069: mov     r14d, eax
+0x14000d06c: test    eax, eax
+0x14000d06e: jnz     short loc_14000D07C
+0x14000d070: mov     cs:dword_14001D094, esi
+0x14000d076: mov     [rdi+0D8h], ebp
+0x14000d07c: mov     ebx, r14d
+0x14000d07f: mov     ecx, 2
+0x14000d084: call    sub_140005B8C
+0x14000d089: mov     eax, ebx
+0x14000d08b: mov     rbx, [rsp+28h+arg_0]
+0x14000d090: mov     rbp, [rsp+28h+arg_8]
+0x14000d095: mov     rsi, [rsp+28h+arg_10]
+0x14000d09a: mov     rdi, [rsp+28h+arg_18]
+0x14000d09f: add     rsp, 20h
+0x14000d0a3: pop     r14
+0x14000d0a5: retn

@@ -1,0 +1,66 @@
+=== METADATA ===
+Name: sub_14000C99C
+Addr: 0x14000c99c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000c9aa: Access Member +0x28 ([rsp+38h+var_10])
+  0x14000c9af: Access Member +0x20 ([rsp+38h+var_18])
+  0x14000c9b4: Access Member +0x20 ([rsp+38h+var_18])
+  0x14000c9c5: Access Member +0x20 ([rsp+38h+var_18])
+  0x14000c9c9: Access Member +0x28 ([rsp+38h+var_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x1400046C0)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000c9a0 -> 2
+  0x14000c9b9 -> @SH
+
+=== BASIC BLOCKS ===
+  Block 0x14000c99c-0x14000c9db -> Jumps to: 
+
+=== CODE ===
+char sub_14000C99C()
+{
+  _BYTE v1[8]; // [rsp+20h] [rbp-18h] BYREF
+
+  v1[0] = 0;
+  sub_140005828((__int64)sub_14000AF10, (__int64)v1);
+  return v1[0];
+}
+
+
+=== DISASM ===
+0x14000c99c: sub     rsp, 38h
+0x14000c9a0: mov     rax, cs:__security_cookie
+0x14000c9a7: xor     rax, rsp
+0x14000c9aa: mov     [rsp+38h+var_10], rax
+0x14000c9af: lea     rdx, [rsp+38h+var_18]
+0x14000c9b4: mov     [rsp+38h+var_18], 0
+0x14000c9b9: lea     rcx, sub_14000AF10
+0x14000c9c0: call    sub_140005828
+0x14000c9c5: mov     al, [rsp+38h+var_18]
+0x14000c9c9: mov     rcx, [rsp+38h+var_10]
+0x14000c9ce: xor     rcx, rsp; StackCookie
+0x14000c9d1: call    __security_check_cookie
+0x14000c9d6: add     rsp, 38h
+0x14000c9da: retn

@@ -1,0 +1,407 @@
+=== METADATA ===
+Name: sub_140007830
+Addr: 0x140007830
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] MEMORY_MAPPING_RW
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140007864: AND with Mask 0xFFF
+  0x14000797f: AND with Mask 0xFFFFFFFFFFFFFFFE
+  0x1400079b2: AND with Mask 0x2
+  0x1400079b5: OR with Mask 0xFFFFFFFFFFFFFFFF
+  0x140007aa4: OR with Mask 0xFFFFFFFFFFFFFFFF
+
+=== MEMBER ACCESS ===
+  0x140007830: Access Member +0x20 ([rsp-8+arg_18])
+  0x140007853: Access Member +0x27 ([rbp+4Fh+var_28])
+  0x1400078d6: Access Member +0x10 ([r9+rax*8+10h])
+  0x1400078eb: Access Member +0x1 ([rdx+1])
+  0x14000793a: Access Member +0x17 ([rbp+4Fh+DestinationString])
+  0x14000793e: Access Member +0x7 ([rbp+4Fh+var_48])
+  0x140007946: Access Member +0x17 (xmmword ptr [rbp+4Fh+DestinationString.Length])
+  0x140007957: Access Member +0x17 ([rbp+4Fh+DestinationString])
+  0x140007963: Access Member +0x7F ([rbp+4Fh+arg_20])
+  0x14000799c: Access Member +0x7F ([rbp+4Fh+arg_20])
+  0x1400079a5: Access Member +0xF (qword ptr [rbp+4Fh+var_40])
+  0x1400079a9: Access Member +0x7 ([rbp+4Fh+var_48])
+  0x1400079bc: Access Member +0x48 ([rsp+0E0h+Win32Protect])
+  0x1400079c0: Access Member +0x40 ([rsp+0E0h+var_A0])
+  0x1400079c9: Access Member +0x38 ([rsp+0E0h+InheritDisposition])
+  0x1400079d1: Access Member +0x30 ([rsp+0E0h+ViewSize])
+  0x1400079d6: Access Member +0xF ([rbp+4Fh+var_40])
+  0x1400079da: Access Member +0x28 ([rsp+0E0h+SectionOffset])
+  0x1400079df: Access Member +0x20 ([rsp+0E0h+CommitSize])
+  0x140007a01: Access Member +0x27 ([rbp+4Fh+var_28])
+  0x140007a0d: Access Member +0x108 ([rsp+0E0h+arg_18])
+  0x140007a53: Access Member +0x7F ([rbp+4Fh+arg_20])
+  0x140007a75: Access Member +0x7F ([rbp+4Fh+arg_20])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] 0x14000791d: [CFG_TARGET] via r8d
+
+=== CALLERS ===
+  <- sub_1400067C0 (0x1400067FF)
+  <- sub_1400077DC (0x14000781B)
+
+=== IMPORTS ===
+  -> 0x14000794d calls RtlInitUnicodeString
+  -> 0x14000798a calls ZwOpenSection
+  -> 0x1400079e8 calls ZwMapViewOfSection
+  -> 0x1400079f6 calls ZwClose
+  -> 0x140007a2e calls MmMapIoSpace
+  -> 0x140007aa8 calls ZwUnmapViewOfSection
+  -> 0x140007ab2 calls ZwClose
+  -> 0x140007ac2 calls MmUnmapIoSpace
+
+=== STRINGS ===
+  0x140007849 -> 2
+  0x14000792f -> \
+
+=== BASIC BLOCKS ===
+  Block 0x140007830-0x14000788f -> Jumps to: 0x14000788f, 0x1400079fc
+  Block 0x14000788f-0x1400078a3 -> Jumps to: 0x1400078a3, 0x1400079fc
+  Block 0x1400078a3-0x1400078b3 -> Jumps to: 0x1400078b3, 0x1400078f8
+  Block 0x1400078b3-0x1400078ba -> Jumps to: 0x1400078ba
+  Block 0x1400078ba-0x1400078d6 -> Jumps to: 0x1400078d6, 0x1400078dd
+  Block 0x1400078d6-0x1400078dd -> Jumps to: 0x1400078dd, 0x140007928
+  Block 0x1400078dd-0x1400078f8 -> Jumps to: 0x1400078ba, 0x1400078f8
+  Block 0x1400078f8-0x140007917 -> Jumps to: 0x140007917, 0x140007a2b
+  Block 0x140007917-0x140007928 -> Jumps to: 0x140007a34
+  Block 0x140007928-0x140007994 -> Jumps to: 0x140007994, 0x1400079fc
+  Block 0x140007994-0x1400079f2 -> Jumps to: 0x1400079f2, 0x140007a25
+  Block 0x1400079f2-0x1400079fc -> Jumps to: 0x1400079fc
+  Block 0x1400079fc-0x140007a01 -> Jumps to: 0x140007a01
+  Block 0x140007a01-0x140007a25 -> Jumps to: 
+  Block 0x140007a25-0x140007a2b -> Jumps to: 0x140007a3b
+  Block 0x140007a2b-0x140007a34 -> Jumps to: 0x140007a34
+  Block 0x140007a34-0x140007a3b -> Jumps to: 0x140007a3b
+  Block 0x140007a3b-0x140007a40 -> Jumps to: 0x140007a40, 0x140007a47
+  Block 0x140007a40-0x140007a47 -> Jumps to: 0x140007a01
+  Block 0x140007a47-0x140007a53 -> Jumps to: 0x140007a53, 0x140007a75
+  Block 0x140007a53-0x140007a59 -> Jumps to: 0x140007a59, 0x140007a67
+  Block 0x140007a59-0x140007a67 -> Jumps to: 0x140007a98
+  Block 0x140007a67-0x140007a75 -> Jumps to: 0x140007a9c
+  Block 0x140007a75-0x140007a7b -> Jumps to: 0x140007a7b, 0x140007a89
+  Block 0x140007a7b-0x140007a89 -> Jumps to: 0x140007a95
+  Block 0x140007a89-0x140007a95 -> Jumps to: 0x140007a95
+  Block 0x140007a95-0x140007a98 -> Jumps to: 0x140007a98
+  Block 0x140007a98-0x140007a9c -> Jumps to: 0x140007a9c
+  Block 0x140007a9c-0x140007aa1 -> Jumps to: 0x140007aa1, 0x140007aba
+  Block 0x140007aa1-0x140007aba -> Jumps to: 0x140007ac8
+  Block 0x140007aba-0x140007ac8 -> Jumps to: 0x140007ac8
+  Block 0x140007ac8-0x140007ad0 -> Jumps to: 0x140007a01
+
+=== CODE ===
+__int64 __fastcall sub_140007830(unsigned __int64 a1, volatile void *a2, SIZE_T a3, char a4, char a5)
+{
+  unsigned __int64 v6; // rbx
+  unsigned int v8; // r12d
+  __int64 v9; // r8
+  size_t v10; // rcx
+  __int64 v11; // rdx
+  unsigned __int64 v12; // r10
+  __int64 v13; // rax
+  char v14; // r13
+  PHYSICAL_ADDRESS v15; // rcx
+  char *v16; // rax
+  char *v18; // rbx
+  unsigned int v19; // eax
+  int v21; // [rsp+54h] [rbp-3Dh]
+  PVOID BaseAddress; // [rsp+58h] [rbp-39h] BYREF
+  void *SectionHandle; // [rsp+60h] [rbp-31h] BYREF
+  struct _OBJECT_ATTRIBUTES ObjectAttributes; // [rsp+68h] [rbp-29h] BYREF
+  ULONG_PTR ViewSize; // [rsp+98h] [rbp+7h] BYREF
+  union _LARGE_INTEGER SectionOffset; // [rsp+A0h] [rbp+Fh] BYREF
+  struct _UNICODE_STRING DestinationString; // [rsp+A8h] [rbp+17h] BYREF
+
+  SectionHandle = 0;
+  v21 = a1 & 0xFFF;
+  v6 = a1 >> 12;
+  v8 = 0;
+  if ( a1 >> 12 == 0x3FFFFFFFFFLL || (a3 + a1 - 1) >> 12 != v6 )
+    return 3221225477LL;
+  v9 = 0;
+  v10 = NumOfElements - 1;
+  if ( (__int64)(NumOfElements - 1) < 0 )
+  {
+LABEL_11:
+    v14 = 0;
+    v15.QuadPart = v6 << 12;
+    if ( qword_140014BD8 )
+      v16 = (char *)((__int64 (__fastcall *)(_QWORD, _QWORD, _QWORD))qword_140014BD8)(
+                      (PHYSICAL_ADDRESS)v15.QuadPart,
+                      4096,
+                      516);
+    else
+      v16 = (char *)MmMapIoSpace(v15, 0x1000u, MmNonCached);
+    BaseAddress = v16;
+    v18 = v16;
+  }
+  else
+  {
+    while ( 1 )
+    {
+      v11 = (__int64)(v10 + v9) / 2;
+      v12 = *((_QWORD *)P + 3 * v11);
+      if ( v6 >= v12 && v6 < *((_QWORD *)P + 3 * v11 + 2) )
+        break;
+      v13 = v11 - 1;
+      if ( v12 <= v6 )
+        v13 = v10;
+      v10 = v13;
+      if ( v12 <= v6 )
+        v9 = v11 + 1;
+      if ( v13 < v9 )
+        goto LABEL_11;
+    }
+    *(&ObjectAttributes.Length + 1) = 0;
+    *(&ObjectAttributes.Attributes + 1) = 0;
+    ViewSize = 4096;
+    DestinationString = 0;
+    v14 = 1;
+    RtlInitUnicodeString(&DestinationString, L"\\Device\\PhysicalMemory");
+    ObjectAttributes.RootDirectory = 0;
+    ObjectAttributes.ObjectName = &DestinationString;
+    ObjectAttributes.Length = 48;
+    ObjectAttributes.Attributes = 576;
+    *(_OWORD *)&ObjectAttributes.SecurityDescriptor = 0;
+    if ( ZwOpenSection(&SectionHandle, a5 != 0 ? 2 : 4, &ObjectAttributes) )
+      return 3221225477LL;
+    BaseAddress = 0;
+    SectionOffset.QuadPart = v6 << 12;
+    if ( ZwMapViewOfSection(
+           SectionHandle,
+           (HANDLE)0xFFFFFFFFFFFFFFFFLL,
+           &BaseAddress,
+           0,
+           0x1000u,
+           &SectionOffset,
+           &ViewSize,
+           ViewUnmap,
+           0,
+           a5 != 0 ? 4 : 2) )
+    {
+      ZwClose(SectionHandle);
+      return 3221225477LL;
+    }
+    v18 = (char *)BaseAddress;
+  }
+  if ( !v18 )
+    return 3221225495LL;
+  if ( !a4 )
+  {
+    if ( a5 )
+      v19 = sub_1400059A4((__int64)&v18[v21], a2, a3);
+    else
+      v19 = sub_1400059F8(a2, (__int64)&v18[v21], a3);
+    v8 = v19;
+    goto LABEL_30;
+  }
+  if ( a5 )
+  {
+    sub_1400100C0(&v18[v21], a2, a3);
+LABEL_30:
+    v18 = (char *)BaseAddress;
+    goto LABEL_31;
+  }
+  sub_1400100C0(a2, &v18[v21], a3);
+LABEL_31:
+  if ( v14 )
+  {
+    ZwUnmapViewOfSection((HANDLE)0xFFFFFFFFFFFFFFFFLL, v18);
+    ZwClose(SectionHandle);
+  }
+  else
+  {
+    MmUnmapIoSpace(v18, 0x1000u);
+  }
+  return v8;
+}
+
+
+=== DISASM ===
+0x140007830: mov     [rsp-8+arg_18], rbx
+0x140007835: push    rbp
+0x140007836: push    rsi
+0x140007837: push    r12
+0x140007839: push    r13
+0x14000783b: push    r15
+0x14000783d: lea     rbp, [rsp-2Fh]
+0x140007842: sub     rsp, 0C0h
+0x140007849: mov     rax, cs:__security_cookie
+0x140007850: xor     rax, rsp
+0x140007853: mov     [rbp+4Fh+var_28], rax
+0x140007857: xor     r11d, r11d
+0x14000785a: mov     [rbp+4Fh+var_90], r9b
+0x14000785e: mov     eax, ecx
+0x140007860: mov     [rbp+4Fh+SectionHandle], r11
+0x140007864: and     eax, 0FFFh
+0x140007869: mov     rbx, rcx
+0x14000786c: mov     [rbp+4Fh+var_8C], eax
+0x14000786f: mov     rsi, r8
+0x140007872: mov     rax, 3FFFFFFFFFh
+0x14000787c: shr     rbx, 0Ch
+0x140007880: mov     r15, rdx
+0x140007883: mov     r12d, r11d
+0x140007886: cmp     rbx, rax
+0x140007889: jz      loc_1400079FC
+0x14000788f: lea     rax, [rcx-1]
+0x140007893: add     rax, r8
+0x140007896: shr     rax, 0Ch
+0x14000789a: cmp     rax, rbx
+0x14000789d: jnz     loc_1400079FC
+0x1400078a3: mov     rcx, cs:NumOfElements
+0x1400078aa: mov     r8d, r11d
+0x1400078ad: sub     rcx, 1
+0x1400078b1: js      short loc_1400078F8
+0x1400078b3: mov     r9, cs:P
+0x1400078ba: lea     rax, [rcx+r8]
+0x1400078be: cqo
+0x1400078c0: sub     rax, rdx
+0x1400078c3: sar     rax, 1
+0x1400078c6: mov     rdx, rax
+0x1400078c9: lea     rax, [rax+rax*2]
+0x1400078cd: mov     r10, [r9+rax*8]
+0x1400078d1: cmp     rbx, r10
+0x1400078d4: jb      short loc_1400078DD
+0x1400078d6: cmp     rbx, [r9+rax*8+10h]
+0x1400078db: jb      short loc_140007928
+0x1400078dd: cmp     r10, rbx
+0x1400078e0: lea     rax, [rdx-1]
+0x1400078e4: cmovbe  rax, rcx
+0x1400078e8: mov     rcx, rax
+0x1400078eb: lea     rax, [rdx+1]
+0x1400078ef: cmovbe  r8, rax
+0x1400078f3: cmp     rcx, r8
+0x1400078f6: jge     short loc_1400078BA
+0x1400078f8: mov     rax, cs:qword_140014BD8
+0x1400078ff: mov     r13b, r11b
+0x140007902: shl     rbx, 0Ch
+0x140007906: mov     edx, 1000h; NumberOfBytes
+0x14000790b: mov     rcx, rbx; PhysicalAddress
+0x14000790e: test    rax, rax
+0x140007911: jz      loc_140007A2B
+0x140007917: mov     r8d, 204h
+0x14000791d: call    cs:__guard_dispatch_icall_fptr
+0x140007923: jmp     loc_140007A34
+0x140007928: xorps   xmm0, xmm0
+0x14000792b: mov     dword ptr [rbp+4Fh+ObjectAttributes+4], r11d
+0x14000792f: lea     rdx, aDevicePhysical; "\\Device\\PhysicalMemory"
+0x140007936: mov     dword ptr [rbp+4Fh+ObjectAttributes+1Ch], r11d
+0x14000793a: lea     rcx, [rbp+4Fh+DestinationString]; DestinationString
+0x14000793e: mov     [rbp+4Fh+var_48], 1000h
+0x140007946: movups  xmmword ptr [rbp+4Fh+DestinationString.Length], xmm0
+0x14000794a: mov     r13b, 1
+0x14000794d: call    cs:RtlInitUnicodeString
+0x140007953: and     [rbp+4Fh+ObjectAttributes.RootDirectory], r12
+0x140007957: lea     rax, [rbp+4Fh+DestinationString]
+0x14000795b: mov     [rbp+4Fh+ObjectAttributes.ObjectName], rax
+0x14000795f: lea     r8, [rbp+4Fh+ObjectAttributes]; ObjectAttributes
+0x140007963: mov     al, [rbp+4Fh+arg_20]
+0x140007966: lea     rcx, [rbp+4Fh+SectionHandle]; SectionHandle
+0x14000796a: neg     al
+0x14000796c: mov     [rbp+4Fh+ObjectAttributes.Length], 30h ; '0'
+0x140007973: xorps   xmm0, xmm0
+0x140007976: mov     [rbp+4Fh+ObjectAttributes.Attributes], 240h
+0x14000797d: sbb     edx, edx
+0x14000797f: and     edx, 0FFFFFFFEh
+0x140007982: add     edx, 4; DesiredAccess
+0x140007985: movdqu  xmmword ptr [rbp+4Fh+ObjectAttributes.SecurityDescriptor], xmm0
+0x14000798a: call    cs:ZwOpenSection
+0x140007990: test    eax, eax
+0x140007992: jnz     short loc_1400079FC
+0x140007994: and     [rbp+4Fh+BaseAddress], r12
+0x140007998: lea     r8, [rbp+4Fh+BaseAddress]; BaseAddress
+0x14000799c: mov     al, [rbp+4Fh+arg_20]
+0x14000799f: shl     rbx, 0Ch
+0x1400079a3: neg     al
+0x1400079a5: mov     qword ptr [rbp+4Fh+var_40], rbx
+0x1400079a9: lea     rax, [rbp+4Fh+var_48]
+0x1400079ad: sbb     ecx, ecx
+0x1400079af: xor     r9d, r9d; ZeroBits
+0x1400079b2: and     ecx, 2
+0x1400079b5: or      rdx, 0FFFFFFFFFFFFFFFFh; ProcessHandle
+0x1400079b9: add     ecx, 2
+0x1400079bc: mov     [rsp+0E0h+Win32Protect], ecx; Win32Protect
+0x1400079c0: and     [rsp+0E0h+var_A0], r12d
+0x1400079c5: mov     rcx, [rbp+4Fh+SectionHandle]; SectionHandle
+0x1400079c9: mov     [rsp+0E0h+InheritDisposition], 2; InheritDisposition
+0x1400079d1: mov     [rsp+0E0h+ViewSize], rax; ViewSize
+0x1400079d6: lea     rax, [rbp+4Fh+var_40]
+0x1400079da: mov     [rsp+0E0h+SectionOffset], rax; SectionOffset
+0x1400079df: mov     [rsp+0E0h+CommitSize], 1000h; CommitSize
+0x1400079e8: call    cs:ZwMapViewOfSection
+0x1400079ee: test    eax, eax
+0x1400079f0: jz      short loc_140007A25
+0x1400079f2: mov     rcx, [rbp+4Fh+SectionHandle]; Handle
+0x1400079f6: call    cs:ZwClose
+0x1400079fc: mov     eax, 0C0000005h
+0x140007a01: mov     rcx, [rbp+4Fh+var_28]
+0x140007a05: xor     rcx, rsp; StackCookie
+0x140007a08: call    __security_check_cookie
+0x140007a0d: mov     rbx, [rsp+0E0h+arg_18]
+0x140007a15: add     rsp, 0C0h
+0x140007a1c: pop     r15
+0x140007a1e: pop     r13
+0x140007a20: pop     r12
+0x140007a22: pop     rsi
+0x140007a23: pop     rbp
+0x140007a24: retn
+0x140007a25: mov     rbx, [rbp+4Fh+BaseAddress]
+0x140007a29: jmp     short loc_140007A3B
+0x140007a2b: xor     r8d, r8d; CacheType
+0x140007a2e: call    cs:MmMapIoSpace
+0x140007a34: mov     [rbp+4Fh+BaseAddress], rax
+0x140007a38: mov     rbx, rax
+0x140007a3b: test    rbx, rbx
+0x140007a3e: jnz     short loc_140007A47
+0x140007a40: mov     eax, 0C0000017h
+0x140007a45: jmp     short loc_140007A01
+0x140007a47: mov     r8, rsi
+0x140007a4a: mov     eax, [rbp+4Fh+var_8C]
+0x140007a4d: cmp     [rbp+4Fh+var_90], r12b
+0x140007a51: jz      short loc_140007A75
+0x140007a53: cmp     [rbp+4Fh+arg_20], r12b
+0x140007a57: jz      short loc_140007A67
+0x140007a59: lea     rcx, [rax+rbx]
+0x140007a5d: mov     rdx, r15
+0x140007a60: call    sub_1400100C0
+0x140007a65: jmp     short loc_140007A98
+0x140007a67: lea     rdx, [rax+rbx]
+0x140007a6b: mov     rcx, r15
+0x140007a6e: call    sub_1400100C0
+0x140007a73: jmp     short loc_140007A9C
+0x140007a75: cmp     [rbp+4Fh+arg_20], r12b
+0x140007a79: jz      short loc_140007A89
+0x140007a7b: lea     rcx, [rax+rbx]
+0x140007a7f: mov     rdx, r15
+0x140007a82: call    sub_1400059A4
+0x140007a87: jmp     short loc_140007A95
+0x140007a89: lea     rdx, [rax+rbx]
+0x140007a8d: mov     rcx, r15
+0x140007a90: call    sub_1400059F8
+0x140007a95: mov     r12d, eax
+0x140007a98: mov     rbx, [rbp+4Fh+BaseAddress]
+0x140007a9c: test    r13b, r13b
+0x140007a9f: jz      short loc_140007ABA
+0x140007aa1: mov     rdx, rbx; BaseAddress
+0x140007aa4: or      rcx, 0FFFFFFFFFFFFFFFFh; ProcessHandle
+0x140007aa8: call    cs:ZwUnmapViewOfSection
+0x140007aae: mov     rcx, [rbp+4Fh+SectionHandle]; Handle
+0x140007ab2: call    cs:ZwClose
+0x140007ab8: jmp     short loc_140007AC8
+0x140007aba: mov     edx, 1000h; NumberOfBytes
+0x140007abf: mov     rcx, rbx; BaseAddress
+0x140007ac2: call    cs:MmUnmapIoSpace
+0x140007ac8: mov     eax, r12d
+0x140007acb: jmp     loc_140007A01

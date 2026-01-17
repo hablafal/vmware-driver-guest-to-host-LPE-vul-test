@@ -1,0 +1,52 @@
+=== METADATA ===
+Name: sub_14000C148
+Addr: 0x14000c148
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140004FD8 (0x140004FE5)
+  <- sub_140004FD8 (0x140004FEE)
+  <- sub_140004FD8 (0x140004FF7)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000c148-0x14000c151 -> Jumps to: 0x14000c151, 0x14000c156
+  Block 0x14000c151-0x14000c156 -> Jumps to: 0x14000c156
+  Block 0x14000c156-0x14000c15b -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_14000C148(void *a1)
+{
+  if ( a1 )
+    sub_140005DC4(a1);
+}
+
+
+=== DISASM ===
+0x14000c148: sub     rsp, 28h
+0x14000c14c: test    rcx, rcx
+0x14000c14f: jz      short loc_14000C156
+0x14000c151: call    sub_140005DC4
+0x14000c156: add     rsp, 28h
+0x14000c15a: retn

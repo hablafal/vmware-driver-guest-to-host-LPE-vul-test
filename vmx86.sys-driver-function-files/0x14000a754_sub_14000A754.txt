@@ -1,0 +1,558 @@
+=== METADATA ===
+Name: sub_14000A754
+Addr: 0x14000a754
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000a887: AND with Mask 0x1FF
+  0x14000a8a5: AND with Mask 0x1FF
+  0x14000a8c5: AND with Mask 0x1FF
+  0x14000a8d4: AND with Mask 0xFFFFFFFFFFFFFC01
+
+=== MEMBER ACCESS ===
+  0x14000a754: Access Member +0x8 ([rsp-18h+arg_0])
+  0x14000a759: Access Member +0x18 ([rsp-18h+arg_10])
+  0x14000aba5: Access Member +0x60 ([rsp+40h+arg_0])
+  0x14000abaa: Access Member +0x70 ([rsp+40h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B92C (0x14000BA9D)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000a769 -> 2
+  0x14000a84e -> H
+  0x14000aa10 -> H
+
+=== BASIC BLOCKS ===
+  Block 0x14000a754-0x14000a792 -> Jumps to: 0x14000a792, 0x14000a7cc
+  Block 0x14000a792-0x14000a7ac -> Jumps to: 0x14000a7ac, 0x14000a7c4
+  Block 0x14000a7ac-0x14000a7c4 -> Jumps to: 0x14000a7c4, 0x14000a7ac
+  Block 0x14000a7c4-0x14000a7cc -> Jumps to: 0x14000ab99
+  Block 0x14000a7cc-0x14000a7d7 -> Jumps to: 0x14000a7d7, 0x14000a843
+  Block 0x14000a7d7-0x14000a7f2 -> Jumps to: 0x14000a7f2, 0x14000a83b
+  Block 0x14000a7f2-0x14000a806 -> Jumps to: 0x14000a806, 0x14000a831
+  Block 0x14000a806-0x14000a82f -> Jumps to: 0x14000a7f2, 0x14000a82f
+  Block 0x14000a82f-0x14000a831 -> Jumps to: 0x14000a83b
+  Block 0x14000a831-0x14000a83b -> Jumps to: 0x14000a83b
+  Block 0x14000a83b-0x14000a843 -> Jumps to: 0x14000ab99
+  Block 0x14000a843-0x14000a84b -> Jumps to: 0x14000a84b, 0x14000a863
+  Block 0x14000a84b-0x14000a863 -> Jumps to: 0x14000ab99
+  Block 0x14000a863-0x14000a86b -> Jumps to: 0x14000a86b, 0x14000a8e6
+  Block 0x14000a86b-0x14000a891 -> Jumps to: 0x14000a891, 0x14000a8d2
+  Block 0x14000a891-0x14000a8b1 -> Jumps to: 0x14000a8b1, 0x14000a8cc
+  Block 0x14000a8b1-0x14000a8cc -> Jumps to: 0x14000a8cc
+  Block 0x14000a8cc-0x14000a8d2 -> Jumps to: 0x14000a891, 0x14000a8d2
+  Block 0x14000a8d2-0x14000a8e6 -> Jumps to: 0x14000ab99
+  Block 0x14000a8e6-0x14000a8f1 -> Jumps to: 0x14000a8f1, 0x14000a92d
+  Block 0x14000a8f1-0x14000a910 -> Jumps to: 0x14000a7c4, 0x14000a910
+  Block 0x14000a910-0x14000a928 -> Jumps to: 0x14000a928, 0x14000a910
+  Block 0x14000a928-0x14000a92d -> Jumps to: 0x14000a7c4
+  Block 0x14000a92d-0x14000a938 -> Jumps to: 0x14000a938, 0x14000a974
+  Block 0x14000a938-0x14000a957 -> Jumps to: 0x14000a7c4, 0x14000a957
+  Block 0x14000a957-0x14000a96f -> Jumps to: 0x14000a96f, 0x14000a957
+  Block 0x14000a96f-0x14000a974 -> Jumps to: 0x14000a7c4
+  Block 0x14000a974-0x14000a97f -> Jumps to: 0x14000a97f, 0x14000a9bb
+  Block 0x14000a97f-0x14000a99e -> Jumps to: 0x14000a7c4, 0x14000a99e
+  Block 0x14000a99e-0x14000a9b6 -> Jumps to: 0x14000a9b6, 0x14000a99e
+  Block 0x14000a9b6-0x14000a9bb -> Jumps to: 0x14000a7c4
+  Block 0x14000a9bb-0x14000a9c6 -> Jumps to: 0x14000a9c6, 0x14000aa02
+  Block 0x14000a9c6-0x14000a9e5 -> Jumps to: 0x14000a7c4, 0x14000a9e5
+  Block 0x14000a9e5-0x14000a9fd -> Jumps to: 0x14000a9fd, 0x14000a9e5
+  Block 0x14000a9fd-0x14000aa02 -> Jumps to: 0x14000a7c4
+  Block 0x14000aa02-0x14000aa0d -> Jumps to: 0x14000aa0d, 0x14000aa25
+  Block 0x14000aa0d-0x14000aa25 -> Jumps to: 0x14000ab99
+  Block 0x14000aa25-0x14000aa30 -> Jumps to: 0x14000aa0d, 0x14000aa30
+  Block 0x14000aa30-0x14000aa3b -> Jumps to: 0x14000aa0d, 0x14000aa3b
+  Block 0x14000aa3b-0x14000aa46 -> Jumps to: 0x14000aa0d, 0x14000aa46
+  Block 0x14000aa46-0x14000aa51 -> Jumps to: 0x14000aa0d, 0x14000aa51
+  Block 0x14000aa51-0x14000aa5c -> Jumps to: 0x14000aa0d, 0x14000aa5c
+  Block 0x14000aa5c-0x14000aa67 -> Jumps to: 0x14000aa0d, 0x14000aa67
+  Block 0x14000aa67-0x14000aa72 -> Jumps to: 0x14000aa0d, 0x14000aa72
+  Block 0x14000aa72-0x14000aa7d -> Jumps to: 0x14000aa0d, 0x14000aa7d
+  Block 0x14000aa7d-0x14000aa86 -> Jumps to: 0x14000aa86, 0x14000aac2
+  Block 0x14000aa86-0x14000aaa5 -> Jumps to: 0x14000a7c4, 0x14000aaa5
+  Block 0x14000aaa5-0x14000aabd -> Jumps to: 0x14000aabd, 0x14000aaa5
+  Block 0x14000aabd-0x14000aac2 -> Jumps to: 0x14000a7c4
+  Block 0x14000aac2-0x14000aacd -> Jumps to: 0x14000aacd, 0x14000ab09
+  Block 0x14000aacd-0x14000aaec -> Jumps to: 0x14000a7c4, 0x14000aaec
+  Block 0x14000aaec-0x14000ab04 -> Jumps to: 0x14000ab04, 0x14000aaec
+  Block 0x14000ab04-0x14000ab09 -> Jumps to: 0x14000a7c4
+  Block 0x14000ab09-0x14000ab14 -> Jumps to: 0x14000ab14, 0x14000ab50
+  Block 0x14000ab14-0x14000ab33 -> Jumps to: 0x14000a7c4, 0x14000ab33
+  Block 0x14000ab33-0x14000ab4b -> Jumps to: 0x14000ab4b, 0x14000ab33
+  Block 0x14000ab4b-0x14000ab50 -> Jumps to: 0x14000a7c4
+  Block 0x14000ab50-0x14000ab5b -> Jumps to: 0x14000ab5b, 0x14000ab97
+  Block 0x14000ab5b-0x14000ab7a -> Jumps to: 0x14000a7c4, 0x14000ab7a
+  Block 0x14000ab7a-0x14000ab92 -> Jumps to: 0x14000ab92, 0x14000ab7a
+  Block 0x14000ab92-0x14000ab97 -> Jumps to: 0x14000a7c4
+  Block 0x14000ab97-0x14000ab99 -> Jumps to: 0x14000ab99
+  Block 0x14000ab99-0x14000abb8 -> Jumps to: 
+
+=== CODE ===
+unsigned __int64 __fastcall sub_14000A754(int a1, unsigned int a2)
+{
+  unsigned int v3; // edi
+  __int64 i; // rsi
+  unsigned int v6; // esi
+  unsigned __int64 v7; // rdi
+  __int64 v8; // rax
+  unsigned int v9; // esi
+  unsigned __int64 v10; // r14
+  unsigned __int64 j; // rdi
+  unsigned int v12; // edi
+  unsigned int v13; // edi
+  unsigned int v14; // edi
+  unsigned int v15; // edi
+  unsigned int v16; // r9d
+  unsigned int v17; // edi
+  unsigned int v18; // edi
+  unsigned int v19; // edi
+  unsigned int v20; // edi
+  __int64 *v21; // [rsp+20h] [rbp-20h] BYREF
+  unsigned int v22; // [rsp+28h] [rbp-18h]
+
+  v22 = a2;
+  v21 = &qword_14001D098;
+  switch ( a1 )
+  {
+    case 58:
+      v3 = 1;
+      for ( i = sub_14000B360(&v21, 58, 0); v3 < a2; ++v3 )
+        i &= sub_14000B360(&v21, 58, v3);
+      return i;
+    case 1152:
+      v6 = 1;
+      v7 = sub_14000B360(&v21, 1152, 0);
+      if ( a2 > 1 )
+      {
+        while ( 1 )
+        {
+          v8 = sub_14000B360(&v21, 1152, v6);
+          if ( v8 != v7 )
+            break;
+          ++v6;
+          v7 = (v8 | 0xFE3DFFFFFFFFFFFFuLL) & (v8 & 0x1000000000000LL | v7);
+          if ( v6 >= a2 )
+            return v7;
+        }
+        return 0xFFFFE000FFFFFFFFuLL;
+      }
+      return v7;
+    case 1157:
+      return sub_14000A010((__int64)&v21, sub_14000B360, a2);
+    case 1162:
+      v9 = 1;
+      v10 = sub_14000B360(&v21, 1162, 0);
+      for ( j = (v10 >> 1) & 0x1FF; v9 < a2; ++v9 )
+      {
+        if ( (unsigned int)j >= (((unsigned __int64)sub_14000B360(&v21, 1162, v9) >> 1) & 0x1FF) )
+          j = ((unsigned __int64)sub_14000B360(&v21, 1162, v9) >> 1) & 0x1FF;
+      }
+      return v10 & 0xFFFFFFFFFFFFFC01uLL | (2LL * (unsigned int)j);
+    case 1164:
+      v12 = 1;
+      for ( i = sub_14000B360(&v21, 1164, 0); v12 < a2; ++v12 )
+        i &= sub_14000B360(&v21, 1164, v12);
+      return i;
+    case 1169:
+      v13 = 1;
+      for ( i = sub_14000B360(&v21, 1169, 0); v13 < a2; ++v13 )
+        i &= sub_14000B360(&v21, 1169, v13);
+      return i;
+    case 1170:
+      v14 = 1;
+      for ( i = sub_14000B360(&v21, 1170, 0); v14 < a2; ++v14 )
+        i &= sub_14000B360(&v21, 1170, v14);
+      return i;
+    case 1171:
+      v15 = 1;
+      for ( i = sub_14000B360(&v21, 1171, 0); v15 < a2; ++v15 )
+        i &= sub_14000B360(&v21, 1171, v15);
+      return i;
+    default:
+      v16 = 1153;
+      if ( a1 == 1153 )
+        return sub_140009F88((__int64)&v21, sub_14000B360, a2, v16);
+      v16 = 1154;
+      if ( a1 == 1154 )
+        return sub_140009F88((__int64)&v21, sub_14000B360, a2, v16);
+      v16 = 1155;
+      if ( a1 == 1155 )
+        return sub_140009F88((__int64)&v21, sub_14000B360, a2, v16);
+      v16 = 1156;
+      if ( a1 == 1156 )
+        return sub_140009F88((__int64)&v21, sub_14000B360, a2, v16);
+      v16 = 1163;
+      if ( a1 == 1163 )
+        return sub_140009F88((__int64)&v21, sub_14000B360, a2, v16);
+      v16 = 1165;
+      if ( a1 == 1165 )
+        return sub_140009F88((__int64)&v21, sub_14000B360, a2, v16);
+      v16 = 1166;
+      if ( a1 == 1166 )
+        return sub_140009F88((__int64)&v21, sub_14000B360, a2, v16);
+      v16 = 1167;
+      if ( a1 == 1167 )
+        return sub_140009F88((__int64)&v21, sub_14000B360, a2, v16);
+      v16 = 1168;
+      switch ( a1 )
+      {
+        case 1168:
+          return sub_140009F88((__int64)&v21, sub_14000B360, a2, v16);
+        case 1158:
+          v17 = 1;
+          for ( i = sub_14000B360(&v21, 1158, 0); v17 < a2; ++v17 )
+            i |= sub_14000B360(&v21, 1158, v17);
+          return i;
+        case 1160:
+          v18 = 1;
+          for ( i = sub_14000B360(&v21, 1160, 0); v18 < a2; ++v18 )
+            i |= sub_14000B360(&v21, 1160, v18);
+          return i;
+        case 1159:
+          v19 = 1;
+          for ( i = sub_14000B360(&v21, 1159, 0); v19 < a2; ++v19 )
+            i &= sub_14000B360(&v21, 1159, v19);
+          return i;
+        case 1161:
+          v20 = 1;
+          for ( i = sub_14000B360(&v21, 1161, 0); v20 < a2; ++v20 )
+            i &= sub_14000B360(&v21, 1161, v20);
+          return i;
+        default:
+          return 0;
+      }
+  }
+}
+
+
+=== DISASM ===
+0x14000a754: mov     [rsp-18h+arg_0], rbx
+0x14000a759: mov     [rsp-18h+arg_10], rsi
+0x14000a75e: push    rbp
+0x14000a75f: push    rdi
+0x14000a760: push    r14
+0x14000a762: mov     rbp, rsp
+0x14000a765: sub     rsp, 40h
+0x14000a769: mov     rax, cs:__security_cookie
+0x14000a770: xor     rax, rsp
+0x14000a773: mov     [rbp+var_10], rax
+0x14000a777: mov     r14d, 3Ah ; ':'
+0x14000a77d: mov     [rbp+var_18], edx
+0x14000a780: lea     rax, qword_14001D098
+0x14000a787: mov     ebx, edx
+0x14000a789: mov     [rbp+var_20], rax
+0x14000a78d: cmp     ecx, r14d
+0x14000a790: jnz     short loc_14000A7CC
+0x14000a792: xor     r8d, r8d
+0x14000a795: lea     rcx, [rbp+var_20]
+0x14000a799: mov     edx, r14d
+0x14000a79c: call    sub_14000B360
+0x14000a7a1: lea     edi, [r14-39h]
+0x14000a7a5: mov     rsi, rax
+0x14000a7a8: cmp     ebx, edi
+0x14000a7aa: jbe     short loc_14000A7C4
+0x14000a7ac: mov     r8d, edi
+0x14000a7af: lea     rcx, [rbp+var_20]
+0x14000a7b3: mov     edx, r14d
+0x14000a7b6: call    sub_14000B360
+0x14000a7bb: and     rsi, rax
+0x14000a7be: inc     edi
+0x14000a7c0: cmp     edi, ebx
+0x14000a7c2: jb      short loc_14000A7AC
+0x14000a7c4: mov     rax, rsi
+0x14000a7c7: jmp     loc_14000AB99
+0x14000a7cc: mov     r14d, 480h
+0x14000a7d2: cmp     ecx, r14d
+0x14000a7d5: jnz     short loc_14000A843
+0x14000a7d7: xor     r8d, r8d
+0x14000a7da: lea     rcx, [rbp+var_20]
+0x14000a7de: mov     edx, r14d
+0x14000a7e1: call    sub_14000B360
+0x14000a7e6: mov     esi, 1
+0x14000a7eb: mov     rdi, rax
+0x14000a7ee: cmp     ebx, esi
+0x14000a7f0: jbe     short loc_14000A83B
+0x14000a7f2: mov     r8d, esi
+0x14000a7f5: lea     rcx, [rbp+var_20]
+0x14000a7f9: mov     edx, r14d
+0x14000a7fc: call    sub_14000B360
+0x14000a801: cmp     rax, rdi
+0x14000a804: jnz     short loc_14000A831
+0x14000a806: mov     rcx, rax
+0x14000a809: mov     rdx, 1000000000000h
+0x14000a813: and     rcx, rdx
+0x14000a816: inc     esi
+0x14000a818: or      rdi, rcx
+0x14000a81b: mov     rdx, 0FE3DFFFFFFFFFFFFh
+0x14000a825: or      rax, rdx
+0x14000a828: and     rdi, rax
+0x14000a82b: cmp     esi, ebx
+0x14000a82d: jb      short loc_14000A7F2
+0x14000a82f: jmp     short loc_14000A83B
+0x14000a831: mov     rdi, 0FFFFE000FFFFFFFFh
+0x14000a83b: mov     rax, rdi
+0x14000a83e: jmp     loc_14000AB99
+0x14000a843: cmp     ecx, 485h
+0x14000a849: jnz     short loc_14000A863
+0x14000a84b: mov     r8d, ebx
+0x14000a84e: lea     rdx, sub_14000B360
+0x14000a855: lea     rcx, [rbp+var_20]
+0x14000a859: call    sub_14000A010
+0x14000a85e: jmp     loc_14000AB99
+0x14000a863: cmp     ecx, 48Ah
+0x14000a869: jnz     short loc_14000A8E6
+0x14000a86b: mov     edx, ecx
+0x14000a86d: xor     r8d, r8d
+0x14000a870: lea     rcx, [rbp+var_20]
+0x14000a874: call    sub_14000B360
+0x14000a879: mov     rdi, rax
+0x14000a87c: mov     esi, 1
+0x14000a881: shr     rdi, 1
+0x14000a884: mov     r14, rax
+0x14000a887: and     edi, 1FFh
+0x14000a88d: cmp     ebx, esi
+0x14000a88f: jbe     short loc_14000A8D2
+0x14000a891: mov     r8d, esi
+0x14000a894: lea     rcx, [rbp+var_20]
+0x14000a898: mov     edx, 48Ah
+0x14000a89d: call    sub_14000B360
+0x14000a8a2: shr     rax, 1
+0x14000a8a5: and     eax, 1FFh
+0x14000a8aa: mov     ecx, edi
+0x14000a8ac: cmp     rcx, rax
+0x14000a8af: jb      short loc_14000A8CC
+0x14000a8b1: mov     r8d, esi
+0x14000a8b4: lea     rcx, [rbp+var_20]
+0x14000a8b8: mov     edx, 48Ah
+0x14000a8bd: call    sub_14000B360
+0x14000a8c2: shr     rax, 1
+0x14000a8c5: and     eax, 1FFh
+0x14000a8ca: mov     edi, eax
+0x14000a8cc: inc     esi
+0x14000a8ce: cmp     esi, ebx
+0x14000a8d0: jb      short loc_14000A891
+0x14000a8d2: mov     eax, edi
+0x14000a8d4: and     r14, 0FFFFFFFFFFFFFC01h
+0x14000a8db: add     rax, rax
+0x14000a8de: or      rax, r14
+0x14000a8e1: jmp     loc_14000AB99
+0x14000a8e6: mov     r14d, 48Ch
+0x14000a8ec: cmp     ecx, r14d
+0x14000a8ef: jnz     short loc_14000A92D
+0x14000a8f1: xor     r8d, r8d
+0x14000a8f4: lea     rcx, [rbp+var_20]
+0x14000a8f8: mov     edx, r14d
+0x14000a8fb: call    sub_14000B360
+0x14000a900: mov     edi, 1
+0x14000a905: mov     rsi, rax
+0x14000a908: cmp     ebx, edi
+0x14000a90a: jbe     loc_14000A7C4
+0x14000a910: mov     r8d, edi
+0x14000a913: lea     rcx, [rbp+var_20]
+0x14000a917: mov     edx, r14d
+0x14000a91a: call    sub_14000B360
+0x14000a91f: and     rsi, rax
+0x14000a922: inc     edi
+0x14000a924: cmp     edi, ebx
+0x14000a926: jb      short loc_14000A910
+0x14000a928: jmp     loc_14000A7C4
+0x14000a92d: mov     r14d, 491h
+0x14000a933: cmp     ecx, r14d
+0x14000a936: jnz     short loc_14000A974
+0x14000a938: xor     r8d, r8d
+0x14000a93b: lea     rcx, [rbp+var_20]
+0x14000a93f: mov     edx, r14d
+0x14000a942: call    sub_14000B360
+0x14000a947: mov     edi, 1
+0x14000a94c: mov     rsi, rax
+0x14000a94f: cmp     ebx, edi
+0x14000a951: jbe     loc_14000A7C4
+0x14000a957: mov     r8d, edi
+0x14000a95a: lea     rcx, [rbp+var_20]
+0x14000a95e: mov     edx, r14d
+0x14000a961: call    sub_14000B360
+0x14000a966: and     rsi, rax
+0x14000a969: inc     edi
+0x14000a96b: cmp     edi, ebx
+0x14000a96d: jb      short loc_14000A957
+0x14000a96f: jmp     loc_14000A7C4
+0x14000a974: mov     r14d, 492h
+0x14000a97a: cmp     ecx, r14d
+0x14000a97d: jnz     short loc_14000A9BB
+0x14000a97f: xor     r8d, r8d
+0x14000a982: lea     rcx, [rbp+var_20]
+0x14000a986: mov     edx, r14d
+0x14000a989: call    sub_14000B360
+0x14000a98e: mov     edi, 1
+0x14000a993: mov     rsi, rax
+0x14000a996: cmp     ebx, edi
+0x14000a998: jbe     loc_14000A7C4
+0x14000a99e: mov     r8d, edi
+0x14000a9a1: lea     rcx, [rbp+var_20]
+0x14000a9a5: mov     edx, r14d
+0x14000a9a8: call    sub_14000B360
+0x14000a9ad: and     rsi, rax
+0x14000a9b0: inc     edi
+0x14000a9b2: cmp     edi, ebx
+0x14000a9b4: jb      short loc_14000A99E
+0x14000a9b6: jmp     loc_14000A7C4
+0x14000a9bb: mov     r14d, 493h
+0x14000a9c1: cmp     ecx, r14d
+0x14000a9c4: jnz     short loc_14000AA02
+0x14000a9c6: xor     r8d, r8d
+0x14000a9c9: lea     rcx, [rbp+var_20]
+0x14000a9cd: mov     edx, r14d
+0x14000a9d0: call    sub_14000B360
+0x14000a9d5: mov     edi, 1
+0x14000a9da: mov     rsi, rax
+0x14000a9dd: cmp     ebx, edi
+0x14000a9df: jbe     loc_14000A7C4
+0x14000a9e5: mov     r8d, edi
+0x14000a9e8: lea     rcx, [rbp+var_20]
+0x14000a9ec: mov     edx, r14d
+0x14000a9ef: call    sub_14000B360
+0x14000a9f4: and     rsi, rax
+0x14000a9f7: inc     edi
+0x14000a9f9: cmp     edi, ebx
+0x14000a9fb: jb      short loc_14000A9E5
+0x14000a9fd: jmp     loc_14000A7C4
+0x14000aa02: mov     r9d, 481h
+0x14000aa08: cmp     ecx, r9d
+0x14000aa0b: jnz     short loc_14000AA25
+0x14000aa0d: mov     r8d, ebx
+0x14000aa10: lea     rdx, sub_14000B360
+0x14000aa17: lea     rcx, [rbp+var_20]
+0x14000aa1b: call    sub_140009F88
+0x14000aa20: jmp     loc_14000AB99
+0x14000aa25: mov     r9d, 482h
+0x14000aa2b: cmp     ecx, r9d
+0x14000aa2e: jz      short loc_14000AA0D
+0x14000aa30: mov     r9d, 483h
+0x14000aa36: cmp     ecx, r9d
+0x14000aa39: jz      short loc_14000AA0D
+0x14000aa3b: mov     r9d, 484h
+0x14000aa41: cmp     ecx, r9d
+0x14000aa44: jz      short loc_14000AA0D
+0x14000aa46: mov     r9d, 48Bh
+0x14000aa4c: cmp     ecx, r9d
+0x14000aa4f: jz      short loc_14000AA0D
+0x14000aa51: mov     r9d, 48Dh
+0x14000aa57: cmp     ecx, r9d
+0x14000aa5a: jz      short loc_14000AA0D
+0x14000aa5c: mov     r9d, 48Eh
+0x14000aa62: cmp     ecx, r9d
+0x14000aa65: jz      short loc_14000AA0D
+0x14000aa67: mov     r9d, 48Fh
+0x14000aa6d: cmp     ecx, r9d
+0x14000aa70: jz      short loc_14000AA0D
+0x14000aa72: mov     r9d, 490h
+0x14000aa78: cmp     ecx, r9d
+0x14000aa7b: jz      short loc_14000AA0D
+0x14000aa7d: lea     r14d, [r9-0Ah]
+0x14000aa81: cmp     ecx, r14d
+0x14000aa84: jnz     short loc_14000AAC2
+0x14000aa86: xor     r8d, r8d
+0x14000aa89: lea     rcx, [rbp+var_20]
+0x14000aa8d: mov     edx, r14d
+0x14000aa90: call    sub_14000B360
+0x14000aa95: mov     edi, 1
+0x14000aa9a: mov     rsi, rax
+0x14000aa9d: cmp     ebx, edi
+0x14000aa9f: jbe     loc_14000A7C4
+0x14000aaa5: mov     r8d, edi
+0x14000aaa8: lea     rcx, [rbp+var_20]
+0x14000aaac: mov     edx, r14d
+0x14000aaaf: call    sub_14000B360
+0x14000aab4: or      rsi, rax
+0x14000aab7: inc     edi
+0x14000aab9: cmp     edi, ebx
+0x14000aabb: jb      short loc_14000AAA5
+0x14000aabd: jmp     loc_14000A7C4
+0x14000aac2: mov     r14d, 488h
+0x14000aac8: cmp     ecx, r14d
+0x14000aacb: jnz     short loc_14000AB09
+0x14000aacd: xor     r8d, r8d
+0x14000aad0: lea     rcx, [rbp+var_20]
+0x14000aad4: mov     edx, r14d
+0x14000aad7: call    sub_14000B360
+0x14000aadc: mov     edi, 1
+0x14000aae1: mov     rsi, rax
+0x14000aae4: cmp     ebx, edi
+0x14000aae6: jbe     loc_14000A7C4
+0x14000aaec: mov     r8d, edi
+0x14000aaef: lea     rcx, [rbp+var_20]
+0x14000aaf3: mov     edx, r14d
+0x14000aaf6: call    sub_14000B360
+0x14000aafb: or      rsi, rax
+0x14000aafe: inc     edi
+0x14000ab00: cmp     edi, ebx
+0x14000ab02: jb      short loc_14000AAEC
+0x14000ab04: jmp     loc_14000A7C4
+0x14000ab09: mov     r14d, 487h
+0x14000ab0f: cmp     ecx, r14d
+0x14000ab12: jnz     short loc_14000AB50
+0x14000ab14: xor     r8d, r8d
+0x14000ab17: lea     rcx, [rbp+var_20]
+0x14000ab1b: mov     edx, r14d
+0x14000ab1e: call    sub_14000B360
+0x14000ab23: mov     edi, 1
+0x14000ab28: mov     rsi, rax
+0x14000ab2b: cmp     ebx, edi
+0x14000ab2d: jbe     loc_14000A7C4
+0x14000ab33: mov     r8d, edi
+0x14000ab36: lea     rcx, [rbp+var_20]
+0x14000ab3a: mov     edx, r14d
+0x14000ab3d: call    sub_14000B360
+0x14000ab42: and     rsi, rax
+0x14000ab45: inc     edi
+0x14000ab47: cmp     edi, ebx
+0x14000ab49: jb      short loc_14000AB33
+0x14000ab4b: jmp     loc_14000A7C4
+0x14000ab50: mov     r14d, 489h
+0x14000ab56: cmp     ecx, r14d
+0x14000ab59: jnz     short loc_14000AB97
+0x14000ab5b: xor     r8d, r8d
+0x14000ab5e: lea     rcx, [rbp+var_20]
+0x14000ab62: mov     edx, r14d
+0x14000ab65: call    sub_14000B360
+0x14000ab6a: mov     edi, 1
+0x14000ab6f: mov     rsi, rax
+0x14000ab72: cmp     ebx, edi
+0x14000ab74: jbe     loc_14000A7C4
+0x14000ab7a: mov     r8d, edi
+0x14000ab7d: lea     rcx, [rbp+var_20]
+0x14000ab81: mov     edx, r14d
+0x14000ab84: call    sub_14000B360
+0x14000ab89: and     rsi, rax
+0x14000ab8c: inc     edi
+0x14000ab8e: cmp     edi, ebx
+0x14000ab90: jb      short loc_14000AB7A
+0x14000ab92: jmp     loc_14000A7C4
+0x14000ab97: xor     eax, eax
+0x14000ab99: mov     rcx, [rbp+var_10]
+0x14000ab9d: xor     rcx, rsp; StackCookie
+0x14000aba0: call    __security_check_cookie
+0x14000aba5: mov     rbx, [rsp+40h+arg_0]
+0x14000abaa: mov     rsi, [rsp+40h+arg_10]
+0x14000abaf: add     rsp, 40h
+0x14000abb3: pop     r14
+0x14000abb5: pop     rdi
+0x14000abb6: pop     rbp
+0x14000abb7: retn

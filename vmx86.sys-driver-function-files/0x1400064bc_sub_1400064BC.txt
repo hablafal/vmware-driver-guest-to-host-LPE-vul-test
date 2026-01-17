@@ -1,0 +1,302 @@
+=== METADATA ===
+Name: sub_1400064BC
+Addr: 0x1400064bc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] DIRECT_MEMORY_ACCESS
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000656d: AND with Mask 0xFFFFFFFFFFFFF000
+
+=== MEMBER ACCESS ===
+  0x1400064bc: Access Member +0x8 ([rsp+arg_0])
+  0x1400064c1: Access Member +0x20 ([rsp+arg_18])
+  0x1400064c6: Access Member +0x18 ([rsp+arg_10])
+  0x1400064f4: Access Member +0x68 ([rcx+68h])
+  0x140006505: Access Member +0x8 ([rax+8])
+  0x140006524: Access Member +0x58 ([rsp+48h+P])
+  0x140006532: Access Member +0xC ([rax+0Ch])
+  0x140006536: Access Member +0x14 ([rax+14h])
+  0x14000653a: Access Member +0x1C ([rax+1Ch])
+  0x140006562: Access Member +0x8 ([rdi+8])
+  0x140006566: Access Member +0xA ([rdi+0Ah])
+  0x140006573: Access Member +0x20 ([rdi+20h])
+  0x14000657a: Access Member +0x2C ([rdi+2Ch])
+  0x14000657e: Access Member +0x28 (dword ptr [rdi+28h])
+  0x140006594: Access Member +0x30 ([rdi+30h])
+  0x1400065b5: Access Member +0x60 ([rsp+48h+arg_10])
+  0x1400065bb: Access Member +0x10 ([r13+10h])
+  0x1400065bf: Access Member +0x50 ([rax+50h])
+  0x140006604: Access Member +0x68 ([r13+68h])
+  0x140006629: Access Member +0x8 ([rsi+8])
+  0x140006650: Access Member +0x58 ([rsp+48h+P])
+  0x140006667: Access Member +0x50 ([rsp+48h+arg_0])
+  0x14000666c: Access Member +0x68 ([rsp+48h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000C9DC (0x14000CA2C)
+
+=== IMPORTS ===
+  -> 0x14000658d calls MmProbeAndLockPages
+  -> 0x140006639 calls MmUnlockPages
+  -> 0x140006644 calls ExFreePoolWithTag
+  -> 0x140006655 calls ExFreePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x1400064bc-0x1400064f1 -> Jumps to: 0x1400064f1, 0x140006515
+  Block 0x1400064f1-0x140006505 -> Jumps to: 0x140006505, 0x140006515
+  Block 0x140006505-0x14000650b -> Jumps to: 0x14000650b, 0x140006515
+  Block 0x14000650b-0x140006515 -> Jumps to: 0x140006667
+  Block 0x140006515-0x140006532 -> Jumps to: 0x140006532, 0x140006662
+  Block 0x140006532-0x140006585 -> Jumps to: 0x140006585
+  Block 0x140006585-0x140006594 -> Jumps to: 0x140006594
+  Block 0x140006594-0x1400065ac -> Jumps to: 0x1400065ac, 0x140006631
+  Block 0x1400065ac-0x1400065b5 -> Jumps to: 0x1400065b5, 0x140006631
+  Block 0x1400065b5-0x1400065bb -> Jumps to: 0x1400065bb, 0x1400065f6
+  Block 0x1400065bb-0x1400065d5 -> Jumps to: 0x1400065d5, 0x1400065ec
+  Block 0x1400065d5-0x1400065e2 -> Jumps to: 0x1400065e2, 0x1400065e5
+  Block 0x1400065e2-0x1400065e5 -> Jumps to: 0x1400065e5
+  Block 0x1400065e5-0x1400065ec -> Jumps to: 0x140006636
+  Block 0x1400065ec-0x1400065f6 -> Jumps to: 0x14000662d
+  Block 0x1400065f6-0x1400065fe -> Jumps to: 0x1400065fe, 0x140006629
+  Block 0x1400065fe-0x140006612 -> Jumps to: 0x140006612, 0x14000662d
+  Block 0x140006612-0x14000661f -> Jumps to: 0x14000661f, 0x140006622
+  Block 0x14000661f-0x140006622 -> Jumps to: 0x140006622
+  Block 0x140006622-0x140006629 -> Jumps to: 0x140006636
+  Block 0x140006629-0x14000662d -> Jumps to: 0x14000662d
+  Block 0x14000662d-0x140006631 -> Jumps to: 0x140006667
+  Block 0x140006631-0x140006636 -> Jumps to: 0x140006636
+  Block 0x140006636-0x14000664e -> Jumps to: 0x140006667
+  Block 0x14000664e-0x140006662 -> Jumps to: 0x140006667
+  Block 0x140006662-0x140006667 -> Jumps to: 0x140006667
+  Block 0x140006667-0x14000667f -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_1400064BC(__int64 a1, unsigned __int64 a2, char a3, unsigned __int64 *a4)
+{
+  __int64 v7; // rsi
+  unsigned __int64 v8; // r15
+  __int64 v9; // rax
+  char *v11; // rax
+  struct _MDL *v12; // rdi
+  unsigned __int64 Next; // rcx
+  volatile signed __int64 *v14; // rax
+  __int64 v15; // rsi
+  volatile __int64 *v16; // rax
+  unsigned int v17; // ebx
+  volatile __int64 *v18; // rax
+
+  v7 = 0;
+  v8 = a2 >> 12;
+  if ( !a3 )
+  {
+    v9 = sub_140007EDC(*(_QWORD *)(a1 + 104), a2 >> 12);
+    v7 = v9;
+    if ( v9 )
+    {
+      if ( *(_QWORD *)(v9 + 8) )
+        return 4294957285LL;
+    }
+  }
+  v11 = (char *)sub_1400055C0(0x38u, 1);
+  v12 = (struct _MDL *)v11;
+  if ( v11 )
+  {
+    *(_QWORD *)(v11 + 12) = 0;
+    *(_QWORD *)(v11 + 20) = 0;
+    *((_DWORD *)v11 + 7) = 0;
+    *(_QWORD *)v11 = 0;
+    *((_WORD *)v11 + 4) = 8 * (((unsigned __int16)((a2 & 0xFFF) + 0x1FFF) >> 12) + 6);
+    *((_WORD *)v11 + 5) = 0;
+    *((_QWORD *)v11 + 4) = a2 & 0xFFFFFFFFFFFFF000uLL;
+    *((_DWORD *)v11 + 11) = a2 & 0xFFF;
+    *((_DWORD *)v11 + 10) = 4096;
+    MmProbeAndLockPages((PMDL)v11, 1, IoReadAccess);
+    Next = (unsigned __int64)v12[1].Next;
+    *a4 = Next;
+    v14 = (volatile signed __int64 *)sub_14000501C(Next);
+    if ( v14 && !_InterlockedCompareExchange64(v14, (signed __int64)v12, 0) )
+    {
+      if ( a3 )
+      {
+        v15 = *(_QWORD *)(*(_QWORD *)(a1 + 16) + 80LL);
+        if ( (unsigned __int8)sub_140008220(v15, *a4) )
+        {
+          v16 = (volatile __int64 *)sub_14000501C(*a4);
+          if ( v16 )
+            _InterlockedExchange64(v16, 0);
+          v17 = -10011;
+          goto LABEL_22;
+        }
+        sub_140007F14(v15, *a4);
+      }
+      else if ( v7 )
+      {
+        *(_QWORD *)(v7 + 8) = *a4;
+      }
+      else if ( !sub_140007BF8(*(_QWORD *)(a1 + 104), v8, *a4) )
+      {
+        v18 = (volatile __int64 *)sub_14000501C(*a4);
+        if ( v18 )
+          _InterlockedExchange64(v18, 0);
+        v17 = -10012;
+        goto LABEL_22;
+      }
+      return 0;
+    }
+    v17 = -10001;
+LABEL_22:
+    MmUnlockPages(v12);
+    ExFreePoolWithTag(v12, 0);
+    return v17;
+  }
+  return 4294957295LL;
+}
+
+
+=== DISASM ===
+0x1400064bc: mov     [rsp+arg_0], rbx
+0x1400064c1: mov     [rsp+arg_18], rsi
+0x1400064c6: mov     [rsp+arg_10], r8b
+0x1400064cb: push    rdi
+0x1400064cc: push    r12
+0x1400064ce: push    r13
+0x1400064d0: push    r14
+0x1400064d2: push    r15
+0x1400064d4: sub     rsp, 20h
+0x1400064d8: mov     r14, r9
+0x1400064db: mov     r12, rdx
+0x1400064de: mov     r13, rcx
+0x1400064e1: xor     ebx, ebx
+0x1400064e3: mov     esi, ebx
+0x1400064e5: mov     r15, rdx
+0x1400064e8: shr     r15, 0Ch
+0x1400064ec: test    r8b, r8b
+0x1400064ef: jnz     short loc_140006515
+0x1400064f1: mov     rdx, r15
+0x1400064f4: mov     rcx, [rcx+68h]
+0x1400064f8: call    sub_140007EDC
+0x1400064fd: mov     rsi, rax
+0x140006500: test    rax, rax
+0x140006503: jz      short loc_140006515
+0x140006505: cmp     [rax+8], rbx
+0x140006509: jz      short loc_140006515
+0x14000650b: mov     eax, 0FFFFD8E5h
+0x140006510: jmp     loc_140006667
+0x140006515: mov     dl, 1
+0x140006517: mov     ecx, 38h ; '8'; NumberOfBytes
+0x14000651c: call    sub_1400055C0
+0x140006521: mov     rdi, rax
+0x140006524: mov     [rsp+48h+P], rax
+0x140006529: test    rax, rax
+0x14000652c: jz      loc_140006662
+0x140006532: mov     [rax+0Ch], rbx
+0x140006536: mov     [rax+14h], rbx
+0x14000653a: mov     [rax+1Ch], ebx
+0x14000653d: mov     [rax], rbx
+0x140006540: movzx   eax, r12w
+0x140006544: mov     r8d, 0FFFh
+0x14000654a: and     ax, r8w
+0x14000654e: mov     ecx, 1FFFh
+0x140006553: add     ax, cx
+0x140006556: shr     ax, 0Ch
+0x14000655a: add     ax, 6
+0x14000655e: shl     ax, 3
+0x140006562: mov     [rdi+8], ax
+0x140006566: mov     [rdi+0Ah], bx
+0x14000656a: mov     rax, r12
+0x14000656d: and     rax, 0FFFFFFFFFFFFF000h
+0x140006573: mov     [rdi+20h], rax
+0x140006577: and     r12d, r8d
+0x14000657a: mov     [rdi+2Ch], r12d
+0x14000657e: mov     dword ptr [rdi+28h], 1000h
+0x140006585: xor     r8d, r8d; Operation
+0x140006588: mov     dl, 1; AccessMode
+0x14000658a: mov     rcx, rdi; MemoryDescriptorList
+0x14000658d: call    cs:MmProbeAndLockPages
+0x140006593: nop
+0x140006594: mov     rcx, [rdi+30h]
+0x140006598: mov     [r14], rcx
+0x14000659b: call    sub_14000501C
+0x1400065a0: mov     rcx, rax
+0x1400065a3: test    rax, rax
+0x1400065a6: jz      loc_140006631
+0x1400065ac: xor     eax, eax
+0x1400065ae: lock cmpxchg [rcx], rdi
+0x1400065b3: jnz     short loc_140006631
+0x1400065b5: cmp     [rsp+48h+arg_10], bl
+0x1400065b9: jz      short loc_1400065F6
+0x1400065bb: mov     rax, [r13+10h]
+0x1400065bf: mov     rsi, [rax+50h]
+0x1400065c3: mov     rdx, [r14]
+0x1400065c6: mov     rcx, rsi
+0x1400065c9: call    sub_140008220
+0x1400065ce: mov     rdx, [r14]
+0x1400065d1: test    al, al
+0x1400065d3: jz      short loc_1400065EC
+0x1400065d5: mov     rcx, rdx
+0x1400065d8: call    sub_14000501C
+0x1400065dd: test    rax, rax
+0x1400065e0: jz      short loc_1400065E5
+0x1400065e2: xchg    rbx, [rax]
+0x1400065e5: mov     ebx, 0FFFFD8E5h
+0x1400065ea: jmp     short loc_140006636
+0x1400065ec: mov     rcx, rsi
+0x1400065ef: call    sub_140007F14
+0x1400065f4: jmp     short loc_14000662D
+0x1400065f6: mov     rax, [r14]
+0x1400065f9: test    rsi, rsi
+0x1400065fc: jnz     short loc_140006629
+0x1400065fe: mov     r8, rax
+0x140006601: mov     rdx, r15
+0x140006604: mov     rcx, [r13+68h]
+0x140006608: call    sub_140007BF8
+0x14000660d: test    rax, rax
+0x140006610: jnz     short loc_14000662D
+0x140006612: mov     rcx, [r14]
+0x140006615: call    sub_14000501C
+0x14000661a: test    rax, rax
+0x14000661d: jz      short loc_140006622
+0x14000661f: xchg    rbx, [rax]
+0x140006622: mov     ebx, 0FFFFD8E4h
+0x140006627: jmp     short loc_140006636
+0x140006629: mov     [rsi+8], rax
+0x14000662d: xor     eax, eax
+0x14000662f: jmp     short loc_140006667
+0x140006631: mov     ebx, 0FFFFD8EFh
+0x140006636: mov     rcx, rdi; MemoryDescriptorList
+0x140006639: call    cs:MmUnlockPages
+0x14000663f: xor     edx, edx; Tag
+0x140006641: mov     rcx, rdi; P
+0x140006644: call    cs:ExFreePoolWithTag
+0x14000664a: mov     eax, ebx
+0x14000664c: jmp     short loc_140006667
+0x14000664e: xor     edx, edx; Tag
+0x140006650: mov     rcx, [rsp+48h+P]; P
+0x140006655: call    cs:ExFreePoolWithTag
+0x14000665b: mov     eax, 0FFFFD8EFh
+0x140006660: jmp     short loc_140006667
+0x140006662: mov     eax, 0FFFFD8EFh
+0x140006667: mov     rbx, [rsp+48h+arg_0]
+0x14000666c: mov     rsi, [rsp+48h+arg_18]
+0x140006671: add     rsp, 20h
+0x140006675: pop     r15
+0x140006677: pop     r14
+0x140006679: pop     r13
+0x14000667b: pop     r12
+0x14000667d: pop     rdi
+0x14000667e: retn

@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: sub_140003000
+Addr: 0x140003000
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140003000-0x140003003 -> Jumps to: 
+
+=== CODE ===
+void sub_140003000()
+{
+  __asm { int     0; - internal hardware - DIVIDE ERROR }
+}
+
+
+=== DISASM ===
+0x140003000: int     0; - internal hardware - DIVIDE ERROR
+0x140003002: retn

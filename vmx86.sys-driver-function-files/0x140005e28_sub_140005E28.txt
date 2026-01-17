@@ -1,0 +1,157 @@
+=== METADATA ===
+Name: sub_140005E28
+Addr: 0x140005e28
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005e2b: Access Member +0x8 ([rax+8])
+  0x140005e2f: Access Member +0x10 ([rax+10h])
+  0x140005e33: Access Member +0x18 ([rax+18h])
+  0x140005e37: Access Member +0x20 ([rax+20h])
+  0x140005e41: Access Member +0x10 ([rcx+10h])
+  0x140005e4d: Access Member +0x58 ([rax+58h])
+  0x140005ead: Access Member +0x40 ([rsp+38h+arg_0])
+  0x140005eb2: Access Member +0x48 ([rsp+38h+arg_8])
+  0x140005eb7: Access Member +0x50 ([rsp+38h+arg_10])
+  0x140005ebc: Access Member +0x58 ([rsp+38h+arg_18])
+  0x140005ee6: Access Member +0x20 ([rsp+38h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140005B9C (0x140005C9F)
+  <- sub_14000C15C (0x14000C187)
+
+=== IMPORTS ===
+  -> 0x140005e92 calls MmFreePagesFromMdl
+  -> 0x140005e9d calls ExFreePoolWithTag
+
+=== STRINGS ===
+  0x140005ecc -> HostIF_FreeLockedPages
+  0x140005eda -> %s(): MPN 0x%08llx is not locked
+
+=== BASIC BLOCKS ===
+  Block 0x140005e28-0x140005e56 -> Jumps to: 0x140005e56, 0x140005eab
+  Block 0x140005e56-0x140005e66 -> Jumps to: 0x140005e66, 0x140005ec8
+  Block 0x140005e66-0x140005e6e -> Jumps to: 0x140005e56, 0x140005e6e
+  Block 0x140005e6e-0x140005e70 -> Jumps to: 0x140005e70
+  Block 0x140005e70-0x140005e80 -> Jumps to: 0x140005e80, 0x140005e83
+  Block 0x140005e80-0x140005e83 -> Jumps to: 0x140005e83
+  Block 0x140005e83-0x140005eab -> Jumps to: 0x140005e70, 0x140005eab
+  Block 0x140005eab-0x140005ead -> Jumps to: 0x140005ead
+  Block 0x140005ead-0x140005ec8 -> Jumps to: 
+  Block 0x140005ec8-0x140005ef7 -> Jumps to: 0x140005ead
+
+=== CODE ===
+__int64 __fastcall sub_140005E28(__int64 a1, __int64 a2, unsigned __int64 a3)
+{
+  unsigned __int64 v3; // rbx
+  __int64 v6; // r14
+  unsigned __int64 v7; // rdi
+  volatile __int64 *v8; // rax
+  struct _MDL *v9; // rbx
+
+  v3 = 0;
+  v6 = *(_QWORD *)(*(_QWORD *)(a1 + 16) + 88LL);
+  if ( a3 )
+  {
+    do
+    {
+      if ( !(unsigned __int8)sub_140008220(v6, *(_QWORD *)(a2 + 8 * v3)) )
+      {
+        sub_14000DF58(IoObject);
+        return 4294957194LL;
+      }
+      ++v3;
+    }
+    while ( v3 < a3 );
+    v7 = 0;
+    do
+    {
+      v8 = (volatile __int64 *)sub_14000501C(*(_QWORD *)(a2 + 8 * v7));
+      v9 = 0;
+      if ( v8 )
+        v9 = (struct _MDL *)_InterlockedExchange64(v8, 0);
+      sub_1400081A4(v6, *(_QWORD *)(a2 + 8 * v7));
+      MmFreePagesFromMdl(v9);
+      ExFreePoolWithTag(v9, 0);
+      ++v7;
+    }
+    while ( v7 < a3 );
+  }
+  return 0;
+}
+
+
+=== DISASM ===
+0x140005e28: mov     rax, rsp
+0x140005e2b: mov     [rax+8], rbx
+0x140005e2f: mov     [rax+10h], rbp
+0x140005e33: mov     [rax+18h], rsi
+0x140005e37: mov     [rax+20h], rdi
+0x140005e3b: push    r14
+0x140005e3d: sub     rsp, 30h
+0x140005e41: mov     rax, [rcx+10h]
+0x140005e45: xor     ebx, ebx
+0x140005e47: mov     rbp, r8
+0x140005e4a: mov     rsi, rdx
+0x140005e4d: mov     r14, [rax+58h]
+0x140005e51: test    r8, r8
+0x140005e54: jz      short loc_140005EAB
+0x140005e56: mov     rdx, [rsi+rbx*8]
+0x140005e5a: mov     rcx, r14
+0x140005e5d: call    sub_140008220
+0x140005e62: test    al, al
+0x140005e64: jz      short loc_140005EC8
+0x140005e66: inc     rbx
+0x140005e69: cmp     rbx, rbp
+0x140005e6c: jb      short loc_140005E56
+0x140005e6e: xor     edi, edi
+0x140005e70: mov     rcx, [rsi+rdi*8]
+0x140005e74: call    sub_14000501C
+0x140005e79: xor     ebx, ebx
+0x140005e7b: test    rax, rax
+0x140005e7e: jz      short loc_140005E83
+0x140005e80: xchg    rbx, [rax]
+0x140005e83: mov     rdx, [rsi+rdi*8]
+0x140005e87: mov     rcx, r14
+0x140005e8a: call    sub_1400081A4
+0x140005e8f: mov     rcx, rbx; MemoryDescriptorList
+0x140005e92: call    cs:MmFreePagesFromMdl
+0x140005e98: xor     edx, edx; Tag
+0x140005e9a: mov     rcx, rbx; P
+0x140005e9d: call    cs:ExFreePoolWithTag
+0x140005ea3: inc     rdi
+0x140005ea6: cmp     rdi, rbp
+0x140005ea9: jb      short loc_140005E70
+0x140005eab: xor     eax, eax
+0x140005ead: mov     rbx, [rsp+38h+arg_0]
+0x140005eb2: mov     rbp, [rsp+38h+arg_8]
+0x140005eb7: mov     rsi, [rsp+38h+arg_10]
+0x140005ebc: mov     rdi, [rsp+38h+arg_18]
+0x140005ec1: add     rsp, 30h
+0x140005ec5: pop     r14
+0x140005ec7: retn
+0x140005ec8: mov     rax, [rsi+rbx*8]
+0x140005ecc: lea     r9, aHostifFreelock; "HostIF_FreeLockedPages"
+0x140005ed3: mov     rcx, cs:IoObject; IoObject
+0x140005eda: lea     r8, aSMpn0x08llxIsN; "%s(): MPN 0x%08llx is not locked"
+0x140005ee1: mov     edx, 0C0080020h
+0x140005ee6: mov     [rsp+38h+var_18], rax
+0x140005eeb: call    sub_14000DF58
+0x140005ef0: mov     eax, 0FFFFD88Ah
+0x140005ef5: jmp     short loc_140005EAD

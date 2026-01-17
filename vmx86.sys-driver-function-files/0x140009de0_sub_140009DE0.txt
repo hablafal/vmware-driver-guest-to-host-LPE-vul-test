@@ -1,0 +1,272 @@
+=== METADATA ===
+Name: sub_140009DE0
+Addr: 0x140009de0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140009e00: AND with Mask 0x0
+  0x140009ec8: AND with Mask 0x0
+  0x140009f50: TEST with Mask 0x4
+
+=== MEMBER ACCESS ===
+  0x140009de0: Access Member +0x8 ([rsp-8+arg_0])
+  0x140009de5: Access Member +0x10 ([rsp-8+arg_8])
+  0x140009f78: Access Member +0x50 ([rsp+40h+arg_0])
+  0x140009f7d: Access Member +0x58 ([rsp+40h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x1400035AA)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140009df2 -> 2
+  0x140009e33 -> GenuineIntel
+  0x140009e50 -> 
+  0x140009e5c -> AuthenticAMD
+  0x140009e70 -> 
+  0x140009e7c -> CyrixInstead
+  0x140009e90 -> 
+  0x140009e9c -> HygonGenuine
+  0x140009eb0 -> 
+  0x140009ebc -> VMMON CPUID: Unrecognized CPU
+
+  0x140009ec8 -> 
+
+=== BASIC BLOCKS ===
+  Block 0x140009de0-0x140009e50 -> Jumps to: 0x140009e50, 0x140009e5c
+  Block 0x140009e50-0x140009e5c -> Jumps to: 0x140009ecf
+  Block 0x140009e5c-0x140009e70 -> Jumps to: 0x140009e70, 0x140009e7c
+  Block 0x140009e70-0x140009e7c -> Jumps to: 0x140009ecf
+  Block 0x140009e7c-0x140009e90 -> Jumps to: 0x140009e90, 0x140009e9c
+  Block 0x140009e90-0x140009e9c -> Jumps to: 0x140009ecf
+  Block 0x140009e9c-0x140009eb0 -> Jumps to: 0x140009eb0, 0x140009ebc
+  Block 0x140009eb0-0x140009ebc -> Jumps to: 0x140009ecf
+  Block 0x140009ebc-0x140009ecf -> Jumps to: 0x140009ecf
+  Block 0x140009ecf-0x140009efb -> Jumps to: 0x140009efb, 0x140009f1c
+  Block 0x140009efb-0x140009f02 -> Jumps to: 0x140009f02, 0x140009f1c
+  Block 0x140009f02-0x140009f07 -> Jumps to: 0x140009f07, 0x140009f1c
+  Block 0x140009f07-0x140009f0c -> Jumps to: 0x140009f0c, 0x140009f1c
+  Block 0x140009f0c-0x140009f12 -> Jumps to: 0x140009f12, 0x140009f1c
+  Block 0x140009f12-0x140009f18 -> Jumps to: 0x140009f18, 0x140009f1c
+  Block 0x140009f18-0x140009f1c -> Jumps to: 0x140009f1f
+  Block 0x140009f1c-0x140009f1f -> Jumps to: 0x140009f1f
+  Block 0x140009f1f-0x140009f47 -> Jumps to: 0x140009f47, 0x140009f62
+  Block 0x140009f47-0x140009f55 -> Jumps to: 0x140009f55, 0x140009f62
+  Block 0x140009f55-0x140009f62 -> Jumps to: 0x140009f62, 0x140009f65
+  Block 0x140009f62-0x140009f65 -> Jumps to: 0x140009f65
+  Block 0x140009f65-0x140009f88 -> Jumps to: 
+
+=== CODE ===
+__int64 sub_140009DE0()
+{
+  char v0; // di
+  int v16; // r8d
+  char v23; // r9
+  bool v28; // al
+  __int64 result; // rax
+  char Str1[4]; // [rsp+20h] [rbp-20h] BYREF
+  int v48; // [rsp+24h] [rbp-1Ch]
+  int v49; // [rsp+28h] [rbp-18h]
+  int v50; // [rsp+2Ch] [rbp-14h]
+
+  v50 = 0;
+  v0 = 1;
+  _RAX = 1;
+  __asm { cpuid }
+  dword_14001D0C4 = _RAX;
+  byte_14001D0C0 = (_RCX & 0x4000000) != 0;
+  _RAX = 0;
+  dword_14001D0C8 = _RDX;
+  __asm { cpuid }
+  v48 = _RDX;
+  v49 = _RCX;
+  *(_DWORD *)Str1 = _RBX;
+  if ( !strcmp(Str1, "GenuineIntel") )
+  {
+    dword_140014A00 = 2;
+  }
+  else if ( !strcmp(Str1, "AuthenticAMD") )
+  {
+    dword_140014A00 = 3;
+  }
+  else if ( !strcmp(Str1, "CyrixInstead") )
+  {
+    dword_140014A00 = 4;
+  }
+  else if ( !strcmp(Str1, "HygonGenuine") )
+  {
+    dword_140014A00 = 6;
+  }
+  else
+  {
+    sub_140003A14("VMMON CPUID: Unrecognized CPU\n");
+    dword_140014A00 = 0;
+  }
+  _RAX = 7;
+  __asm { cpuid }
+  v16 = _RDX;
+  _RAX = 7;
+  __asm { cpuid }
+  _RAX = 2147483656LL;
+  v23 = _RDX;
+  __asm { cpuid }
+  v28 = (v16 & 0x4000000) != 0
+     || (v16 & 0x8000000) != 0
+     || v16 < 0
+     || (v23 & 1) != 0
+     || (_RBX & 0x1000000) != 0
+     || (_RBX & 0x10000000) != 0;
+  byte_14001D0C1 = v28;
+  _RAX = 1;
+  __asm { cpuid }
+  _RAX = 0x80000000LL;
+  byte_14001D0C3 = (_RCX & 0x20) != 0;
+  __asm { cpuid }
+  if ( (unsigned int)result < 0x8000000A )
+    goto LABEL_21;
+  _RAX = 2147483649LL;
+  __asm { cpuid }
+  if ( (_RCX & 4) == 0 )
+    goto LABEL_21;
+  _RAX = 2147483658LL;
+  __asm { cpuid }
+  if ( !(_BYTE)result )
+LABEL_21:
+    v0 = 0;
+  byte_14001D0C2 = v0;
+  return result;
+}
+
+
+=== DISASM ===
+0x140009de0: mov     [rsp-8+arg_0], rbx
+0x140009de5: mov     [rsp-8+arg_8], rdi
+0x140009dea: push    rbp
+0x140009deb: mov     rbp, rsp
+0x140009dee: sub     rsp, 40h
+0x140009df2: mov     rax, cs:__security_cookie
+0x140009df9: xor     rax, rsp
+0x140009dfc: mov     [rbp+var_10], rax
+0x140009e00: and     [rbp+var_14], 0
+0x140009e04: xor     ecx, ecx
+0x140009e06: mov     edi, 1
+0x140009e0b: mov     eax, edi
+0x140009e0d: cpuid
+0x140009e0f: shr     ecx, 1Ah
+0x140009e12: and     cl, dil
+0x140009e15: mov     cs:dword_14001D0C4, eax
+0x140009e1b: mov     cs:byte_14001D0C0, cl
+0x140009e21: xor     eax, eax
+0x140009e23: xor     ecx, ecx
+0x140009e25: mov     [rbp+var_1C], ebx
+0x140009e28: mov     cs:dword_14001D0C8, edx
+0x140009e2e: cpuid
+0x140009e30: mov     [rbp+var_1C], edx
+0x140009e33: lea     rdx, Str2; "GenuineIntel"
+0x140009e3a: mov     [rbp+var_18], ecx
+0x140009e3d: lea     rcx, [rbp+Str1]; Str1
+0x140009e41: mov     dword ptr [rbp+Str1], eax
+0x140009e44: mov     dword ptr [rbp+Str1], ebx
+0x140009e47: call    strcmp
+0x140009e4c: test    eax, eax
+0x140009e4e: jnz     short loc_140009E5C
+0x140009e50: mov     cs:dword_140014A00, 2
+0x140009e5a: jmp     short loc_140009ECF
+0x140009e5c: lea     rdx, aAuthenticamd; "AuthenticAMD"
+0x140009e63: lea     rcx, [rbp+Str1]; Str1
+0x140009e67: call    strcmp
+0x140009e6c: test    eax, eax
+0x140009e6e: jnz     short loc_140009E7C
+0x140009e70: mov     cs:dword_140014A00, 3
+0x140009e7a: jmp     short loc_140009ECF
+0x140009e7c: lea     rdx, aCyrixinstead; "CyrixInstead"
+0x140009e83: lea     rcx, [rbp+Str1]; Str1
+0x140009e87: call    strcmp
+0x140009e8c: test    eax, eax
+0x140009e8e: jnz     short loc_140009E9C
+0x140009e90: mov     cs:dword_140014A00, 4
+0x140009e9a: jmp     short loc_140009ECF
+0x140009e9c: lea     rdx, aHygongenuine; "HygonGenuine"
+0x140009ea3: lea     rcx, [rbp+Str1]; Str1
+0x140009ea7: call    strcmp
+0x140009eac: test    eax, eax
+0x140009eae: jnz     short loc_140009EBC
+0x140009eb0: mov     cs:dword_140014A00, 6
+0x140009eba: jmp     short loc_140009ECF
+0x140009ebc: lea     rcx, aVmmonCpuidUnre; "VMMON CPUID: Unrecognized CPU\n"
+0x140009ec3: call    sub_140003A14
+0x140009ec8: and     cs:dword_140014A00, 0
+0x140009ecf: xor     ecx, ecx
+0x140009ed1: mov     r9d, 7
+0x140009ed7: mov     eax, r9d
+0x140009eda: cpuid
+0x140009edc: mov     r8d, edx
+0x140009edf: mov     eax, r9d
+0x140009ee2: lea     ecx, [r9-5]
+0x140009ee6: cpuid
+0x140009ee8: xor     ecx, ecx
+0x140009eea: mov     eax, 80000008h
+0x140009eef: mov     r9d, edx
+0x140009ef2: cpuid
+0x140009ef4: bt      r8d, 1Ah
+0x140009ef9: jb      short loc_140009F1C
+0x140009efb: bt      r8d, 1Bh
+0x140009f00: jb      short loc_140009F1C
+0x140009f02: test    r8d, r8d
+0x140009f05: js      short loc_140009F1C
+0x140009f07: test    dil, r9b
+0x140009f0a: jnz     short loc_140009F1C
+0x140009f0c: bt      ebx, 18h
+0x140009f10: jb      short loc_140009F1C
+0x140009f12: bt      ebx, 1Ch
+0x140009f16: jb      short loc_140009F1C
+0x140009f18: xor     al, al
+0x140009f1a: jmp     short loc_140009F1F
+0x140009f1c: mov     al, dil
+0x140009f1f: xor     ecx, ecx
+0x140009f21: mov     cs:byte_14001D0C1, al
+0x140009f27: mov     eax, edi
+0x140009f29: cpuid
+0x140009f2b: shr     ecx, 5
+0x140009f2e: mov     eax, 80000000h
+0x140009f33: and     cl, dil
+0x140009f36: mov     cs:byte_14001D0C3, cl
+0x140009f3c: xor     ecx, ecx
+0x140009f3e: cpuid
+0x140009f40: cmp     eax, 8000000Ah
+0x140009f45: jb      short loc_140009F62
+0x140009f47: xor     ecx, ecx
+0x140009f49: mov     eax, 80000001h
+0x140009f4e: cpuid
+0x140009f50: test    cl, 4
+0x140009f53: jz      short loc_140009F62
+0x140009f55: xor     ecx, ecx
+0x140009f57: mov     eax, 8000000Ah
+0x140009f5c: cpuid
+0x140009f5e: test    al, al
+0x140009f60: jnz     short loc_140009F65
+0x140009f62: xor     dil, dil
+0x140009f65: mov     cs:byte_14001D0C2, dil
+0x140009f6c: mov     rcx, [rbp+var_10]
+0x140009f70: xor     rcx, rsp; StackCookie
+0x140009f73: call    __security_check_cookie
+0x140009f78: mov     rbx, [rsp+40h+arg_0]
+0x140009f7d: mov     rdi, [rsp+40h+arg_8]
+0x140009f82: add     rsp, 40h
+0x140009f86: pop     rbp
+0x140009f87: retn

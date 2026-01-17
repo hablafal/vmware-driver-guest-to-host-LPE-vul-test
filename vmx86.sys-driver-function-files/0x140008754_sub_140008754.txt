@@ -1,0 +1,87 @@
+=== METADATA ===
+Name: sub_140008754
+Addr: 0x140008754
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000876b: AND with Mask 0x700
+
+=== MEMBER ACCESS ===
+  0x140008754: Access Member +0x8 ([rsp+arg_0])
+  0x1400087a9: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000922C (0x1400092FF)
+  <- sub_14000922C (0x14000930F)
+  <- sub_14000922C (0x14000931F)
+  <- sub_14000922C (0x140009343)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140008754-0x14000877b -> Jumps to: 0x14000877b, 0x1400087a7
+  Block 0x14000877b-0x140008784 -> Jumps to: 0x140008784, 0x1400087a7
+  Block 0x140008784-0x1400087a7 -> Jumps to: 0x1400087a9
+  Block 0x1400087a7-0x1400087a9 -> Jumps to: 0x1400087a9
+  Block 0x1400087a9-0x1400087b4 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_140008754(__int64 a1, unsigned int a2)
+{
+  int v4; // eax
+
+  v4 = ((__int64 (*)(void))sub_14000E30C)();
+  if ( (v4 & 0x700) != 0x400 || (v4 & 0x10000) != 0 )
+    return 0;
+  sub_14000E334(a1, a2, v4 | 0x10000u);
+  dword_140018F1C = sub_14000E30C(a1, a2);
+  return 1;
+}
+
+
+=== DISASM ===
+0x140008754: mov     [rsp+arg_0], rbx
+0x140008759: push    rdi
+0x14000875a: sub     rsp, 20h
+0x14000875e: mov     ebx, edx
+0x140008760: mov     rdi, rcx
+0x140008763: call    sub_14000E30C
+0x140008768: mov     r8d, eax
+0x14000876b: and     r8d, 700h
+0x140008772: cmp     r8d, 400h
+0x140008779: jnz     short loc_1400087A7
+0x14000877b: mov     ecx, 10000h
+0x140008780: test    ecx, eax
+0x140008782: jnz     short loc_1400087A7
+0x140008784: or      eax, ecx
+0x140008786: mov     edx, ebx
+0x140008788: mov     r8d, eax
+0x14000878b: mov     rcx, rdi
+0x14000878e: call    sub_14000E334
+0x140008793: mov     edx, ebx
+0x140008795: mov     rcx, rdi
+0x140008798: call    sub_14000E30C
+0x14000879d: mov     cs:dword_140018F1C, eax
+0x1400087a3: mov     al, 1
+0x1400087a5: jmp     short loc_1400087A9
+0x1400087a7: xor     al, al
+0x1400087a9: mov     rbx, [rsp+28h+arg_0]
+0x1400087ae: add     rsp, 20h
+0x1400087b2: pop     rdi
+0x1400087b3: retn

@@ -1,0 +1,130 @@
+=== METADATA ===
+Name: sub_140008A14
+Addr: 0x140008a14
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140008a6c: AND with Mask 0x1FF
+  0x140008a86: TEST with Mask 0x1
+
+=== MEMBER ACCESS ===
+  0x140008a14: Access Member +0x20 ([rsp+arg_18])
+  0x140008a2a: Access Member +0x38 ([rsp+58h+var_20])
+  0x140008a47: Access Member +0x20 ([rsp+58h+var_38])
+  0x140008a59: Access Member +0x30 ([rsp+58h+var_28])
+  0x140008a61: Access Member +0x30 ([rsp+58h+var_28])
+  0x140008a81: Access Member +0x30 ([rsp+58h+var_28])
+  0x140008aad: Access Member +0x38 ([rsp+58h+var_20])
+  0x140008aba: Access Member +0x78 ([rsp+58h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008AC8 (0x140008B2F)
+  <- sub_140008AC8 (0x140008B4A)
+  <- sub_140008AC8 (0x140008B5F)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140008a20 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x140008a14-0x140008a3d -> Jumps to: 0x140008a3d
+  Block 0x140008a3d-0x140008a81 -> Jumps to: 0x140008a81, 0x140008aab
+  Block 0x140008a81-0x140008a8b -> Jumps to: 0x140008a8b, 0x140008aab
+  Block 0x140008a8b-0x140008a92 -> Jumps to: 0x140008a3d, 0x140008a92
+  Block 0x140008a92-0x140008aab -> Jumps to: 0x140008aad
+  Block 0x140008aab-0x140008aad -> Jumps to: 0x140008aad
+  Block 0x140008aad-0x140008ac7 -> Jumps to: 
+
+=== CODE ===
+bool __fastcall sub_140008A14(__int64 a1, unsigned __int64 a2, unsigned __int64 a3, __int64 a4)
+{
+  int v7; // ebx
+  unsigned __int64 v9; // [rsp+30h] [rbp-28h] BYREF
+
+  v7 = 4;
+  while ( 1 )
+  {
+    v9 = a2 & 0xFFFFFFFFFF000LL;
+    if ( (unsigned int)sub_1400067C0(
+                         a1,
+                         (a2 & 0xFFFFFFFFFF000LL) + 8 * ((a3 >> (9 * ((unsigned __int8)v7 - 1))) & 0x1FF),
+                         (int)&v9,
+                         1,
+                         8) )
+      break;
+    a2 = v9;
+    if ( (v9 & 1) == 0 )
+      break;
+    if ( --v7 < 1 )
+      return ((v9 >> 12) & 0xFFFFFFFFFFLL) == a4;
+  }
+  return 0;
+}
+
+
+=== DISASM ===
+0x140008a14: mov     [rsp+arg_18], rbx
+0x140008a19: push    rbp
+0x140008a1a: push    rsi
+0x140008a1b: push    rdi
+0x140008a1c: sub     rsp, 40h
+0x140008a20: mov     rax, cs:__security_cookie
+0x140008a27: xor     rax, rsp
+0x140008a2a: mov     [rsp+58h+var_20], rax
+0x140008a2f: mov     rdi, r9
+0x140008a32: mov     rbp, r8
+0x140008a35: mov     rsi, rcx
+0x140008a38: mov     ebx, 4
+0x140008a3d: mov     rax, 0FFFFFFFFFF000h
+0x140008a47: mov     [rsp+58h+var_38], 8
+0x140008a50: and     rdx, rax
+0x140008a53: lea     ecx, [rbx-1]
+0x140008a56: lea     ecx, [rcx+rcx*8]
+0x140008a59: mov     [rsp+58h+var_28], rdx
+0x140008a5e: mov     rax, rbp
+0x140008a61: lea     r8, [rsp+58h+var_28]
+0x140008a66: shr     rax, cl
+0x140008a69: mov     r9b, 1
+0x140008a6c: and     eax, 1FFh
+0x140008a71: mov     rcx, rsi
+0x140008a74: lea     rdx, [rdx+rax*8]
+0x140008a78: call    sub_1400067C0
+0x140008a7d: test    eax, eax
+0x140008a7f: jnz     short loc_140008AAB
+0x140008a81: mov     rdx, [rsp+58h+var_28]
+0x140008a86: test    dl, 1
+0x140008a89: jz      short loc_140008AAB
+0x140008a8b: dec     ebx
+0x140008a8d: cmp     ebx, 1
+0x140008a90: jge     short loc_140008A3D
+0x140008a92: shr     rdx, 0Ch
+0x140008a96: mov     rax, 0FFFFFFFFFFh
+0x140008aa0: and     rdx, rax
+0x140008aa3: cmp     rdx, rdi
+0x140008aa6: setz    al
+0x140008aa9: jmp     short loc_140008AAD
+0x140008aab: xor     al, al
+0x140008aad: mov     rcx, [rsp+58h+var_20]
+0x140008ab2: xor     rcx, rsp; StackCookie
+0x140008ab5: call    __security_check_cookie
+0x140008aba: mov     rbx, [rsp+58h+arg_18]
+0x140008abf: add     rsp, 40h
+0x140008ac3: pop     rdi
+0x140008ac4: pop     rsi
+0x140008ac5: pop     rbp
+0x140008ac6: retn

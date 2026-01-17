@@ -1,0 +1,171 @@
+=== METADATA ===
+Name: sub_14000C1BC
+Addr: 0x14000c1bc
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000c1cc: Access Member +0x40 ([rsp+58h+var_18])
+  0x14000c1d3: Access Member +0x38 ([rsp+58h+var_20])
+  0x14000c1db: Access Member +0x20 ([rsp+58h+var_38])
+  0x14000c1e7: Access Member +0x30 ([rsp+58h+var_28])
+  0x14000c207: Access Member +0x20 ([rsp+58h+var_38])
+  0x14000c20c: Access Member +0x38 ([rsp+58h+var_20])
+  0x14000c218: Access Member +0x28 ([rsp+58h+var_30])
+  0x14000c222: Access Member +0x20 ([rsp+58h+var_38])
+  0x14000c229: Access Member +0x4 ([rbx+4])
+  0x14000c232: Access Member +0x20 ([rsp+58h+var_38])
+  0x14000c239: Access Member +0x4 ([rbx+4])
+  0x14000c23e: Access Member +0x4 ([rbx+4])
+  0x14000c24a: Access Member +0x8 ([r10+r9*8+8])
+  0x14000c25b: Access Member +0x10 ([rbx+rcx*8+10h])
+  0x14000c260: Access Member +0x8 ([rbx+rcx*8+8])
+  0x14000c265: Access Member +0x4 ([rbx+4])
+  0x14000c26d: Access Member +0x40 ([rsp+58h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x14000429E)
+  <- sub_14000D3E0 (0x14000D8C3)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000c1c2 -> 2
+  0x14000c1e0 -> 
+
+  0x14000c211 -> H
+
+=== BASIC BLOCKS ===
+  Block 0x14000c1bc-0x14000c1f8 -> Jumps to: 0x14000c1f8
+  Block 0x14000c1f8-0x14000c1fc -> Jumps to: 0x14000c1fc, 0x14000c23e
+  Block 0x14000c1fc-0x14000c207 -> Jumps to: 0x14000c1f8, 0x14000c207
+  Block 0x14000c207-0x14000c22e -> Jumps to: 0x14000c22e, 0x14000c232
+  Block 0x14000c22e-0x14000c232 -> Jumps to: 0x14000c26d
+  Block 0x14000c232-0x14000c23e -> Jumps to: 0x14000c26b
+  Block 0x14000c23e-0x14000c244 -> Jumps to: 0x14000c244, 0x14000c26b
+  Block 0x14000c244-0x14000c24a -> Jumps to: 0x14000c24a
+  Block 0x14000c24a-0x14000c26b -> Jumps to: 0x14000c26b, 0x14000c24a
+  Block 0x14000c26b-0x14000c26d -> Jumps to: 0x14000c26d
+  Block 0x14000c26d-0x14000c280 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000C1BC(int *a1)
+{
+  int v1; // edx
+  unsigned int v2; // r8d
+  unsigned int v4; // eax
+  _DWORD *v5; // rcx
+  __int64 v7; // rcx
+  __int64 v8; // rdx
+  _QWORD v9[2]; // [rsp+20h] [rbp-38h] BYREF
+  int v10; // [rsp+30h] [rbp-28h]
+  int v11; // [rsp+38h] [rbp-20h] BYREF
+
+  v1 = *a1;
+  v2 = 0;
+  v9[0] = &v11;
+  v10 = 1;
+  v4 = 0;
+  v5 = &unk_140014A10;
+  do
+  {
+    if ( *v5 == v1 )
+    {
+      if ( a1[1] )
+      {
+        do
+        {
+          v7 = 2LL * v2;
+          v8 = v2++;
+          *(_QWORD *)&a1[2 * v7 + 4] = *((_QWORD *)&unk_140014A10 + 2 * v4 + 1);
+          *(_QWORD *)&a1[2 * v7 + 2] = v8;
+        }
+        while ( v2 < a1[1] );
+      }
+      return 1;
+    }
+    ++v4;
+    v5 += 4;
+  }
+  while ( v4 < 0x1A );
+  v11 = 0;
+  v9[1] = a1;
+  sub_140005828((__int64)sub_14000ABC0, (__int64)v9);
+  if ( *(_DWORD *)v9[0] > (unsigned int)a1[1] )
+    return 0;
+  a1[1] = *(_DWORD *)v9[0];
+  return 1;
+}
+
+
+=== DISASM ===
+0x14000c1bc: push    rbx
+0x14000c1be: sub     rsp, 50h
+0x14000c1c2: mov     rax, cs:__security_cookie
+0x14000c1c9: xor     rax, rsp
+0x14000c1cc: mov     [rsp+58h+var_18], rax
+0x14000c1d1: mov     edx, [rcx]
+0x14000c1d3: lea     rax, [rsp+58h+var_20]
+0x14000c1d8: xor     r8d, r8d
+0x14000c1db: mov     [rsp+58h+var_38], rax
+0x14000c1e0: lea     r10, unk_140014A10
+0x14000c1e7: mov     [rsp+58h+var_28], 1
+0x14000c1ef: mov     rbx, rcx
+0x14000c1f2: mov     eax, r8d
+0x14000c1f5: mov     rcx, r10
+0x14000c1f8: cmp     [rcx], edx
+0x14000c1fa: jz      short loc_14000C23E
+0x14000c1fc: inc     eax
+0x14000c1fe: add     rcx, 10h
+0x14000c202: cmp     eax, 1Ah
+0x14000c205: jb      short loc_14000C1F8
+0x14000c207: lea     rdx, [rsp+58h+var_38]
+0x14000c20c: mov     [rsp+58h+var_20], r8d
+0x14000c211: lea     rcx, sub_14000ABC0
+0x14000c218: mov     [rsp+58h+var_30], rbx
+0x14000c21d: call    sub_140005828
+0x14000c222: mov     rax, [rsp+58h+var_38]
+0x14000c227: mov     ecx, [rax]
+0x14000c229: cmp     ecx, [rbx+4]
+0x14000c22c: jbe     short loc_14000C232
+0x14000c22e: xor     al, al
+0x14000c230: jmp     short loc_14000C26D
+0x14000c232: mov     rcx, [rsp+58h+var_38]
+0x14000c237: mov     edx, [rcx]
+0x14000c239: mov     [rbx+4], edx
+0x14000c23c: jmp     short loc_14000C26B
+0x14000c23e: cmp     [rbx+4], r8d
+0x14000c242: jbe     short loc_14000C26B
+0x14000c244: mov     r9d, eax
+0x14000c247: add     r9, r9
+0x14000c24a: mov     rax, [r10+r9*8+8]
+0x14000c24f: mov     ecx, r8d
+0x14000c252: add     rcx, rcx
+0x14000c255: mov     edx, r8d
+0x14000c258: inc     r8d
+0x14000c25b: mov     [rbx+rcx*8+10h], rax
+0x14000c260: mov     [rbx+rcx*8+8], rdx
+0x14000c265: cmp     r8d, [rbx+4]
+0x14000c269: jb      short loc_14000C24A
+0x14000c26b: mov     al, 1
+0x14000c26d: mov     rcx, [rsp+58h+var_18]
+0x14000c272: xor     rcx, rsp; StackCookie
+0x14000c275: call    __security_check_cookie
+0x14000c27a: add     rsp, 50h
+0x14000c27e: pop     rbx
+0x14000c27f: retn

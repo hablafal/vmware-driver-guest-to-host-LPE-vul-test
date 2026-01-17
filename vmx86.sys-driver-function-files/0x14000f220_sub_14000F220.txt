@@ -1,0 +1,95 @@
+=== METADATA ===
+Name: sub_14000F220
+Addr: 0x14000f220
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f220: Access Member +0x8 ([rsp+arg_0])
+  0x14000f232: Access Member +0x10 ([rdx+10h])
+  0x14000f25e: Access Member +0x8 ([rbx+8])
+  0x14000f262: Access Member +0x8 ([r8+8])
+  0x14000f26b: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000EAD0 (0x14000EB68)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f242 -> Failed to allocate memory for MonLoader context
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000f220-0x14000f242 -> Jumps to: 0x14000f242, 0x14000f252
+  Block 0x14000f242-0x14000f252 -> Jumps to: 0x14000f26b
+  Block 0x14000f252-0x14000f26b -> Jumps to: 0x14000f26b
+  Block 0x14000f26b-0x14000f276 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000F220(_QWORD *a1, _QWORD *a2)
+{
+  _QWORD *v4; // rax
+  _QWORD *v5; // r8
+
+  v4 = sub_1400055C0(0x10u, 0);
+  v5 = v4;
+  if ( v4 )
+  {
+    *(_OWORD *)v4 = 0;
+    *v4 = *a1;
+    v4[1] = a1[1];
+    *a2 = v5;
+    return 1;
+  }
+  else
+  {
+    sub_140003A14("Failed to allocate memory for MonLoader context\n");
+    return 0;
+  }
+}
+
+
+=== DISASM ===
+0x14000f220: mov     [rsp+arg_0], rbx
+0x14000f225: push    rdi
+0x14000f226: sub     rsp, 20h
+0x14000f22a: mov     rdi, rdx
+0x14000f22d: mov     rbx, rcx
+0x14000f230: xor     edx, edx
+0x14000f232: lea     ecx, [rdx+10h]; NumberOfBytes
+0x14000f235: call    sub_1400055C0
+0x14000f23a: mov     r8, rax
+0x14000f23d: test    rax, rax
+0x14000f240: jnz     short loc_14000F252
+0x14000f242: lea     rcx, aFailedToAlloca_2; "Failed to allocate memory for MonLoader"...
+0x14000f249: call    sub_140003A14
+0x14000f24e: xor     al, al
+0x14000f250: jmp     short loc_14000F26B
+0x14000f252: xorps   xmm0, xmm0
+0x14000f255: movups  xmmword ptr [rax], xmm0
+0x14000f258: mov     rax, [rbx]
+0x14000f25b: mov     [r8], rax
+0x14000f25e: mov     rax, [rbx+8]
+0x14000f262: mov     [r8+8], rax
+0x14000f266: mov     al, 1
+0x14000f268: mov     [rdi], r8
+0x14000f26b: mov     rbx, [rsp+28h+arg_0]
+0x14000f270: add     rsp, 20h
+0x14000f274: pop     rdi
+0x14000f275: retn

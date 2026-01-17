@@ -1,0 +1,132 @@
+=== METADATA ===
+Name: sub_140008024
+Addr: 0x140008024
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000806c: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140008024: Access Member +0x8 ([rsp+arg_0])
+  0x140008029: Access Member +0x10 ([rsp+arg_8])
+  0x140008036: Access Member +0x8 ([rcx+8])
+  0x140008081: Access Member +0x30 ([rsp+28h+arg_0])
+  0x140008086: Access Member +0x38 ([rsp+28h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140005B9C (0x140005C7A)
+  <- sub_140005B9C (0x140005CC1)
+  <- sub_14000606C (0x1400061FE)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140008095 -> PhysTrack_Free
+  0x14000809c -> %s: pfns still locked
+
+
+=== BASIC BLOCKS ===
+  Block 0x140008024-0x14000803c -> Jumps to: 0x14000803c
+  Block 0x14000803c-0x140008044 -> Jumps to: 0x140008044, 0x140008070
+  Block 0x140008044-0x140008046 -> Jumps to: 0x140008046
+  Block 0x140008046-0x14000804c -> Jumps to: 0x14000804c
+  Block 0x14000804c-0x140008051 -> Jumps to: 0x140008051, 0x140008095
+  Block 0x140008051-0x140008060 -> Jumps to: 0x14000804c, 0x140008060
+  Block 0x140008060-0x140008067 -> Jumps to: 0x140008046, 0x140008067
+  Block 0x140008067-0x140008070 -> Jumps to: 0x140008070
+  Block 0x140008070-0x14000807e -> Jumps to: 0x14000803c, 0x14000807e
+  Block 0x14000807e-0x140008095 -> Jumps to: 0x140005dc4
+  Block 0x140008095-0x1400080a8 -> Jumps to: 
+  Block 0x140005dc4-0x140005dc4 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140008024(void **a1)
+{
+  void **v2; // rbx
+  unsigned int i; // edi
+  int v4; // eax
+  unsigned int v5; // r8d
+  _BYTE *v6; // rdx
+
+  v2 = a1 + 1;
+  for ( i = 0; i < 0x4020; ++i )
+  {
+    if ( *v2 )
+    {
+      v4 = 0;
+      do
+      {
+        v5 = 0;
+        v6 = *v2;
+        do
+        {
+          if ( *v6 )
+            sub_140003A70((ULONG_PTR)"%s: pfns still locked\n", "PhysTrack_Free");
+          ++v5;
+          ++v6;
+        }
+        while ( v5 < 0x1000 );
+        ++v4;
+      }
+      while ( !v4 );
+      sub_140005DC4(*v2);
+      *v2 = 0;
+    }
+    ++v2;
+  }
+  sub_140005DC4(a1);
+}
+
+
+=== DISASM ===
+0x140008024: mov     [rsp+arg_0], rbx
+0x140008029: mov     [rsp+arg_8], rsi
+0x14000802e: push    rdi
+0x14000802f: sub     rsp, 20h
+0x140008033: mov     rsi, rcx
+0x140008036: lea     rbx, [rcx+8]
+0x14000803a: xor     edi, edi
+0x14000803c: mov     rcx, [rbx]
+0x14000803f: test    rcx, rcx
+0x140008042: jz      short loc_140008070
+0x140008044: xor     eax, eax
+0x140008046: xor     r8d, r8d
+0x140008049: mov     rdx, rcx
+0x14000804c: cmp     byte ptr [rdx], 0
+0x14000804f: jnz     short loc_140008095
+0x140008051: inc     r8d
+0x140008054: inc     rdx
+0x140008057: cmp     r8d, 1000h
+0x14000805e: jb      short loc_14000804C
+0x140008060: inc     eax
+0x140008062: cmp     eax, 1
+0x140008065: jb      short loc_140008046
+0x140008067: call    sub_140005DC4
+0x14000806c: and     qword ptr [rbx], 0
+0x140008070: inc     edi
+0x140008072: add     rbx, 8
+0x140008076: cmp     edi, 4020h
+0x14000807c: jb      short loc_14000803C
+0x14000807e: mov     rcx, rsi
+0x140008081: mov     rbx, [rsp+28h+arg_0]
+0x140008086: mov     rsi, [rsp+28h+arg_8]
+0x14000808b: add     rsp, 20h
+0x14000808f: pop     rdi
+0x140008090: jmp     sub_140005DC4
+0x140008095: lea     rdx, aPhystrackFree; "PhysTrack_Free"
+0x14000809c: lea     rcx, aSPfnsStillLock; "%s: pfns still locked\n"
+0x1400080a3: call    sub_140003A70

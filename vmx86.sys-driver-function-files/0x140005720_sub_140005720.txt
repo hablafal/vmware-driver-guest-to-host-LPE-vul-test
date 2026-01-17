@@ -1,0 +1,47 @@
+=== METADATA ===
+Name: sub_140005720
+Addr: 0x140005720
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005724: Access Member +0x20 ([rsp+38h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B768 (0x14000B7BB)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005720-0x140005733 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140005720(__int64 a1, char *a2, unsigned __int64 a3, char a4)
+{
+  return sub_140004C50(a1, a2, a3, a4, 0);
+}
+
+
+=== DISASM ===
+0x140005720: sub     rsp, 38h
+0x140005724: mov     [rsp+38h+var_18], 0
+0x140005729: call    sub_140004C50
+0x14000572e: add     rsp, 38h
+0x140005732: retn

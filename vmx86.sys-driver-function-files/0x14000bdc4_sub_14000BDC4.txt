@@ -1,0 +1,96 @@
+=== METADATA ===
+Name: sub_14000BDC4
+Addr: 0x14000bdc4
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000bdde: OR with Mask 0xFFFFFFFFFFFFFFFF
+
+=== MEMBER ACCESS ===
+  0x14000bdc4: Access Member +0x8 ([rsp+arg_0])
+  0x14000be07: Access Member +0x1F4 ([rax+1F4h])
+  0x14000be29: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000C6FC (0x14000C73D)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000bdc4-0x14000bde7 -> Jumps to: 0x14000bded
+  Block 0x14000bde7-0x14000bded -> Jumps to: 0x14000bded
+  Block 0x14000bded-0x14000bdf2 -> Jumps to: 0x14000bde7, 0x14000bdf2
+  Block 0x14000bdf2-0x14000bdf7 -> Jumps to: 0x14000bdf7, 0x14000bdfb
+  Block 0x14000bdf7-0x14000bdfb -> Jumps to: 0x14000be29
+  Block 0x14000bdfb-0x14000be29 -> Jumps to: 0x14000be29
+  Block 0x14000be29-0x14000be34 -> Jumps to: 
+
+=== CODE ===
+unsigned __int64 __fastcall sub_14000BDC4(unsigned __int64 a1, unsigned __int64 a2)
+{
+  union _LARGE_INTEGER v4; // rcx
+
+  v4 = sub_140007520();
+  while ( a1 > 0xFFFFFFFFFFFFFFFFuLL / v4.QuadPart )
+  {
+    a1 >>= 1;
+    a2 >>= 1;
+  }
+  if ( a2 )
+    return (a1 * v4.QuadPart / a2 + 500) / 0x3E8;
+  else
+    return 0;
+}
+
+
+=== DISASM ===
+0x14000bdc4: mov     [rsp+arg_0], rbx
+0x14000bdc9: push    rdi
+0x14000bdca: sub     rsp, 20h
+0x14000bdce: mov     rdi, rdx
+0x14000bdd1: mov     rbx, rcx
+0x14000bdd4: call    sub_140007520
+0x14000bdd9: mov     rcx, rax
+0x14000bddc: xor     edx, edx
+0x14000bdde: or      rax, 0FFFFFFFFFFFFFFFFh
+0x14000bde2: div     rcx
+0x14000bde5: jmp     short loc_14000BDED
+0x14000bde7: shr     rbx, 1
+0x14000bdea: shr     rdi, 1
+0x14000bded: cmp     rbx, rax
+0x14000bdf0: ja      short loc_14000BDE7
+0x14000bdf2: test    rdi, rdi
+0x14000bdf5: jnz     short loc_14000BDFB
+0x14000bdf7: xor     eax, eax
+0x14000bdf9: jmp     short loc_14000BE29
+0x14000bdfb: imul    rcx, rbx
+0x14000bdff: xor     edx, edx
+0x14000be01: mov     rax, rcx
+0x14000be04: div     rdi
+0x14000be07: lea     rcx, [rax+1F4h]
+0x14000be0e: mov     rax, 624DD2F1A9FBE77h
+0x14000be18: mul     rcx
+0x14000be1b: sub     rcx, rdx
+0x14000be1e: shr     rcx, 1
+0x14000be21: lea     rax, [rdx+rcx]
+0x14000be25: shr     rax, 9
+0x14000be29: mov     rbx, [rsp+28h+arg_0]
+0x14000be2e: add     rsp, 20h
+0x14000be32: pop     rdi
+0x14000be33: retn

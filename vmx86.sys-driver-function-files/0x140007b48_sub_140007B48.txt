@@ -1,0 +1,150 @@
+=== METADATA ===
+Name: sub_140007B48
+Addr: 0x140007b48
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140007b48: Access Member +0x8 ([rsp+arg_0])
+  0x140007b4d: Access Member +0x10 ([rsp+arg_8])
+  0x140007b78: Access Member +0x10 ([rbx+rdi*8+10h])
+  0x140007be7: Access Member +0x30 ([rsp+28h+arg_0])
+  0x140007bec: Access Member +0x38 ([rsp+28h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140007CF4 (0x140007D51)
+  <- sub_140007D74 (0x140007E82)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140007b48-0x140007b5f -> Jumps to: 0x140007b5f, 0x140007b6e
+  Block 0x140007b5f-0x140007b69 -> Jumps to: 0x140007b69, 0x140007b6e
+  Block 0x140007b69-0x140007b6e -> Jumps to: 0x140007b76
+  Block 0x140007b6e-0x140007b76 -> Jumps to: 0x140007b76, 0x140007be7
+  Block 0x140007b76-0x140007b78 -> Jumps to: 0x140007b78
+  Block 0x140007b78-0x140007b82 -> Jumps to: 0x140007b82, 0x140007b93
+  Block 0x140007b82-0x140007b93 -> Jumps to: 0x140007b78, 0x140007b93
+  Block 0x140007b93-0x140007b95 -> Jumps to: 0x140007b95
+  Block 0x140007b95-0x140007ba2 -> Jumps to: 0x140007ba2, 0x140007ba7
+  Block 0x140007ba2-0x140007ba7 -> Jumps to: 0x140007ba7
+  Block 0x140007ba7-0x140007bac -> Jumps to: 0x140007bac, 0x140007bc1
+  Block 0x140007bac-0x140007bbc -> Jumps to: 0x140007bbc, 0x140007bc1
+  Block 0x140007bbc-0x140007bc1 -> Jumps to: 0x140007bc1
+  Block 0x140007bc1-0x140007bce -> Jumps to: 0x140007b95, 0x140007bce
+  Block 0x140007bce-0x140007bd3 -> Jumps to: 0x140007bd3, 0x140007bdf
+  Block 0x140007bd3-0x140007bdf -> Jumps to: 0x140007bdf
+  Block 0x140007bdf-0x140007be7 -> Jumps to: 0x140007be7
+  Block 0x140007be7-0x140007bf7 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140007B48(void **a1)
+{
+  char v2; // si
+  unsigned __int64 i; // rdi
+  void *v4; // rcx
+  unsigned __int64 j; // rdi
+  void *v6; // rcx
+  void *v7; // rcx
+
+  if ( a1 && a1[243746] )
+  {
+    v2 = 1;
+  }
+  else
+  {
+    v2 = 0;
+    if ( !a1 )
+      return;
+  }
+  for ( i = 0; i < 0x3B800; ++i )
+  {
+    v4 = a1[i + 2];
+    if ( !v4 )
+      break;
+    sub_140005DC4(v4);
+  }
+  for ( j = 0; j < 32; ++j )
+  {
+    v6 = a1[j + 243714];
+    if ( v6 )
+      sub_140005DC4(v6);
+    if ( v2 )
+    {
+      v7 = *(void **)((char *)a1[243746] + j * 8);
+      if ( v7 )
+        sub_140005DC4(v7);
+    }
+  }
+  if ( v2 )
+    sub_140005DC4(a1[243746]);
+  sub_140005DC4(a1);
+}
+
+
+=== DISASM ===
+0x140007b48: mov     [rsp+arg_0], rbx
+0x140007b4d: mov     [rsp+arg_8], rsi
+0x140007b52: push    rdi
+0x140007b53: sub     rsp, 20h
+0x140007b57: mov     rbx, rcx
+0x140007b5a: test    rcx, rcx
+0x140007b5d: jz      short loc_140007B6E
+0x140007b5f: cmp     qword ptr [rcx+1DC110h], 0
+0x140007b67: jz      short loc_140007B6E
+0x140007b69: mov     sil, 1
+0x140007b6c: jmp     short loc_140007B76
+0x140007b6e: xor     sil, sil
+0x140007b71: test    rbx, rbx
+0x140007b74: jz      short loc_140007BE7
+0x140007b76: xor     edi, edi
+0x140007b78: mov     rcx, [rbx+rdi*8+10h]
+0x140007b7d: test    rcx, rcx
+0x140007b80: jz      short loc_140007B93
+0x140007b82: call    sub_140005DC4
+0x140007b87: inc     rdi
+0x140007b8a: cmp     rdi, 3B800h
+0x140007b91: jb      short loc_140007B78
+0x140007b93: xor     edi, edi
+0x140007b95: mov     rcx, [rbx+rdi+1DC010h]
+0x140007b9d: test    rcx, rcx
+0x140007ba0: jz      short loc_140007BA7
+0x140007ba2: call    sub_140005DC4
+0x140007ba7: test    sil, sil
+0x140007baa: jz      short loc_140007BC1
+0x140007bac: mov     rax, [rbx+1DC110h]
+0x140007bb3: mov     rcx, [rdi+rax]
+0x140007bb7: test    rcx, rcx
+0x140007bba: jz      short loc_140007BC1
+0x140007bbc: call    sub_140005DC4
+0x140007bc1: add     rdi, 8
+0x140007bc5: cmp     rdi, 100h
+0x140007bcc: jb      short loc_140007B95
+0x140007bce: test    sil, sil
+0x140007bd1: jz      short loc_140007BDF
+0x140007bd3: mov     rcx, [rbx+1DC110h]
+0x140007bda: call    sub_140005DC4
+0x140007bdf: mov     rcx, rbx
+0x140007be2: call    sub_140005DC4
+0x140007be7: mov     rbx, [rsp+28h+arg_0]
+0x140007bec: mov     rsi, [rsp+28h+arg_8]
+0x140007bf1: add     rsp, 20h
+0x140007bf5: pop     rdi
+0x140007bf6: retn

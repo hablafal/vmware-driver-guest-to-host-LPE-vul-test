@@ -1,0 +1,82 @@
+=== METADATA ===
+Name: sub_14000BE34
+Addr: 0x14000be34
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000be69: Access Member +0x8 ([rax+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x1400035C7)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000be59 -> Failed to allocate SVM I/O bitmap.
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000be34-0x14000be41 -> Jumps to: 0x14000be41, 0x14000be7d
+  Block 0x14000be41-0x14000be59 -> Jumps to: 0x14000be59, 0x14000be69
+  Block 0x14000be59-0x14000be69 -> Jumps to: 0x14000be7f
+  Block 0x14000be69-0x14000be7d -> Jumps to: 0x14000be7d
+  Block 0x14000be7d-0x14000be7f -> Jumps to: 0x14000be7f
+  Block 0x14000be7f-0x14000be84 -> Jumps to: 
+
+=== CODE ===
+char sub_14000BE34()
+{
+  struct _MDL **v0; // rax
+
+  if ( byte_14001D0C2 )
+  {
+    v0 = sub_140005480(0, (struct _MDL *)3);
+    qword_14001D0B8 = (__int64)v0;
+    if ( !v0 )
+    {
+      sub_140003A14("Failed to allocate SVM I/O bitmap.\n");
+      return 0;
+    }
+    sub_14000FEC0(v0[1], 255, 12288);
+  }
+  return 1;
+}
+
+
+=== DISASM ===
+0x14000be34: sub     rsp, 28h
+0x14000be38: cmp     cs:byte_14001D0C2, 0
+0x14000be3f: jz      short loc_14000BE7D
+0x14000be41: mov     edx, 3
+0x14000be46: xor     ecx, ecx
+0x14000be48: call    sub_140005480
+0x14000be4d: mov     cs:qword_14001D0B8, rax
+0x14000be54: test    rax, rax
+0x14000be57: jnz     short loc_14000BE69
+0x14000be59: lea     rcx, aFailedToAlloca; "Failed to allocate SVM I/O bitmap.\n"
+0x14000be60: call    sub_140003A14
+0x14000be65: xor     al, al
+0x14000be67: jmp     short loc_14000BE7F
+0x14000be69: mov     rcx, [rax+8]
+0x14000be6d: mov     edx, 0FFh
+0x14000be72: mov     r8d, 3000h
+0x14000be78: call    sub_14000FEC0
+0x14000be7d: mov     al, 1
+0x14000be7f: add     rsp, 28h
+0x14000be83: retn

@@ -1,0 +1,275 @@
+=== METADATA ===
+Name: sub_1400047D0
+Addr: 0x1400047d0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x1400047e5: AND with Mask 0x0
+  0x1400047ee: AND with Mask 0x0
+  0x14000481b: AND with Mask 0x3
+  0x140004890: AND with Mask 0x0
+  0x14000489c: AND with Mask 0x0
+  0x1400048d6: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x1400047d0: Access Member +0x8 ([rsp+arg_0])
+  0x1400047d5: Access Member +0x10 ([rsp+arg_8])
+  0x1400047da: Access Member +0x18 ([rsp+arg_10])
+  0x1400047e5: Access Member +0x38 (qword ptr [rdx+38h])
+  0x1400047ea: Access Member +0x30 ([rdx+30h])
+  0x1400047f4: Access Member +0xB8 ([rdx+0B8h])
+  0x140004800: Access Member +0x30 ([rcx+30h])
+  0x140004814: Access Member +0x18 ([rcx+18h])
+  0x140004823: Access Member +0x20 ([rcx+20h])
+  0x140004827: Access Member +0x70 ([rdx+70h])
+  0x140004831: Access Member +0x18 ([rdx+18h])
+  0x140004838: Access Member +0x8 ([rcx+8])
+  0x14000483b: Access Member +0x48 ([rsp+58h+var_10])
+  0x140004840: Access Member +0x40 ([rsp+58h+var_18])
+  0x140004845: Access Member +0x38 ([rsp+58h+var_20])
+  0x14000484d: Access Member +0x30 ([rsp+58h+var_28])
+  0x140004851: Access Member +0x10 ([rcx+10h])
+  0x140004857: Access Member +0x28 ([rsp+58h+var_30])
+  0x14000485f: Access Member +0x20 ([rsp+58h+var_38])
+  0x140004872: Access Member +0x18 ([rsi+18h])
+  0x140004890: Access Member +0x18 (qword ptr [rsi+18h])
+  0x14000489c: Access Member +0x18 (qword ptr [rsi+18h])
+  0x1400048a1: Access Member +0x8 ([rcx+8])
+  0x1400048a5: Access Member +0x10 ([rcx+10h])
+  0x1400048a8: Access Member +0x8 ([rcx+8])
+  0x1400048da: Access Member +0x18 ([rsi+18h])
+  0x1400048f0: Access Member +0x68 ([rsp+58h+arg_8])
+  0x1400048f7: Access Member +0x60 ([rsp+58h+arg_0])
+  0x1400048fc: Access Member +0x70 ([rsp+58h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x18 -> possible EvtIoDefault
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+  -> 0x1400048ea calls IofCompleteRequest
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x1400047d0-0x14000480c -> Jumps to: 0x14000480c, 0x14000489c
+  Block 0x14000480c-0x140004810 -> Jumps to: 0x140004810, 0x140004872
+  Block 0x140004810-0x140004814 -> Jumps to: 0x140004814, 0x14000486a
+  Block 0x140004814-0x140004823 -> Jumps to: 0x140004823, 0x14000482d
+  Block 0x140004823-0x14000482d -> Jumps to: 0x140004838
+  Block 0x14000482d-0x140004831 -> Jumps to: 0x140004831, 0x14000486a
+  Block 0x140004831-0x140004838 -> Jumps to: 0x140004838
+  Block 0x140004838-0x14000486a -> Jumps to: 0x1400048e3
+  Block 0x14000486a-0x140004872 -> Jumps to: 0x1400048e3
+  Block 0x140004872-0x14000487b -> Jumps to: 0x14000487b, 0x140004895
+  Block 0x14000487b-0x140004883 -> Jumps to: 0x140004883, 0x140004888
+  Block 0x140004883-0x140004888 -> Jumps to: 0x140004888
+  Block 0x140004888-0x140004895 -> Jumps to: 0x140004895
+  Block 0x140004895-0x14000489c -> Jumps to: 0x1400048e3
+  Block 0x14000489c-0x1400048b5 -> Jumps to: 0x1400048b5, 0x1400048bd
+  Block 0x1400048b5-0x1400048bd -> Jumps to: 0x1400048e3
+  Block 0x1400048bd-0x1400048ce -> Jumps to: 0x1400048ce, 0x1400048d6
+  Block 0x1400048ce-0x1400048d6 -> Jumps to: 0x1400048e3
+  Block 0x1400048d6-0x1400048e3 -> Jumps to: 0x1400048e3
+  Block 0x1400048e3-0x140004908 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_1400047D0(__int64 a1, IRP *a2, __int64 a3, __int64 a4)
+{
+  IO_STATUS_BLOCK *p_IoStatus; // rbx
+  struct _IO_STACK_LOCATION *CurrentStackLocation; // rcx
+  UCHAR MajorFunction; // al
+  __int64 FileObject; // rsi
+  __int64 LowPart; // r8
+  int v10; // eax
+  __int64 *Parameters; // r9
+  __int64 UserBuffer; // rdx
+  _QWORD *v13; // r14
+  _QWORD *v14; // rax
+  unsigned int Status; // ebx
+
+  a2->IoStatus.Information = 0;
+  p_IoStatus = &a2->IoStatus;
+  a2->IoStatus.Status = 0;
+  CurrentStackLocation = a2->Tail.Overlay.CurrentStackLocation;
+  MajorFunction = CurrentStackLocation->MajorFunction;
+  FileObject = (__int64)CurrentStackLocation->FileObject;
+  if ( CurrentStackLocation->MajorFunction )
+  {
+    if ( MajorFunction != 2 )
+    {
+      if ( MajorFunction == 14 )
+      {
+        LowPart = CurrentStackLocation->Parameters.Read.ByteOffset.LowPart;
+        v10 = CurrentStackLocation->Parameters.Read.ByteOffset.LowPart & 3;
+        if ( v10 == 3 )
+        {
+          Parameters = (__int64 *)CurrentStackLocation->Parameters.CreatePipe.Parameters;
+          UserBuffer = (__int64)a2->UserBuffer;
+LABEL_8:
+          LOBYTE(LowPart) = 1;
+          sub_140003BB4(
+            (__int64)a2,
+            FileObject,
+            LowPart,
+            Parameters,
+            CurrentStackLocation->Parameters.Create.Options,
+            UserBuffer,
+            CurrentStackLocation->Parameters.Read.Length,
+            CurrentStackLocation->Parameters.Read.ByteOffset.LowPart,
+            (__int64)p_IoStatus);
+          goto LABEL_20;
+        }
+        if ( !v10 )
+        {
+          Parameters = (__int64 *)&a2->AssociatedIrp.MasterIrp->Type;
+          UserBuffer = (__int64)Parameters;
+          goto LABEL_8;
+        }
+      }
+      p_IoStatus->Status = -1073741811;
+      goto LABEL_20;
+    }
+    v13 = *(_QWORD **)(FileObject + 24);
+    if ( v13 )
+    {
+      if ( *v13 )
+        sub_14000CE80(*v13, a2, a3, a4);
+      sub_140005DC4(v13);
+      *(_QWORD *)(FileObject + 24) = 0;
+    }
+    sub_14000BD88();
+  }
+  else
+  {
+    *(_QWORD *)(FileObject + 24) = 0;
+    if ( (unsigned __int8)CMSPAddress::get_DynamicTerminalClasses(
+                            *(CMSPAddress **)(CurrentStackLocation->Parameters.WMI.ProviderId + 8),
+                            (struct tagVARIANT *)*(unsigned int *)(CurrentStackLocation->Parameters.WMI.ProviderId + 16)) )
+    {
+      v14 = (_QWORD *)sub_1400055C0(8u);
+      if ( v14 )
+      {
+        *v14 = 0;
+        *(_QWORD *)(FileObject + 24) = v14;
+        sub_14000CAC4();
+      }
+      else
+      {
+        p_IoStatus->Status = -1073741801;
+      }
+    }
+    else
+    {
+      p_IoStatus->Status = -1073741790;
+    }
+  }
+LABEL_20:
+  Status = p_IoStatus->Status;
+  IofCompleteRequest(a2, 0);
+  return Status;
+}
+
+
+=== DISASM ===
+0x1400047d0: mov     [rsp+arg_0], rbx
+0x1400047d5: mov     [rsp+arg_8], rsi
+0x1400047da: mov     [rsp+arg_10], rdi
+0x1400047df: push    r14
+0x1400047e1: sub     rsp, 50h
+0x1400047e5: and     qword ptr [rdx+38h], 0
+0x1400047ea: lea     rbx, [rdx+30h]
+0x1400047ee: and     dword ptr [rbx], 0
+0x1400047f1: mov     r10, rcx
+0x1400047f4: mov     rcx, [rdx+0B8h]
+0x1400047fb: mov     rdi, rdx
+0x1400047fe: mov     al, [rcx]
+0x140004800: mov     rsi, [rcx+30h]
+0x140004804: test    al, al
+0x140004806: jz      loc_14000489C
+0x14000480c: cmp     al, 2
+0x14000480e: jz      short loc_140004872
+0x140004810: cmp     al, 0Eh
+0x140004812: jnz     short loc_14000486A
+0x140004814: mov     r8d, [rcx+18h]
+0x140004818: mov     eax, r8d
+0x14000481b: and     eax, 3
+0x14000481e: cmp     eax, 3
+0x140004821: jnz     short loc_14000482D
+0x140004823: mov     r9, [rcx+20h]
+0x140004827: mov     rdx, [rdx+70h]
+0x14000482b: jmp     short loc_140004838
+0x14000482d: test    eax, eax
+0x14000482f: jnz     short loc_14000486A
+0x140004831: mov     r9, [rdx+18h]
+0x140004835: mov     rdx, r9
+0x140004838: mov     eax, [rcx+8]
+0x14000483b: mov     [rsp+58h+var_10], r10
+0x140004840: mov     [rsp+58h+var_18], rbx
+0x140004845: mov     [rsp+58h+var_20], r8d
+0x14000484a: mov     r8b, 1
+0x14000484d: mov     [rsp+58h+var_28], eax
+0x140004851: mov     eax, [rcx+10h]
+0x140004854: mov     rcx, rdi
+0x140004857: mov     [rsp+58h+var_30], rdx
+0x14000485c: mov     rdx, rsi
+0x14000485f: mov     [rsp+58h+var_38], eax
+0x140004863: call    sub_140003BB4
+0x140004868: jmp     short loc_1400048E3
+0x14000486a: mov     dword ptr [rbx], 0C000000Dh
+0x140004870: jmp     short loc_1400048E3
+0x140004872: mov     r14, [rsi+18h]
+0x140004876: test    r14, r14
+0x140004879: jz      short loc_140004895
+0x14000487b: mov     rcx, [r14]
+0x14000487e: test    rcx, rcx
+0x140004881: jz      short loc_140004888
+0x140004883: call    sub_14000CE80
+0x140004888: mov     rcx, r14
+0x14000488b: call    sub_140005DC4
+0x140004890: and     qword ptr [rsi+18h], 0
+0x140004895: call    sub_14000BD88
+0x14000489a: jmp     short loc_1400048E3
+0x14000489c: and     qword ptr [rsi+18h], 0
+0x1400048a1: mov     rcx, [rcx+8]
+0x1400048a5: mov     edx, [rcx+10h]; struct tagVARIANT *
+0x1400048a8: mov     rcx, [rcx+8]; this
+0x1400048ac: call    ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z; CMSPAddress::get_DynamicTerminalClasses(tagVARIANT *)
+0x1400048b1: test    al, al
+0x1400048b3: jnz     short loc_1400048BD
+0x1400048b5: mov     dword ptr [rbx], 0C0000022h
+0x1400048bb: jmp     short loc_1400048E3
+0x1400048bd: mov     dl, 1
+0x1400048bf: mov     ecx, 8; NumberOfBytes
+0x1400048c4: call    sub_1400055C0
+0x1400048c9: test    rax, rax
+0x1400048cc: jnz     short loc_1400048D6
+0x1400048ce: mov     dword ptr [rbx], 0C0000017h
+0x1400048d4: jmp     short loc_1400048E3
+0x1400048d6: and     qword ptr [rax], 0
+0x1400048da: mov     [rsi+18h], rax
+0x1400048de: call    sub_14000CAC4
+0x1400048e3: mov     ebx, [rbx]
+0x1400048e5: xor     edx, edx; PriorityBoost
+0x1400048e7: mov     rcx, rdi; Irp
+0x1400048ea: call    cs:IofCompleteRequest
+0x1400048f0: mov     rsi, [rsp+58h+arg_8]
+0x1400048f5: mov     eax, ebx
+0x1400048f7: mov     rbx, [rsp+58h+arg_0]
+0x1400048fc: mov     rdi, [rsp+58h+arg_10]
+0x140004901: add     rsp, 50h
+0x140004905: pop     r14
+0x140004907: retn

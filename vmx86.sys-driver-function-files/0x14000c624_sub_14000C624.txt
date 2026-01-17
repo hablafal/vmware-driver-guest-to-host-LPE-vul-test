@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: sub_14000C624
+Addr: 0x14000c624
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140003F98)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000c624-0x14000c62b -> Jumps to: 
+
+=== CODE ===
+__int64 sub_14000C624()
+{
+  return (unsigned int)dword_14001CF80;
+}
+
+
+=== DISASM ===
+0x14000c624: mov     eax, cs:dword_14001CF80
+0x14000c62a: retn

@@ -1,0 +1,108 @@
+=== METADATA ===
+Name: sub_14000A6F0 (Suggested: EvtIoRead)
+Addr: 0x14000a6f0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000a70b: XOR with Mask 0x4
+  0x14000a72c: XOR with Mask 0x4
+  0x14000a73d: XOR with Mask 0x4
+
+=== MEMBER ACCESS ===
+  0x14000a707: Access Member +0x10 ([rax+10h])
+  0x14000a718: Access Member +0x10 ([rax+10h])
+  0x14000a71c: Access Member +0x20 ([rax+20h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x20 -> possible EvtIoRead
+
+=== CALLERS ===
+  <- sub_14000B92C (0x14000BA5E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000a6f0-0x14000a700 -> Jumps to: 0x14000a700, 0x14000a749
+  Block 0x14000a700-0x14000a715 -> Jumps to: 0x14000a715, 0x14000a73d
+  Block 0x14000a715-0x14000a724 -> Jumps to: 0x14000a724
+  Block 0x14000a724-0x14000a72c -> Jumps to: 0x14000a72c, 0x14000a733
+  Block 0x14000a72c-0x14000a733 -> Jumps to: 0x14000a733
+  Block 0x14000a733-0x14000a73d -> Jumps to: 0x14000a724, 0x14000a73d
+  Block 0x14000a73d-0x14000a749 -> Jumps to: 
+  Block 0x14000a749-0x14000a752 -> Jumps to: 0x14000a3e0
+  Block 0x14000a3e0-0x14000a3e0 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000A6F0(int a1, unsigned int a2)
+{
+  __int64 v2; // rax
+  unsigned int v3; // r10d
+  __int64 v4; // rcx
+  _QWORD *v5; // rdx
+  __int64 v6; // r8
+
+  if ( a1 != 266 )
+    return sub_14000A3E0();
+  v2 = sub_14000A418(266, a2);
+  v4 = *(_QWORD *)(v2 + 16) ^ 4LL;
+  if ( v3 > 1 )
+  {
+    _mm_lfence();
+    v5 = (_QWORD *)(v2 + 32);
+    v6 = v3 - 1;
+    do
+    {
+      if ( *v5 != *(_QWORD *)(v2 + 16) )
+        v4 &= *v5 ^ 4LL;
+      v5 += 2;
+      --v6;
+    }
+    while ( v6 );
+  }
+  return v4 ^ 4;
+}
+
+
+=== DISASM ===
+0x14000a6f0: sub     rsp, 28h
+0x14000a6f4: mov     eax, 10Ah
+0x14000a6f9: mov     r10d, edx
+0x14000a6fc: cmp     ecx, eax
+0x14000a6fe: jnz     short loc_14000A749
+0x14000a700: mov     ecx, eax
+0x14000a702: call    sub_14000A418
+0x14000a707: mov     rcx, [rax+10h]
+0x14000a70b: xor     rcx, 4
+0x14000a70f: cmp     r10d, 1
+0x14000a713: jbe     short loc_14000A73D
+0x14000a715: lfence
+0x14000a718: mov     r9, [rax+10h]
+0x14000a71c: lea     rdx, [rax+20h]
+0x14000a720: lea     r8d, [r10-1]
+0x14000a724: mov     rax, [rdx]
+0x14000a727: cmp     rax, r9
+0x14000a72a: jz      short loc_14000A733
+0x14000a72c: xor     rax, 4
+0x14000a730: and     rcx, rax
+0x14000a733: add     rdx, 10h
+0x14000a737: sub     r8, 1
+0x14000a73b: jnz     short loc_14000A724
+0x14000a73d: xor     rcx, 4
+0x14000a741: mov     rax, rcx
+0x14000a744: add     rsp, 28h
+0x14000a748: retn
+0x14000a749: add     rsp, 28h
+0x14000a74d: jmp     sub_14000A3E0

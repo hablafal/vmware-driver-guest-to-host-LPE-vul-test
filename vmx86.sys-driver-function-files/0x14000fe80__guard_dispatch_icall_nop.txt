@@ -1,0 +1,56 @@
+=== METADATA ===
+Name: _guard_dispatch_icall_nop
+Addr: 0x14000fe80
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x140003501)
+  <- sub_140004EF0 (0x140004EF7)
+  <- BroadcastFunction (0x14000531B)
+  <- sub_140005480 (0x1400054E5)
+  <- sub_140007830 (0x14000791D)
+  <- sub_140007AD0 (0x140007AF6)
+  <- sub_140007CF4 (0x140007D3C)
+  <- sub_140009F88 (0x140009FB5)
+  <- sub_140009F88 (0x140009FD2)
+  <- sub_14000A010 (0x14000A041)
+  <- sub_14000A010 (0x14000A07D)
+  <- ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z (0x14000DB02)
+  <- _guard_xfg_dispatch_icall_nop (0x14000FEA0)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fe80-0x14000fe82 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall guard_dispatch_icall_nop()
+{
+  __int64 (*v0)(void); // rax
+
+  return v0();
+}
+
+
+=== DISASM ===
+0x14000fe80: jmp     rax

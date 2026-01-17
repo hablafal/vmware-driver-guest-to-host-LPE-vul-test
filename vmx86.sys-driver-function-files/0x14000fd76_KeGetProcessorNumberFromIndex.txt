@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: KeGetProcessorNumberFromIndex
+Addr: 0x14000fd76
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_1400051C8 (0x140005235)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fd76-0x14000fd7c -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+NTSTATUS __stdcall KeGetProcessorNumberFromIndex(ULONG ProcIndex, PPROCESSOR_NUMBER ProcNumber)
+{
+  return __imp_KeGetProcessorNumberFromIndex(ProcIndex, ProcNumber);
+}
+
+
+=== DISASM ===
+0x14000fd76: jmp     cs:__imp_KeGetProcessorNumberFromIndex

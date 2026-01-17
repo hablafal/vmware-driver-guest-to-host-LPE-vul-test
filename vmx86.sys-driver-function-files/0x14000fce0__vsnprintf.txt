@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: _vsnprintf
+Addr: 0x14000fce0
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003A14 (0x140003A51)
+  <- sub_140003AE4 (0x140003B21)
+  <- sub_140003B4C (0x140003B82)
+  <- sub_14000E074 (0x14000E19E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fce0-0x14000fce6 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+int __cdecl vsnprintf(char *Dest, size_t Count, const char *Format, va_list Args)
+{
+  return _vsnprintf(Dest, Count, Format, Args);
+}
+
+
+=== DISASM ===
+0x14000fce0: jmp     cs:__imp__vsnprintf

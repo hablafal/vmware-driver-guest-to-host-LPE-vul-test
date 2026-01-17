@@ -1,0 +1,276 @@
+=== METADATA ===
+Name: sub_14000CAF8 (Suggested: EvtIoRead)
+Addr: 0x14000caf8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000cb27: AND with Mask 0x0
+  0x14000cb61: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000cb18: Access Member +0x68 ([rbp+arg_28])
+  0x14000cb1f: Access Member +0x70 ([rbp+arg_30])
+  0x14000cb61: Access Member +0x20 (qword ptr [rdi+20h])
+  0x14000cb8a: Access Member +0x60 ([rbp+arg_20])
+  0x14000cb92: Access Member +0x20 ([rdi+20h])
+  0x14000cb96: Access Member +0x18 ([rax+18h])
+  0x14000cbc4: Access Member +0x4 ([rdi+4])
+  0x14000cbd7: Access Member +0x38 ([rdi+38h])
+  0x14000cbdf: Access Member +0x38 ([rdi+38h])
+  0x14000cbfb: Access Member +0x4 ([rdi+4])
+  0x14000cc00: Access Member +0x2C ([r14+2Ch])
+  0x14000cc07: Access Member +0x24 ([r14+24h])
+  0x14000cc2f: Access Member +0x60 ([rbp+arg_20])
+  0x14000cc3b: Access Member +0x20 ([rsp+60h+var_40])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x38 -> possible EvtIoInternalDeviceControl
+  [!] Offset +0x18 -> possible EvtIoDefault
+  [!] Offset +0x20 -> possible EvtIoRead
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140003DDE)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000cb0a -> 2
+  0x14000cb47 -> Error loading VMM bootstrap blob
+
+  0x14000cbad -> Vmx86_ProcessBootstrap
+  0x14000cbb4 -> %s: PseudoTSC has not been initialized
+
+  0x14000cc17 -> Error initializing crosspage
+
+  0x14000cc23 -> Failed to allocate cross pages.
+
+  0x14000cc5c -> Error processing bootstrap: error %d at line %u, vcpu %u
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000caf8-0x14000cb47 -> Jumps to: 0x14000cb47, 0x14000cb83
+  Block 0x14000cb47-0x14000cb4e -> Jumps to: 0x14000cb4e
+  Block 0x14000cb4e-0x14000cb53 -> Jumps to: 0x14000cb53
+  Block 0x14000cb53-0x14000cb5c -> Jumps to: 0x14000cb5c, 0x14000cb66
+  Block 0x14000cb5c-0x14000cb66 -> Jumps to: 0x14000cb66
+  Block 0x14000cb66-0x14000cb68 -> Jumps to: 0x14000cb68
+  Block 0x14000cb68-0x14000cb83 -> Jumps to: 
+  Block 0x14000cb83-0x14000cba3 -> Jumps to: 0x14000cb53, 0x14000cba3
+  Block 0x14000cba3-0x14000cbad -> Jumps to: 0x14000cbad, 0x14000cbc2
+  Block 0x14000cbad-0x14000cbc2 -> Jumps to: 0x14000cb53
+  Block 0x14000cbc2-0x14000cbc9 -> Jumps to: 0x14000cbc9, 0x14000cc00
+  Block 0x14000cbc9-0x14000cbec -> Jumps to: 0x14000cbec, 0x14000cc23
+  Block 0x14000cbec-0x14000cc00 -> Jumps to: 0x14000cbc9, 0x14000cc00
+  Block 0x14000cc00-0x14000cc17 -> Jumps to: 0x14000cc17, 0x14000cc2f
+  Block 0x14000cc17-0x14000cc23 -> Jumps to: 0x14000cb4e
+  Block 0x14000cc23-0x14000cc2f -> Jumps to: 0x14000cb4e
+  Block 0x14000cc2f-0x14000cc58 -> Jumps to: 0x14000cc58, 0x14000cc73
+  Block 0x14000cc58-0x14000cc73 -> Jumps to: 0x14000cb53
+  Block 0x14000cc73-0x14000cc7a -> Jumps to: 0x14000cb68
+
+=== CODE ===
+char __fastcall sub_14000CAF8(
+        __int64 a1,
+        __int64 a2,
+        unsigned int a3,
+        unsigned int a4,
+        unsigned __int16 a5,
+        __int64 a6,
+        __int64 a7)
+{
+  __int64 v9; // rax
+  __int64 v10; // r14
+  __int64 v11; // rsi
+  __int64 v12; // rcx
+  int v13; // eax
+  __int64 v14; // [rsp+30h] [rbp-30h] BYREF
+  _QWORD v15[2]; // [rsp+38h] [rbp-28h] BYREF
+  int v16; // [rsp+48h] [rbp-18h] BYREF
+  int v17; // [rsp+4Ch] [rbp-14h] BYREF
+  unsigned __int64 v18; // [rsp+50h] [rbp-10h] BYREF
+
+  v14 = 0;
+  if ( (unsigned __int8)sub_14000F474(a2, a3, a4, &v14) )
+  {
+    v9 = v14;
+    *(_QWORD *)(a1 + 32) = v14;
+    v10 = *(_QWORD *)(v9 + 24);
+    if ( sub_14000B218(a1, a6, a5) )
+    {
+      if ( byte_14001CF53 )
+      {
+        v11 = 0;
+        if ( *(_DWORD *)(a1 + 4) )
+        {
+          while ( 1 )
+          {
+            *(_QWORD *)(*(_QWORD *)(a1 + 56) + 8 * v11) = sub_140005618(1u, &v18);
+            v12 = *(_QWORD *)(*(_QWORD *)(a1 + 56) + 8 * v11);
+            if ( !v12 )
+              break;
+            sub_14000FEC0(v12, 0, 4096);
+            v11 = (unsigned int)(v11 + 1);
+            if ( (unsigned int)v11 >= *(_DWORD *)(a1 + 4) )
+              goto LABEL_12;
+          }
+          sub_140003A14("Failed to allocate cross pages.\n");
+        }
+        else
+        {
+LABEL_12:
+          if ( sub_140008D04(a1, *(_QWORD *)(v10 + 36), *(_QWORD *)(v10 + 44)) )
+          {
+            v15[0] = a1;
+            v15[1] = a7;
+            v13 = sub_14000EAD0(v10, a5, (unsigned int)v15, (unsigned int)&v17, (__int64)&v16);
+            if ( !v13 )
+              return 1;
+            sub_140003A14("Error processing bootstrap: error %d at line %u, vcpu %u\n", v13, v17, v16);
+          }
+          else
+          {
+            sub_140003A14("Error initializing crosspage\n");
+          }
+        }
+      }
+      else
+      {
+        sub_140003A14("%s: PseudoTSC has not been initialized\n", "Vmx86_ProcessBootstrap");
+      }
+    }
+  }
+  else
+  {
+    sub_140003A14("Error loading VMM bootstrap blob\n");
+  }
+  if ( v14 )
+  {
+    sub_14000F3EC();
+    *(_QWORD *)(a1 + 32) = 0;
+  }
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000caf8: push    rbp
+0x14000cafa: push    rbx
+0x14000cafb: push    rsi
+0x14000cafc: push    rdi
+0x14000cafd: push    r12
+0x14000caff: push    r14
+0x14000cb01: push    r15
+0x14000cb03: mov     rbp, rsp
+0x14000cb06: sub     rsp, 60h
+0x14000cb0a: mov     rax, cs:__security_cookie
+0x14000cb11: xor     rax, rsp
+0x14000cb14: mov     [rbp+var_8], rax
+0x14000cb18: mov     r15, [rbp+arg_28]
+0x14000cb1c: mov     r11d, r9d
+0x14000cb1f: mov     r12, [rbp+arg_30]
+0x14000cb23: lea     r9, [rbp+var_30]
+0x14000cb27: and     [rbp+var_30], 0
+0x14000cb2c: mov     r10d, r8d
+0x14000cb2f: mov     rax, rdx
+0x14000cb32: mov     rdi, rcx
+0x14000cb35: mov     r8d, r11d
+0x14000cb38: mov     edx, r10d
+0x14000cb3b: mov     rcx, rax
+0x14000cb3e: call    sub_14000F474
+0x14000cb43: test    al, al
+0x14000cb45: jnz     short loc_14000CB83
+0x14000cb47: lea     rcx, aErrorLoadingVm; "Error loading VMM bootstrap blob\n"
+0x14000cb4e: call    sub_140003A14
+0x14000cb53: mov     rcx, [rbp+var_30]
+0x14000cb57: test    rcx, rcx
+0x14000cb5a: jz      short loc_14000CB66
+0x14000cb5c: call    sub_14000F3EC
+0x14000cb61: and     qword ptr [rdi+20h], 0
+0x14000cb66: xor     al, al
+0x14000cb68: mov     rcx, [rbp+var_8]
+0x14000cb6c: xor     rcx, rsp; StackCookie
+0x14000cb6f: call    __security_check_cookie
+0x14000cb74: add     rsp, 60h
+0x14000cb78: pop     r15
+0x14000cb7a: pop     r14
+0x14000cb7c: pop     r12
+0x14000cb7e: pop     rdi
+0x14000cb7f: pop     rsi
+0x14000cb80: pop     rbx
+0x14000cb81: pop     rbp
+0x14000cb82: retn
+0x14000cb83: mov     rax, [rbp+var_30]
+0x14000cb87: mov     rdx, r15
+0x14000cb8a: movzx   r8d, [rbp+arg_20]
+0x14000cb8f: mov     rcx, rdi
+0x14000cb92: mov     [rdi+20h], rax
+0x14000cb96: mov     r14, [rax+18h]
+0x14000cb9a: call    sub_14000B218
+0x14000cb9f: test    al, al
+0x14000cba1: jz      short loc_14000CB53
+0x14000cba3: mov     al, cs:byte_14001CF53
+0x14000cba9: test    al, al
+0x14000cbab: jnz     short loc_14000CBC2
+0x14000cbad: lea     rdx, aVmx86Processbo; "Vmx86_ProcessBootstrap"
+0x14000cbb4: lea     rcx, aSPseudotscHasN; "%s: PseudoTSC has not been initialized"...
+0x14000cbbb: call    sub_140003A14
+0x14000cbc0: jmp     short loc_14000CB53
+0x14000cbc2: xor     esi, esi
+0x14000cbc4: cmp     [rdi+4], esi
+0x14000cbc7: jbe     short loc_14000CC00
+0x14000cbc9: lea     rdx, [rbp+var_10]
+0x14000cbcd: mov     ecx, 1
+0x14000cbd2: call    sub_140005618
+0x14000cbd7: mov     rcx, [rdi+38h]
+0x14000cbdb: mov     [rcx+rsi*8], rax
+0x14000cbdf: mov     rax, [rdi+38h]
+0x14000cbe3: mov     rcx, [rax+rsi*8]
+0x14000cbe7: test    rcx, rcx
+0x14000cbea: jz      short loc_14000CC23
+0x14000cbec: xor     edx, edx
+0x14000cbee: mov     r8d, 1000h
+0x14000cbf4: call    sub_14000FEC0
+0x14000cbf9: inc     esi
+0x14000cbfb: cmp     esi, [rdi+4]
+0x14000cbfe: jb      short loc_14000CBC9
+0x14000cc00: mov     r8, [r14+2Ch]
+0x14000cc04: mov     r9, r15
+0x14000cc07: mov     rdx, [r14+24h]
+0x14000cc0b: mov     rcx, rdi
+0x14000cc0e: call    sub_140008D04
+0x14000cc13: test    al, al
+0x14000cc15: jnz     short loc_14000CC2F
+0x14000cc17: lea     rcx, aErrorInitializ; "Error initializing crosspage\n"
+0x14000cc1e: jmp     loc_14000CB4E
+0x14000cc23: lea     rcx, aFailedToAlloca_0; "Failed to allocate cross pages.\n"
+0x14000cc2a: jmp     loc_14000CB4E
+0x14000cc2f: movzx   edx, [rbp+arg_20]
+0x14000cc33: lea     rax, [rbp+var_18]
+0x14000cc37: lea     r9, [rbp+var_14]
+0x14000cc3b: mov     [rsp+60h+var_40], rax
+0x14000cc40: lea     r8, [rbp+var_28]
+0x14000cc44: mov     [rbp+var_28], rdi
+0x14000cc48: mov     rcx, r14
+0x14000cc4b: mov     [rbp+var_20], r12
+0x14000cc4f: call    sub_14000EAD0
+0x14000cc54: test    eax, eax
+0x14000cc56: jz      short loc_14000CC73
+0x14000cc58: mov     r9d, [rbp+var_18]
+0x14000cc5c: lea     rcx, aErrorProcessin; "Error processing bootstrap: error %d at"...
+0x14000cc63: mov     r8d, [rbp+var_14]
+0x14000cc67: mov     edx, eax
+0x14000cc69: call    sub_140003A14
+0x14000cc6e: jmp     loc_14000CB53
+0x14000cc73: mov     al, 1
+0x14000cc75: jmp     loc_14000CB68

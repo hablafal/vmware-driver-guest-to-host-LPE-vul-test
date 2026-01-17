@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: sub_140008A00
+Addr: 0x140008a00
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140008a00-0x140008a11 -> Jumps to: 0x140005dd0
+  Block 0x140005dd0-0x140005dd0 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140008A00(__int64 a1, _QWORD *a2)
+{
+  sub_140005DD0(1, (void *)(*a2 << 12));
+}
+
+
+=== DISASM ===
+0x140008a00: mov     rdx, [rdx]
+0x140008a03: mov     ecx, 1
+0x140008a08: shl     rdx, 0Ch
+0x140008a0c: jmp     sub_140005DD0

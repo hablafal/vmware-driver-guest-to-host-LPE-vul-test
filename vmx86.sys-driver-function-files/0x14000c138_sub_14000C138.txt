@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: sub_14000C138
+Addr: 0x14000c138
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000D3E0 (0x14000D844)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000c13b -> H
+
+=== BASIC BLOCKS ===
+  Block 0x14000c138-0x14000c147 -> Jumps to: 0x140005828
+  Block 0x140005828-0x140005828 -> Jumps to: 
+
+=== CODE ===
+KAFFINITY __fastcall sub_14000C138(__int64 a1)
+{
+  return sub_140005828((__int64)sub_14000A450, a1);
+}
+
+
+=== DISASM ===
+0x14000c138: mov     rdx, rcx
+0x14000c13b: lea     rcx, sub_14000A450
+0x14000c142: jmp     sub_140005828

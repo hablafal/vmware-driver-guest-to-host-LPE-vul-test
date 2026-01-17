@@ -1,0 +1,126 @@
+=== METADATA ===
+Name: sub_14000A66C
+Addr: 0x14000a66c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000a6c1: AND with Mask 0x0
+  0x14000a6c9: AND with Mask 0x0
+  0x14000a6ce: AND with Mask 0x0
+  0x14000a6d3: AND with Mask 0x0
+  0x14000a6db: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000a675: Access Member +0x18 ([rcx+18h])
+  0x14000a683: Access Member +0x38 ([rbx+38h])
+  0x14000a691: Access Member +0x50 ([rbx+50h])
+  0x14000a69f: Access Member +0xF0 ([rbx+0F0h])
+  0x14000a6b0: Access Member +0xF8 ([rbx+0F8h])
+  0x14000a6c1: Access Member +0x18 (qword ptr [rbx+18h])
+  0x14000a6c9: Access Member +0x38 (qword ptr [rbx+38h])
+  0x14000a6ce: Access Member +0x50 (qword ptr [rbx+50h])
+  0x14000a6d3: Access Member +0xF0 (qword ptr [rbx+0F0h])
+  0x14000a6db: Access Member +0xF8 (qword ptr [rbx+0F8h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A134 (0x14000A1E3)
+  <- sub_14000A564 (0x14000A65B)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000a66c-0x14000a67e -> Jumps to: 0x14000a67e, 0x14000a683
+  Block 0x14000a67e-0x14000a683 -> Jumps to: 0x14000a683
+  Block 0x14000a683-0x14000a68c -> Jumps to: 0x14000a68c, 0x14000a691
+  Block 0x14000a68c-0x14000a691 -> Jumps to: 0x14000a691
+  Block 0x14000a691-0x14000a69a -> Jumps to: 0x14000a69a, 0x14000a69f
+  Block 0x14000a69a-0x14000a69f -> Jumps to: 0x14000a69f
+  Block 0x14000a69f-0x14000a6ab -> Jumps to: 0x14000a6ab, 0x14000a6b0
+  Block 0x14000a6ab-0x14000a6b0 -> Jumps to: 0x14000a6b0
+  Block 0x14000a6b0-0x14000a6bc -> Jumps to: 0x14000a6bc, 0x14000a6c1
+  Block 0x14000a6bc-0x14000a6c1 -> Jumps to: 0x14000a6c1
+  Block 0x14000a6c1-0x14000a6ed -> Jumps to: 0x140005dc4
+  Block 0x140005dc4-0x140005dc4 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_14000A66C(_QWORD *a1)
+{
+  void *v2; // rcx
+  void *v3; // rcx
+  void *v4; // rcx
+  void *v5; // rcx
+  void *v6; // rcx
+
+  v2 = (void *)a1[3];
+  if ( v2 )
+    sub_140005DC4(v2);
+  v3 = (void *)a1[7];
+  if ( v3 )
+    sub_140005DC4(v3);
+  v4 = (void *)a1[10];
+  if ( v4 )
+    sub_140005DC4(v4);
+  v5 = (void *)a1[30];
+  if ( v5 )
+    sub_140005DC4(v5);
+  v6 = (void *)a1[31];
+  if ( v6 )
+    sub_140005DC4(v6);
+  a1[3] = 0;
+  a1[7] = 0;
+  a1[10] = 0;
+  a1[30] = 0;
+  a1[31] = 0;
+  sub_140005DC4(a1);
+}
+
+
+=== DISASM ===
+0x14000a66c: push    rbx
+0x14000a66e: sub     rsp, 20h
+0x14000a672: mov     rbx, rcx
+0x14000a675: mov     rcx, [rcx+18h]
+0x14000a679: test    rcx, rcx
+0x14000a67c: jz      short loc_14000A683
+0x14000a67e: call    sub_140005DC4
+0x14000a683: mov     rcx, [rbx+38h]
+0x14000a687: test    rcx, rcx
+0x14000a68a: jz      short loc_14000A691
+0x14000a68c: call    sub_140005DC4
+0x14000a691: mov     rcx, [rbx+50h]
+0x14000a695: test    rcx, rcx
+0x14000a698: jz      short loc_14000A69F
+0x14000a69a: call    sub_140005DC4
+0x14000a69f: mov     rcx, [rbx+0F0h]
+0x14000a6a6: test    rcx, rcx
+0x14000a6a9: jz      short loc_14000A6B0
+0x14000a6ab: call    sub_140005DC4
+0x14000a6b0: mov     rcx, [rbx+0F8h]
+0x14000a6b7: test    rcx, rcx
+0x14000a6ba: jz      short loc_14000A6C1
+0x14000a6bc: call    sub_140005DC4
+0x14000a6c1: and     qword ptr [rbx+18h], 0
+0x14000a6c6: mov     rcx, rbx
+0x14000a6c9: and     qword ptr [rbx+38h], 0
+0x14000a6ce: and     qword ptr [rbx+50h], 0
+0x14000a6d3: and     qword ptr [rbx+0F0h], 0
+0x14000a6db: and     qword ptr [rbx+0F8h], 0
+0x14000a6e3: add     rsp, 20h
+0x14000a6e7: pop     rbx
+0x14000a6e8: jmp     sub_140005DC4

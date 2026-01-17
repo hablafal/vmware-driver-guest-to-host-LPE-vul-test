@@ -1,0 +1,206 @@
+=== METADATA ===
+Name: sub_140005A48
+Addr: 0x140005a48
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005a5b: Access Member +0x180 ([rsp+198h+var_18])
+  0x140005a73: Access Member +0x20 ([rsp+198h+ReturnLength])
+  0x140005a7e: Access Member +0x30 ([rsp+198h+SystemInformation])
+  0x140005a92: Access Member +0x20 ([rsp+198h+ReturnLength])
+  0x140005a9c: Access Member +0x178 ([rsp+198h+var_20])
+  0x140005b61: Access Member +0x180 ([rsp+198h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B074 (0x14000B0FF)
+  <- sub_14000B3B8 (0x14000B3FA)
+  <- sub_14000B3B8 (0x14000B573)
+  <- sub_14000B3B8 (0x14000B6E8)
+  <- sub_14000C280 (0x14000C2E9)
+  <- sub_14000CCBC (0x14000CD85)
+
+=== IMPORTS ===
+  -> 0x140005a88 calls ZwQuerySystemInformation
+
+=== STRINGS ===
+  0x140005a51 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x140005a48-0x140005a73 -> Jumps to: 0x140005a73, 0x140005ad6
+  Block 0x140005a73-0x140005a92 -> Jumps to: 0x140005a92, 0x140005ae5
+  Block 0x140005a92-0x140005a9c -> Jumps to: 0x140005a9c, 0x140005ae5
+  Block 0x140005a9c-0x140005ab0 -> Jumps to: 0x140005ab0, 0x140005ac2
+  Block 0x140005ab0-0x140005abb -> Jumps to: 0x140005abb, 0x140005ac2
+  Block 0x140005abb-0x140005ac2 -> Jumps to: 0x140005b61
+  Block 0x140005ac2-0x140005ad6 -> Jumps to: 0x140005b61
+  Block 0x140005ad6-0x140005ae0 -> Jumps to: 0x140005ae0, 0x140005b5f
+  Block 0x140005ae0-0x140005ae5 -> Jumps to: 0x140005ae5, 0x140005af1
+  Block 0x140005ae5-0x140005af1 -> Jumps to: 0x140005b61
+  Block 0x140005af1-0x140005afa -> Jumps to: 0x140005afa, 0x140005b09
+  Block 0x140005afa-0x140005b09 -> Jumps to: 0x140005b5f
+  Block 0x140005b09-0x140005b1b -> Jumps to: 0x140005b1b, 0x140005b23
+  Block 0x140005b1b-0x140005b23 -> Jumps to: 0x140005b43
+  Block 0x140005b23-0x140005b28 -> Jumps to: 0x140005b28, 0x140005b30
+  Block 0x140005b28-0x140005b30 -> Jumps to: 0x140005b43
+  Block 0x140005b30-0x140005b43 -> Jumps to: 0x140005b43
+  Block 0x140005b43-0x140005b5f -> Jumps to: 0x140005b5f
+  Block 0x140005b5f-0x140005b61 -> Jumps to: 0x140005b61
+  Block 0x140005b61-0x140005b7a -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140005A48(__int64 a1, unsigned __int64 a2)
+{
+  __int64 result; // rax
+  unsigned int v5; // ecx
+  unsigned int v6; // edx
+  unsigned int v7; // ecx
+  ULONG ReturnLength[4]; // [rsp+20h] [rbp-178h] BYREF
+  _BYTE SystemInformation[328]; // [rsp+30h] [rbp-168h] BYREF
+  __int64 v10; // [rsp+178h] [rbp-20h]
+
+  if ( !qword_140018DC0 )
+  {
+    v5 = dword_140018DC8;
+    if ( !dword_140018DC8 )
+    {
+      if ( !a1 )
+        return 0x1FFFFFFFFLL;
+      if ( byte_140018DCC )
+      {
+        v5 = sub_140005118();
+        dword_140018DC8 = v5;
+      }
+      else
+      {
+        if ( (unsigned int)dword_140018E48 >> 18 > 4 )
+        {
+          if ( (unsigned int)dword_140018E48 >> 18 < 0x10 )
+            v6 = ((unsigned int)dword_140018E48 >> 5) * (8 - ((unsigned int)dword_140018E48 >> 20));
+          else
+            v6 = (unsigned int)dword_140018E48 >> 3;
+        }
+        else
+        {
+          v6 = (unsigned int)dword_140018E48 >> 2;
+        }
+        v7 = 0x8000;
+        if ( v6 > 0x8000 )
+          v7 = v6;
+        v5 = v7 < dword_140018E48 ? dword_140018E48 - v7 : 0;
+        dword_140018DC8 = v5;
+      }
+    }
+    return v5;
+  }
+  if ( ZwQuerySystemInformation(SystemPerformanceInformation, SystemInformation, 0x150u, ReturnLength) < 0
+    || ReturnLength[0] < 0x150 )
+  {
+    return 0x1FFFFFFFFLL;
+  }
+  if ( v10 - 0x2000 <= 0 && a2 < 0x2000 - v10 )
+    return 0;
+  result = 4294967294LL;
+  if ( a2 + v10 - 0x2000 < 0xFFFFFFFE )
+    return a2 + v10 - 0x2000;
+  return result;
+}
+
+
+=== DISASM ===
+0x140005a48: push    rbx
+0x140005a4a: sub     rsp, 190h
+0x140005a51: mov     rax, cs:__security_cookie
+0x140005a58: xor     rax, rsp
+0x140005a5b: mov     [rsp+198h+var_18], rax
+0x140005a63: cmp     cs:qword_140018DC0, 0
+0x140005a6b: mov     rbx, rdx
+0x140005a6e: mov     rax, rcx
+0x140005a71: jz      short loc_140005AD6
+0x140005a73: lea     r9, [rsp+198h+ReturnLength]; ReturnLength
+0x140005a78: mov     r8d, 150h; SystemInformationLength
+0x140005a7e: lea     rdx, [rsp+198h+SystemInformation]; SystemInformation
+0x140005a83: mov     ecx, 2; SystemInformationClass
+0x140005a88: call    cs:ZwQuerySystemInformation
+0x140005a8e: test    eax, eax
+0x140005a90: js      short loc_140005AE5
+0x140005a92: cmp     [rsp+198h+ReturnLength], 150h
+0x140005a9a: jb      short loc_140005AE5
+0x140005a9c: mov     rcx, [rsp+198h+var_20]
+0x140005aa4: add     rcx, 0FFFFFFFFFFFFE000h
+0x140005aab: test    rcx, rcx
+0x140005aae: jg      short loc_140005AC2
+0x140005ab0: mov     rax, rcx
+0x140005ab3: neg     rax
+0x140005ab6: cmp     rbx, rax
+0x140005ab9: jnb     short loc_140005AC2
+0x140005abb: xor     eax, eax
+0x140005abd: jmp     loc_140005B61
+0x140005ac2: add     rcx, rbx
+0x140005ac5: mov     eax, 0FFFFFFFEh
+0x140005aca: cmp     rcx, rax
+0x140005acd: cmovb   rax, rcx
+0x140005ad1: jmp     loc_140005B61
+0x140005ad6: mov     ecx, cs:dword_140018DC8
+0x140005adc: test    ecx, ecx
+0x140005ade: jnz     short loc_140005B5F
+0x140005ae0: test    rax, rax
+0x140005ae3: jnz     short loc_140005AF1
+0x140005ae5: mov     rax, 1FFFFFFFFh
+0x140005aef: jmp     short loc_140005B61
+0x140005af1: cmp     cs:byte_140018DCC, 0
+0x140005af8: jz      short loc_140005B09
+0x140005afa: call    sub_140005118
+0x140005aff: mov     ecx, eax
+0x140005b01: mov     cs:dword_140018DC8, eax
+0x140005b07: jmp     short loc_140005B5F
+0x140005b09: mov     r8d, cs:dword_140018E48
+0x140005b10: mov     eax, r8d
+0x140005b13: shr     eax, 12h
+0x140005b16: cmp     eax, 4
+0x140005b19: ja      short loc_140005B23
+0x140005b1b: mov     edx, r8d
+0x140005b1e: shr     edx, 2
+0x140005b21: jmp     short loc_140005B43
+0x140005b23: cmp     eax, 10h
+0x140005b26: jb      short loc_140005B30
+0x140005b28: mov     edx, r8d
+0x140005b2b: shr     edx, 3
+0x140005b2e: jmp     short loc_140005B43
+0x140005b30: shr     eax, 2
+0x140005b33: mov     edx, 8
+0x140005b38: sub     edx, eax
+0x140005b3a: mov     eax, r8d
+0x140005b3d: shr     eax, 5
+0x140005b40: imul    edx, eax
+0x140005b43: mov     ecx, 8000h
+0x140005b48: mov     eax, r8d
+0x140005b4b: cmp     edx, ecx
+0x140005b4d: cmova   ecx, edx
+0x140005b50: sub     eax, ecx
+0x140005b52: cmp     ecx, r8d
+0x140005b55: sbb     ecx, ecx
+0x140005b57: and     ecx, eax
+0x140005b59: mov     cs:dword_140018DC8, ecx
+0x140005b5f: mov     eax, ecx
+0x140005b61: mov     rcx, [rsp+198h+var_18]
+0x140005b69: xor     rcx, rsp; StackCookie
+0x140005b6c: call    __security_check_cookie
+0x140005b71: add     rsp, 190h
+0x140005b78: pop     rbx
+0x140005b79: retn

@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: sub_140003414
+Addr: 0x140003414
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140003414-0x140003418 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140003414(unsigned __int64 a1)
+{
+  __writecr2(a1);
+}
+
+
+=== DISASM ===
+0x140003414: mov     cr2, rcx
+0x140003417: retn

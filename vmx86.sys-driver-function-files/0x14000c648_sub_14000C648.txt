@@ -1,0 +1,94 @@
+=== METADATA ===
+Name: sub_14000C648
+Addr: 0x14000c648
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000c68e: AND with Mask 0x1
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140004422)
+  <- sub_140008D04 (0x140008F73)
+  <- sub_14000922C (0x14000939C)
+  <- sub_14000922C (0x1400093D8)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000c648-0x14000c656 -> Jumps to: 0x14000c656, 0x14000c6a0
+  Block 0x14000c656-0x14000c671 -> Jumps to: 0x14000c671, 0x14000c677
+  Block 0x14000c671-0x14000c677 -> Jumps to: 0x14000c694
+  Block 0x14000c677-0x14000c694 -> Jumps to: 0x14000c694
+  Block 0x14000c694-0x14000c6a0 -> Jumps to: 0x14000c6b0
+  Block 0x14000c6a0-0x14000c6b0 -> Jumps to: 0x14000c6b0
+  Block 0x14000c6b0-0x14000c6b5 -> Jumps to: 
+
+=== CODE ===
+unsigned __int64 sub_14000C648()
+{
+  LONGLONG v0; // rax
+  LONGLONG v1; // r8
+
+  if ( !byte_14001CF50 )
+    return qword_14001CF40 + __rdtsc();
+  v0 = sub_140006814();
+  if ( dword_14001CF34 )
+    v1 = (((v0 * (unsigned __int64)(unsigned int)dword_14001CF30) >> ((unsigned __int8)dword_14001CF34 - 1)) & 1)
+       + (((v0 * (unsigned __int64)(unsigned int)dword_14001CF30) >> dword_14001CF34)
+        | (((unsigned __int64)v0 * (unsigned __int128)(unsigned int)dword_14001CF30) >> 64 << (64
+                                                                                             - (unsigned __int8)dword_14001CF34)));
+  else
+    v1 = v0 * (unsigned int)dword_14001CF30;
+  return v1 + qword_14001CF38;
+}
+
+
+=== DISASM ===
+0x14000c648: sub     rsp, 28h
+0x14000c64c: mov     al, cs:byte_14001CF50
+0x14000c652: test    al, al
+0x14000c654: jz      short loc_14000C6A0
+0x14000c656: call    sub_140006814
+0x14000c65b: mov     r9d, cs:dword_14001CF34
+0x14000c662: mov     rcx, rax
+0x14000c665: mov     r8d, cs:dword_14001CF30
+0x14000c66c: test    r9d, r9d
+0x14000c66f: jnz     short loc_14000C677
+0x14000c671: imul    r8, rcx
+0x14000c675: jmp     short loc_14000C694
+0x14000c677: mov     rax, r8
+0x14000c67a: mul     rcx
+0x14000c67d: mov     cl, r9b
+0x14000c680: mov     r8, rax
+0x14000c683: shrd    r8, rdx, cl
+0x14000c687: lea     ecx, [r9-1]
+0x14000c68b: shr     rax, cl
+0x14000c68e: and     eax, 1
+0x14000c691: add     r8, rax
+0x14000c694: mov     rax, cs:qword_14001CF38
+0x14000c69b: add     rax, r8
+0x14000c69e: jmp     short loc_14000C6B0
+0x14000c6a0: rdtsc
+0x14000c6a2: shl     rdx, 20h
+0x14000c6a6: or      rax, rdx
+0x14000c6a9: add     rax, cs:qword_14001CF40
+0x14000c6b0: add     rsp, 28h
+0x14000c6b4: retn

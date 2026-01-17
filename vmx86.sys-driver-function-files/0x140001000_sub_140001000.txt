@@ -1,0 +1,49 @@
+=== METADATA ===
+Name: sub_140001000
+Addr: 0x140001000
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140001004: Access Member +0x10 ([rbp+arg_0])
+  0x140001008: Access Member +0x10 ([rbp+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140001104 (0x140001155)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140001000-0x14000100e -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140001000(__int64 a1)
+{
+  return a1;
+}
+
+
+=== DISASM ===
+0x140001000: push    rbp
+0x140001001: mov     rbp, rsp
+0x140001004: mov     [rbp+arg_0], rcx
+0x140001008: mov     rax, [rbp+arg_0]
+0x14000100c: pop     rbp
+0x14000100d: retn

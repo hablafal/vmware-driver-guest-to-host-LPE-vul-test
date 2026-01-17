@@ -1,0 +1,1608 @@
+=== METADATA ===
+Name: sub_140003BB4
+Addr: 0x140003bb4
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140003bf7: AND with Mask 0x0
+  0x140003bfa: AND with Mask 0x0
+  0x140003c1d: TEST with Mask 0x3
+  0x140003e47: AND with Mask 0x0
+  0x140003ef8: AND with Mask 0x0
+  0x140003f01: AND with Mask 0x0
+  0x140003f60: OR with Mask 0xFFFFFFFFFFFFFFFF
+  0x1400040f2: AND with Mask 0x0
+  0x1400043c6: AND with Mask 0x0
+  0x140004702: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140003bb4: Access Member +0x8 (qword ptr [rsp-8+arg_0])
+  0x140003bb9: Access Member +0x18 (qword ptr [rsp-8+arg_10])
+  0x140003bdf: Access Member +0xC0 ([rbp+0F0h+var_30])
+  0x140003be6: Access Member +0x140 ([rbp+0F0h+arg_40])
+  0x140003bf0: Access Member +0x128 ([rbp+0F0h+arg_28])
+  0x140003bfa: Access Member +0x8 (qword ptr [rbx+8])
+  0x140003bff: Access Member +0x18 ([rdx+18h])
+  0x140003c11: Access Member +0x40 (byte ptr [rcx+40h])
+  0x140003c17: Access Member +0x138 ([rbp+0F0h+arg_38])
+  0x140003d38: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140003d63: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140003d90: Access Member +0x4 ([rsi+4])
+  0x140003d93: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140003daa: Access Member +0x10 (word ptr [rdi+10h])
+  0x140003db8: Access Member +0xC ([rdi+0Ch])
+  0x140003dbc: Access Member +0x18 ([rdi+18h])
+  0x140003dc3: Access Member +0x60 ([rdi+60h])
+  0x140003dc7: Access Member +0x30 ([rsp+1F0h+var_1C0])
+  0x140003dcc: Access Member +0x28 ([rsp+1F0h+var_1C8])
+  0x140003dd4: Access Member +0x20 (word ptr [rsp+1F0h+var_1D0])
+  0x140003dda: Access Member +0x8 ([rdi+8])
+  0x140003de8: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140003df5: Access Member +0x14 ([rdi+14h])
+  0x140003df9: Access Member +0x18 ([rdi+18h])
+  0x140003dfd: Access Member +0x10 ([rdi+10h])
+  0x140003e13: Access Member +0x1C ([rdi+1Ch])
+  0x140003e17: Access Member +0x8 (qword ptr [rbx+8])
+  0x140003e21: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140003e2e: Access Member +0x8 (qword ptr [rbx+8])
+  0x140003e7d: Access Member +0xC0 ([rbp+0F0h+var_30])
+  0x140003e8c: Access Member +0x1D0 ([rsp+1F0h+var_20])
+  0x140003e94: Access Member +0x30 ([r11+30h])
+  0x140003e98: Access Member +0x40 ([r11+40h])
+  0x140003ea8: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140003eb5: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140003ed0: Access Member +0x8 ([rdi+8])
+  0x140003ed3: Access Member +0x8 ([rbx+8])
+  0x140003ee1: Access Member +0x4 ([rsi+4])
+  0x140003ee6: Access Member +0x10 ([rsi+10h])
+  0x140003eea: Access Member +0x38 ([rax+38h])
+  0x140003ef8: Access Member +0x58 ([rsp+1F0h+ObjectAttributes.RootDirectory])
+  0x140003f01: Access Member +0x60 ([rsp+1F0h+ObjectAttributes.ObjectName])
+  0x140003f07: Access Member +0x70 (xmmword ptr [rsp+1F0h+ObjectAttributes.SecurityDescriptor])
+  0x140003f0d: Access Member +0x50 ([rsp+1F0h+ObjectAttributes.Length])
+  0x140003f15: Access Member +0x68 ([rsp+1F0h+ObjectAttributes.Attributes])
+  0x140003f23: Access Member +0x40 ([rsp+1F0h+ClientId.UniqueProcess])
+  0x140003f2e: Access Member +0x48 ([rsp+1F0h+ClientId.UniqueThread])
+  0x140003f33: Access Member +0x40 ([rsp+1F0h+ClientId])
+  0x140003f38: Access Member +0x10 ([rsi+10h])
+  0x140003f41: Access Member +0x50 ([rsp+1F0h+ObjectAttributes])
+  0x140003f46: Access Member +0x38 ([rax+38h])
+  0x140003f58: Access Member +0x10 ([rsi+10h])
+  0x140003f5c: Access Member +0x38 ([rcx+38h])
+  0x140003f7a: Access Member +0x8 ([rbx+8])
+  0x140003f83: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140003f90: Access Member +0x8 (qword ptr [rbx+8])
+  0x140003f9f: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140003fac: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140003fcd: Access Member +0x8 (qword ptr [rbx+8])
+  0x140004024: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140004047: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140004054: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x14000406c: Access Member +0x8 ([rbx+8])
+  0x140004075: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140004082: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x1400040b0: Access Member +0x34 ([r14+34h])
+  0x1400040c1: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x1400040d8: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x1400040f2: Access Member +0x8 (qword ptr [rbx+8])
+  0x1400040fc: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x14000413e: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140004151: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x14000416e: Access Member +0x20 ([rsp+1F0h+var_1D0])
+  0x140004185: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140004192: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x14000419f: Access Member +0x8 (qword ptr [rbx+8])
+  0x1400041b6: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x1400041ca: Access Member +0x8 (qword ptr [rbx+8])
+  0x1400041dc: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x1400041e9: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x14000426c: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x14000427b: Access Member +0x4 ([rdi+4])
+  0x14000428f: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x1400042ab: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x1400042b1: Access Member +0x8 ([rbx+8])
+  0x1400042ba: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x1400042d2: Access Member +0x8 (qword ptr [rbx+8])
+  0x1400042df: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x1400042ec: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140004309: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140004316: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140004323: Access Member +0x8 ([rdi+8])
+  0x14000432f: Access Member +0x10 ([rdi+10h])
+  0x140004333: Access Member +0x20 (byte ptr [rsp+1F0h+var_1D0])
+  0x140004348: Access Member +0x8 (qword ptr [rbx+8])
+  0x140004355: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140004362: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x14000436f: Access Member +0x8 ([rdi+8])
+  0x140004383: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x1400043cd: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140004408: Access Member +0x8 (qword ptr [rbx+8])
+  0x140004415: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x14000444a: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140004457: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140004473: Access Member +0x8 ([rdi+8])
+  0x140004480: Access Member +0x10 ([r14+10h])
+  0x14000448f: Access Member +0x8 ([r14+8])
+  0x140004498: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x1400044a5: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x1400044ba: Access Member +0x8 (qword ptr [rbx+8])
+  0x1400044cd: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x140004548: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x14000455c: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140004581: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x14000458e: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x1400045ad: Access Member +0x8 (qword ptr [rbx+8])
+  0x1400045ba: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x1400045e8: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x1400045f5: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140004604: Access Member +0x4 ([rsi+4])
+  0x14000460d: Access Member +0x38 ([rsi+38h])
+  0x140004627: Access Member +0x9D8 ([rax+9D8h])
+  0x14000462e: Access Member +0x8 ([rdi+8])
+  0x140004632: Access Member +0x8 (qword ptr [rbx+8])
+  0x14000463f: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x14000464e: Access Member +0x4 ([rsi+4])
+  0x14000466c: Access Member +0x20 ([rsp+1F0h+var_1D0])
+  0x1400046b7: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x1400046c8: Access Member +0x8 (qword ptr [rbx+8])
+  0x1400046db: Access Member +0x120 ([rbp+0F0h+arg_20])
+  0x1400046e4: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140004705: Access Member +0x8 ([rbx+8])
+  0x14000470e: Access Member +0x130 ([rbp+0F0h+arg_30])
+  0x140004729: Access Member +0x120 ([rbp+0F0h+arg_20])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x18 -> possible EvtIoDefault
+  [!] Offset +0x38 -> possible EvtIoInternalDeviceControl
+
+=== CALLERS ===
+  <- sub_140004760 (0x1400047C1)
+  <- sub_1400047D0 (0x140004863)
+
+=== IMPORTS ===
+  -> 0x140003f1d calls PsGetCurrentProcessId
+  -> 0x140003f28 calls PsGetCurrentThreadId
+  -> 0x140003f4e calls ZwOpenThread
+  -> 0x1400043e2 calls KeGetCurrentProcessorNumberEx
+  -> 0x1400043f2 calls KeQueryGroupAffinity
+
+=== STRINGS ===
+  0x140003bd5 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x140003bb4-0x140003c0c -> Jumps to: 0x140003c0c, 0x140003e75
+  Block 0x140003c0c-0x140003c11 -> Jumps to: 0x140003c11, 0x140003c17
+  Block 0x140003c11-0x140003c17 -> Jumps to: 0x140003c17, 0x140003c27
+  Block 0x140003c17-0x140003c22 -> Jumps to: 0x140003c22, 0x140003c32
+  Block 0x140003c22-0x140003c27 -> Jumps to: 0x140003c27, 0x140003c32
+  Block 0x140003c27-0x140003c32 -> Jumps to: 0x140003e7b
+  Block 0x140003c32-0x140003c58 -> Jumps to: 0x140003c58, 0x140003c94
+  Block 0x140003c58-0x140003c5e -> Jumps to: 0x140003c5e, 0x140004383
+  Block 0x140003c5e-0x140003c69 -> Jumps to: 0x140003c69, 0x140003c79
+  Block 0x140003c69-0x140003c79 -> Jumps to: 0x140003c79, 0x140003cde
+  Block 0x140003c79-0x140003c7e -> Jumps to: 0x140003c7e, 0x140003cde
+  Block 0x140003c7e-0x140003c86 -> Jumps to: 0x140003c86, 0x140003cde
+  Block 0x140003c86-0x140003c92 -> Jumps to: 0x140003c92, 0x140004240
+  Block 0x140003c92-0x140003c94 -> Jumps to: 0x140003cc6
+  Block 0x140003c94-0x140003c9f -> Jumps to: 0x140003c9f, 0x140003cad
+  Block 0x140003c9f-0x140003cad -> Jumps to: 0x140003cad, 0x14000421c
+  Block 0x140003cad-0x140003cb8 -> Jumps to: 0x140003cb8, 0x140003cc6
+  Block 0x140003cb8-0x140003cc6 -> Jumps to: 0x140003cc6, 0x140004501
+  Block 0x140003cc6-0x140003ccf -> Jumps to: 0x140003ccf, 0x140003e75
+  Block 0x140003ccf-0x140003cd8 -> Jumps to: 0x140003cd8, 0x140004213
+  Block 0x140003cd8-0x140003cde -> Jumps to: 0x140003cde, 0x1400041dc
+  Block 0x140003cde-0x140003ceb -> Jumps to: 0x140003ceb, 0x140003fdd
+  Block 0x140003ceb-0x140003cf1 -> Jumps to: 0x140003cf1, 0x140003f9f
+  Block 0x140003cf1-0x140003cfe -> Jumps to: 0x140003cfe, 0x140003e4d
+  Block 0x140003cfe-0x140003d04 -> Jumps to: 0x140003d04, 0x140003e3f
+  Block 0x140003d04-0x140003d10 -> Jumps to: 0x140003d10, 0x140003e21
+  Block 0x140003d10-0x140003d1c -> Jumps to: 0x140003d1c, 0x140003de8
+  Block 0x140003d1c-0x140003d24 -> Jumps to: 0x140003d24, 0x140003d90
+  Block 0x140003d24-0x140003d2c -> Jumps to: 0x140003d2c, 0x140003d63
+  Block 0x140003d2c-0x140003d38 -> Jumps to: 0x140003d38, 0x140003e75
+  Block 0x140003d38-0x140003d45 -> Jumps to: 0x140003d45, 0x140003e75
+  Block 0x140003d45-0x140003d50 -> Jumps to: 0x140003d50
+  Block 0x140003d50-0x140003d58 -> Jumps to: 0x140003d58, 0x140003e7b
+  Block 0x140003d58-0x140003d63 -> Jumps to: 0x140003e7b
+  Block 0x140003d63-0x140003d70 -> Jumps to: 0x140003d70, 0x140003e75
+  Block 0x140003d70-0x140003d83 -> Jumps to: 0x140003d83, 0x140003e75
+  Block 0x140003d83-0x140003d90 -> Jumps to: 0x140003d50
+  Block 0x140003d90-0x140003daa -> Jumps to: 0x140003daa, 0x140003e75
+  Block 0x140003daa-0x140003db8 -> Jumps to: 0x140003db8, 0x140003e75
+  Block 0x140003db8-0x140003de8 -> Jumps to: 0x140003d50
+  Block 0x140003de8-0x140003df5 -> Jumps to: 0x140003df5, 0x140004732
+  Block 0x140003df5-0x140003e0d -> Jumps to: 0x140003e0d, 0x140003e17
+  Block 0x140003e0d-0x140003e17 -> Jumps to: 0x140003e17
+  Block 0x140003e17-0x140003e21 -> Jumps to: 0x140003e7b
+  Block 0x140003e21-0x140003e2e -> Jumps to: 0x140003e2e, 0x140004732
+  Block 0x140003e2e-0x140003e3f -> Jumps to: 0x140003e7b
+  Block 0x140003e3f-0x140003e4d -> Jumps to: 0x140003e7b
+  Block 0x140003e4d-0x140003e59 -> Jumps to: 0x140003e59, 0x140003f83
+  Block 0x140003e59-0x140003e61 -> Jumps to: 0x140003e61, 0x140003ed9
+  Block 0x140003e61-0x140003e69 -> Jumps to: 0x140003e69, 0x140003ea8
+  Block 0x140003e69-0x140003e75 -> Jumps to: 0x140003e75, 0x1400041dc
+  Block 0x140003e75-0x140003e7b -> Jumps to: 0x140003e7b
+  Block 0x140003e7b-0x140003ea8 -> Jumps to: 
+  Block 0x140003ea8-0x140003eb5 -> Jumps to: 0x140003eb5, 0x140004732
+  Block 0x140003eb5-0x140003ec2 -> Jumps to: 0x140003ec2, 0x140004732
+  Block 0x140003ec2-0x140003ed0 -> Jumps to: 0x140003ed0
+  Block 0x140003ed0-0x140003ed9 -> Jumps to: 0x140003e7b
+  Block 0x140003ed9-0x140003ee1 -> Jumps to: 0x140003e75, 0x140003ee1
+  Block 0x140003ee1-0x140003ee6 -> Jumps to: 0x140003e75, 0x140003ee6
+  Block 0x140003ee6-0x140003ef5 -> Jumps to: 0x140003ef5, 0x140003f6a
+  Block 0x140003ef5-0x140003f58 -> Jumps to: 0x140003f58, 0x140003f6a
+  Block 0x140003f58-0x140003f6a -> Jumps to: 0x140004751
+  Block 0x140003f6a-0x140003f7a -> Jumps to: 0x140003f7a
+  Block 0x140003f7a-0x140003f83 -> Jumps to: 0x140003e7b
+  Block 0x140003f83-0x140003f90 -> Jumps to: 0x140003f90, 0x140004732
+  Block 0x140003f90-0x140003f9f -> Jumps to: 0x140003fd5
+  Block 0x140003f9f-0x140003fac -> Jumps to: 0x140003fac, 0x140004732
+  Block 0x140003fac-0x140003fb9 -> Jumps to: 0x140003fb9, 0x140004732
+  Block 0x140003fb9-0x140003fc5 -> Jumps to: 0x140003e75, 0x140003fc5
+  Block 0x140003fc5-0x140003fcd -> Jumps to: 0x140003fcd
+  Block 0x140003fcd-0x140003fd5 -> Jumps to: 0x140003fd5
+  Block 0x140003fd5-0x140003fdd -> Jumps to: 0x140003e7b
+  Block 0x140003fdd-0x140003fea -> Jumps to: 0x140003fea, 0x140004121
+  Block 0x140003fea-0x140003ff0 -> Jumps to: 0x140003ff0, 0x1400040fc
+  Block 0x140003ff0-0x140003ffc -> Jumps to: 0x140003ffc, 0x1400040d8
+  Block 0x140003ffc-0x140004008 -> Jumps to: 0x140004008, 0x1400040c1
+  Block 0x140004008-0x140004010 -> Jumps to: 0x140004010, 0x140004075
+  Block 0x140004010-0x140004018 -> Jumps to: 0x140004018, 0x140004041
+  Block 0x140004018-0x140004024 -> Jumps to: 0x140003e75, 0x140004024
+  Block 0x140004024-0x140004031 -> Jumps to: 0x140004031, 0x140004732
+  Block 0x140004031-0x140004041 -> Jumps to: 0x140003e7b
+  Block 0x140004041-0x140004054 -> Jumps to: 0x140004054, 0x140004732
+  Block 0x140004054-0x140004061 -> Jumps to: 0x140004061, 0x140004732
+  Block 0x140004061-0x14000406c -> Jumps to: 0x14000406c
+  Block 0x14000406c-0x140004075 -> Jumps to: 0x140003e7b
+  Block 0x140004075-0x140004082 -> Jumps to: 0x140004082, 0x140004732
+  Block 0x140004082-0x140004098 -> Jumps to: 0x140004098, 0x140004732
+  Block 0x140004098-0x1400040b0 -> Jumps to: 0x1400040b0, 0x140004732
+  Block 0x1400040b0-0x1400040c1 -> Jumps to: 0x140003f7a
+  Block 0x1400040c1-0x1400040ce -> Jumps to: 0x1400040ce, 0x140004732
+  Block 0x1400040ce-0x1400040d8 -> Jumps to: 0x140004114
+  Block 0x1400040d8-0x1400040e5 -> Jumps to: 0x1400040e5, 0x140004732
+  Block 0x1400040e5-0x1400040ea -> Jumps to: 0x1400040ea, 0x1400040f2
+  Block 0x1400040ea-0x1400040f2 -> Jumps to: 0x1400040f2
+  Block 0x1400040f2-0x1400040fc -> Jumps to: 0x140003e7b
+  Block 0x1400040fc-0x140004109 -> Jumps to: 0x140004109, 0x140004732
+  Block 0x140004109-0x140004114 -> Jumps to: 0x140004114
+  Block 0x140004114-0x14000411c -> Jumps to: 0x140003e7b, 0x14000411c
+  Block 0x14000411c-0x140004121 -> Jumps to: 0x140003e75
+  Block 0x140004121-0x14000412a -> Jumps to: 0x14000412a, 0x1400041b6
+  Block 0x14000412a-0x140004132 -> Jumps to: 0x140004132, 0x140004185
+  Block 0x140004132-0x14000413e -> Jumps to: 0x140003e75, 0x14000413e
+  Block 0x14000413e-0x14000414b -> Jumps to: 0x14000414b, 0x140004732
+  Block 0x14000414b-0x14000415e -> Jumps to: 0x14000415e, 0x140004732
+  Block 0x14000415e-0x140004180 -> Jumps to: 0x140004180, 0x140004751
+  Block 0x140004180-0x140004185 -> Jumps to: 0x14000406c
+  Block 0x140004185-0x140004192 -> Jumps to: 0x140004192, 0x140004732
+  Block 0x140004192-0x14000419f -> Jumps to: 0x14000419f, 0x140004732
+  Block 0x14000419f-0x1400041b6 -> Jumps to: 0x140003fd5
+  Block 0x1400041b6-0x1400041c3 -> Jumps to: 0x1400041c3, 0x140004732
+  Block 0x1400041c3-0x1400041dc -> Jumps to: 0x140003fd5
+  Block 0x1400041dc-0x1400041e9 -> Jumps to: 0x1400041e9, 0x140004732
+  Block 0x1400041e9-0x1400041f6 -> Jumps to: 0x1400041f6, 0x140004732
+  Block 0x1400041f6-0x140004213 -> Jumps to: 0x140003ed0
+  Block 0x140004213-0x14000421c -> Jumps to: 0x14000421c, 0x140004501
+  Block 0x14000421c-0x140004225 -> Jumps to: 0x140004225, 0x1400044c7
+  Block 0x140004225-0x14000422e -> Jumps to: 0x14000422e, 0x14000439a
+  Block 0x14000422e-0x140004234 -> Jumps to: 0x140004234, 0x140004383
+  Block 0x140004234-0x140004240 -> Jumps to: 0x140004240, 0x140004355
+  Block 0x140004240-0x14000424c -> Jumps to: 0x14000424c, 0x140004309
+  Block 0x14000424c-0x140004258 -> Jumps to: 0x140004258, 0x1400042df
+  Block 0x140004258-0x140004260 -> Jumps to: 0x140004260, 0x1400042ba
+  Block 0x140004260-0x14000426c -> Jumps to: 0x140003e75, 0x14000426c
+  Block 0x14000426c-0x14000427b -> Jumps to: 0x140003e75, 0x14000427b
+  Block 0x14000427b-0x14000428f -> Jumps to: 0x140003e75, 0x14000428f
+  Block 0x14000428f-0x14000429b -> Jumps to: 0x140003e75, 0x14000429b
+  Block 0x14000429b-0x1400042ab -> Jumps to: 0x1400042ab, 0x140004732
+  Block 0x1400042ab-0x1400042ba -> Jumps to: 0x140003e7b
+  Block 0x1400042ba-0x1400042c7 -> Jumps to: 0x1400042c7, 0x140004732
+  Block 0x1400042c7-0x1400042cf -> Jumps to: 0x1400042cf
+  Block 0x1400042cf-0x1400042d2 -> Jumps to: 0x1400042d2
+  Block 0x1400042d2-0x1400042df -> Jumps to: 0x140003e7b
+  Block 0x1400042df-0x1400042ec -> Jumps to: 0x1400042ec, 0x140004732
+  Block 0x1400042ec-0x1400042f9 -> Jumps to: 0x1400042f9, 0x140004732
+  Block 0x1400042f9-0x140004309 -> Jumps to: 0x14000462e
+  Block 0x140004309-0x140004316 -> Jumps to: 0x140004316, 0x140004732
+  Block 0x140004316-0x140004323 -> Jumps to: 0x140004323, 0x140004732
+  Block 0x140004323-0x140004348 -> Jumps to: 0x140004348, 0x140004751
+  Block 0x140004348-0x140004355 -> Jumps to: 0x140003e7b
+  Block 0x140004355-0x140004362 -> Jumps to: 0x140004362, 0x140004732
+  Block 0x140004362-0x14000436f -> Jumps to: 0x14000436f, 0x140004732
+  Block 0x14000436f-0x140004383 -> Jumps to: 0x140003fcd
+  Block 0x140004383-0x140004390 -> Jumps to: 0x140004390, 0x140004732
+  Block 0x140004390-0x14000439a -> Jumps to: 0x1400042cf
+  Block 0x14000439a-0x1400043a6 -> Jumps to: 0x1400043a6, 0x140004498
+  Block 0x1400043a6-0x1400043b2 -> Jumps to: 0x1400043b2, 0x14000444a
+  Block 0x1400043b2-0x1400043ba -> Jumps to: 0x1400043ba, 0x140004415
+  Block 0x1400043ba-0x1400043c6 -> Jumps to: 0x140003e75, 0x1400043c6
+  Block 0x1400043c6-0x1400043de -> Jumps to: 0x1400043de, 0x140004732
+  Block 0x1400043de-0x140004415 -> Jumps to: 0x140004751
+  Block 0x140004415-0x140004422 -> Jumps to: 0x140004422, 0x140004732
+  Block 0x140004422-0x14000442f -> Jumps to: 0x14000442f
+  Block 0x14000442f-0x140004445 -> Jumps to: 0x140004445, 0x140004751
+  Block 0x140004445-0x14000444a -> Jumps to: 0x1400042d2
+  Block 0x14000444a-0x140004457 -> Jumps to: 0x140004457, 0x140004732
+  Block 0x140004457-0x140004464 -> Jumps to: 0x140004464, 0x140004732
+  Block 0x140004464-0x140004498 -> Jumps to: 0x140004348
+  Block 0x140004498-0x1400044a5 -> Jumps to: 0x1400044a5, 0x140004732
+  Block 0x1400044a5-0x1400044b2 -> Jumps to: 0x1400044b2, 0x140004732
+  Block 0x1400044b2-0x1400044c7 -> Jumps to: 0x140003e7b
+  Block 0x1400044c7-0x1400044da -> Jumps to: 0x140003e75, 0x1400044da
+  Block 0x1400044da-0x1400044f0 -> Jumps to: 0x140003e7b, 0x1400044f0
+  Block 0x1400044f0-0x140004501 -> Jumps to: 0x140003e7b
+  Block 0x140004501-0x14000450e -> Jumps to: 0x14000450e, 0x14000468f
+  Block 0x14000450e-0x140004510 -> Jumps to: 0x140004510, 0x140004548
+  Block 0x140004510-0x14000451c -> Jumps to: 0x14000451c, 0x14000463f
+  Block 0x14000451c-0x140004528 -> Jumps to: 0x140004528, 0x1400045e8
+  Block 0x140004528-0x140004534 -> Jumps to: 0x140004534, 0x1400045ba
+  Block 0x140004534-0x14000453c -> Jumps to: 0x14000453c, 0x140004581
+  Block 0x14000453c-0x140004548 -> Jumps to: 0x140003e75, 0x140004548
+  Block 0x140004548-0x14000455c -> Jumps to: 0x14000455c, 0x140004732
+  Block 0x14000455c-0x140004569 -> Jumps to: 0x140004569, 0x140004732
+  Block 0x140004569-0x140004576 -> Jumps to: 0x140004576, 0x140004667
+  Block 0x140004576-0x140004581 -> Jumps to: 0x140003e7b
+  Block 0x140004581-0x14000458e -> Jumps to: 0x14000458e, 0x140004732
+  Block 0x14000458e-0x14000459b -> Jumps to: 0x14000459b, 0x140004732
+  Block 0x14000459b-0x1400045ad -> Jumps to: 0x1400045ad, 0x140004751
+  Block 0x1400045ad-0x1400045ba -> Jumps to: 0x140003e7b
+  Block 0x1400045ba-0x1400045c7 -> Jumps to: 0x1400045c7, 0x140004732
+  Block 0x1400045c7-0x1400045d4 -> Jumps to: 0x1400045d4, 0x1400045de
+  Block 0x1400045d4-0x1400045de -> Jumps to: 0x140004751
+  Block 0x1400045de-0x1400045e8 -> Jumps to: 0x140004751
+  Block 0x1400045e8-0x1400045f5 -> Jumps to: 0x1400045f5, 0x140004732
+  Block 0x1400045f5-0x140004602 -> Jumps to: 0x140004602, 0x140004732
+  Block 0x140004602-0x14000460d -> Jumps to: 0x140003e75, 0x14000460d
+  Block 0x14000460d-0x14000461a -> Jumps to: 0x140003e75, 0x14000461a
+  Block 0x14000461a-0x140004627 -> Jumps to: 0x140003e75, 0x140004627
+  Block 0x140004627-0x14000462e -> Jumps to: 0x14000462e
+  Block 0x14000462e-0x14000463f -> Jumps to: 0x140003e7b
+  Block 0x14000463f-0x14000464c -> Jumps to: 0x140003e75, 0x14000464c
+  Block 0x14000464c-0x140004657 -> Jumps to: 0x140003e75, 0x140004657
+  Block 0x140004657-0x140004667 -> Jumps to: 0x140003e7b
+  Block 0x140004667-0x14000468a -> Jumps to: 0x140003e7b, 0x14000468a
+  Block 0x14000468a-0x14000468f -> Jumps to: 0x1400042d2
+  Block 0x14000468f-0x14000469b -> Jumps to: 0x14000469b, 0x140004729
+  Block 0x14000469b-0x1400046a3 -> Jumps to: 0x1400046a3, 0x14000470e
+  Block 0x1400046a3-0x1400046ab -> Jumps to: 0x1400046ab, 0x1400046d5
+  Block 0x1400046ab-0x1400046b7 -> Jumps to: 0x140003e75, 0x1400046b7
+  Block 0x1400046b7-0x1400046c0 -> Jumps to: 0x1400046c0, 0x140004732
+  Block 0x1400046c0-0x1400046d5 -> Jumps to: 0x140003e7b
+  Block 0x1400046d5-0x1400046e4 -> Jumps to: 0x1400046e4, 0x140004732
+  Block 0x1400046e4-0x1400046ed -> Jumps to: 0x1400046ed, 0x140004732
+  Block 0x1400046ed-0x140004702 -> Jumps to: 0x140003e75, 0x140004702
+  Block 0x140004702-0x14000470e -> Jumps to: 0x140003e7b
+  Block 0x14000470e-0x140004717 -> Jumps to: 0x140004717, 0x140004732
+  Block 0x140004717-0x140004729 -> Jumps to: 0x14000442f
+  Block 0x140004729-0x140004732 -> Jumps to: 0x140004732, 0x14000473d
+  Block 0x140004732-0x14000473d -> Jumps to: 0x140003e7b
+  Block 0x14000473d-0x140004749 -> Jumps to: 0x140003e75, 0x140004749
+  Block 0x140004749-0x140004751 -> Jumps to: 0x140004751
+  Block 0x140004751-0x140004758 -> Jumps to: 0x140003e7b
+
+=== CODE ===
+char __fastcall sub_140003BB4(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 *a4,
+        unsigned int a5,
+        __int64 a6,
+        unsigned int a7,
+        unsigned int a8,
+        __int64 a9)
+{
+  _QWORD *v10; // r15
+  __int64 v11; // rsi
+  __int64 v12; // r8
+  __int64 v13; // r9
+  unsigned __int64 v14; // rax
+  char v15; // al
+  __int64 v16; // rdx
+  int v17; // r8d
+  _WORD *v18; // rax
+  int v20; // eax
+  __int64 v21; // rdi
+  __int64 v22; // rax
+  __int64 v23; // rcx
+  int v24; // eax
+  __int64 v25; // r15
+  char v26; // al
+  __int64 v27; // rax
+  __int64 v28; // rax
+  __int64 *v29; // rdx
+  int v30; // eax
+  __int64 v31; // r8
+  __int64 v32; // rax
+  __int64 v33; // rcx
+  __int64 v34; // rax
+  __int64 v35; // rdx
+  int v36; // eax
+  struct _CLIENT_ID ClientId; // [rsp+40h] [rbp-C0h] BYREF
+  struct _OBJECT_ATTRIBUTES ObjectAttributes; // [rsp+50h] [rbp-B0h] BYREF
+  struct _PROCESSOR_NUMBER ProcNumber; // [rsp+80h] [rbp-80h] BYREF
+  __int64 v40; // [rsp+88h] [rbp-78h] BYREF
+  __int64 v41; // [rsp+90h] [rbp-70h] BYREF
+  __int64 v42; // [rsp+98h] [rbp-68h] BYREF
+  __int64 v43; // [rsp+A0h] [rbp-60h] BYREF
+  __int128 v44; // [rsp+A8h] [rbp-58h] BYREF
+  _BYTE v45[256]; // [rsp+C0h] [rbp-40h] BYREF
+
+  *(_DWORD *)a9 = 0;
+  *(_QWORD *)(a9 + 8) = 0;
+  v10 = *(_QWORD **)(a2 + 24);
+  if ( !v10 )
+    goto LABEL_52;
+  if ( a1 && !*(_BYTE *)(a1 + 64) || (a8 & 3) == 0 && a4 != (__int64 *)a6 )
+  {
+    *(_DWORD *)a9 = -1073741823;
+    return 1;
+  }
+  v11 = *v10;
+  v12 = 2164342712LL;
+  v13 = 2164342739LL;
+  if ( a8 > 0x81013FB8 )
+  {
+    if ( a8 + 2130624580 <= 0xC )
+    {
+      a2 = 6161;
+      if ( _bittest((const int *)&a2, a8 + 2130624580) )
+        goto LABEL_116;
+    }
+    if ( a8 + 2130624540 <= 0x1C )
+    {
+      a2 = 276824081;
+      if ( _bittest((const int *)&a2, a8 + 2130624540) )
+      {
+LABEL_163:
+        if ( a8 <= 0x81013FF0 )
+        {
+          if ( a8 != -2130624528 )
+          {
+            switch ( a8 )
+            {
+              case 0x81013FD4:
+                if ( a5 == 4 )
+                {
+                  v35 = *(unsigned int *)a4;
+                  if ( (unsigned int)v35 < *(_DWORD *)(v11 + 4) )
+                  {
+                    _mm_lfence();
+                    sub_140006780(*v10, v35, 2164342712LL, 2164342739LL);
+                    return 1;
+                  }
+                }
+                goto LABEL_52;
+              case 0x81013FD8:
+                if ( a5 < 0x10 || a7 < 0x10 )
+                  goto LABEL_207;
+                v32 = *(unsigned int *)a4;
+                if ( (unsigned int)v32 >= *(_DWORD *)(v11 + 4) )
+                  goto LABEL_52;
+                v33 = *(_QWORD *)(v11 + 56);
+                if ( !v33 )
+                  goto LABEL_52;
+                v34 = *(_QWORD *)(v33 + 8 * v32);
+                if ( !v34 )
+                  goto LABEL_52;
+                v28 = *(_QWORD *)(v34 + 2520);
+                goto LABEL_188;
+              case 0x81013FE4:
+                if ( a5 < 8 )
+                  goto LABEL_207;
+                if ( (unsigned __int64)(*a4 - 1) > 0xFFFFFFFFFFFFFFFDuLL )
+                  LODWORD(v22) = sub_14000723C(*a4, a2, 2164342712LL, 2164342739LL);
+                else
+                  LODWORD(v22) = -1073741637;
+                goto LABEL_210;
+              case 0x81013FE8:
+                if ( a7 < 4 || a5 < 4 )
+                  goto LABEL_207;
+                LODWORD(v22) = sub_140006B30(*(unsigned int *)a4, a6, 2164342712LL, 2164342739LL);
+                if ( (int)v22 >= 0 )
+                {
+                  *(_QWORD *)(a9 + 8) = 4;
+                  return 1;
+                }
+                goto LABEL_210;
+            }
+            if ( a8 != -2130624532 )
+              goto LABEL_52;
+          }
+          v31 = a5 >> 3;
+          if ( !(_DWORD)v31 || a7 < 8 )
+            goto LABEL_207;
+          if ( (unsigned int)v31 > 0xFFFFF )
+          {
+            *(_DWORD *)a9 = -1073741306;
+            return 1;
+          }
+          _mm_lfence();
+          LOBYTE(v13) = a8 == -2130624528;
+          v36 = sub_140006924(v11, a4, v31, v13, a6);
+          *(_DWORD *)a9 = v36;
+          if ( v36 < 0 )
+            return 1;
+LABEL_131:
+          *(_QWORD *)(a9 + 8) = 8;
+          return 1;
+        }
+        if ( a8 == -2130624524 )
+        {
+          if ( a5 < 8 )
+            goto LABEL_207;
+          if ( !*a4 )
+            goto LABEL_52;
+          LODWORD(v22) = sub_140007450(*v10, *a4, 2164342712LL, 2164342739LL);
+          goto LABEL_210;
+        }
+        if ( a8 != -2130624517 )
+        {
+          if ( a8 == -2130624516 )
+          {
+            if ( a5 >= 0xB8 && a7 >= 0xB8 )
+            {
+              if ( (unsigned __int8)sub_14000C4C8(*v10, *(unsigned int *)a4, a4, 2164342739LL) )
+              {
+                *(_DWORD *)a9 = 0;
+                *(_QWORD *)(a9 + 8) = 184;
+                return 1;
+              }
+              goto LABEL_52;
+            }
+          }
+          else
+          {
+            if ( a8 != -2130624512 )
+              goto LABEL_52;
+            if ( a7 )
+            {
+              *(_BYTE *)a6 = sub_14000C99C(a8, a2, 2164342712LL, 2164342739LL);
+              *(_QWORD *)(a9 + 8) = 1;
+              return 1;
+            }
+          }
+          goto LABEL_207;
+        }
+        if ( a7 < 8 )
+          goto LABEL_207;
+        v43 = sub_14000C6B8(a8, a2, 2164342712LL, 2164342739LL);
+        v29 = &v43;
+LABEL_152:
+        LODWORD(v22) = sub_1400059F8(a6, v29, 8);
+        if ( (int)v22 < 0 )
+          goto LABEL_210;
+        goto LABEL_131;
+      }
+    }
+  }
+  else
+  {
+    if ( a8 == -2130624584 )
+    {
+      if ( a7 < 8 )
+        goto LABEL_207;
+      v27 = sub_140007520(a8, a2, 2164342712LL, 2164342739LL);
+LABEL_130:
+      *(_QWORD *)a6 = v27;
+      goto LABEL_131;
+    }
+    v14 = a8 + 2130624696;
+    if ( (unsigned int)v14 <= 0x38 )
+    {
+      a2 = 0x110000001000011LL;
+      if ( _bittest64(&a2, v14) )
+        goto LABEL_22;
+    }
+    if ( a8 == -2130624624 || a8 == -2130624620 )
+      goto LABEL_22;
+    if ( a8 == -2130624588 )
+      goto LABEL_119;
+  }
+  if ( !v11 )
+    goto LABEL_52;
+  if ( a8 > 0x81013FA0 )
+  {
+    if ( a8 <= 0x81013FD3 )
+    {
+LABEL_116:
+      if ( a8 == -2130624557 )
+      {
+        if ( a5 != 256 )
+          goto LABEL_52;
+        v30 = sub_1400059A4(v45, a4, 256, 2164342739LL);
+        *(_DWORD *)a9 = v30;
+        if ( v30 >= 0 )
+          sub_140005FD8(v11, v45);
+        return 1;
+      }
+      if ( a8 <= 0x81013FB8 )
+      {
+        if ( a8 == -2130624604 )
+        {
+          if ( a5 < 0x10 || a7 < 4 )
+            goto LABEL_207;
+          v24 = sub_14000D0F8(*v10, *a4, a4[1], 2164342739LL);
+          goto LABEL_71;
+        }
+LABEL_119:
+        if ( a8 != -2130624600 )
+        {
+          if ( a8 != -2130624596 )
+          {
+            if ( a8 != -2130624592 )
+            {
+              if ( a8 != -2130624588 || a5 < 8 || a5 < 16 * (unsigned __int64)*((unsigned int *)a4 + 1) + 8 || a7 != a5 )
+                goto LABEL_52;
+              if ( (unsigned __int8)sub_14000C1BC(a4, a5, 2164342712LL, 2164342739LL) )
+              {
+                *(_QWORD *)(a9 + 8) = a7;
+                return 1;
+              }
+              goto LABEL_207;
+            }
+            if ( a7 < 8 )
+              goto LABEL_207;
+            v27 = sub_14000C5E4(*v10, a2, 2164342712LL, 2164342739LL);
+            goto LABEL_130;
+          }
+          if ( a5 < 0x10 || a7 < 0x10 )
+            goto LABEL_207;
+          v28 = sub_14000C5A0(*v10, *a4, 2164342712LL, 2164342739LL);
+LABEL_188:
+          a4[1] = v28;
+          *(_QWORD *)(a9 + 8) = 16;
+          return 1;
+        }
+        if ( a5 < 0x18 || a7 < 0x18 )
+          goto LABEL_207;
+        v22 = sub_14000B768(*v10, a4[2], *a4, 0, *((_BYTE *)a4 + 8));
+        *a4 = v22;
+        if ( v22 < 0 )
+          goto LABEL_210;
+LABEL_138:
+        *(_QWORD *)(a9 + 8) = 24;
+        return 1;
+      }
+      if ( a8 == -2130624580 )
+      {
+        if ( a5 >= 0x30 && a7 >= 0x30 )
+        {
+          sub_14000C7D4(a4, a2, 2164342712LL, 2164342739LL);
+          *(_QWORD *)(a9 + 8) = 48;
+          return 1;
+        }
+        goto LABEL_207;
+      }
+      if ( a8 == -2130624576 )
+      {
+        if ( a5 < 0x18 || a7 < 0x18 )
+          goto LABEL_207;
+        v40 = *a4;
+        v41 = a4[1];
+        *(_BYTE *)(a6 + 16) = sub_14000BBE0(&v40, &v41, 2164342712LL, 2164342739LL);
+        *(_QWORD *)a6 = v40;
+        *(_QWORD *)(a6 + 8) = v41;
+        goto LABEL_138;
+      }
+      if ( a8 != -2130624569 )
+      {
+        if ( a8 != -2130624568 )
+          goto LABEL_52;
+        ProcNumber = 0;
+        v44 = 0;
+        if ( a7 < 8 )
+          goto LABEL_207;
+        KeGetCurrentProcessorNumberEx(&ProcNumber);
+        WORD4(v44) = ProcNumber.Group;
+        *(_QWORD *)&v44 = KeQueryGroupAffinity(ProcNumber.Group);
+        LODWORD(v22) = sub_1400072A0(a6, &v44);
+        *(_QWORD *)(a9 + 8) = 8;
+        goto LABEL_210;
+      }
+      if ( a7 < 8 )
+        goto LABEL_207;
+      v42 = sub_14000C648(a8, a2, 2164342712LL, 2164342739LL);
+      v29 = &v42;
+      goto LABEL_152;
+    }
+    goto LABEL_163;
+  }
+  if ( a8 == -2130624608 )
+    goto LABEL_112;
+LABEL_22:
+  if ( a8 <= 0x81013F74 )
+  {
+    if ( a8 != -2130624652 )
+    {
+      if ( a8 <= 0x81013F5C )
+      {
+        if ( a8 == -2130624676 )
+        {
+          sub_14000CE80(*v10, a2, 2164342712LL, 2164342739LL);
+          *v10 = 0;
+          return 1;
+        }
+        if ( a8 == -2130624696 )
+        {
+          if ( a7 >= 4 )
+          {
+            *(_QWORD *)(a9 + 8) = 4;
+            *(_DWORD *)a6 = 27328512;
+            return 1;
+          }
+        }
+        else
+        {
+          if ( a8 != -2130624692 )
+          {
+            if ( a8 == -2130624688 )
+            {
+              v16 = *(unsigned int *)(v11 + 4);
+              if ( a5 != 8 * v16 + 96 )
+                goto LABEL_52;
+              v17 = *((unsigned __int16 *)a4 + 8);
+              if ( v17 != (_DWORD)v16 )
+                goto LABEL_52;
+              v15 = sub_14000CAF8(
+                      v11,
+                      *a4,
+                      *((_DWORD *)a4 + 2),
+                      *((_DWORD *)a4 + 3),
+                      v17,
+                      (__int64)(a4 + 12),
+                      (__int64)(a4 + 3));
+            }
+            else
+            {
+              if ( a8 != -2130624684 )
+              {
+                if ( a8 == -2130624680 && a5 == 24 )
+                {
+                  v15 = sub_14000FA80(v11, a4, 2164342712LL, 2164342739LL);
+                  goto LABEL_33;
+                }
+LABEL_52:
+                *(_DWORD *)a9 = -1073741811;
+                return 1;
+              }
+              if ( a5 != 32 || !(unsigned __int8)sub_14000F918(v11, a4, 2164342712LL, 2164342739LL) )
+                goto LABEL_52;
+              v15 = sub_14000F768(v11, a4);
+            }
+LABEL_33:
+            if ( !v15 )
+              *(_DWORD *)a9 = -1073741670;
+            return 1;
+          }
+          if ( a7 >= 0x20 )
+          {
+            v18 = (_WORD *)sub_14000BE84(*a4, *((unsigned int *)a4 + 4), *((unsigned int *)a4 + 5), a4 + 3);
+            if ( v18 )
+            {
+              *v10 = v18;
+              *((_WORD *)a4 + 14) = *v18;
+            }
+            *(_QWORD *)(a9 + 8) = 32;
+            return 1;
+          }
+        }
+LABEL_207:
+        *(_DWORD *)a9 = -1073741789;
+        return 1;
+      }
+      if ( a8 != -2130624672 )
+      {
+        if ( a8 != -2130624665 )
+        {
+          if ( a8 == -2130624664 )
+          {
+            if ( a5 < 0xC || a7 < 0xC )
+              goto LABEL_207;
+            v20 = sub_14000CA68(*v10, *a4, a4, 2164342739LL);
+            goto LABEL_57;
+          }
+          if ( a8 != -2130624656 )
+            goto LABEL_52;
+LABEL_112:
+          if ( a5 < 0xC || a7 < 0xC )
+            goto LABEL_207;
+          _mm_lfence();
+          LOBYTE(v12) = a8 == -2130624608;
+          v20 = sub_14000C9DC(*v10, *a4, v12, a4);
+LABEL_57:
+          *((_DWORD *)a4 + 2) = v20;
+          *(_QWORD *)(a9 + 8) = 12;
+          return 1;
+        }
+        v21 = (unsigned int)((_DWORD)a4 - 1000);
+        if ( (int)v21 < 0 || (unsigned int)v21 >= *(_DWORD *)(v11 + 4) )
+          goto LABEL_52;
+        if ( *(_QWORD *)(*(_QWORD *)(*(_QWORD *)(v11 + 16) + 56LL) + 8 * v21) == -1 )
+        {
+          _mm_lfence();
+          ObjectAttributes.RootDirectory = 0;
+          ObjectAttributes.ObjectName = 0;
+          *(_OWORD *)&ObjectAttributes.SecurityDescriptor = 0;
+          ObjectAttributes.Length = 48;
+          ObjectAttributes.Attributes = 512;
+          ClientId.UniqueProcess = PsGetCurrentProcessId();
+          ClientId.UniqueThread = PsGetCurrentThreadId();
+          LODWORD(v22) = ZwOpenThread(
+                           (PHANDLE)(*(_QWORD *)(*(_QWORD *)(v11 + 16) + 56LL) + 8 * v21),
+                           4u,
+                           &ObjectAttributes,
+                           &ClientId);
+          if ( (int)v22 < 0 )
+          {
+            *(_QWORD *)(*(_QWORD *)(*(_QWORD *)(v11 + 16) + 56LL) + 8 * v21) = -1;
+            goto LABEL_210;
+          }
+        }
+        _mm_lfence();
+        v23 = (int)sub_14000D3E0(v11, (unsigned int)v21, v12, v13);
+LABEL_64:
+        *(_QWORD *)(a9 + 8) = v23;
+        return 1;
+      }
+      if ( a7 < 4 )
+        goto LABEL_207;
+      *(_QWORD *)(a9 + 8) = 4;
+      v24 = sub_14000C624(a8, a2, 2164342712LL, 2164342739LL);
+LABEL_72:
+      *(_DWORD *)a6 = v24;
+      return 1;
+    }
+    if ( a5 < 8 || a7 < 4 )
+      goto LABEL_207;
+    if ( !*a4 )
+      goto LABEL_52;
+    v24 = sub_14000D0A8(*v10, *a4, 2164342712LL, 2164342739LL);
+LABEL_71:
+    *(_QWORD *)(a9 + 8) = 4;
+    goto LABEL_72;
+  }
+  if ( a8 > 0x81013F8C )
+  {
+    if ( a8 == -2130624624 )
+    {
+      if ( a7 < 4 )
+        goto LABEL_207;
+      *(_QWORD *)(a9 + 8) = 4;
+      v24 = sub_14000C6FC(&unk_140014C70, a2, 2164342712LL, 2164342739LL);
+      goto LABEL_72;
+    }
+    if ( a8 == -2130624620 )
+    {
+      if ( a5 < 4 || a7 < 4 )
+        goto LABEL_207;
+      *(_QWORD *)(a9 + 8) = 4;
+      v24 = sub_14000CFB4(v11, *(unsigned int *)a4, 2164342712LL, 2164342739LL);
+      goto LABEL_72;
+    }
+    if ( a8 != -2130624616 )
+      goto LABEL_52;
+    if ( a5 < 8 )
+      goto LABEL_207;
+    v25 = 4096;
+    if ( a7 < 0x1000 )
+      goto LABEL_207;
+    LOBYTE(v13) = 1;
+    LODWORD(v22) = sub_1400067C0(v11, *(_DWORD *)a4 << 12, a6, v13, 4096);
+    if ( (int)v22 >= 0 )
+    {
+LABEL_85:
+      *(_QWORD *)(a9 + 8) = v25;
+      return 1;
+    }
+LABEL_210:
+    *(_DWORD *)a9 = v22;
+    return 1;
+  }
+  if ( a8 == -2130624628 )
+  {
+    if ( a5 < 0xC )
+      goto LABEL_207;
+    v26 = sub_14000CCBC(*v10, a4, 2164342712LL, 2164342739LL);
+    goto LABEL_98;
+  }
+  if ( a8 != -2130624648 )
+  {
+    if ( a8 != -2130624644 )
+    {
+      if ( a8 == -2130624640 )
+      {
+        if ( !a5 )
+          goto LABEL_207;
+        if ( a7 < 0x98 )
+          goto LABEL_207;
+        _mm_lfence();
+        LOBYTE(a2) = *(_BYTE *)a4;
+        if ( !(unsigned __int8)sub_14000C280(v11, a2, a6) )
+          goto LABEL_207;
+        v23 = 88LL * *(unsigned int *)(a6 + 52) + 64;
+        goto LABEL_64;
+      }
+      if ( a8 != -2130624636 )
+      {
+        if ( a8 != -2130624632 )
+          goto LABEL_52;
+        if ( a5 >= 0x10 )
+        {
+          sub_14000D160(*v10, a4, 2164342712LL, 2164342739LL);
+          return 1;
+        }
+        goto LABEL_207;
+      }
+      v25 = 152;
+      if ( a5 < 0x98 || a7 < 0x98 )
+        goto LABEL_207;
+      sub_14000B3B8(v11, a4, 2164342712LL, 2164342739LL);
+      goto LABEL_85;
+    }
+    if ( a5 < 8 )
+      goto LABEL_207;
+    v26 = sub_14000CF70(*a4, a2, 2164342712LL, 2164342739LL);
+LABEL_98:
+    if ( v26 )
+      return 1;
+    goto LABEL_52;
+  }
+  if ( !a5 )
+    goto LABEL_207;
+  if ( *(_BYTE *)a4 )
+    sub_140005430(*v10, a2, 2164342712LL, 2164342739LL);
+  *(_QWORD *)(a9 + 8) = 0;
+  return 1;
+}
+
+
+=== DISASM ===
+0x140003bb4: mov     qword ptr [rsp-8+arg_0], rbx; int
+0x140003bb9: mov     qword ptr [rsp-8+arg_10], rsi; int
+0x140003bbe: push    rbp; int
+0x140003bbf: push    rdi; int
+0x140003bc0: push    r13; int
+0x140003bc2: push    r14; int
+0x140003bc4: push    r15; int
+0x140003bc6: lea     rbp, [rsp-0D0h]
+0x140003bce: sub     rsp, 1D0h
+0x140003bd5: mov     rax, cs:__security_cookie
+0x140003bdc: xor     rax, rsp
+0x140003bdf: mov     [rbp+0F0h+var_30], rax
+0x140003be6: mov     rbx, [rbp+0F0h+arg_40]
+0x140003bed: mov     rdi, r9
+0x140003bf0: mov     r14, [rbp+0F0h+arg_28]
+0x140003bf7: and     dword ptr [rbx], 0
+0x140003bfa: and     qword ptr [rbx+8], 0
+0x140003bff: mov     r15, [rdx+18h]
+0x140003c03: test    r15, r15
+0x140003c06: jz      loc_140003E75
+0x140003c0c: test    rcx, rcx
+0x140003c0f: jz      short loc_140003C17
+0x140003c11: cmp     byte ptr [rcx+40h], 0
+0x140003c15: jz      short loc_140003C27
+0x140003c17: mov     ecx, [rbp+0F0h+arg_38]
+0x140003c1d: test    cl, 3
+0x140003c20: jnz     short loc_140003C32
+0x140003c22: cmp     rdi, r14
+0x140003c25: jz      short loc_140003C32
+0x140003c27: mov     dword ptr [rbx], 0C0000001h
+0x140003c2d: jmp     loc_140003E7B
+0x140003c32: mov     rsi, [r15]
+0x140003c35: mov     r8d, 81013FB8h
+0x140003c3b: mov     r9d, 81013FD3h
+0x140003c41: mov     r13d, 0Ch
+0x140003c47: mov     r10d, 81013FA0h
+0x140003c4d: mov     r11d, 81013F90h
+0x140003c53: cmp     ecx, r8d
+0x140003c56: ja      short loc_140003C94
+0x140003c58: jz      loc_140004383
+0x140003c5e: lea     eax, [rcx+7EFEC0B8h]
+0x140003c64: cmp     eax, 38h ; '8'
+0x140003c67: ja      short loc_140003C79
+0x140003c69: mov     rdx, 110000001000011h
+0x140003c73: bt      rdx, rax
+0x140003c77: jb      short loc_140003CDE
+0x140003c79: cmp     ecx, r11d
+0x140003c7c: jz      short loc_140003CDE
+0x140003c7e: cmp     ecx, 81013F94h
+0x140003c84: jz      short loc_140003CDE
+0x140003c86: cmp     ecx, 81013FB4h
+0x140003c8c: jz      loc_140004240
+0x140003c92: jmp     short loc_140003CC6
+0x140003c94: lea     eax, [rcx+7EFEC044h]
+0x140003c9a: cmp     eax, r13d
+0x140003c9d: ja      short loc_140003CAD
+0x140003c9f: mov     edx, 1811h
+0x140003ca4: bt      edx, eax
+0x140003ca7: jb      loc_14000421C
+0x140003cad: lea     eax, [rcx+7EFEC01Ch]
+0x140003cb3: cmp     eax, 1Ch
+0x140003cb6: ja      short loc_140003CC6
+0x140003cb8: mov     edx, 10800011h
+0x140003cbd: bt      edx, eax
+0x140003cc0: jb      loc_140004501
+0x140003cc6: test    rsi, rsi
+0x140003cc9: jz      loc_140003E75
+0x140003ccf: cmp     ecx, r10d
+0x140003cd2: ja      loc_140004213
+0x140003cd8: jz      loc_1400041DC
+0x140003cde: mov     eax, 81013F74h
+0x140003ce3: cmp     ecx, eax
+0x140003ce5: ja      loc_140003FDD
+0x140003ceb: jz      loc_140003F9F
+0x140003cf1: mov     eax, 81013F5Ch
+0x140003cf6: cmp     ecx, eax
+0x140003cf8: ja      loc_140003E4D
+0x140003cfe: jz      loc_140003E3F
+0x140003d04: cmp     ecx, 81013F48h
+0x140003d0a: jz      loc_140003E21
+0x140003d10: cmp     ecx, 81013F4Ch
+0x140003d16: jz      loc_140003DE8
+0x140003d1c: cmp     ecx, 81013F50h
+0x140003d22: jz      short loc_140003D90
+0x140003d24: cmp     ecx, 81013F54h
+0x140003d2a: jz      short loc_140003D63
+0x140003d2c: cmp     ecx, 81013F58h
+0x140003d32: jnz     loc_140003E75
+0x140003d38: cmp     [rbp+0F0h+arg_20], 18h
+0x140003d3f: jnz     loc_140003E75
+0x140003d45: mov     rdx, rdi
+0x140003d48: mov     rcx, rsi
+0x140003d4b: call    sub_14000FA80
+0x140003d50: test    al, al
+0x140003d52: jnz     loc_140003E7B
+0x140003d58: mov     dword ptr [rbx], 0C000009Ah
+0x140003d5e: jmp     loc_140003E7B
+0x140003d63: cmp     [rbp+0F0h+arg_20], 20h ; ' '
+0x140003d6a: jnz     loc_140003E75
+0x140003d70: mov     rdx, rdi
+0x140003d73: mov     rcx, rsi
+0x140003d76: call    sub_14000F918
+0x140003d7b: test    al, al
+0x140003d7d: jz      loc_140003E75
+0x140003d83: mov     rdx, rdi
+0x140003d86: mov     rcx, rsi
+0x140003d89: call    sub_14000F768
+0x140003d8e: jmp     short loc_140003D50
+0x140003d90: mov     edx, [rsi+4]
+0x140003d93: mov     eax, [rbp+0F0h+arg_20]
+0x140003d99: lea     rcx, ds:60h[rdx*8]
+0x140003da1: cmp     rax, rcx
+0x140003da4: jnz     loc_140003E75
+0x140003daa: movzx   r8d, word ptr [rdi+10h]
+0x140003daf: cmp     r8d, edx
+0x140003db2: jnz     loc_140003E75
+0x140003db8: mov     r9d, [rdi+0Ch]
+0x140003dbc: lea     rax, [rdi+18h]
+0x140003dc0: mov     rdx, [rdi]
+0x140003dc3: lea     rcx, [rdi+60h]
+0x140003dc7: mov     [rsp+1F0h+var_1C0], rax
+0x140003dcc: mov     [rsp+1F0h+var_1C8], rcx
+0x140003dd1: mov     rcx, rsi
+0x140003dd4: mov     word ptr [rsp+1F0h+var_1D0], r8w
+0x140003dda: mov     r8d, [rdi+8]
+0x140003dde: call    sub_14000CAF8
+0x140003de3: jmp     loc_140003D50
+0x140003de8: cmp     [rbp+0F0h+arg_30], 20h ; ' '
+0x140003def: jb      loc_140004732
+0x140003df5: mov     r8d, [rdi+14h]
+0x140003df9: lea     r9, [rdi+18h]
+0x140003dfd: mov     edx, [rdi+10h]
+0x140003e00: mov     rcx, [rdi]
+0x140003e03: call    sub_14000BE84
+0x140003e08: test    rax, rax
+0x140003e0b: jz      short loc_140003E17
+0x140003e0d: mov     [r15], rax
+0x140003e10: movzx   eax, word ptr [rax]
+0x140003e13: mov     [rdi+1Ch], ax
+0x140003e17: mov     qword ptr [rbx+8], 20h ; ' '
+0x140003e1f: jmp     short loc_140003E7B
+0x140003e21: cmp     [rbp+0F0h+arg_30], 4
+0x140003e28: jb      loc_140004732
+0x140003e2e: mov     qword ptr [rbx+8], 4
+0x140003e36: mov     dword ptr [r14], 1A10000h
+0x140003e3d: jmp     short loc_140003E7B
+0x140003e3f: mov     rcx, rsi
+0x140003e42: call    sub_14000CE80
+0x140003e47: and     qword ptr [r15], 0
+0x140003e4b: jmp     short loc_140003E7B
+0x140003e4d: cmp     ecx, 81013F60h
+0x140003e53: jz      loc_140003F83
+0x140003e59: cmp     ecx, 81013F67h
+0x140003e5f: jz      short loc_140003ED9
+0x140003e61: cmp     ecx, 81013F68h
+0x140003e67: jz      short loc_140003EA8
+0x140003e69: cmp     ecx, 81013F70h
+0x140003e6f: jz      loc_1400041DC
+0x140003e75: mov     dword ptr [rbx], 0C000000Dh
+0x140003e7b: mov     al, 1
+0x140003e7d: mov     rcx, [rbp+0F0h+var_30]
+0x140003e84: xor     rcx, rsp; StackCookie
+0x140003e87: call    __security_check_cookie
+0x140003e8c: lea     r11, [rsp+1F0h+var_20]
+0x140003e94: mov     rbx, [r11+30h]
+0x140003e98: mov     rsi, [r11+40h]
+0x140003e9c: mov     rsp, r11
+0x140003e9f: pop     r15
+0x140003ea1: pop     r14
+0x140003ea3: pop     r13
+0x140003ea5: pop     rdi
+0x140003ea6: pop     rbp
+0x140003ea7: retn
+0x140003ea8: cmp     [rbp+0F0h+arg_20], r13d
+0x140003eaf: jb      loc_140004732
+0x140003eb5: cmp     [rbp+0F0h+arg_30], r13d
+0x140003ebc: jb      loc_140004732
+0x140003ec2: mov     rdx, [rdi]
+0x140003ec5: mov     r8, rdi
+0x140003ec8: mov     rcx, rsi
+0x140003ecb: call    sub_14000CA68
+0x140003ed0: mov     [rdi+8], eax
+0x140003ed3: mov     [rbx+8], r13
+0x140003ed7: jmp     short loc_140003E7B
+0x140003ed9: add     edi, 0FFFFFC18h
+0x140003edf: js      short loc_140003E75
+0x140003ee1: cmp     edi, [rsi+4]
+0x140003ee4: jnb     short loc_140003E75
+0x140003ee6: mov     rax, [rsi+10h]
+0x140003eea: mov     rcx, [rax+38h]
+0x140003eee: cmp     qword ptr [rcx+rdi*8], 0FFFFFFFFFFFFFFFFh
+0x140003ef3: jnz     short loc_140003F6A
+0x140003ef5: lfence
+0x140003ef8: and     [rsp+1F0h+ObjectAttributes.RootDirectory], 0
+0x140003efe: xorps   xmm0, xmm0
+0x140003f01: and     [rsp+1F0h+ObjectAttributes.ObjectName], 0
+0x140003f07: movdqu  xmmword ptr [rsp+1F0h+ObjectAttributes.SecurityDescriptor], xmm0
+0x140003f0d: mov     [rsp+1F0h+ObjectAttributes.Length], 30h ; '0'
+0x140003f15: mov     [rsp+1F0h+ObjectAttributes.Attributes], 200h
+0x140003f1d: call    cs:PsGetCurrentProcessId
+0x140003f23: mov     [rsp+1F0h+ClientId.UniqueProcess], rax
+0x140003f28: call    cs:PsGetCurrentThreadId
+0x140003f2e: mov     [rsp+1F0h+ClientId.UniqueThread], rax
+0x140003f33: lea     r9, [rsp+1F0h+ClientId]; ClientId
+0x140003f38: mov     rax, [rsi+10h]
+0x140003f3c: mov     edx, 4; DesiredAccess
+0x140003f41: lea     r8, [rsp+1F0h+ObjectAttributes]; ObjectAttributes
+0x140003f46: mov     rcx, [rax+38h]
+0x140003f4a: lea     rcx, [rcx+rdi*8]; ThreadHandle
+0x140003f4e: call    cs:ZwOpenThread
+0x140003f54: test    eax, eax
+0x140003f56: jns     short loc_140003F6A
+0x140003f58: mov     rcx, [rsi+10h]
+0x140003f5c: mov     rdx, [rcx+38h]
+0x140003f60: or      qword ptr [rdx+rdi*8], 0FFFFFFFFFFFFFFFFh
+0x140003f65: jmp     loc_140004751
+0x140003f6a: lfence
+0x140003f6d: mov     edx, edi; DeferredContext
+0x140003f6f: mov     rcx, rsi; Dpc
+0x140003f72: call    sub_14000D3E0
+0x140003f77: movsxd  rcx, eax
+0x140003f7a: mov     [rbx+8], rcx
+0x140003f7e: jmp     loc_140003E7B
+0x140003f83: cmp     [rbp+0F0h+arg_30], 4
+0x140003f8a: jb      loc_140004732
+0x140003f90: mov     qword ptr [rbx+8], 4
+0x140003f98: call    sub_14000C624
+0x140003f9d: jmp     short loc_140003FD5
+0x140003f9f: cmp     [rbp+0F0h+arg_20], 8
+0x140003fa6: jb      loc_140004732
+0x140003fac: cmp     [rbp+0F0h+arg_30], 4
+0x140003fb3: jb      loc_140004732
+0x140003fb9: mov     rdx, [rdi]
+0x140003fbc: test    rdx, rdx
+0x140003fbf: jz      loc_140003E75
+0x140003fc5: mov     rcx, rsi
+0x140003fc8: call    sub_14000D0A8
+0x140003fcd: mov     qword ptr [rbx+8], 4
+0x140003fd5: mov     [r14], eax
+0x140003fd8: jmp     loc_140003E7B
+0x140003fdd: mov     eax, 81013F8Ch
+0x140003fe2: cmp     ecx, eax
+0x140003fe4: ja      loc_140004121
+0x140003fea: jz      loc_1400040FC
+0x140003ff0: cmp     ecx, 81013F78h
+0x140003ff6: jz      loc_1400040D8
+0x140003ffc: cmp     ecx, 81013F7Ch
+0x140004002: jz      loc_1400040C1
+0x140004008: cmp     ecx, 81013F80h
+0x14000400e: jz      short loc_140004075
+0x140004010: cmp     ecx, 81013F84h
+0x140004016: jz      short loc_140004041
+0x140004018: cmp     ecx, 81013F88h
+0x14000401e: jnz     loc_140003E75
+0x140004024: cmp     [rbp+0F0h+arg_20], 10h
+0x14000402b: jb      loc_140004732
+0x140004031: mov     rdx, rdi
+0x140004034: mov     rcx, rsi
+0x140004037: call    sub_14000D160
+0x14000403c: jmp     loc_140003E7B
+0x140004041: mov     r15d, 98h
+0x140004047: cmp     [rbp+0F0h+arg_20], r15d
+0x14000404e: jb      loc_140004732
+0x140004054: cmp     [rbp+0F0h+arg_30], r15d
+0x14000405b: jb      loc_140004732
+0x140004061: mov     rdx, rdi
+0x140004064: mov     rcx, rsi
+0x140004067: call    sub_14000B3B8
+0x14000406c: mov     [rbx+8], r15
+0x140004070: jmp     loc_140003E7B
+0x140004075: cmp     [rbp+0F0h+arg_20], 1
+0x14000407c: jb      loc_140004732
+0x140004082: mov     r9d, [rbp+0F0h+arg_30]
+0x140004089: mov     r15d, 98h
+0x14000408f: cmp     r9d, r15d
+0x140004092: jb      loc_140004732
+0x140004098: lfence
+0x14000409b: mov     dl, [rdi]
+0x14000409d: mov     r8, r14
+0x1400040a0: mov     rcx, rsi
+0x1400040a3: call    sub_14000C280
+0x1400040a8: test    al, al
+0x1400040aa: jz      loc_140004732
+0x1400040b0: mov     eax, [r14+34h]
+0x1400040b4: imul    rcx, rax, 58h ; 'X'
+0x1400040b8: add     rcx, 40h ; '@'
+0x1400040bc: jmp     loc_140003F7A
+0x1400040c1: cmp     [rbp+0F0h+arg_20], 8
+0x1400040c8: jb      loc_140004732
+0x1400040ce: mov     rcx, [rdi]
+0x1400040d1: call    sub_14000CF70
+0x1400040d6: jmp     short loc_140004114
+0x1400040d8: cmp     [rbp+0F0h+arg_20], 1
+0x1400040df: jb      loc_140004732
+0x1400040e5: cmp     byte ptr [rdi], 0
+0x1400040e8: jz      short loc_1400040F2
+0x1400040ea: mov     rcx, rsi
+0x1400040ed: call    sub_140005430
+0x1400040f2: and     qword ptr [rbx+8], 0
+0x1400040f7: jmp     loc_140003E7B
+0x1400040fc: cmp     [rbp+0F0h+arg_20], r13d
+0x140004103: jb      loc_140004732
+0x140004109: mov     rdx, rdi
+0x14000410c: mov     rcx, rsi
+0x14000410f: call    sub_14000CCBC
+0x140004114: test    al, al
+0x140004116: jnz     loc_140003E7B
+0x14000411c: jmp     loc_140003E75
+0x140004121: cmp     ecx, r11d
+0x140004124: jz      loc_1400041B6
+0x14000412a: cmp     ecx, 81013F94h
+0x140004130: jz      short loc_140004185
+0x140004132: cmp     ecx, 81013F98h
+0x140004138: jnz     loc_140003E75
+0x14000413e: cmp     [rbp+0F0h+arg_20], 8
+0x140004145: jb      loc_140004732
+0x14000414b: mov     r15d, 1000h
+0x140004151: cmp     [rbp+0F0h+arg_30], r15d
+0x140004158: jb      loc_140004732
+0x14000415e: mov     rdx, [rdi]
+0x140004161: mov     r9b, 1
+0x140004164: shl     rdx, 0Ch
+0x140004168: mov     r8, r14
+0x14000416b: mov     rcx, rsi
+0x14000416e: mov     [rsp+1F0h+var_1D0], r15
+0x140004173: call    sub_1400067C0
+0x140004178: test    eax, eax
+0x14000417a: js      loc_140004751
+0x140004180: jmp     loc_14000406C
+0x140004185: cmp     [rbp+0F0h+arg_20], 4
+0x14000418c: jb      loc_140004732
+0x140004192: cmp     [rbp+0F0h+arg_30], 4
+0x140004199: jb      loc_140004732
+0x14000419f: mov     qword ptr [rbx+8], 4
+0x1400041a7: mov     rcx, rsi
+0x1400041aa: mov     edx, [rdi]
+0x1400041ac: call    sub_14000CFB4
+0x1400041b1: jmp     loc_140003FD5
+0x1400041b6: cmp     [rbp+0F0h+arg_30], 4
+0x1400041bd: jb      loc_140004732
+0x1400041c3: lea     rcx, unk_140014C70
+0x1400041ca: mov     qword ptr [rbx+8], 4
+0x1400041d2: call    sub_14000C6FC
+0x1400041d7: jmp     loc_140003FD5
+0x1400041dc: cmp     [rbp+0F0h+arg_20], r13d
+0x1400041e3: jb      loc_140004732
+0x1400041e9: cmp     [rbp+0F0h+arg_30], r13d
+0x1400041f0: jb      loc_140004732
+0x1400041f6: lfence
+0x1400041f9: mov     rdx, [rdi]
+0x1400041fc: cmp     ecx, r10d
+0x1400041ff: mov     r9, rdi
+0x140004202: mov     rcx, rsi
+0x140004205: setz    r8b
+0x140004209: call    sub_14000C9DC
+0x14000420e: jmp     loc_140003ED0
+0x140004213: cmp     ecx, r9d
+0x140004216: ja      loc_140004501
+0x14000421c: cmp     ecx, r9d
+0x14000421f: jz      loc_1400044C7
+0x140004225: cmp     ecx, r8d
+0x140004228: ja      loc_14000439A
+0x14000422e: jz      loc_140004383
+0x140004234: cmp     ecx, 81013FA4h
+0x14000423a: jz      loc_140004355
+0x140004240: cmp     ecx, 81013FA8h
+0x140004246: jz      loc_140004309
+0x14000424c: cmp     ecx, 81013FACh
+0x140004252: jz      loc_1400042DF
+0x140004258: cmp     ecx, 81013FB0h
+0x14000425e: jz      short loc_1400042BA
+0x140004260: cmp     ecx, 81013FB4h
+0x140004266: jnz     loc_140003E75
+0x14000426c: mov     edx, [rbp+0F0h+arg_20]
+0x140004272: cmp     edx, 8
+0x140004275: jb      loc_140003E75
+0x14000427b: mov     ecx, [rdi+4]
+0x14000427e: shl     rcx, 4
+0x140004282: add     rcx, 8
+0x140004286: cmp     rdx, rcx
+0x140004289: jb      loc_140003E75
+0x14000428f: cmp     [rbp+0F0h+arg_30], edx
+0x140004295: jnz     loc_140003E75
+0x14000429b: mov     rcx, rdi
+0x14000429e: call    sub_14000C1BC
+0x1400042a3: test    al, al
+0x1400042a5: jz      loc_140004732
+0x1400042ab: mov     eax, [rbp+0F0h+arg_30]
+0x1400042b1: mov     [rbx+8], rax
+0x1400042b5: jmp     loc_140003E7B
+0x1400042ba: cmp     [rbp+0F0h+arg_30], 8
+0x1400042c1: jb      loc_140004732
+0x1400042c7: mov     rcx, rsi
+0x1400042ca: call    sub_14000C5E4
+0x1400042cf: mov     [r14], rax
+0x1400042d2: mov     qword ptr [rbx+8], 8
+0x1400042da: jmp     loc_140003E7B
+0x1400042df: cmp     [rbp+0F0h+arg_20], 10h
+0x1400042e6: jb      loc_140004732
+0x1400042ec: cmp     [rbp+0F0h+arg_30], 10h
+0x1400042f3: jb      loc_140004732
+0x1400042f9: mov     rdx, [rdi]
+0x1400042fc: mov     rcx, rsi
+0x1400042ff: call    sub_14000C5A0
+0x140004304: jmp     loc_14000462E
+0x140004309: cmp     [rbp+0F0h+arg_20], 18h
+0x140004310: jb      loc_140004732
+0x140004316: cmp     [rbp+0F0h+arg_30], 18h
+0x14000431d: jb      loc_140004732
+0x140004323: mov     al, [rdi+8]
+0x140004326: xor     r9d, r9d
+0x140004329: mov     r8, [rdi]
+0x14000432c: mov     rcx, rsi
+0x14000432f: mov     rdx, [rdi+10h]
+0x140004333: mov     byte ptr [rsp+1F0h+var_1D0], al
+0x140004337: call    sub_14000B768
+0x14000433c: mov     [rdi], rax
+0x14000433f: test    rax, rax
+0x140004342: js      loc_140004751
+0x140004348: mov     qword ptr [rbx+8], 18h
+0x140004350: jmp     loc_140003E7B
+0x140004355: cmp     [rbp+0F0h+arg_20], 10h
+0x14000435c: jb      loc_140004732
+0x140004362: cmp     [rbp+0F0h+arg_30], 4
+0x140004369: jb      loc_140004732
+0x14000436f: mov     r8, [rdi+8]
+0x140004373: mov     rcx, rsi
+0x140004376: mov     rdx, [rdi]
+0x140004379: call    sub_14000D0F8
+0x14000437e: jmp     loc_140003FCD
+0x140004383: cmp     [rbp+0F0h+arg_30], 8
+0x14000438a: jb      loc_140004732
+0x140004390: call    sub_140007520
+0x140004395: jmp     loc_1400042CF
+0x14000439a: cmp     ecx, 81013FBCh
+0x1400043a0: jz      loc_140004498
+0x1400043a6: cmp     ecx, 81013FC0h
+0x1400043ac: jz      loc_14000444A
+0x1400043b2: cmp     ecx, 81013FC7h
+0x1400043b8: jz      short loc_140004415
+0x1400043ba: cmp     ecx, 81013FC8h
+0x1400043c0: jnz     loc_140003E75
+0x1400043c6: and     dword ptr [rbp+0F0h+ProcNumber.Group], 0
+0x1400043ca: xorps   xmm0, xmm0
+0x1400043cd: cmp     [rbp+0F0h+arg_30], 8
+0x1400043d4: movups  [rbp+0F0h+var_148], xmm0
+0x1400043d8: jb      loc_140004732
+0x1400043de: lea     rcx, [rbp+0F0h+ProcNumber]; ProcNumber
+0x1400043e2: call    cs:KeGetCurrentProcessorNumberEx
+0x1400043e8: mov     eax, dword ptr [rbp+0F0h+ProcNumber.Group]
+0x1400043eb: movzx   ecx, ax; GroupNumber
+0x1400043ee: mov     word ptr [rbp+0F0h+var_148+8], ax
+0x1400043f2: call    cs:KeQueryGroupAffinity
+0x1400043f8: lea     rdx, [rbp+0F0h+var_148]
+0x1400043fc: mov     rcx, r14
+0x1400043ff: mov     qword ptr [rbp+0F0h+var_148], rax
+0x140004403: call    sub_1400072A0
+0x140004408: mov     qword ptr [rbx+8], 8
+0x140004410: jmp     loc_140004751
+0x140004415: cmp     [rbp+0F0h+arg_30], 8
+0x14000441c: jb      loc_140004732
+0x140004422: call    sub_14000C648
+0x140004427: mov     [rbp+0F0h+var_158], rax
+0x14000442b: lea     rdx, [rbp+0F0h+var_158]
+0x14000442f: mov     r8d, 8
+0x140004435: mov     rcx, r14
+0x140004438: call    sub_1400059F8
+0x14000443d: test    eax, eax
+0x14000443f: js      loc_140004751
+0x140004445: jmp     loc_1400042D2
+0x14000444a: cmp     [rbp+0F0h+arg_20], 18h
+0x140004451: jb      loc_140004732
+0x140004457: cmp     [rbp+0F0h+arg_30], 18h
+0x14000445e: jb      loc_140004732
+0x140004464: mov     rax, [rdi]
+0x140004467: lea     rdx, [rbp+0F0h+var_160]
+0x14000446b: mov     [rbp+0F0h+var_168], rax
+0x14000446f: lea     rcx, [rbp+0F0h+var_168]
+0x140004473: mov     rax, [rdi+8]
+0x140004477: mov     [rbp+0F0h+var_160], rax
+0x14000447b: call    sub_14000BBE0
+0x140004480: mov     [r14+10h], al
+0x140004484: mov     rax, [rbp+0F0h+var_168]
+0x140004488: mov     [r14], rax
+0x14000448b: mov     rax, [rbp+0F0h+var_160]
+0x14000448f: mov     [r14+8], rax
+0x140004493: jmp     loc_140004348
+0x140004498: cmp     [rbp+0F0h+arg_20], 30h ; '0'
+0x14000449f: jb      loc_140004732
+0x1400044a5: cmp     [rbp+0F0h+arg_30], 30h ; '0'
+0x1400044ac: jb      loc_140004732
+0x1400044b2: mov     rcx, rdi
+0x1400044b5: call    sub_14000C7D4
+0x1400044ba: mov     qword ptr [rbx+8], 30h ; '0'
+0x1400044c2: jmp     loc_140003E7B
+0x1400044c7: mov     r8d, 100h
+0x1400044cd: cmp     [rbp+0F0h+arg_20], r8d
+0x1400044d4: jnz     loc_140003E75
+0x1400044da: mov     rdx, rdi
+0x1400044dd: lea     rcx, [rbp+0F0h+var_130]
+0x1400044e1: call    sub_1400059A4
+0x1400044e6: mov     [rbx], eax
+0x1400044e8: test    eax, eax
+0x1400044ea: js      loc_140003E7B
+0x1400044f0: lea     rdx, [rbp+0F0h+var_130]
+0x1400044f4: mov     rcx, rsi
+0x1400044f7: call    sub_140005FD8
+0x1400044fc: jmp     loc_140003E7B
+0x140004501: mov     eax, 81013FF0h
+0x140004506: cmp     ecx, eax
+0x140004508: ja      loc_14000468F
+0x14000450e: jz      short loc_140004548
+0x140004510: cmp     ecx, 81013FD4h
+0x140004516: jz      loc_14000463F
+0x14000451c: cmp     ecx, 81013FD8h
+0x140004522: jz      loc_1400045E8
+0x140004528: cmp     ecx, 81013FE4h
+0x14000452e: jz      loc_1400045BA
+0x140004534: cmp     ecx, 81013FE8h
+0x14000453a: jz      short loc_140004581
+0x14000453c: cmp     ecx, 81013FECh
+0x140004542: jnz     loc_140003E75
+0x140004548: mov     r8d, [rbp+0F0h+arg_20]
+0x14000454f: shr     r8d, 3
+0x140004553: test    r8d, r8d
+0x140004556: jz      loc_140004732
+0x14000455c: cmp     [rbp+0F0h+arg_30], 8
+0x140004563: jb      loc_140004732
+0x140004569: cmp     r8d, 0FFFFFh
+0x140004570: jbe     loc_140004667
+0x140004576: mov     dword ptr [rbx], 0C0000206h
+0x14000457c: jmp     loc_140003E7B
+0x140004581: cmp     [rbp+0F0h+arg_30], 4
+0x140004588: jb      loc_140004732
+0x14000458e: cmp     [rbp+0F0h+arg_20], 4
+0x140004595: jb      loc_140004732
+0x14000459b: mov     ecx, [rdi]
+0x14000459d: mov     rdx, r14
+0x1400045a0: call    sub_140006B30
+0x1400045a5: test    eax, eax
+0x1400045a7: js      loc_140004751
+0x1400045ad: mov     qword ptr [rbx+8], 4
+0x1400045b5: jmp     loc_140003E7B
+0x1400045ba: cmp     [rbp+0F0h+arg_20], 8
+0x1400045c1: jb      loc_140004732
+0x1400045c7: mov     rcx, [rdi]
+0x1400045ca: lea     rax, [rcx-1]
+0x1400045ce: cmp     rax, 0FFFFFFFFFFFFFFFDh
+0x1400045d2: ja      short loc_1400045DE
+0x1400045d4: mov     eax, 0C00000BBh
+0x1400045d9: jmp     loc_140004751
+0x1400045de: call    sub_14000723C
+0x1400045e3: jmp     loc_140004751
+0x1400045e8: cmp     [rbp+0F0h+arg_20], 10h
+0x1400045ef: jb      loc_140004732
+0x1400045f5: cmp     [rbp+0F0h+arg_30], 10h
+0x1400045fc: jb      loc_140004732
+0x140004602: mov     eax, [rdi]
+0x140004604: cmp     eax, [rsi+4]
+0x140004607: jnb     loc_140003E75
+0x14000460d: mov     rcx, [rsi+38h]
+0x140004611: test    rcx, rcx
+0x140004614: jz      loc_140003E75
+0x14000461a: mov     rax, [rcx+rax*8]
+0x14000461e: test    rax, rax
+0x140004621: jz      loc_140003E75
+0x140004627: mov     rax, [rax+9D8h]
+0x14000462e: mov     [rdi+8], rax
+0x140004632: mov     qword ptr [rbx+8], 10h
+0x14000463a: jmp     loc_140003E7B
+0x14000463f: cmp     [rbp+0F0h+arg_20], 4
+0x140004646: jnz     loc_140003E75
+0x14000464c: mov     edx, [rdi]
+0x14000464e: cmp     edx, [rsi+4]
+0x140004651: jnb     loc_140003E75
+0x140004657: lfence
+0x14000465a: mov     rcx, rsi
+0x14000465d: call    sub_140006780
+0x140004662: jmp     loc_140003E7B
+0x140004667: lfence
+0x14000466a: cmp     ecx, eax
+0x14000466c: mov     [rsp+1F0h+var_1D0], r14
+0x140004671: mov     rdx, rdi
+0x140004674: mov     rcx, rsi
+0x140004677: setz    r9b
+0x14000467b: call    sub_140006924
+0x140004680: mov     [rbx], eax
+0x140004682: test    eax, eax
+0x140004684: js      loc_140003E7B
+0x14000468a: jmp     loc_1400042D2
+0x14000468f: cmp     ecx, 81013FF4h
+0x140004695: jz      loc_140004729
+0x14000469b: cmp     ecx, 81013FFBh
+0x1400046a1: jz      short loc_14000470E
+0x1400046a3: cmp     ecx, 81013FFCh
+0x1400046a9: jz      short loc_1400046D5
+0x1400046ab: cmp     ecx, 81014000h
+0x1400046b1: jnz     loc_140003E75
+0x1400046b7: cmp     [rbp+0F0h+arg_30], 1
+0x1400046be: jb      short loc_140004732
+0x1400046c0: call    sub_14000C99C
+0x1400046c5: mov     [r14], al
+0x1400046c8: mov     qword ptr [rbx+8], 1
+0x1400046d0: jmp     loc_140003E7B
+0x1400046d5: mov     r14d, 0B8h
+0x1400046db: cmp     [rbp+0F0h+arg_20], r14d
+0x1400046e2: jb      short loc_140004732
+0x1400046e4: cmp     [rbp+0F0h+arg_30], r14d
+0x1400046eb: jb      short loc_140004732
+0x1400046ed: mov     edx, [rdi]
+0x1400046ef: mov     r8, rdi
+0x1400046f2: mov     rcx, rsi
+0x1400046f5: call    sub_14000C4C8
+0x1400046fa: test    al, al
+0x1400046fc: jz      loc_140003E75
+0x140004702: and     dword ptr [rbx], 0
+0x140004705: mov     [rbx+8], r14
+0x140004709: jmp     loc_140003E7B
+0x14000470e: cmp     [rbp+0F0h+arg_30], 8
+0x140004715: jb      short loc_140004732
+0x140004717: call    sub_14000C6B8
+0x14000471c: mov     [rbp+0F0h+var_150], rax
+0x140004720: lea     rdx, [rbp+0F0h+var_150]
+0x140004724: jmp     loc_14000442F
+0x140004729: cmp     [rbp+0F0h+arg_20], 8
+0x140004730: jnb     short loc_14000473D
+0x140004732: mov     dword ptr [rbx], 0C0000023h
+0x140004738: jmp     loc_140003E7B
+0x14000473d: mov     rdx, [rdi]
+0x140004740: test    rdx, rdx
+0x140004743: jz      loc_140003E75
+0x140004749: mov     rcx, rsi
+0x14000474c: call    sub_140007450
+0x140004751: mov     [rbx], eax
+0x140004753: jmp     loc_140003E7B

@@ -1,0 +1,44 @@
+=== METADATA ===
+Name: sub_14000D158
+Addr: 0x14000d158
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000EE70 (0x14000EF53)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000d158-0x14000d15d -> Jumps to: 0x14000741c
+  Block 0x14000741c-0x14000741c -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+void __fastcall sub_14000D158(__int64 a1)
+{
+  sub_14000741C(a1);
+}
+
+
+=== DISASM ===
+0x14000d158: jmp     sub_14000741C

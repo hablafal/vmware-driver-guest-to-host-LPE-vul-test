@@ -1,0 +1,58 @@
+=== METADATA ===
+Name: sub_14000F1A8
+Addr: 0x14000f1a8
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f1ab: Access Member +0x4 ([rax+4])
+  0x14000f1be: Access Member +0x18 ([rax+18h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E46C (0x14000E557)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f1a8-0x14000f1b0 -> Jumps to: 0x14000f1b0, 0x14000f1bb
+  Block 0x14000f1b0-0x14000f1bb -> Jumps to: 
+  Block 0x14000f1bb-0x14000f1c9 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000F1A8(__int64 a1, unsigned int a2)
+{
+  if ( a2 >= *(_DWORD *)(*(_QWORD *)a1 + 4LL) )
+    return 0x3FFFFFFFFFLL;
+  _mm_lfence();
+  return *(_QWORD *)(*(_QWORD *)(*(_QWORD *)a1 + 24LL) + 8LL * a2);
+}
+
+
+=== DISASM ===
+0x14000f1a8: mov     rax, [rcx]
+0x14000f1ab: cmp     edx, [rax+4]
+0x14000f1ae: jb      short loc_14000F1BB
+0x14000f1b0: mov     rax, 3FFFFFFFFFh
+0x14000f1ba: retn
+0x14000f1bb: lfence
+0x14000f1be: mov     rax, [rax+18h]
+0x14000f1c2: mov     ecx, edx
+0x14000f1c4: mov     rax, [rax+rcx*8]
+0x14000f1c8: retn

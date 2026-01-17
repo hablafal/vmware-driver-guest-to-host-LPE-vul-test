@@ -1,0 +1,73 @@
+=== METADATA ===
+Name: sub_140007EDC
+Addr: 0x140007edc
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140007edf: AND with Mask 0x3FFF
+  0x140007eed: AND with Mask 0x1FF
+
+=== MEMBER ACCESS ===
+  0x140007f07: Access Member +0x10 ([rax+10h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_1400064BC (0x1400064F8)
+  <- sub_140006680 (0x1400066F5)
+  <- sub_140007338 (0x14000734A)
+  <- sub_1400087B4 (0x1400087FD)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140007edc-0x140007f02 -> Jumps to: 0x140007f0b
+  Block 0x140007f02-0x140007f07 -> Jumps to: 0x140007f07, 0x140007f10
+  Block 0x140007f07-0x140007f0b -> Jumps to: 0x140007f0b
+  Block 0x140007f0b-0x140007f10 -> Jumps to: 0x140007f02, 0x140007f10
+  Block 0x140007f10-0x140007f11 -> Jumps to: 
+
+=== CODE ===
+_QWORD *__fastcall sub_140007EDC(__int64 a1, __int64 a2)
+{
+  _QWORD *result; // rax
+
+  for ( result = *(_QWORD **)(*(_QWORD *)(a1 + 8 * ((unsigned __int64)(a2 & 0x3FFF) >> 9) + 1949712) + 8 * (a2 & 0x1FF));
+        result && *result != a2;
+        result = (_QWORD *)result[2] )
+  {
+    ;
+  }
+  return result;
+}
+
+
+=== DISASM ===
+0x140007edc: mov     r8, rdx
+0x140007edf: and     r8d, 3FFFh
+0x140007ee6: mov     eax, r8d
+0x140007ee9: shr     rax, 9
+0x140007eed: and     r8d, 1FFh
+0x140007ef4: mov     rax, [rcx+rax*8+1DC010h]
+0x140007efc: mov     rax, [rax+r8*8]
+0x140007f00: jmp     short loc_140007F0B
+0x140007f02: cmp     [rax], rdx
+0x140007f05: jz      short locret_140007F10
+0x140007f07: mov     rax, [rax+10h]
+0x140007f0b: test    rax, rax
+0x140007f0e: jnz     short loc_140007F02
+0x140007f10: retn

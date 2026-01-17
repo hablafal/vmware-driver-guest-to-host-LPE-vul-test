@@ -1,0 +1,44 @@
+=== METADATA ===
+Name: sub_14000B350
+Addr: 0x14000b350
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000b350-0x14000b358 -> Jumps to: 0x14000741c
+  Block 0x14000741c-0x14000741c -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_14000B350(__int64 a1, __int64 *a2)
+{
+  sub_14000741C(*a2);
+}
+
+
+=== DISASM ===
+0x14000b350: mov     rcx, [rdx]
+0x14000b353: jmp     sub_14000741C

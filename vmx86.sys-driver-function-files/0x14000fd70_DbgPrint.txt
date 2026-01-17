@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: DbgPrint
+Addr: 0x14000fd70
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_1400062FC (0x1400063A0)
+  <- sub_14000DF58 (0x14000DFCE)
+  <- sub_14000DF58 (0x14000DFEB)
+  <- sub_14000DF58 (0x14000E00D)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fd70-0x14000fd76 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+ULONG DbgPrint(PCSTR Format, ...)
+{
+  return __imp_DbgPrint(Format);
+}
+
+
+=== DISASM ===
+0x14000fd70: jmp     cs:__imp_DbgPrint

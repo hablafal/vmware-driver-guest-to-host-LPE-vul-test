@@ -1,0 +1,79 @@
+=== METADATA ===
+Name: sub_14000E828
+Addr: 0x14000e828
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000e84b: AND with Mask 0x1FF
+  0x14000e856: AND with Mask 0x7FFFFFF
+  0x14000e870: AND with Mask 0x8
+
+=== MEMBER ACCESS ===
+  0x14000e82c: Access Member +0x148 ([rcx+148h])
+  0x14000e838: Access Member +0x28 ([rsp+38h+var_10])
+  0x14000e83f: Access Member +0x20 ([rsp+38h+var_18])
+  0x14000e844: Access Member +0x130 ([rcx+130h])
+  0x14000e85d: Access Member +0x20 ([rcx+r10*8+20h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E378 (0x14000E400)
+  <- sub_14000E878 (0x14000E8F3)
+  <- sub_14000E938 (0x14000E9B5)
+  <- sub_14000EA00 (0x14000EA86)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000e828-0x14000e878 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000E828(_QWORD *a1, __int64 a2, int a3, __int64 a4)
+{
+  return (unsigned __int8)sub_14000F278(
+                            *a1,
+                            a1[(((unsigned __int64)(a4 - a1[38]) >> 9) & 0x7FFFFFF) + 4],
+                            a4 & 0x1FF,
+                            a3,
+                            a2) == 0
+       ? 8
+       : 0;
+}
+
+
+=== DISASM ===
+0x14000e828: sub     rsp, 38h
+0x14000e82c: mov     eax, [rcx+148h]
+0x14000e832: mov     r10, r9
+0x14000e835: mov     r9, r8
+0x14000e838: mov     [rsp+38h+var_10], eax
+0x14000e83c: mov     r8d, r10d
+0x14000e83f: mov     [rsp+38h+var_18], rdx
+0x14000e844: sub     r10, [rcx+130h]
+0x14000e84b: and     r8d, 1FFh
+0x14000e852: shr     r10, 9
+0x14000e856: and     r10d, 7FFFFFFh
+0x14000e85d: mov     rdx, [rcx+r10*8+20h]
+0x14000e862: mov     rcx, [rcx]
+0x14000e865: call    sub_14000F278
+0x14000e86a: neg     al
+0x14000e86c: sbb     eax, eax
+0x14000e86e: not     eax
+0x14000e870: and     eax, 8
+0x14000e873: add     rsp, 38h
+0x14000e877: retn

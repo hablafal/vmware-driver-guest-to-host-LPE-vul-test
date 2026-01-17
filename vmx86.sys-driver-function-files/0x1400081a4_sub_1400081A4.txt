@@ -1,0 +1,107 @@
+=== METADATA ===
+Name: sub_1400081A4
+Addr: 0x1400081a4
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x1400081b1: AND with Mask 0x7FFF
+  0x1400081c8: AND with Mask 0x7
+
+=== MEMBER ACCESS ===
+  0x1400081b8: Access Member +0x8 ([rcx+rax*8+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140004C50 (0x140004E5C)
+  <- sub_140005D60 (0x140005D90)
+  <- sub_140005E28 (0x140005E8A)
+  <- sub_1400073A4 (0x140007402)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x1400081f1 -> D:\build\ob\bora-24037534\bora\build\build\vmx86\release\win-kernel\vmx86\phystrack.c
+  0x1400081f8 -> VERIFY %s:%d
+
+  0x14000820b -> D:\build\ob\bora-24037534\bora\build\build\vmx86\release\win-kernel\vmx86\phystrack.c
+  0x140008212 -> VERIFY %s:%d
+
+
+=== BASIC BLOCKS ===
+  Block 0x1400081a4-0x1400081c2 -> Jumps to: 0x1400081c2, 0x1400081eb
+  Block 0x1400081c2-0x1400081de -> Jumps to: 0x1400081de, 0x140008205
+  Block 0x1400081de-0x1400081eb -> Jumps to: 
+  Block 0x1400081eb-0x140008204 -> Jumps to: 
+  Block 0x140008205-0x14000821e -> Jumps to: 
+
+=== CODE ===
+unsigned __int64 __fastcall sub_1400081A4(__int64 a1, unsigned int a2)
+{
+  __int64 v2; // r9
+  unsigned __int64 result; // rax
+  int v4; // edx
+  unsigned __int8 v5; // cl
+
+  v2 = *(_QWORD *)(a1 + 8 * ((unsigned __int64)a2 >> 15) + 8);
+  if ( !v2 )
+    sub_140003A70(
+      (ULONG_PTR)"VERIFY %s:%d\n",
+      "D:\\build\\ob\\bora-24037534\\bora\\build\\build\\vmx86\\release\\win-kernel\\vmx86\\phystrack.c",
+      348);
+  result = (unsigned __int64)(a2 & 0x7FFF) >> 3;
+  v4 = 1 << (a2 & 7);
+  v5 = *(_BYTE *)(result + v2);
+  if ( (v5 & (unsigned __int8)v4) == 0 )
+    sub_140003A70(
+      (ULONG_PTR)"VERIFY %s:%d\n",
+      "D:\\build\\ob\\bora-24037534\\bora\\build\\build\\vmx86\\release\\win-kernel\\vmx86\\phystrack.c",
+      352);
+  *(_BYTE *)(result + v2) = v5 & ~(_BYTE)v4;
+  return result;
+}
+
+
+=== DISASM ===
+0x1400081a4: sub     rsp, 28h
+0x1400081a8: mov     eax, edx
+0x1400081aa: mov     r8d, edx
+0x1400081ad: shr     rax, 0Fh
+0x1400081b1: and     r8d, 7FFFh
+0x1400081b8: mov     r9, [rcx+rax*8+8]
+0x1400081bd: test    r9, r9
+0x1400081c0: jz      short loc_1400081EB
+0x1400081c2: mov     eax, r8d
+0x1400081c5: mov     ecx, r8d
+0x1400081c8: and     ecx, 7
+0x1400081cb: shr     rax, 3
+0x1400081cf: mov     edx, 1
+0x1400081d4: shl     edx, cl
+0x1400081d6: mov     cl, [rax+r9]
+0x1400081da: test    dl, cl
+0x1400081dc: jz      short loc_140008205
+0x1400081de: not     dl
+0x1400081e0: and     dl, cl
+0x1400081e2: mov     [rax+r9], dl
+0x1400081e6: add     rsp, 28h
+0x1400081ea: retn
+0x1400081eb: mov     r8d, 15Ch
+0x1400081f1: lea     rdx, aDBuildObBora24; "D:\\build\\ob\\bora-24037534\\bora\\bui"...
+0x1400081f8: lea     rcx, aVerifySD; "VERIFY %s:%d\n"
+0x1400081ff: call    sub_140003A70
+0x140008205: mov     r8d, 160h
+0x14000820b: lea     rdx, aDBuildObBora24; "D:\\build\\ob\\bora-24037534\\bora\\bui"...
+0x140008212: lea     rcx, aVerifySD; "VERIFY %s:%d\n"
+0x140008219: call    sub_140003A70

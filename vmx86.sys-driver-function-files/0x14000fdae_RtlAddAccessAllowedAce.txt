@@ -1,0 +1,45 @@
+=== METADATA ===
+Name: RtlAddAccessAllowedAce
+Addr: 0x14000fdae
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z (0x14000DB26)
+  <- ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z (0x14000DBCF)
+  <- ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z (0x14000DC5A)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fdae-0x14000fdb4 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+NTSTATUS __stdcall RtlAddAccessAllowedAce(PACL Acl, ULONG AceRevision, ACCESS_MASK AccessMask, PSID Sid)
+{
+  return __imp_RtlAddAccessAllowedAce(Acl, AceRevision, AccessMask, Sid);
+}
+
+
+=== DISASM ===
+0x14000fdae: jmp     cs:__imp_RtlAddAccessAllowedAce

@@ -1,0 +1,119 @@
+=== METADATA ===
+Name: sub_140009D10
+Addr: 0x140009d10
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140009d10: Access Member +0x8 ([rsp+arg_0])
+  0x140009d15: Access Member +0x10 ([rsp+arg_8])
+  0x140009d5a: Access Member +0x1 ([rsi+1])
+  0x140009d87: Access Member +0x30 ([rsp+28h+arg_0])
+  0x140009d8c: Access Member +0x38 ([rsp+28h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140004910 (0x140004950)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140009d10-0x140009d2d -> Jumps to: 0x140009d2d
+  Block 0x140009d2d-0x140009d3f -> Jumps to: 0x140009d3f, 0x140009d44
+  Block 0x140009d3f-0x140009d44 -> Jumps to: 0x140009d44
+  Block 0x140009d44-0x140009d4e -> Jumps to: 0x140009d2d, 0x140009d4e
+  Block 0x140009d4e-0x140009d5a -> Jumps to: 0x140009d5a, 0x140009d69
+  Block 0x140009d5a-0x140009d69 -> Jumps to: 0x140009d69
+  Block 0x140009d69-0x140009d70 -> Jumps to: 0x140009d70
+  Block 0x140009d70-0x140009d78 -> Jumps to: 0x140009d78, 0x140009d7d
+  Block 0x140009d78-0x140009d7d -> Jumps to: 0x140009d7d
+  Block 0x140009d7d-0x140009d87 -> Jumps to: 0x140009d70, 0x140009d87
+  Block 0x140009d87-0x140009d97 -> Jumps to: 
+
+=== CODE ===
+void sub_140009D10()
+{
+  __int64 v0; // rdi
+  unsigned __int64 *v1; // rbx
+  __int64 v2; // rsi
+  void **v3; // rbx
+
+  v0 = 1024;
+  v1 = (unsigned __int64 *)qword_140018F20;
+  v2 = 1024;
+  do
+  {
+    if ( *v1 != 0x3FFFFFFFFFLL )
+      sub_140005EF8(*v1);
+    ++v1;
+    --v2;
+  }
+  while ( v2 );
+  if ( qword_140018F08 )
+  {
+    sub_140005DD0(1, (void *)qword_140018F08);
+    qword_140018F08 = 0;
+  }
+  v3 = (void **)qword_14001AF20;
+  do
+  {
+    if ( *v3 )
+      sub_140005DC4(*v3);
+    ++v3;
+    --v0;
+  }
+  while ( v0 );
+}
+
+
+=== DISASM ===
+0x140009d10: mov     [rsp+arg_0], rbx
+0x140009d15: mov     [rsp+arg_8], rsi
+0x140009d1a: push    rdi
+0x140009d1b: sub     rsp, 20h
+0x140009d1f: mov     edi, 400h
+0x140009d24: lea     rbx, qword_140018F20
+0x140009d2b: mov     esi, edi
+0x140009d2d: mov     rcx, [rbx]
+0x140009d30: mov     rax, 3FFFFFFFFFh
+0x140009d3a: cmp     rcx, rax
+0x140009d3d: jz      short loc_140009D44
+0x140009d3f: call    sub_140005EF8
+0x140009d44: add     rbx, 8
+0x140009d48: sub     rsi, 1
+0x140009d4c: jnz     short loc_140009D2D
+0x140009d4e: mov     rdx, cs:qword_140018F08
+0x140009d55: test    rdx, rdx
+0x140009d58: jz      short loc_140009D69
+0x140009d5a: lea     ecx, [rsi+1]
+0x140009d5d: call    sub_140005DD0
+0x140009d62: and     cs:qword_140018F08, rsi
+0x140009d69: lea     rbx, qword_14001AF20
+0x140009d70: mov     rcx, [rbx]
+0x140009d73: test    rcx, rcx
+0x140009d76: jz      short loc_140009D7D
+0x140009d78: call    sub_140005DC4
+0x140009d7d: add     rbx, 8
+0x140009d81: sub     rdi, 1
+0x140009d85: jnz     short loc_140009D70
+0x140009d87: mov     rbx, [rsp+28h+arg_0]
+0x140009d8c: mov     rsi, [rsp+28h+arg_8]
+0x140009d91: add     rsp, 20h
+0x140009d95: pop     rdi
+0x140009d96: retn

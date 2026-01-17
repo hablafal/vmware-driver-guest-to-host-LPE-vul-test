@@ -1,0 +1,94 @@
+=== METADATA ===
+Name: sub_140003A70
+Addr: 0x140003a70
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] SYSTEM_CRASH_TRIGGER
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140003acc: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140003a73: Access Member +0x8 ([rax+8])
+  0x140003a77: Access Member +0x10 ([rax+10h])
+  0x140003a7b: Access Member +0x18 ([rax+18h])
+  0x140003a7f: Access Member +0x20 ([rax+20h])
+  0x140003a8d: Access Member +0x10 ([rax+10h])
+  0x140003a91: Access Member +0x30 ([rsp+338h+BugCheckParameter2])
+  0x140003ab5: Access Member +0x30 ([rsp+338h+BugCheckParameter2])
+  0x140003abf: Access Member +0x340 ([rsp+338h+BugCheckParameter1])
+  0x140003ac7: Access Member +0x30 ([rsp+338h+BugCheckParameter2])
+  0x140003acc: Access Member +0x20 ([rsp+338h+var_318])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140007F14 (0x140007FAC)
+  <- sub_140007F14 (0x140007FC6)
+  <- sub_140008024 (0x1400080A3)
+  <- sub_1400081A4 (0x1400081FF)
+  <- sub_1400081A4 (0x140008219)
+  <- sub_140008538 (0x14000874C)
+  <- sub_14000922C (0x140009CB8)
+  <- sub_14000922C (0x140009CDF)
+
+=== IMPORTS ===
+  -> 0x140003aa0 calls IoGetCurrentProcess
+  -> 0x140003ada calls KeBugCheckEx
+
+=== STRINGS ===
+  0x140003aa6 -> VMX86 panic. pid=%p
+
+
+=== BASIC BLOCKS ===
+  Block 0x140003a70-0x140003ae0 -> Jumps to: 
+
+=== CODE ===
+void __noreturn sub_140003A70(ULONG_PTR a1, ...)
+{
+  PEPROCESS CurrentProcess; // rax
+  ULONG_PTR BugCheckParameter2[97]; // [rsp+30h] [rbp-308h] BYREF
+  va_list va; // [rsp+348h] [rbp+10h] BYREF
+
+  va_start(va, a1);
+  sub_140003B4C(BugCheckParameter2, 768, a1, (__int64 *)va);
+  CurrentProcess = IoGetCurrentProcess();
+  sub_140003AE4(BugCheckParameter2, 768, "VMX86 panic. pid=%p\n\r", CurrentProcess);
+  KeBugCheckEx(0xE0000001, a1, (ULONG_PTR)BugCheckParameter2, 0, 0);
+}
+
+
+=== DISASM ===
+0x140003a70: mov     rax, rsp
+0x140003a73: mov     [rax+8], rcx
+0x140003a77: mov     [rax+10h], rdx
+0x140003a7b: mov     [rax+18h], r8
+0x140003a7f: mov     [rax+20h], r9
+0x140003a83: sub     rsp, 338h
+0x140003a8a: mov     r8, rcx
+0x140003a8d: lea     r9, [rax+10h]
+0x140003a91: lea     rcx, [rsp+338h+BugCheckParameter2]
+0x140003a96: mov     edx, 300h
+0x140003a9b: call    sub_140003B4C
+0x140003aa0: call    cs:IoGetCurrentProcess
+0x140003aa6: lea     r8, aVmx86PanicPidP; "VMX86 panic. pid=%p\n\r"
+0x140003aad: mov     edx, 300h
+0x140003ab2: mov     r9, rax
+0x140003ab5: lea     rcx, [rsp+338h+BugCheckParameter2]
+0x140003aba: call    sub_140003AE4
+0x140003abf: mov     rdx, [rsp+338h+BugCheckParameter1]; BugCheckParameter1
+0x140003ac7: lea     r8, [rsp+338h+BugCheckParameter2]; BugCheckParameter2
+0x140003acc: and     [rsp+338h+var_318], 0
+0x140003ad2: xor     r9d, r9d; BugCheckParameter3
+0x140003ad5: mov     ecx, 0E0000001h; BugCheckCode
+0x140003ada: call    cs:KeBugCheckEx

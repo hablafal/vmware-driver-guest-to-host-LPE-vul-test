@@ -1,0 +1,42 @@
+=== METADATA ===
+Name: nullsub_3
+Addr: 0x1400030a6
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x1400030a6-0x1400030a7 -> Jumps to: 
+
+=== CODE ===
+void nullsub_3()
+{
+  ;
+}
+
+
+=== DISASM ===
+0x1400030a6: retn

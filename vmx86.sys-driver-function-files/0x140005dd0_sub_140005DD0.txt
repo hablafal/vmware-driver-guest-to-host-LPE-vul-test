@@ -1,0 +1,88 @@
+=== METADATA ===
+Name: sub_140005DD0
+Addr: 0x140005dd0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005dd0: Access Member +0x8 ([rsp+arg_0])
+  0x140005e16: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008538 (0x1400086FD)
+  <- sub_140008A00 (0x140008A0C)
+  <- sub_140009D10 (0x140009D5D)
+  <- sub_14000A564 (0x14000A5A1)
+  <- sub_14000F3EC (0x14000F405)
+  <- sub_14000F474 (0x14000F5A6)
+
+=== IMPORTS ===
+  -> 0x140005de0 calls MmGetPhysicalAddress
+  -> 0x140005e02 calls MmUnmapLockedPages
+  -> 0x140005e0b calls MmFreePagesFromMdl
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005dd0-0x140005df9 -> Jumps to: 0x140005df9, 0x140005dfc
+  Block 0x140005df9-0x140005dfc -> Jumps to: 0x140005dfc
+  Block 0x140005dfc-0x140005e27 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140005DD0(__int64 a1, void *a2)
+{
+  PHYSICAL_ADDRESS PhysicalAddress; // rax
+  volatile __int64 *v4; // rax
+  struct _MDL *v5; // rbx
+
+  PhysicalAddress = MmGetPhysicalAddress(a2);
+  v4 = (volatile __int64 *)sub_14000501C(PhysicalAddress.QuadPart >> 12);
+  v5 = 0;
+  if ( v4 )
+    v5 = (struct _MDL *)_InterlockedExchange64(v4, 0);
+  MmUnmapLockedPages(a2, v5);
+  MmFreePagesFromMdl(v5);
+  ExFreePoolWithTag(v5, 0);
+}
+
+
+=== DISASM ===
+0x140005dd0: mov     [rsp+arg_0], rbx
+0x140005dd5: push    rdi
+0x140005dd6: sub     rsp, 20h
+0x140005dda: mov     rcx, rdx; BaseAddress
+0x140005ddd: mov     rdi, rdx
+0x140005de0: call    cs:MmGetPhysicalAddress
+0x140005de6: sar     rax, 0Ch
+0x140005dea: mov     rcx, rax
+0x140005ded: call    sub_14000501C
+0x140005df2: xor     ebx, ebx
+0x140005df4: test    rax, rax
+0x140005df7: jz      short loc_140005DFC
+0x140005df9: xchg    rbx, [rax]
+0x140005dfc: mov     rdx, rbx; MemoryDescriptorList
+0x140005dff: mov     rcx, rdi; BaseAddress
+0x140005e02: call    cs:MmUnmapLockedPages
+0x140005e08: mov     rcx, rbx; MemoryDescriptorList
+0x140005e0b: call    cs:MmFreePagesFromMdl
+0x140005e11: xor     edx, edx
+0x140005e13: mov     rcx, rbx
+0x140005e16: mov     rbx, [rsp+28h+arg_0]
+0x140005e1b: add     rsp, 20h
+0x140005e1f: pop     rdi
+0x140005e20: jmp     cs:ExFreePoolWithTag

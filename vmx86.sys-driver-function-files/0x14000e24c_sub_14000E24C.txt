@@ -1,0 +1,127 @@
+=== METADATA ===
+Name: sub_14000E24C
+Addr: 0x14000e24c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000e270: TEST with Mask 0xFFFFFFFFFFFFFFFA
+  0x14000e29d: AND with Mask 0xFFFFFFFFFFFFF000
+  0x14000e2d6: OR with Mask 0xFFFFFFFFFFFFFFFF
+
+=== MEMBER ACCESS ===
+  0x14000e24c: Access Member +0x8 ([rsp+arg_0])
+  0x14000e2a9: Access Member +0x9 ([rcx+9])
+  0x14000e2da: Access Member +0x40 ([rsp+38h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140005430 (0x140005464)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000e261 -> 
+
+=== BASIC BLOCKS ===
+  Block 0x14000e24c-0x14000e26d -> Jumps to: 0x14000e26d, 0x14000e2d6
+  Block 0x14000e26d-0x14000e277 -> Jumps to: 0x14000e277, 0x14000e2d6
+  Block 0x14000e277-0x14000e27c -> Jumps to: 0x14000e27c, 0x14000e2d6
+  Block 0x14000e27c-0x14000e291 -> Jumps to: 0x14000e291, 0x14000e2d6
+  Block 0x14000e291-0x14000e2a9 -> Jumps to: 0x14000e2a9, 0x14000e2d1
+  Block 0x14000e2a9-0x14000e2b5 -> Jumps to: 0x14000e2b5, 0x14000e2c1
+  Block 0x14000e2b5-0x14000e2c1 -> Jumps to: 0x14000e2c1
+  Block 0x14000e2c1-0x14000e2d1 -> Jumps to: 0x14000e2d1
+  Block 0x14000e2d1-0x14000e2d6 -> Jumps to: 0x14000e2da
+  Block 0x14000e2d6-0x14000e2da -> Jumps to: 0x14000e2da
+  Block 0x14000e2da-0x14000e2e5 -> Jumps to: 
+
+=== CODE ===
+__int64 sub_14000E24C()
+{
+  unsigned __int64 v0; // rdi
+  char v1; // bl
+
+  if ( (dword_14001D0C8 & 0x220) != 0x220
+    || ((dword_140014A00 - 2) & 0xFFFFFFFA) != 0
+    || dword_140014A00 == 7
+    || (__readmsr(0x1Bu) & 0x400) != 0 )
+  {
+    return -1;
+  }
+  v0 = __readmsr(0x1Bu) & 0xFFFFFFFFFFFFF000uLL;
+  if ( dword_140014A00 == 2 )
+  {
+    v1 = 36;
+    if ( sub_140009D98() )
+    {
+      _RAX = 2147483656LL;
+      __asm { cpuid }
+      v1 = _RAX;
+    }
+    v0 &= (1LL << v1) - 1;
+  }
+  return v0;
+}
+
+
+=== DISASM ===
+0x14000e24c: mov     [rsp+arg_0], rbx
+0x14000e251: push    rdi
+0x14000e252: sub     rsp, 30h
+0x14000e256: mov     eax, cs:dword_14001D0C8
+0x14000e25c: mov     ecx, 220h
+0x14000e261: mov     ebx, cs:dword_140014A00
+0x14000e267: and     eax, ecx
+0x14000e269: cmp     eax, ecx
+0x14000e26b: jnz     short loc_14000E2D6
+0x14000e26d: lea     eax, [rbx-2]
+0x14000e270: test    eax, 0FFFFFFFAh
+0x14000e275: jnz     short loc_14000E2D6
+0x14000e277: cmp     ebx, 7
+0x14000e27a: jz      short loc_14000E2D6
+0x14000e27c: mov     ecx, 1Bh
+0x14000e281: rdmsr
+0x14000e283: shl     rdx, 20h
+0x14000e287: or      rax, rdx
+0x14000e28a: bt      rax, 0Ah
+0x14000e28f: jb      short loc_14000E2D6
+0x14000e291: rdmsr
+0x14000e293: shl     rdx, 20h
+0x14000e297: or      rax, rdx
+0x14000e29a: mov     rdi, rax
+0x14000e29d: and     rdi, 0FFFFFFFFFFFFF000h
+0x14000e2a4: cmp     ebx, 2
+0x14000e2a7: jnz     short loc_14000E2D1
+0x14000e2a9: lea     ebx, [rcx+9]
+0x14000e2ac: call    sub_140009D98
+0x14000e2b1: test    al, al
+0x14000e2b3: jz      short loc_14000E2C1
+0x14000e2b5: mov     eax, 80000008h
+0x14000e2ba: xor     ecx, ecx
+0x14000e2bc: cpuid
+0x14000e2be: movzx   ebx, al
+0x14000e2c1: mov     ecx, ebx
+0x14000e2c3: mov     edx, 1
+0x14000e2c8: shl     rdx, cl
+0x14000e2cb: dec     rdx
+0x14000e2ce: and     rdi, rdx
+0x14000e2d1: mov     rax, rdi
+0x14000e2d4: jmp     short loc_14000E2DA
+0x14000e2d6: or      rax, 0FFFFFFFFFFFFFFFFh
+0x14000e2da: mov     rbx, [rsp+38h+arg_0]
+0x14000e2df: add     rsp, 30h
+0x14000e2e3: pop     rdi
+0x14000e2e4: retn

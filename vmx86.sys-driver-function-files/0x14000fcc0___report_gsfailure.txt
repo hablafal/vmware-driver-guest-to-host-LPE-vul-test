@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: __report_gsfailure
+Addr: 0x14000fcc0
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- __security_check_cookie (0x14000FCB9)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fcc0-0x14000fcc7 -> Jumps to: 
+
+=== CODE ===
+void __cdecl __noreturn _report_gsfailure(uintptr_t StackCookie)
+{
+  __fastfail(2u);
+}
+
+
+=== DISASM ===
+0x14000fcc0: mov     ecx, 2
+0x14000fcc5: int     29h; Win8: RtlFailFast(ecx)

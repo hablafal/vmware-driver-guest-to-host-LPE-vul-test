@@ -1,0 +1,73 @@
+=== METADATA ===
+Name: sub_140007558
+Addr: 0x140007558
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140007558: Access Member +0x10 ([rcx+10h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008D04 (0x140008DF5)
+  <- sub_14000A1FC (0x14000A221)
+  <- sub_14000A564 (0x14000A616)
+  <- sub_14000B074 (0x14000B0C4)
+  <- sub_14000B074 (0x14000B1A3)
+  <- sub_14000B218 (0x14000B26E)
+  <- sub_14000B2F0 (0x14000B312)
+  <- sub_14000B3B8 (0x14000B467)
+  <- sub_14000B3B8 (0x14000B4CD)
+  <- sub_14000B3B8 (0x14000B682)
+  <- sub_14000B768 (0x14000B7AA)
+  <- sub_14000B804 (0x14000B836)
+  <- sub_14000C15C (0x14000C179)
+  <- sub_14000C280 (0x14000C430)
+  <- sub_14000C5A0 (0x14000C5B5)
+  <- sub_14000C5E4 (0x14000C5F6)
+  <- sub_14000C9DC (0x14000CA1B)
+  <- sub_14000CA68 (0x14000CA85)
+  <- sub_14000CCBC (0x14000CD00)
+  <- sub_14000D0A8 (0x14000D0BD)
+  <- sub_14000D0F8 (0x14000D115)
+  <- sub_14000D160 (0x14000D175)
+  <- sub_14000D3E0 (0x14000D684)
+  <- sub_14000D3E0 (0x14000D713)
+  <- sub_14000EE70 (0x14000EF11)
+  <- sub_14000EFA4 (0x14000F00E)
+  <- sub_14000F0AC (0x14000F0D1)
+  <- sub_14000F300 (0x14000F39D)
+  <- sub_14000F9BC (0x14000F9E1)
+  <- sub_14000FA80 (0x14000FAB3)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140007558-0x140007563 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140007558(__int64 a1)
+{
+  ExAcquireFastMutex(*(PFAST_MUTEX *)(a1 + 16));
+}
+
+
+=== DISASM ===
+0x140007558: mov     rcx, [rcx+10h]
+0x14000755c: jmp     cs:ExAcquireFastMutex

@@ -1,0 +1,62 @@
+=== METADATA ===
+Name: sub_14000F3EC
+Addr: 0x14000f3ec
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f3f5: Access Member +0x8 ([rcx+8])
+  0x14000f40a: Access Member +0x10 ([rbx+10h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A564 (0x14000A5D4)
+  <- sub_14000CAF8 (0x14000CB5C)
+  <- sub_14000D3E0 (0x14000D951)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f3ec-0x14000f420 -> Jumps to: 0x140005dc4
+  Block 0x140005dc4-0x140005dc4 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_14000F3EC(__int64 a1)
+{
+  sub_140005DD0((unsigned __int64)(unsigned int)(*(_DWORD *)(a1 + 8) + 4095) >> 12, *(void **)a1);
+  sub_140005DC4(*(void **)(a1 + 16));
+  sub_140005DC4((void *)a1);
+}
+
+
+=== DISASM ===
+0x14000f3ec: push    rbx
+0x14000f3ee: sub     rsp, 20h
+0x14000f3f2: mov     rbx, rcx
+0x14000f3f5: mov     ecx, [rcx+8]
+0x14000f3f8: add     ecx, 0FFFh
+0x14000f3fe: shr     rcx, 0Ch
+0x14000f402: mov     rdx, [rbx]
+0x14000f405: call    sub_140005DD0
+0x14000f40a: mov     rcx, [rbx+10h]
+0x14000f40e: call    sub_140005DC4
+0x14000f413: mov     rcx, rbx
+0x14000f416: add     rsp, 20h
+0x14000f41a: pop     rbx
+0x14000f41b: jmp     sub_140005DC4

@@ -1,0 +1,219 @@
+=== METADATA ===
+Name: CallbackFunction
+Addr: 0x140004a40
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] HANDLE_MANIPULATION
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140004ae9: AND with Mask 0x0
+  0x140004af1: AND with Mask 0x0
+  0x140004b08: AND with Mask 0x0
+  0x140004b45: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140004a40: Access Member +0x8 ([rsp+arg_0])
+  0x140004a45: Access Member +0x10 ([rsp+arg_8])
+  0x140004a59: Access Member +0x48 ([rsp+58h+var_10])
+  0x140004af1: Access Member +0x30 ([rsp+58h+var_28])
+  0x140004afe: Access Member +0x28 ([rsp+58h+StartRoutine])
+  0x140004b03: Access Member +0x40 ([rsp+58h+ThreadHandle])
+  0x140004b08: Access Member +0x20 ([rsp+58h+Object])
+  0x140004b45: Access Member +0x28 ([rsp+58h+StartRoutine])
+  0x140004b52: Access Member +0x40 ([rsp+58h+ThreadHandle])
+  0x140004b5d: Access Member +0x20 ([rsp+58h+Object])
+  0x140004b6a: Access Member +0x40 ([rsp+58h+ThreadHandle])
+  0x140004b92: Access Member +0x48 ([rsp+58h+var_10])
+  0x140004b9f: Access Member +0x60 ([rsp+58h+arg_0])
+  0x140004ba4: Access Member +0x68 ([rsp+58h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+  -> 0x140004ae3 calls ObfDereferenceObject
+  -> 0x140004b1d calls PsCreateSystemThread
+  -> 0x140004b64 calls ObReferenceObjectByHandle
+  -> 0x140004b71 calls ZwClose
+
+=== STRINGS ===
+  0x140004a4f -> 2
+  0x140004a61 -> powerStateCallback
+  0x140004a6b -> Saw %s
+
+  0x140004a87 -> %s: PO_CB_SYSTEM_STATE_LOCK with arg2 of %d
+
+  0x140004aa2 -> %s: System is resuming, creating reset clock on resume thread...
+
+  0x140004ab7 -> %s: thread is already running
+
+  0x140004ad0 -> %s: releasing previous thread pointer
+
+  0x140004af7 -> @SH
+  0x140004b37 -> %s: PsCreateSystemThread failed: %d
+
+  0x140004b83 -> %s: Successfully created reset clock on resume thread
+
+
+=== BASIC BLOCKS ===
+  Block 0x140004a40-0x140004a84 -> Jumps to: 0x140004a84, 0x140004b92
+  Block 0x140004a84-0x140004a9f -> Jumps to: 0x140004a9f, 0x140004b92
+  Block 0x140004a9f-0x140004ab7 -> Jumps to: 0x140004ab7, 0x140004ac3
+  Block 0x140004ab7-0x140004ac3 -> Jumps to: 0x140004b8a
+  Block 0x140004ac3-0x140004acd -> Jumps to: 0x140004acd, 0x140004af1
+  Block 0x140004acd-0x140004af1 -> Jumps to: 0x140004af1
+  Block 0x140004af1-0x140004b27 -> Jumps to: 0x140004b27, 0x140004b45
+  Block 0x140004b27-0x140004b34 -> Jumps to: 0x140004b34
+  Block 0x140004b34-0x140004b45 -> Jumps to: 0x140004b92
+  Block 0x140004b45-0x140004b7b -> Jumps to: 0x140004b7b, 0x140004b83
+  Block 0x140004b7b-0x140004b83 -> Jumps to: 0x140004b34
+  Block 0x140004b83-0x140004b8a -> Jumps to: 0x140004b8a
+  Block 0x140004b8a-0x140004b92 -> Jumps to: 0x140004b92
+  Block 0x140004b92-0x140004baf -> Jumps to: 
+
+=== CODE ===
+void __fastcall CallbackFunction(PVOID CallbackContext, PVOID Argument1, PVOID Argument2)
+{
+  NTSTATUS v5; // eax
+  NTSTATUS v6; // r8d
+  NTSTATUS v7; // ebx
+  void *ThreadHandle; // [rsp+40h] [rbp-18h] BYREF
+
+  sub_140003A14("Saw %s\n", "powerStateCallback");
+  if ( Argument1 == (PVOID)3 )
+  {
+    sub_140003A14("%s: PO_CB_SYSTEM_STATE_LOCK with arg2 of %d\n", "powerStateCallback", (_DWORD)Argument2);
+    if ( Argument2 )
+    {
+      sub_140003A14("%s: System is resuming, creating reset clock on resume thread...\n", "powerStateCallback");
+      if ( byte_140014D90 )
+      {
+        sub_140003A14("%s: thread is already running\n", "powerStateCallback");
+        return;
+      }
+      if ( qword_140014D70 )
+      {
+        sub_140003A14("%s: releasing previous thread pointer\n", "powerStateCallback");
+        ObfDereferenceObject(qword_140014D70);
+        qword_140014D70 = 0;
+      }
+      byte_140014D90 = 1;
+      v5 = PsCreateSystemThread(&ThreadHandle, 0, 0, 0, 0, HandleInformation, 0);
+      if ( v5 < 0 )
+      {
+        _mm_lfence();
+        byte_140014D90 = 0;
+        v6 = v5;
+LABEL_9:
+        sub_140003A14("%s: PsCreateSystemThread failed: %d\n", "powerStateCallback", v6);
+        return;
+      }
+      v7 = ObReferenceObjectByHandle(ThreadHandle, 0, 0, 0, &qword_140014D70, 0);
+      ZwClose(ThreadHandle);
+      if ( v7 < 0 )
+      {
+        _mm_lfence();
+        v6 = v7;
+        goto LABEL_9;
+      }
+      sub_140003A14("%s: Successfully created reset clock on resume thread\n", "powerStateCallback");
+    }
+  }
+}
+
+
+=== DISASM ===
+0x140004a40: mov     [rsp+arg_0], rbx
+0x140004a45: mov     [rsp+arg_8], rbp
+0x140004a4a: push    rdi
+0x140004a4b: sub     rsp, 50h
+0x140004a4f: mov     rax, cs:__security_cookie
+0x140004a56: xor     rax, rsp
+0x140004a59: mov     [rsp+58h+var_10], rax
+0x140004a5e: mov     rbx, rdx
+0x140004a61: lea     rbp, aPowerstatecall; "powerStateCallback"
+0x140004a68: mov     rdx, rbp
+0x140004a6b: lea     rcx, aSawS; "Saw %s\n"
+0x140004a72: mov     rdi, r8
+0x140004a75: call    sub_140003A14
+0x140004a7a: cmp     rbx, 3
+0x140004a7e: jnz     loc_140004B92
+0x140004a84: mov     r8, rdi
+0x140004a87: lea     rcx, aSPoCbSystemSta; "%s: PO_CB_SYSTEM_STATE_LOCK with arg2 o"...
+0x140004a8e: mov     rdx, rbp
+0x140004a91: call    sub_140003A14
+0x140004a96: test    rdi, rdi
+0x140004a99: jz      loc_140004B92
+0x140004a9f: mov     rdx, rbp
+0x140004aa2: lea     rcx, aSSystemIsResum; "%s: System is resuming, creating reset "...
+0x140004aa9: call    sub_140003A14
+0x140004aae: cmp     cs:byte_140014D90, 0
+0x140004ab5: jz      short loc_140004AC3
+0x140004ab7: lea     rcx, aSThreadIsAlrea; "%s: thread is already running\n"
+0x140004abe: jmp     loc_140004B8A
+0x140004ac3: cmp     cs:qword_140014D70, 0
+0x140004acb: jz      short loc_140004AF1
+0x140004acd: mov     rdx, rbp
+0x140004ad0: lea     rcx, aSReleasingPrev; "%s: releasing previous thread pointer\n"
+0x140004ad7: call    sub_140003A14
+0x140004adc: mov     rcx, cs:qword_140014D70; Object
+0x140004ae3: call    cs:ObfDereferenceObject
+0x140004ae9: and     cs:qword_140014D70, 0
+0x140004af1: and     [rsp+58h+var_28], 0
+0x140004af7: lea     rax, HandleInformation
+0x140004afe: mov     [rsp+58h+StartRoutine], rax; HandleInformation
+0x140004b03: lea     rcx, [rsp+58h+ThreadHandle]; ThreadHandle
+0x140004b08: and     [rsp+58h+Object], 0
+0x140004b0e: xor     r9d, r9d; ProcessHandle
+0x140004b11: xor     r8d, r8d; ObjectAttributes
+0x140004b14: mov     cs:byte_140014D90, 1
+0x140004b1b: xor     edx, edx; DesiredAccess
+0x140004b1d: call    cs:PsCreateSystemThread
+0x140004b23: test    eax, eax
+0x140004b25: jns     short loc_140004B45
+0x140004b27: lfence
+0x140004b2a: mov     cs:byte_140014D90, 0
+0x140004b31: mov     r8d, eax
+0x140004b34: mov     rdx, rbp
+0x140004b37: lea     rcx, aSPscreatesyste; "%s: PsCreateSystemThread failed: %d\n"
+0x140004b3e: call    sub_140003A14
+0x140004b43: jmp     short loc_140004B92
+0x140004b45: and     [rsp+58h+StartRoutine], 0
+0x140004b4b: lea     rax, qword_140014D70
+0x140004b52: mov     rcx, [rsp+58h+ThreadHandle]; Handle
+0x140004b57: xor     r9d, r9d; AccessMode
+0x140004b5a: xor     r8d, r8d; ObjectType
+0x140004b5d: mov     [rsp+58h+Object], rax; Object
+0x140004b62: xor     edx, edx; DesiredAccess
+0x140004b64: call    cs:ObReferenceObjectByHandle
+0x140004b6a: mov     rcx, [rsp+58h+ThreadHandle]; Handle
+0x140004b6f: mov     ebx, eax
+0x140004b71: call    cs:ZwClose
+0x140004b77: test    ebx, ebx
+0x140004b79: jns     short loc_140004B83
+0x140004b7b: lfence
+0x140004b7e: mov     r8d, ebx
+0x140004b81: jmp     short loc_140004B34
+0x140004b83: lea     rcx, aSSuccessfullyC; "%s: Successfully created reset clock on"...
+0x140004b8a: mov     rdx, rbp
+0x140004b8d: call    sub_140003A14
+0x140004b92: mov     rcx, [rsp+58h+var_10]
+0x140004b97: xor     rcx, rsp; StackCookie
+0x140004b9a: call    __security_check_cookie
+0x140004b9f: mov     rbx, [rsp+58h+arg_0]
+0x140004ba4: mov     rbp, [rsp+58h+arg_8]
+0x140004ba9: add     rsp, 50h
+0x140004bad: pop     rdi
+0x140004bae: retn

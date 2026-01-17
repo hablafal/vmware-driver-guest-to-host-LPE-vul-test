@@ -1,0 +1,138 @@
+=== METADATA ===
+Name: sub_14000A344
+Addr: 0x14000a344
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000a37c: TEST with Mask 0x1
+  0x14000a38a: TEST with Mask 0x4
+  0x14000a38f: AND with Mask 0xFFFFFFFFFFFFFFEF
+  0x14000a396: OR with Mask 0x8
+  0x14000a3b9: TEST with Mask 0x1
+  0x14000a3bd: OR with Mask 0x5
+
+=== MEMBER ACCESS ===
+  0x14000a354: Access Member +0x10 ([rsp+28h+var_18])
+  0x14000a3ca: Access Member +0x10 ([rsp+28h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A450 (0x14000A49B)
+  <- sub_14000ABC0 (0x14000AC8E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000a34a -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x14000a344-0x14000a362 -> Jumps to: 0x14000a362, 0x14000a3a2
+  Block 0x14000a362-0x14000a381 -> Jumps to: 0x14000a381, 0x14000a3ca
+  Block 0x14000a381-0x14000a38f -> Jumps to: 0x14000a38f, 0x14000a3ca
+  Block 0x14000a38f-0x14000a3a2 -> Jumps to: 0x14000a3c4
+  Block 0x14000a3a2-0x14000a3ab -> Jumps to: 0x14000a3ab, 0x14000a3ca
+  Block 0x14000a3ab-0x14000a3bd -> Jumps to: 0x14000a3bd, 0x14000a3ca
+  Block 0x14000a3bd-0x14000a3c4 -> Jumps to: 0x14000a3c4
+  Block 0x14000a3c4-0x14000a3ca -> Jumps to: 0x14000a3ca
+  Block 0x14000a3ca-0x14000a3dd -> Jumps to: 
+
+=== CODE ===
+void sub_14000A344()
+{
+  unsigned __int64 v0; // r8
+  unsigned int v6; // ecx
+  unsigned __int64 v7; // rdx
+  __int64 v8; // rax
+  unsigned __int64 v9; // rax
+
+  if ( byte_14001D0C2 )
+  {
+    v0 = __readmsr(0xC0010114);
+    if ( (v0 & 8) == 0 )
+    {
+      _RAX = 2147483658LL;
+      __asm { cpuid }
+      if ( (_RDX & 4) != 0 )
+      {
+        v6 = -1073676012;
+        v7 = v0 & 0xFFFFFFFFFFFFFFE7uLL | 8;
+        LODWORD(v8) = v0 & 0xFFFFFFE7 | 8;
+LABEL_8:
+        __writemsr(v6, __PAIR64__(HIDWORD(v7), v8));
+      }
+    }
+  }
+  else if ( byte_14001D0C3 )
+  {
+    v6 = 58;
+    v9 = __readmsr(0x3Au);
+    if ( (v9 & 1) == 0 )
+    {
+      v8 = v9 | 5;
+      HIDWORD(v7) = HIDWORD(v8);
+      goto LABEL_8;
+    }
+  }
+}
+
+
+=== DISASM ===
+0x14000a344: push    rbx
+0x14000a346: sub     rsp, 20h
+0x14000a34a: mov     rax, cs:__security_cookie
+0x14000a351: xor     rax, rsp
+0x14000a354: mov     [rsp+28h+var_18], rax
+0x14000a359: cmp     cs:byte_14001D0C2, 0
+0x14000a360: jz      short loc_14000A3A2
+0x14000a362: mov     r9d, 0C0010114h
+0x14000a368: mov     ecx, r9d
+0x14000a36b: rdmsr
+0x14000a36d: shl     rdx, 20h
+0x14000a371: or      rax, rdx
+0x14000a374: mov     cl, al
+0x14000a376: mov     r8, rax
+0x14000a379: shr     cl, 3
+0x14000a37c: test    cl, 1
+0x14000a37f: jnz     short loc_14000A3CA
+0x14000a381: xor     ecx, ecx
+0x14000a383: mov     eax, 8000000Ah
+0x14000a388: cpuid
+0x14000a38a: test    dl, 4
+0x14000a38d: jz      short loc_14000A3CA
+0x14000a38f: and     r8, 0FFFFFFFFFFFFFFEFh
+0x14000a393: mov     ecx, r9d
+0x14000a396: or      r8, 8
+0x14000a39a: mov     rdx, r8
+0x14000a39d: mov     rax, r8
+0x14000a3a0: jmp     short loc_14000A3C4
+0x14000a3a2: cmp     cs:byte_14001D0C3, 0
+0x14000a3a9: jz      short loc_14000A3CA
+0x14000a3ab: mov     ecx, 3Ah ; ':'
+0x14000a3b0: rdmsr
+0x14000a3b2: shl     rdx, 20h
+0x14000a3b6: or      rax, rdx
+0x14000a3b9: test    al, 1
+0x14000a3bb: jnz     short loc_14000A3CA
+0x14000a3bd: or      rax, 5
+0x14000a3c1: mov     rdx, rax
+0x14000a3c4: shr     rdx, 20h
+0x14000a3c8: wrmsr
+0x14000a3ca: mov     rcx, [rsp+28h+var_18]
+0x14000a3cf: xor     rcx, rsp; StackCookie
+0x14000a3d2: call    __security_check_cookie
+0x14000a3d7: add     rsp, 20h
+0x14000a3db: pop     rbx
+0x14000a3dc: retn

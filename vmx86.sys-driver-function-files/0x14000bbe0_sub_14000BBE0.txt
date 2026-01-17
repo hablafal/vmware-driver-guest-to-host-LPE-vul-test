@@ -1,0 +1,228 @@
+=== METADATA ===
+Name: sub_14000BBE0
+Addr: 0x14000bbe0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000bc75: AND with Mask 0x1
+  0x14000bca3: AND with Mask 0x1
+
+=== MEMBER ACCESS ===
+  0x14000bbe0: Access Member +0x18 ([rsp+arg_10])
+  0x14000bbe5: Access Member +0x20 ([rsp+arg_18])
+  0x14000bbf9: Access Member +0x40 ([rsp+58h+var_18])
+  0x14000bc04: Access Member +0x20 ([rsp+58h+var_38])
+  0x14000bc51: Access Member +0x28 ([rsp+58h+var_30])
+  0x14000bc5f: Access Member +0x28 ([rsp+58h+var_30])
+  0x14000bc67: Access Member +0x30 ([rsp+58h+var_28])
+  0x14000bc95: Access Member +0x38 ([rsp+58h+var_20])
+  0x14000bca9: Access Member +0x20 ([rsp+58h+var_38])
+  0x14000bd08: Access Member +0x20 ([rsp+58h+var_38])
+  0x14000bd0d: Access Member +0x28 ([rsp+58h+var_30])
+  0x14000bd1e: Access Member +0x40 ([rsp+58h+var_18])
+  0x14000bd2b: Access Member +0x70 ([rsp+58h+arg_10])
+  0x14000bd30: Access Member +0x78 ([rsp+58h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x14000447B)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000bbef -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x14000bbe0-0x14000bc1c -> Jumps to: 0x14000bc1c, 0x14000bd08
+  Block 0x14000bc1c-0x14000bc26 -> Jumps to: 0x14000bc26, 0x14000bd08
+  Block 0x14000bc26-0x14000bc34 -> Jumps to: 0x14000bc34, 0x14000bd08
+  Block 0x14000bc34-0x14000bc4e -> Jumps to: 0x14000bc4e, 0x14000bc59
+  Block 0x14000bc4e-0x14000bc59 -> Jumps to: 0x14000bc7b
+  Block 0x14000bc59-0x14000bc7b -> Jumps to: 0x14000bc7b
+  Block 0x14000bc7b-0x14000bc83 -> Jumps to: 0x14000bc83, 0x14000bc89
+  Block 0x14000bc83-0x14000bc89 -> Jumps to: 0x14000bca9
+  Block 0x14000bc89-0x14000bca9 -> Jumps to: 0x14000bca9
+  Block 0x14000bca9-0x14000bcbf -> Jumps to: 0x14000bcbf, 0x14000bcef
+  Block 0x14000bcbf-0x14000bccc -> Jumps to: 0x14000bccc, 0x14000bcef
+  Block 0x14000bccc-0x14000bcd9 -> Jumps to: 0x14000bcd9, 0x14000bcef
+  Block 0x14000bcd9-0x14000bcef -> Jumps to: 0x14000bd0d
+  Block 0x14000bcef-0x14000bcf9 -> Jumps to: 0x14000bcf9, 0x14000bd08
+  Block 0x14000bcf9-0x14000bd01 -> Jumps to: 0x14000bd01, 0x14000bd08
+  Block 0x14000bd01-0x14000bd08 -> Jumps to: 0x14000bd08
+  Block 0x14000bd08-0x14000bd0d -> Jumps to: 0x14000bd0d
+  Block 0x14000bd0d-0x14000bd3b -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000BBE0(_QWORD *a1, unsigned __int64 *a2)
+{
+  char v4; // si
+  unsigned __int64 v5; // r10
+  unsigned __int128 v6; // kr00_16
+  unsigned __int64 v7; // rcx
+  unsigned __int64 v8; // r8
+  unsigned __int128 v9; // rax
+  __int64 v10; // rdx
+  unsigned __int64 v11; // r11
+  __int64 v12; // r9
+  unsigned __int64 v13; // rax
+  __int64 v15; // [rsp+20h] [rbp-38h] BYREF
+  unsigned __int64 v16; // [rsp+28h] [rbp-30h]
+  __int64 v17; // [rsp+30h] [rbp-28h]
+  __int64 v18; // [rsp+38h] [rbp-20h]
+
+  sub_14000CC7C(&v15);
+  if ( !byte_14001CF53 || !*a1 || byte_14001CF50 )
+  {
+LABEL_16:
+    v10 = v15;
+    goto LABEL_17;
+  }
+  v4 = dword_14001CF34 - 1;
+  if ( dword_14001CF34 )
+  {
+    v6 = v16 * (unsigned __int128)(unsigned int)dword_14001CF30;
+    v17 = *((_QWORD *)&v6 + 1);
+    v5 = (((v16 * (unsigned int)dword_14001CF30) >> v4) & 1)
+       + (((v16 * (unsigned int)dword_14001CF30) >> dword_14001CF34)
+        | (*((_QWORD *)&v6 + 1) << (64 - (unsigned __int8)dword_14001CF34)));
+  }
+  else
+  {
+    v5 = v16 * (unsigned int)dword_14001CF30;
+  }
+  v7 = *a2;
+  if ( dword_14001CF34 )
+  {
+    v9 = v7 * (unsigned __int128)(unsigned int)dword_14001CF30;
+    v18 = *((_QWORD *)&v9 + 1);
+    v8 = (((unsigned __int64)v9 >> v4) & 1)
+       + (((unsigned __int64)v9 >> dword_14001CF34) | (*((_QWORD *)&v9 + 1) << (64 - (unsigned __int8)dword_14001CF34)));
+  }
+  else
+  {
+    v8 = v7 * (unsigned int)dword_14001CF30;
+  }
+  v10 = v15;
+  v11 = v5 - v8;
+  v12 = v15 - *a1;
+  if ( v12 < 0 || 100 * v12 < 95 * v11 || 95 * v12 > 100 * v11 )
+  {
+    if ( !byte_14001CF50 )
+      byte_14001CF50 = byte_14001CF51 == 0;
+    goto LABEL_16;
+  }
+  qword_14001CF38 = v15 + qword_14001CF40 - v5;
+LABEL_17:
+  v13 = v16;
+  *a1 = v10;
+  *a2 = v13;
+  return byte_14001CF50;
+}
+
+
+=== DISASM ===
+0x14000bbe0: mov     [rsp+arg_10], rbx
+0x14000bbe5: mov     [rsp+arg_18], rsi
+0x14000bbea: push    rdi
+0x14000bbeb: sub     rsp, 50h
+0x14000bbef: mov     rax, cs:__security_cookie
+0x14000bbf6: xor     rax, rsp
+0x14000bbf9: mov     [rsp+58h+var_18], rax
+0x14000bbfe: mov     rbx, rcx
+0x14000bc01: mov     rdi, rdx
+0x14000bc04: lea     rcx, [rsp+58h+var_38]
+0x14000bc09: call    sub_14000CC7C
+0x14000bc0e: mov     al, cs:byte_14001CF53
+0x14000bc14: test    al, al
+0x14000bc16: jz      loc_14000BD08
+0x14000bc1c: cmp     qword ptr [rbx], 0
+0x14000bc20: jz      loc_14000BD08
+0x14000bc26: mov     al, cs:byte_14001CF50
+0x14000bc2c: test    al, al
+0x14000bc2e: jnz     loc_14000BD08
+0x14000bc34: mov     r9d, cs:dword_14001CF34
+0x14000bc3b: mov     r11b, r9b
+0x14000bc3e: mov     r8d, cs:dword_14001CF30
+0x14000bc45: lea     esi, [r9-1]
+0x14000bc49: test    r9d, r9d
+0x14000bc4c: jnz     short loc_14000BC59
+0x14000bc4e: mov     r10d, r8d
+0x14000bc51: imul    r10, [rsp+58h+var_30]
+0x14000bc57: jmp     short loc_14000BC7B
+0x14000bc59: mov     cl, r9b
+0x14000bc5c: mov     rax, r8
+0x14000bc5f: mul     [rsp+58h+var_30]
+0x14000bc64: mov     r10, rax
+0x14000bc67: mov     [rsp+58h+var_28], rdx
+0x14000bc6c: shrd    r10, rdx, cl
+0x14000bc70: mov     ecx, esi
+0x14000bc72: shr     rax, cl
+0x14000bc75: and     eax, 1
+0x14000bc78: add     r10, rax
+0x14000bc7b: mov     rcx, [rdi]
+0x14000bc7e: test    r9d, r9d
+0x14000bc81: jnz     short loc_14000BC89
+0x14000bc83: imul    r8, rcx
+0x14000bc87: jmp     short loc_14000BCA9
+0x14000bc89: mov     rax, r8
+0x14000bc8c: mul     rcx
+0x14000bc8f: mov     cl, r11b
+0x14000bc92: mov     r8, rax
+0x14000bc95: mov     [rsp+58h+var_20], rdx
+0x14000bc9a: shrd    r8, rdx, cl
+0x14000bc9e: mov     ecx, esi
+0x14000bca0: shr     rax, cl
+0x14000bca3: and     eax, 1
+0x14000bca6: add     r8, rax
+0x14000bca9: mov     rdx, [rsp+58h+var_38]
+0x14000bcae: mov     r11, r10
+0x14000bcb1: mov     r9, rdx
+0x14000bcb4: sub     r11, r8
+0x14000bcb7: sub     r9, [rbx]
+0x14000bcba: test    r9, r9
+0x14000bcbd: js      short loc_14000BCEF
+0x14000bcbf: imul    rcx, r11, 5Fh ; '_'
+0x14000bcc3: imul    rax, r9, 64h ; 'd'
+0x14000bcc7: cmp     rax, rcx
+0x14000bcca: jb      short loc_14000BCEF
+0x14000bccc: imul    rcx, r11, 64h ; 'd'
+0x14000bcd0: imul    rax, r9, 5Fh ; '_'
+0x14000bcd4: cmp     rax, rcx
+0x14000bcd7: ja      short loc_14000BCEF
+0x14000bcd9: mov     rax, cs:qword_14001CF40
+0x14000bce0: sub     rax, r10
+0x14000bce3: add     rax, rdx
+0x14000bce6: mov     cs:qword_14001CF38, rax
+0x14000bced: jmp     short loc_14000BD0D
+0x14000bcef: mov     al, cs:byte_14001CF50
+0x14000bcf5: test    al, al
+0x14000bcf7: jnz     short loc_14000BD08
+0x14000bcf9: cmp     cs:byte_14001CF51, al
+0x14000bcff: jnz     short loc_14000BD08
+0x14000bd01: mov     cs:byte_14001CF50, 1
+0x14000bd08: mov     rdx, [rsp+58h+var_38]
+0x14000bd0d: mov     rax, [rsp+58h+var_30]
+0x14000bd12: mov     [rbx], rdx
+0x14000bd15: mov     [rdi], rax
+0x14000bd18: mov     al, cs:byte_14001CF50
+0x14000bd1e: mov     rcx, [rsp+58h+var_18]
+0x14000bd23: xor     rcx, rsp; StackCookie
+0x14000bd26: call    __security_check_cookie
+0x14000bd2b: mov     rbx, [rsp+58h+arg_10]
+0x14000bd30: mov     rsi, [rsp+58h+arg_18]
+0x14000bd35: add     rsp, 50h
+0x14000bd39: pop     rdi
+0x14000bd3a: retn

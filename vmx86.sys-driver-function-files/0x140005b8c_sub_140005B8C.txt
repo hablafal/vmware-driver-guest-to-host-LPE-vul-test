@@ -1,0 +1,44 @@
+=== METADATA ===
+Name: sub_140005B8C
+Addr: 0x140005b8c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140004910 (0x14000493E)
+  <- sub_14000CFB4 (0x14000D084)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005b8c-0x140005b9a -> Jumps to: 
+
+=== CODE ===
+void sub_140005B8C()
+{
+  ExReleaseFastMutex((PFAST_MUTEX)&dword_140018E08);
+}
+
+
+=== DISASM ===
+0x140005b8c: lea     rcx, dword_140018E08
+0x140005b93: jmp     cs:ExReleaseFastMutex

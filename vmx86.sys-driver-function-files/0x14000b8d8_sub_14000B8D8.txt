@@ -1,0 +1,98 @@
+=== METADATA ===
+Name: sub_14000B8D8
+Addr: 0x14000b8d8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000b8d8: Access Member +0x8 ([rsp+arg_0])
+  0x14000b920: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000606C (0x1400060A7)
+  <- sub_14000606C (0x1400060BE)
+  <- sub_14000606C (0x1400060D6)
+  <- sub_14000606C (0x1400060EE)
+  <- sub_14000A134 (0x14000A152)
+  <- sub_14000A134 (0x14000A16F)
+  <- sub_14000A134 (0x14000A184)
+  <- sub_14000A134 (0x14000A19C)
+  <- sub_14000A134 (0x14000A1B1)
+  <- sub_14000A134 (0x14000A1CA)
+  <- sub_14000B92C (0x14000B981)
+  <- sub_14000B92C (0x14000B996)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000b8d8-0x14000b8f9 -> Jumps to: 0x14000b8f9, 0x14000b8fd
+  Block 0x14000b8f9-0x14000b8fd -> Jumps to: 0x14000b920
+  Block 0x14000b8fd-0x14000b910 -> Jumps to: 0x14000b910, 0x14000b91d
+  Block 0x14000b910-0x14000b91d -> Jumps to: 0x14000b91d
+  Block 0x14000b91d-0x14000b920 -> Jumps to: 0x14000b920
+  Block 0x14000b920-0x14000b92b -> Jumps to: 
+
+=== CODE ===
+PVOID __fastcall sub_14000B8D8(unsigned __int64 a1, __int64 a2, char a3)
+{
+  SIZE_T v3; // rdi
+  PVOID v5; // rax
+  PVOID v6; // rbx
+
+  v3 = a2 * a1;
+  if ( a2 * a1 / a1 != a2 )
+    return 0;
+  v5 = sub_1400055C0(v3, a3);
+  v6 = v5;
+  if ( v5 )
+    sub_14000FEC0(v5, 0, v3);
+  return v6;
+}
+
+
+=== DISASM ===
+0x14000b8d8: mov     [rsp+arg_0], rbx
+0x14000b8dd: push    rdi
+0x14000b8de: sub     rsp, 20h
+0x14000b8e2: mov     r9, rdx
+0x14000b8e5: mov     rdi, rcx
+0x14000b8e8: imul    rdi, rdx
+0x14000b8ec: xor     edx, edx
+0x14000b8ee: mov     rax, rdi
+0x14000b8f1: div     rcx
+0x14000b8f4: cmp     rax, r9
+0x14000b8f7: jz      short loc_14000B8FD
+0x14000b8f9: xor     eax, eax
+0x14000b8fb: jmp     short loc_14000B920
+0x14000b8fd: mov     dl, r8b
+0x14000b900: mov     rcx, rdi; NumberOfBytes
+0x14000b903: call    sub_1400055C0
+0x14000b908: mov     rbx, rax
+0x14000b90b: test    rax, rax
+0x14000b90e: jz      short loc_14000B91D
+0x14000b910: mov     r8, rdi
+0x14000b913: xor     edx, edx
+0x14000b915: mov     rcx, rax
+0x14000b918: call    sub_14000FEC0
+0x14000b91d: mov     rax, rbx
+0x14000b920: mov     rbx, [rsp+28h+arg_0]
+0x14000b925: add     rsp, 20h
+0x14000b929: pop     rdi
+0x14000b92a: retn

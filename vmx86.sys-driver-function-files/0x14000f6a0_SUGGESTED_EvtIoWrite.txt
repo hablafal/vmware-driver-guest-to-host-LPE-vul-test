@@ -1,0 +1,118 @@
+=== METADATA ===
+Name: sub_14000F6A0 (Suggested: EvtIoWrite)
+Addr: 0x14000f6a0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f6a7: Access Member +0x4 ([rdx+4])
+  0x14000f6ae: Access Member +0x8 ([rdx+8])
+  0x14000f6b6: Access Member +0x28 ([rcx+28h])
+  0x14000f6ba: Access Member +0x8 ([rax+8])
+  0x14000f6e0: Access Member +0x20 ([rsp+38h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x28 -> possible EvtIoWrite
+
+=== CALLERS ===
+  <- sub_14000D3E0 (0x14000D93F)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f6d6 -> SharedAreaVmmon_GetRegionMPN
+  0x14000f6e5 -> (%s) Offset %I64u (type %u, per-VCPU size %I64u)
+
+  0x14000f706 -> SharedAreaVmmon_GetRegionMPN
+  0x14000f70d -> (%s) Requested unregistered region %u, VCPU %u
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000f6a0-0x14000f6c6 -> Jumps to: 0x14000f6c6, 0x14000f703
+  Block 0x14000f6c6-0x14000f6cb -> Jumps to: 0x14000f6cb, 0x14000f703
+  Block 0x14000f6cb-0x14000f6d3 -> Jumps to: 0x14000f6d3, 0x14000f6f3
+  Block 0x14000f6d3-0x14000f6f3 -> Jumps to: 0x14000f719
+  Block 0x14000f6f3-0x14000f703 -> Jumps to: 0x14000f723
+  Block 0x14000f703-0x14000f719 -> Jumps to: 0x14000f719
+  Block 0x14000f719-0x14000f723 -> Jumps to: 0x14000f723
+  Block 0x14000f723-0x14000f728 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000F6A0(__int64 a1, int *a2)
+{
+  int v2; // r10d
+  __int64 v3; // r9
+  unsigned __int64 v4; // r8
+  unsigned __int64 *v5; // rax
+  unsigned __int64 v6; // rdx
+  unsigned __int64 v7; // rcx
+
+  v2 = *a2;
+  v3 = (unsigned int)a2[1];
+  v4 = *((_QWORD *)a2 + 1);
+  v5 = (unsigned __int64 *)(*(_QWORD *)(a1 + 40) + 16LL * *a2);
+  v6 = v5[1];
+  v7 = *v5;
+  if ( v6 && v7 )
+  {
+    _mm_lfence();
+    if ( v4 < v7 )
+      return *(_QWORD *)(v6 + 8 * (v4 + v7 * v3));
+    sub_140003A14("(%s) Offset %I64u (type %u, per-VCPU size %I64u)\n", "SharedAreaVmmon_GetRegionMPN", v4, v2, *v5);
+  }
+  else
+  {
+    sub_140003A14("(%s) Requested unregistered region %u, VCPU %u\n", "SharedAreaVmmon_GetRegionMPN", v2, v3);
+  }
+  return 0x3FFFFFFFFFLL;
+}
+
+
+=== DISASM ===
+0x14000f6a0: sub     rsp, 38h
+0x14000f6a4: movsxd  r10, dword ptr [rdx]
+0x14000f6a7: mov     r9d, [rdx+4]
+0x14000f6ab: mov     rax, r10
+0x14000f6ae: mov     r8, [rdx+8]
+0x14000f6b2: shl     rax, 4
+0x14000f6b6: add     rax, [rcx+28h]
+0x14000f6ba: mov     rdx, [rax+8]
+0x14000f6be: mov     rcx, [rax]
+0x14000f6c1: test    rdx, rdx
+0x14000f6c4: jz      short loc_14000F703
+0x14000f6c6: test    rcx, rcx
+0x14000f6c9: jz      short loc_14000F703
+0x14000f6cb: lfence
+0x14000f6ce: cmp     r8, rcx
+0x14000f6d1: jb      short loc_14000F6F3
+0x14000f6d3: mov     rax, [rax]
+0x14000f6d6: lea     rdx, aSharedareavmmo; "SharedAreaVmmon_GetRegionMPN"
+0x14000f6dd: mov     r9d, r10d
+0x14000f6e0: mov     [rsp+38h+var_18], rax
+0x14000f6e5: lea     rcx, aSOffsetI64uTyp; "(%s) Offset %I64u (type %u, per-VCPU si"...
+0x14000f6ec: call    sub_140003A14
+0x14000f6f1: jmp     short loc_14000F719
+0x14000f6f3: mov     rax, r9
+0x14000f6f6: imul    rax, rcx
+0x14000f6fa: add     rax, r8
+0x14000f6fd: mov     rax, [rdx+rax*8]
+0x14000f701: jmp     short loc_14000F723
+0x14000f703: mov     r8d, r10d
+0x14000f706: lea     rdx, aSharedareavmmo; "SharedAreaVmmon_GetRegionMPN"
+0x14000f70d: lea     rcx, aSRequestedUnre; "(%s) Requested unregistered region %u, "...
+0x14000f714: call    sub_140003A14
+0x14000f719: mov     rax, 3FFFFFFFFFh
+0x14000f723: add     rsp, 38h
+0x14000f727: retn

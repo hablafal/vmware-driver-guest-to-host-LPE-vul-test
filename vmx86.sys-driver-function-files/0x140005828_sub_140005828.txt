@@ -1,0 +1,116 @@
+=== METADATA ===
+Name: sub_140005828
+Addr: 0x140005828
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000583b: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140005836: Access Member +0x48 ([rsp+58h+var_10])
+  0x14000583b: Access Member +0x40 (dword ptr [rsp+58h+ProcNumber.Group])
+  0x140005840: Access Member +0x30 ([rsp+58h+var_28])
+  0x140005845: Access Member +0x40 ([rsp+58h+ProcNumber])
+  0x14000584a: Access Member +0x38 ([rsp+58h+var_20])
+  0x140005855: Access Member +0x40 (dword ptr [rsp+58h+ProcNumber.Group])
+  0x140005869: Access Member +0x20 ([rsp+58h+var_38])
+  0x14000586e: Access Member +0x28 (word ptr [rsp+58h+var_38+8])
+  0x140005879: Access Member +0x20 (qword ptr [rsp+58h+var_38])
+  0x140005883: Access Member +0x20 ([rsp+58h+var_38])
+  0x140005888: Access Member +0x30 ([rsp+58h+var_28])
+  0x140005899: Access Member +0x48 ([rsp+58h+var_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B880 (0x14000B8AF)
+  <- sub_14000B92C (0x14000B962)
+  <- sub_14000B92C (0x14000BA3B)
+  <- sub_14000C138 (0x14000C142)
+  <- sub_14000C1BC (0x14000C21D)
+  <- sub_14000C6B8 (0x14000C6E0)
+  <- sub_14000C99C (0x14000C9C0)
+
+=== IMPORTS ===
+  -> 0x14000584f calls KeGetCurrentProcessorNumberEx
+  -> 0x140005873 calls KeQueryGroupAffinity
+
+=== STRINGS ===
+  0x14000582c -> 2
+  0x14000588d -> H
+
+=== BASIC BLOCKS ===
+  Block 0x140005828-0x140005863 -> Jumps to: 0x140005863, 0x140005899
+  Block 0x140005863-0x140005883 -> Jumps to: 0x140005883, 0x140005899
+  Block 0x140005883-0x140005899 -> Jumps to: 0x140005899
+  Block 0x140005899-0x1400058ab -> Jumps to: 
+
+=== CODE ===
+KAFFINITY __fastcall sub_140005828(__int64 a1, __int64 a2)
+{
+  KAFFINITY result; // rax
+  __int128 v3; // [rsp+20h] [rbp-38h] BYREF
+  _QWORD v4[2]; // [rsp+30h] [rbp-28h] BYREF
+  struct _PROCESSOR_NUMBER ProcNumber; // [rsp+40h] [rbp-18h] BYREF
+
+  ProcNumber = 0;
+  v4[0] = a1;
+  v4[1] = a2;
+  KeGetCurrentProcessorNumberEx(&ProcNumber);
+  result = (unsigned int)ProcNumber;
+  if ( ProcNumber.Group != 0xFFFF )
+  {
+    v3 = 0;
+    WORD4(v3) = ProcNumber.Group;
+    result = KeQueryGroupAffinity(ProcNumber.Group);
+    *(_QWORD *)&v3 = result;
+    if ( result )
+      return sub_140005274((ULONG_PTR)sub_140004EF0, (ULONG_PTR)v4, &v3);
+  }
+  return result;
+}
+
+
+=== DISASM ===
+0x140005828: sub     rsp, 58h
+0x14000582c: mov     rax, cs:__security_cookie
+0x140005833: xor     rax, rsp
+0x140005836: mov     [rsp+58h+var_10], rax
+0x14000583b: and     dword ptr [rsp+58h+ProcNumber.Group], 0
+0x140005840: mov     [rsp+58h+var_28], rcx
+0x140005845: lea     rcx, [rsp+58h+ProcNumber]; ProcNumber
+0x14000584a: mov     [rsp+58h+var_20], rdx
+0x14000584f: call    cs:KeGetCurrentProcessorNumberEx
+0x140005855: mov     eax, dword ptr [rsp+58h+ProcNumber.Group]
+0x140005859: mov     ecx, 0FFFFh
+0x14000585e: cmp     ax, cx
+0x140005861: jz      short loc_140005899
+0x140005863: xorps   xmm0, xmm0
+0x140005866: movzx   ecx, ax; GroupNumber
+0x140005869: movups  [rsp+58h+var_38], xmm0
+0x14000586e: mov     word ptr [rsp+58h+var_38+8], ax
+0x140005873: call    cs:KeQueryGroupAffinity
+0x140005879: mov     qword ptr [rsp+58h+var_38], rax
+0x14000587e: test    rax, rax
+0x140005881: jz      short loc_140005899
+0x140005883: lea     r8, [rsp+58h+var_38]
+0x140005888: lea     rdx, [rsp+58h+var_28]
+0x14000588d: lea     rcx, sub_140004EF0
+0x140005894: call    sub_140005274
+0x140005899: mov     rcx, [rsp+58h+var_10]
+0x14000589e: xor     rcx, rsp; StackCookie
+0x1400058a1: call    __security_check_cookie
+0x1400058a6: add     rsp, 58h
+0x1400058aa: retn

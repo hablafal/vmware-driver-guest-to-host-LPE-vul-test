@@ -1,0 +1,59 @@
+=== METADATA ===
+Name: sub_14002002C
+Addr: 0x14002002c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- DriverEntry (0x140020010)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14002002c -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x14002002c-0x140020038 -> Jumps to: 0x140020038, 0x140020053
+  Block 0x140020038-0x140020047 -> Jumps to: 0x140020047, 0x140020053
+  Block 0x140020047-0x140020052 -> Jumps to: 
+  Block 0x140020053-0x14002005a -> Jumps to: 
+
+=== CODE ===
+uintptr_t sub_14002002C()
+{
+  if ( !_security_cookie || _security_cookie == 0x2B992DDFA232LL )
+    __fastfail(6u);
+  qword_140014BB8 = ~_security_cookie;
+  return ~_security_cookie;
+}
+
+
+=== DISASM ===
+0x14002002c: mov     rax, cs:__security_cookie
+0x140020033: test    rax, rax
+0x140020036: jz      short loc_140020053
+0x140020038: mov     rcx, 2B992DDFA232h
+0x140020042: cmp     rax, rcx
+0x140020045: jz      short loc_140020053
+0x140020047: not     rax
+0x14002004a: mov     cs:qword_140014BB8, rax
+0x140020051: retn
+0x140020053: mov     ecx, 6
+0x140020058: int     29h; Win8: RtlFailFast(ecx)

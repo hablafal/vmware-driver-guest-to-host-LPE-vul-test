@@ -1,0 +1,77 @@
+=== METADATA ===
+Name: sub_140005274
+Addr: 0x140005274
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005282: Access Member +0x40 ([rsp+58h+var_18])
+  0x14000528b: Access Member +0x20 ([rsp+58h+Context])
+  0x140005297: Access Member +0x28 ([rsp+58h+var_30])
+  0x14000529c: Access Member +0x20 ([rsp+58h+Context])
+  0x1400052a1: Access Member +0x30 ([rsp+58h+var_28])
+  0x1400052af: Access Member +0x40 ([rsp+58h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140005828 (0x140005894)
+  <- sub_1400072A0 (0x1400072EE)
+
+=== IMPORTS ===
+  -> 0x1400052a7 calls KeIpiGenericCall
+
+=== STRINGS ===
+  0x140005278 -> 2
+  0x140005290 -> @SH
+
+=== BASIC BLOCKS ===
+  Block 0x140005274-0x1400052c1 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140005274(ULONG_PTR a1, ULONG_PTR a2, __int128 *a3)
+{
+  __int128 v3; // xmm0
+  ULONG_PTR Context[2]; // [rsp+20h] [rbp-38h] BYREF
+  __int128 v6; // [rsp+30h] [rbp-28h]
+
+  v3 = *a3;
+  Context[0] = a1;
+  Context[1] = a2;
+  v6 = v3;
+  KeIpiGenericCall(BroadcastFunction, (ULONG_PTR)Context);
+  return 0;
+}
+
+
+=== DISASM ===
+0x140005274: sub     rsp, 58h
+0x140005278: mov     rax, cs:__security_cookie
+0x14000527f: xor     rax, rsp
+0x140005282: mov     [rsp+58h+var_18], rax
+0x140005287: movups  xmm0, xmmword ptr [r8]
+0x14000528b: mov     [rsp+58h+Context], rcx
+0x140005290: lea     rcx, BroadcastFunction; BroadcastFunction
+0x140005297: mov     [rsp+58h+var_30], rdx
+0x14000529c: lea     rdx, [rsp+58h+Context]; Context
+0x1400052a1: movdqu  [rsp+58h+var_28], xmm0
+0x1400052a7: call    cs:KeIpiGenericCall
+0x1400052ad: xor     eax, eax
+0x1400052af: mov     rcx, [rsp+58h+var_18]
+0x1400052b4: xor     rcx, rsp; StackCookie
+0x1400052b7: call    __security_check_cookie
+0x1400052bc: add     rsp, 58h
+0x1400052c0: retn

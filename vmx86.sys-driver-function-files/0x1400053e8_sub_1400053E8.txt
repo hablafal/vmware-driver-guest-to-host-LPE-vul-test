@@ -1,0 +1,76 @@
+=== METADATA ===
+Name: sub_1400053E8
+Addr: 0x1400053e8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x1400053f6: Access Member +0x28 ([rsp+38h+var_10])
+  0x140005407: Access Member +0x20 ([rsp+38h+Interval])
+  0x14000540c: Access Member +0x20 (qword ptr [rsp+38h+Interval])
+  0x14000541b: Access Member +0x28 ([rsp+38h+var_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140005FD8 (0x14000604F)
+  <- sub_140006780 (0x14000678F)
+
+=== IMPORTS ===
+  -> 0x140005415 calls KeDelayExecutionThread
+
+=== STRINGS ===
+  0x1400053ec -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x1400053e8-0x140005401 -> Jumps to: 0x140005401, 0x140005407
+  Block 0x140005401-0x140005407 -> Jumps to: 0x140005407
+  Block 0x140005407-0x14000542d -> Jumps to: 
+
+=== CODE ===
+NTSTATUS __fastcall sub_1400053E8(unsigned int a1)
+{
+  union _LARGE_INTEGER v1; // rax
+  union _LARGE_INTEGER Interval; // [rsp+20h] [rbp-18h] BYREF
+
+  v1.QuadPart = 0;
+  if ( a1 )
+    v1.QuadPart = -10LL * a1;
+  Interval = v1;
+  return KeDelayExecutionThread(0, 0, &Interval);
+}
+
+
+=== DISASM ===
+0x1400053e8: sub     rsp, 38h
+0x1400053ec: mov     rax, cs:__security_cookie
+0x1400053f3: xor     rax, rsp
+0x1400053f6: mov     [rsp+38h+var_10], rax
+0x1400053fb: xor     eax, eax
+0x1400053fd: test    ecx, ecx
+0x1400053ff: jz      short loc_140005407
+0x140005401: mov     eax, ecx
+0x140005403: imul    rax, -0Ah
+0x140005407: lea     r8, [rsp+38h+Interval]; Interval
+0x14000540c: mov     qword ptr [rsp+38h+Interval], rax
+0x140005411: xor     edx, edx; Alertable
+0x140005413: xor     ecx, ecx; WaitMode
+0x140005415: call    cs:KeDelayExecutionThread
+0x14000541b: mov     rcx, [rsp+38h+var_10]
+0x140005420: xor     rcx, rsp; StackCookie
+0x140005423: call    __security_check_cookie
+0x140005428: add     rsp, 38h
+0x14000542c: retn

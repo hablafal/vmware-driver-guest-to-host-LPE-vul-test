@@ -1,0 +1,42 @@
+=== METADATA ===
+Name: _guard_check_icall_nop
+Addr: 0x14000fcd0
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fcd0-0x14000fcd3 -> Jumps to: 
+
+=== CODE ===
+void guard_check_icall_nop()
+{
+  ;
+}
+
+
+=== DISASM ===
+0x14000fcd0: retn    0

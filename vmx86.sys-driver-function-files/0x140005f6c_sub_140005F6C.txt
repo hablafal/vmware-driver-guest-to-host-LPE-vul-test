@@ -1,0 +1,61 @@
+=== METADATA ===
+Name: sub_140005F6C
+Addr: 0x140005f6c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005f6c: Access Member +0x10 ([rcx+10h])
+  0x140005f75: Access Member +0x58 ([rcx+58h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000C5A0 (0x14000C5C0)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005f6c-0x140005f75 -> Jumps to: 0x140005f75, 0x140005f82
+  Block 0x140005f75-0x140005f82 -> Jumps to: 0x140005f82, 0x1400080ac
+  Block 0x140005f82-0x140005f8d -> Jumps to: 
+  Block 0x1400080ac-0x1400080ac -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140005F6C(__int64 a1, __int64 a2)
+{
+  __int64 v2; // rcx
+  __int64 v3; // rcx
+
+  v2 = *(_QWORD *)(a1 + 16);
+  if ( v2 && (v3 = *(_QWORD *)(v2 + 88)) != 0 )
+    return sub_1400080AC(v3, a2);
+  else
+    return 0x3FFFFFFFFFLL;
+}
+
+
+=== DISASM ===
+0x140005f6c: mov     rcx, [rcx+10h]
+0x140005f70: test    rcx, rcx
+0x140005f73: jz      short loc_140005F82
+0x140005f75: mov     rcx, [rcx+58h]
+0x140005f79: test    rcx, rcx
+0x140005f7c: jnz     sub_1400080AC
+0x140005f82: mov     rax, 3FFFFFFFFFh
+0x140005f8c: retn

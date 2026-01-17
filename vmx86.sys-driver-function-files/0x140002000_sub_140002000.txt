@@ -1,0 +1,189 @@
+=== METADATA ===
+Name: sub_140002000
+Addr: 0x140002000
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140002201: AND with Mask 0xFFFFFFFFFFFFF000
+
+=== MEMBER ACCESS ===
+  0x1400020e2: Access Member +0x28 ([rsp+10h+arg_8])
+  0x1400020eb: Access Member +0x18 ([rsp+18h])
+  0x1400020f0: Access Member +0x18 ([rbp+arg_8])
+  0x1400020f4: Access Member +0x10 ([rsp+10h+var_s0])
+  0x1400020f9: Access Member +0x10 ([rbp+arg_0])
+  0x1400020fd: Access Member +0x20 ([rsp+10h+arg_0])
+  0x140002102: Access Member +0x8 ([rbp+8])
+  0x140002106: Access Member +0x8 (qword ptr [rsp+10h+var_8])
+  0x140002123: Access Member +0x8 (word ptr [rsp+8])
+  0x14000212a: Access Member +0x162 ([rcx+162h])
+  0x140002147: Access Member +0x270 ([rcx+270h])
+  0x14000215c: Access Member +0x338 (fword ptr [rcx+338h])
+  0x14000218f: Access Member +0x8 (word ptr [rsp+8+var_s0])
+  0x1400021b2: Access Member +0x110 ([rcx+110h])
+  0x1400021ca: Access Member +0x338 (fword ptr [rcx+338h])
+  0x1400021d1: Access Member +0x720 (fword ptr [rcx+720h])
+  0x1400021f8: Access Member +0x2 ([rsp+2])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140002000-0x140002010 -> Jumps to: 0x140002010
+  Block 0x140002010-0x14000201a -> Jumps to: 
+  Block 0x140002040-0x14000204c -> Jumps to: 
+  Block 0x1400020a0-0x1400020aa -> Jumps to: 
+  Block 0x1400020aa-0x1400020b6 -> Jumps to: 0x1400020e0
+  Block 0x1400020c0-0x1400020ca -> Jumps to: 
+  Block 0x1400020ca-0x1400020d6 -> Jumps to: 0x1400020e0
+  Block 0x1400020e0-0x140002117 -> Jumps to: 
+  Block 0x140002120-0x140002171 -> Jumps to: 
+  Block 0x140002180-0x1400021e8 -> Jumps to: 
+  Block 0x1400021f0-0x140002208 -> Jumps to: 
+
+=== CODE ===
+void __noreturn sub_140002000()
+{
+  JUMPOUT(0x1400021F0LL);
+}
+
+
+=== DISASM ===
+0x140002000: push    rbp
+0x140002001: mov     rbp, rsp
+0x140002004: nop     word ptr [rax+rax+00000000h]
+0x140002010: endbr64
+0x140002014: push    rax
+0x140002015: call    loc_1400021F0
+0x140002040: endbr64
+0x140002044: push    rax
+0x140002045: push    rbx
+0x140002046: push    rcx
+0x140002047: call    loc_1400021F0
+0x1400020a0: endbr64
+0x1400020a4: push    rax
+0x1400020a5: call    loc_1400021F0
+0x1400020aa: add     rax, 9C2h
+0x1400020b0: mov     byte ptr [rax], 1
+0x1400020b3: pop     rax
+0x1400020b4: jmp     short loc_1400020E0
+0x1400020c0: endbr64
+0x1400020c4: push    rax
+0x1400020c5: call    loc_1400021F0
+0x1400020ca: add     rax, 9D2h
+0x1400020d0: mov     byte ptr [rax], 1
+0x1400020d3: pop     rax
+0x1400020d4: jmp     short loc_1400020E0
+0x1400020e0: push    rbp
+0x1400020e1: push    rax
+0x1400020e2: mov     rbp, [rsp+10h+arg_8]
+0x1400020e7: sub     rbp, 20h ; ' '
+0x1400020eb: mov     rax, [rsp+18h]
+0x1400020f0: mov     [rbp+arg_8], rax
+0x1400020f4: mov     rax, [rsp+10h+var_s0]
+0x1400020f9: mov     [rbp+arg_0], rax
+0x1400020fd: mov     rax, [rsp+10h+arg_0]
+0x140002102: mov     [rbp+8], rax
+0x140002106: mov     rax, qword ptr [rsp+10h+var_8]
+0x14000210b: mov     [rbp+var_s0], rax
+0x14000210f: pop     rax
+0x140002110: mov     rsp, rbp
+0x140002113: pop     rbp
+0x140002114: popfq
+0x140002115: retfq
+0x140002120: push    qword ptr [rsp+0]
+0x140002123: mov     word ptr [rsp+8], cs
+0x140002127: mov     rax, rsp
+0x14000212a: lea     rsp, [rcx+162h]
+0x140002131: mov     dx, ss
+0x140002134: push    dx
+0x140002136: push    rax
+0x140002137: push    r15
+0x140002139: push    r14
+0x14000213b: push    r13
+0x14000213d: push    r12
+0x14000213f: push    rdi
+0x140002140: push    rsi
+0x140002141: push    rbp
+0x140002142: push    rbx
+0x140002143: mov     rax, cr3
+0x140002146: push    rax
+0x140002147: lea     rsp, [rcx+270h]
+0x14000214e: pop     rsi
+0x14000214f: pop     rbx
+0x140002150: pop     rbp
+0x140002151: pop     r12
+0x140002153: pop     r13
+0x140002155: pop     r14
+0x140002157: pop     r15
+0x140002159: pop     rax
+0x14000215a: pop     dx
+0x14000215c: lgdt    fword ptr [rcx+338h]
+0x140002163: mov     cr3, rsi
+0x140002166: mov     ds, edx
+0x140002168: mov     es, edx
+0x14000216a: mov     ss, edx
+0x14000216c: mov     rsp, rax
+0x14000216f: retfq
+0x140002180: endbr64
+0x140002184: mov     rcx, ds:0FFFFFFFFFCA00300h
+0x14000218c: push    [rsp+var_s0]
+0x14000218f: mov     word ptr [rsp+8+var_s0], cs
+0x140002193: mov     rax, rsp
+0x140002196: lea     rsp, ds:0FFFFFFFFFCA002B2h
+0x14000219e: mov     dx, ss
+0x1400021a1: push    dx
+0x1400021a3: push    rax
+0x1400021a4: push    r15
+0x1400021a6: push    r14
+0x1400021a8: push    r13
+0x1400021aa: push    r12
+0x1400021ac: push    rbp
+0x1400021ad: push    rbx
+0x1400021ae: mov     rax, cr3
+0x1400021b1: push    rax
+0x1400021b2: lea     rsp, [rcx+110h]
+0x1400021b9: pop     r9
+0x1400021bb: pop     rbx
+0x1400021bc: pop     rbp
+0x1400021bd: pop     rsi
+0x1400021be: pop     rdi
+0x1400021bf: pop     r12
+0x1400021c1: pop     r13
+0x1400021c3: pop     r14
+0x1400021c5: pop     r15
+0x1400021c7: pop     rax
+0x1400021c8: pop     dx
+0x1400021ca: lgdt    fword ptr [rcx+338h]
+0x1400021d1: lidt    fword ptr [rcx+720h]
+0x1400021d8: mov     cr3, r9
+0x1400021dc: mov     ds, edx
+0x1400021de: mov     es, edx
+0x1400021e0: mov     ss, edx
+0x1400021e2: mov     rsp, rax
+0x1400021e5: cld
+0x1400021e6: retfq
+0x1400021f0: sub     rsp, 10h
+0x1400021f4: sidt    fword ptr [rsp+8+var_8]
+0x1400021f8: mov     rax, [rsp+2]
+0x1400021fd: add     rsp, 10h
+0x140002201: and     rax, 0FFFFFFFFFFFFF000h
+0x140002207: retn

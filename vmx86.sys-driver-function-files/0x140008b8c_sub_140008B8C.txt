@@ -1,0 +1,142 @@
+=== METADATA ===
+Name: sub_140008B8C
+Addr: 0x140008b8c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140008b8c: Access Member +0x10 ([rsp+arg_8])
+  0x140008b91: Access Member +0x18 ([rsp+arg_10])
+  0x140008ba5: Access Member +0x30 ([rsp+48h+var_18])
+  0x140008be1: Access Member +0x2 ([rax+2])
+  0x140008c12: Access Member +0x20 (fword ptr [rsp+48h+var_28])
+  0x140008c17: Access Member +0x20 ([rsp+48h+var_28])
+  0x140008c1f: Access Member +0x22 ([rsp+48h+var_26])
+  0x140008c49: Access Member +0x30 ([rsp+48h+var_18])
+  0x140008c56: Access Member +0x58 ([rsp+48h+arg_8])
+  0x140008c5b: Access Member +0x60 ([rsp+48h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000BE84 (0x14000BFEF)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140008b9b -> 2
+  0x140008be9 -> Task_CreateCrossGDT
+  0x140008bf0 -> %s: unable to allocate crossGDT
+
+
+=== BASIC BLOCKS ===
+  Block 0x140008b8c-0x140008bc1 -> Jumps to: 0x140008bc1, 0x140008c33
+  Block 0x140008bc1-0x140008be1 -> Jumps to: 0x140008be1, 0x140008c00
+  Block 0x140008be1-0x140008c00 -> Jumps to: 0x140008c49
+  Block 0x140008c00-0x140008c33 -> Jumps to: 0x140008c33
+  Block 0x140008c33-0x140008c49 -> Jumps to: 0x140008c49
+  Block 0x140008c49-0x140008c66 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_140008B8C(__int64 a1)
+{
+  void *v2; // rax
+  void *v3; // rdi
+  unsigned int v5; // ebx
+  char v6; // bl
+  unsigned __int16 v7; // [rsp+20h] [rbp-28h] BYREF
+  __int64 v8; // [rsp+22h] [rbp-26h]
+
+  sub_140005FB8();
+  if ( !qword_140018F08 )
+  {
+    v2 = sub_140005618(1u, (unsigned __int64 *)&qword_140018F10);
+    qword_140018F08 = (__int64)v2;
+    v3 = v2;
+    if ( !v2 )
+    {
+      sub_140005FC8();
+      sub_140003A14("%s: unable to allocate crossGDT\n", "Task_CreateCrossGDT");
+      return 0;
+    }
+    v5 = 4096;
+    sub_14000FEC0(v2, 0, 4096);
+    __sgdt(&v7);
+    if ( (unsigned int)v7 + 1 < 0x1000 )
+      v5 = v7 + 1;
+    sub_1400100C0(v3, v8, v5);
+  }
+  v6 = sub_14000885C(a1);
+  sub_140005FC8();
+  return v6;
+}
+
+
+=== DISASM ===
+0x140008b8c: mov     [rsp+arg_8], rbx
+0x140008b91: mov     [rsp+arg_10], rsi
+0x140008b96: push    rdi
+0x140008b97: sub     rsp, 40h
+0x140008b9b: mov     rax, cs:__security_cookie
+0x140008ba2: xor     rax, rsp
+0x140008ba5: mov     [rsp+48h+var_18], rax
+0x140008baa: mov     rsi, rcx
+0x140008bad: mov     ecx, 2
+0x140008bb2: call    sub_140005FB8
+0x140008bb7: cmp     cs:qword_140018F08, 0
+0x140008bbf: jnz     short loc_140008C33
+0x140008bc1: lea     rdx, qword_140018F10
+0x140008bc8: mov     ecx, 1
+0x140008bcd: call    sub_140005618
+0x140008bd2: mov     cs:qword_140018F08, rax
+0x140008bd9: mov     rdi, rax
+0x140008bdc: test    rax, rax
+0x140008bdf: jnz     short loc_140008C00
+0x140008be1: lea     ecx, [rax+2]
+0x140008be4: call    sub_140005FC8
+0x140008be9: lea     rdx, aTaskCreatecros; "Task_CreateCrossGDT"
+0x140008bf0: lea     rcx, aSUnableToAlloc; "%s: unable to allocate crossGDT\n"
+0x140008bf7: call    sub_140003A14
+0x140008bfc: xor     al, al
+0x140008bfe: jmp     short loc_140008C49
+0x140008c00: mov     ebx, 1000h
+0x140008c05: xor     edx, edx
+0x140008c07: mov     r8d, ebx
+0x140008c0a: mov     rcx, rdi
+0x140008c0d: call    sub_14000FEC0
+0x140008c12: sgdt    fword ptr [rsp+48h+var_28]
+0x140008c17: movzx   eax, [rsp+48h+var_28]
+0x140008c1c: mov     rcx, rdi
+0x140008c1f: mov     rdx, [rsp+48h+var_26]
+0x140008c24: inc     eax
+0x140008c26: cmp     eax, ebx
+0x140008c28: cmovb   ebx, eax
+0x140008c2b: mov     r8d, ebx
+0x140008c2e: call    sub_1400100C0
+0x140008c33: mov     rcx, rsi
+0x140008c36: call    sub_14000885C
+0x140008c3b: mov     ecx, 2
+0x140008c40: mov     bl, al
+0x140008c42: call    sub_140005FC8
+0x140008c47: mov     al, bl
+0x140008c49: mov     rcx, [rsp+48h+var_18]
+0x140008c4e: xor     rcx, rsp; StackCookie
+0x140008c51: call    __security_check_cookie
+0x140008c56: mov     rbx, [rsp+48h+arg_8]
+0x140008c5b: mov     rsi, [rsp+48h+arg_10]
+0x140008c60: add     rsp, 40h
+0x140008c64: pop     rdi
+0x140008c65: retn

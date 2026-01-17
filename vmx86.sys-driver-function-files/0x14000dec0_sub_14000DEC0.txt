@@ -1,0 +1,123 @@
+=== METADATA ===
+Name: sub_14000DEC0
+Addr: 0x14000dec0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] POOL_ALLOCATION
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000dec0: Access Member +0x8 ([rsp+arg_0])
+  0x14000dec5: Access Member +0x10 ([rsp+arg_8])
+  0x14000deca: Access Member +0x18 ([rsp+arg_10])
+  0x14000dedc: Access Member +0x58 ([rsp+28h+arg_28])
+  0x14000df41: Access Member +0x30 ([rsp+28h+arg_0])
+  0x14000df46: Access Member +0x38 ([rsp+28h+arg_8])
+  0x14000df4b: Access Member +0x40 ([rsp+28h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Pool Tag: 'sqMV'
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+  -> 0x14000def7 calls ExAllocatePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000dec0-0x14000dedc -> Jumps to: 0x14000dedc, 0x14000df3c
+  Block 0x14000dedc-0x14000dee6 -> Jumps to: 0x14000dee6, 0x14000df3c
+  Block 0x14000dee6-0x14000df09 -> Jumps to: 0x14000df09, 0x14000df30
+  Block 0x14000df09-0x14000df0e -> Jumps to: 0x14000df0e, 0x14000df35
+  Block 0x14000df0e-0x14000df1b -> Jumps to: 0x14000df1b
+  Block 0x14000df1b-0x14000df30 -> Jumps to: 0x14000df41
+  Block 0x14000df30-0x14000df35 -> Jumps to: 0x14000df1b, 0x14000df35
+  Block 0x14000df35-0x14000df3c -> Jumps to: 0x14000df41
+  Block 0x14000df3c-0x14000df41 -> Jumps to: 0x14000df41
+  Block 0x14000df41-0x14000df56 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000DEC0(__int64 a1, __int64 a2, __int64 a3, unsigned int a4, __int64 a5, _QWORD *a6)
+{
+  __int64 v7; // rsi
+  PVOID PoolWithTag; // rax
+  PVOID v9; // rbx
+
+  if ( !a3 || !a6 )
+    return 3221225485LL;
+  v7 = a4;
+  PoolWithTag = ExAllocatePoolWithTag((POOL_TYPE)1025, a4, 0x564D7173u);
+  v9 = PoolWithTag;
+  if ( byte_140014D91 )
+  {
+    if ( PoolWithTag )
+      goto LABEL_6;
+  }
+  else if ( PoolWithTag )
+  {
+    sub_14000FEC0(PoolWithTag, 0, (unsigned int)v7);
+LABEL_6:
+    sub_1400100C0(v9, a3, v7);
+    *a6 = v9;
+    return 0;
+  }
+  return 3221225495LL;
+}
+
+
+=== DISASM ===
+0x14000dec0: mov     [rsp+arg_0], rbx
+0x14000dec5: mov     [rsp+arg_8], rbp
+0x14000deca: mov     [rsp+arg_10], rsi
+0x14000decf: push    rdi
+0x14000ded0: sub     rsp, 20h
+0x14000ded4: mov     rbp, r8
+0x14000ded7: test    r8, r8
+0x14000deda: jz      short loc_14000DF3C
+0x14000dedc: mov     rdi, [rsp+28h+arg_28]
+0x14000dee1: test    rdi, rdi
+0x14000dee4: jz      short loc_14000DF3C
+0x14000dee6: mov     r8d, 564D7173h; Tag
+0x14000deec: mov     edx, r9d; NumberOfBytes
+0x14000deef: mov     ecx, 401h; PoolType
+0x14000def4: mov     esi, r9d
+0x14000def7: call    cs:ExAllocatePoolWithTag
+0x14000defd: cmp     cs:byte_140014D91, 0
+0x14000df04: mov     rbx, rax
+0x14000df07: jnz     short loc_14000DF30
+0x14000df09: test    rax, rax
+0x14000df0c: jz      short loc_14000DF35
+0x14000df0e: mov     r8d, esi
+0x14000df11: xor     edx, edx
+0x14000df13: mov     rcx, rax
+0x14000df16: call    sub_14000FEC0
+0x14000df1b: mov     r8, rsi
+0x14000df1e: mov     rdx, rbp
+0x14000df21: mov     rcx, rbx
+0x14000df24: call    sub_1400100C0
+0x14000df29: xor     eax, eax
+0x14000df2b: mov     [rdi], rbx
+0x14000df2e: jmp     short loc_14000DF41
+0x14000df30: test    rbx, rbx
+0x14000df33: jnz     short loc_14000DF1B
+0x14000df35: mov     eax, 0C0000017h
+0x14000df3a: jmp     short loc_14000DF41
+0x14000df3c: mov     eax, 0C000000Dh
+0x14000df41: mov     rbx, [rsp+28h+arg_0]
+0x14000df46: mov     rbp, [rsp+28h+arg_8]
+0x14000df4b: mov     rsi, [rsp+28h+arg_10]
+0x14000df50: add     rsp, 20h
+0x14000df54: pop     rdi
+0x14000df55: retn

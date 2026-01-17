@@ -1,0 +1,212 @@
+=== METADATA ===
+Name: sub_140007D74
+Addr: 0x140007d74
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140007d74: Access Member +0x8 ([rsp+arg_0])
+  0x140007d79: Access Member +0x10 ([rsp+arg_8])
+  0x140007d7e: Access Member +0x18 ([rsp+arg_10])
+  0x140007db1: Access Member +0x8 ([rax+8])
+  0x140007e89: Access Member +0x30 ([rsp+28h+arg_0])
+  0x140007e8e: Access Member +0x38 ([rsp+28h+arg_8])
+  0x140007e93: Access Member +0x40 ([rsp+28h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000606C (0x14000608A)
+  <- sub_14000BE84 (0x14000C006)
+  <- sub_14000BE84 (0x14000C01E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140007da0 -> MemTrack failed to allocate handle.
+
+  0x140007e19 -> MemTrack failed to allocate MPN hash table.
+
+  0x140007e67 -> MemTrack failed to allocate MPN hash table (%I64d).
+
+  0x140007e70 -> MemTrack failed to allocate VPN hash table (%I64d).
+
+
+=== BASIC BLOCKS ===
+  Block 0x140007d74-0x140007da0 -> Jumps to: 0x140007da0, 0x140007db1
+  Block 0x140007da0-0x140007da7 -> Jumps to: 0x140007da7
+  Block 0x140007da7-0x140007db1 -> Jumps to: 0x140007e7f
+  Block 0x140007db1-0x140007dce -> Jumps to: 0x140007dce
+  Block 0x140007dce-0x140007ddf -> Jumps to: 0x140007ddf, 0x140007e70
+  Block 0x140007ddf-0x140007dff -> Jumps to: 0x140007dce, 0x140007dff
+  Block 0x140007dff-0x140007e19 -> Jumps to: 0x140007e19, 0x140007e22
+  Block 0x140007e19-0x140007e22 -> Jumps to: 0x140007da7
+  Block 0x140007e22-0x140007e31 -> Jumps to: 0x140007e31
+  Block 0x140007e31-0x140007e3e -> Jumps to: 0x140007e3e, 0x140007e67
+  Block 0x140007e3e-0x140007e62 -> Jumps to: 0x140007e31, 0x140007e62
+  Block 0x140007e62-0x140007e67 -> Jumps to: 0x140007e89
+  Block 0x140007e67-0x140007e70 -> Jumps to: 0x140007e77
+  Block 0x140007e70-0x140007e77 -> Jumps to: 0x140007e77
+  Block 0x140007e77-0x140007e7f -> Jumps to: 0x140007e7f
+  Block 0x140007e7f-0x140007e89 -> Jumps to: 0x140007e89
+  Block 0x140007e89-0x140007e9f -> Jumps to: 
+
+=== CODE ===
+char *__fastcall sub_140007D74(__int64 a1)
+{
+  char *v2; // rax
+  char *v3; // rbx
+  _QWORD *v4; // r14
+  unsigned __int64 i; // rdi
+  PVOID v6; // rax
+  PVOID v7; // rsi
+  PVOID v8; // rax
+  unsigned __int64 v9; // rdi
+  PVOID v10; // rax
+  PVOID v11; // rsi
+
+  v2 = (char *)sub_1400055C0(0x1DC118u, 0);
+  v3 = v2;
+  if ( v2 )
+  {
+    sub_14000FEC0(v2 + 8, 0, 1949968);
+    *(_QWORD *)v3 = a1;
+    v4 = v3 + 1949712;
+    for ( i = 0; i < 0x20; ++i )
+    {
+      v6 = sub_14000581C();
+      v7 = v6;
+      if ( !v6 )
+      {
+        sub_140003A14("MemTrack failed to allocate VPN hash table (%I64d).\n", i);
+        goto LABEL_15;
+      }
+      sub_14000FEC0(v6, 0, 4096);
+      *v4++ = v7;
+    }
+    v8 = sub_1400055C0(0x100u, 0);
+    *((_QWORD *)v3 + 243746) = v8;
+    if ( v8 )
+    {
+      sub_14000FEC0(v8, 0, 256);
+      v9 = 0;
+      while ( 1 )
+      {
+        v10 = sub_14000581C();
+        v11 = v10;
+        if ( !v10 )
+          break;
+        sub_14000FEC0(v10, 0, 4096);
+        *(_QWORD *)(*((_QWORD *)v3 + 243746) + 8 * v9++) = v11;
+        if ( v9 >= 0x20 )
+          return v3;
+      }
+      sub_140003A14("MemTrack failed to allocate MPN hash table (%I64d).\n", v9);
+    }
+    else
+    {
+      sub_140003A14("MemTrack failed to allocate MPN hash table.\n");
+    }
+  }
+  else
+  {
+    sub_140003A14("MemTrack failed to allocate handle.\n");
+  }
+LABEL_15:
+  sub_140007B48((void **)v3);
+  return 0;
+}
+
+
+=== DISASM ===
+0x140007d74: mov     [rsp+arg_0], rbx
+0x140007d79: mov     [rsp+arg_8], rsi
+0x140007d7e: mov     [rsp+arg_10], rdi
+0x140007d83: push    r14
+0x140007d85: sub     rsp, 20h
+0x140007d89: mov     rdi, rcx
+0x140007d8c: xor     edx, edx
+0x140007d8e: mov     ecx, 1DC118h; NumberOfBytes
+0x140007d93: call    sub_1400055C0
+0x140007d98: mov     rbx, rax
+0x140007d9b: test    rax, rax
+0x140007d9e: jnz     short loc_140007DB1
+0x140007da0: lea     rcx, aMemtrackFailed; "MemTrack failed to allocate handle.\n"
+0x140007da7: call    sub_140003A14
+0x140007dac: jmp     loc_140007E7F
+0x140007db1: lea     rcx, [rax+8]
+0x140007db5: xor     edx, edx
+0x140007db7: mov     r8d, 1DC110h
+0x140007dbd: call    sub_14000FEC0
+0x140007dc2: mov     [rbx], rdi
+0x140007dc5: lea     r14, [rbx+1DC010h]
+0x140007dcc: xor     edi, edi
+0x140007dce: call    sub_14000581C
+0x140007dd3: mov     rsi, rax
+0x140007dd6: test    rax, rax
+0x140007dd9: jz      loc_140007E70
+0x140007ddf: xor     edx, edx
+0x140007de1: mov     r8d, 1000h
+0x140007de7: mov     rcx, rax
+0x140007dea: call    sub_14000FEC0
+0x140007def: mov     [r14], rsi
+0x140007df2: inc     rdi
+0x140007df5: add     r14, 8
+0x140007df9: cmp     rdi, 20h ; ' '
+0x140007dfd: jb      short loc_140007DCE
+0x140007dff: mov     edi, 100h
+0x140007e04: xor     edx, edx
+0x140007e06: mov     ecx, edi; NumberOfBytes
+0x140007e08: call    sub_1400055C0
+0x140007e0d: mov     [rbx+1DC110h], rax
+0x140007e14: test    rax, rax
+0x140007e17: jnz     short loc_140007E22
+0x140007e19: lea     rcx, aMemtrackFailed_0; "MemTrack failed to allocate MPN hash ta"...
+0x140007e20: jmp     short loc_140007DA7
+0x140007e22: mov     r8, rdi
+0x140007e25: xor     edx, edx
+0x140007e27: mov     rcx, rax
+0x140007e2a: call    sub_14000FEC0
+0x140007e2f: xor     edi, edi
+0x140007e31: call    sub_14000581C
+0x140007e36: mov     rsi, rax
+0x140007e39: test    rax, rax
+0x140007e3c: jz      short loc_140007E67
+0x140007e3e: xor     edx, edx
+0x140007e40: mov     r8d, 1000h
+0x140007e46: mov     rcx, rax
+0x140007e49: call    sub_14000FEC0
+0x140007e4e: mov     rcx, [rbx+1DC110h]
+0x140007e55: mov     [rcx+rdi*8], rsi
+0x140007e59: inc     rdi
+0x140007e5c: cmp     rdi, 20h ; ' '
+0x140007e60: jb      short loc_140007E31
+0x140007e62: mov     rax, rbx
+0x140007e65: jmp     short loc_140007E89
+0x140007e67: lea     rcx, aMemtrackFailed_1; "MemTrack failed to allocate MPN hash ta"...
+0x140007e6e: jmp     short loc_140007E77
+0x140007e70: lea     rcx, aMemtrackFailed_2; "MemTrack failed to allocate VPN hash ta"...
+0x140007e77: mov     rdx, rdi
+0x140007e7a: call    sub_140003A14
+0x140007e7f: mov     rcx, rbx
+0x140007e82: call    sub_140007B48
+0x140007e87: xor     eax, eax
+0x140007e89: mov     rbx, [rsp+28h+arg_0]
+0x140007e8e: mov     rsi, [rsp+28h+arg_8]
+0x140007e93: mov     rdi, [rsp+28h+arg_10]
+0x140007e98: add     rsp, 20h
+0x140007e9c: pop     r14
+0x140007e9e: retn

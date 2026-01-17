@@ -1,0 +1,327 @@
+=== METADATA ===
+Name: sub_140005B9C
+Addr: 0x140005b9c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140005c7f: AND with Mask 0x0
+  0x140005cc6: AND with Mask 0x0
+  0x140005d04: AND with Mask 0x0
+  0x140005d21: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140005b9c: Access Member +0x10 ([rsp+arg_8])
+  0x140005ba1: Access Member +0x18 ([rsp+arg_10])
+  0x140005ba6: Access Member +0x20 ([rsp+arg_18])
+  0x140005bbb: Access Member +0x28 ([rsp+38h+var_10])
+  0x140005bc0: Access Member +0x10 ([rcx+10h])
+  0x140005bd0: Access Member +0x60 ([rdi+60h])
+  0x140005bdf: Access Member +0x8 ([rsi+8])
+  0x140005be8: Access Member +0x8 ([rax+8])
+  0x140005bf1: Access Member +0x8 ([rax+8])
+  0x140005bf5: Access Member +0x18 ([rsi+18h])
+  0x140005bf9: Access Member +0x10 ([rsi+10h])
+  0x140005c03: Access Member +0x18 ([rsi+18h])
+  0x140005c0d: Access Member +0x18 ([rsi+18h])
+  0x140005c2c: Access Member +0x10 ([rbx+10h])
+  0x140005c36: Access Member +0x50 ([rdi+50h])
+  0x140005c62: Access Member +0x50 ([rdi+50h])
+  0x140005c76: Access Member +0x50 ([rdi+50h])
+  0x140005c7f: Access Member +0x50 (qword ptr [rdi+50h])
+  0x140005c84: Access Member +0x58 ([rdi+58h])
+  0x140005c97: Access Member +0x20 ([rsp+38h+var_18])
+  0x140005ca4: Access Member +0x58 ([rdi+58h])
+  0x140005cb0: Access Member +0x20 ([rsp+38h+var_18])
+  0x140005cbd: Access Member +0x58 ([rdi+58h])
+  0x140005cc6: Access Member +0x58 (qword ptr [rdi+58h])
+  0x140005ccb: Access Member +0x10 ([rbx+10h])
+  0x140005cd7: Access Member +0x4 ([rbx+4])
+  0x140005cdc: Access Member +0x10 ([rbx+10h])
+  0x140005ce0: Access Member +0x38 ([rax+38h])
+  0x140005cf6: Access Member +0x4 ([rbx+4])
+  0x140005cfb: Access Member +0x10 ([rbx+10h])
+  0x140005d04: Access Member +0x10 (qword ptr [rbx+10h])
+  0x140005d09: Access Member +0x68 ([rbx+68h])
+  0x140005d21: Access Member +0x68 (qword ptr [rbx+68h])
+  0x140005d26: Access Member +0x60 ([rbx+60h])
+  0x140005d3a: Access Member +0x28 ([rsp+38h+var_10])
+  0x140005d47: Access Member +0x48 ([rsp+38h+arg_8])
+  0x140005d4c: Access Member +0x50 ([rsp+38h+arg_10])
+  0x140005d51: Access Member +0x58 ([rsp+38h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A564 (0x14000A653)
+
+=== IMPORTS ===
+  -> 0x140005bfd calls MmUnmapLockedPages
+  -> 0x140005c07 calls MmUnlockPages
+  -> 0x140005c13 calls ExFreePoolWithTag
+  -> 0x140005c1e calls ExFreePoolWithTag
+  -> 0x140005c30 calls ExAcquireFastMutex
+  -> 0x140005ccf calls ExReleaseFastMutex
+  -> 0x140005cee calls ZwClose
+  -> 0x140005d34 calls MmUnmapIoSpace
+
+=== STRINGS ===
+  0x140005bb1 -> 2
+  0x140005d15 -> H
+
+=== BASIC BLOCKS ===
+  Block 0x140005b9c-0x140005bd0 -> Jumps to: 0x140005bd0, 0x140005d09
+  Block 0x140005bd0-0x140005bdf -> Jumps to: 0x140005bdf, 0x140005c30
+  Block 0x140005bdf-0x140005be5 -> Jumps to: 0x140005be5, 0x140005c4d
+  Block 0x140005be5-0x140005bee -> Jumps to: 0x140005bee, 0x140005c4d
+  Block 0x140005bee-0x140005c2c -> Jumps to: 0x140005bdf, 0x140005c2c
+  Block 0x140005c2c-0x140005c30 -> Jumps to: 0x140005c30
+  Block 0x140005c30-0x140005c49 -> Jumps to: 0x140005c49, 0x140005c84
+  Block 0x140005c49-0x140005c4d -> Jumps to: 0x140005c69
+  Block 0x140005c4d-0x140005c54 -> Jumps to: 
+  Block 0x140005c54-0x140005c69 -> Jumps to: 0x140005c69
+  Block 0x140005c69-0x140005c76 -> Jumps to: 0x140005c54, 0x140005c76
+  Block 0x140005c76-0x140005c84 -> Jumps to: 0x140005c84
+  Block 0x140005c84-0x140005c8d -> Jumps to: 0x140005c8d, 0x140005ccb
+  Block 0x140005c8d-0x140005c91 -> Jumps to: 0x140005cab
+  Block 0x140005c91-0x140005cab -> Jumps to: 0x140005cab
+  Block 0x140005cab-0x140005cbd -> Jumps to: 0x140005c91, 0x140005cbd
+  Block 0x140005cbd-0x140005ccb -> Jumps to: 0x140005ccb
+  Block 0x140005ccb-0x140005cdc -> Jumps to: 0x140005cdc, 0x140005cfb
+  Block 0x140005cdc-0x140005cee -> Jumps to: 0x140005cee, 0x140005cf4
+  Block 0x140005cee-0x140005cf4 -> Jumps to: 0x140005cf4
+  Block 0x140005cf4-0x140005cfb -> Jumps to: 0x140005cdc, 0x140005cfb
+  Block 0x140005cfb-0x140005d09 -> Jumps to: 0x140005d09
+  Block 0x140005d09-0x140005d12 -> Jumps to: 0x140005d12, 0x140005d26
+  Block 0x140005d12-0x140005d26 -> Jumps to: 0x140005d26
+  Block 0x140005d26-0x140005d2f -> Jumps to: 0x140005d2f, 0x140005d3a
+  Block 0x140005d2f-0x140005d3a -> Jumps to: 0x140005d3a
+  Block 0x140005d3a-0x140005d5d -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140005B9C(__int64 a1)
+{
+  _QWORD *v1; // rdi
+  _QWORD *v3; // r14
+  struct _FAST_MUTEX *v4; // rcx
+  _QWORD *v5; // rsi
+  _QWORD *v6; // rax
+  __int64 v7; // rcx
+  __int64 i; // rdx
+  __int64 v9; // rax
+  __int64 v10; // rsi
+  __int64 v11; // rcx
+  __int64 j; // rdx
+  __int64 v13; // rsi
+  __int64 k; // rdi
+  void *v15; // rcx
+  __int64 v16; // rcx
+  void *v17; // rcx
+  __int64 v18; // [rsp+20h] [rbp-18h] BYREF
+
+  v1 = *(_QWORD **)(a1 + 16);
+  if ( v1 )
+  {
+    v3 = v1 + 12;
+    v4 = *(struct _FAST_MUTEX **)(a1 + 16);
+    v5 = (_QWORD *)v1[12];
+    if ( v5 != v1 + 12 )
+    {
+      do
+      {
+        if ( (_QWORD *)v5[1] != v3 || (v6 = (_QWORD *)*v5, *(_QWORD **)(*v5 + 8LL) != v5) )
+          __fastfail(3u);
+        *v3 = v6;
+        v6[1] = v3;
+        MmUnmapLockedPages((PVOID)v5[2], (PMDL)v5[3]);
+        MmUnlockPages((PMDL)v5[3]);
+        ExFreePoolWithTag((PVOID)v5[3], 0);
+        ExFreePoolWithTag(v5, 0);
+        v5 = (_QWORD *)*v3;
+      }
+      while ( (_QWORD *)*v3 != v3 );
+      v4 = *(struct _FAST_MUTEX **)(a1 + 16);
+    }
+    ExAcquireFastMutex(v4);
+    v7 = v1[10];
+    if ( v7 )
+    {
+      for ( i = 0; ; i = v10 )
+      {
+        v9 = sub_1400080AC(v7, i);
+        v10 = v9;
+        if ( v9 == 0x3FFFFFFFFFLL )
+          break;
+        sub_1400073A4(a1, v9, 0);
+        v7 = v1[10];
+      }
+      sub_140008024(v1[10]);
+      v1[10] = 0;
+    }
+    v11 = v1[11];
+    if ( v11 )
+    {
+      for ( j = 0; ; j = v13 )
+      {
+        v18 = sub_1400080AC(v11, j);
+        v13 = v18;
+        if ( v18 == 0x3FFFFFFFFFLL )
+          break;
+        sub_140005E28(a1, &v18, 1);
+        v11 = v1[11];
+      }
+      sub_140008024(v1[11]);
+      v1[11] = 0;
+    }
+    ExReleaseFastMutex(*(PFAST_MUTEX *)(a1 + 16));
+    for ( k = 0; (unsigned int)k < *(_DWORD *)(a1 + 4); k = (unsigned int)(k + 1) )
+    {
+      v15 = *(void **)(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 56LL) + 8 * k);
+      if ( v15 != (void *)-1LL )
+        ZwClose(v15);
+    }
+    sub_140004FD8(*(_QWORD **)(a1 + 16));
+    *(_QWORD *)(a1 + 16) = 0;
+  }
+  v16 = *(_QWORD *)(a1 + 104);
+  if ( v16 )
+  {
+    sub_140007CF4(v16, sub_140005390, a1);
+    *(_QWORD *)(a1 + 104) = 0;
+  }
+  v17 = *(void **)(a1 + 96);
+  if ( v17 )
+    MmUnmapIoSpace(v17, 0x1000u);
+}
+
+
+=== DISASM ===
+0x140005b9c: mov     [rsp+arg_8], rbx
+0x140005ba1: mov     [rsp+arg_10], rsi
+0x140005ba6: mov     [rsp+arg_18], rdi
+0x140005bab: push    r14
+0x140005bad: sub     rsp, 30h
+0x140005bb1: mov     rax, cs:__security_cookie
+0x140005bb8: xor     rax, rsp
+0x140005bbb: mov     [rsp+38h+var_10], rax
+0x140005bc0: mov     rdi, [rcx+10h]
+0x140005bc4: mov     rbx, rcx
+0x140005bc7: test    rdi, rdi
+0x140005bca: jz      loc_140005D09
+0x140005bd0: lea     r14, [rdi+60h]
+0x140005bd4: mov     rcx, rdi
+0x140005bd7: mov     rsi, [r14]
+0x140005bda: cmp     rsi, r14
+0x140005bdd: jz      short loc_140005C30
+0x140005bdf: cmp     [rsi+8], r14
+0x140005be3: jnz     short loc_140005C4D
+0x140005be5: mov     rax, [rsi]
+0x140005be8: cmp     [rax+8], rsi
+0x140005bec: jnz     short loc_140005C4D
+0x140005bee: mov     [r14], rax
+0x140005bf1: mov     [rax+8], r14
+0x140005bf5: mov     rdx, [rsi+18h]; MemoryDescriptorList
+0x140005bf9: mov     rcx, [rsi+10h]; BaseAddress
+0x140005bfd: call    cs:MmUnmapLockedPages
+0x140005c03: mov     rcx, [rsi+18h]; MemoryDescriptorList
+0x140005c07: call    cs:MmUnlockPages
+0x140005c0d: mov     rcx, [rsi+18h]; P
+0x140005c11: xor     edx, edx; Tag
+0x140005c13: call    cs:ExFreePoolWithTag
+0x140005c19: xor     edx, edx; Tag
+0x140005c1b: mov     rcx, rsi; P
+0x140005c1e: call    cs:ExFreePoolWithTag
+0x140005c24: mov     rsi, [r14]
+0x140005c27: cmp     rsi, r14
+0x140005c2a: jnz     short loc_140005BDF
+0x140005c2c: mov     rcx, [rbx+10h]; FastMutex
+0x140005c30: call    cs:ExAcquireFastMutex
+0x140005c36: mov     rcx, [rdi+50h]
+0x140005c3a: mov     r14, 3FFFFFFFFFh
+0x140005c44: test    rcx, rcx
+0x140005c47: jz      short loc_140005C84
+0x140005c49: xor     edx, edx
+0x140005c4b: jmp     short loc_140005C69
+0x140005c4d: mov     ecx, 3
+0x140005c52: int     29h; Win8: RtlFailFast(ecx)
+0x140005c54: xor     r8d, r8d
+0x140005c57: mov     rdx, rsi
+0x140005c5a: mov     rcx, rbx
+0x140005c5d: call    sub_1400073A4
+0x140005c62: mov     rcx, [rdi+50h]
+0x140005c66: mov     rdx, rsi
+0x140005c69: call    sub_1400080AC
+0x140005c6e: mov     rsi, rax
+0x140005c71: cmp     rax, r14
+0x140005c74: jnz     short loc_140005C54
+0x140005c76: mov     rcx, [rdi+50h]
+0x140005c7a: call    sub_140008024
+0x140005c7f: and     qword ptr [rdi+50h], 0
+0x140005c84: mov     rcx, [rdi+58h]
+0x140005c88: test    rcx, rcx
+0x140005c8b: jz      short loc_140005CCB
+0x140005c8d: xor     edx, edx
+0x140005c8f: jmp     short loc_140005CAB
+0x140005c91: mov     r8d, 1
+0x140005c97: lea     rdx, [rsp+38h+var_18]
+0x140005c9c: mov     rcx, rbx
+0x140005c9f: call    sub_140005E28
+0x140005ca4: mov     rcx, [rdi+58h]
+0x140005ca8: mov     rdx, rsi
+0x140005cab: call    sub_1400080AC
+0x140005cb0: mov     [rsp+38h+var_18], rax
+0x140005cb5: mov     rsi, rax
+0x140005cb8: cmp     rax, r14
+0x140005cbb: jnz     short loc_140005C91
+0x140005cbd: mov     rcx, [rdi+58h]
+0x140005cc1: call    sub_140008024
+0x140005cc6: and     qword ptr [rdi+58h], 0
+0x140005ccb: mov     rcx, [rbx+10h]; FastMutex
+0x140005ccf: call    cs:ExReleaseFastMutex
+0x140005cd5: xor     edi, edi
+0x140005cd7: cmp     [rbx+4], edi
+0x140005cda: jbe     short loc_140005CFB
+0x140005cdc: mov     rax, [rbx+10h]
+0x140005ce0: mov     rcx, [rax+38h]
+0x140005ce4: mov     rcx, [rcx+rdi*8]; Handle
+0x140005ce8: cmp     rcx, 0FFFFFFFFFFFFFFFFh
+0x140005cec: jz      short loc_140005CF4
+0x140005cee: call    cs:ZwClose
+0x140005cf4: inc     edi
+0x140005cf6: cmp     edi, [rbx+4]
+0x140005cf9: jb      short loc_140005CDC
+0x140005cfb: mov     rcx, [rbx+10h]
+0x140005cff: call    sub_140004FD8
+0x140005d04: and     qword ptr [rbx+10h], 0
+0x140005d09: mov     rcx, [rbx+68h]
+0x140005d0d: test    rcx, rcx
+0x140005d10: jz      short loc_140005D26
+0x140005d12: mov     r8, rbx
+0x140005d15: lea     rdx, sub_140005390
+0x140005d1c: call    sub_140007CF4
+0x140005d21: and     qword ptr [rbx+68h], 0
+0x140005d26: mov     rcx, [rbx+60h]; BaseAddress
+0x140005d2a: test    rcx, rcx
+0x140005d2d: jz      short loc_140005D3A
+0x140005d2f: mov     edx, 1000h; NumberOfBytes
+0x140005d34: call    cs:MmUnmapIoSpace
+0x140005d3a: mov     rcx, [rsp+38h+var_10]
+0x140005d3f: xor     rcx, rsp; StackCookie
+0x140005d42: call    __security_check_cookie
+0x140005d47: mov     rbx, [rsp+38h+arg_8]
+0x140005d4c: mov     rsi, [rsp+38h+arg_10]
+0x140005d51: mov     rdi, [rsp+38h+arg_18]
+0x140005d56: add     rsp, 30h
+0x140005d5a: pop     r14
+0x140005d5c: retn

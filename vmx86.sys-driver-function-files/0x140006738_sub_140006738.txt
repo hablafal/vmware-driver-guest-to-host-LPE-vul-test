@@ -1,0 +1,77 @@
+=== METADATA ===
+Name: sub_140006738
+Addr: 0x140006738
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000673c: AND with Mask 0x0
+  0x140006757: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000673c: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000674f: Access Member +0x28 ([rsp+48h+Priority])
+  0x140006757: Access Member +0x20 ([rsp+48h+var_28])
+  0x140006761: Access Member +0x1 ([r9+1])
+  0x14000676b: Access Member +0x30 ([rsp+48h+var_18])
+  0x140006772: Access Member +0x30 ([rsp+48h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000CABC (0x14000CABC)
+
+=== IMPORTS ===
+  -> 0x140006765 calls MmMapLockedPagesSpecifyCache
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140006738-0x14000674c -> Jumps to: 0x14000674c, 0x14000677b
+  Block 0x14000674c-0x140006772 -> Jumps to: 0x140006777
+  Block 0x140006772-0x140006777 -> Jumps to: 0x140006777
+  Block 0x140006777-0x14000677b -> Jumps to: 0x14000677b
+  Block 0x14000677b-0x140006780 -> Jumps to: 
+
+=== CODE ===
+PMDL *__fastcall sub_140006738(unsigned __int64 a1)
+{
+  PMDL *result; // rax
+
+  result = (PMDL *)sub_14000501C(a1);
+  if ( result )
+    return (PMDL *)((unsigned __int64)MmMapLockedPagesSpecifyCache(*result, 0, MmCached, 0, 0, 0x40000010u) >> 12);
+  return result;
+}
+
+
+=== DISASM ===
+0x140006738: sub     rsp, 48h
+0x14000673c: and     [rsp+48h+var_18], 0
+0x140006742: call    sub_14000501C
+0x140006747: test    rax, rax
+0x14000674a: jz      short loc_14000677B
+0x14000674c: mov     rcx, [rax]; MemoryDescriptorList
+0x14000674f: mov     [rsp+48h+Priority], 40000010h; Priority
+0x140006757: and     [rsp+48h+var_28], 0
+0x14000675c: xor     r9d, r9d; RequestedAddress
+0x14000675f: xor     edx, edx; AccessMode
+0x140006761: lea     r8d, [r9+1]; CacheType
+0x140006765: call    cs:MmMapLockedPagesSpecifyCache
+0x14000676b: mov     [rsp+48h+var_18], rax
+0x140006770: jmp     short loc_140006777
+0x140006772: mov     rax, [rsp+48h+var_18]
+0x140006777: shr     rax, 0Ch
+0x14000677b: add     rsp, 48h
+0x14000677f: retn

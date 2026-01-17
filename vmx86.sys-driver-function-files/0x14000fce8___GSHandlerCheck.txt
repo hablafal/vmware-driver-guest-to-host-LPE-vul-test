@@ -1,0 +1,51 @@
+=== METADATA ===
+Name: __GSHandlerCheck
+Addr: 0x14000fce8
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000fcec: Access Member +0x38 ([r9+38h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x38 -> possible EvtIoInternalDeviceControl
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fce8-0x14000fd05 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall _GSHandlerCheck(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
+{
+  sub_14000FD08(a2, a4, *(_QWORD *)(a4 + 56));
+  return 1;
+}
+
+
+=== DISASM ===
+0x14000fce8: sub     rsp, 28h
+0x14000fcec: mov     r8, [r9+38h]
+0x14000fcf0: mov     rcx, rdx
+0x14000fcf3: mov     rdx, r9
+0x14000fcf6: call    sub_14000FD08
+0x14000fcfb: mov     eax, 1
+0x14000fd00: add     rsp, 28h
+0x14000fd04: retn

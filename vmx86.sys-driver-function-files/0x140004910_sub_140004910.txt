@@ -1,0 +1,146 @@
+=== METADATA ===
+Name: sub_140004910
+Addr: 0x140004910
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x1400049a6: AND with Mask 0x0
+  0x1400049d0: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x140004920: Access Member +0x40 ([rsp+58h+var_18])
+  0x1400049a6: Access Member +0x20 ([rsp+58h+var_38])
+  0x1400049df: Access Member +0x30 ([rsp+58h+DestinationString])
+  0x1400049ea: Access Member +0x30 ([rsp+58h+DestinationString])
+  0x1400049f5: Access Member +0x8 ([rbx+8])
+  0x140004a13: Access Member +0x40 ([rsp+58h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+  -> 0x14000494a calls KeCancelTimer
+  -> 0x140004961 calls ExUnregisterCallback
+  -> 0x14000496e calls ObfDereferenceObject
+  -> 0x140004980 calls KeSetEvent
+  -> 0x1400049b1 calls KeWaitForSingleObject
+  -> 0x1400049ca calls ObfDereferenceObject
+  -> 0x1400049e4 calls RtlInitUnicodeString
+  -> 0x1400049ef calls IoDeleteSymbolicLink
+  -> 0x1400049f9 calls IoDeleteDevice
+  -> 0x140004a08 calls ExFreePoolWithTag
+
+=== STRINGS ===
+  0x140004916 -> 2
+  0x140004990 -> Waiting a moment for the power state thread to terminate...
+
+  0x1400049b7 -> power state thread has terminated...
+
+  0x1400049d8 -> \
+
+=== BASIC BLOCKS ===
+  Block 0x140004910-0x140004990 -> Jumps to: 0x140004990, 0x1400049d8
+  Block 0x140004990-0x1400049d8 -> Jumps to: 0x1400049d8
+  Block 0x1400049d8-0x140004a26 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140004910(__int64 a1)
+{
+  struct _UNICODE_STRING DestinationString; // [rsp+30h] [rbp-28h] BYREF
+
+  sub_140005B7C(1);
+  sub_14000717C(0);
+  sub_140005B8C(1);
+  KeCancelTimer(&Timer);
+  sub_140009D10();
+  sub_14000BD3C();
+  ExUnregisterCallback(CallbackRegistration);
+  ObfDereferenceObject(Object);
+  KeSetEvent(&Event, 0, 0);
+  if ( qword_140014D70 )
+  {
+    sub_140003A14("Waiting a moment for the power state thread to terminate...\n");
+    KeWaitForSingleObject(qword_140014D70, Executive, 0, 0, 0);
+    sub_140003A14("power state thread has terminated...\n");
+    ObfDereferenceObject(qword_140014D70);
+    qword_140014D70 = 0;
+  }
+  RtlInitUnicodeString(&DestinationString, L"\\DosDevices\\vmx86");
+  IoDeleteSymbolicLink(&DestinationString);
+  IoDeleteDevice(*(PDEVICE_OBJECT *)(a1 + 8));
+  ExFreePoolWithTag(::DestinationString.Buffer, 0);
+  return sub_1400058B4();
+}
+
+
+=== DISASM ===
+0x140004910: push    rbx
+0x140004912: sub     rsp, 50h
+0x140004916: mov     rax, cs:__security_cookie
+0x14000491d: xor     rax, rsp
+0x140004920: mov     [rsp+58h+var_18], rax
+0x140004925: mov     rbx, rcx
+0x140004928: mov     ecx, 1
+0x14000492d: call    sub_140005B7C
+0x140004932: xor     ecx, ecx
+0x140004934: call    sub_14000717C
+0x140004939: mov     ecx, 1
+0x14000493e: call    sub_140005B8C
+0x140004943: lea     rcx, Timer; PKTIMER
+0x14000494a: call    cs:KeCancelTimer
+0x140004950: call    sub_140009D10
+0x140004955: call    sub_14000BD3C
+0x14000495a: mov     rcx, cs:CallbackRegistration; CallbackRegistration
+0x140004961: call    cs:ExUnregisterCallback
+0x140004967: mov     rcx, cs:Object; Object
+0x14000496e: call    cs:ObfDereferenceObject
+0x140004974: xor     r8d, r8d; Wait
+0x140004977: lea     rcx, Event; Event
+0x14000497e: xor     edx, edx; Increment
+0x140004980: call    cs:KeSetEvent
+0x140004986: cmp     cs:qword_140014D70, 0
+0x14000498e: jz      short loc_1400049D8
+0x140004990: lea     rcx, aWaitingAMoment; "Waiting a moment for the power state th"...
+0x140004997: call    sub_140003A14
+0x14000499c: mov     rcx, cs:qword_140014D70; Object
+0x1400049a3: xor     r9d, r9d; Alertable
+0x1400049a6: and     [rsp+58h+var_38], 0
+0x1400049ac: xor     r8d, r8d; WaitMode
+0x1400049af: xor     edx, edx; WaitReason
+0x1400049b1: call    cs:KeWaitForSingleObject
+0x1400049b7: lea     rcx, aPowerStateThre; "power state thread has terminated...\n"
+0x1400049be: call    sub_140003A14
+0x1400049c3: mov     rcx, cs:qword_140014D70; Object
+0x1400049ca: call    cs:ObfDereferenceObject
+0x1400049d0: and     cs:qword_140014D70, 0
+0x1400049d8: lea     rdx, aDosdevicesVmx8; "\\DosDevices\\vmx86"
+0x1400049df: lea     rcx, [rsp+58h+DestinationString]; DestinationString
+0x1400049e4: call    cs:RtlInitUnicodeString
+0x1400049ea: lea     rcx, [rsp+58h+DestinationString]; SymbolicLinkName
+0x1400049ef: call    cs:IoDeleteSymbolicLink
+0x1400049f5: mov     rcx, [rbx+8]; DeviceObject
+0x1400049f9: call    cs:IoDeleteDevice
+0x1400049ff: mov     rcx, cs:DestinationString.Buffer; P
+0x140004a06: xor     edx, edx; Tag
+0x140004a08: call    cs:ExFreePoolWithTag
+0x140004a0e: call    sub_1400058B4
+0x140004a13: mov     rcx, [rsp+58h+var_18]
+0x140004a18: xor     rcx, rsp; StackCookie
+0x140004a1b: call    __security_check_cookie
+0x140004a20: add     rsp, 50h
+0x140004a24: pop     rbx
+0x140004a25: retn

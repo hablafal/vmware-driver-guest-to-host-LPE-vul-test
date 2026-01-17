@@ -1,0 +1,122 @@
+=== METADATA ===
+Name: __security_check_cookie
+Addr: 0x14000fca0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000fcad: TEST with Mask 0xFFFFFFFFFFFFFFFF
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x140003857)
+  <- sub_140003874 (0x1400039F7)
+  <- sub_140003A14 (0x140003A61)
+  <- sub_140003BB4 (0x140003E87)
+  <- sub_140004910 (0x140004A1B)
+  <- CallbackFunction (0x140004B9A)
+  <- HandleInformation (0x140004C45)
+  <- sub_1400051C8 (0x140005264)
+  <- sub_140005274 (0x1400052B7)
+  <- BroadcastFunction (0x14000532B)
+  <- sub_1400053E8 (0x140005423)
+  <- sub_140005734 (0x140005781)
+  <- sub_140005828 (0x1400058A1)
+  <- sub_140005A48 (0x140005B6C)
+  <- sub_140005B9C (0x140005D42)
+  <- sub_1400062FC (0x140006429)
+  <- sub_140006814 (0x14000690F)
+  <- sub_140006B30 (0x140006CF6)
+  <- sub_140006D14 (0x140006F5F)
+  <- sub_14000702C (0x14000709C)
+  <- sub_1400070A8 (0x140007170)
+  <- sub_1400072A0 (0x14000731F)
+  <- sub_140007520 (0x14000754B)
+  <- sub_140007570 (0x1400075AE)
+  <- sub_1400075B8 (0x140007624)
+  <- sub_140007634 (0x1400076DE)
+  <- sub_140007830 (0x140007A08)
+  <- sub_140008264 (0x140008354)
+  <- sub_140008370 (0x140008515)
+  <- sub_140008538 (0x140008728)
+  <- sub_140008A14 (0x140008AB5)
+  <- sub_140008B8C (0x140008C51)
+  <- sub_140009034 (0x14000921F)
+  <- sub_14000922C (0x140009C90)
+  <- sub_140009DE0 (0x140009F73)
+  <- sub_14000A344 (0x14000A3D2)
+  <- sub_14000A450 (0x14000A551)
+  <- sub_14000A754 (0x14000ABA0)
+  <- sub_14000AD00 (0x14000AEDD)
+  <- sub_14000B880 (0x14000B8CD)
+  <- sub_14000B92C (0x14000B9BE)
+  <- sub_14000BBE0 (0x14000BD26)
+  <- sub_14000C1BC (0x14000C275)
+  <- sub_14000C6B8 (0x14000C6F2)
+  <- sub_14000C7D4 (0x14000C98A)
+  <- sub_14000C99C (0x14000C9D1)
+  <- sub_14000CAF8 (0x14000CB6F)
+  <- sub_14000D1B0 (0x14000D3C9)
+  <- sub_14000D3E0 (0x14000D995)
+  <- ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z (0x14000DE93)
+  <- sub_14000DF58 (0x14000E062)
+  <- sub_14000E46C (0x14000E809)
+  <- sub_14000EAD0 (0x14000EE56)
+  <- sub_14000EE70 (0x14000EF67)
+  <- sub_14000F278 (0x14000F2F3)
+  <- sub_14000F300 (0x14000F35A)
+  <- sub_14000FD08 (0x14000FD5D)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000fca0 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x14000fca0-0x14000fca9 -> Jumps to: 0x14000fca9, 0x14000fcb9
+  Block 0x14000fca9-0x14000fcb4 -> Jumps to: 0x14000fcb4, 0x14000fcb5
+  Block 0x14000fcb4-0x14000fcb5 -> Jumps to: 
+  Block 0x14000fcb5-0x14000fcb9 -> Jumps to: 0x14000fcb9
+  Block 0x14000fcb9-0x14000fcbe -> Jumps to: 0x14000fcc0
+  Block 0x14000fcc0-0x14000fcc0 -> Jumps to: 
+
+=== CODE ===
+void __cdecl _security_check_cookie(uintptr_t StackCookie)
+{
+  __int64 v1; // rcx
+
+  if ( StackCookie != _security_cookie )
+ReportFailure:
+    _report_gsfailure(StackCookie);
+  v1 = __ROL8__(StackCookie, 16);
+  if ( (_WORD)v1 )
+  {
+    StackCookie = __ROR8__(v1, 16);
+    goto ReportFailure;
+  }
+}
+
+
+=== DISASM ===
+0x14000fca0: cmp     rcx, cs:__security_cookie
+0x14000fca7: jnz     short ReportFailure
+0x14000fca9: rol     rcx, 10h
+0x14000fcad: test    cx, 0FFFFh
+0x14000fcb2: jnz     short RestoreRcx
+0x14000fcb4: retn
+0x14000fcb5: ror     rcx, 10h; StackCookie
+0x14000fcb9: jmp     __report_gsfailure

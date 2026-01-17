@@ -1,0 +1,59 @@
+=== METADATA ===
+Name: sub_14000C62C
+Addr: 0x14000c62c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000c62f: Access Member +0x4 ([rcx+4])
+  0x14000c637: Access Member +0x18 ([rax+18h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x18 -> possible EvtIoDefault
+
+=== CALLERS ===
+  <- sub_14000D3E0 (0x14000D82E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000c62c-0x14000c634 -> Jumps to: 0x14000c634, 0x14000c637
+  Block 0x14000c634-0x14000c637 -> Jumps to: 
+  Block 0x14000c637-0x14000c647 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000C62C(__int64 a1, unsigned int a2, _QWORD *a3)
+{
+  if ( a2 >= *(_DWORD *)(a1 + 4) )
+    return 0;
+  *a3 = *(_QWORD *)(*(_QWORD *)(a1 + 24) + 8LL * a2);
+  return 1;
+}
+
+
+=== DISASM ===
+0x14000c62c: mov     rax, rcx
+0x14000c62f: cmp     edx, [rcx+4]
+0x14000c632: jb      short loc_14000C637
+0x14000c634: xor     al, al
+0x14000c636: retn
+0x14000c637: mov     rax, [rax+18h]
+0x14000c63b: mov     ecx, edx
+0x14000c63d: mov     rcx, [rax+rcx*8]
+0x14000c641: mov     al, 1
+0x14000c643: mov     [r8], rcx
+0x14000c646: retn

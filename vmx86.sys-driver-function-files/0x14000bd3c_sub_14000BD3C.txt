@@ -1,0 +1,63 @@
+=== METADATA ===
+Name: sub_14000BD3C
+Addr: 0x14000bd3c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000bd53: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x140003620)
+  <- sub_140003464 (0x140003669)
+  <- sub_140003464 (0x1400036F0)
+  <- sub_140003464 (0x14000377F)
+  <- sub_140003464 (0x1400037B9)
+  <- sub_140003464 (0x1400037C9)
+  <- sub_140004910 (0x140004955)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000bd3c-0x14000bd4c -> Jumps to: 0x14000bd4c, 0x14000bd5b
+  Block 0x14000bd4c-0x14000bd5b -> Jumps to: 0x14000bd5b
+  Block 0x14000bd5b-0x14000bd60 -> Jumps to: 
+
+=== CODE ===
+void sub_14000BD3C()
+{
+  if ( qword_14001D0B8 )
+  {
+    sub_140005D60(0, (void *)qword_14001D0B8);
+    qword_14001D0B8 = 0;
+  }
+}
+
+
+=== DISASM ===
+0x14000bd3c: sub     rsp, 28h
+0x14000bd40: mov     rdx, cs:qword_14001D0B8
+0x14000bd47: test    rdx, rdx
+0x14000bd4a: jz      short loc_14000BD5B
+0x14000bd4c: xor     ecx, ecx
+0x14000bd4e: call    sub_140005D60
+0x14000bd53: and     cs:qword_14001D0B8, 0
+0x14000bd5b: add     rsp, 28h
+0x14000bd5f: retn

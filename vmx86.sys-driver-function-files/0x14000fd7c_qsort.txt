@@ -1,0 +1,47 @@
+=== METADATA ===
+Name: qsort
+Addr: 0x14000fd7c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_1400062FC (0x1400064A5)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fd7c-0x14000fd82 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+void __cdecl qsort(
+        void *Base,
+        size_t NumOfElements,
+        size_t SizeOfElements,
+        int (__cdecl *PtFuncCompare)(const void *, const void *))
+{
+  __imp_qsort(Base, NumOfElements, SizeOfElements, PtFuncCompare);
+}
+
+
+=== DISASM ===
+0x14000fd7c: jmp     cs:__imp_qsort

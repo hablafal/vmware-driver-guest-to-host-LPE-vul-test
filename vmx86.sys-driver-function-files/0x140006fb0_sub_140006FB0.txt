@@ -1,0 +1,126 @@
+=== METADATA ===
+Name: sub_140006FB0
+Addr: 0x140006fb0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140006fb0: Access Member +0x18 ([rsp+arg_10])
+  0x140006fb5: Access Member +0x20 ([rsp+arg_18])
+  0x140006fc2: Access Member +0x4 ([rcx+4])
+  0x140007000: Access Member +0x10 ([rbp+10h])
+  0x140007004: Access Member +0x38 ([rax+38h])
+  0x140007019: Access Member +0x50 ([rsp+38h+arg_10])
+  0x14000701e: Access Member +0x58 ([rsp+38h+arg_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000D3E0 (0x14000D557)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140006fb0-0x140006fd7 -> Jumps to: 0x140006fd7
+  Block 0x140006fd7-0x140006fdc -> Jumps to: 0x140006fdc, 0x140006fe8
+  Block 0x140006fdc-0x140006fe2 -> Jumps to: 0x140006fe2, 0x140007019
+  Block 0x140006fe2-0x140006fe8 -> Jumps to: 0x140006fd7
+  Block 0x140006fe8-0x140006ffe -> Jumps to: 0x140006ffe, 0x140007019
+  Block 0x140006ffe-0x140007012 -> Jumps to: 0x140006fd7, 0x140007012
+  Block 0x140007012-0x140007019 -> Jumps to: 0x140006fd7
+  Block 0x140007019-0x14000702c -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140006FB0(__int64 a1, unsigned __int64 *a2)
+{
+  __int64 v2; // rbx
+  unsigned __int64 v3; // rdi
+  unsigned int v5; // esi
+  unsigned __int64 v7; // rcx
+  unsigned int v8; // eax
+  void *v9; // rcx
+
+  LODWORD(v2) = 0;
+  v3 = *a2;
+  v5 = ((unsigned int)(*(_DWORD *)(a1 + 4) - 1) >> 6) + 1;
+  while ( 1 )
+  {
+    while ( !v3 )
+    {
+      v2 = (unsigned int)(v2 + 1);
+      if ( (unsigned int)v2 >= v5 )
+        return;
+      v3 = a2[v2];
+    }
+    _BitScanForward64(&v7, v3);
+    v3 &= ~(1LL << v7);
+    v8 = v7 + ((_DWORD)v2 << 6);
+    if ( v8 == -1 )
+      break;
+    v9 = *(void **)(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 56LL) + 8LL * v8);
+    if ( v9 != (void *)-1LL )
+      ZwAlertThread(v9);
+  }
+}
+
+
+=== DISASM ===
+0x140006fb0: mov     [rsp+arg_10], rbx
+0x140006fb5: mov     [rsp+arg_18], rbp
+0x140006fba: push    rsi
+0x140006fbb: push    rdi
+0x140006fbc: push    r14
+0x140006fbe: sub     rsp, 20h
+0x140006fc2: mov     esi, [rcx+4]
+0x140006fc5: xor     ebx, ebx
+0x140006fc7: mov     rdi, [rdx]
+0x140006fca: dec     esi
+0x140006fcc: shr     esi, 6
+0x140006fcf: mov     r14, rdx
+0x140006fd2: inc     esi
+0x140006fd4: mov     rbp, rcx
+0x140006fd7: test    rdi, rdi
+0x140006fda: jnz     short loc_140006FE8
+0x140006fdc: inc     ebx
+0x140006fde: cmp     ebx, esi
+0x140006fe0: jnb     short loc_140007019
+0x140006fe2: mov     rdi, [r14+rbx*8]
+0x140006fe6: jmp     short loc_140006FD7
+0x140006fe8: bsf     rcx, rdi
+0x140006fec: mov     eax, ecx
+0x140006fee: btr     rdi, rax
+0x140006ff2: mov     eax, ebx
+0x140006ff4: shl     eax, 6
+0x140006ff7: add     eax, ecx
+0x140006ff9: cmp     eax, 0FFFFFFFFh
+0x140006ffc: jz      short loc_140007019
+0x140006ffe: mov     edx, eax
+0x140007000: mov     rax, [rbp+10h]
+0x140007004: mov     rcx, [rax+38h]
+0x140007008: mov     rcx, [rcx+rdx*8]; ThreadHandle
+0x14000700c: cmp     rcx, 0FFFFFFFFFFFFFFFFh
+0x140007010: jz      short loc_140006FD7
+0x140007012: call    ZwAlertThread
+0x140007017: jmp     short loc_140006FD7
+0x140007019: mov     rbx, [rsp+38h+arg_10]
+0x14000701e: mov     rbp, [rsp+38h+arg_18]
+0x140007023: add     rsp, 20h
+0x140007027: pop     r14
+0x140007029: pop     rdi
+0x14000702a: pop     rsi
+0x14000702b: retn

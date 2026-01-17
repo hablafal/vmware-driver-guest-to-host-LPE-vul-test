@@ -1,0 +1,57 @@
+=== METADATA ===
+Name: PtFuncCompare
+Addr: 0x140004fc0
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140004fcb: OR with Mask 0xFFFFFFFFFFFFFFFF
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140004fc0-0x140004fcb -> Jumps to: 0x140004fcb, 0x140004fcf
+  Block 0x140004fcb-0x140004fcf -> Jumps to: 
+  Block 0x140004fcf-0x140004fd8 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall PtFuncCompare(_QWORD *a1, _QWORD *a2)
+{
+  if ( *a1 >= *a2 )
+    return *a1 > *a2;
+  else
+    return 0xFFFFFFFFLL;
+}
+
+
+=== DISASM ===
+0x140004fc0: mov     r8, [rcx]
+0x140004fc3: mov     rcx, [rdx]
+0x140004fc6: cmp     r8, rcx
+0x140004fc9: jnb     short loc_140004FCF
+0x140004fcb: or      eax, 0FFFFFFFFh
+0x140004fce: retn
+0x140004fcf: xor     eax, eax
+0x140004fd1: cmp     r8, rcx
+0x140004fd4: setnbe  al
+0x140004fd7: retn

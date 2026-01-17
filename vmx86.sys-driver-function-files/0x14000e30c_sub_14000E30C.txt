@@ -1,0 +1,66 @@
+=== METADATA ===
+Name: sub_14000E30C
+Addr: 0x14000e30c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000e314: Access Member +0x800 ([rdx+800h])
+  0x14000e324: Access Member +0x8 ([rax+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008754 (0x140008763)
+  <- sub_140008754 (0x140008798)
+  <- sub_14000922C (0x140009C03)
+  <- sub_14000922C (0x140009C27)
+  <- sub_14000922C (0x140009C4B)
+  <- sub_14000922C (0x140009C6F)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000e30c-0x14000e314 -> Jumps to: 0x14000e314, 0x14000e324
+  Block 0x14000e314-0x14000e324 -> Jumps to: 
+  Block 0x14000e324-0x14000e332 -> Jumps to: 
+
+=== CODE ===
+unsigned __int64 __fastcall sub_14000E30C(__int64 a1, int a2)
+{
+  if ( *(_BYTE *)a1 )
+    return __readmsr(a2 + 2048);
+  else
+    return *(unsigned int *)(*(_QWORD *)(a1 + 8) + 16LL * a2);
+}
+
+
+=== DISASM ===
+0x14000e30c: cmp     byte ptr [rcx], 0
+0x14000e30f: mov     rax, rcx
+0x14000e312: jz      short loc_14000E324
+0x14000e314: lea     ecx, [rdx+800h]
+0x14000e31a: rdmsr
+0x14000e31c: shl     rdx, 20h
+0x14000e320: or      rax, rdx
+0x14000e323: retn
+0x14000e324: mov     rax, [rax+8]
+0x14000e328: movsxd  rcx, edx
+0x14000e32b: add     rcx, rcx
+0x14000e32e: mov     eax, [rax+rcx*8]
+0x14000e331: retn

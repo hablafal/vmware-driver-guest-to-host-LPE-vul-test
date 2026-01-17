@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: _guard_xfg_dispatch_icall_nop
+Addr: 0x14000fea0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fea0-0x14000fea6 -> Jumps to: 0x14000fe80
+  Block 0x14000fe80-0x14000fe80 -> Jumps to: 
+
+=== CODE ===
+// attributes: thunk
+__int64 __fastcall guard_xfg_dispatch_icall_nop()
+{
+  __int64 (*v0)(void); // rax
+
+  return v0();
+}
+
+
+=== DISASM ===
+0x14000fea0: jmp     cs:__guard_dispatch_icall_fptr

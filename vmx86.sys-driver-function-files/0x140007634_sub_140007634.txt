@@ -1,0 +1,192 @@
+=== METADATA ===
+Name: sub_140007634
+Addr: 0x140007634
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000770f: AND with Mask 0x3F
+
+=== MEMBER ACCESS ===
+  0x140007634: Access Member +0x18 ([rsp+arg_10])
+  0x140007639: Access Member +0x20 ([rsp+arg_18])
+  0x140007650: Access Member +0x120 ([rsp+138h+var_18])
+  0x140007667: Access Member +0x20 ([rsp+138h+var_118])
+  0x14000767a: Access Member +0x4 ([rdi+4])
+  0x14000767e: Access Member +0x20 ([rsp+138h+var_118])
+  0x140007694: Access Member +0x50 ([rdi+50h])
+  0x1400076a7: Access Member +0x8 ([r9+8])
+  0x1400076b2: Access Member +0x20 ([rsp+138h+var_118])
+  0x1400076d3: Access Member +0x120 ([rsp+138h+var_18])
+  0x1400076e3: Access Member +0x130 ([rsp+138h+var_8])
+  0x1400076eb: Access Member +0x20 ([r11+20h])
+  0x1400076ef: Access Member +0x28 ([r11+28h])
+  0x140007712: Access Member +0x20 ([rsp+rdx*8+138h+var_118])
+  0x14000771b: Access Member +0x20 ([rsp+rdx*8+138h+var_118])
+  0x140007720: Access Member +0x10 ([rdi+10h])
+  0x140007724: Access Member +0x38 ([rdx+38h])
+  0x14000772f: Access Member +0x40 ([rdx+40h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x38 -> possible EvtIoInternalDeviceControl
+
+=== CALLERS ===
+  <- sub_14000D1B0 (0x14000D211)
+  <- sub_14000D1B0 (0x14000D301)
+  <- sub_14000D3E0 (0x14000D472)
+
+=== IMPORTS ===
+  -> 0x14000765f calls KfRaiseIrql
+  -> 0x1400076cd calls KeLowerIrql
+  -> 0x140007740 calls KeSetEvent
+
+=== STRINGS ===
+  0x140007646 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x140007634-0x140007694 -> Jumps to: 0x140007694
+  Block 0x140007694-0x1400076b0 -> Jumps to: 0x1400076b0, 0x140007694
+  Block 0x1400076b0-0x1400076b7 -> Jumps to: 0x1400076b7
+  Block 0x1400076b7-0x1400076bf -> Jumps to: 0x1400076bf, 0x1400076f8
+  Block 0x1400076bf-0x1400076ca -> Jumps to: 0x1400076b7, 0x1400076ca
+  Block 0x1400076ca-0x1400076f8 -> Jumps to: 
+  Block 0x1400076f8-0x140007706 -> Jumps to: 0x1400076ca, 0x140007706
+  Block 0x140007706-0x14000772f -> Jumps to: 0x1400076b0, 0x14000772f
+  Block 0x14000772f-0x14000774b -> Jumps to: 0x1400076b0
+
+=== CODE ===
+void __fastcall sub_140007634(__int64 a1, unsigned int a2)
+{
+  KIRQL v4; // si
+  _QWORD *v5; // r9
+  __int64 v6; // r8
+  unsigned int v7; // r10d
+  unsigned int v8; // ecx
+  unsigned __int64 *v9; // rax
+  unsigned int v10; // ecx
+  __int64 v11; // rdx
+  _QWORD v12[32]; // [rsp+20h] [rbp-118h] BYREF
+
+  v4 = KfRaiseIrql(2u);
+  sub_14000FEC0(v12, 0, 256);
+  v5 = v12;
+  v6 = 0;
+  v7 = (unsigned int)(*(_DWORD *)(a1 + 4) - 1) >> 6;
+  do
+  {
+    *v5 |= _InterlockedExchange64((volatile __int64 *)(((unsigned __int64)a2 << 8) + *(_QWORD *)(a1 + 80) + 8 * v6), 0);
+    v6 = (unsigned int)(v6 + 1);
+    ++v5;
+  }
+  while ( (unsigned int)v6 <= v7 );
+  while ( 1 )
+  {
+    v8 = 0;
+    v9 = v12;
+    while ( !*v9 )
+    {
+      ++v8;
+      ++v9;
+      if ( v8 >= 0x20 )
+        goto LABEL_6;
+    }
+    _BitScanForward64((unsigned __int64 *)&v9, *v9);
+    v10 = (_DWORD)v9 + (v8 << 6);
+    if ( v10 == -1 )
+      break;
+    v12[(unsigned __int64)v10 >> 6] &= ~(1LL << (v10 & 0x3F));
+    v11 = *(_QWORD *)(a1 + 16);
+    if ( *(_QWORD *)(*(_QWORD *)(v11 + 56) + 8LL * v10) != -1 )
+      KeSetEvent((PRKEVENT)(*(_QWORD *)(v11 + 64) + 24LL * v10), 0, 0);
+  }
+LABEL_6:
+  KeLowerIrql(v4);
+}
+
+
+=== DISASM ===
+0x140007634: mov     [rsp+arg_10], rbx
+0x140007639: mov     [rsp+arg_18], rsi
+0x14000763e: push    rdi
+0x14000763f: sub     rsp, 130h
+0x140007646: mov     rax, cs:__security_cookie
+0x14000764d: xor     rax, rsp
+0x140007650: mov     [rsp+138h+var_18], rax
+0x140007658: mov     rdi, rcx
+0x14000765b: mov     ebx, edx
+0x14000765d: mov     cl, 2; NewIrql
+0x14000765f: call    cs:KfRaiseIrql
+0x140007665: xor     edx, edx
+0x140007667: lea     rcx, [rsp+138h+var_118]
+0x14000766c: mov     r8d, 100h
+0x140007672: mov     sil, al
+0x140007675: call    sub_14000FEC0
+0x14000767a: mov     r10d, [rdi+4]
+0x14000767e: lea     r9, [rsp+138h+var_118]
+0x140007683: dec     r10d
+0x140007686: xor     r8d, r8d
+0x140007689: shr     r10d, 6
+0x14000768d: mov     r11d, ebx
+0x140007690: shl     r11, 8
+0x140007694: mov     rdx, [rdi+50h]
+0x140007698: xor     ecx, ecx
+0x14000769a: add     rdx, r11
+0x14000769d: xchg    rcx, [rdx+r8*8]
+0x1400076a1: or      [r9], rcx
+0x1400076a4: inc     r8d
+0x1400076a7: lea     r9, [r9+8]
+0x1400076ab: cmp     r8d, r10d
+0x1400076ae: jbe     short loc_140007694
+0x1400076b0: xor     ecx, ecx
+0x1400076b2: lea     rax, [rsp+138h+var_118]
+0x1400076b7: mov     rdx, [rax]
+0x1400076ba: test    rdx, rdx
+0x1400076bd: jnz     short loc_1400076F8
+0x1400076bf: inc     ecx
+0x1400076c1: add     rax, 8
+0x1400076c5: cmp     ecx, 20h ; ' '
+0x1400076c8: jb      short loc_1400076B7
+0x1400076ca: mov     cl, sil; NewIrql
+0x1400076cd: call    cs:KeLowerIrql
+0x1400076d3: mov     rcx, [rsp+138h+var_18]
+0x1400076db: xor     rcx, rsp; StackCookie
+0x1400076de: call    __security_check_cookie
+0x1400076e3: lea     r11, [rsp+138h+var_8]
+0x1400076eb: mov     rbx, [r11+20h]
+0x1400076ef: mov     rsi, [r11+28h]
+0x1400076f3: mov     rsp, r11
+0x1400076f6: pop     rdi
+0x1400076f7: retn
+0x1400076f8: bsf     rax, rdx
+0x1400076fc: shl     ecx, 6
+0x1400076ff: add     ecx, eax
+0x140007701: cmp     ecx, 0FFFFFFFFh
+0x140007704: jz      short loc_1400076CA
+0x140007706: mov     edx, ecx
+0x140007708: shr     rdx, 6
+0x14000770c: mov     r8d, ecx
+0x14000770f: and     ecx, 3Fh
+0x140007712: mov     rax, [rsp+rdx*8+138h+var_118]
+0x140007717: btr     rax, rcx
+0x14000771b: mov     [rsp+rdx*8+138h+var_118], rax
+0x140007720: mov     rdx, [rdi+10h]
+0x140007724: mov     rax, [rdx+38h]
+0x140007728: cmp     qword ptr [rax+r8*8], 0FFFFFFFFFFFFFFFFh
+0x14000772d: jz      short loc_1400076B0
+0x14000772f: mov     rax, [rdx+40h]
+0x140007733: lea     rcx, [r8+r8*2]
+0x140007737: xor     r8d, r8d; Wait
+0x14000773a: xor     edx, edx; Increment
+0x14000773c: lea     rcx, [rax+rcx*8]; Event
+0x140007740: call    cs:KeSetEvent
+0x140007746: jmp     loc_1400076B0

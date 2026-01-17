@@ -1,0 +1,64 @@
+=== METADATA ===
+Name: sub_140007520
+Addr: 0x140007520
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000752e: Access Member +0x28 ([rsp+38h+var_10])
+  0x140007533: Access Member +0x20 ([rsp+38h+PerformanceFrequency])
+  0x14000753e: Access Member +0x20 (qword ptr [rsp+38h+PerformanceFrequency])
+  0x140007543: Access Member +0x28 ([rsp+38h+var_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140004390)
+  <- sub_14000BDC4 (0x14000BDD4)
+  <- sub_14000C280 (0x14000C373)
+
+=== IMPORTS ===
+  -> 0x140007538 calls KeQueryPerformanceCounter
+
+=== STRINGS ===
+  0x140007524 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x140007520-0x140007555 -> Jumps to: 
+
+=== CODE ===
+union _LARGE_INTEGER sub_140007520()
+{
+  union _LARGE_INTEGER PerformanceFrequency; // [rsp+20h] [rbp-18h] BYREF
+
+  KeQueryPerformanceCounter(&PerformanceFrequency);
+  return PerformanceFrequency;
+}
+
+
+=== DISASM ===
+0x140007520: sub     rsp, 38h
+0x140007524: mov     rax, cs:__security_cookie
+0x14000752b: xor     rax, rsp
+0x14000752e: mov     [rsp+38h+var_10], rax
+0x140007533: lea     rcx, [rsp+38h+PerformanceFrequency]; PerformanceFrequency
+0x140007538: call    cs:KeQueryPerformanceCounter
+0x14000753e: mov     rax, qword ptr [rsp+38h+PerformanceFrequency]
+0x140007543: mov     rcx, [rsp+38h+var_10]
+0x140007548: xor     rcx, rsp; StackCookie
+0x14000754b: call    __security_check_cookie
+0x140007550: add     rsp, 38h
+0x140007554: retn

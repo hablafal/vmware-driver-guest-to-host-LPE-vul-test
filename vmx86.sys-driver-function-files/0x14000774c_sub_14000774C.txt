@@ -1,0 +1,119 @@
+=== METADATA ===
+Name: sub_14000774C
+Addr: 0x14000774c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x140007770: TEST with Mask 0x5
+  0x140007787: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000774c: Access Member +0x8 ([rsp+arg_0])
+  0x140007751: Access Member +0x10 ([rsp+arg_8])
+  0x140007770: Access Member +0xA (byte ptr [rbx+0Ah])
+  0x140007776: Access Member +0x18 ([rbx+18h])
+  0x14000777f: Access Member +0x28 ([rsp+38h+Priority])
+  0x140007787: Access Member +0x20 ([rsp+38h+var_18])
+  0x140007791: Access Member +0x1 ([r9+1])
+  0x1400077c9: Access Member +0x40 ([rsp+38h+arg_0])
+  0x1400077ce: Access Member +0x48 ([rsp+38h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x18 -> possible EvtIoDefault
+
+=== CALLERS ===
+  <- sub_140008264 (0x1400082FB)
+
+=== IMPORTS ===
+  -> 0x140007795 calls MmMapLockedPagesSpecifyCache
+  -> 0x1400077ba calls MmUnmapLockedPages
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000774c-0x140007768 -> Jumps to: 0x140007768, 0x1400077c4
+  Block 0x140007768-0x140007770 -> Jumps to: 0x140007770, 0x1400077c4
+  Block 0x140007770-0x140007776 -> Jumps to: 0x140007776, 0x14000777c
+  Block 0x140007776-0x14000777c -> Jumps to: 0x14000779e
+  Block 0x14000777c-0x14000779e -> Jumps to: 0x14000779e
+  Block 0x14000779e-0x1400077a3 -> Jumps to: 0x1400077a3, 0x1400077c4
+  Block 0x1400077a3-0x1400077c4 -> Jumps to: 0x1400077c9
+  Block 0x1400077c4-0x1400077c9 -> Jumps to: 0x1400077c9
+  Block 0x1400077c9-0x1400077d9 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000774C(unsigned __int64 a1, __int64 a2)
+{
+  __int64 *v3; // rax
+  __int64 v4; // rbx
+  PVOID v5; // rdi
+
+  v3 = (__int64 *)sub_14000501C(a1);
+  if ( !v3 )
+    return 3221225495LL;
+  v4 = *v3;
+  if ( !*v3 )
+    return 3221225495LL;
+  v5 = (*(_BYTE *)(v4 + 10) & 5) != 0
+     ? *(PVOID *)(v4 + 24)
+     : MmMapLockedPagesSpecifyCache((PMDL)v4, 0, MmCached, 0, 0, 0x40000010u);
+  if ( !v5 )
+    return 3221225495LL;
+  sub_1400100C0(v5, a2, 4096);
+  MmUnmapLockedPages(v5, (PMDL)v4);
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000774c: mov     [rsp+arg_0], rbx
+0x140007751: mov     [rsp+arg_8], rsi
+0x140007756: push    rdi
+0x140007757: sub     rsp, 30h
+0x14000775b: mov     rsi, rdx
+0x14000775e: call    sub_14000501C
+0x140007763: test    rax, rax
+0x140007766: jz      short loc_1400077C4
+0x140007768: mov     rbx, [rax]
+0x14000776b: test    rbx, rbx
+0x14000776e: jz      short loc_1400077C4
+0x140007770: test    byte ptr [rbx+0Ah], 5
+0x140007774: jz      short loc_14000777C
+0x140007776: mov     rdi, [rbx+18h]
+0x14000777a: jmp     short loc_14000779E
+0x14000777c: xor     r9d, r9d; RequestedAddress
+0x14000777f: mov     [rsp+38h+Priority], 40000010h; Priority
+0x140007787: and     [rsp+38h+var_18], 0
+0x14000778c: xor     edx, edx; AccessMode
+0x14000778e: mov     rcx, rbx; MemoryDescriptorList
+0x140007791: lea     r8d, [r9+1]; CacheType
+0x140007795: call    cs:MmMapLockedPagesSpecifyCache
+0x14000779b: mov     rdi, rax
+0x14000779e: test    rdi, rdi
+0x1400077a1: jz      short loc_1400077C4
+0x1400077a3: mov     r8d, 1000h
+0x1400077a9: mov     rdx, rsi
+0x1400077ac: mov     rcx, rdi
+0x1400077af: call    sub_1400100C0
+0x1400077b4: mov     rdx, rbx; MemoryDescriptorList
+0x1400077b7: mov     rcx, rdi; BaseAddress
+0x1400077ba: call    cs:MmUnmapLockedPages
+0x1400077c0: xor     eax, eax
+0x1400077c2: jmp     short loc_1400077C9
+0x1400077c4: mov     eax, 0C0000017h
+0x1400077c9: mov     rbx, [rsp+38h+arg_0]
+0x1400077ce: mov     rsi, [rsp+38h+arg_8]
+0x1400077d3: add     rsp, 30h
+0x1400077d7: pop     rdi
+0x1400077d8: retn

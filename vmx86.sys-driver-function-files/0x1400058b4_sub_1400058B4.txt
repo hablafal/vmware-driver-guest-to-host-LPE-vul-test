@@ -1,0 +1,189 @@
+=== METADATA ===
+Name: sub_1400058B4
+Addr: 0x1400058b4
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x1400058d9: AND with Mask 0x0
+  0x1400058e7: AND with Mask 0x0
+  0x140005937: AND with Mask 0x0
+  0x140005956: AND with Mask 0x0
+  0x140005975: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x1400058b4: Access Member +0x8 ([rsp+arg_0])
+  0x1400058b9: Access Member +0x10 ([rsp+arg_8])
+  0x1400058be: Access Member +0x18 ([rsp+arg_10])
+  0x140005987: Access Member +0x50 ([rsp+48h+arg_0])
+  0x14000598c: Access Member +0x58 ([rsp+48h+arg_8])
+  0x140005991: Access Member +0x60 ([rsp+48h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140004910 (0x140004A0E)
+
+=== IMPORTS ===
+  -> 0x1400058e1 calls ExFreePoolWithTag
+  -> 0x1400058f6 calls KeCancelTimer
+  -> 0x1400058fc calls KeFlushQueuedDpcs
+  -> 0x140005931 calls ExFreePoolWithTag
+  -> 0x140005950 calls ExFreePoolWithTag
+  -> 0x14000596f calls ExFreePoolWithTag
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x1400058b4-0x14000590b -> Jumps to: 0x14000590b
+  Block 0x14000590b-0x140005913 -> Jumps to: 0x140005913, 0x140005979
+  Block 0x140005913-0x140005919 -> Jumps to: 0x140005919
+  Block 0x140005919-0x140005921 -> Jumps to: 0x140005921, 0x14000595a
+  Block 0x140005921-0x140005927 -> Jumps to: 0x140005927
+  Block 0x140005927-0x14000592f -> Jumps to: 0x14000592f, 0x14000593b
+  Block 0x14000592f-0x14000593b -> Jumps to: 0x14000593b
+  Block 0x14000593b-0x14000594b -> Jumps to: 0x140005927, 0x14000594b
+  Block 0x14000594b-0x14000595a -> Jumps to: 0x14000595a
+  Block 0x14000595a-0x14000596a -> Jumps to: 0x140005919, 0x14000596a
+  Block 0x14000596a-0x140005979 -> Jumps to: 0x140005979
+  Block 0x140005979-0x140005987 -> Jumps to: 0x14000590b, 0x140005987
+  Block 0x140005987-0x1400059a4 -> Jumps to: 
+
+=== CODE ===
+void sub_1400058B4()
+{
+  unsigned int v0; // ebp
+  void **v1; // rbx
+  void *v2; // rsi
+  unsigned int v3; // r12d
+  void **v4; // rdi
+  void *v5; // r15
+  unsigned int v6; // r13d
+  PVOID *v7; // r14
+
+  NumOfElements = 0;
+  ExFreePoolWithTag(P, 0);
+  P = 0;
+  KeCancelTimer(&stru_140018E60);
+  KeFlushQueuedDpcs();
+  v0 = 0;
+  v1 = (void **)qword_140014DA0;
+  do
+  {
+    v2 = *v1;
+    if ( *v1 )
+    {
+      v3 = 0;
+      v4 = (void **)*v1;
+      do
+      {
+        v5 = *v4;
+        if ( *v4 )
+        {
+          v6 = 0;
+          v7 = (PVOID *)*v4;
+          do
+          {
+            if ( *v7 )
+            {
+              ExFreePoolWithTag(*v7, 0);
+              *v7 = 0;
+            }
+            ++v6;
+            ++v7;
+          }
+          while ( v6 < 0x200 );
+          ExFreePoolWithTag(v5, 0);
+          *v4 = 0;
+        }
+        ++v3;
+        ++v4;
+      }
+      while ( v3 < 0x200 );
+      ExFreePoolWithTag(v2, 0);
+      *v1 = 0;
+    }
+    ++v0;
+    ++v1;
+  }
+  while ( v0 < 0x804 );
+}
+
+
+=== DISASM ===
+0x1400058b4: mov     [rsp+arg_0], rbx
+0x1400058b9: mov     [rsp+arg_8], rbp
+0x1400058be: mov     [rsp+arg_10], rsi
+0x1400058c3: push    rdi
+0x1400058c4: push    r12
+0x1400058c6: push    r13
+0x1400058c8: push    r14
+0x1400058ca: push    r15
+0x1400058cc: sub     rsp, 20h
+0x1400058d0: mov     rcx, cs:P; P
+0x1400058d7: xor     edx, edx; Tag
+0x1400058d9: and     cs:NumOfElements, 0
+0x1400058e1: call    cs:ExFreePoolWithTag
+0x1400058e7: and     cs:P, 0
+0x1400058ef: lea     rcx, stru_140018E60; PKTIMER
+0x1400058f6: call    cs:KeCancelTimer
+0x1400058fc: call    cs:KeFlushQueuedDpcs
+0x140005902: xor     ebp, ebp
+0x140005904: lea     rbx, qword_140014DA0
+0x14000590b: mov     rsi, [rbx]
+0x14000590e: test    rsi, rsi
+0x140005911: jz      short loc_140005979
+0x140005913: xor     r12d, r12d
+0x140005916: mov     rdi, rsi
+0x140005919: mov     r15, [rdi]
+0x14000591c: test    r15, r15
+0x14000591f: jz      short loc_14000595A
+0x140005921: xor     r13d, r13d
+0x140005924: mov     r14, r15
+0x140005927: mov     rcx, [r14]; P
+0x14000592a: test    rcx, rcx
+0x14000592d: jz      short loc_14000593B
+0x14000592f: xor     edx, edx; Tag
+0x140005931: call    cs:ExFreePoolWithTag
+0x140005937: and     qword ptr [r14], 0
+0x14000593b: inc     r13d
+0x14000593e: add     r14, 8
+0x140005942: cmp     r13d, 200h
+0x140005949: jb      short loc_140005927
+0x14000594b: xor     edx, edx; Tag
+0x14000594d: mov     rcx, r15; P
+0x140005950: call    cs:ExFreePoolWithTag
+0x140005956: and     qword ptr [rdi], 0
+0x14000595a: inc     r12d
+0x14000595d: add     rdi, 8
+0x140005961: cmp     r12d, 200h
+0x140005968: jb      short loc_140005919
+0x14000596a: xor     edx, edx; Tag
+0x14000596c: mov     rcx, rsi; P
+0x14000596f: call    cs:ExFreePoolWithTag
+0x140005975: and     qword ptr [rbx], 0
+0x140005979: inc     ebp
+0x14000597b: add     rbx, 8
+0x14000597f: cmp     ebp, 804h
+0x140005985: jb      short loc_14000590B
+0x140005987: mov     rbx, [rsp+48h+arg_0]
+0x14000598c: mov     rbp, [rsp+48h+arg_8]
+0x140005991: mov     rsi, [rsp+48h+arg_10]
+0x140005996: add     rsp, 20h
+0x14000599a: pop     r15
+0x14000599c: pop     r14
+0x14000599e: pop     r13
+0x1400059a0: pop     r12
+0x1400059a2: pop     rdi
+0x1400059a3: retn

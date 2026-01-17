@@ -1,0 +1,71 @@
+=== METADATA ===
+Name: sub_140006298
+Addr: 0x140006298
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000629c: AND with Mask 0x0
+  0x1400062ab: AND with Mask 0x0
+  0x1400062c9: AND with Mask 0x0
+  0x1400062d8: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x1400062bf: Access Member +0x1 ([r8+1])
+  0x1400062ec: Access Member +0x1 ([r8+1])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_1400062FC (0x140006320)
+
+=== IMPORTS ===
+  -> 0x1400062c3 calls KeInitializeEvent
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140006298-0x1400062fb -> Jumps to: 
+
+=== CODE ===
+void sub_140006298()
+{
+  FastMutex.Owner = 0;
+  FastMutex.Contention = 0;
+  FastMutex.Count = 1;
+  KeInitializeEvent(&FastMutex.Event, SynchronizationEvent, 0);
+  qword_140018E10 = 0;
+  dword_140018E18 = 0;
+  dword_140018E08 = 1;
+  KeInitializeEvent(&stru_140018E20, SynchronizationEvent, 0);
+}
+
+
+=== DISASM ===
+0x140006298: sub     rsp, 28h
+0x14000629c: and     cs:FastMutex.Owner, 0
+0x1400062a4: lea     rcx, FastMutex.Event; Event
+0x1400062ab: and     cs:FastMutex.Contention, 0
+0x1400062b2: xor     r8d, r8d; State
+0x1400062b5: mov     cs:FastMutex.Count, 1
+0x1400062bf: lea     edx, [r8+1]; Type
+0x1400062c3: call    cs:KeInitializeEvent
+0x1400062c9: and     cs:qword_140018E10, 0
+0x1400062d1: lea     rcx, stru_140018E20
+0x1400062d8: and     cs:dword_140018E18, 0
+0x1400062df: xor     r8d, r8d
+0x1400062e2: mov     cs:dword_140018E08, 1
+0x1400062ec: lea     edx, [r8+1]
+0x1400062f0: add     rsp, 28h
+0x1400062f4: jmp     cs:KeInitializeEvent

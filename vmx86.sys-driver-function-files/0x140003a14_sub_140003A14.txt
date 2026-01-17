@@ -1,0 +1,151 @@
+=== METADATA ===
+Name: sub_140003A14
+Addr: 0x140003a14
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140003a17: Access Member +0x8 ([r11+8])
+  0x140003a1b: Access Member +0x10 ([r11+10h])
+  0x140003a1f: Access Member +0x18 ([r11+18h])
+  0x140003a23: Access Member +0x20 ([r11+20h])
+  0x140003a38: Access Member +0x320 ([rsp+338h+var_18])
+  0x140003a43: Access Member +0x10 ([r11+10h])
+  0x140003a47: Access Member +0x20 ([rsp+338h+Dest])
+  0x140003a56: Access Member +0x320 ([rsp+338h+var_18])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140004910 (0x140004997)
+  <- sub_140004910 (0x1400049BE)
+  <- CallbackFunction (0x140004A75)
+  <- CallbackFunction (0x140004A91)
+  <- CallbackFunction (0x140004AA9)
+  <- CallbackFunction (0x140004AD7)
+  <- CallbackFunction (0x140004B3E)
+  <- CallbackFunction (0x140004B8D)
+  <- HandleInformation (0x140004BE1)
+  <- HandleInformation (0x140004C29)
+  <- sub_140006258 (0x140006293)
+  <- sub_14000717C (0x1400071A4)
+  <- sub_14000717C (0x1400071DB)
+  <- sub_14000717C (0x14000720D)
+  <- sub_140007D74 (0x140007DA7)
+  <- sub_140007D74 (0x140007E7A)
+  <- sub_140007FCC (0x140008011)
+  <- sub_140008264 (0x1400082AE)
+  <- sub_140008264 (0x140008322)
+  <- sub_140008264 (0x14000833F)
+  <- sub_140008538 (0x1400085E6)
+  <- sub_140008538 (0x140008710)
+  <- sub_14000885C (0x1400089A4)
+  <- sub_14000885C (0x1400089C2)
+  <- sub_14000885C (0x1400089DA)
+  <- sub_14000885C (0x1400089F5)
+  <- sub_140008B8C (0x140008BF7)
+  <- sub_140008CA0 (0x140008CDE)
+  <- sub_140008D04 (0x14000900C)
+  <- sub_140008D04 (0x140009027)
+  <- sub_140009034 (0x140009069)
+  <- sub_140009034 (0x140009210)
+  <- sub_14000922C (0x140009CCC)
+  <- sub_140009DE0 (0x140009EC3)
+  <- sub_14000A290 (0x14000A30B)
+  <- sub_14000A450 (0x14000A52D)
+  <- sub_14000B218 (0x14000B2CF)
+  <- sub_14000B218 (0x14000B2E3)
+  <- sub_14000B92C (0x14000B9AF)
+  <- sub_14000BE34 (0x14000BE60)
+  <- sub_14000BE84 (0x14000BEE5)
+  <- sub_14000BE84 (0x14000BF85)
+  <- sub_14000BE84 (0x14000BFE1)
+  <- sub_14000BE84 (0x14000C12E)
+  <- sub_14000C7D4 (0x14000C912)
+  <- sub_14000CAF8 (0x14000CB4E)
+  <- sub_14000CAF8 (0x14000CBBB)
+  <- sub_14000CAF8 (0x14000CC69)
+  <- sub_14000CE80 (0x14000CF06)
+  <- sub_14000CFB4 (0x14000CFE9)
+  <- sub_14000D3E0 (0x14000D608)
+  <- sub_14000D3E0 (0x14000D8A5)
+  <- sub_14000D3E0 (0x14000D984)
+  <- sub_14000EE70 (0x14000EEC0)
+  <- sub_14000EE70 (0x14000EEF2)
+  <- sub_14000EE70 (0x14000EF4B)
+  <- sub_14000EFA4 (0x14000F075)
+  <- sub_14000EFA4 (0x14000F08C)
+  <- sub_14000F0AC (0x14000F124)
+  <- sub_14000F14C (0x14000F190)
+  <- sub_14000F220 (0x14000F249)
+  <- sub_14000F278 (0x14000F2E0)
+  <- sub_14000F300 (0x14000F3D0)
+  <- sub_14000F474 (0x14000F4F0)
+  <- sub_14000F474 (0x14000F513)
+  <- sub_14000F474 (0x14000F53A)
+  <- sub_14000F474 (0x14000F55F)
+  <- sub_14000F474 (0x14000F59B)
+  <- sub_14000F474 (0x14000F5E4)
+  <- sub_14000F474 (0x14000F5F5)
+  <- sub_14000F474 (0x14000F606)
+  <- sub_14000F474 (0x14000F61D)
+  <- sub_14000F474 (0x14000F62B)
+  <- sub_14000F6A0 (0x14000F6EC)
+  <- sub_14000F6A0 (0x14000F714)
+  <- sub_14000F728 (0x14000F747)
+  <- sub_14000F768 (0x14000F7ED)
+  <- sub_14000F9BC (0x14000FA10)
+  <- sub_14000FA50 (0x14000FA6A)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140003a2e -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x140003a14-0x140003a6e -> Jumps to: 
+
+=== CODE ===
+int sub_140003A14(char *Format, ...)
+{
+  char Dest[768]; // [rsp+20h] [rbp-318h] BYREF
+  va_list va; // [rsp+348h] [rbp+10h] BYREF
+
+  va_start(va, Format);
+  return vsnprintf(Dest, 0x2FFu, Format, va);
+}
+
+
+=== DISASM ===
+0x140003a14: mov     r11, rsp
+0x140003a17: mov     [r11+8], rcx
+0x140003a1b: mov     [r11+10h], rdx
+0x140003a1f: mov     [r11+18h], r8
+0x140003a23: mov     [r11+20h], r9
+0x140003a27: sub     rsp, 338h
+0x140003a2e: mov     rax, cs:__security_cookie
+0x140003a35: xor     rax, rsp
+0x140003a38: mov     [rsp+338h+var_18], rax
+0x140003a40: mov     r8, rcx; Format
+0x140003a43: lea     r9, [r11+10h]; Args
+0x140003a47: lea     rcx, [rsp+338h+Dest]; Dest
+0x140003a4c: mov     edx, 2FFh; Count
+0x140003a51: call    _vsnprintf
+0x140003a56: mov     rcx, [rsp+338h+var_18]
+0x140003a5e: xor     rcx, rsp; StackCookie
+0x140003a61: call    __security_check_cookie
+0x140003a66: add     rsp, 338h
+0x140003a6d: retn

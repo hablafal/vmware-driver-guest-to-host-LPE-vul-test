@@ -1,0 +1,98 @@
+=== METADATA ===
+Name: sub_14000C758
+Addr: 0x14000c758
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000c7af: AND with Mask 0x0
+  0x14000c7b6: OR with Mask 0xFFFFFFFFFFFFFFFF
+
+=== MEMBER ACCESS ===
+  0x14000c7a5: Access Member +0x10 ([r9+10h])
+  0x14000c7c5: Access Member +0x21 ([rax+21h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003464 (0x140003846)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000c758-0x14000c773 -> Jumps to: 0x14000c773
+  Block 0x14000c773-0x14000c7af -> Jumps to: 0x14000c7af, 0x14000c773
+  Block 0x14000c7af-0x14000c7d1 -> Jumps to: 0x140005fc8
+  Block 0x140005fc8-0x140005fc8 -> Jumps to: 
+
+=== CODE ===
+void sub_14000C758()
+{
+  signed int v0; // r8d
+  __m128i *v1; // r9
+  __m128i v2; // xmm1
+  __m128i v3; // xmm2
+  __m128i v4; // xmm0
+  __m128i v5; // xmm3
+
+  sub_140005FB8();
+  v0 = 4;
+  v1 = (__m128i *)dword_14001CF90;
+  do
+  {
+    v2 = _mm_cvtsi32_si128(v0);
+    v3 = _mm_cvtsi32_si128(v0 - 1);
+    v4 = _mm_cvtsi32_si128(v0 - 2);
+    v5 = _mm_cvtsi32_si128(v0 - 3);
+    v0 += 4;
+    *v1++ = _mm_unpacklo_epi64(_mm_unpacklo_epi32(v5, v4), _mm_unpacklo_epi32(v3, v2));
+  }
+  while ( v0 < 68 );
+  dword_14001D090 = 0;
+  dword_14001D08C = -1;
+  dword_14001CF88 = -1;
+  sub_140005FC8();
+}
+
+
+=== DISASM ===
+0x14000c758: sub     rsp, 28h
+0x14000c75c: mov     ecx, 20h ; ' '
+0x14000c761: call    sub_140005FB8
+0x14000c766: mov     r8d, 4
+0x14000c76c: lea     r9, dword_14001CF90
+0x14000c773: lea     eax, [r8-1]
+0x14000c777: movd    xmm1, r8d
+0x14000c77c: lea     ecx, [r8-2]
+0x14000c780: movd    xmm2, eax
+0x14000c784: lea     edx, [r8-3]
+0x14000c788: movd    xmm0, ecx
+0x14000c78c: movd    xmm3, edx
+0x14000c790: add     r8d, 4
+0x14000c794: punpckldq xmm2, xmm1
+0x14000c798: punpckldq xmm3, xmm0
+0x14000c79c: punpcklqdq xmm3, xmm2
+0x14000c7a0: movdqu  xmmword ptr [r9], xmm3
+0x14000c7a5: lea     r9, [r9+10h]
+0x14000c7a9: cmp     r8d, 44h ; 'D'
+0x14000c7ad: jl      short loc_14000C773
+0x14000c7af: and     cs:dword_14001D090, 0
+0x14000c7b6: or      eax, 0FFFFFFFFh
+0x14000c7b9: mov     cs:dword_14001D08C, eax
+0x14000c7bf: mov     cs:dword_14001CF88, eax
+0x14000c7c5: lea     ecx, [rax+21h]
+0x14000c7c8: add     rsp, 28h
+0x14000c7cc: jmp     sub_140005FC8

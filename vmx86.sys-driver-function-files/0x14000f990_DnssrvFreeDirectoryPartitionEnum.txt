@@ -1,0 +1,68 @@
+=== METADATA ===
+Name: DnssrvFreeDirectoryPartitionEnum
+Addr: 0x14000f990
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f99d: Access Member +0x8 ([rcx+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A564 (0x14000A5FA)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f990-0x14000f995 -> Jumps to: 0x14000f995, 0x14000f9b8
+  Block 0x14000f995-0x14000f9a6 -> Jumps to: 0x14000f9a6, 0x14000f9ab
+  Block 0x14000f9a6-0x14000f9ab -> Jumps to: 0x14000f9ab
+  Block 0x14000f9ab-0x14000f9b8 -> Jumps to: 0x14000f9b8
+  Block 0x14000f9b8-0x14000f9b9 -> Jumps to: 
+
+=== CODE ===
+void __fastcall DnssrvFreeDirectoryPartitionEnum(_QWORD *a1)
+{
+  void *v2; // rcx
+
+  if ( a1 )
+  {
+    v2 = (void *)a1[1];
+    if ( v2 )
+      sub_140005DC4(v2);
+    sub_140005DC4(a1);
+  }
+}
+
+
+=== DISASM ===
+0x14000f990: test    rcx, rcx
+0x14000f993: jz      short locret_14000F9B8
+0x14000f995: push    rbx
+0x14000f996: sub     rsp, 20h
+0x14000f99a: mov     rbx, rcx
+0x14000f99d: mov     rcx, [rcx+8]
+0x14000f9a1: test    rcx, rcx
+0x14000f9a4: jz      short loc_14000F9AB
+0x14000f9a6: call    sub_140005DC4
+0x14000f9ab: mov     rcx, rbx
+0x14000f9ae: call    sub_140005DC4
+0x14000f9b3: add     rsp, 20h
+0x14000f9b7: pop     rbx
+0x14000f9b8: retn

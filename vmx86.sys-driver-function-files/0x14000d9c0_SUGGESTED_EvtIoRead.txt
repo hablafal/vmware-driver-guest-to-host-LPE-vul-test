@@ -1,0 +1,690 @@
+=== METADATA ===
+Name: ?get_DynamicTerminalClasses@CMSPAddress@@UEAAJPEAUtagVARIANT@@@Z (Suggested: EvtIoRead)
+Addr: 0x14000d9c0
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] DYNAMIC_IMPORT_RESOLVING
+  [+] POOL_ALLOCATION
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000d9ea: AND with Mask 0x0
+  0x14000de03: AND with Mask 0x0
+  0x14000de09: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000d9c0: Access Member +0x18 ([rsp-8+arg_10])
+  0x14000d9e6: Access Member +0x10 ([rbp+50h+var_40])
+  0x14000d9ea: Access Member +0x78 ([rsp+150h+Sid])
+  0x14000da04: Access Member +0x60 ([rsp+150h+DesiredAccess])
+  0x14000da14: Access Member +0x50 ([rsp+150h+var_100])
+  0x14000da2a: Access Member +0x20 ([rcx+20h])
+  0x14000da35: Access Member +0x68 ([rsp+150h+SubjectSecurityContext])
+  0x14000da94: Access Member +0x6E ([rdi+6Eh])
+  0x14000daba: Access Member +0x78 ([rsp+150h+Sid])
+  0x14000dafb: Access Member +0x20 ([rsp+150h+var_130])
+  0x14000db0c: Access Member +0x78 ([rsp+150h+Sid])
+  0x14000db16: Access Member +0x78 ([rsp+150h+Sid])
+  0x14000db35: Access Member +0x50 ([rsp+150h+var_100])
+  0x14000dbbd: Access Member +0x1 ([rdi+1])
+  0x14000dbe5: Access Member +0x58 ([rsp+150h+var_F8])
+  0x14000dc0a: Access Member +0x58 ([rsp+150h+var_F8])
+  0x14000dc90: Access Member +0x58 ([rsp+150h+var_F8])
+  0x14000dcae: Access Member +0x58 ([rsp+150h+var_F8])
+  0x14000dcf1: Access Member +0x50 ([rsp+150h+var_100])
+  0x14000dcfc: Access Member +0x78 ([rsp+150h+Sid])
+  0x14000dd15: Access Member +0x50 ([rsp+150h+var_100])
+  0x14000dd1d: Access Member +0x78 ([rsp+150h+Sid])
+  0x14000dd4f: Access Member +0x70 ([rsp+150h+BufferLength])
+  0x14000dd8f: Access Member +0x70 ([rsp+150h+BufferLength])
+  0x14000dd9e: Access Member +0x70 ([rsp+150h+BufferLength])
+  0x14000ddb5: Access Member +0x70 ([rsp+150h+BufferLength])
+  0x14000ddcf: Access Member +0x60 ([rsp+150h+DesiredAccess])
+  0x14000ddd7: Access Member +0x68 ([rsp+150h+SubjectSecurityContext])
+  0x14000dde2: Access Member +0x48 ([rsp+150h+AccessStatus])
+  0x14000ddf1: Access Member +0x40 ([rsp+150h+GrantedAccess])
+  0x14000ddf9: Access Member +0x38 ([rsp+150h+AccessMode])
+  0x14000ddfe: Access Member +0x30 ([rsp+150h+GenericMapping])
+  0x14000de03: Access Member +0x28 ([rsp+150h+var_128])
+  0x14000de09: Access Member +0x20 (dword ptr [rsp+150h+var_130])
+  0x14000de23: Access Member +0x58 ([rsp+150h+var_F8])
+  0x14000de28: Access Member +0x78 ([rsp+150h+Sid])
+  0x14000de8c: Access Member +0x10 ([rbp+50h+var_40])
+  0x14000de98: Access Member +0x170 ([rsp+150h+arg_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Pool Tag: 'paMV'
+  [!] Pool Tag: 'gaMV'
+  [!] Pool Tag: 'soMV'
+  [!] Pool Tag: 'saMV'
+  [!] Pool Tag: 'soMV'
+  [!] Pool Tag: 'srMV'
+  [!] Offset +0x20 -> possible EvtIoRead
+
+=== CALLERS ===
+  <- sub_1400047D0 (0x1400048AC)
+
+=== IMPORTS ===
+  -> 0x14000da45 calls ExAllocatePoolWithTag
+  -> 0x14000dad2 calls RtlInitUnicodeString
+  -> 0x14000dadc calls MmGetSystemRoutineAddress
+  -> 0x14000db50 calls ExAllocatePoolWithTag
+  -> 0x14000dbef calls ExAllocatePoolWithTag
+  -> 0x14000dc67 calls ExFreePoolWithTag
+  -> 0x14000dc7d calls ExAllocatePoolWithTag
+  -> 0x14000dcc4 calls RtlCreateSecurityDescriptor
+  -> 0x14000dce0 calls RtlSetDaclSecurityDescriptor
+  -> 0x14000dd3c calls RtlLengthSecurityDescriptor
+  -> 0x14000dd56 calls ExAllocatePoolWithTag
+  -> 0x14000ddbc calls SeValidSecurityDescriptor
+  -> 0x14000ddc9 calls IoGetFileObjectGenericMapping
+  -> 0x14000de0e calls SeAccessCheck
+  -> 0x14000de37 calls ExFreePoolWithTag
+  -> 0x14000de4a calls ExFreePoolWithTag
+  -> 0x14000de5d calls ExFreePoolWithTag
+  -> 0x14000de70 calls ExFreePoolWithTag
+  -> 0x14000de83 calls ExFreePoolWithTag
+
+=== STRINGS ===
+  0x14000d9dc -> 2
+  0x14000daa1 -> _
+  0x14000dab3 -> R
+  0x14000dac7 -> H
+  0x14000dae9 -> \
+
+=== BASIC BLOCKS ===
+  Block 0x14000d9c0-0x14000da22 -> Jumps to: 0x14000da22, 0x14000de89
+  Block 0x14000da22-0x14000da2a -> Jumps to: 0x14000da2a, 0x14000de89
+  Block 0x14000da2a-0x14000da57 -> Jumps to: 0x14000da57, 0x14000da6f
+  Block 0x14000da57-0x14000da60 -> Jumps to: 0x14000da60, 0x14000de28
+  Block 0x14000da60-0x14000da6f -> Jumps to: 0x14000da78
+  Block 0x14000da6f-0x14000da78 -> Jumps to: 0x14000da78, 0x14000de28
+  Block 0x14000da78-0x14000da92 -> Jumps to: 0x14000da92, 0x14000de28
+  Block 0x14000da92-0x14000db0c -> Jumps to: 0x14000db0c, 0x14000db35
+  Block 0x14000db0c-0x14000db13 -> Jumps to: 0x14000db13, 0x14000db35
+  Block 0x14000db13-0x14000db33 -> Jumps to: 0x14000db33, 0x14000de28
+  Block 0x14000db33-0x14000db35 -> Jumps to: 0x14000db3a
+  Block 0x14000db35-0x14000db3a -> Jumps to: 0x14000db3a
+  Block 0x14000db3a-0x14000db65 -> Jumps to: 0x14000db65, 0x14000db7d
+  Block 0x14000db65-0x14000db6e -> Jumps to: 0x14000db6e, 0x14000de28
+  Block 0x14000db6e-0x14000db7d -> Jumps to: 0x14000db86
+  Block 0x14000db7d-0x14000db86 -> Jumps to: 0x14000db86, 0x14000de28
+  Block 0x14000db86-0x14000dc01 -> Jumps to: 0x14000dc01, 0x14000dc1b
+  Block 0x14000dc01-0x14000dc0a -> Jumps to: 0x14000dc0a, 0x14000de28
+  Block 0x14000dc0a-0x14000dc1b -> Jumps to: 0x14000dc24
+  Block 0x14000dc1b-0x14000dc24 -> Jumps to: 0x14000dc24, 0x14000de28
+  Block 0x14000dc24-0x14000dc97 -> Jumps to: 0x14000dc97, 0x14000dcae
+  Block 0x14000dc97-0x14000dc9c -> Jumps to: 0x14000dc9c, 0x14000dcae
+  Block 0x14000dc9c-0x14000dcae -> Jumps to: 0x14000dcbc
+  Block 0x14000dcae-0x14000dcbc -> Jumps to: 0x14000dcbc, 0x14000de28
+  Block 0x14000dcbc-0x14000dcd2 -> Jumps to: 0x14000dcd2, 0x14000de28
+  Block 0x14000dcd2-0x14000dcee -> Jumps to: 0x14000dcee, 0x14000de28
+  Block 0x14000dcee-0x14000dd12 -> Jumps to: 0x14000dd12, 0x14000de28
+  Block 0x14000dd12-0x14000dd36 -> Jumps to: 0x14000dd36, 0x14000de28
+  Block 0x14000dd36-0x14000dd6b -> Jumps to: 0x14000dd6b, 0x14000dd83
+  Block 0x14000dd6b-0x14000dd74 -> Jumps to: 0x14000dd74, 0x14000de23
+  Block 0x14000dd74-0x14000dd83 -> Jumps to: 0x14000dd8c
+  Block 0x14000dd83-0x14000dd8c -> Jumps to: 0x14000dd8c, 0x14000de23
+  Block 0x14000dd8c-0x14000ddb2 -> Jumps to: 0x14000ddb2, 0x14000de23
+  Block 0x14000ddb2-0x14000ddc6 -> Jumps to: 0x14000ddc6, 0x14000de23
+  Block 0x14000ddc6-0x14000de18 -> Jumps to: 0x14000de18, 0x14000de23
+  Block 0x14000de18-0x14000de23 -> Jumps to: 0x14000de23
+  Block 0x14000de23-0x14000de28 -> Jumps to: 0x14000de28
+  Block 0x14000de28-0x14000de32 -> Jumps to: 0x14000de32, 0x14000de3d
+  Block 0x14000de32-0x14000de3d -> Jumps to: 0x14000de3d
+  Block 0x14000de3d-0x14000de42 -> Jumps to: 0x14000de42, 0x14000de50
+  Block 0x14000de42-0x14000de50 -> Jumps to: 0x14000de50
+  Block 0x14000de50-0x14000de55 -> Jumps to: 0x14000de55, 0x14000de63
+  Block 0x14000de55-0x14000de63 -> Jumps to: 0x14000de63
+  Block 0x14000de63-0x14000de68 -> Jumps to: 0x14000de68, 0x14000de76
+  Block 0x14000de68-0x14000de76 -> Jumps to: 0x14000de76
+  Block 0x14000de76-0x14000de7b -> Jumps to: 0x14000de7b, 0x14000de89
+  Block 0x14000de7b-0x14000de89 -> Jumps to: 0x14000de89
+  Block 0x14000de89-0x14000deb3 -> Jumps to: 
+
+=== CODE ===
+bool __fastcall CMSPAddress::get_DynamicTerminalClasses(CMSPAddress *this, struct tagVARIANT *a2)
+{
+  void *v2; // r12
+  bool v3; // r14
+  void *v4; // r15
+  void *v5; // r13
+  struct _ACL *PoolWithTag; // rax
+  struct _ACL *v7; // rsi
+  PVOID SystemRoutineAddress; // rax
+  ULONG v9; // edi
+  PVOID v10; // rax
+  PSID v11; // rbx
+  PVOID v12; // rax
+  void *v13; // rdi
+  PVOID v14; // rax
+  void *v15; // rdi
+  PSID v16; // rdx
+  PVOID v17; // rax
+  void *v18; // rbx
+  struct _GENERIC_MAPPING *GenericMapping; // rax
+  char v21; // [rsp+50h] [rbp-B0h]
+  SIZE_T v22; // [rsp+58h] [rbp-A8h]
+  PVOID v23; // [rsp+58h] [rbp-A8h]
+  ACCESS_MASK DesiredAccess; // [rsp+60h] [rbp-A0h]
+  struct _SECURITY_SUBJECT_CONTEXT *SubjectSecurityContext; // [rsp+68h] [rbp-98h]
+  ULONG BufferLength; // [rsp+70h] [rbp-90h] BYREF
+  PSID Sid; // [rsp+78h] [rbp-88h] BYREF
+  struct _SID_IDENTIFIER_AUTHORITY IdentifierAuthority; // [rsp+80h] [rbp-80h] BYREF
+  DWORD GrantedAccess; // [rsp+88h] [rbp-78h] BYREF
+  int AccessStatus; // [rsp+8Ch] [rbp-74h] BYREF
+  struct _UNICODE_STRING DestinationString; // [rsp+90h] [rbp-70h] BYREF
+  void *v32; // [rsp+A0h] [rbp-60h] BYREF
+  int v33; // [rsp+A8h] [rbp-58h]
+  const wchar_t *v34; // [rsp+B0h] [rbp-50h]
+  PSID *p_Sid; // [rsp+B8h] [rbp-48h]
+
+  Sid = 0;
+  v2 = 0;
+  AccessStatus = 0;
+  v3 = 0;
+  GrantedAccess = 0;
+  v4 = 0;
+  v5 = 0;
+  DesiredAccess = (unsigned int)a2;
+  *(_DWORD *)IdentifierAuthority.Value = 0;
+  *(_WORD *)&IdentifierAuthority.Value[4] = 1280;
+  v21 = 1;
+  if ( !this || !(_DWORD)a2 )
+    return v3;
+  SubjectSecurityContext = (struct _SECURITY_SUBJECT_CONTEXT *)((char *)this + 32);
+  PoolWithTag = (struct _ACL *)ExAllocatePoolWithTag((POOL_TYPE)1025, 0x1000u, 0x564D6170u);
+  v7 = PoolWithTag;
+  if ( byte_140014D91 )
+  {
+    if ( !PoolWithTag )
+      goto LABEL_44;
+  }
+  else
+  {
+    if ( !PoolWithTag )
+      goto LABEL_44;
+    sub_14000FEC0(PoolWithTag, 0, 4096);
+  }
+  if ( RtlCreateAcl(v7, 0x1000u, 2u) >= 0 )
+  {
+    sub_14000FEC0(&v32, 0, 112);
+    v33 = 4;
+    v34 = L"__vmware__";
+    p_Sid = &Sid;
+    v32 = &sub_14000DEC0;
+    RtlInitUnicodeString(&DestinationString, L"RtlQueryRegistryValuesEx");
+    SystemRoutineAddress = MmGetSystemRoutineAddress(&DestinationString);
+    if ( !SystemRoutineAddress )
+      SystemRoutineAddress = RtlQueryRegistryValues;
+    if ( ((int (__fastcall *)(_QWORD, const wchar_t *, void **, _QWORD, _QWORD))SystemRoutineAddress)(
+           0,
+           L"\\Registry\\Machine\\SOFTWARE\\Wow6432Node\\VMware, Inc.\\SID",
+           &v32,
+           0,
+           0) >= 0
+      && Sid )
+    {
+      _mm_lfence();
+      if ( RtlAddAccessAllowedAce(v7, 2u, 0x1F01FFu, Sid) < 0 )
+        goto LABEL_44;
+    }
+    else
+    {
+      v21 = 0;
+    }
+    v9 = RtlLengthRequiredSid(2u);
+    v10 = ExAllocatePoolWithTag((POOL_TYPE)1025, v9, 0x564D6167u);
+    v11 = v10;
+    v5 = v10;
+    if ( byte_140014D91 )
+    {
+      if ( !v10 )
+        goto LABEL_44;
+    }
+    else
+    {
+      if ( !v10 )
+        goto LABEL_44;
+      sub_14000FEC0(v10, 0, v9);
+    }
+    _mm_lfence();
+    RtlInitializeSid(v11, &IdentifierAuthority, 2u);
+    *RtlSubAuthoritySid(v11, 0) = 32;
+    *RtlSubAuthoritySid(v11, 1u) = 544;
+    RtlAddAccessAllowedAce(v7, 2u, 0x1F01FFu, v11);
+    v22 = RtlLengthRequiredSid(1u);
+    v12 = ExAllocatePoolWithTag((POOL_TYPE)1025, v22, 0x564D6F73u);
+    v13 = v12;
+    if ( byte_140014D91 )
+    {
+      if ( !v12 )
+        goto LABEL_44;
+    }
+    else
+    {
+      if ( !v12 )
+        goto LABEL_44;
+      sub_14000FEC0(v12, 0, v22);
+    }
+    _mm_lfence();
+    RtlInitializeSid(v13, &IdentifierAuthority, 1u);
+    *RtlSubAuthoritySid(v13, 0) = 18;
+    RtlAddAccessAllowedAce(v7, 2u, 0x1F01FFu, v13);
+    ExFreePoolWithTag(v13, 0x564D6F73u);
+    v14 = ExAllocatePoolWithTag((POOL_TYPE)1025, 0x1000u, 0x564D6173u);
+    v15 = v14;
+    v2 = v14;
+    v23 = v14;
+    if ( !byte_140014D91 && v14 )
+    {
+      sub_14000FEC0(v14, 0, 4096);
+      goto LABEL_27;
+    }
+    v23 = v14;
+    if ( v14 )
+    {
+LABEL_27:
+      if ( RtlCreateSecurityDescriptor(v15, 1u) < 0 )
+        goto LABEL_44;
+      _mm_lfence();
+      if ( RtlSetDaclSecurityDescriptor(v15, 1u, v7, 0) < 0 )
+        goto LABEL_44;
+      _mm_lfence();
+      v16 = v11;
+      if ( v21 )
+        v16 = Sid;
+      if ( RtlSetOwnerSecurityDescriptor(v15, v16, 0) < 0 )
+        goto LABEL_44;
+      _mm_lfence();
+      if ( v21 )
+        v11 = Sid;
+      if ( RtlSetGroupSecurityDescriptor(v15, v11, 0) < 0 )
+        goto LABEL_44;
+      _mm_lfence();
+      BufferLength = RtlLengthSecurityDescriptor(v15);
+      v17 = ExAllocatePoolWithTag((POOL_TYPE)1025, BufferLength, 0x564D7273u);
+      v18 = v17;
+      v4 = v17;
+      if ( byte_140014D91 )
+      {
+        if ( v17 )
+          goto LABEL_39;
+      }
+      else if ( v17 )
+      {
+        sub_14000FEC0(v17, 0, BufferLength);
+LABEL_39:
+        _mm_lfence();
+        sub_14000FEC0(v18, 0, BufferLength);
+        if ( RtlAbsoluteToSelfRelativeSD(v15, v18, &BufferLength) >= 0 )
+        {
+          _mm_lfence();
+          if ( SeValidSecurityDescriptor(BufferLength, v18) )
+          {
+            _mm_lfence();
+            GenericMapping = IoGetFileObjectGenericMapping();
+            if ( SeAccessCheck(
+                   v18,
+                   SubjectSecurityContext,
+                   0,
+                   DesiredAccess,
+                   0,
+                   0,
+                   GenericMapping,
+                   1,
+                   &GrantedAccess,
+                   &AccessStatus) )
+            {
+              v3 = GrantedAccess == DesiredAccess;
+            }
+          }
+        }
+      }
+      v2 = v23;
+    }
+  }
+LABEL_44:
+  if ( Sid )
+    ExFreePoolWithTag(Sid, 0x564D7173u);
+  if ( v5 )
+    ExFreePoolWithTag(v5, 0x564D6167u);
+  if ( v7 )
+    ExFreePoolWithTag(v7, 0x564D6170u);
+  if ( v2 )
+    ExFreePoolWithTag(v2, 0x564D6173u);
+  if ( v4 )
+    ExFreePoolWithTag(v4, 0x564D7273u);
+  return v3;
+}
+
+
+=== DISASM ===
+0x14000d9c0: mov     [rsp-8+arg_10], rbx
+0x14000d9c5: push    rbp
+0x14000d9c6: push    rsi
+0x14000d9c7: push    rdi
+0x14000d9c8: push    r12
+0x14000d9ca: push    r13
+0x14000d9cc: push    r14
+0x14000d9ce: push    r15
+0x14000d9d0: lea     rbp, [rsp-20h]
+0x14000d9d5: sub     rsp, 120h
+0x14000d9dc: mov     rax, cs:__security_cookie
+0x14000d9e3: xor     rax, rsp
+0x14000d9e6: mov     [rbp+50h+var_40], rax
+0x14000d9ea: and     [rsp+150h+Sid], 0
+0x14000d9f0: xor     r12d, r12d
+0x14000d9f3: and     [rbp+50h+var_C4], r12d
+0x14000d9f7: xor     r14b, r14b
+0x14000d9fa: and     [rbp+50h+var_C8], r12d
+0x14000d9fe: xor     r15d, r15d
+0x14000da01: xor     r13d, r13d
+0x14000da04: mov     [rsp+150h+DesiredAccess], edx
+0x14000da08: mov     dword ptr [rbp+50h+IdentifierAuthority.Value], r12d
+0x14000da0c: mov     eax, edx
+0x14000da0e: mov     word ptr [rbp+50h+IdentifierAuthority.Value+4], 500h
+0x14000da14: mov     [rsp+150h+var_100], 1
+0x14000da19: test    rcx, rcx
+0x14000da1c: jz      loc_14000DE89
+0x14000da22: test    eax, eax
+0x14000da24: jz      loc_14000DE89
+0x14000da2a: lea     rax, [rcx+20h]
+0x14000da2e: mov     ebx, 1000h
+0x14000da33: mov     edx, ebx; NumberOfBytes
+0x14000da35: mov     [rsp+150h+SubjectSecurityContext], rax
+0x14000da3a: mov     r8d, 564D6170h; Tag
+0x14000da40: mov     ecx, 401h; PoolType
+0x14000da45: call    cs:ExAllocatePoolWithTag
+0x14000da4b: cmp     cs:byte_140014D91, r12b
+0x14000da52: mov     rsi, rax
+0x14000da55: jnz     short loc_14000DA6F
+0x14000da57: test    rax, rax
+0x14000da5a: jz      loc_14000DE28
+0x14000da60: mov     r8d, ebx
+0x14000da63: xor     edx, edx
+0x14000da65: mov     rcx, rax
+0x14000da68: call    sub_14000FEC0
+0x14000da6d: jmp     short loc_14000DA78
+0x14000da6f: test    rsi, rsi
+0x14000da72: jz      loc_14000DE28
+0x14000da78: mov     edi, 2
+0x14000da7d: mov     edx, ebx; AclLength
+0x14000da7f: mov     r8d, edi; AclRevision
+0x14000da82: mov     rcx, rsi; Acl
+0x14000da85: call    RtlCreateAcl
+0x14000da8a: test    eax, eax
+0x14000da8c: js      loc_14000DE28
+0x14000da92: xor     edx, edx
+0x14000da94: lea     r8d, [rdi+6Eh]
+0x14000da98: lea     rcx, [rbp+50h+var_B0]
+0x14000da9c: call    sub_14000FEC0
+0x14000daa1: lea     rax, aVmware
+0x14000daa8: mov     [rbp+50h+var_A8], 4
+0x14000daaf: mov     [rbp+50h+var_A0], rax
+0x14000dab3: lea     rdx, aRtlqueryregist
+0x14000daba: lea     rax, [rsp+150h+Sid]
+0x14000dabf: mov     [rbp+50h+var_98], rax
+0x14000dac3: lea     rcx, [rbp+50h+DestinationString]; DestinationString
+0x14000dac7: lea     rax, sub_14000DEC0
+0x14000dace: mov     [rbp+50h+var_B0], rax
+0x14000dad2: call    cs:RtlInitUnicodeString
+0x14000dad8: lea     rcx, [rbp+50h+DestinationString]; SystemRoutineName
+0x14000dadc: call    cs:MmGetSystemRoutineAddress
+0x14000dae2: test    rax, rax
+0x14000dae5: lea     r8, [rbp+50h+var_B0]
+0x14000dae9: lea     rdx, aRegistryMachin
+0x14000daf0: cmovz   rax, cs:RtlQueryRegistryValues
+0x14000daf8: xor     r9d, r9d
+0x14000dafb: and     [rsp+150h+var_130], r12
+0x14000db00: xor     ecx, ecx
+0x14000db02: call    cs:__guard_dispatch_icall_fptr
+0x14000db08: test    eax, eax
+0x14000db0a: js      short loc_14000DB35
+0x14000db0c: cmp     [rsp+150h+Sid], r12
+0x14000db11: jz      short loc_14000DB35
+0x14000db13: lfence
+0x14000db16: mov     r9, [rsp+150h+Sid]; Sid
+0x14000db1b: mov     r8d, 1F01FFh; AccessMask
+0x14000db21: mov     edx, edi; AceRevision
+0x14000db23: mov     rcx, rsi; Acl
+0x14000db26: call    RtlAddAccessAllowedAce
+0x14000db2b: test    eax, eax
+0x14000db2d: js      loc_14000DE28
+0x14000db33: jmp     short loc_14000DB3A
+0x14000db35: mov     [rsp+150h+var_100], r12b
+0x14000db3a: mov     ecx, edi; SubAuthorityCount
+0x14000db3c: call    RtlLengthRequiredSid
+0x14000db41: mov     r8d, 564D6167h; Tag
+0x14000db47: mov     edx, eax; NumberOfBytes
+0x14000db49: mov     ecx, 401h; PoolType
+0x14000db4e: mov     edi, eax
+0x14000db50: call    cs:ExAllocatePoolWithTag
+0x14000db56: cmp     cs:byte_140014D91, r12b
+0x14000db5d: mov     rbx, rax
+0x14000db60: mov     r13, rax
+0x14000db63: jnz     short loc_14000DB7D
+0x14000db65: test    rax, rax
+0x14000db68: jz      loc_14000DE28
+0x14000db6e: mov     r8d, edi
+0x14000db71: xor     edx, edx
+0x14000db73: mov     rcx, rax
+0x14000db76: call    sub_14000FEC0
+0x14000db7b: jmp     short loc_14000DB86
+0x14000db7d: test    rbx, rbx
+0x14000db80: jz      loc_14000DE28
+0x14000db86: lfence
+0x14000db89: mov     r8d, 2; SubAuthorityCount
+0x14000db8f: lea     rdx, [rbp+50h+IdentifierAuthority]; IdentifierAuthority
+0x14000db93: mov     rcx, rbx; Sid
+0x14000db96: call    RtlInitializeSid
+0x14000db9b: xor     edx, edx; SubAuthority
+0x14000db9d: mov     rcx, rbx; Sid
+0x14000dba0: call    RtlSubAuthoritySid
+0x14000dba5: mov     edi, 1
+0x14000dbaa: mov     rcx, rbx; Sid
+0x14000dbad: mov     edx, edi; SubAuthority
+0x14000dbaf: mov     dword ptr [rax], 20h ; ' '
+0x14000dbb5: call    RtlSubAuthoritySid
+0x14000dbba: mov     r9, rbx; Sid
+0x14000dbbd: lea     edx, [rdi+1]; AceRevision
+0x14000dbc0: mov     r8d, 1F01FFh; AccessMask
+0x14000dbc6: mov     rcx, rsi; Acl
+0x14000dbc9: mov     dword ptr [rax], 220h
+0x14000dbcf: call    RtlAddAccessAllowedAce
+0x14000dbd4: mov     ecx, edi; SubAuthorityCount
+0x14000dbd6: call    RtlLengthRequiredSid
+0x14000dbdb: mov     eax, eax
+0x14000dbdd: mov     r8d, 564D6F73h; Tag
+0x14000dbe3: mov     edx, eax; NumberOfBytes
+0x14000dbe5: mov     [rsp+150h+var_F8], rax
+0x14000dbea: mov     ecx, 401h; PoolType
+0x14000dbef: call    cs:ExAllocatePoolWithTag
+0x14000dbf5: cmp     cs:byte_140014D91, r12b
+0x14000dbfc: mov     rdi, rax
+0x14000dbff: jnz     short loc_14000DC1B
+0x14000dc01: test    rax, rax
+0x14000dc04: jz      loc_14000DE28
+0x14000dc0a: mov     r8, [rsp+150h+var_F8]
+0x14000dc0f: xor     edx, edx
+0x14000dc11: mov     rcx, rax
+0x14000dc14: call    sub_14000FEC0
+0x14000dc19: jmp     short loc_14000DC24
+0x14000dc1b: test    rdi, rdi
+0x14000dc1e: jz      loc_14000DE28
+0x14000dc24: lfence
+0x14000dc27: mov     r8d, 1; SubAuthorityCount
+0x14000dc2d: lea     rdx, [rbp+50h+IdentifierAuthority]; IdentifierAuthority
+0x14000dc31: mov     rcx, rdi; Sid
+0x14000dc34: call    RtlInitializeSid
+0x14000dc39: xor     edx, edx; SubAuthority
+0x14000dc3b: mov     rcx, rdi; Sid
+0x14000dc3e: call    RtlSubAuthoritySid
+0x14000dc43: mov     r9, rdi; Sid
+0x14000dc46: mov     edx, 2; AceRevision
+0x14000dc4b: mov     r8d, 1F01FFh; AccessMask
+0x14000dc51: mov     rcx, rsi; Acl
+0x14000dc54: mov     dword ptr [rax], 12h
+0x14000dc5a: call    RtlAddAccessAllowedAce
+0x14000dc5f: mov     edx, 564D6F73h; Tag
+0x14000dc64: mov     rcx, rdi; P
+0x14000dc67: call    cs:ExFreePoolWithTag
+0x14000dc6d: mov     edx, 1000h; NumberOfBytes
+0x14000dc72: mov     ecx, 401h; PoolType
+0x14000dc77: mov     r8d, 564D6173h; Tag
+0x14000dc7d: call    cs:ExAllocatePoolWithTag
+0x14000dc83: cmp     cs:byte_140014D91, r14b
+0x14000dc8a: mov     rdi, rax
+0x14000dc8d: mov     r12, rax
+0x14000dc90: mov     [rsp+150h+var_F8], rax
+0x14000dc95: jnz     short loc_14000DCAE
+0x14000dc97: test    rax, rax
+0x14000dc9a: jz      short loc_14000DCAE
+0x14000dc9c: xor     edx, edx
+0x14000dc9e: mov     r8d, 1000h
+0x14000dca4: mov     rcx, rax
+0x14000dca7: call    sub_14000FEC0
+0x14000dcac: jmp     short loc_14000DCBC
+0x14000dcae: mov     [rsp+150h+var_F8], rdi
+0x14000dcb3: test    rdi, rdi
+0x14000dcb6: jz      loc_14000DE28
+0x14000dcbc: mov     edx, 1; Revision
+0x14000dcc1: mov     rcx, rdi; SecurityDescriptor
+0x14000dcc4: call    cs:RtlCreateSecurityDescriptor
+0x14000dcca: test    eax, eax
+0x14000dccc: js      loc_14000DE28
+0x14000dcd2: lfence
+0x14000dcd5: xor     r9d, r9d; DaclDefaulted
+0x14000dcd8: mov     r8, rsi; Dacl
+0x14000dcdb: mov     dl, 1; DaclPresent
+0x14000dcdd: mov     rcx, rdi; SecurityDescriptor
+0x14000dce0: call    cs:RtlSetDaclSecurityDescriptor
+0x14000dce6: test    eax, eax
+0x14000dce8: js      loc_14000DE28
+0x14000dcee: lfence
+0x14000dcf1: cmp     [rsp+150h+var_100], r14b
+0x14000dcf6: mov     rdx, rbx
+0x14000dcf9: mov     rcx, rdi; SecurityDescriptor
+0x14000dcfc: cmovnz  rdx, [rsp+150h+Sid]; Owner
+0x14000dd02: xor     r8d, r8d; OwnerDefaulted
+0x14000dd05: call    RtlSetOwnerSecurityDescriptor
+0x14000dd0a: test    eax, eax
+0x14000dd0c: js      loc_14000DE28
+0x14000dd12: lfence
+0x14000dd15: cmp     [rsp+150h+var_100], r14b
+0x14000dd1a: mov     rcx, rdi; SecurityDescriptor
+0x14000dd1d: cmovnz  rbx, [rsp+150h+Sid]
+0x14000dd23: xor     r8d, r8d; GroupDefaulted
+0x14000dd26: mov     rdx, rbx; Group
+0x14000dd29: call    RtlSetGroupSecurityDescriptor
+0x14000dd2e: test    eax, eax
+0x14000dd30: js      loc_14000DE28
+0x14000dd36: lfence
+0x14000dd39: mov     rcx, rdi; SecurityDescriptor
+0x14000dd3c: call    cs:RtlLengthSecurityDescriptor
+0x14000dd42: mov     edx, eax; NumberOfBytes
+0x14000dd44: mov     r8d, 564D7273h; Tag
+0x14000dd4a: mov     ecx, 401h; PoolType
+0x14000dd4f: mov     [rsp+150h+BufferLength], eax
+0x14000dd53: mov     r12d, eax
+0x14000dd56: call    cs:ExAllocatePoolWithTag
+0x14000dd5c: cmp     cs:byte_140014D91, r14b
+0x14000dd63: mov     rbx, rax
+0x14000dd66: mov     r15, rax
+0x14000dd69: jnz     short loc_14000DD83
+0x14000dd6b: test    rax, rax
+0x14000dd6e: jz      loc_14000DE23
+0x14000dd74: mov     r8d, r12d
+0x14000dd77: xor     edx, edx
+0x14000dd79: mov     rcx, rax
+0x14000dd7c: call    sub_14000FEC0
+0x14000dd81: jmp     short loc_14000DD8C
+0x14000dd83: test    rbx, rbx
+0x14000dd86: jz      loc_14000DE23
+0x14000dd8c: lfence
+0x14000dd8f: mov     r8d, [rsp+150h+BufferLength]
+0x14000dd94: xor     edx, edx
+0x14000dd96: mov     rcx, rbx
+0x14000dd99: call    sub_14000FEC0
+0x14000dd9e: lea     r8, [rsp+150h+BufferLength]; BufferLength
+0x14000dda3: mov     rdx, rbx; SelfRelativeSecurityDescriptor
+0x14000dda6: mov     rcx, rdi; AbsoluteSecurityDescriptor
+0x14000dda9: call    RtlAbsoluteToSelfRelativeSD
+0x14000ddae: test    eax, eax
+0x14000ddb0: js      short loc_14000DE23
+0x14000ddb2: lfence
+0x14000ddb5: mov     ecx, [rsp+150h+BufferLength]; Length
+0x14000ddb9: mov     rdx, rbx; SecurityDescriptor
+0x14000ddbc: call    cs:SeValidSecurityDescriptor
+0x14000ddc2: test    al, al
+0x14000ddc4: jz      short loc_14000DE23
+0x14000ddc6: lfence
+0x14000ddc9: call    cs:IoGetFileObjectGenericMapping
+0x14000ddcf: mov     edi, [rsp+150h+DesiredAccess]
+0x14000ddd3: lea     rcx, [rbp+50h+var_C4]
+0x14000ddd7: mov     rdx, [rsp+150h+SubjectSecurityContext]; SubjectSecurityContext
+0x14000dddc: mov     r12d, 1
+0x14000dde2: mov     [rsp+150h+AccessStatus], rcx; AccessStatus
+0x14000dde7: mov     r9d, edi; DesiredAccess
+0x14000ddea: lea     rcx, [rbp+50h+var_C8]
+0x14000ddee: xor     r8d, r8d; SubjectContextLocked
+0x14000ddf1: mov     [rsp+150h+GrantedAccess], rcx; GrantedAccess
+0x14000ddf6: mov     rcx, rbx; SecurityDescriptor
+0x14000ddf9: mov     [rsp+150h+AccessMode], r12b; AccessMode
+0x14000ddfe: mov     [rsp+150h+GenericMapping], rax; GenericMapping
+0x14000de03: and     [rsp+150h+var_128], 0
+0x14000de09: and     dword ptr [rsp+150h+var_130], 0
+0x14000de0e: call    cs:SeAccessCheck
+0x14000de14: test    al, al
+0x14000de16: jz      short loc_14000DE23
+0x14000de18: cmp     [rbp+50h+var_C8], edi
+0x14000de1b: movzx   r14d, r14b
+0x14000de1f: cmovz   r14d, r12d
+0x14000de23: mov     r12, [rsp+150h+var_F8]
+0x14000de28: mov     rcx, [rsp+150h+Sid]; P
+0x14000de2d: test    rcx, rcx
+0x14000de30: jz      short loc_14000DE3D
+0x14000de32: mov     edx, 564D7173h; Tag
+0x14000de37: call    cs:ExFreePoolWithTag
+0x14000de3d: test    r13, r13
+0x14000de40: jz      short loc_14000DE50
+0x14000de42: mov     edx, 564D6167h; Tag
+0x14000de47: mov     rcx, r13; P
+0x14000de4a: call    cs:ExFreePoolWithTag
+0x14000de50: test    rsi, rsi
+0x14000de53: jz      short loc_14000DE63
+0x14000de55: mov     edx, 564D6170h; Tag
+0x14000de5a: mov     rcx, rsi; P
+0x14000de5d: call    cs:ExFreePoolWithTag
+0x14000de63: test    r12, r12
+0x14000de66: jz      short loc_14000DE76
+0x14000de68: mov     edx, 564D6173h; Tag
+0x14000de6d: mov     rcx, r12; P
+0x14000de70: call    cs:ExFreePoolWithTag
+0x14000de76: test    r15, r15
+0x14000de79: jz      short loc_14000DE89
+0x14000de7b: mov     edx, 564D7273h; Tag
+0x14000de80: mov     rcx, r15; P
+0x14000de83: call    cs:ExFreePoolWithTag
+0x14000de89: mov     al, r14b
+0x14000de8c: mov     rcx, [rbp+50h+var_40]
+0x14000de90: xor     rcx, rsp; StackCookie
+0x14000de93: call    __security_check_cookie
+0x14000de98: mov     rbx, [rsp+150h+arg_10]
+0x14000dea0: add     rsp, 120h
+0x14000dea7: pop     r15
+0x14000dea9: pop     r14
+0x14000deab: pop     r13
+0x14000dead: pop     r12
+0x14000deaf: pop     rdi
+0x14000deb0: pop     rsi
+0x14000deb1: pop     rbp
+0x14000deb2: retn

@@ -1,0 +1,94 @@
+=== METADATA ===
+Name: sub_14000F278
+Addr: 0x14000f278
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f286: Access Member +0x38 ([rsp+48h+var_10])
+  0x14000f29f: Access Member +0x70 ([rsp+48h+arg_20])
+  0x14000f2ab: Access Member +0x20 ([rsp+48h+var_28])
+  0x14000f2b7: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000f2bf: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000f2d4: Access Member +0x70 ([rsp+48h+arg_20])
+  0x14000f2eb: Access Member +0x38 ([rsp+48h+var_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E828 (0x14000E865)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f27c -> 2
+  0x14000f2d9 -> Failed to map MPN %I64x
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000f278-0x14000f2d4 -> Jumps to: 0x14000f2d4, 0x14000f2e9
+  Block 0x14000f2d4-0x14000f2e9 -> Jumps to: 0x14000f2eb
+  Block 0x14000f2e9-0x14000f2eb -> Jumps to: 0x14000f2eb
+  Block 0x14000f2eb-0x14000f2fd -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000F278(__int64 *a1, __int64 a2, unsigned int a3, __int64 a4, __int64 a5)
+{
+  __int64 v5; // rcx
+  unsigned __int64 v7; // [rsp+30h] [rbp-18h] BYREF
+
+  v5 = *a1;
+  v7 = (a5 << 12) | a4 & 0x80000000000001FFuLL;
+  if ( !(unsigned int)sub_1400077DC(v5, 8 * (a3 + (a2 << 9)), (int)&v7, 1, 8) )
+    return 1;
+  sub_140003A14("Failed to map MPN %I64x\n", a5);
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000f278: sub     rsp, 48h
+0x14000f27c: mov     rax, cs:__security_cookie
+0x14000f283: xor     rax, rsp
+0x14000f286: mov     [rsp+48h+var_10], rax
+0x14000f28b: mov     rcx, [rcx]
+0x14000f28e: mov     rax, 80000000000001FFh
+0x14000f298: and     r9, rax
+0x14000f29b: shl     rdx, 9
+0x14000f29f: mov     rax, [rsp+48h+arg_20]
+0x14000f2a4: shl     rax, 0Ch
+0x14000f2a8: or      r9, rax
+0x14000f2ab: mov     [rsp+48h+var_28], 8
+0x14000f2b4: mov     eax, r8d
+0x14000f2b7: lea     r8, [rsp+48h+var_18]
+0x14000f2bc: add     rdx, rax
+0x14000f2bf: mov     [rsp+48h+var_18], r9
+0x14000f2c4: shl     rdx, 3
+0x14000f2c8: mov     r9b, 1
+0x14000f2cb: call    sub_1400077DC
+0x14000f2d0: test    eax, eax
+0x14000f2d2: jz      short loc_14000F2E9
+0x14000f2d4: mov     rdx, [rsp+48h+arg_20]
+0x14000f2d9: lea     rcx, aFailedToMapMpn_0; "Failed to map MPN %I64x\n"
+0x14000f2e0: call    sub_140003A14
+0x14000f2e5: xor     al, al
+0x14000f2e7: jmp     short loc_14000F2EB
+0x14000f2e9: mov     al, 1
+0x14000f2eb: mov     rcx, [rsp+48h+var_10]
+0x14000f2f0: xor     rcx, rsp; StackCookie
+0x14000f2f3: call    __security_check_cookie
+0x14000f2f8: add     rsp, 48h
+0x14000f2fc: retn

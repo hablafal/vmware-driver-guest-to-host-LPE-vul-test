@@ -1,0 +1,74 @@
+=== METADATA ===
+Name: sub_140009D98
+Addr: 0x140009d98
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  [+] PRIVILEGED_INSTRUCTIONS_USED
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E24C (0x14000E2AC)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140009d98-0x140009daa -> Jumps to: 0x140009daa, 0x140009dd2
+  Block 0x140009daa-0x140009dd2 -> Jumps to: 0x140009dd8
+  Block 0x140009dd2-0x140009dd8 -> Jumps to: 0x140009dd8
+  Block 0x140009dd8-0x140009dde -> Jumps to: 
+
+=== CODE ===
+char sub_140009D98()
+{
+  unsigned int v0; // r8d
+
+  v0 = 0;
+  if ( byte_14001CF20 )
+    return byte_14001CF21;
+  byte_14001CF20 = 1;
+  _RAX = 0x80000000LL;
+  __asm { cpuid }
+  if ( (int)_RAX < 0 )
+    v0 = _RAX;
+  byte_14001CF21 = v0 >= 0x80000008;
+  return v0 >= 0x80000008;
+}
+
+
+=== DISASM ===
+0x140009d98: push    rbx
+0x140009d9a: sub     rsp, 10h
+0x140009d9e: xor     r8d, r8d
+0x140009da1: cmp     cs:byte_14001CF20, r8b
+0x140009da8: jnz     short loc_140009DD2
+0x140009daa: xor     ecx, ecx
+0x140009dac: mov     cs:byte_14001CF20, 1
+0x140009db3: mov     eax, 80000000h
+0x140009db8: cpuid
+0x140009dba: test    eax, eax
+0x140009dbc: cmovs   r8d, eax
+0x140009dc0: cmp     r8d, 80000008h
+0x140009dc7: setnb   al
+0x140009dca: mov     cs:byte_14001CF21, al
+0x140009dd0: jmp     short loc_140009DD8
+0x140009dd2: mov     al, cs:byte_14001CF21
+0x140009dd8: add     rsp, 10h
+0x140009ddc: pop     rbx
+0x140009ddd: retn

@@ -1,0 +1,58 @@
+=== METADATA ===
+Name: sub_140005FB8
+Addr: 0x140005fb8
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140008B8C (0x140008BB2)
+  <- sub_14000B074 (0x14000B0BA)
+  <- sub_14000B074 (0x14000B199)
+  <- sub_14000B2F0 (0x14000B305)
+  <- sub_14000B3B8 (0x14000B3DC)
+  <- sub_14000B3B8 (0x14000B673)
+  <- sub_14000BD88 (0x14000BD91)
+  <- sub_14000BE84 (0x14000C062)
+  <- sub_14000C280 (0x14000C2AD)
+  <- sub_14000C758 (0x14000C761)
+  <- sub_14000C7D4 (0x14000C7F5)
+  <- sub_14000CAC4 (0x14000CACD)
+  <- sub_14000CCBC (0x14000CCE7)
+  <- sub_14000CE80 (0x14000CE8E)
+  <- sub_14000CF70 (0x14000CF84)
+  <- sub_14000CFB4 (0x14000D02B)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005fb8-0x140005fc6 -> Jumps to: 
+
+=== CODE ===
+void sub_140005FB8()
+{
+  ExAcquireFastMutex(&FastMutex);
+}
+
+
+=== DISASM ===
+0x140005fb8: lea     rcx, FastMutex
+0x140005fbf: jmp     cs:ExAcquireFastMutex

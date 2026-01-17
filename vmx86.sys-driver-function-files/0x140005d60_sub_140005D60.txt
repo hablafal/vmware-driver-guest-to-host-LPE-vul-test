@@ -1,0 +1,96 @@
+=== METADATA ===
+Name: sub_140005D60
+Addr: 0x140005d60
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005d60: Access Member +0x8 ([rsp+arg_0])
+  0x140005d65: Access Member +0x10 ([rsp+arg_8])
+  0x140005d7c: Access Member +0x10 ([rdx+10h])
+  0x140005d82: Access Member +0x10 ([rsi+10h])
+  0x140005d8c: Access Member +0x58 ([rcx+58h])
+  0x140005d98: Access Member +0x10 ([rbx+10h])
+  0x140005d9e: Access Member +0x8 ([rbx+8])
+  0x140005dad: Access Member +0x30 ([rsp+28h+arg_0])
+  0x140005db2: Access Member +0x38 ([rsp+28h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A564 (0x14000A62E)
+  <- sub_14000BD3C (0x14000BD4E)
+
+=== IMPORTS ===
+  -> 0x140005da2 calls MmFreeContiguousMemory
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005d60-0x140005d7c -> Jumps to: 0x140005d7c, 0x140005d9e
+  Block 0x140005d7c-0x140005d82 -> Jumps to: 0x140005d82, 0x140005d9e
+  Block 0x140005d82-0x140005d9e -> Jumps to: 0x140005d9e, 0x140005d82
+  Block 0x140005d9e-0x140005dc3 -> Jumps to: 
+
+=== CODE ===
+void __fastcall sub_140005D60(__int64 a1, void *a2)
+{
+  unsigned __int64 v2; // rdi
+
+  v2 = 0;
+  if ( a1 && *((_QWORD *)a2 + 2) )
+  {
+    do
+    {
+      sub_1400081A4(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 88LL), v2 + *(_QWORD *)a2);
+      ++v2;
+    }
+    while ( v2 < *((_QWORD *)a2 + 2) );
+  }
+  MmFreeContiguousMemory(*((PVOID *)a2 + 1));
+  ExFreePoolWithTag(a2, 0);
+}
+
+
+=== DISASM ===
+0x140005d60: mov     [rsp+arg_0], rbx
+0x140005d65: mov     [rsp+arg_8], rsi
+0x140005d6a: push    rdi
+0x140005d6b: sub     rsp, 20h
+0x140005d6f: xor     edi, edi
+0x140005d71: mov     rbx, rdx
+0x140005d74: mov     rsi, rcx
+0x140005d77: test    rcx, rcx
+0x140005d7a: jz      short loc_140005D9E
+0x140005d7c: cmp     [rdx+10h], rdi
+0x140005d80: jbe     short loc_140005D9E
+0x140005d82: mov     rcx, [rsi+10h]
+0x140005d86: mov     rdx, [rbx]
+0x140005d89: add     rdx, rdi
+0x140005d8c: mov     rcx, [rcx+58h]
+0x140005d90: call    sub_1400081A4
+0x140005d95: inc     rdi
+0x140005d98: cmp     rdi, [rbx+10h]
+0x140005d9c: jb      short loc_140005D82
+0x140005d9e: mov     rcx, [rbx+8]; BaseAddress
+0x140005da2: call    cs:MmFreeContiguousMemory
+0x140005da8: xor     edx, edx
+0x140005daa: mov     rcx, rbx
+0x140005dad: mov     rbx, [rsp+28h+arg_0]
+0x140005db2: mov     rsi, [rsp+28h+arg_8]
+0x140005db7: add     rsp, 20h
+0x140005dbb: pop     rdi
+0x140005dbc: jmp     cs:ExFreePoolWithTag

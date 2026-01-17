@@ -1,0 +1,61 @@
+=== METADATA ===
+Name: sub_14000BD60
+Addr: 0x14000bd60
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000bd7c: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000bd70: Access Member +0x48 ([rcx+48h])
+  0x14000bd7c: Access Member +0x48 (qword ptr [rbx+48h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000A564 (0x14000A5C6)
+  <- sub_14000EF84 (0x14000EF90)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000bd69 -> H
+
+=== BASIC BLOCKS ===
+  Block 0x14000bd60-0x14000bd87 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000BD60(__int64 a1)
+{
+  __int64 result; // rax
+
+  result = sub_140007CF4(*(_QWORD *)(a1 + 72), (void (__fastcall *)(__int64, __int64))sub_14000B350, 0);
+  *(_QWORD *)(a1 + 72) = 0;
+  return result;
+}
+
+
+=== DISASM ===
+0x14000bd60: push    rbx
+0x14000bd62: sub     rsp, 20h
+0x14000bd66: mov     rbx, rcx
+0x14000bd69: lea     rdx, sub_14000B350
+0x14000bd70: mov     rcx, [rcx+48h]
+0x14000bd74: xor     r8d, r8d
+0x14000bd77: call    sub_140007CF4
+0x14000bd7c: and     qword ptr [rbx+48h], 0
+0x14000bd81: add     rsp, 20h
+0x14000bd85: pop     rbx
+0x14000bd86: retn

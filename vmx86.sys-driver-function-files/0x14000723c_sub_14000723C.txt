@@ -1,0 +1,89 @@
+=== METADATA ===
+Name: sub_14000723C
+Addr: 0x14000723c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000723c: Access Member +0x8 ([rsp+arg_0])
+  0x140007294: Access Member +0x30 ([rsp+28h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x1400045DE)
+
+=== IMPORTS ===
+  -> 0x140007261 calls ExAcquireFastMutex
+  -> 0x14000728c calls ExReleaseFastMutex
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000723c-0x140007253 -> Jumps to: 0x140007253, 0x14000725a
+  Block 0x140007253-0x14000725a -> Jumps to: 0x140007294
+  Block 0x14000725a-0x14000726e -> Jumps to: 0x14000726e, 0x14000727e
+  Block 0x14000726e-0x140007277 -> Jumps to: 0x140007277, 0x14000727e
+  Block 0x140007277-0x14000727e -> Jumps to: 0x140007285
+  Block 0x14000727e-0x140007285 -> Jumps to: 0x140007285
+  Block 0x140007285-0x140007294 -> Jumps to: 0x140007294
+  Block 0x140007294-0x14000729f -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000723C(__int64 a1)
+{
+  unsigned int v3; // ebx
+
+  if ( (unsigned __int64)(a1 - 1) <= 0xFFFFFFFFFFFFFFFDuLL )
+    return 3221225659LL;
+  ExAcquireFastMutex(&FastMutex);
+  v3 = 0;
+  if ( a1 && qword_140018DC0 )
+    v3 = -1073741757;
+  else
+    qword_140018DC0 = a1;
+  ExReleaseFastMutex(&FastMutex);
+  return v3;
+}
+
+
+=== DISASM ===
+0x14000723c: mov     [rsp+arg_0], rbx
+0x140007241: push    rdi
+0x140007242: sub     rsp, 20h
+0x140007246: lea     rax, [rcx-1]
+0x14000724a: mov     rdi, rcx
+0x14000724d: cmp     rax, 0FFFFFFFFFFFFFFFDh
+0x140007251: ja      short loc_14000725A
+0x140007253: mov     eax, 0C00000BBh
+0x140007258: jmp     short loc_140007294
+0x14000725a: lea     rcx, FastMutex; FastMutex
+0x140007261: call    cs:ExAcquireFastMutex
+0x140007267: xor     ebx, ebx
+0x140007269: test    rdi, rdi
+0x14000726c: jz      short loc_14000727E
+0x14000726e: cmp     cs:qword_140018DC0, rbx
+0x140007275: jz      short loc_14000727E
+0x140007277: mov     ebx, 0C0000043h
+0x14000727c: jmp     short loc_140007285
+0x14000727e: mov     cs:qword_140018DC0, rdi
+0x140007285: lea     rcx, FastMutex; FastMutex
+0x14000728c: call    cs:ExReleaseFastMutex
+0x140007292: mov     eax, ebx
+0x140007294: mov     rbx, [rsp+28h+arg_0]
+0x140007299: add     rsp, 20h
+0x14000729d: pop     rdi
+0x14000729e: retn

@@ -1,0 +1,43 @@
+=== METADATA ===
+Name: sub_140005FAC
+Addr: 0x140005fac
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000D3E0 (0x14000D7EF)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005fac-0x140005faf -> Jumps to: 
+
+=== CODE ===
+char sub_140005FAC()
+{
+  return -1;
+}
+
+
+=== DISASM ===
+0x140005fac: mov     al, 0FFh
+0x140005fae: retn

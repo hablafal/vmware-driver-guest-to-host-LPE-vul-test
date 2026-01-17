@@ -1,0 +1,46 @@
+=== METADATA ===
+Name: sub_14000F46C (Suggested: EvtIoRead)
+Addr: 0x14000f46c
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f46c: Access Member +0x20 ([rcx+20h])
+  0x14000f470: Access Member +0x8 ([rax+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x20 -> possible EvtIoRead
+
+=== CALLERS ===
+  <- sub_14000EFA4 (0x14000EFCB)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000f46c-0x14000f474 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000F46C(__int64 a1)
+{
+  return *(unsigned int *)(*(_QWORD *)(a1 + 32) + 8LL);
+}
+
+
+=== DISASM ===
+0x14000f46c: mov     rax, [rcx+20h]
+0x14000f470: mov     eax, [rax+8]
+0x14000f473: retn

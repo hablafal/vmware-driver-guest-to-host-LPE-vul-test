@@ -1,0 +1,95 @@
+=== METADATA ===
+Name: sub_140005340
+Addr: 0x140005340
+Type: LEAF (Helper/Math)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000536a: Access Member +0x8 ([r8+8])
+  0x140005376: Access Member +0x8 ([r8+8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  (No direct callers)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140005340-0x140005355 -> Jumps to: 0x140005355
+  Block 0x140005355-0x14000535d -> Jumps to: 0x14000535d, 0x14000536a
+  Block 0x14000535d-0x14000536a -> Jumps to: 0x140005355, 0x14000536a
+  Block 0x14000536a-0x140005373 -> Jumps to: 0x140005373, 0x140005381
+  Block 0x140005373-0x140005381 -> Jumps to: 0x14000536a, 0x140005381
+  Block 0x140005381-0x140005382 -> Jumps to: 
+
+=== CODE ===
+signed __int64 __fastcall sub_140005340(__int64 a1, volatile signed __int64 *a2)
+{
+  signed __int64 result; // rax
+  unsigned __int64 v4; // rcx
+  signed __int64 v5; // rdx
+  unsigned __int64 v6; // rdx
+
+  _mm_mfence();
+  _mm_lfence();
+  result = __rdtsc();
+  v4 = result;
+  do
+  {
+    v5 = *a2;
+    if ( *a2 <= v4 )
+      break;
+    result = _InterlockedCompareExchange64(a2, v4, v5);
+  }
+  while ( v5 != result );
+  do
+  {
+    v6 = *((_QWORD *)a2 + 1);
+    if ( v6 >= v4 )
+      break;
+    result = _InterlockedCompareExchange64(a2 + 1, v4, v6);
+  }
+  while ( v6 != result );
+  return result;
+}
+
+
+=== DISASM ===
+0x140005340: mov     r8, rdx
+0x140005343: mfence
+0x140005346: lfence
+0x140005349: rdtsc
+0x14000534b: shl     rdx, 20h
+0x14000534f: or      rax, rdx
+0x140005352: mov     rcx, rax
+0x140005355: mov     rdx, [r8]
+0x140005358: cmp     rdx, rcx
+0x14000535b: jbe     short loc_14000536A
+0x14000535d: mov     rax, rdx
+0x140005360: lock cmpxchg [r8], rcx
+0x140005365: cmp     rdx, rax
+0x140005368: jnz     short loc_140005355
+0x14000536a: mov     rdx, [r8+8]
+0x14000536e: cmp     rdx, rcx
+0x140005371: jnb     short locret_140005381
+0x140005373: mov     rax, rdx
+0x140005376: lock cmpxchg [r8+8], rcx
+0x14000537c: cmp     rdx, rax
+0x14000537f: jnz     short loc_14000536A
+0x140005381: retn

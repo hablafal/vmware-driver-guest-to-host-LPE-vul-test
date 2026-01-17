@@ -1,0 +1,73 @@
+=== METADATA ===
+Name: sub_14000FA50
+Addr: 0x14000fa50
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000fa56: Access Member +0x10 ([rdx+10h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000BE84 (0x14000C04E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000fa63 -> StatVars failed to allocate handle.
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000fa50-0x14000fa63 -> Jumps to: 0x14000fa63, 0x14000fa73
+  Block 0x14000fa63-0x14000fa73 -> Jumps to: 0x14000fa79
+  Block 0x14000fa73-0x14000fa79 -> Jumps to: 0x14000fa79
+  Block 0x14000fa79-0x14000fa7e -> Jumps to: 
+
+=== CODE ===
+_OWORD *sub_14000FA50()
+{
+  _OWORD *result; // rax
+
+  result = sub_1400055C0(0x10u, 0);
+  if ( result )
+  {
+    *result = 0;
+  }
+  else
+  {
+    sub_140003A14("StatVars failed to allocate handle.\n");
+    return 0;
+  }
+  return result;
+}
+
+
+=== DISASM ===
+0x14000fa50: sub     rsp, 28h
+0x14000fa54: xor     edx, edx
+0x14000fa56: lea     ecx, [rdx+10h]; NumberOfBytes
+0x14000fa59: call    sub_1400055C0
+0x14000fa5e: test    rax, rax
+0x14000fa61: jnz     short loc_14000FA73
+0x14000fa63: lea     rcx, aStatvarsFailed; "StatVars failed to allocate handle.\n"
+0x14000fa6a: call    sub_140003A14
+0x14000fa6f: xor     eax, eax
+0x14000fa71: jmp     short loc_14000FA79
+0x14000fa73: xorps   xmm0, xmm0
+0x14000fa76: movups  xmmword ptr [rax], xmm0
+0x14000fa79: add     rsp, 28h
+0x14000fa7d: retn

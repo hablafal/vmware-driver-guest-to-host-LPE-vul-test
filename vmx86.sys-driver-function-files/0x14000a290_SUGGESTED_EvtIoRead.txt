@@ -1,0 +1,166 @@
+=== METADATA ===
+Name: sub_14000A290 (Suggested: EvtIoRead)
+Addr: 0x14000a290
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000a2ff: AND with Mask 0x0
+
+=== MEMBER ACCESS ===
+  0x14000a290: Access Member +0x8 ([rsp+arg_0])
+  0x14000a2ba: Access Member +0x80 ([rsp+68h+arg_10])
+  0x14000a2c2: Access Member +0x1A ([rbx+1Ah])
+  0x14000a2db: Access Member +0x20 ([r12+20h])
+  0x14000a2e9: Access Member +0x10 ([rbx+r12+10h])
+  0x14000a2f3: Access Member +0x28 ([rsp+68h+var_40])
+  0x14000a2ff: Access Member +0x20 ([rsp+68h+var_48])
+  0x14000a31a: Access Member +0x80 ([rsp+68h+arg_10])
+  0x14000a32f: Access Member +0x70 ([rsp+68h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] Offset +0x20 -> possible EvtIoRead
+
+=== CALLERS ===
+  <- sub_14000B92C (0x14000BA42)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000a2ad -> 
+
+  0x14000a2f8 -> Found a mismatch on MSR feature 0x%x; logical cpu%u value = 0x%llx, but logical cpu%u value = 0x%llx
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000a290-0x14000a2c6 -> Jumps to: 0x14000a2c6
+  Block 0x14000a2c6-0x14000a2d8 -> Jumps to: 0x14000a2d8, 0x14000a322
+  Block 0x14000a2d8-0x14000a2e6 -> Jumps to: 0x14000a2e6
+  Block 0x14000a2e6-0x14000a2f3 -> Jumps to: 0x14000a2f3, 0x14000a310
+  Block 0x14000a2f3-0x14000a310 -> Jumps to: 0x14000a310
+  Block 0x14000a310-0x14000a31a -> Jumps to: 0x14000a2e6, 0x14000a31a
+  Block 0x14000a31a-0x14000a322 -> Jumps to: 0x14000a322
+  Block 0x14000a322-0x14000a32f -> Jumps to: 0x14000a2c6, 0x14000a32f
+  Block 0x14000a32f-0x14000a344 -> Jumps to: 
+
+=== CODE ===
+int __fastcall sub_14000A290(unsigned int a1)
+{
+  __int64 v1; // rbx
+  int *v2; // rdi
+  __int64 v3; // r13
+  __int64 v5; // r15
+  __int64 v6; // rax
+  unsigned int v7; // esi
+  __int64 v8; // r12
+  int v9; // r13d
+  _QWORD *v10; // r14
+  __int64 v12; // [rsp+80h] [rbp+18h]
+
+  v1 = 0;
+  v2 = (int *)&unk_140014A10;
+  v3 = 16LL * a1 + 8;
+  v12 = v3;
+  v5 = 26;
+  do
+  {
+    LODWORD(v6) = *v2;
+    v7 = 1;
+    v8 = qword_14001D0A0;
+    if ( a1 > 1 )
+    {
+      _mm_lfence();
+      v9 = *v2;
+      v10 = (_QWORD *)(v1 + qword_14001D0A0 + 32);
+      do
+      {
+        v6 = *(_QWORD *)(v1 + v8 + 16);
+        if ( *v10 != v6 )
+          LODWORD(v6) = sub_140003A14(
+                          "Found a mismatch on MSR feature 0x%x; logical cpu%u value = 0x%llx, but logical cpu%u value = 0x%llx\n",
+                          v9,
+                          v7,
+                          *v10,
+                          0,
+                          *(_QWORD *)(v1 + v8 + 16));
+        ++v7;
+        v10 += 2;
+      }
+      while ( v7 < a1 );
+      v3 = v12;
+    }
+    v2 += 4;
+    v1 += v3;
+    --v5;
+  }
+  while ( v5 );
+  return v6;
+}
+
+
+=== DISASM ===
+0x14000a290: mov     [rsp+arg_0], rbx
+0x14000a295: push    rbp
+0x14000a296: push    rsi
+0x14000a297: push    rdi
+0x14000a298: push    r12
+0x14000a29a: push    r13
+0x14000a29c: push    r14
+0x14000a29e: push    r15
+0x14000a2a0: sub     rsp, 30h
+0x14000a2a4: xor     ebx, ebx
+0x14000a2a6: mov     r13d, ecx
+0x14000a2a9: shl     r13, 4
+0x14000a2ad: lea     rdi, unk_140014A10
+0x14000a2b4: add     r13, 8
+0x14000a2b8: mov     ebp, ecx
+0x14000a2ba: mov     [rsp+68h+arg_10], r13
+0x14000a2c2: lea     r15d, [rbx+1Ah]
+0x14000a2c6: mov     eax, [rdi]
+0x14000a2c8: mov     esi, 1
+0x14000a2cd: mov     r12, cs:qword_14001D0A0
+0x14000a2d4: cmp     ebp, esi
+0x14000a2d6: jbe     short loc_14000A322
+0x14000a2d8: lfence
+0x14000a2db: lea     r14, [r12+20h]
+0x14000a2e0: mov     r13d, eax
+0x14000a2e3: add     r14, rbx
+0x14000a2e6: mov     r9, [r14]
+0x14000a2e9: mov     rax, [rbx+r12+10h]
+0x14000a2ee: cmp     r9, rax
+0x14000a2f1: jz      short loc_14000A310
+0x14000a2f3: mov     [rsp+68h+var_40], rax
+0x14000a2f8: lea     rcx, aFoundAMismatch; "Found a mismatch on MSR feature 0x%x; l"...
+0x14000a2ff: and     [rsp+68h+var_48], 0
+0x14000a305: mov     r8d, esi
+0x14000a308: mov     edx, r13d
+0x14000a30b: call    sub_140003A14
+0x14000a310: inc     esi
+0x14000a312: add     r14, 10h
+0x14000a316: cmp     esi, ebp
+0x14000a318: jb      short loc_14000A2E6
+0x14000a31a: mov     r13, [rsp+68h+arg_10]
+0x14000a322: add     rdi, 10h
+0x14000a326: add     rbx, r13
+0x14000a329: sub     r15, 1
+0x14000a32d: jnz     short loc_14000A2C6
+0x14000a32f: mov     rbx, [rsp+68h+arg_0]
+0x14000a334: add     rsp, 30h
+0x14000a338: pop     r15
+0x14000a33a: pop     r14
+0x14000a33c: pop     r13
+0x14000a33e: pop     r12
+0x14000a340: pop     rdi
+0x14000a341: pop     rsi
+0x14000a342: pop     rbp
+0x14000a343: retn

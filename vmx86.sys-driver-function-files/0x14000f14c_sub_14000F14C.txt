@@ -1,0 +1,81 @@
+=== METADATA ===
+Name: sub_14000F14C
+Addr: 0x14000f14c
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000f14c: Access Member +0x8 ([rsp+arg_0])
+  0x14000f166: Access Member +0x60 ([rsp+38h+arg_20])
+  0x14000f172: Access Member +0x20 ([rsp+38h+var_18])
+  0x14000f19b: Access Member +0x40 ([rsp+38h+arg_0])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000E46C (0x14000E5C9)
+  <- sub_14000E46C (0x14000E698)
+  <- sub_14000E46C (0x14000E766)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000f187 -> Failed to read PTE %d from MPN %I64x
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000f14c-0x14000f184 -> Jumps to: 0x14000f184, 0x14000f199
+  Block 0x14000f184-0x14000f199 -> Jumps to: 0x14000f19b
+  Block 0x14000f199-0x14000f19b -> Jumps to: 0x14000f19b
+  Block 0x14000f19b-0x14000f1a6 -> Jumps to: 
+
+=== CODE ===
+char __fastcall sub_14000F14C(__int64 *a1, __int64 a2, unsigned int a3, __int64 a4, __int64 a5)
+{
+  if ( !(unsigned int)sub_1400067C0(*a1, 8 * (a3 + (a2 << 9)), a5, 1, 8) )
+    return 1;
+  sub_140003A14("Failed to read PTE %d from MPN %I64x\n", a3, a2);
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000f14c: mov     [rsp+arg_0], rbx
+0x14000f151: push    rdi
+0x14000f152: sub     rsp, 30h
+0x14000f156: mov     rcx, [rcx]
+0x14000f159: mov     rdi, rdx
+0x14000f15c: shl     rdx, 9
+0x14000f160: mov     r9b, 1
+0x14000f163: mov     ebx, r8d
+0x14000f166: mov     r8, [rsp+38h+arg_20]
+0x14000f16b: add     rdx, rbx
+0x14000f16e: shl     rdx, 3
+0x14000f172: mov     [rsp+38h+var_18], 8
+0x14000f17b: call    sub_1400067C0
+0x14000f180: test    eax, eax
+0x14000f182: jz      short loc_14000F199
+0x14000f184: mov     r8, rdi
+0x14000f187: lea     rcx, aFailedToReadPt; "Failed to read PTE %d from MPN %I64x\n"
+0x14000f18e: mov     edx, ebx
+0x14000f190: call    sub_140003A14
+0x14000f195: xor     al, al
+0x14000f197: jmp     short loc_14000F19B
+0x14000f199: mov     al, 1
+0x14000f19b: mov     rbx, [rsp+38h+arg_0]
+0x14000f1a0: add     rsp, 30h
+0x14000f1a4: pop     rdi
+0x14000f1a5: retn

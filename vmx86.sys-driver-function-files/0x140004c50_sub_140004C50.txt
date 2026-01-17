@@ -1,0 +1,389 @@
+=== METADATA ===
+Name: sub_140004C50
+Addr: 0x140004c50
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  [+] IRP_DISPATCH_HANDLER
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140004c50: Access Member +0x10 ([rsp+arg_8])
+  0x140004c55: Access Member +0x20 ([rsp+arg_18])
+  0x140004c69: Access Member +0x10 ([rcx+10h])
+  0x140004c7d: Access Member +0x58 ([rax+58h])
+  0x140004cd0: Access Member +0x90 ([rsp+68h+arg_20])
+  0x140004cdb: Access Member +0x28 ([rsp+68h+Flags])
+  0x140004ce7: Access Member +0x20 ([rsp+68h+CacheType])
+  0x140004d19: Access Member +0x30 ([rax+30h])
+  0x140004d72: Access Member +0x30 ([rax+30h])
+  0x140004d76: Access Member +0x70 ([rsp+68h+arg_0])
+  0x140004d7b: Access Member +0x88 ([rsp+68h+arg_18])
+  0x140004d90: Access Member +0x70 ([rsp+68h+arg_0])
+  0x140004df8: Access Member +0x28 (qword ptr [rsp+68h+Flags])
+  0x140004e05: Access Member +0x20 (qword ptr [rsp+68h+CacheType])
+  0x140004e29: Access Member +0x28 (qword ptr [rsp+68h+Flags])
+  0x140004e36: Access Member +0x20 (qword ptr [rsp+68h+CacheType])
+  0x140004e55: Access Member +0x30 ([rax+30h])
+  0x140004ed9: Access Member +0x78 ([rsp+68h+arg_8])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  [!] DISPATCH ASSIGNMENT -> None (0x1)
+
+=== CALLERS ===
+  <- sub_140005720 (0x140005729)
+  <- sub_140005734 (0x14000575A)
+
+=== IMPORTS ===
+  -> 0x140004cef calls MmAllocatePagesForMdlEx
+  -> 0x140004db2 calls ExFreePoolWithTag
+  -> 0x140004e83 calls MmFreePagesFromMdl
+  -> 0x140004e8e calls ExFreePoolWithTag
+  -> 0x140004ea1 calls ExFreePoolWithTag
+  -> 0x140004ecc calls ExFreePoolWithTag
+
+=== STRINGS ===
+  0x140004c97 -> Can't allocate MDLs array for %I64u pages
+  0x140004dca -> Couldn't copy out %I64u pages
+  0x140004df1 -> Failed to add MPN 0x%08llx to MDL array(%I64u/%I64u)
+  0x140004e22 -> MPN 0x%08llx is alredy locked (%I64u/%I64u)
+  0x140004eb3 -> Can't allocate %I64u pages
+
+=== BASIC BLOCKS ===
+  Block 0x140004c50-0x140004c90 -> Jumps to: 0x140004c90, 0x140004cb0
+  Block 0x140004c90-0x140004cb0 -> Jumps to: 0x140004ed2
+  Block 0x140004cb0-0x140004cbc -> Jumps to: 0x140004cbc, 0x140004eac
+  Block 0x140004cbc-0x140004cfe -> Jumps to: 0x140004cfe, 0x140004d06
+  Block 0x140004cfe-0x140004d06 -> Jumps to: 0x140004cbc, 0x140004d06
+  Block 0x140004d06-0x140004d0f -> Jumps to: 0x140004d0f, 0x140004eac
+  Block 0x140004d0f-0x140004d12 -> Jumps to: 0x140004d12
+  Block 0x140004d12-0x140004d2d -> Jumps to: 0x140004d2d, 0x140004e18
+  Block 0x140004d2d-0x140004d45 -> Jumps to: 0x140004d45, 0x140004de7
+  Block 0x140004d45-0x140004d52 -> Jumps to: 0x140004d52, 0x140004de7
+  Block 0x140004d52-0x140004d65 -> Jumps to: 0x140004d12, 0x140004d65
+  Block 0x140004d65-0x140004d6e -> Jumps to: 0x140004d6e
+  Block 0x140004d6e-0x140004d85 -> Jumps to: 0x140004d85, 0x140004d8a
+  Block 0x140004d85-0x140004d8a -> Jumps to: 0x140004da1
+  Block 0x140004d8a-0x140004da1 -> Jumps to: 0x140004da1, 0x140004dc0
+  Block 0x140004da1-0x140004dad -> Jumps to: 0x140004d6e, 0x140004dad
+  Block 0x140004dad-0x140004dc0 -> Jumps to: 0x140004ed9
+  Block 0x140004dc0-0x140004de7 -> Jumps to: 0x140004e46
+  Block 0x140004de7-0x140004e18 -> Jumps to: 0x140004e46
+  Block 0x140004e18-0x140004e46 -> Jumps to: 0x140004e46
+  Block 0x140004e46-0x140004e4e -> Jumps to: 0x140004e4e, 0x140004e7c
+  Block 0x140004e4e-0x140004e6e -> Jumps to: 0x140004e6e, 0x140004e74
+  Block 0x140004e6e-0x140004e74 -> Jumps to: 0x140004e74
+  Block 0x140004e74-0x140004e7c -> Jumps to: 0x140004e4e, 0x140004e7c
+  Block 0x140004e7c-0x140004e9c -> Jumps to: 0x140004e9c, 0x140004e7c
+  Block 0x140004e9c-0x140004eac -> Jumps to: 0x140004ed9
+  Block 0x140004eac-0x140004ed2 -> Jumps to: 0x140004ed2
+  Block 0x140004ed2-0x140004ed9 -> Jumps to: 0x140004ed9
+  Block 0x140004ed9-0x140004eee -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140004C50(__int64 a1, char *a2, unsigned __int64 a3, char a4, char a5)
+{
+  __int64 v7; // r13
+  unsigned __int64 v8; // rdi
+  _QWORD *v9; // r14
+  unsigned __int64 v10; // rsi
+  PHYSICAL_ADDRESS v11; // rdx
+  PMDL PagesForMdl; // rax
+  unsigned __int64 v13; // rbp
+  __int64 v14; // rbx
+  signed __int64 v15; // r12
+  volatile signed __int64 *v16; // rax
+  unsigned __int64 v17; // rbx
+  signed __int64 v18; // r12
+  __int64 v19; // rcx
+  __int64 v21; // r12
+  unsigned __int64 i; // r15
+  __int64 v23; // rbx
+  volatile __int64 *v24; // rax
+  struct _MDL *v25; // rbx
+  __int64 v26; // [rsp+70h] [rbp+8h] BYREF
+  char v27; // [rsp+88h] [rbp+20h]
+
+  v27 = a4;
+  v7 = *(_QWORD *)(*(_QWORD *)(a1 + 16) + 88LL);
+  v8 = 0;
+  v9 = (_QWORD *)sub_1400055C0(8 * a3);
+  if ( !v9 )
+  {
+    sub_14000DF58(IoObject);
+    return -1073741670;
+  }
+  v10 = 0;
+  if ( !a3 )
+    goto LABEL_29;
+  do
+  {
+    v11.QuadPart = 0x7FFFFFFFFFFFFFFFLL;
+    if ( a5 )
+      v11.QuadPart = 0xFFFFFFFFLL;
+    PagesForMdl = MmAllocatePagesForMdlEx(0, v11, 0, 0x1000u, MmCached, 0);
+    v9[v10] = PagesForMdl;
+    if ( !PagesForMdl )
+      break;
+    ++v10;
+  }
+  while ( v10 < a3 );
+  if ( !v10 )
+  {
+LABEL_29:
+    sub_14000DF58(IoObject);
+    ExFreePoolWithTag(v9, 0);
+    return -1073741670;
+  }
+  v13 = 0;
+  while ( 1 )
+  {
+    v14 = *(_QWORD *)(v9[v13] + 48LL);
+    if ( (unsigned __int8)sub_140008220(v7, v14) )
+      break;
+    v15 = v9[v13];
+    v16 = (volatile signed __int64 *)sub_14000501C(v14);
+    if ( !v16 || _InterlockedCompareExchange64(v16, v15, 0) )
+    {
+      _mm_lfence();
+      sub_14000DF58(IoObject);
+      v21 = -1073740024;
+      goto LABEL_23;
+    }
+    sub_140007F14(v7, v14);
+    if ( ++v13 >= v10 )
+    {
+      v17 = 0;
+      v18 = (char *)v9 - a2;
+      while ( 1 )
+      {
+        v19 = *(_QWORD *)(*(_QWORD *)&a2[v18] + 48LL);
+        v26 = v19;
+        if ( v27 )
+        {
+          *(_QWORD *)a2 = v19;
+        }
+        else if ( (unsigned int)sub_1400059F8(a2, &v26, 8) )
+        {
+          _mm_lfence();
+          sub_14000DF58(IoObject);
+          v21 = -1073741819;
+          goto LABEL_23;
+        }
+        ++v17;
+        a2 += 8;
+        if ( v17 >= v10 )
+        {
+          ExFreePoolWithTag(v9, 0);
+          return v10;
+        }
+      }
+    }
+  }
+  _mm_lfence();
+  sub_14000DF58(IoObject);
+  v21 = 1073741849;
+LABEL_23:
+  for ( i = 0; i < v13; ++i )
+  {
+    v23 = *(_QWORD *)(v9[i] + 48LL);
+    sub_1400081A4(v7, v23);
+    v24 = (volatile __int64 *)sub_14000501C(v23);
+    if ( v24 )
+      _InterlockedExchange64(v24, 0);
+  }
+  do
+  {
+    v25 = (struct _MDL *)v9[v8];
+    MmFreePagesFromMdl(v25);
+    ExFreePoolWithTag(v25, 0);
+    ++v8;
+  }
+  while ( v8 < v10 );
+  ExFreePoolWithTag(v9, 0);
+  return v21;
+}
+
+
+=== DISASM ===
+0x140004c50: mov     [rsp+arg_8], rbx
+0x140004c55: mov     [rsp+arg_18], r9b
+0x140004c5a: push    rbp
+0x140004c5b: push    rsi
+0x140004c5c: push    rdi
+0x140004c5d: push    r12
+0x140004c5f: push    r13
+0x140004c61: push    r14
+0x140004c63: push    r15
+0x140004c65: sub     rsp, 30h
+0x140004c69: mov     rax, [rcx+10h]
+0x140004c6d: mov     r15, rdx
+0x140004c70: lea     rcx, ds:0[r8*8]; NumberOfBytes
+0x140004c78: xor     edx, edx
+0x140004c7a: mov     rbx, r8
+0x140004c7d: mov     r13, [rax+58h]
+0x140004c81: call    sub_1400055C0
+0x140004c86: xor     edi, edi
+0x140004c88: mov     r14, rax
+0x140004c8b: test    rax, rax
+0x140004c8e: jnz     short loc_140004CB0
+0x140004c90: mov     rcx, cs:IoObject; IoObject
+0x140004c97: lea     r8, aCanTAllocateMd; "Can't allocate MDLs array for %I64u pag"...
+0x140004c9e: mov     r9, rbx
+0x140004ca1: mov     edx, 0C0080020h
+0x140004ca6: call    sub_14000DF58
+0x140004cab: jmp     loc_140004ED2
+0x140004cb0: mov     rsi, rdi
+0x140004cb3: test    rbx, rbx
+0x140004cb6: jz      loc_140004EAC
+0x140004cbc: mov     rdx, qword ptr cs:HighestAcceptableAddress
+0x140004cc3: mov     r9d, 1000h; TotalBytes
+0x140004cc9: mov     rcx, qword ptr cs:LowAddress; LowAddress
+0x140004cd0: cmp     [rsp+68h+arg_20], dil
+0x140004cd8: mov     r8, rcx; SkipBytes
+0x140004cdb: mov     [rsp+68h+Flags], edi; Flags
+0x140004cdf: cmovnz  rdx, qword ptr cs:HighAddress; HighAddress
+0x140004ce7: mov     [rsp+68h+CacheType], 1; CacheType
+0x140004cef: call    cs:MmAllocatePagesForMdlEx
+0x140004cf5: mov     [r14+rsi*8], rax
+0x140004cf9: test    rax, rax
+0x140004cfc: jz      short loc_140004D06
+0x140004cfe: inc     rsi
+0x140004d01: cmp     rsi, rbx
+0x140004d04: jb      short loc_140004CBC
+0x140004d06: test    rsi, rsi
+0x140004d09: jz      loc_140004EAC
+0x140004d0f: mov     rbp, rdi
+0x140004d12: mov     rax, [r14+rbp*8]
+0x140004d16: mov     rcx, r13
+0x140004d19: mov     rbx, [rax+30h]
+0x140004d1d: mov     rdx, rbx
+0x140004d20: call    sub_140008220
+0x140004d25: test    al, al
+0x140004d27: jnz     loc_140004E18
+0x140004d2d: mov     r12, [r14+rbp*8]
+0x140004d31: mov     rcx, rbx
+0x140004d34: call    sub_14000501C
+0x140004d39: mov     rcx, rax
+0x140004d3c: test    rax, rax
+0x140004d3f: jz      loc_140004DE7
+0x140004d45: xor     eax, eax
+0x140004d47: lock cmpxchg [rcx], r12
+0x140004d4c: jnz     loc_140004DE7
+0x140004d52: mov     rdx, rbx
+0x140004d55: mov     rcx, r13
+0x140004d58: call    sub_140007F14
+0x140004d5d: inc     rbp
+0x140004d60: cmp     rbp, rsi
+0x140004d63: jb      short loc_140004D12
+0x140004d65: mov     r12, r14
+0x140004d68: mov     rbx, rdi
+0x140004d6b: sub     r12, r15
+0x140004d6e: mov     rax, [r12+r15]
+0x140004d72: mov     rcx, [rax+30h]
+0x140004d76: mov     [rsp+68h+arg_0], rcx
+0x140004d7b: cmp     [rsp+68h+arg_18], dil
+0x140004d83: jz      short loc_140004D8A
+0x140004d85: mov     [r15], rcx
+0x140004d88: jmp     short loc_140004DA1
+0x140004d8a: mov     r8d, 8
+0x140004d90: lea     rdx, [rsp+68h+arg_0]
+0x140004d95: mov     rcx, r15
+0x140004d98: call    sub_1400059F8
+0x140004d9d: test    eax, eax
+0x140004d9f: jnz     short loc_140004DC0
+0x140004da1: inc     rbx
+0x140004da4: add     r15, 8
+0x140004da8: cmp     rbx, rsi
+0x140004dab: jb      short loc_140004D6E
+0x140004dad: xor     edx, edx; Tag
+0x140004daf: mov     rcx, r14; P
+0x140004db2: call    cs:ExFreePoolWithTag
+0x140004db8: mov     rax, rsi
+0x140004dbb: jmp     loc_140004ED9
+0x140004dc0: lfence
+0x140004dc3: mov     rcx, cs:IoObject; IoObject
+0x140004dca: lea     r8, aCouldnTCopyOut; "Couldn't copy out %I64u pages"
+0x140004dd1: mov     r9, rsi
+0x140004dd4: mov     edx, 0C0080020h
+0x140004dd9: call    sub_14000DF58
+0x140004dde: mov     r12, 0FFFFFFFFC0000005h
+0x140004de5: jmp     short loc_140004E46
+0x140004de7: lfence
+0x140004dea: mov     rcx, cs:IoObject; IoObject
+0x140004df1: lea     r8, aFailedToAddMpn; "Failed to add MPN 0x%08llx to MDL array"...
+0x140004df8: mov     qword ptr [rsp+68h+Flags], rsi
+0x140004dfd: mov     r9, rbx
+0x140004e00: mov     edx, 0C0080020h
+0x140004e05: mov     qword ptr [rsp+68h+CacheType], rbp
+0x140004e0a: call    sub_14000DF58
+0x140004e0f: mov     r12, 0FFFFFFFFC0000708h
+0x140004e16: jmp     short loc_140004E46
+0x140004e18: lfence
+0x140004e1b: mov     rcx, cs:IoObject; IoObject
+0x140004e22: lea     r8, aMpn0x08llxIsAl; "MPN 0x%08llx is alredy locked (%I64u/%I"...
+0x140004e29: mov     qword ptr [rsp+68h+Flags], rsi
+0x140004e2e: mov     r9, rbx
+0x140004e31: mov     edx, 0C0080020h
+0x140004e36: mov     qword ptr [rsp+68h+CacheType], rbp
+0x140004e3b: call    sub_14000DF58
+0x140004e40: mov     r12d, 40000019h
+0x140004e46: mov     r15, rdi
+0x140004e49: test    rbp, rbp
+0x140004e4c: jz      short loc_140004E7C
+0x140004e4e: mov     rax, [r14+r15*8]
+0x140004e52: mov     rcx, r13
+0x140004e55: mov     rbx, [rax+30h]
+0x140004e59: mov     rdx, rbx
+0x140004e5c: call    sub_1400081A4
+0x140004e61: mov     rcx, rbx
+0x140004e64: call    sub_14000501C
+0x140004e69: test    rax, rax
+0x140004e6c: jz      short loc_140004E74
+0x140004e6e: mov     rcx, rdi
+0x140004e71: xchg    rcx, [rax]
+0x140004e74: inc     r15
+0x140004e77: cmp     r15, rbp
+0x140004e7a: jb      short loc_140004E4E
+0x140004e7c: mov     rbx, [r14+rdi*8]
+0x140004e80: mov     rcx, rbx; MemoryDescriptorList
+0x140004e83: call    cs:MmFreePagesFromMdl
+0x140004e89: xor     edx, edx; Tag
+0x140004e8b: mov     rcx, rbx; P
+0x140004e8e: call    cs:ExFreePoolWithTag
+0x140004e94: inc     rdi
+0x140004e97: cmp     rdi, rsi
+0x140004e9a: jb      short loc_140004E7C
+0x140004e9c: xor     edx, edx; Tag
+0x140004e9e: mov     rcx, r14; P
+0x140004ea1: call    cs:ExFreePoolWithTag
+0x140004ea7: mov     rax, r12
+0x140004eaa: jmp     short loc_140004ED9
+0x140004eac: mov     rcx, cs:IoObject; IoObject
+0x140004eb3: lea     r8, aCanTAllocateI6; "Can't allocate %I64u pages"
+0x140004eba: mov     r9, rbx
+0x140004ebd: mov     edx, 0C0080020h
+0x140004ec2: call    sub_14000DF58
+0x140004ec7: xor     edx, edx; Tag
+0x140004ec9: mov     rcx, r14; P
+0x140004ecc: call    cs:ExFreePoolWithTag
+0x140004ed2: mov     rax, 0FFFFFFFFC000009Ah
+0x140004ed9: mov     rbx, [rsp+68h+arg_8]
+0x140004ede: add     rsp, 30h
+0x140004ee2: pop     r15
+0x140004ee4: pop     r14
+0x140004ee6: pop     r13
+0x140004ee8: pop     r12
+0x140004eea: pop     rdi
+0x140004eeb: pop     rsi
+0x140004eec: pop     rbp
+0x140004eed: retn

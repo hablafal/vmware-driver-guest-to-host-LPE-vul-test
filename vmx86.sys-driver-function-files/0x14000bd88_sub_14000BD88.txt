@@ -1,0 +1,68 @@
+=== METADATA ===
+Name: sub_14000BD88
+Addr: 0x14000bd88
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_1400047D0 (0x140004895)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000bd88-0x14000bda3 -> Jumps to: 0x14000bda3, 0x14000bdab
+  Block 0x14000bda3-0x14000bdab -> Jumps to: 0x14000bdab
+  Block 0x14000bdab-0x14000bdaf -> Jumps to: 0x14000bdaf, 0x14000bdb5
+  Block 0x14000bdaf-0x14000bdb5 -> Jumps to: 0x14000bdb5
+  Block 0x14000bdb5-0x14000bdc3 -> Jumps to: 0x140005fc8
+  Block 0x140005fc8-0x140005fc8 -> Jumps to: 
+
+=== CODE ===
+void sub_14000BD88()
+{
+  int v0; // eax
+
+  sub_140005FB8();
+  v0 = dword_14001CF84;
+  if ( (unsigned int)dword_14001CF84 < 0x7FFFFFFF )
+    v0 = --dword_14001CF84;
+  if ( !v0 )
+    byte_14001CF53 = 0;
+  sub_140005FC8();
+}
+
+
+=== DISASM ===
+0x14000bd88: sub     rsp, 28h
+0x14000bd8c: mov     ecx, 7Ch ; '|'
+0x14000bd91: call    sub_140005FB8
+0x14000bd96: mov     eax, cs:dword_14001CF84
+0x14000bd9c: cmp     eax, 7FFFFFFFh
+0x14000bda1: jnb     short loc_14000BDAB
+0x14000bda3: dec     eax
+0x14000bda5: mov     cs:dword_14001CF84, eax
+0x14000bdab: test    eax, eax
+0x14000bdad: jnz     short loc_14000BDB5
+0x14000bdaf: mov     cs:byte_14001CF53, al
+0x14000bdb5: mov     ecx, 7Ch ; '|'
+0x14000bdba: add     rsp, 28h
+0x14000bdbe: jmp     sub_140005FC8

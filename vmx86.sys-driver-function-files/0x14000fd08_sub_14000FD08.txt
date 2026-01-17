@@ -1,0 +1,92 @@
+=== METADATA ===
+Name: sub_14000FD08
+Addr: 0x14000fd08
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+  0x14000fd18: AND with Mask 0xFFFFFFFFFFFFFFF8
+  0x14000fd1c: TEST with Mask 0x4
+  0x14000fd4a: TEST with Mask 0xF
+  0x14000fd51: AND with Mask 0xFFFFFFFFFFFFFFF0
+
+=== MEMBER ACCESS ===
+  0x14000fd20: Access Member +0x8 ([r8+8])
+  0x14000fd24: Access Member +0x4 (dword ptr [r8+4])
+  0x14000fd3a: Access Member +0x10 ([rdx+10h])
+  0x14000fd3e: Access Member +0x8 ([rax+8])
+  0x14000fd41: Access Member +0x8 ([rdx+8])
+  0x14000fd45: Access Member +0x3 (byte ptr [rcx+rax+3])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- __GSHandlerCheck (0x14000FCF6)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x14000fd08-0x14000fd20 -> Jumps to: 0x14000fd20, 0x14000fd33
+  Block 0x14000fd20-0x14000fd33 -> Jumps to: 0x14000fd33
+  Block 0x14000fd33-0x14000fd4f -> Jumps to: 0x14000fd4f, 0x14000fd57
+  Block 0x14000fd4f-0x14000fd57 -> Jumps to: 0x14000fd57
+  Block 0x14000fd57-0x14000fd67 -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000FD08(__int64 a1, __int64 a2)
+{
+  __int64 result; // rax
+  int v3; // edx
+
+  result = *(_QWORD *)(a2 + 8);
+  v3 = *(unsigned __int8 *)(*(unsigned int *)(*(_QWORD *)(a2 + 16) + 8LL) + result + 3);
+  if ( (v3 & 0xF) != 0 )
+    return v3 & 0xFFFFFFF0;
+  return result;
+}
+
+
+=== DISASM ===
+0x14000fd08: sub     rsp, 28h
+0x14000fd0c: mov     eax, [r8]
+0x14000fd0f: mov     r9, rcx
+0x14000fd12: mov     r11d, eax
+0x14000fd15: mov     r10, rcx
+0x14000fd18: and     r11d, 0FFFFFFF8h
+0x14000fd1c: test    al, 4
+0x14000fd1e: jz      short loc_14000FD33
+0x14000fd20: mov     eax, [r8+8]
+0x14000fd24: movsxd  r10, dword ptr [r8+4]
+0x14000fd28: neg     eax
+0x14000fd2a: add     r10, rcx
+0x14000fd2d: movsxd  rcx, eax
+0x14000fd30: and     r10, rcx
+0x14000fd33: movsxd  rax, r11d
+0x14000fd36: mov     r8, [rax+r10]
+0x14000fd3a: mov     rax, [rdx+10h]
+0x14000fd3e: mov     ecx, [rax+8]
+0x14000fd41: mov     rax, [rdx+8]
+0x14000fd45: movzx   edx, byte ptr [rcx+rax+3]
+0x14000fd4a: test    dl, 0Fh
+0x14000fd4d: jz      short loc_14000FD57
+0x14000fd4f: mov     eax, edx
+0x14000fd51: and     eax, 0FFFFFFF0h
+0x14000fd54: add     r9, rax
+0x14000fd57: xor     r9, r8
+0x14000fd5a: mov     rcx, r9; StackCookie
+0x14000fd5d: call    __security_check_cookie
+0x14000fd62: add     rsp, 28h
+0x14000fd66: retn

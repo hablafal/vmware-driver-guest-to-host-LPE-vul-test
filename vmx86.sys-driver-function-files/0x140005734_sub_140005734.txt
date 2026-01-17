@@ -1,0 +1,74 @@
+=== METADATA ===
+Name: sub_140005734
+Addr: 0x140005734
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x140005742: Access Member +0x38 ([rsp+48h+var_10])
+  0x14000574a: Access Member +0x20 ([rsp+48h+var_28])
+  0x140005755: Access Member +0x30 ([rsp+48h+var_18])
+  0x14000575f: Access Member +0x30 ([rsp+48h+var_18])
+  0x140005779: Access Member +0x38 ([rsp+48h+var_10])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_14000B804 (0x14000B83E)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x140005738 -> 2
+
+=== BASIC BLOCKS ===
+  Block 0x140005734-0x14000578b -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_140005734(__int64 a1)
+{
+  __int64 v1; // rax
+  __int64 v2; // rcx
+  __int64 v4; // [rsp+30h] [rbp-18h] BYREF
+
+  v1 = sub_140004C50(a1, (char *)&v4, 1u, 1, 1);
+  v2 = v4;
+  if ( v1 != 1 )
+    return 0x3FFFFFFFFFLL;
+  return v2;
+}
+
+
+=== DISASM ===
+0x140005734: sub     rsp, 48h
+0x140005738: mov     rax, cs:__security_cookie
+0x14000573f: xor     rax, rsp
+0x140005742: mov     [rsp+48h+var_10], rax
+0x140005747: mov     r9b, 1
+0x14000574a: mov     [rsp+48h+var_28], 1
+0x14000574f: mov     r8d, 1
+0x140005755: lea     rdx, [rsp+48h+var_18]
+0x14000575a: call    sub_140004C50
+0x14000575f: mov     rcx, [rsp+48h+var_18]
+0x140005764: cmp     rax, 1
+0x140005768: mov     rdx, 3FFFFFFFFFh
+0x140005772: cmovnz  rcx, rdx
+0x140005776: mov     rax, rcx
+0x140005779: mov     rcx, [rsp+48h+var_10]
+0x14000577e: xor     rcx, rsp; StackCookie
+0x140005781: call    __security_check_cookie
+0x140005786: add     rsp, 48h
+0x14000578a: retn

@@ -1,0 +1,59 @@
+=== METADATA ===
+Name: sub_140010080
+Addr: 0x140010080
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14001008b: Access Member +0x20 ([rsp+58h+var_38])
+  0x140010095: Access Member +0x20 ([rsp+58h+var_38])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140010000 (0x14001003C)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+
+=== BASIC BLOCKS ===
+  Block 0x140010080-0x1400100a6 -> Jumps to: 
+
+=== CODE ===
+void sub_140010080()
+{
+  sub_14000FDD0();
+}
+
+
+=== DISASM ===
+0x140010080: push    r9
+0x140010082: push    r8
+0x140010084: push    rdx
+0x140010085: push    rcx
+0x140010086: push    rax
+0x140010087: sub     rsp, 30h
+0x14001008b: movaps  [rsp+58h+var_38], xmm0
+0x140010090: call    sub_14000FDD0
+0x140010095: movaps  xmm0, [rsp+58h+var_38]
+0x14001009a: add     rsp, 30h
+0x14001009e: pop     rax
+0x14001009f: pop     rcx
+0x1400100a0: pop     rdx
+0x1400100a1: pop     r8
+0x1400100a3: pop     r9
+0x1400100a5: retn

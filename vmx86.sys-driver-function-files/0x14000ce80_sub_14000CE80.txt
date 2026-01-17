@@ -1,0 +1,184 @@
+=== METADATA ===
+Name: sub_14000CE80
+Addr: 0x14000ce80
+Type: NODE (Logic/Controller)
+
+=== CAPABILITIES ===
+  (None Detected)
+
+=== RETURN VALUES ===
+
+=== STACK FRAME ===
+
+=== CALL ARGUMENTS (SMOKING GUN) ===
+
+=== BITWISE MASKS ===
+
+=== MEMBER ACCESS ===
+  0x14000cea8: Access Member +0x8 ([rax+8])
+  0x14000ceb4: Access Member +0x8 ([rbx+8])
+  0x14000cf3a: Access Member +0xB0 ([rbx+0B0h])
+
+=== SWITCH TABLES ===
+
+=== HEURISTICS ===
+  (None)
+
+=== CALLERS ===
+  <- sub_140003BB4 (0x140003E42)
+  <- sub_1400047D0 (0x140004883)
+
+=== IMPORTS ===
+
+=== STRINGS ===
+  0x14000ceff -> VM is not on the list of registered VMs.
+
+
+=== BASIC BLOCKS ===
+  Block 0x14000ce80-0x14000cea3 -> Jumps to: 0x14000ceaf
+  Block 0x14000cea3-0x14000cea8 -> Jumps to: 0x14000cea8, 0x14000ceff
+  Block 0x14000cea8-0x14000ceaf -> Jumps to: 0x14000ceaf
+  Block 0x14000ceaf-0x14000ceb4 -> Jumps to: 0x14000cea3, 0x14000ceb4
+  Block 0x14000ceb4-0x14000cee6 -> Jumps to: 0x14000cee6, 0x14000cf14
+  Block 0x14000cee6-0x14000ceff -> Jumps to: 0x14000cf33
+  Block 0x14000ceff-0x14000cf0d -> Jumps to: 0x14000cf55
+  Block 0x14000cf0d-0x14000cf12 -> Jumps to: 0x14000cf12, 0x14000cf21
+  Block 0x14000cf12-0x14000cf14 -> Jumps to: 0x14000cf14
+  Block 0x14000cf14-0x14000cf1f -> Jumps to: 0x14000cf0d, 0x14000cf1f
+  Block 0x14000cf1f-0x14000cf21 -> Jumps to: 0x14000cf3a
+  Block 0x14000cf21-0x14000cf33 -> Jumps to: 0x14000cf33
+  Block 0x14000cf33-0x14000cf3a -> Jumps to: 0x14000cf3a
+  Block 0x14000cf3a-0x14000cf55 -> Jumps to: 0x14000cf55
+  Block 0x14000cf55-0x14000cf6f -> Jumps to: 
+
+=== CODE ===
+__int64 __fastcall sub_14000CE80(int *a1)
+{
+  __int64 v2; // rax
+  __int64 *v3; // rcx
+  int v4; // r8d
+  int v5; // r8d
+  __int64 v6; // rdx
+  __int64 v7; // rax
+  int v8; // r10d
+  __int64 v9; // rdx
+  _DWORD *v10; // rcx
+  __int64 v11; // rdx
+  __int64 v12; // r8
+  __int64 v13; // r9
+
+  sub_140005FB8();
+  v2 = qword_14001CF58;
+  v3 = &qword_14001CF58;
+  while ( (int *)v2 != a1 )
+  {
+    if ( !v2 )
+    {
+      sub_140003A14("VM is not on the list of registered VMs.\n");
+      goto LABEL_15;
+    }
+    v3 = (__int64 *)(v2 + 8);
+    v2 = *(_QWORD *)(v2 + 8);
+  }
+  v4 = dword_14001CF80;
+  *v3 = *((_QWORD *)a1 + 1);
+  v5 = v4 - 1;
+  v6 = *a1;
+  v7 = dword_14001CF88;
+  dword_14001CF80 = v5;
+  v8 = v6 - 1;
+  if ( (_DWORD)v6 - 1 == dword_14001CF88 )
+  {
+    v9 = dword_14001CF88;
+    dword_14001CF88 = dword_14001CF90[dword_14001CF88];
+    dword_14001CF90[v9] = dword_14001D090;
+LABEL_13:
+    dword_14001D090 = v8;
+  }
+  else
+  {
+    while ( 1 )
+    {
+      v10 = &dword_14001CF90[v7];
+      LODWORD(v7) = *v10;
+      if ( *v10 == -1 )
+        break;
+      if ( (_DWORD)v7 == v8 )
+      {
+        *v10 = dword_14001CF90[v6 - 1];
+        dword_14001CF90[v6 - 1] = dword_14001D090;
+        goto LABEL_13;
+      }
+      v7 = (int)v7;
+    }
+  }
+  qword_14001CF78 -= *((_QWORD *)a1 + 22);
+  *((_QWORD *)&xmmword_14001CF60 + 1) &= -(__int64)(v5 != 0);
+LABEL_15:
+  sub_140005FC8();
+  sub_14000A564((__int64)a1, v11, v12, v13);
+  return 0;
+}
+
+
+=== DISASM ===
+0x14000ce80: push    rbx
+0x14000ce82: sub     rsp, 20h
+0x14000ce86: mov     rbx, rcx
+0x14000ce89: mov     ecx, 1
+0x14000ce8e: call    sub_140005FB8
+0x14000ce93: mov     rax, cs:qword_14001CF58
+0x14000ce9a: lea     rcx, qword_14001CF58
+0x14000cea1: jmp     short loc_14000CEAF
+0x14000cea3: test    rax, rax
+0x14000cea6: jz      short loc_14000CEFF
+0x14000cea8: lea     rcx, [rax+8]
+0x14000ceac: mov     rax, [rcx]
+0x14000ceaf: cmp     rax, rbx
+0x14000ceb2: jnz     short loc_14000CEA3
+0x14000ceb4: mov     rax, [rbx+8]
+0x14000ceb8: lea     r9, dword_14001CF90
+0x14000cebf: mov     r8d, cs:dword_14001CF80
+0x14000cec6: mov     [rcx], rax
+0x14000cec9: dec     r8d
+0x14000cecc: movsxd  rdx, dword ptr [rbx]
+0x14000cecf: movsxd  rax, cs:dword_14001CF88
+0x14000ced6: mov     cs:dword_14001CF80, r8d
+0x14000cedd: lea     r10d, [rdx-1]
+0x14000cee1: cmp     r10d, eax
+0x14000cee4: jnz     short loc_14000CF14
+0x14000cee6: mov     ecx, [r9+rax*4]
+0x14000ceea: mov     rdx, rax
+0x14000ceed: mov     eax, cs:dword_14001D090
+0x14000cef3: mov     cs:dword_14001CF88, ecx
+0x14000cef9: mov     [r9+rdx*4], eax
+0x14000cefd: jmp     short loc_14000CF33
+0x14000ceff: lea     rcx, aVmIsNotOnTheLi; "VM is not on the list of registered VMs"...
+0x14000cf06: call    sub_140003A14
+0x14000cf0b: jmp     short loc_14000CF55
+0x14000cf0d: cmp     eax, r10d
+0x14000cf10: jz      short loc_14000CF21
+0x14000cf12: cdqe
+0x14000cf14: lea     rcx, [r9+rax*4]
+0x14000cf18: mov     eax, [rcx]
+0x14000cf1a: cmp     eax, 0FFFFFFFFh
+0x14000cf1d: jnz     short loc_14000CF0D
+0x14000cf1f: jmp     short loc_14000CF3A
+0x14000cf21: mov     eax, [r9+rdx*4-4]
+0x14000cf26: mov     [rcx], eax
+0x14000cf28: mov     eax, cs:dword_14001D090
+0x14000cf2e: mov     [r9+rdx*4-4], eax
+0x14000cf33: mov     cs:dword_14001D090, r10d
+0x14000cf3a: mov     rax, [rbx+0B0h]
+0x14000cf41: sub     cs:qword_14001CF78, rax
+0x14000cf48: neg     r8d
+0x14000cf4b: sbb     rax, rax
+0x14000cf4e: and     qword ptr cs:xmmword_14001CF60+8, rax
+0x14000cf55: mov     ecx, 1
+0x14000cf5a: call    sub_140005FC8
+0x14000cf5f: mov     rcx, rbx
+0x14000cf62: call    sub_14000A564
+0x14000cf67: xor     eax, eax
+0x14000cf69: add     rsp, 20h
+0x14000cf6d: pop     rbx
+0x14000cf6e: retn
